@@ -8,16 +8,16 @@ library(randomcoloR)
 
 name <- paste0('paintings/', Sys.Date(), ".png")
 
-set.seed(as.numeric(Sys.Date() + rnorm(1)))      # World seed
+set.seed(as.numeric(Sys.Date()))      # World seed
 
 # Give the painting dimensions
-
-width <- sample(c(10000, 20000, 50000))
-height <- width
 
 if (as.numeric(Sys.Date())%%2 == 0) { # Odd days we make a city map
   
   print(paste0("Creating a city map for ", Sys.Date()))
+  
+  width <- sample(c(10000, 20000, 50000))
+  height <- width
   
   # Set the painting options
   
@@ -88,12 +88,12 @@ if (as.numeric(Sys.Date())%%2 == 0) { # Odd days we make a city map
   
 } else { # Even days we make an expanding tree
   
-  print(paste0("Creating another painting for ", Sys.Date()))
+  print(paste0("Creating a non-city map for ", Sys.Date()))
   
   # include a specific formula, for example:
   my_formula <- list(
-    x = quote(runif(1, -10, 10) * x_i^sample(1:4, 1) - sin(y_i^sample(1:4, 1)) + runif(1, -100, 100)),
-    y = quote(runif(1, -10, 10) * y_i^sample(1:4, 1) - cos(x_i^sample(1:4, 1)) * y_i^sample(1:4, 1) + runif(1, -100, 100))
+    x = quote(runif(1, -10, 10) * x_i^sample(1:5, 1) - sin(y_i^sample(1:5, 1)) + runif(1, -100, 100)),
+    y = quote(runif(1, -10, 10) * y_i^sample(1:5, 1) - cos(x_i^sample(1:5, 1)) * y_i^sample(1:5, 1) + runif(1, -100, 100))
   )
 
   color <- randomcoloR::randomColor(1, luminosity = "dark")

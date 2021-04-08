@@ -43,7 +43,7 @@ jobs:
           delete-branch: true
           title: 'New painting'
           body: |
-            New painting:
+            Today's painting:
 
             ![image](https://github.com/koenderks/aRt-Gallery/raw/new-painting//paintings/${{ steps.date.outputs.date }}.png)
           draft: false
