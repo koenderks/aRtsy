@@ -1,6 +1,6 @@
 on: workflow_dispatch
 
-name: Create city map
+name: Create new painting
 
 jobs:
   update:
