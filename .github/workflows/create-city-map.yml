@@ -5,7 +5,7 @@ name: Create city map
 jobs:
   update:
     name: Create city map
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -14,7 +14,7 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v1
 
       # Install required packages and update README
-      - name: Install required packages and render script
+      - name: Install required packages
         run: |
           install.packages(c("remotes", "rmarkdown", "gifski", "ggplot2", "dplyr", "tweenr"))
         shell: Rscript {0}
@@ -46,7 +46,9 @@ jobs:
           delete-branch: true
           title: 'New city map'
           body: |
-            Daily update
+            New city painting: [1]
+
+            - 
           labels: |
             automated pr
           reviewers: koenderks
