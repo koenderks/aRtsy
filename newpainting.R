@@ -8,11 +8,13 @@ library(randomcoloR)
 
 name <- paste0('paintings/', Sys.Date(), ".png")
 
-set.seed(as.numeric(Sys.Date()))      # World seed
+set.seed(as.numeric(Sys.Date()) - 199)      # World seed
 
 # Give the painting dimensions
 
 if (as.numeric(Sys.Date())%%2 == 0) { # Odd days we make a city map
+  
+  # Credits to https://github.com/marcusvolz/mathart
   
   print(paste0("Creating a city map for ", Sys.Date()))
   
@@ -90,10 +92,9 @@ if (as.numeric(Sys.Date())%%2 == 0) { # Odd days we make a city map
   
   print(paste0("Creating a non-city map for ", Sys.Date()))
   
-  # include a specific formula, for example:
   my_formula <- list(
-    x = quote(runif(1, -10, 10) * x_i^sample(1:5, 1) - sin(y_i^sample(1:5, 1)) + runif(1, -100, 100)),
-    y = quote(runif(1, -10, 10) * y_i^sample(1:5, 1) - cos(x_i^sample(1:5, 1)) * y_i^sample(1:5, 1) + runif(1, -100, 100))
+    x = quote(runif(1, -10, 10) * x_i^sample(c(0.5, 1:5), 1) - sin(y_i^sample(c(0.5, 1, 2, 3, 4, 5), 1)) * runif(1, -100, 100)),
+    y = quote(runif(1, -10, 10) * y_i^sample(c(0.5, 1:5), 1) - cos(x_i^sample(c(0.5, 1, 2, 3, 4, 5), 1)) * y_i^sample(1:5, 1) + runif(1, -100, 100))
   )
 
   color <- randomcoloR::randomColor(1, luminosity = "dark")
