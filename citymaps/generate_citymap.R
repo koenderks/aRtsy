@@ -1,14 +1,15 @@
 # Metropolis: Generative city visualisations
-# Packages
+
+# 1. Packages
 library(mathart)
-library(tidyverse)
+library(ggplot2)
 library(tweenr)
 library(viridis)
 
-# Make reproducible
+# 2. Make reproducible
 set.seed(120495)
 
-# Parameters
+# 3. Parameters
 n <- 10000 # iterations
 r <- 75 # neighbourhood
 width <- 10000 # canvas width
@@ -18,7 +19,7 @@ p_branch <- 0.1 # probability of branching
 initial_pts <- 3 # number of initial points
 nframes <- 500 # number of tweenr frames
 
-# Initialise data frames
+# 4. Initialise data frames
 points <- data.frame(x = numeric(n), y = numeric(n), dir = numeric(n), level = integer(n))
 edges <-  data.frame(x = numeric(n), y = numeric(n), xend = numeric(n), yend = numeric(n), level = integer(n))
 
@@ -30,9 +31,7 @@ if(initial_pts > 1) {
   }
 }
 
-t0 <- Sys.time()
-
-# Main loop ----
+# 5. Main loop ----
 i <- initial_pts + 1
 while (i <= n) {
   valid <- FALSE
@@ -65,7 +64,7 @@ edges <- edges %>% filter(level > 0)
 sand <- data.frame(alpha = numeric(0), x = numeric(0), y = numeric(0))
 perp <- data.frame(x = numeric(0), y = numeric(0), xend = numeric(0), yend = numeric(0))
 
-# Create plot
+# 6. Create painting
 painting <- ggplot() +
   geom_segment(aes(x, y, xend = xend, yend = yend, size = -level), edges, lineend = "round") +
   #geom_segment(aes(x, y, xend = xend, yend = yend), perp, lineend = "round", alpha = 0.15) +
@@ -78,5 +77,5 @@ painting <- ggplot() +
   #scale_color_viridis() +
   theme_blankcanvas(bg_col = "#fafafa", margin_cm = 0)
 
-# print plot
+# 8. Save painting
 ggsave("citymap1.png", painting, width = 20, height = 20, units = "cm", dpi = 300)
