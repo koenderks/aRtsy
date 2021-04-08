@@ -2,19 +2,20 @@
 
 # 1. Load required packages
 
+library(gifski)
+library(ggplot2)
+library(gganimate)
 library(mathart)
 library(dplyr)
-library(ggplot2)
 library(tweenr)
-library(viridis)
 
 setwd("C:/Users/derksk/OneDrive - NBU/Desktop/Art-Gallery/city-maps")
 
 # 2. Give the painting a name and dimensions
 
-name <- "citymap2"
-width <- 10000
-height <- 10000
+name <- "citymap3"
+width <- 50000
+height <- 20000
 
 # 3. Set the painting options
 
@@ -23,7 +24,7 @@ n <- 10000                # Iterations
 r <- 75                   # Neighborhood
 delta <- 2 * pi / 180     # Angle direction noise
 p_branch <- 0.1           # Probability of branching
-initial_pts <- 4          # Number of initial points
+initial_pts <- 3          # Number of initial points
 nframes <- 500            # Number of tweenr frames
 
 # 4. Initialize the empty painting data
@@ -70,8 +71,7 @@ while (i <= n) {
 }
 
 edges <- edges %>% filter(level > 0)
-sand <- data.frame(alpha = numeric(0), x = numeric(0), y = numeric(0))
-perp <- data.frame(x = numeric(0), y = numeric(0), xend = numeric(0), yend = numeric(0))
+edges <- cbind(index = 1:nrow(edges), edges)
 
 # 6. Create the painting
 
@@ -85,4 +85,7 @@ painting <- ggplot() +
 
 # 7. Save the painting
 
-ggsave(paste0(name, ".png"), painting, width = 20, height = 20, units = "cm", dpi = 300)
+ggsave(paste0(name, ".png"), painting, scale = 1, dpi = 300)
+
+# 8. Save an animated version of the painting (only for small paintings)
+anim_save(paste0(name, ".gif"), painting + gganimate::transition_manual(frames = index, cumulative = TRUE))
