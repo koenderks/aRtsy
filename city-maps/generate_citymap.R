@@ -1,13 +1,14 @@
-# Metropolis: Generative city visualisations
+# Metropolis: Generative city visualizations (https://github.com/marcusvolz/metropolis/blob/master/metropolis.R)
 
 # 1. Load required packages
-setwd("C:/Users/derksk/OneDrive - NBU/Desktop/Art-Gallery/city-maps")
 
 library(mathart)
 library(dplyr)
 library(ggplot2)
 library(tweenr)
 library(viridis)
+
+setwd("C:/Users/derksk/OneDrive - NBU/Desktop/Art-Gallery/city-maps")
 
 # 2. Give the painting a name and dimensions
 
@@ -16,15 +17,17 @@ width <- 10000
 height <- 10000
 
 # 3. Set the painting options
-set.seed(1237523)
-n <- 10000 # iterations
-r <- 75 # neighbourhood
-delta <- 2 * pi / 180 # angle direction noise
-p_branch <- 0.1 # probability of branching
-initial_pts <- 3 # number of initial points
-nframes <- 500 # number of tweenr frames
+
+set.seed(92796)           # World seed
+n <- 10000                # Iterations
+r <- 75                   # Neighborhood
+delta <- 2 * pi / 180     # Angle direction noise
+p_branch <- 0.1           # Probability of branching
+initial_pts <- 4          # Number of initial points
+nframes <- 500            # Number of tweenr frames
 
 # 4. Initialize the empty painting data
+
 points <- data.frame(x = numeric(n), y = numeric(n), dir = numeric(n), level = integer(n))
 edges <-  data.frame(x = numeric(n), y = numeric(n), xend = numeric(n), yend = numeric(n), level = integer(n))
 
@@ -36,7 +39,8 @@ if(initial_pts > 1) {
   }
 }
 
-# 5. Main loop ----
+# 5. Create the painting data
+
 i <- initial_pts + 1
 while (i <= n) {
   valid <- FALSE
@@ -70,6 +74,7 @@ sand <- data.frame(alpha = numeric(0), x = numeric(0), y = numeric(0))
 perp <- data.frame(x = numeric(0), y = numeric(0), xend = numeric(0), yend = numeric(0))
 
 # 6. Create the painting
+
 painting <- ggplot() +
   geom_segment(aes(x, y, xend = xend, yend = yend, size = -level), edges, lineend = "round") +
   xlim(0, width) +
@@ -79,4 +84,5 @@ painting <- ggplot() +
   theme_blankcanvas(bg_col = "#fafafa", margin_cm = 0)
 
 # 7. Save the painting
-ggsave(paste0(name, ".png"), painting, width = 100, height = 20, units = "cm", dpi = 300)
+
+ggsave(paste0(name, ".png"), painting, scale = 1, dpi = 300)
