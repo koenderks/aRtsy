@@ -4,7 +4,7 @@ name: Create city map
 
 jobs:
   update:
-    name: Create city map
+    name: Create new painting
     runs-on: macos-latest
     steps:
       
@@ -23,7 +23,7 @@ jobs:
           remotes::install_github("marcusvolz/mathart")
         shell: Rscript {0}
 
-      - name: Create city painting
+      - name: Create city map
         run: |
           source("city-maps/citypainting.R")
         shell: Rscript {0}
@@ -37,13 +37,13 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: New city map
+          commit-message: New painting
           signoff: false
-          branch: city-map
+          branch: new-painting
           delete-branch: true
-          title: 'New city map'
+          title: 'New painting'
           body: |
-            New city painting:
+            New painting:
 
             ![image](https://github.com/koenderks/aRt-Gallery/raw/city-map/city-maps/${{ steps.date.outputs.date }}.png)
           labels: |

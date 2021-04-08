@@ -15,7 +15,7 @@ height <- 50000
 # 3. Set the painting options
 
 set.seed(as.numeric(Sys.Date()))      # World seed
-n <- 5000                             # Iterations
+n <- 50000                             # Iterations
 r <- 75                               # Neighborhood
 delta <- 2 * pi / 180                 # Angle direction noise
 p_branch <- runif(1, 0.1, 0.3)        # Probability of branching
