@@ -85,4 +85,4 @@ painting <- ggplot() +
 
 # 7. Save the painting
 
-ggsave(paste0(name, ".png"), painting, scale = 1, dpi = 300)
+ggsave(paste0(name, ".png"), painting, width = 20, height = 20, units = "cm", dpi = 300)
