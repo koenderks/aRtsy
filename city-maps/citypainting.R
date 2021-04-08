@@ -1,11 +1,3 @@
----
-title: "citypainting"
-author: "Koen Derks"
-date: "8-4-2021"
-output: html_document
----
-
-```{r setup, include=FALSE}
 # Metropolis: Generative city visualizations (https://github.com/marcusvolz/metropolis/blob/master/metropolis.R)
 
 # 1. Load required packages
@@ -90,8 +82,3 @@ painting <- ggplot() +
 
 name <- paste0('city-maps/', Sys.Date(), ".png")
 ggsave(name, painting, width = 50, height = 50, units = "cm", dpi = 300)
-
-# 8. Save an animated version of the painting (only for small paintings)
-# anim_save(paste0(name, ".gif"), painting + gganimate::transition_manual(frames = index, cumulative = TRUE))
-
-```
