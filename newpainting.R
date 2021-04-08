@@ -97,7 +97,7 @@ if (as.numeric(Sys.Date())%%2 == 0) { # Odd days we make a city map
   )
   background <- randomcoloR::randomColor(1, luminosity = "bright")
   color <- randomcoloR::randomColor(1, luminosity = "dark")
-  # call the main function to create five images with a polar coordinate system
+
   df <- seq(from = -pi, to = pi, by = 0.01) %>% 
     expand.grid(x_i = ., y_i = .) %>% 
     dplyr::mutate(!!!my_formula)
@@ -106,8 +106,7 @@ if (as.numeric(Sys.Date())%%2 == 0) { # Odd days we make a city map
     ggplot2::theme_void() + 
     ggplot2::coord_fixed() + 
     ggplot2::coord_polar() + 
-    ggplot2::theme(panel.background = element_rect(fill = background), 
-                   plot.background = element_rect(fill = background))
+    theme_blankcanvas(bg_col = "#fafafa", margin_cm = 0)
   ggplot2::ggsave(painting, filename = name, width = width/1000, height = height/1000, units = "cm", dpi = 300)
   
 }
