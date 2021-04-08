@@ -15,6 +15,8 @@ height <- width
 
 if (as.numeric(Sys.Date())%%2 != 0) { # Odd days we make a city map
   
+  print(paste0("Creating a city map for ", Sys.Date()))
+  
   # Set the painting options
   
   n <- width                            # Iterations
@@ -81,6 +83,8 @@ if (as.numeric(Sys.Date())%%2 != 0) { # Odd days we make a city map
     theme_blankcanvas(bg_col = "#fafafa", margin_cm = 0)
   
 } else { # Even days we make an expanding tree
+  
+  print(paste0("Creating an expanding tree for ", Sys.Date()))
   
   # Set the painting options
   nTrees <- sample(1:10, size = 1)
