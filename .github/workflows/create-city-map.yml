@@ -39,9 +39,9 @@ jobs:
           delete-branch: true
           title: 'New city map'
           body: |
-            New city painting: [1]
+            New city painting:
 
-            - hello
+            ![image](https://github.com/koenderks/aRt-Gallery/raw/city-map/city-maps/2021-04-08.png)
           labels: |
             automated pr
           draft: false
