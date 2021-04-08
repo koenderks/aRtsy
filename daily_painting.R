@@ -17,7 +17,7 @@ name <- paste0('paintings/', Sys.Date() - 10, ".png")
 
 # Painting seed dependent on the date
 
-set.seed(as.numeric(Sys.Date()) + 105023)
+set.seed(as.numeric(Sys.Date()))
 
 paintingType <- sample(1:3, 1)
 
