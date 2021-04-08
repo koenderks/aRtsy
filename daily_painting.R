@@ -25,7 +25,7 @@ if (paintingType == 1) {
   
   # Credits to https://github.com/marcusvolz/mathart
   
-  print(paste0("Creating a city map for ", Sys.Date()))
+  print(paste0("Creating a city painting on ", Sys.Date()))
   
   width <- sample(c(10000, 20000, 50000))
   height <- width
@@ -40,7 +40,7 @@ if (paintingType == 1) {
   
 } else if(paintingType == 2) {
   
-  print(paste0("Creating a non-city map for ", Sys.Date()))
+  print(paste0("Creating a function painting on ", Sys.Date()))
   
   my_formula <- list(
     x = quote(runif(1, -10, 10) * x_i^sample(c(0.5, 1:5), 1) - sin(y_i^sample(c(0.5, 1, 2, 3, 4, 5), 1)) * runif(1, -100, 100)),
@@ -54,6 +54,8 @@ if (paintingType == 1) {
   ggplot2::ggsave(painting, filename = name, scale = 1, dpi = 300)
   
 } else if (paintingType == 3) {
+  
+  print(paste0("Creating an expanding tree painting on ", Sys.Date()))
   
   # Credits to https://github.com/marcusvolz/mathart
   
