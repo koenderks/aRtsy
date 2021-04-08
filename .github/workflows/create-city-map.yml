@@ -5,7 +5,7 @@ name: Create city map
 jobs:
   update:
     name: Create city map
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -16,7 +16,7 @@ jobs:
       # Install required packages and update README
       - name: Install required packages
         run: |
-          install.packages(c("remotes", "rmarkdown", "gifski", "ggplot2", "dplyr", "tweenr"))
+          install.packages(c("remotes", "rmarkdown", "ggplot2", "dplyr", "tweenr"))
         shell: Rscript {0}
 
       - name: Install mathart

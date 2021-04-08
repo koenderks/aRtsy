@@ -10,7 +10,6 @@ output: html_document
 
 # 1. Load required packages
 
-library(gifski)
 library(ggplot2)
 library(mathart)
 library(dplyr)
