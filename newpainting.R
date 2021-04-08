@@ -8,7 +8,7 @@ library(randomcoloR)
 
 name <- paste0('paintings/', Sys.Date(), ".png")
 
-set.seed(as.numeric(Sys.Date()) - 199)      # World seed
+set.seed(as.numeric(Sys.Date()))      # World seed
 
 # Give the painting dimensions
 
