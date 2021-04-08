@@ -10,6 +10,7 @@ library(randomcoloR)
 
 source("generate_city.R")
 source("generate_function.R")
+source("generate_tree.R")
 
 # Name
 
