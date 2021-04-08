@@ -4,6 +4,9 @@ library(ggplot2)
 library(mathart)
 library(dplyr)
 library(tweenr)
+library(randomcoloR)
+
+name <- paste0('paintings/', Sys.Date(), ".png")
 
 set.seed(as.numeric(Sys.Date()))      # World seed
 
@@ -13,7 +16,7 @@ width <- sample(c(10000, 20000, 50000))
 width <- 20000
 height <- width
 
-if (as.numeric(Sys.Date())%%2 != 0) { # Odd days we make a city map
+if (as.numeric(Sys.Date())%%2 == 0) { # Odd days we make a city map
   
   print(paste0("Creating a city map for ", Sys.Date()))
   
@@ -82,32 +85,30 @@ if (as.numeric(Sys.Date())%%2 != 0) { # Odd days we make a city map
     scale_size_continuous(range = c(0.5, 0.5)) +
     theme_blankcanvas(bg_col = "#fafafa", margin_cm = 0)
   
+  ggsave(name, painting, width = 50, height = 50, units = "cm", dpi = 300)
+  
 } else { # Even days we make an expanding tree
   
-  print(paste0("Creating an expanding tree for ", Sys.Date()))
+  print(paste0("Creating another painting for ", Sys.Date()))
   
-  # Set the painting options
-  nTrees <- sample(1:10, size = 1)
-  
-  # Simulate the rrt edges
-  sink("nul") 
-  paintingData <- list()
-  for (i in 1:nTrees) {
-    paintingData[[i]] <- mathart::rapidly_exploring_random_tree(X = width, n = n, delta = runif(1, 1, 10)) %>% mutate(id = 1:nrow(.))
-  }
-  sink()
-  
-  # Create the painting
-  painting <- ggplot() +
-    geom_segment(aes(x, y, xend = xend, yend = yend, size = -id, alpha = -id), paintingData, lineend = "round") +
-    coord_equal() +
-    scale_size_continuous(range = c(0.1, 0.75)) +
-    scale_alpha_continuous(range = c(0.1, 1)) +
-    theme_blankcanvas(bg_col = "#fafafa", margin_cm = 0)
+  # include a specific formula, for example:
+  my_formula <- list(
+    x = quote(runif(1, -10, 10) * x_i^2 - sin(y_i^4) + runif(1, -100, 100)),
+    y = quote(runif(1, -10, 10) * y_i^3 - cos(x_i^2) * y_i^4 + runif(1, -100, 100))
+  )
+  background <- randomcoloR::randomColor(1, luminosity = "bright")
+  color <- randomcoloR::randomColor(1, luminosity = "dark")
+  # call the main function to create five images with a polar coordinate system
+  df <- seq(from = -pi, to = pi, by = 0.01) %>% 
+    expand.grid(x_i = ., y_i = .) %>% 
+    dplyr::mutate(!!!my_formula)
+  painting <- df %>% ggplot2::ggplot(ggplot2::aes(x = x, y = y)) + 
+    ggplot2::geom_point(alpha = 0.1, size = 0, shape = 20, color = color) + 
+    ggplot2::theme_void() + 
+    ggplot2::coord_fixed() + 
+    ggplot2::coord_polar() + 
+    ggplot2::theme(panel.background = element_rect(fill = background), 
+                   plot.background = element_rect(fill = background))
+  ggplot2::ggsave(painting, filename = name, width = 50, height = 50, units = "cm", dpi = 300)
   
 }
-
-# Save the painting
-
-name <- paste0('paintings/', Sys.Date(), ".png")
-ggsave(name, painting, width = 50, height = 50, units = "cm", dpi = 300)

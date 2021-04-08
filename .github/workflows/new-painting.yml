@@ -15,7 +15,7 @@ jobs:
       # Install required packages and update README
       - name: Install required packages
         run: |
-          install.packages(c("remotes", "ggplot2", "dplyr", "tweenr"))
+          install.packages(c("remotes", "ggplot2", "dplyr", "tweenr", "randomcoloR"))
         shell: Rscript {0}
 
       - name: Install mathart package
@@ -23,7 +23,7 @@ jobs:
           remotes::install_github("marcusvolz/mathart")
         shell: Rscript {0}
 
-      - name: Create city map
+      - name: Create new painting
         run: |
           source("newpainting.R")
         shell: Rscript {0}
