@@ -1,26 +1,27 @@
-# Packages
+# Packages required for painting
 
 library(ggplot2)
-library(mathart)
 library(dplyr)
 library(tweenr)
 library(randomcoloR)
 
-# Functions
+# Functions required for painting
 
 source("generate_city.R")
 source("generate_function.R")
 source("generate_tree.R")
 
-# Name
+# Name of the painting
 
 name <- paste0('paintings/', Sys.Date(), ".png")
 
-# Seed
+# Painting seed dependent on the date
 
-set.seed(as.numeric(Sys.Date()))  # Painting seed
+set.seed(as.numeric(Sys.Date()))
 
-if (as.numeric(Sys.Date())%%2 == 0) { # Odd days we make a city map
+paintingType <- sample(1:3, 1)
+
+if (paintingType == 1) {
   
   # Credits to https://github.com/marcusvolz/mathart
   
@@ -37,7 +38,7 @@ if (as.numeric(Sys.Date())%%2 == 0) { # Odd days we make a city map
   
   ggsave(name, painting, width = width/1000, height = height/1000, units = "cm", dpi = 300)
   
-} else { # Even days
+} else if(paintingType == 2) {
   
   print(paste0("Creating a non-city map for ", Sys.Date()))
   
@@ -49,6 +50,16 @@ if (as.numeric(Sys.Date())%%2 == 0) { # Odd days we make a city map
   color <- randomcoloR::randomColor(1, luminosity = "dark")
   
   painting <- generate_function(formula = my_formula)
+  
+  ggplot2::ggsave(painting, filename = name, scale = 1, dpi = 300)
+  
+} else if (paintingType == 3) {
+  
+  # Credits to https://github.com/marcusvolz/mathart
+  
+  width <- sample(c(10000, 20000, 50000), 1)
+  
+  painting <- generate_tree(n = width, dims = 1000, delta = 2.5)
   
   ggplot2::ggsave(painting, filename = name, scale = 1, dpi = 300)
   
