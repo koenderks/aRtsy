@@ -1,4 +1,4 @@
-generate_tree <- function(n, dims, delta) 
+generate_tree_painting <- function(n, dims, delta) 
 {
   
   points <- data.frame(x = numeric(n), y = numeric(n))

@@ -7,9 +7,9 @@ library(randomcoloR)
 
 # Functions required for painting
 
-source("generate_city.R")
-source("generate_function.R")
-source("generate_tree.R")
+source("generate_city_painting.R")
+source("generate_function_painting.R")
+source("generate_tree_painting.R")
 
 # Name of the painting
 
@@ -30,11 +30,11 @@ if (paintingType == 1) {
   width <- sample(c(10000, 20000, 50000))
   height <- width
   
-  painting <- generate_city(n = width, 
-                            r = 75, 
-                            delta = 2 * pi / 180, p_branch = runif(1, 0.1, 0.2),
-                            initial_pts = sample(1:4, size = 1),
-                            nframes = 500)
+  painting <- generate_city_painting(n = width, 
+                                     r = 75, 
+                                     delta = 2 * pi / 180, p_branch = runif(1, 0.1, 0.2),
+                                     initial_pts = sample(1:4, size = 1),
+                                     nframes = 500)
   
   ggsave(name, painting, width = width/1000, height = height/1000, units = "cm", dpi = 300)
   
@@ -49,7 +49,7 @@ if (paintingType == 1) {
   
   color <- randomcoloR::randomColor(1, luminosity = "dark")
   
-  painting <- generate_function(formula = my_formula)
+  painting <- generate_function_painting(formula = my_formula)
   
   ggplot2::ggsave(painting, filename = name, scale = 1, dpi = 300)
   
@@ -59,7 +59,7 @@ if (paintingType == 1) {
   
   width <- sample(c(10000, 20000, 50000), 1)
   
-  painting <- generate_tree(n = width, dims = 1000, delta = 2.5)
+  painting <- generate_tree_painting(n = width, dims = width / 10, delta = 2.5)
   
   ggplot2::ggsave(painting, filename = name, scale = 1, dpi = 300)
   

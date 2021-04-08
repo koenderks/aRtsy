@@ -1,4 +1,4 @@
-generate_function <- function(formula)
+generate_function_painting <- function(formula)
 {
   df <- seq(from = -pi, to = pi, by = 0.01) %>% 
     expand.grid(x_i = ., y_i = .) %>% 

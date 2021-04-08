@@ -1,4 +1,4 @@
-generate_city <- function(n, r, delta, p_branch, initial_pts, nframes)
+generate_city_painting <- function(n, r, delta, p_branch, initial_pts, nframes)
 {
   
   # Initialize the empty painting data
