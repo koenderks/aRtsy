@@ -1,6 +1,6 @@
 # Generative Art Created with R - Highlights
 
-<img src='https://github.com/koenderks/Art-Gallery/raw/master/paintings/2021-04-06.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/paintings/2021-04-07.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
+<img src='https://github.com/koenderks/Art-Gallery/raw/master/paintings/2021-04-06.png' width='300' height='300' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/paintings/2021-04-07.png' width='300' height='300' align='center' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/paintings/2021-04-08.png' width='300' height='300' align='right' margin-left='20' margin-right='20'/>
 
 <br/>
 <br/>
