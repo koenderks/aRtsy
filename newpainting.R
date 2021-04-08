@@ -13,7 +13,6 @@ set.seed(as.numeric(Sys.Date()))      # World seed
 # Give the painting dimensions
 
 width <- sample(c(10000, 20000, 50000))
-width <- 20000
 height <- width
 
 if (as.numeric(Sys.Date())%%2 == 0) { # Odd days we make a city map
@@ -85,7 +84,7 @@ if (as.numeric(Sys.Date())%%2 == 0) { # Odd days we make a city map
     scale_size_continuous(range = c(0.5, 0.5)) +
     theme_blankcanvas(bg_col = "#fafafa", margin_cm = 0)
   
-  ggsave(name, painting, width = 50, height = 50, units = "cm", dpi = 300)
+  ggsave(name, painting, width = width/1000, height = height/1000, units = "cm", dpi = 300)
   
 } else { # Even days we make an expanding tree
   
@@ -109,6 +108,6 @@ if (as.numeric(Sys.Date())%%2 == 0) { # Odd days we make a city map
     ggplot2::coord_polar() + 
     ggplot2::theme(panel.background = element_rect(fill = background), 
                    plot.background = element_rect(fill = background))
-  ggplot2::ggsave(painting, filename = name, width = 50, height = 50, units = "cm", dpi = 300)
+  ggplot2::ggsave(painting, filename = name, width = width/1000, height = height/1000, units = "cm", dpi = 300)
   
 }
