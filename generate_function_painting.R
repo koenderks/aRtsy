@@ -9,7 +9,18 @@ generate_function_painting <- function(formula)
     ggplot2::theme_void() + 
     ggplot2::coord_fixed() + 
     ggplot2::coord_polar() + 
-    theme_blankcanvas(bg_col = "#fafafa", margin_cm = 0)
+    theme(axis.title = element_blank(), 
+          axis.text = element_blank(), 
+          axis.ticks = element_blank(), 
+          axis.line = element_blank(), 
+          legend.position = "none", 
+          panel.background = element_rect(fill = "#fafafa", colour = "#fafafa"), 
+          panel.border = element_blank(), 
+          panel.grid = element_blank(), 
+          plot.background = element_rect(fill = "#fafafa", colour = "#fafafa"), 
+          plot.margin = unit(rep(0, 4), "cm"), 
+          strip.background = element_blank(), 
+          strip.text = element_blank())
   
   return(painting)
 }

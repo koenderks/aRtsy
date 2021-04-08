@@ -67,7 +67,18 @@ generate_tree_painting <- function(n, dims, delta)
     coord_equal() +
     scale_size_continuous(range = c(0.1, 0.75)) +
     scale_alpha_continuous(range = c(0.1, 1)) +
-    theme_blankcanvas(bg_col = "#fafafa", margin_cm = 0)
+    theme(axis.title = element_blank(), 
+          axis.text = element_blank(), 
+          axis.ticks = element_blank(), 
+          axis.line = element_blank(), 
+          legend.position = "none", 
+          panel.background = element_rect(fill = "#fafafa", colour = "#fafafa"), 
+          panel.border = element_blank(), 
+          panel.grid = element_blank(), 
+          plot.background = element_rect(fill = "#fafafa", colour = "#fafafa"), 
+          plot.margin = unit(rep(0, 4), "cm"), 
+          strip.background = element_blank(), 
+          strip.text = element_blank())
   
   return(painting)
 }
