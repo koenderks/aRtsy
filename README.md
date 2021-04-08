@@ -9,7 +9,7 @@ Created using [generate_citymap.R](https://github.com/koenderks/Art-Gallery/blob
 
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/city-maps/citymap1.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/>
 
-<img src='https://github.com/koenderks/Art-Gallery/raw/master/city-maps/citymap3.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
+<img src='https://github.com/koenderks/Art-Gallery/raw/master/city-maps/citymap2.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
 
 <br/>
 <br/>
