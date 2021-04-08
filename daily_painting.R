@@ -48,8 +48,9 @@ if (paintingType == 1) {
   )
   
   color <- randomcoloR::randomColor(1, luminosity = "dark")
+  bgcolor <- sample(c("#fafafa", "#1a3657", "#343434"), 1)
   
-  painting <- generate_function_painting(formula = my_formula)
+  painting <- generate_function_painting(formula = my_formula, color = color, bgcolor = bgcolor)
   
   ggplot2::ggsave(painting, filename = name, scale = 1, dpi = 300)
   
@@ -59,9 +60,7 @@ if (paintingType == 1) {
   
   # Credits to https://github.com/marcusvolz/mathart
   
-  width <- sample(c(10000, 20000), 1)
-  
-  painting <- generate_tree_painting(n = width, dims = 5000, delta = 2.5)
+  painting <- generate_tree_painting(n = 50000, dims = 5000, delta = 2.5)
   
   ggplot2::ggsave(painting, filename = name, scale = 1, dpi = 300)
   

@@ -1,4 +1,4 @@
-generate_function_painting <- function(formula)
+generate_function_painting <- function(formula, color, bgcolor)
 {
   df <- seq(from = -pi, to = pi, by = 0.01) %>% 
     expand.grid(x_i = ., y_i = .) %>% 
@@ -14,10 +14,10 @@ generate_function_painting <- function(formula)
           axis.ticks = element_blank(), 
           axis.line = element_blank(), 
           legend.position = "none", 
-          panel.background = element_rect(fill = "#fafafa", colour = "#fafafa"), 
+          panel.background = element_rect(fill = bgcolor, colour = bgcolor), 
           panel.border = element_blank(), 
           panel.grid = element_blank(), 
-          plot.background = element_rect(fill = "#fafafa", colour = "#fafafa"), 
+          plot.background = element_rect(fill = bgcolor, colour = bgcolor), 
           plot.margin = unit(rep(0, 4), "cm"), 
           strip.background = element_blank(), 
           strip.text = element_blank())
