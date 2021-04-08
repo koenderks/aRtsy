@@ -7,9 +7,9 @@
 
 Created using [generate_citymap.R](https://github.com/koenderks/Art-Gallery/blob/master/citymaps/generate_citymap.R), see also this [link](https://vitgabrhel.medium.com/getting-started-with-generative-art-in-r-3bc50067d34b).
 
-<img src='https://github.com/koenderks/Art-Gallery/raw/master/city-maps/citymap1.png' width='400' height='400' align='left' margin-left='20' margin-right='20'/>
+<img src='https://github.com/koenderks/Art-Gallery/raw/master/city-maps/citymap1.png' width='350' height='350' align='left' margin-left='20' margin-right='20'/>
 
-<img src='https://github.com/koenderks/Art-Gallery/raw/master/city-maps/citymap2.png' width='400' height='400' align='right' margin-left='20' margin-right='20'/>
+<img src='https://github.com/koenderks/Art-Gallery/raw/master/city-maps/citymap2.png' width='350' height='350' align='right' margin-left='20' margin-right='20'/>
 
 <br/>
 <br/>
@@ -34,4 +34,4 @@ Created using [generate_citymap.R](https://github.com/koenderks/Art-Gallery/blob
 
 Created using [generate_rrt.R](https://github.com/koenderks/Art-Gallery/blob/master/rapidly-exploring-random-trees/generate_rrt.R), see also the [mathart R package](https://github.com/marcusvolz/mathart).
 
-<img src='https://github.com/koenderks/Art-Gallery/raw/master/rapidly-exploring-random-trees/rrt1.png' width='400' height='400' align='left' margin-left='20' margin-right='20'/>
+<img src='https://github.com/koenderks/Art-Gallery/raw/master/rapidly-exploring-random-trees/rrt1.png' width='350' height='350' align='left' margin-left='20' margin-right='20'/>
