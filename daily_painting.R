@@ -19,7 +19,7 @@ name <- paste0('paintings/', Sys.Date() - 10, ".png")
 
 set.seed(as.numeric(Sys.Date()))
 
-paintingType <- sample(1:3, 1)
+paintingType <- sample(1:3, 1, prob = c(0.4, 0.4, 0.2))
 
 if (paintingType == 1) {
   
