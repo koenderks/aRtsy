@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron:  '00 01 * * *'
+    - cron:  '00 00 * * *'
 
 name: Create new painting
 
