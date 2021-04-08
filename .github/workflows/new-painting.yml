@@ -1,4 +1,6 @@
-on: workflow_dispatch
+on:
+  schedule:
+    - cron:  '00 01 * * *'
 
 name: Create new painting
 
