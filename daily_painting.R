@@ -59,9 +59,9 @@ if (paintingType == 1) {
   
   # Credits to https://github.com/marcusvolz/mathart
   
-  width <- sample(c(10000, 20000, 50000), 1)
+  width <- sample(c(10000, 20000), 1)
   
-  painting <- generate_tree_painting(n = width, dims = width / 10, delta = 2.5)
+  painting <- generate_tree_painting(n = width, dims = 5000, delta = 2.5)
   
   ggplot2::ggsave(painting, filename = name, scale = 1, dpi = 300)
   
