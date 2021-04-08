@@ -1,3 +1,11 @@
+---
+title: "citypainting"
+author: "Koen Derks"
+date: "8-4-2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
 # Metropolis: Generative city visualizations (https://github.com/marcusvolz/metropolis/blob/master/metropolis.R)
 
 # 1. Load required packages
@@ -9,8 +17,6 @@ library(mathart)
 library(dplyr)
 library(tweenr)
 
-setwd("C:/Users/derksk/OneDrive - NBU/Desktop/Art-Gallery/city-maps")
-
 # 2. Give the painting a name and dimensions
 
 name <- "citymap3"
@@ -20,7 +26,7 @@ height <- 50000
 # 3. Set the painting options
 
 set.seed(23570235)           # World seed
-n <- 50000                # Iterations
+n <- 5000                # Iterations
 r <- 75                   # Neighborhood
 delta <- 2 * pi / 180     # Angle direction noise
 p_branch <- 0.1           # Probability of branching
@@ -85,7 +91,9 @@ painting <- ggplot() +
 
 # 7. Save the painting
 
-ggsave(paste0(name, ".png"), painting, width = 50, height = 50, units = "cm", dpi = 300)
+ggsave(paste0('city-maps/', name, ".png"), painting, width = 50, height = 50, units = "cm", dpi = 300)
 
 # 8. Save an animated version of the painting (only for small paintings)
-anim_save(paste0(name, ".gif"), painting + gganimate::transition_manual(frames = index, cumulative = TRUE))
+# anim_save(paste0(name, ".gif"), painting + gganimate::transition_manual(frames = index, cumulative = TRUE))
+
+```
