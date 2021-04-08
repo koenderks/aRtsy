@@ -92,11 +92,11 @@ if (as.numeric(Sys.Date())%%2 == 0) { # Odd days we make a city map
   
   # include a specific formula, for example:
   my_formula <- list(
-    x = quote(runif(1, -10, 10) * x_i^2 - sin(y_i^4) + runif(1, -100, 100)),
-    y = quote(runif(1, -10, 10) * y_i^3 - cos(x_i^2) * y_i^4 + runif(1, -100, 100))
+    x = quote(runif(1, -10, 10) * x_i^sample(1:4, 1) - sin(y_i^sample(1:4, 1)) + runif(1, -100, 100)),
+    y = quote(runif(1, -10, 10) * y_i^sample(1:4, 1) - cos(x_i^sample(1:4, 1)) * y_i^sample(1:4, 1) + runif(1, -100, 100))
   )
 
-  color <- randomcoloR::randomColor(1)
+  color <- randomcoloR::randomColor(1, luminosity = "dark")
 
   df <- seq(from = -pi, to = pi, by = 0.01) %>% 
     expand.grid(x_i = ., y_i = .) %>% 
