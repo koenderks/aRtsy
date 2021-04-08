@@ -18,14 +18,14 @@ jobs:
           install.packages(c("remotes", "ggplot2", "dplyr", "tweenr"))
         shell: Rscript {0}
 
-      - name: Install mathart
+      - name: Install mathart package
         run: |
           remotes::install_github("marcusvolz/mathart")
         shell: Rscript {0}
 
-      - name: Render script
+      - name: Create city painting
         run: |
-          source("city-maps/citypainting.Rmd")
+          source("city-maps/citypainting.R")
         shell: Rscript {0}
 
       # Create a pull request with changes to master
@@ -33,7 +33,7 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: Update package statistics
+          commit-message: New city map
           signoff: false
           branch: city-map
           delete-branch: true
@@ -41,7 +41,7 @@ jobs:
           body: |
             New city painting: [1]
 
-            - 
+            - hello
           labels: |
             automated pr
           reviewers: koenderks
