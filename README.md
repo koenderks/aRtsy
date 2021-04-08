@@ -30,6 +30,27 @@ Created using [generate_citymap.R](https://github.com/koenderks/Art-Gallery/blob
 <br/>
 <br/>
 
+<img src='https://github.com/koenderks/Art-Gallery/raw/master/city-maps/citymap3.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## Rapidly exploring random trees
 
 Created using [generate_rrt.R](https://github.com/koenderks/Art-Gallery/blob/master/rapidly-exploring-random-trees/generate_rrt.R), see also the [mathart R package](https://github.com/marcusvolz/mathart).
