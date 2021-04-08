@@ -45,9 +45,7 @@ jobs:
           body: |
             New painting:
 
-            ![image](https://github.com/koenderks/aRt-Gallery/raw/paintings/${{ steps.date.outputs.date }}.png)
-          labels: |
-            automated pr
+            ![image](https://github.com/koenderks/aRt-Gallery/raw/new-painting//paintings/${{ steps.date.outputs.date }}.png)
           draft: false
 
       # Check outputs of workflow
