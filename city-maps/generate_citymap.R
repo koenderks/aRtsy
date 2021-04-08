@@ -15,16 +15,16 @@ setwd("C:/Users/derksk/OneDrive - NBU/Desktop/Art-Gallery/city-maps")
 
 name <- "citymap3"
 width <- 50000
-height <- 20000
+height <- 50000
 
 # 3. Set the painting options
 
-set.seed(92796)           # World seed
+set.seed(23570235)           # World seed
 n <- 10000                # Iterations
 r <- 75                   # Neighborhood
 delta <- 2 * pi / 180     # Angle direction noise
 p_branch <- 0.1           # Probability of branching
-initial_pts <- 3          # Number of initial points
+initial_pts <- 4          # Number of initial points
 nframes <- 500            # Number of tweenr frames
 
 # 4. Initialize the empty painting data
@@ -85,7 +85,7 @@ painting <- ggplot() +
 
 # 7. Save the painting
 
-ggsave(paste0(name, ".png"), painting, scale = 1, dpi = 300)
+ggsave(paste0(name, ".png"), painting, width = 50, height = 50, units = "cm", dpi = 300)
 
 # 8. Save an animated version of the painting (only for small paintings)
 anim_save(paste0(name, ".gif"), painting + gganimate::transition_manual(frames = index, cumulative = TRUE))
