@@ -28,6 +28,10 @@ jobs:
           source("city-maps/citypainting.R")
         shell: Rscript {0}
 
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+
       # Create a pull request with changes to master
       - name: Create pull request
         id: cpr
@@ -41,7 +45,7 @@ jobs:
           body: |
             New city painting:
 
-            ![image](https://github.com/koenderks/aRt-Gallery/raw/city-map/city-maps/2021-04-08.png)
+            ![image](https://github.com/koenderks/aRt-Gallery/raw/city-map/city-maps/${{ steps.date.outputs.date }}.png)
           labels: |
             automated pr
           draft: false
