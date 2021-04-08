@@ -26,14 +26,14 @@ jobs:
 
       - name: Render script
         run: |
-          rmarkdown::render("citypainting.Rmd")
+          rmarkdown::render("city-maps/citypainting.Rmd")
         shell: Rscript {0}
 
       # Make sure only the images and data set are committed
-      - name: Remove citypainting.html
+      - name: Remove city-maps/citypainting.html
         run: |
           git add .
-          git rm -f citypainting.html
+          git rm -f city-maps/citypainting.html
 
       # Create a pull request with changes to master
       - name: Create pull request
