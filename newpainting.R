@@ -107,6 +107,6 @@ if (as.numeric(Sys.Date())%%2 == 0) { # Odd days we make a city map
     ggplot2::coord_fixed() + 
     ggplot2::coord_polar() + 
     theme_blankcanvas(bg_col = "#fafafa", margin_cm = 0)
-  ggplot2::ggsave(painting, filename = name, width = width/1000, height = height/1000, units = "cm", dpi = 300)
+  ggplot2::ggsave(painting, filename = name, scale = 1, dpi = 300)
   
 }
