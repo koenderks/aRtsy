@@ -12,7 +12,6 @@ output: html_document
 
 library(gifski)
 library(ggplot2)
-library(gganimate)
 library(mathart)
 library(dplyr)
 library(tweenr)
@@ -90,7 +89,8 @@ painting <- ggplot() +
 
 # 7. Save the painting
 
-ggsave(paste0('city-maps/', Sys.Date(), ".png"), painting, width = 50, height = 50, units = "cm", dpi = 300)
+name <- paste0('city-maps/', Sys.Date(), ".png")
+ggsave(name, painting, width = 50, height = 50, units = "cm", dpi = 300)
 
 # 8. Save an animated version of the painting (only for small paintings)
 # anim_save(paste0(name, ".gif"), painting + gganimate::transition_manual(frames = index, cumulative = TRUE))
