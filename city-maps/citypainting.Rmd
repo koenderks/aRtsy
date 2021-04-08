@@ -19,14 +19,13 @@ library(tweenr)
 
 # 2. Give the painting a name and dimensions
 
-name <- "citymap3"
 width <- 50000
 height <- 50000
 
 # 3. Set the painting options
 
-set.seed(23570235)           # World seed
-n <- 5000                # Iterations
+set.seed(runif(1))        # World seed
+n <- 5000                 # Iterations
 r <- 75                   # Neighborhood
 delta <- 2 * pi / 180     # Angle direction noise
 p_branch <- 0.1           # Probability of branching
@@ -91,7 +90,7 @@ painting <- ggplot() +
 
 # 7. Save the painting
 
-ggsave(paste0('city-maps/', name, ".png"), painting, width = 50, height = 50, units = "cm", dpi = 300)
+ggsave(paste0('city-maps/', Sys.Date(), ".png"), painting, width = 50, height = 50, units = "cm", dpi = 300)
 
 # 8. Save an animated version of the painting (only for small paintings)
 # anim_save(paste0(name, ".gif"), painting + gganimate::transition_manual(frames = index, cumulative = TRUE))

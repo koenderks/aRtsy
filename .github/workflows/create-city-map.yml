@@ -14,11 +14,11 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v1
 
       # Install required packages and update README
-      - name: Install required packages and render README
+      - name: Install required packages and render script
         run: |
+          install.packages(c("remotes", "rmarkdown", "gifski", "ggplot2", "dplyr", "tweenr"))
           remotes::install_deps(dependencies = TRUE, type = "binary")
           remotes::install_github("marcusvolz/mathart")
-          install.packages(c("remotes", "rmarkdown", "gifski", "ggplot2", "gganimate", "dplyr", "tweenr"))
           rmarkdown::render("citypainting.Rmd")
         shell: Rscript {0}
 
@@ -35,9 +35,9 @@ jobs:
         with:
           commit-message: Update package statistics
           signoff: false
-          branch: stats-update
+          branch: city-map
           delete-branch: true
-          title: 'Update package statistics'
+          title: 'New city map'
           body: |
             Daily update
           labels: |
