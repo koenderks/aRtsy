@@ -95,18 +95,20 @@ if (as.numeric(Sys.Date())%%2 == 0) { # Odd days we make a city map
     x = quote(runif(1, -10, 10) * x_i^2 - sin(y_i^4) + runif(1, -100, 100)),
     y = quote(runif(1, -10, 10) * y_i^3 - cos(x_i^2) * y_i^4 + runif(1, -100, 100))
   )
-  background <- randomcoloR::randomColor(1, luminosity = "bright")
-  color <- randomcoloR::randomColor(1, luminosity = "dark")
+
+  color <- randomcoloR::randomColor(1)
 
   df <- seq(from = -pi, to = pi, by = 0.01) %>% 
     expand.grid(x_i = ., y_i = .) %>% 
     dplyr::mutate(!!!my_formula)
+  
   painting <- df %>% ggplot2::ggplot(ggplot2::aes(x = x, y = y)) + 
     ggplot2::geom_point(alpha = 0.1, size = 0, shape = 20, color = color) + 
     ggplot2::theme_void() + 
     ggplot2::coord_fixed() + 
     ggplot2::coord_polar() + 
     theme_blankcanvas(bg_col = "#fafafa", margin_cm = 0)
+  
   ggplot2::ggsave(painting, filename = name, scale = 1, dpi = 300)
   
 }
