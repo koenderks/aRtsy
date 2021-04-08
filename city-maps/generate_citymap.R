@@ -1,25 +1,30 @@
 # Metropolis: Generative city visualisations
 
-# 1. Packages
+# 1. Load required packages
+setwd("C:/Users/derksk/OneDrive - NBU/Desktop/Art-Gallery/city-maps")
+
 library(mathart)
+library(dplyr)
 library(ggplot2)
 library(tweenr)
 library(viridis)
 
-# 2. Make reproducible
-set.seed(120495)
+# 2. Give the painting a name and dimensions
 
-# 3. Parameters
+name <- "citymap2"
+width <- 10000
+height <- 10000
+
+# 3. Set the painting options
+set.seed(1237523)
 n <- 10000 # iterations
 r <- 75 # neighbourhood
-width <- 10000 # canvas width
-height <- 10000 # canvas height
 delta <- 2 * pi / 180 # angle direction noise
 p_branch <- 0.1 # probability of branching
 initial_pts <- 3 # number of initial points
 nframes <- 500 # number of tweenr frames
 
-# 4. Initialise data frames
+# 4. Initialize the empty painting data
 points <- data.frame(x = numeric(n), y = numeric(n), dir = numeric(n), level = integer(n))
 edges <-  data.frame(x = numeric(n), y = numeric(n), xend = numeric(n), yend = numeric(n), level = integer(n))
 
@@ -57,25 +62,21 @@ while (i <= n) {
     }
   }
   i <- i + 1
-  print(i)
+  print(paste0("Iteration ", i, " of ", n))
 }
 
 edges <- edges %>% filter(level > 0)
 sand <- data.frame(alpha = numeric(0), x = numeric(0), y = numeric(0))
 perp <- data.frame(x = numeric(0), y = numeric(0), xend = numeric(0), yend = numeric(0))
 
-# 6. Create painting
+# 6. Create the painting
 painting <- ggplot() +
   geom_segment(aes(x, y, xend = xend, yend = yend, size = -level), edges, lineend = "round") +
-  #geom_segment(aes(x, y, xend = xend, yend = yend), perp, lineend = "round", alpha = 0.15) +
-  #geom_point(aes(x, y), points) +
-  #geom_point(aes(x, y), sand, size = 0.05, alpha = 0.05, colour = "black") +
-  xlim(0, 10000) +
-  ylim(0, 10000) +
+  xlim(0, width) +
+  ylim(0, height) +
   coord_equal() +
   scale_size_continuous(range = c(0.5, 0.5)) +
-  #scale_color_viridis() +
   theme_blankcanvas(bg_col = "#fafafa", margin_cm = 0)
 
-# 8. Save painting
-ggsave("citymap1.png", painting, width = 20, height = 20, units = "cm", dpi = 300)
+# 7. Save the painting
+ggsave(paste0(name, ".png"), painting, width = 100, height = 20, units = "cm", dpi = 300)
