@@ -17,8 +17,15 @@ jobs:
       - name: Install required packages and render script
         run: |
           install.packages(c("remotes", "rmarkdown", "gifski", "ggplot2", "dplyr", "tweenr"))
-          remotes::install_deps(dependencies = TRUE, type = "binary")
+        shell: Rscript {0}
+
+      - name: Install mathart
+        run: |
           remotes::install_github("marcusvolz/mathart")
+        shell: Rscript {0}
+
+      - name: Render script
+        run: |
           rmarkdown::render("citypainting.Rmd")
         shell: Rscript {0}
 
