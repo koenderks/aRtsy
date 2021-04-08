@@ -14,13 +14,13 @@ height <- 50000
 
 # 3. Set the painting options
 
-set.seed(runif(1))        # World seed
-n <- 5000                 # Iterations
-r <- 75                   # Neighborhood
-delta <- 2 * pi / 180     # Angle direction noise
-p_branch <- 0.1           # Probability of branching
-initial_pts <- 4          # Number of initial points
-nframes <- 500            # Number of tweenr frames
+set.seed(as.numeric(Sys.Date()))      # World seed
+n <- 5000                             # Iterations
+r <- 75                               # Neighborhood
+delta <- 2 * pi / 180                 # Angle direction noise
+p_branch <- runif(1, 0.1, 0.3)        # Probability of branching
+initial_pts <- sample(1:10, size = 1) # Number of initial points
+nframes <- 500                        # Number of tweenr frames
 
 # 4. Initialize the empty painting data
 
@@ -37,8 +37,7 @@ if(initial_pts > 1) {
 
 # 5. Create the painting data
 
-i <- initial_pts + 1
-while (i <= n) {
+for (i in (initial_pts + 1):n) {
   valid <- FALSE
   while (!valid) {
     random_point <- sample_n(points[seq(1:(i-1)), ], 1) # Pick a point at random
@@ -61,8 +60,8 @@ while (i <= n) {
       valid <- TRUE
     }
   }
-  i <- i + 1
-  print(paste0("Iteration ", i, " of ", n))
+  if(i%%1000 == 0)
+    print(paste0("Iteration ", i, " of ", n))
 }
 
 edges <- edges %>% filter(level > 0)
@@ -71,7 +70,8 @@ edges <- cbind(index = 1:nrow(edges), edges)
 # 6. Create the painting
 
 painting <- ggplot() +
-  geom_segment(aes(x, y, xend = xend, yend = yend, size = -level), edges, lineend = "round") +
+  geom_segment(mapping = aes(x, y, xend = xend, yend = yend, size = -level), 
+               data = edges, lineend = "round") +
   xlim(0, width) +
   ylim(0, height) +
   coord_equal() +

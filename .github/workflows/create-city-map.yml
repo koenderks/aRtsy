@@ -44,7 +44,6 @@ jobs:
             - hello
           labels: |
             automated pr
-          reviewers: koenderks
           draft: false
 
       # Check outputs of workflow
