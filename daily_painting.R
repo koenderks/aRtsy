@@ -13,7 +13,7 @@ source("generate_tree_painting.R")
 
 # Name of the painting
 
-name <- paste0('paintings/', Sys.Date() - 10, ".png")
+name <- paste0('paintings/', Sys.Date(), ".png")
 
 # Painting seed dependent on the date
 
