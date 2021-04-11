@@ -47,12 +47,8 @@ if (paintingType == 1) {
     y = quote(runif(1, -10, 10) * y_i^sample(c(0.5, 1:5), 1) - cos(x_i^sample(c(0.5, 1, 2, 3, 4, 5), 1)) * y_i^sample(1:5, 1) + runif(1, -100, 100))
   )
   
-  bgcolor <- sample(c("#fafafa", "#1a3657", "#343434"), 1)
-  if(bgcolor == "#fafafa"){
-    color <- randomcoloR::randomColor(1, luminosity = "dark")
-  } else {
-    color <- randomcoloR::randomColor(1, luminosity = "light")
-  }
+  bgcolor <- "#fafafa"
+  color <- randomcoloR::randomColor(1, luminosity = "dark")
   
   painting <- generate_function_painting(formula = my_formula, color = color, bgcolor = bgcolor)
   
