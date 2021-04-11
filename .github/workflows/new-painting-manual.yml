@@ -1,7 +1,7 @@
 on:
   workflow_dispatch
 
-name: Create new painting
+name: Create new painting manually
 
 jobs:
   update:
