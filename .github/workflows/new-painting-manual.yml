@@ -21,7 +21,7 @@ jobs:
 
       - name: Create new painting
         run: |
-          source("daily_painting.R")
+          source("generate_painting.R")
         shell: Rscript {0}
 
       - name: Get current date
