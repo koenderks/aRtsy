@@ -8,11 +8,11 @@ library(randomcoloR)
 # Name of the painting
 
 paintingPNGname <- paste0('png/', Sys.Date(), ".png")
-paintingSVGname <- paste0('svg/', Sys.Date(), ".png")
+paintingSVGname <- paste0('svg/', Sys.Date(), ".svg")
 
 # Painting seed dependent on the date
 
-set.seed(as.numeric(Sys.Date()))
+set.seed(as.numeric(Sys.Date()) + 100)
 
 painting_formulas <- list()
 
@@ -56,3 +56,4 @@ painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y)) +
         strip.text = element_blank())
 
 ggplot2::ggsave(painting, filename = paintingPNGname, scale = 1, dpi = 300)
+ggplot2::ggsave(painting, filename = paintingSVGname, scale = 1, dpi = 300)
