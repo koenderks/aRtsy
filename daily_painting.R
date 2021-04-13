@@ -19,26 +19,26 @@ name <- paste0('paintings/', Sys.Date(), ".png")
 
 set.seed(as.numeric(Sys.Date()))
 
-paintingType <- sample(1:3, 1, prob = c(0.4, 0.4, 0.2))
-
-if (paintingType == 1) {
-  
-  # Credits to https://github.com/marcusvolz/mathart
-  
-  print(paste0("Creating a city painting on ", Sys.Date()))
-  
-  width <- sample(c(10000, 20000, 50000))
-  height <- width
-  
-  painting <- generate_city_painting(n = width, 
-                                     r = 75, 
-                                     delta = 2 * pi / 180, p_branch = runif(1, 0.1, 0.2),
-                                     initial_pts = sample(1:4, size = 1),
-                                     nframes = 500)
-  
-  ggsave(name, painting, width = width/1000, height = height/1000, units = "cm", dpi = 300)
-  
-} else if(paintingType == 2) {
+# paintingType <- sample(1:3, 1, prob = c(0.4, 0.4, 0.2))
+# 
+# if (paintingType == 1) {
+#   
+#   # Credits to https://github.com/marcusvolz/mathart
+#   
+#   print(paste0("Creating a city painting on ", Sys.Date()))
+#   
+#   width <- sample(c(10000, 20000, 50000))
+#   height <- width
+#   
+#   painting <- generate_city_painting(n = width, 
+#                                      r = 75, 
+#                                      delta = 2 * pi / 180, p_branch = runif(1, 0.1, 0.2),
+#                                      initial_pts = sample(1:4, size = 1),
+#                                      nframes = 500)
+#   
+#   ggsave(name, painting, width = width/1000, height = height/1000, units = "cm", dpi = 300)
+#   
+# } else if(paintingType == 2) {
   
   print(paste0("Creating a function painting on ", Sys.Date()))
   
@@ -58,14 +58,14 @@ if (paintingType == 1) {
   
   ggplot2::ggsave(painting, filename = name, scale = 1, dpi = 300)
   
-} else if (paintingType == 3) {
-  
-  print(paste0("Creating an expanding tree painting on ", Sys.Date()))
-  
-  # Credits to https://github.com/marcusvolz/mathart
-  
-  painting <- generate_tree_painting(n = 50000, dims = 5000, delta = 2.5)
-  
-  ggplot2::ggsave(painting, filename = name, scale = 1, dpi = 300)
-  
-}
+# } else if (paintingType == 3) {
+#   
+#   print(paste0("Creating an expanding tree painting on ", Sys.Date()))
+#   
+#   # Credits to https://github.com/marcusvolz/mathart
+#   
+#   painting <- generate_tree_painting(n = 50000, dims = 5000, delta = 2.5)
+#   
+#   ggplot2::ggsave(painting, filename = name, scale = 1, dpi = 300)
+#   
+# }
