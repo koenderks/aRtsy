@@ -41,7 +41,7 @@ jobs:
           body: |
             Today's painting:
 
-            ![image](https://github.com/koenderks/aRt-Gallery/raw/new-painting//paintings/${{ steps.date.outputs.date }}.png)
+            ![image](https://github.com/koenderks/aRt-Gallery/raw/new-painting//png/${{ steps.date.outputs.date }}.png)
           draft: false
 
       # Check outputs of workflow
