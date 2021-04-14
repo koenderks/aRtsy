@@ -88,7 +88,7 @@ paint_new <- function(width = 500, height = 500, p.newcol = 0.001, palette, seed
     
     filled <- length(which(df > 0))
     
-    if(filled%%10 == 0){
+    if(filled%%1000 == 0){
       if(tim == 1){
         print(paste0(filled, " of ", width * height, " blocks filled")) 
         tim <- tim + 1
