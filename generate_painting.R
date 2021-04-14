@@ -18,7 +18,7 @@ paintingSVGname <- paste0('svg/', Sys.Date(), ".svg")
 
 # Painting seed dependent on the date
 
-seed <- as.numeric(Sys.Date()) + rnorm(1)
+seed <- as.numeric(Sys.Date())
 set.seed(seed)
 
 paintingType <- 2
@@ -35,6 +35,8 @@ if(paintingType == 1){
   painting <- shape_painting(color = color, background = bgcolor, seed = seed)
   
 } else if (paintingType == 2){
+  
+  seed <- seed + rnorm(1)
   
   palette <- randomcoloR::randomColor(count = sample(5:15, size = 1))
   
