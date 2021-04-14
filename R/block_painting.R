@@ -43,7 +43,7 @@ block_painting <- function(width, height, p.takecol, p.newcol, palette){
         get.new.color <- sample(c(FALSE, TRUE), size = 1, prob = c(1 - p.newcol, p.newcol))
         if(get.new.color){
           # If the current block gets a new color, a random color from the palette is sampled
-          df[x, y] <- sample(1:length(palette), size = 1)
+          df[x, y] <- sample(2:length(palette), size = 1)
         } else {
           # If the current block does not get a new color, the original color is retained
           df[x, y] <- canvasColor
