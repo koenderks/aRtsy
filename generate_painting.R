@@ -21,6 +21,8 @@ paintingSVGname <- paste0('svg/', Sys.Date(), ".svg")
 seed <- as.numeric(Sys.Date())
 set.seed(seed)
 
+if(seed%%2 == 0) paintingType <- 1 else paintingType <- 2
+
 paintingType <- 2
 
 if(paintingType == 1){
@@ -40,7 +42,7 @@ if(paintingType == 1){
   
   palette <- randomcoloR::randomColor(count = sample(5:15, size = 1))
   
-  painting <- block_painting(width = 1500, height = 15000, p.newcol = runif(1, 0.0001, 0.001), palette = palette, seed = seed)
+  painting <- block_painting(width = 1500, height = 1500, p.newcol = runif(1, 0.0001, 0.001), palette = palette, seed = seed)
   
 }
 
