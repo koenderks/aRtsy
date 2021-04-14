@@ -10,11 +10,6 @@ paint_shape <- function(color, background, seed){
   )
   
   painting_formulas[[2]] <- list(
-    x = quote(sample(1:10, 1) * (x_i/sample(c(0.5, 1:6), 1)) * runif(1, -100, 100) * (sin(y_i) - asinh(x_i))),
-    y = quote(sample(1:10, 1) * x_i - tanh(y_i) + (runif(1, -100, 100)))
-  )
-  
-  painting_formulas[[3]] <- list(
     x = quote(runif(1, -1, 10) * x_i^sample(c(0.5, 1:6), 1) - sin(y_i^sample(c(0.5, 1:6), 1))),
     y = quote(runif(1, -1, 10) * y_i^sample(c(0.5, 1:6), 1) - cos(x_i^sample(c(0.5, 1:6), 1)) * y_i^sample(c(0.5, 1:6), 1))
   )
@@ -37,7 +32,7 @@ paint_shape <- function(color, background, seed){
           panel.border = element_blank(), 
           panel.grid = element_blank(), 
           plot.background = element_rect(fill = bgcolor, colour = bgcolor), 
-          plot.margin = unit(rep(0, 4), "cm"), 
+          plot.margin = unit(rep(0, 4), "cm"),  
           strip.background = element_blank(), 
           strip.text = element_blank())
   
