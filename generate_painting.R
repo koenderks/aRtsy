@@ -29,7 +29,7 @@ painting_formulas[[2]] <- list(
 
 painting_formula <- painting_formulas[[sample(1:length(painting_formulas), 1)]]
 
-bgcolor <- sample(c("#fafafa", "#1a3657", "#343434"), 1)
+bgcolor <- sample(c("#fafafa", "#1a3657", "#343434"), size = 1, prob = c(0.8, 0.1, 0.1))
 if(bgcolor == "#fafafa"){
   color <- randomcoloR::randomColor(1, luminosity = "dark")
 } else {
