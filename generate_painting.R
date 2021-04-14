@@ -28,7 +28,7 @@ if(paintingType == 1){
   
 } else if (paintingType == 2){
   
- painting <- block_painting(width = 1500, height = 1500, p.newcol = 0.1, palette = randomcoloR::randomColor(count = 20))
+ painting <- block_painting(width = 1500, height = 1500, p.newcol = 0.01, palette = randomcoloR::randomColor(count = 20))
   
 }
 

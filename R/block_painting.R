@@ -4,7 +4,7 @@ block_painting <- function(width, height, p.newcol, palette){
   df <- matrix(sample(x = 1, size = width * height, replace = TRUE), nrow = height, ncol = width)
   
   # Initialize the options
-  initialColor <- 1
+  initialColor <- sample(1:length(palette), size = 1)
   color.given <- FALSE
   
   # Loop
@@ -26,13 +26,14 @@ block_painting <- function(width, height, p.newcol, palette){
         # Block gets a new color with probability
         get.new.color <- sample(c(FALSE, TRUE), size = 1, prob = c(1 - p.newcol, p.newcol))
         if(get.new.color){
-          df[x, y] <- sample(2:length(palette), size = 1)
+          df[x, y] <- sample(1:length(palette), size = 1)
         } else {
           df[x, y] <- initialColor
         }
       }
     }
-    print(paste0("Iteration ", x))
+    if(x%%100 == 0)
+      print(paste0("Iteration ", x))
   }
   
   df <- reshape2::melt(df)
