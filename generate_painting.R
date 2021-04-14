@@ -14,7 +14,6 @@ source("R/paint_new.R")
 # Name of the painting
 
 paintingPNGname <- paste0('png/', Sys.Date(), ".png")
-paintingSVGname <- paste0('svg/', Sys.Date(), ".svg")
 
 # Painting seed dependent on the date
 
