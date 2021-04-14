@@ -41,7 +41,6 @@ if(paintingType == 1){
   seed <- seed + rnorm(1)
   
   palette <- randomcoloR::randomColor(count = sample(5:15, size = 1))
-  palette <- c("white", "black")
   
   painting <- block_painting(width = 1500, height = 1500, p.newcol = runif(1, 0.0001, 0.001), palette = palette, seed = seed)
   
