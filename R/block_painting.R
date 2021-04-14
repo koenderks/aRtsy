@@ -50,20 +50,19 @@ block_painting <- function(width, height, p.newcol, palette, seed){
       print(paste0("Filling column ", col))
   }
   
-  for(y in 1:nrow(df)){
-    df[y, 1] <- df[y, 2]
+  print("Coloring border blocks")
+  
+  for(row in 1:nrow(df)){
+    df[row, 1] <- df[row, 2]
   }
   
-  for(x in 1:ncol(df)){
-    df[nrow(df), x] <- df[nrow(df) - 1, x]
+  for(col in 1:ncol(df)){
+    df[nrow(df), col] <- df[nrow(df) - 1, col]
   }
   
   # Reshape the data to plotting format
   df <- reshape2::melt(df)
   colnames(df) <- c("y","x","z") # to name columns
-  
-  df <- subset(df, df$x > 1 & df$x < max(df$x))
-  df <- subset(df, df$y > 1 & df$y < max(df$y))
   
   painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) + 
     geom_raster(interpolate = TRUE, alpha = 0.9) + 
