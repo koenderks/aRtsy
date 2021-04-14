@@ -9,7 +9,7 @@ I like pretty pictures and I like R. In this repository I combine those two thin
 
 The `paint_strokes` algorithm is my first self-concocted algorithm for drawing on a grid-based canvas. The algorithm is based on the premisse that each point on the grid has a large chance to take over the color of an adjacent colored point, but also has a slight change of generating a new color. This causes paint brush-like strokes on the canvas. 
 
-You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your own portrait like this. 
+You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your own unique portrait using this style. 
 
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-21.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-25.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
 
