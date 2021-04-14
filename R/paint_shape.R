@@ -32,7 +32,8 @@ paint_shape <- function(color, background, seed){
           panel.border = element_blank(), 
           panel.grid = element_blank(), 
           plot.background = element_rect(fill = background, colour = background), 
-          plot.margin = unit(rep(0, 4), "cm"),  
+          #plot.margin = unit(rep(0, 4), "cm"),
+          plot.margin = unit(rep(-1.25,4),"lines"), 
           strip.background = element_blank(), 
           strip.text = element_blank())
   
