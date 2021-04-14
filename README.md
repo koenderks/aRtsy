@@ -39,7 +39,11 @@
 <br/>
 <br/>
 
+<p align="center">
+
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-20.png' width='780' height='390' align='center' margin-left='20' margin-right='20'/>
+
+</p>
 
 # Highlights - Function Shapes
 
