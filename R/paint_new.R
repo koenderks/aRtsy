@@ -35,9 +35,7 @@ paint_new <- function(width = 500, height = 500, p.newcol = 0.001, palette, seed
       i <- sample(1:nrow(zeros), size = 1)
       row <- as.numeric(zeros[i, 1])
       col <- as.numeric(zeros[i, 2])
-      newcol <- sample(c(TRUE, FALSE), size = 1, prob = c(p.newcol, 1 - p.newcol))
-      if(newcol)
-        df[row, col] <- sample(2:length(palette), size = 1)
+      df[row, col] <- sample(2:length(palette), size = 1)
       
     } else {
       
