@@ -9,13 +9,14 @@ paint_new <- function(width = 500, height = 500, p.newcol = 0.001, palette, seed
   # Initialize the painting
   df <- matrix(sample(x = canvasColor, size = width * height, replace = TRUE), nrow = height, ncol = width)
   
+  # Initialize the iterations
   filled <- 0
-  
-  row <- sample(1:height, size = 1)
-  col <- sample(1:width, size = 1)
   allfilled <- FALSE
   
   # Pick a random starting point on the canvas
+  row <- sample(1:height, size = 1)
+  col <- sample(1:width, size = 1)
+  
   while (!allfilled){
     
     # Check if all the blocks have a color and end
@@ -39,7 +40,7 @@ paint_new <- function(width = 500, height = 500, p.newcol = 0.001, palette, seed
       
     } else {
       
-      # Determine if there is something on the canvas adjacent to the current block
+      # Adjust the indices for edges
       xright <- ifelse(col + 1 > ncol(df), yes = col - 1, no = col + 1)
       xleft <- ifelse(col - 1 < 1, yes = col + 1, no = col - 1)
       ytop <- ifelse(row - 1 < 1, yes = row + 1, no = row - 1)
@@ -54,6 +55,7 @@ paint_new <- function(width = 500, height = 500, p.newcol = 0.001, palette, seed
       # The current block will get the color of a surrounding block, or a new color if no surrounding blocks are colored
       blocksAround <- c(df[ytop, xleft], df[row, xleft], df[ybottom, xleft], df[ytop, col], df[ybottom, col], df[ytop, xright], df[row, xright], df[ybottom, xright])
       if(all(blocksAround == 0)){
+        newcol <- sample(c(TRUE, FALSE), size = 1, prob = c(p.newcol, 1 - p.newcol))
         df[row, col] <- sample(2:length(palette), size = 1)
       } else {
         colorsOfBlockAroundIt <- subset(blocksAround, blocksAround > 0)
