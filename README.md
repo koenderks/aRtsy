@@ -2,7 +2,10 @@
 
 I like pretty pictures and I like R. In this repository I combine those two things into what people generally call generative art.
 
-## Highlights - Paint Strokes
+* [Paint strokes](#paint-strokes)
+* [Function shapes](#function-shapes)
+
+## Paint Strokes
 
 The `paint_strokes` algorithm is my first self-concocted algorithm for drawing on a grid-based canvas. The algorithm is based on the premisse that each point on the grid has a large chance to take over the color of an adjacent colored point, but also has a slight change of generating a new color. This causes these paint brush-like strokes on the canvas. 
 
@@ -52,7 +55,7 @@ You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-20.png' width='1000' height='390' align='center' margin-left='20' margin-right='20'/>
 </p>
 
-## Highlights - Function Shapes
+## Function Shapes
 
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-04-08.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-04-04.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
 
