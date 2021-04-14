@@ -52,9 +52,7 @@ paint_new <- function(width = 500, height = 500, p.newcol = 0.001, palette, seed
         # Any new block will put up a color of an adjacent block if available, otherwise it will generate a new color
         blocksAround <- c(df[ytop, xleft], df[row, xleft], df[ybottom, xleft], df[ytop, col], df[ybottom, col], df[ytop, xright], df[row, xright], df[ybottom, xright])
         if(all(blocksAround == 0)){
-          newcol <- sample(c(TRUE, FALSE), size = 1, prob = c(p.newcol, 1 - p.newcol))
-          if(newcol)
-            df[row, col] <- sample(2:length(palette), size = 1)
+          df[row, col] <- sample(2:length(palette), size = 1)
         } else {
           colorsOfBlockAroundIt <- subset(blocksAround, blocksAround > 0)
           selectedColor <- sample(colorsOfBlockAroundIt, size = 1)
