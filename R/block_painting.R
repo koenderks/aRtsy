@@ -1,15 +1,15 @@
 block_painting <- function(width, height, p.takecol, p.newcol, palette){
   
-  canvasColor <- 1
+  canvasColor <- 0
   iter <- 1
   
   # Initialize the painting
   df <- matrix(sample(x = canvasColor, size = width * height, replace = TRUE), nrow = height, ncol = width)
   
   # Loop over each block in the painting
-  for(x in sample(1:ncol(df), size = ncol(df), replace = F)){
+  for(x in 1:ncol(df)){
     
-    for(y in sample(1:nrow(df), size = nrow(df), replace = F)){
+    for(y in 1:nrow(df)){
       
       # Determine if the current block is an edge block
       edge <- x == 1 || y == 1 || x == ncol(df) || y == nrow(df)
