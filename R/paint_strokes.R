@@ -1,4 +1,4 @@
-paint_strokes <- function(width, height, p.newcol, palette, seed){
+paint_strokes <- function(width = 500, height = 500, p.newcol = 0.01, palette, seed = 120495){
   
   set.seed(seed)
   
@@ -15,7 +15,7 @@ paint_strokes <- function(width, height, p.newcol, palette, seed){
     for(row in 1:nrow(df)){
       
       if(col == 1 | row == 1 | col == ncol(df) | row == nrow(df)){
-        # If the block is an edge block, it receives the canvas color
+        # If the block is an edge block, it receives the temporary canvas color
         df[row, col] <- canvasColor
         
       } else {
@@ -34,14 +34,15 @@ paint_strokes <- function(width, height, p.newcol, palette, seed){
         
         if(block.around.it.has.color){
           
-          # If a block around the current block is colored, the current block takes over a color from its surroundings  
+          # If a block around the current block is colored, the current block takes over a random color from its surroundings  
           blocksAround <- c(df[ytop, xleft], df[row, xleft], df[ybottom, xleft], df[ytop, col], df[ybottom, col], df[ytop, xright], df[row, xright], df[ybottom, xright])
           colorsOfBlockAroundIt <- subset(blocksAround, blocksAround > 0)
           selectedColor <- sample(colorsOfBlockAroundIt, size = 1)
           df[row, col] <- selectedColor
           
         } else {
-          # If the current block gets a new color, a random color from the palette is sampled
+          
+          # If the current block does not take a color from the surroundings, a new color from the palette is sampled
           df[row, col] <- sample(seq_along(palette), size = 1)
         }
       }
