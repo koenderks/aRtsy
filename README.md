@@ -1,4 +1,10 @@
-# Highlights - Paint Strokes
+# Generative Art Using R
+
+I like pretty pictures and I like R. In this repository I combine those two.
+
+## Highlights - Paint Strokes
+
+The "paint strokes" algorithm is my first self-made algorithm for generative art.
 
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-22.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-25.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
 
@@ -44,7 +50,7 @@
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-20.png' width='1000' height='390' align='center' margin-left='20' margin-right='20'/>
 </p>
 
-# Highlights - Function Shapes
+## Highlights - Function Shapes
 
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-04-08.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-04-04.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
 
