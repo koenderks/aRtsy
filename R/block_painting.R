@@ -4,12 +4,13 @@ block_painting <- function(width, height, p.takecol, p.newcol, palette){
   df <- matrix(sample(x = 1, size = width * height, replace = TRUE), nrow = height, ncol = width)
   
   # Initialize the options
-  canvasColor <- 0
+  canvasColor <- 1
   color.given <- FALSE
   
   # Loop over each block in the painting
-  for(x in 1:ncol(df)){
-    for(y in 1:nrow(df)){
+  for(x in sample(1:ncol(df), size = ncol(df), replace = FALSE)){
+    
+    for(y in sample(1:nrow(df), size = nrow(df), replace = FALSE)){
       
       # Determine if the current block is an edge block
       edge <- x == 1 || y == 1 || x == ncol(df) || y == nrow(df)

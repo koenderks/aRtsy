@@ -38,7 +38,7 @@ if(paintingType == 1){
   palette <- randomColor(count = 10)
   palette <- c("#fafafa", palette)
   
-  painting <- block_painting(width = 1500, height = 1500, p.takecol = 0.9, p.newcol = 0.5, palette = palette)
+  painting <- block_painting(width = 1500, height = 1500, p.takecol = 1, p.newcol = 0.5, palette = palette)
   
 }
 
