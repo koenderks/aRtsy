@@ -6,7 +6,6 @@ library(tweenr)
 library(randomcoloR)
 library(svglite)
 library(reshape2)
-library(colourlovers)
 
 # Load the painting functions
 source("R/shape_painting.R")
@@ -35,9 +34,6 @@ if(paintingType == 1){
   painting <- shape_painting(color = color, background = bgcolor)
   
 } else if (paintingType == 2){
-  
-  palette <- sample(clpalettes('top'), 1)[[1]] 
-  palette <- palette %>% swatch %>% .[[1]]
   
   palette <- randomColor(count = 10)
   palette <- c("#fafafa", palette)

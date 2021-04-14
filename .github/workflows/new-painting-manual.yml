@@ -16,7 +16,7 @@ jobs:
       # Install required packages and update README
       - name: Install required packages
         run: |
-          install.packages(c("ggplot2", "dplyr", "tweenr", "randomcoloR", "svglite", "reshape2", "colourlovers"))
+          install.packages(c("ggplot2", "dplyr", "tweenr", "randomcoloR", "svglite", "reshape2"))
         shell: Rscript {0}
 
       - name: Create new painting
