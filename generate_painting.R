@@ -41,8 +41,8 @@ if (paintingType == 1){
   
 } else if (paintingType == 2){
   
-  painting <- paint_strokes(width = 1500, 
-                            height = 1500, 
+  painting <- paint_strokes(width = 500, 
+                            height = 500, 
                             p.newcol = runif(1, 0.0001, 0.001), 
                             palette = randomcoloR::randomColor(count = sample(5:15, size = 1)), 
                             seed = seed, 
@@ -62,4 +62,4 @@ if (paintingType == 1){
 }
 
 ggplot2::ggsave(painting, filename = paintingPNGname, scale = 1, dpi = 300)
-ggplot2::ggsave(painting, filename = paintingSVGname, scale = 1, dpi = 300)
+#ggplot2::ggsave(painting, filename = paintingSVGname, scale = 1, dpi = 300)
