@@ -38,7 +38,7 @@ if(paintingType == 1){
   
   palette <- randomcoloR::randomColor(count = sample(5:10, size = 1))
   
-  painting <- block_painting(width = 1500, height = 1500, p.newcol = runif(1, 0.001, 0.1), palette = palette, seed = seed)
+  painting <- block_painting(width = 1500, height = 1500, p.newcol = 0.001, palette = palette, seed = seed)
   
 }
 
