@@ -38,8 +38,9 @@ if(paintingType == 1){
   
   palette <- sample(clpalettes('top'), 1)[[1]] 
   palette <- palette %>% swatch %>% .[[1]]
+  palette <- c("#fafafa", palette)
   
-  painting <- block_painting(width = 1500, height = 1500, p.newcol = 0.01, palette = palette)
+  painting <- block_painting(width = 1500, height = 1500, p.takecol = 0.5, p.newcol = 0.1, palette = palette)
   
 }
 
