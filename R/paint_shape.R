@@ -1,4 +1,4 @@
-shape_painting <- function(color, background, seed){
+paint_shape <- function(color, background, seed){
   
   set.seed(seed)
   
