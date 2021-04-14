@@ -4,7 +4,7 @@ I like pretty pictures and I like R. In this repository I combine those two thin
 
 ## Highlights - Paint Strokes
 
-The "paint strokes" algorithm is my first self-made algorithm for generative art in R. You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your own portrait like this.
+The "paint strokes" algorithm is my first self-made algorithm for generative art in R. The algorithm is based on the premisse that each point has a large chance to take over the color of an adjacent colored point, but also has a slight change of generating a new color. This causes these brush-like strokes on the canvas. You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your own portrait like this. 
 
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-22.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-25.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
 
