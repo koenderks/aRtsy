@@ -57,6 +57,8 @@ You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your
 
 ## Function Shapes
 
+To be honest, this idea is completely taken over from other people (like X and Y), but it makes pretty pictures nonetheless.
+
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-04-08.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-04-04.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
 
 <br/>
