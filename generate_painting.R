@@ -23,7 +23,7 @@ set.seed(seed)
 
 paintingType <- sample(1:3, size = 1)
 
-paintingType <- 2
+paintingType <- 3
 
 if (paintingType == 1){
   

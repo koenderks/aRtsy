@@ -1,4 +1,4 @@
-paint_new <- function(width = 500, height = 500, palette, seed = 120495, xascending = TRUE, yascending = TRUE){
+paint_new <- function(width = 500, height = 500, palette, seed = 120495){
   
   set.seed(seed)
   
@@ -9,13 +9,12 @@ paint_new <- function(width = 500, height = 500, palette, seed = 120495, xascend
   # Initialize the painting
   df <- matrix(sample(x = canvasColor, size = width * height, replace = TRUE), nrow = height, ncol = width)
   
-  colorder <- 1:ncol(df)
-  if(!yascending)
-    colorder <- rev(colorder)
-  
-  roworder <- 1:nrow(df)
-  if(!xascending)
-    roworder <- rev(roworder)
+  # Start in the middle
+  colorder <- split(1:ncol(df), ceiling(seq_along(1:ncol(df))/(length(1:ncol(df))/ 2)))
+  colorder <- c(colorder[[2]], colorder[[1]])
+  roworder <- split(1:nrow(df), ceiling(seq_along(1:nrow(df))/(length(1:nrow(df))/ 2)))
+  roworder <- c(roworder[[2]], roworder[[1]])
+
   
   iter <- 0
   

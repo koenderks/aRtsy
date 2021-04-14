@@ -11,7 +11,7 @@ The `paint_strokes` algorithm is my first self-concocted algorithm for drawing o
 
 You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your own portrait like this. 
 
-<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-22.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-25.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
+<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-21.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-25.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
 
 <br/>
 <br/>
@@ -31,7 +31,7 @@ You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your
 <br/>
 <br/>
 
-<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-24.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-21.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
+<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-24.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-22.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
 
 <br/>
 <br/>
