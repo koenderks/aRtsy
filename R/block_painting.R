@@ -5,7 +5,6 @@ block_painting <- function(width, height, p.newcol, palette, seed){
   internalPalette <- c("#fafafa", palette)
   
   canvasColor <- 0
-  iter <- 1
   
   # Initialize the painting
   df <- matrix(sample(x = canvasColor, size = width * height, replace = TRUE), nrow = height, ncol = width)
@@ -47,9 +46,8 @@ block_painting <- function(width, height, p.newcol, palette, seed){
         }
       }
     }
-    iter <- iter + 1
-    if(iter%%100 == 0)
-      print(paste0("Iteration ", iter))
+    if(col%%100 == 0)
+      print(paste0("Filling column ", col))
   }
   
   # Reshape the data to plotting format
