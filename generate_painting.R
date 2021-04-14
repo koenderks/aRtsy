@@ -4,7 +4,6 @@ library(ggplot2)
 library(dplyr)
 library(tweenr)
 library(randomcoloR)
-library(svglite)
 library(reshape2)
 
 # Load the painting functions
@@ -41,19 +40,18 @@ if (paintingType == 1){
   
 } else if (paintingType == 2){
   
-  painting <- paint_strokes(width = 500, 
-                            height = 500, 
+  painting <- paint_strokes(width = 1500, 
+                            height = 1500, 
                             p.newcol = runif(1, 0.0001, 0.001), 
                             palette = randomcoloR::randomColor(count = sample(5:15, size = 1)), 
                             seed = seed, 
                             xascending = sample(c(TRUE, FALSE), size = 1), 
-                            yascending = sample(c(TRUE, FALSE), size = 1),
-                            polar = TRUE)
+                            yascending = sample(c(TRUE, FALSE), size = 1))
   
 } else if (paintingType == 3){
   
-  painting <- paint_new(width = 100, 
-                        height = 100, 
+  painting <- paint_new(width = 500, 
+                        height = 500, 
                         palette = randomcoloR::randomColor(count = sample(5:15, size = 1)), 
                         seed = seed, 
                         xascending = sample(c(TRUE, FALSE), size = 1), 
@@ -62,4 +60,3 @@ if (paintingType == 1){
 }
 
 ggplot2::ggsave(painting, filename = paintingPNGname, scale = 1, dpi = 300)
-#ggplot2::ggsave(painting, filename = paintingSVGname, scale = 1, dpi = 300)
