@@ -1,4 +1,4 @@
-block_painting <- function(width, height, palette){
+block_painting <- function(width, height, p.newcol, palette){
   
   # Initialize the painting
   df <- matrix(sample(x = 1, size = width * height, replace = TRUE), nrow = height, ncol = width)
@@ -24,7 +24,7 @@ block_painting <- function(width, height, palette){
         df[x, y] <- colorOfBlockAroundIt
       } else {
         # Block gets a new color with probability
-        get.new.color <- sample(c(FALSE, TRUE), size = 1, prob = c(0.1, 0.9))
+        get.new.color <- sample(c(FALSE, TRUE), size = 1, prob = c(1 - p.newcol, p.newcol))
         if(get.new.color){
           df[x, y] <- sample(2:length(palette), size = 1)
         } else {
