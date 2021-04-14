@@ -24,11 +24,20 @@ paintingType <- 2
 
 if(paintingType == 1){
   
-  painting <- shape_painting()
+  bgcolor <- sample(c("#fafafa", "#1a3657", "#343434", "#cc7722", "#a9d2c3", "#fc7c7c"), size = 1)
+  if(bgcolor %in% c("#fafafa",  "#cc7722", "#a9d2c3", "#fc7c7c")){
+    color <- sample(c("black", randomcoloR::randomColor(1, luminosity = "dark")), size = 1)
+  } else {
+    color <- randomcoloR::randomColor(1, luminosity = "light")
+  }
+  
+  painting <- shape_painting(color = color, background = bgcolor)
   
 } else if (paintingType == 2){
   
- painting <- block_painting(width = 1500, height = 1500, p.newcol = 0.01, palette = randomcoloR::randomColor(count = 20))
+  palette <- randomcoloR::randomColor(count = sample(3:10, size = 1))
+  
+  painting <- block_painting(width = 1500, height = 1500, p.newcol = 0.01, palette = palette)
   
 }
 

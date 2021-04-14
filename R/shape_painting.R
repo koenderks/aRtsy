@@ -1,4 +1,4 @@
-shape_painting <- function(){
+shape_painting <- function(color, background){
   
   painting_formulas <- list()
   
@@ -13,13 +13,6 @@ shape_painting <- function(){
   )
   
   painting_formula <- painting_formulas[[sample(1:length(painting_formulas), 1)]]
-  
-  bgcolor <- sample(c("#fafafa", "#1a3657", "#343434", "#cc7722", "#a9d2c3", "#fc7c7c"), size = 1)
-  if(bgcolor %in% c("#fafafa",  "#cc7722", "#a9d2c3", "#fc7c7c")){
-    color <- sample(c("black", randomcoloR::randomColor(1, luminosity = "dark")), size = 1)
-  } else {
-    color <- randomcoloR::randomColor(1, luminosity = "light")
-  }
   
   df <- seq(from = -pi, to = pi, by = 0.01) %>% expand.grid(x_i = ., y_i = .) %>% dplyr::mutate(!!!painting_formula)
   
