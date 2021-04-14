@@ -1,6 +1,6 @@
 # Generative Art Using R
 
-I like pretty pictures and I like R. In this repository I combine those two.
+I like pretty pictures and I like R. In this repository I combine those two things into what people generally call generative art.
 
 ## Highlights - Paint Strokes
 
