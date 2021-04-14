@@ -1,4 +1,4 @@
-block_painting <- function(width, height, p.takecol, p.newcol, palette){
+block_painting <- function(width, height, p.newcol, palette){
   
   canvasColor <- 0
   iter <- 1
@@ -15,26 +15,19 @@ block_painting <- function(width, height, p.takecol, p.newcol, palette){
       edge <- x == 1 || y == 1 || x == ncol(df) || y == nrow(df)
 
       if(edge){
-        # If the block is an edge block, it treated as if the blocks around it have no color
-        block.around.it.has.color <- FALSE
+        # If the block is an edge block, it should take over the color from any adjacent block
+        block.around.it.has.color <- TRUE
       } else {
         # If the block is no edge block, the 9 surrounding blocks are checked if they have a color
         block.around.it.has.color <- df[x - 1, y - 1] > 1 || df[x - 1, y] > 1 || df[x - 1, y + 1] > 1 || df[x, y - 1] > 1 || df[x, y + 1] > 1 || df[x + 1, y - 1] > 1 || df[x + 1, y] > 1 || df[x + 1, y + 1] > 1
       }
       
       if(block.around.it.has.color){
-        # If a block around the current block is colored, the current block takes over its color with probability p.takecol
-        take.col <- sample(c(FALSE, TRUE), size = 1, prob = c(1 - p.takecol, p.takecol))
-        if(take.col){
-          # If the current block takes over the color, it samples from the surrounding colors
+        # If a block around the current block is colored, the current block takes over a color from its surroundings
           colorOfBlockAroundIt <- c(df[x - 1, y - 1], df[x - 1, y], df[x - 1, y + 1], df[x, y - 1], df[x, y + 1], df[x + 1, y - 1], df[x + 1, y], df[x + 1, y + 1])
           colorOfBlockAroundIt <- subset(colorOfBlockAroundIt, colorOfBlockAroundIt > 1)
           colorOfBlockAroundIt <- sample(colorOfBlockAroundIt, size = 1)
           df[x, y] <- colorOfBlockAroundIt 
-        } else {
-          # If the current block does not take over the color, it retains the canvas color 
-          df[x, y] <- canvasColor
-        }
       } else {
         # If no blocks around the current block are colored, the current block gets a new color with probability p.newcol
         get.new.color <- sample(c(FALSE, TRUE), size = 1, prob = c(1 - p.newcol, p.newcol))
@@ -57,7 +50,7 @@ block_painting <- function(width, height, p.takecol, p.newcol, palette){
   colnames(df) <- c("x","y","z") # to name columns
   
   painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) + 
-    geom_raster(interpolate = TRUE) + 
+    geom_raster(interpolate = TRUE, alpha = 0.9) + 
     coord_equal() +
     scale_fill_gradientn(colours = palette) +
     scale_y_continuous(expand = c(0,0)) + 
