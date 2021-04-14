@@ -21,7 +21,7 @@ paintingSVGname <- paste0('svg/', Sys.Date(), ".svg")
 seed <- as.numeric(Sys.Date() + runif(1, -1000, 1000))
 set.seed(seed)
 
-paintingType <- sample(1:3, size = 1)
+paintingType <- sample(1:2, size = 1)
 
 if (paintingType == 1){
   
