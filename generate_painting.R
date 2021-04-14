@@ -40,7 +40,7 @@ if(paintingType == 1){
   xascending <- sample(c(TRUE, FALSE), size = 1)
   yascending <- sample(c(TRUE, FALSE), size = 1)
   
-  painting <- paint_strokes(width = 1500, height = 1500, p.newcol = runif(1, 0.0001, 0.001), palette = palette, 
+  painting <- paint_strokes(width = 3000, height = 3000, p.newcol = runif(1, 0.0001, 0.001), palette = palette, 
                             seed = seed, xascending = xascending, yascending = yascending)
   
 }
