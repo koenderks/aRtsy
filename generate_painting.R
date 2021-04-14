@@ -18,7 +18,7 @@ paintingSVGname <- paste0('svg/', Sys.Date(), ".svg")
 
 # Painting seed dependent on the date
 
-seed <- as.numeric(Sys.Date() + 235729354352)
+seed <- as.numeric(Sys.Date() + 12124)
 set.seed(seed)
 
 if(seed%%2 == 0) paintingType <- 1 else paintingType <- 2
