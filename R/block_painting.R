@@ -77,7 +77,7 @@ block_painting <- function(width, height, p.newcol, palette, seed){
           legend.position = "none", 
           panel.border = element_blank(), 
           panel.grid = element_blank(), 
-          plot.margin = unit(rep(0, 4), "cm"), 
+          plot.margin = unit(rep(-1.25,4),"lines"), 
           strip.background = element_blank(), 
           strip.text = element_blank())
   
