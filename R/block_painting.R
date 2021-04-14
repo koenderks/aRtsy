@@ -1,4 +1,8 @@
-block_painting <- function(width, height, p.newcol, palette){
+block_painting <- function(width, height, p.newcol, palette, seed){
+  
+  set.seed(seed)
+  
+  internalPalette <- c("#fafafa", palette)
   
   canvasColor <- 0
   iter <- 1
@@ -7,36 +11,39 @@ block_painting <- function(width, height, p.newcol, palette){
   df <- matrix(sample(x = canvasColor, size = width * height, replace = TRUE), nrow = height, ncol = width)
   
   # Loop over each block in the painting
-  for(x in 1:ncol(df)){
+  for(col in 1:ncol(df)){
     
-    for(y in 1:nrow(df)){
+    for(row in 1:nrow(df)){
       
-      # Determine if the current block is an edge block
-      edge <- x == 1 || y == 1 || x == ncol(df) || y == nrow(df)
-
-      if(edge){
-        # If the block is an edge block, it should take over the color from any adjacent block
-        block.around.it.has.color <- TRUE
+      if(col == 1 | row == 1 | col == ncol(df) | row == nrow(df)){
+        # If the block is an edge block, it receives the canvas color
+        df[row, col] <- canvasColor
+        
       } else {
+        
+        # Adjust for edges
+        xright <- ifelse(col + 1 > ncol(df), yes = col - 1, no = col + 1)
+        xleft <- ifelse(col - 1 < 1, yes = col + 1, no = col - 1)
+        ytop <- ifelse(row - 1 < 1, yes = row + 1, no = row - 1)
+        ybottom <- ifelse(row + 1 > nrow(df), yes = row - 1, no = row + 1)
+        
         # If the block is no edge block, the 9 surrounding blocks are checked if they have a color
-        block.around.it.has.color <- df[x - 1, y - 1] > 1 || df[x - 1, y] > 1 || df[x - 1, y + 1] > 1 || df[x, y - 1] > 1 || df[x, y + 1] > 1 || df[x + 1, y - 1] > 1 || df[x + 1, y] > 1 || df[x + 1, y + 1] > 1
-      }
-      
-      if(block.around.it.has.color){
-        # If a block around the current block is colored, the current block takes over a color from its surroundings
-          colorOfBlockAroundIt <- c(df[x - 1, y - 1], df[x - 1, y], df[x - 1, y + 1], df[x, y - 1], df[x, y + 1], df[x + 1, y - 1], df[x + 1, y], df[x + 1, y + 1])
-          colorOfBlockAroundIt <- subset(colorOfBlockAroundIt, colorOfBlockAroundIt > 1)
-          colorOfBlockAroundIt <- sample(colorOfBlockAroundIt, size = 1)
-          df[x, y] <- colorOfBlockAroundIt 
-      } else {
-        # If no blocks around the current block are colored, the current block gets a new color with probability p.newcol
-        get.new.color <- sample(c(FALSE, TRUE), size = 1, prob = c(1 - p.newcol, p.newcol))
-        if(get.new.color){
-          # If the current block gets a new color, a random color from the palette is sampled
-          df[x, y] <- sample(1:length(palette), size = 1)
+        block.around.it.has.color <- df[ytop, xleft] > 0 | df[row, xleft] > 0 | df[ybottom, xleft] > 0 | df[ytop, col] > 0 | df[ybottom, col] > 0 | df[ytop, xright] > 0 | df[row, xright] > 0 | df[ybottom, xright] > 0
+        
+        if(sample(c(TRUE, FALSE), size = 1, prob = c(p.newcol, 1 - p.newcol)))
+          block.around.it.has.color <- FALSE
+        
+        if(block.around.it.has.color){
+          
+          # If a block around the current block is colored, the current block takes over a color from its surroundings  
+          blocksAround <- c(df[ytop, xleft], df[row, xleft], df[ybottom, xleft], df[ytop, col], df[ybottom, col], df[ytop, xright], df[row, xright], df[ybottom, xright])
+          colorsOfBlockAroundIt <- subset(blocksAround, blocksAround > 0)
+          selectedColor <- sample(colorsOfBlockAroundIt, size = 1)
+          df[row, col] <- selectedColor
+          
         } else {
-          # If the current block does not get a new color, the original color is retained
-          df[x, y] <- canvasColor
+          # If the current block gets a new color, a random color from the palette is sampled
+          df[row, col] <- sample(seq_along(palette), size = 1)
         }
       }
     }
@@ -47,12 +54,12 @@ block_painting <- function(width, height, p.newcol, palette){
   
   # Reshape the data to plotting format
   df <- reshape2::melt(df)
-  colnames(df) <- c("x","y","z") # to name columns
+  colnames(df) <- c("y","x","z") # to name columns
   
   painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) + 
     geom_raster(interpolate = TRUE, alpha = 0.9) + 
     coord_equal() +
-    scale_fill_gradientn(colours = palette) +
+    scale_fill_gradientn(colours = internalPalette) +
     scale_y_continuous(expand = c(0,0)) + 
     scale_x_continuous(expand = c(0,0)) +
     theme(axis.title = element_blank(), 

@@ -1,4 +1,6 @@
-shape_painting <- function(color, background){
+shape_painting <- function(color, background, seed){
+  
+  set.seed(seed)
   
   painting_formulas <- list()
   
