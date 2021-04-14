@@ -50,12 +50,11 @@ if (paintingType == 1){
   
 } else if (paintingType == 3){
   
-  painting <- paint_new(width = 500, 
-                        height = 500, 
+  painting <- paint_new(width = 1500, 
+                        height = 1500, 
                         palette = randomcoloR::randomColor(count = sample(5:15, size = 1)), 
-                        seed = seed, 
-                        xascending = sample(c(TRUE, FALSE), size = 1), 
-                        yascending = sample(c(TRUE, FALSE), size = 1))
+                        seed = seed,
+                        p.newcol = 0.001)
   
 }
 
