@@ -41,8 +41,11 @@ if(paintingType == 1){
   seed <- seed + rnorm(1)
   
   palette <- randomcoloR::randomColor(count = sample(5:15, size = 1))
+  xascending <- sample(c(TRUE, FALSE), size = 1)
+  yascending <- sample(c(TRUE, FALSE), size = 1)
   
-  painting <- paint_strokes(width = 1500, height = 1500, p.newcol = runif(1, 0.0001, 0.001), palette = palette, seed = seed)
+  painting <- paint_strokes(width = 1500, height = 1500, p.newcol = runif(1, 0.0001, 0.001), palette = palette, 
+                            seed = seed, xascending = xascending, yascending = yascending)
   
 }
 

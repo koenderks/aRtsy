@@ -1,4 +1,4 @@
-paint_strokes <- function(width = 500, height = 500, p.newcol = 0.01, palette, seed = 120495){
+paint_strokes <- function(width = 500, height = 500, p.newcol = 0.01, palette, seed = 120495, xascending = TRUE, yascending = TRUE){
   
   set.seed(seed)
   
@@ -9,10 +9,20 @@ paint_strokes <- function(width = 500, height = 500, p.newcol = 0.01, palette, s
   # Initialize the painting
   df <- matrix(sample(x = canvasColor, size = width * height, replace = TRUE), nrow = height, ncol = width)
   
+  colorder <- 1:ncol(df)
+  if(!yascending)
+    colorder <- rev(colorder)
+  
+  roworder <- 1:nrow(df)
+  if(!xascending)
+    roworder <- rev(roworder)
+  
+  iter <- 0
+  
   # Loop over each block in the painting
-  for(col in 1:ncol(df)){
+  for(col in colorder){
     
-    for(row in 1:nrow(df)){
+    for(row in roworder){
       
       if(col == 1 | row == 1 | col == ncol(df) | row == nrow(df)){
         # If the block is an edge block, it receives the temporary canvas color
@@ -47,18 +57,19 @@ paint_strokes <- function(width = 500, height = 500, p.newcol = 0.01, palette, s
         }
       }
     }
-    if(col%%100 == 0)
-      print(paste0("Filling column ", col))
+    iter <- iter + 1
+    if(iter%%100 == 0)
+      print(paste0("Filling column ", iter))
   }
   
   print("Coloring border blocks")
   
-  for(row in 1:nrow(df)){
-    df[row, 1] <- df[row, 2]
+  for(row in roworder){
+    df[row, roworder[1]] <- df[row, roworder[2]]
   }
   
-  for(col in 1:ncol(df)){
-    df[nrow(df), col] <- df[nrow(df) - 1, col]
+  for(col in colorder){
+    df[colorder[length(colorder)], col] <- df[colorder[length(colorder) - 1], col]
   }
   
   # Reshape the data to plotting format
