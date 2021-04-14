@@ -1,15 +1,13 @@
-block_painting <- function(){
+block_painting <- function(width, height, palette){
   
-  width  <- 1000
-  height <- 1000
-  
+  # Initialize the painting
   df <- matrix(sample(x = 1, size = width * height, replace = TRUE), nrow = height, ncol = width)
   
-  palette <- c("#fafafa", randomColor(count = 10))
-  
+  # Initialize the options
   initialColor <- 1
   color.given <- FALSE
   
+  # Loop
   for(x in 1:ncol(df)){
     for(y in 1:nrow(df)){
       # Determine if blocks around the current block are colored
