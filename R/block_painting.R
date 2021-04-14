@@ -10,9 +10,9 @@ block_painting <- function(width, height, p.takecol, p.newcol, palette){
   iter <- 1
   
   # Loop over each block in the painting
-  for(x in sample(1:ncol(df), size = ncol(df), replace = FALSE)){
+  for(x in 1:ncol(df)){
     
-    for(y in sample(1:nrow(df), size = nrow(df), replace = FALSE)){
+    for(y in 1:nrow(df)){
       
       # Determine if the current block is an edge block
       edge <- x == 1 || y == 1 || x == ncol(df) || y == nrow(df)
@@ -51,7 +51,7 @@ block_painting <- function(width, height, p.takecol, p.newcol, palette){
       }
     }
     iter <- iter + 1
-    if(x%%100 == 0)
+    if(iter%%100 == 0)
       print(paste0("Iteration ", iter))
   }
   
