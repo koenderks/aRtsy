@@ -18,32 +18,30 @@
 <br/>
 <br/>
 <br/>
+
+<p align="center">
+<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-20.png' width='780' height='390' align='center' margin-left='20' margin-right='20'/>
+</p>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 <br/>
 
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-24.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-21.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-<p align="center">
-
-<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-20.png' width='780' height='390' align='center' margin-left='20' margin-right='20'/>
-
-</p>
 
 # Highlights - Function Shapes
 
