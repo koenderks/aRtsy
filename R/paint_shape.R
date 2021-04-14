@@ -28,10 +28,10 @@ paint_shape <- function(color, background, seed){
           axis.ticks = element_blank(), 
           axis.line = element_blank(), 
           legend.position = "none", 
-          panel.background = element_rect(fill = bgcolor, colour = bgcolor), 
+          panel.background = element_rect(fill = background, colour = background), 
           panel.border = element_blank(), 
           panel.grid = element_blank(), 
-          plot.background = element_rect(fill = bgcolor, colour = bgcolor), 
+          plot.background = element_rect(fill = background, colour = background), 
           plot.margin = unit(rep(0, 4), "cm"),  
           strip.background = element_blank(), 
           strip.text = element_blank())
