@@ -1,11 +1,13 @@
 block_painting <- function(width, height, p.takecol, p.newcol, palette){
   
+  canvasColor <- 1
+  
   # Initialize the painting
-  df <- matrix(sample(x = 1, size = width * height, replace = TRUE), nrow = height, ncol = width)
+  df <- matrix(sample(x = canvasColor, size = width * height, replace = TRUE), nrow = height, ncol = width)
   
   # Initialize the options
-  canvasColor <- 1
   color.given <- FALSE
+  iter <- 1
   
   # Loop over each block in the painting
   for(x in sample(1:ncol(df), size = ncol(df), replace = FALSE)){
@@ -48,8 +50,9 @@ block_painting <- function(width, height, p.takecol, p.newcol, palette){
         }
       }
     }
+    iter <- iter + 1
     if(x%%100 == 0)
-      print(paste0("Iteration ", x))
+      print(paste0("Iteration ", iter))
   }
   
   # Reshape the data to plotting format
