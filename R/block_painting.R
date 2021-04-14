@@ -50,6 +50,14 @@ block_painting <- function(width, height, p.newcol, palette, seed){
       print(paste0("Filling column ", col))
   }
   
+  for(y in 1:nrow(df)){
+    df[y, 1] <- df[y, 2]
+  }
+  
+  for(x in 1:ncol(df)){
+    df[nrow(df), x] <- df[nrow(df) - 1, x]
+  }
+  
   # Reshape the data to plotting format
   df <- reshape2::melt(df)
   colnames(df) <- c("y","x","z") # to name columns
