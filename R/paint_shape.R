@@ -14,6 +14,11 @@ paint_shape <- function(color, background, seed){
     y = quote(sample(1:10, 1) * x_i - tanh(y_i) + (runif(1, -100, 100)))
   )
   
+  painting_formulas[[3]] <- list(
+    x = quote(runif(1, -1, 10) * x_i^sample(c(0.5, 1:6), 1) - sin(y_i^sample(c(0.5, 1:6), 1))),
+    y = quote(runif(1, -1, 10) * y_i^sample(c(0.5, 1:6), 1) - cos(x_i^sample(c(0.5, 1:6), 1)) * y_i^sample(c(0.5, 1:6), 1))
+  )
+  
   painting_formula <- painting_formulas[[sample(1:length(painting_formulas), 1)]]
   
   df <- seq(from = -pi, to = pi, by = 0.01) %>% expand.grid(x_i = ., y_i = .) %>% dplyr::mutate(!!!painting_formula)

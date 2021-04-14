@@ -17,9 +17,9 @@ paint_new <- function(width = 500, height = 500, p.newcol = 0.001, palette, seed
   row <- sample(1:height, size = 1)
   col <- sample(1:width, size = 1)
   
+  # Color initial points
   initialRows <- sample(1:nrow(df), size = initialpoints, replace = T)
   initialCols <- sample(1:ncol(df), size = initialpoints, replace = T)
-  
   df[initialRows, initialCols] <- sample(2:length(palette), size = initialpoints, replace = T)
   
   while (!allfilled){
