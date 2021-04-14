@@ -9,7 +9,7 @@ library(reshape2)
 
 # Load the painting functions
 source("R/shape_painting.R")
-source("R/block_painting.R")
+source("R/paint_strokes.R")
 
 # Name of the painting
 
@@ -42,7 +42,9 @@ if(paintingType == 1){
   
   palette <- randomcoloR::randomColor(count = sample(5:15, size = 1))
   
-  painting <- block_painting(width = 1500, height = 1500, p.newcol = runif(1, 0.0001, 0.001), palette = palette, seed = seed)
+  width <- sample(c(500, 1000, 1500), size = 1, prob = c(0.2, 0.2, 0.6))
+  
+  painting <- paint_strokes(width = width, height = width, p.newcol = runif(1, 0.0001, 0.001), palette = palette, seed = seed)
   
 }
 

@@ -1,4 +1,4 @@
-block_painting <- function(width, height, p.newcol, palette, seed){
+paint_strokes <- function(width, height, p.newcol, palette, seed){
   
   set.seed(seed)
   
