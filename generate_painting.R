@@ -38,7 +38,7 @@ if(paintingType == 1){
   
 } else if (paintingType == 2){
   
-  seed <- seed + rnorm(1)
+  seed <- seed
   
   palette <- randomcoloR::randomColor(count = sample(5:15, size = 1))
   xascending <- sample(c(TRUE, FALSE), size = 1)
