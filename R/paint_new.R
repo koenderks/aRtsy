@@ -23,7 +23,12 @@ paint_new <- function(width = 500, height = 500, p.newcol = 0.001, palette, seed
     if(allfilled)
       next
     
-    if(col <= 1 | row <= 1 | col >= ncol(df) | row >= nrow(df) | df[row, col] > 0){
+    # If there is nothing on the canvas at all, draw a random colored block
+    if(filled == 0){
+      df[row, col] <- sample(2:length(palette), size = 1)
+    }
+    
+    if(col <= 1 | row <= 1 | col >= ncol(df) | row >= nrow(df)){
       
       # If the trails hits an edge it moves to a random empty block (the block is to be revisited again)
       zeros <- which(df == 0, arr.ind=TRUE)
@@ -36,70 +41,61 @@ paint_new <- function(width = 500, height = 500, p.newcol = 0.001, palette, seed
       
     } else {
       
-      # Determine if there is something on the canvas adjacent to the block
+      # Determine if there is something on the canvas adjacent to the current block
       xright <- ifelse(col + 1 > ncol(df), yes = col - 1, no = col + 1)
       xleft <- ifelse(col - 1 < 1, yes = col + 1, no = col - 1)
       ytop <- ifelse(row - 1 < 1, yes = row + 1, no = row - 1)
       ybottom <- ifelse(row + 1 > nrow(df), yes = row - 1, no = row + 1)
       
-      # If there is nothing on the canvas at all, draw a random colored block
-      if(filled == 0){
-        
-        df[row, col] <- sample(2:length(palette), size = 1)
-        
-      } else {
-        
-        # Any new block will put up a color of an adjacent block if available, otherwise it will generate a new color
-        blocksAround <- c(df[ytop, xleft], df[row, xleft], df[ybottom, xleft], df[ytop, col], df[ybottom, col], df[ytop, xright], df[row, xright], df[ybottom, xright])
-        if(all(blocksAround == 0)){
-          df[row, col] <- sample(2:length(palette), size = 1)
-        } else {
-          colorsOfBlockAroundIt <- subset(blocksAround, blocksAround > 0)
-          selectedColor <- sample(colorsOfBlockAroundIt, size = 1)
-          df[row, col] <- selectedColor 
-        }
-        
-      }
-      
-      # The new block will then detect by which sides it is surrounded by other colored blocks
+      # The current block will detect by which sides it is surrounded by other colored blocks
       leftprob <- ifelse(df[xleft, col] > 0, yes = 0, no = 1)
       rightprob <- ifelse(df[xleft, col] > 0, yes = 0, no = 1)
       upprob <- ifelse(df[row, ytop] > 0, yes = 0, no = 1)
       downprob <- ifelse(df[row, ybottom] > 0, yes = 0, no = 1)
       
+      # The current block will get the color of a surrounding block, or a new color if no surrounding blocks are colored
+      blocksAround <- c(df[ytop, xleft], df[row, xleft], df[ybottom, xleft], df[ytop, col], df[ybottom, col], df[ytop, xright], df[row, xright], df[ybottom, xright])
+      if(all(blocksAround == 0)){
+        df[row, col] <- sample(2:length(palette), size = 1)
+      } else {
+        colorsOfBlockAroundIt <- subset(blocksAround, blocksAround > 0)
+        selectedColor <- sample(colorsOfBlockAroundIt, size = 1)
+        df[row, col] <- selectedColor 
+      }
+      
+      # If the current block is completely surrounded by colored blocks, a fresh starting block will be selected
       if (all(c(leftprob, rightprob, upprob, downprob) == 0)){
-        # If the block is completely surrounded by colored blocks it will get the color of an adjacent block
-        blocksAround <- c(df[ytop, xleft], df[row, xleft], df[ybottom, xleft], df[ytop, col], df[ybottom, col], df[ytop, xright], df[row, xright], df[ybottom, xright])
-        if(all(blocksAround == 0)){
-          df[row, col] <- sample(2:length(palette), size = 1)
-        } else {
-          colorsOfBlockAroundIt <- subset(blocksAround, blocksAround > 0)
-          selectedColor <- sample(colorsOfBlockAroundIt, size = 1)
-          df[row, col] <- selectedColor 
-        }
-        
-        # Next, a fresh starting block will be selected
         zeros <- which(df == 0, arr.ind=TRUE)
         i <- sample(1:nrow(zeros), size = 1)
         row <- as.numeric(zeros[i, 1])
         col <- as.numeric(zeros[i, 2])
         
       } else {
-        # If the block is not completely surrounded by colored blocks, move the next block up/down or left/right
-        dir <- sample(0:1, size = 1, prob = c(leftprob + rightprob, upprob + downprob))
-        if(dir == 0){
-          direction <- sample(c("left", "right"), size = 1, prob = c(leftprob, rightprob))
-          row <- switch(direction, "left" = row - 1, "right" = row + 1) 
-        } else {
-          direction <- sample(c("up", "down"), size = 1, prob = c(upprob, downprob))
-          col <- switch(direction, "up" = col - 1, "down" = col + 1)  
-        } 
+        
+        # If the current block is not completely surrounded by colored blocks, move the next block up/down or left/right
+        dir <- sample(1:4, size = 1, prob = c(leftprob, rightprob, upprob, downprob))
+        if(dir == 1){
+          row <- row - 1
+        } else if (dir == 2){
+          row <- row + 1
+        } else if (dir == 3){
+          col <- col - 1
+        } else if (dir == 4){
+          col <- col + 1
+        }
       }
     }
     
     filled <- length(which(df > 0))
-    if(filled%%1000 == 0)
-      print(paste0(filled, " of ", width * height, " blocks filled"))
+    
+    if(filled%%10 == 0){
+      if(tim == 1){
+        print(paste0(filled, " of ", width * height, " blocks filled")) 
+        tim <- tim + 1
+      }
+    } else {
+      tim <- 1
+    }
   }
   
   print("Coloring border blocks")
