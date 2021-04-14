@@ -4,6 +4,7 @@ library(ggplot2)
 library(dplyr)
 library(tweenr)
 library(randomcoloR)
+library(svglite)
 
 # Name of the painting
 
@@ -12,7 +13,7 @@ paintingSVGname <- paste0('svg/', Sys.Date(), ".svg")
 
 # Painting seed dependent on the date
 
-set.seed(as.numeric(Sys.Date()) + 100)
+set.seed(as.numeric(Sys.Date()))
 
 painting_formulas <- list()
 
