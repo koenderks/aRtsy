@@ -81,7 +81,7 @@ paint_strokes <- function(width = 500, height = 500, p.newcol = 0.01, palette, s
   if(!polar){
     painting <- painting + geom_raster(interpolate = TRUE, alpha = 0.9) + coord_equal()
   } else {
-    painting <- painting + geom_tile(alpha = 0.9) + coord_fixed() + coord_polar()
+    painting <- painting + geom_bar(stat = "identity", alpha = 0.9) + coord_fixed() + coord_polar(theta = "x")
   }
   painting <- painting + 
     scale_fill_gradientn(colours = internalPalette) +
