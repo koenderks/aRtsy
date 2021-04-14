@@ -61,8 +61,8 @@ block_painting <- function(width, height, p.newcol, palette, seed){
     geom_raster(interpolate = TRUE, alpha = 0.9) + 
     coord_equal() +
     scale_fill_gradientn(colours = internalPalette) +
-    scale_y_continuous(expand = c(1,1)) + 
-    scale_x_continuous(expand = c(1,1)) +
+    scale_y_continuous(expand = c(0,0)) + 
+    scale_x_continuous(expand = c(0,0)) +
     theme(axis.title = element_blank(), 
           axis.text = element_blank(), 
           axis.ticks = element_blank(), 
