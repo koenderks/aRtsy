@@ -26,10 +26,6 @@ jobs:
           source(".github/workflows/generate_painting.R")
         shell: Rscript {0}
 
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
-
       # Create a pull request with changes to master
       - name: Create pull request
         id: cpr
@@ -43,7 +39,7 @@ jobs:
           body: |
             Today's painting:
 
-            ![image](https://github.com/koenderks/aRt-Gallery/raw/new-painting//png/${{ steps.date.outputs.date }}.png)
+            ![image](https://github.com/koenderks/aRtsy/raw/new-painting//png/daily.png)
           draft: false
 
       # Check outputs of workflow
