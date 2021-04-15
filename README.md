@@ -60,27 +60,7 @@ To be honest, this last type of painting is plainly taken over from other people
 <br/>
 <br/>
 
-<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-17.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-16.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-31.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-30.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
+<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/shapes/2021-03-17.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/shapes/2021-03-16.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
 
 <br/>
 <br/>
