@@ -40,7 +40,7 @@ You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your
 
 To be honest, this last type of painting is plainly taken over from other people (like [here](https://github.com/cutterkom/generativeart)) but it makes pretty pictures nonetheless. Here are some nice variations I found using the `paint_shape()` function from `R/paint_shape.R`.
 
-<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-04-08.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-04-04.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
+<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-17.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-04-04.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
 
 <br/>
 <br/>
@@ -81,6 +81,24 @@ To be honest, this last type of painting is plainly taken over from other people
 <br/>
 
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-31.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-30.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## LP records
 
