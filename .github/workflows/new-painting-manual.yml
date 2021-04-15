@@ -16,12 +16,13 @@ jobs:
       # Install required packages and update README
       - name: Install required packages
         run: |
-          install.packages(c("ggplot2", "dplyr", "tweenr", "randomcoloR", "reshape2", "RcppArmadillo"))
+          install.packages("remotes")
+          remotes::install_github("koenderks/aRtsy")
         shell: Rscript {0}
 
       - name: Create new painting
         run: |
-          source("generate_painting.R")
+          source(".github/workflows/generate_painting.R")
         shell: Rscript {0}
 
       - name: Get current date

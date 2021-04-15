@@ -6,12 +6,13 @@ Authors@R:
     person(given = "Koen",
            family = "Derks",
            role = c("aut", "cre"),
-           email = "k.derks@nyenrode.nl",
+           email = "koen-derks@hotmail.com",
 		   comment = c(ORCID = '0000-0002-5533-9349'))
 Description: Implements generative art.
 BugReports: https://github.com/koenderks/aRtsy/issues
 URL: https://github.com/koenderks/aRtsy
-imports: ggplot2, dplyr, tweenr, randomcoloR, reshape2, RcppArmadillo
+Imports: ggplot2, dplyr, tweenr, randomcoloR, reshape2, RcppArmadillo, Rcpp, knitr
+LinkingTo: Rcpp, RcppArmadillo
 Language: en-US
 License: GPL-3
 Encoding: UTF-8

@@ -1,7 +1,40 @@
-paint_turmite <- function(width = 1000, height = 1000, seed = 120495, iters = 1e6, row = 1, col = 1, p.swap = 0.5, color = "#fafafa", background = "black"){
-  
-  Rcpp::sourceCpp('cpp/paint_turmite.cpp')
-  
+#' Paint turmites
+#'
+#' @description This function paints turmites.
+#'
+#'
+#' @usage paint_turmite(color = '#fafafa', background = '#000000', p = 0.5, seed = 1, 
+#'                      iterations = 1e7, width = 1500, height = 1500)
+#'
+#' @param color   	  the color of the turmite.
+#' @param background  the color of the background.
+#' @param p           the probability of a state switch within the turmite.
+#' @param seed        the seed for the painting.
+#' @param iterations  the number of iterations of the turmite.
+#' @param width       the width of the painting.
+#' @param height      the height of the painting.
+#'
+#' @references https://en.wikipedia.org/wiki/Turmite
+#'
+#' @return A \code{ggplot} object with the painting.
+#'
+#' @author Koen Derks, \email{koen-derks@hotmail.com}
+#'
+#' @seealso \code{\link{paint_strokes}} \code{\link{paint_shape}}
+#'
+#' @examples
+#' paint_turmite(color = "#fafafa", background = "#1E90FF", p = 0.5,
+#'               seed = 1, iterations = 1e7, width = 1500, height = 1500)
+#' 
+#' @keywords paint
+#'
+#' @export
+#' @useDynLib aRtsy
+#' @import Rcpp
+
+paint_turmite <- function(color = '#fafafa', background = '#000000', p = 0.5, seed = 1, 
+						  iterations = 1e7, width = 1500, height = 1500){
+
   set.seed(seed)
   
   palette <- c(background, color)
@@ -14,28 +47,28 @@ paint_turmite <- function(width = 1000, height = 1000, seed = 120495, iters = 1e
   if(k == 0)
     row <- sample(0:(height-1), size = 1)
   
-  df <- iterate_turmite(matrix(0, nrow = height, ncol = width), iters, row, col, p = p.swap)  
+  df <- iterate_turmite(matrix(0, nrow = height, ncol = width), iterations, row, col, p = p)  
   
   # Reshape the data to plotting format
   df <- reshape2::melt(df)
   colnames(df) <- c("y","x","z") # to name columns
   
   painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) +
-    geom_raster(interpolate = TRUE, alpha = 0.9) + 
-    coord_equal() +
-    scale_fill_gradientn(colours = palette) +
-    scale_y_continuous(expand = c(0,0)) + 
-    scale_x_continuous(expand = c(0,0)) +
-    theme(axis.title = element_blank(), 
-          axis.text = element_blank(), 
-          axis.ticks = element_blank(), 
-          axis.line = element_blank(), 
+    ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 
+    ggplot2::coord_equal() +
+    ggplot2::scale_fill_gradientn(colours = palette) +
+    ggplot2::scale_y_continuous(expand = c(0,0)) + 
+    ggplot2::scale_x_continuous(expand = c(0,0)) +
+    ggplot2::theme(axis.title = ggplot2::element_blank(), 
+          axis.text = ggplot2::element_blank(), 
+          axis.ticks = ggplot2::element_blank(), 
+          axis.line = ggplot2::element_blank(), 
           legend.position = "none", 
-          panel.border = element_blank(), 
-          panel.grid = element_blank(), 
-          plot.margin = unit(rep(-1.25,4),"lines"), 
-          strip.background = element_blank(), 
-          strip.text = element_blank())
+          panel.border = ggplot2::element_blank(), 
+          panel.grid = ggplot2::element_blank(), 
+          plot.margin = ggplot2::unit(rep(-1.25,4),"lines"), 
+          strip.background = ggplot2::element_blank(), 
+          strip.text = ggplot2::element_blank())
   
   return(painting)
 }

@@ -1,4 +1,32 @@
-paint_shape <- function(color = "black", background = "#fafafa", seed = 120495){
+#' Paint shapes
+#'
+#' @description This function paints shapes.
+#'
+#'
+#' @usage paint_shape(color = '#000000', background = '#fafafa', seed = 1)
+#'
+#' @param color   	  the color of the shape.
+#' @param background  the color of the background.
+#' @param seed        the seed for the painting.
+#'
+#' @references https://github.com/cutterkom/generativeart
+#'
+#' @return A \code{ggplot} object with the painting.
+#'
+#' @author Koen Derks, \email{koen-derks@hotmail.com}
+#'
+#' @seealso \code{\link{paint_strokes}} \code{\link{paint_turmite}}
+#'
+#' @examples
+#' bg <- sample(c('#fafafa', '#cc7722', '#a9d2c3', '#fc7c7c'), size = 1)
+#' 
+#' paint_shape(color = '#000000', background = bg)
+#' 
+#' @keywords paint
+#'
+#' @export
+
+paint_shape <- function(color = '#000000', background = '#fafafa', seed = 1){
   
   set.seed(seed)
   
@@ -32,11 +60,9 @@ paint_shape <- function(color = "black", background = "#fafafa", seed = 120495){
           panel.border = element_blank(), 
           panel.grid = element_blank(), 
           plot.background = element_rect(fill = background, colour = background), 
-          #plot.margin = unit(rep(0, 4), "cm"),
           plot.margin = unit(rep(-1.25,4),"lines"), 
           strip.background = element_blank(), 
           strip.text = element_blank())
   
-  return(painting)
-  
+  return(painting) 
 }

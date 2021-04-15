@@ -1,15 +1,41 @@
-paint_strokes <- function(width = 500, height = 500, p.newcol = 0.01, palette, seed = 120495, neighbors = 1, iter = 1){
-  
-  Rcpp::sourceCpp('cpp/paint_strokes.cpp')
+#' Paint strokes
+#'
+#' @description This function paints strokes.
+#'
+#'
+#' @usage paint_strokes(palette = '#000000', neighbors = 1, p = 0.01, seed = 1, 
+#'                      iter = 1, width = 500, height = 500)
+#'
+#' @param palette    a vector of colors for the painting.
+#' @param neighbors  the number of neighbors a block considers when taking over a color.
+#' @param p          the probability of .
+#' @param seed       the seed for the painting.
+#' @param iter       the number of iterations.
+#' @param width      the width of the painting.
+#' @param height     the height of the painting.
+#'
+#' @return A \code{ggplot} object with the painting.
+#'
+#' @author Koen Derks, \email{koen-derks@hotmail.com}
+#'
+#' @seealso \code{\link{paint_turmite}} \code{\link{paint_shape}}
+#'
+#' @examples
+#' paint_strokes(palette = c('#fafafa', '#000000'), neighbors = 1, p = 0.01,
+#'               seed = 1, iter = 1, width = 1500, height = 1500)
+#' 
+#' @keywords paint
+#'
+#' @export
+#' @useDynLib aRtsy
+#' @import Rcpp
+
+paint_strokes <- function(palette = '#000000', neighbors = 1, p = 0.01, seed = 1, 
+                          iter = 1, width = 500, height = 500){
   
   set.seed(seed)
-  
-  internalPalette <- c("#fafafa", palette)
-  
-  canvasColor <- 0
-  
-  # Initialize the painting
-  df <- matrix(sample(x = canvasColor, size = width * height, replace = TRUE), nrow = height, ncol = width)
+  internalPalette <- c('#fafafa', palette)
+  df <- matrix(0, nrow = height, ncol = width)
   
   neighborsLocations <- expand.grid(-(neighbors):neighbors,-(neighbors):neighbors)
   colnames(neighborsLocations) <- c("x", "y")
@@ -17,93 +43,29 @@ paint_strokes <- function(width = 500, height = 500, p.newcol = 0.01, palette, s
   df <- matrix(0, nrow = height, ncol = width)
   
   for (i in 1:iter){
-    df <- iterate_strokes(X = df, neighbors = neighborsLocations, s = length(internalPalette), p = p.newcol) 
+    df <- iterate_strokes(X = df, neighbors = neighborsLocations, s = length(internalPalette), p = p) 
   }
-  
-  # colorder <- 1:ncol(df)
-  # if(!yascending)
-  #   colorder <- rev(colorder)
-  # 
-  # roworder <- 1:nrow(df)
-  # if(!xascending)
-  #   roworder <- rev(roworder)
-  # 
-  # iter <- 0
-  # 
-  # # Loop over each block in the painting
-  # for(col in colorder){
-  #   
-  #   for(row in roworder){
-  #     
-  #     if(col == 1 | row == 1 | col == ncol(df) | row == nrow(df)){
-  #       # If the block is an edge block, it receives the temporary canvas color
-  #       df[row, col] <- canvasColor
-  #       
-  #     } else {
-  #       
-  #       # Adjust for edges
-  #       xright <- ifelse(col + 1 > ncol(df), yes = col - 1, no = col + 1)
-  #       xleft <- ifelse(col - 1 < 1, yes = col + 1, no = col - 1)
-  #       ytop <- ifelse(row - 1 < 1, yes = row + 1, no = row - 1)
-  #       ybottom <- ifelse(row + 1 > nrow(df), yes = row - 1, no = row + 1)
-  #       
-  #       # If the block is no edge block, the 9 surrounding blocks are checked if they have a color
-  #       block.around.it.has.color <- df[ytop, xleft] > 0 | df[row, xleft] > 0 | df[ybottom, xleft] > 0 | df[ytop, col] > 0 | df[ybottom, col] > 0 | df[ytop, xright] > 0 | df[row, xright] > 0 | df[ybottom, xright] > 0
-  #       
-  #       if(sample(c(TRUE, FALSE), size = 1, prob = c(p.newcol, 1 - p.newcol)))
-  #         block.around.it.has.color <- FALSE
-  #       
-  #       if(block.around.it.has.color){
-  #         
-  #         # If a block around the current block is colored, the current block takes over a random color from its surroundings  
-  #         blocksAround <- c(df[ytop, xleft], df[row, xleft], df[ybottom, xleft], df[ytop, col], df[ybottom, col], df[ytop, xright], df[row, xright], df[ybottom, xright])
-  #         colorsOfBlockAroundIt <- subset(blocksAround, blocksAround > 0)
-  #         selectedColor <- sample(colorsOfBlockAroundIt, size = 1)
-  #         df[row, col] <- selectedColor
-  #         
-  #       } else {
-  #         
-  #         # If the current block does not take a color from the surroundings, a new color from the palette is sampled
-  #         df[row, col] <- sample(seq_along(palette), size = 1)
-  #       }
-  #     }
-  #   }
-  #   iter <- iter + 1
-  #   if(iter%%100 == 0)
-  #     print(paste0("Filling column ", iter))
-  # }
-  # 
-  # print("Coloring border blocks")
-  # 
-  # # Color blocks on the border of the frame
-  # for(row in roworder){
-  #   df[row, roworder[1]] <- df[row, roworder[2]]
-  # }
-  # 
-  # for(col in colorder){
-  #   df[colorder[length(colorder)], col] <- df[colorder[length(colorder) - 1], col]
-  # }
   
   # Reshape the data to plotting format
   df <- reshape2::melt(df)
   colnames(df) <- c("y","x","z") # to name columns
   
   painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) +
-    geom_raster(interpolate = TRUE, alpha = 0.9) + 
-    coord_equal() +
-    scale_fill_gradientn(colours = internalPalette) +
-    scale_y_continuous(expand = c(0,0)) + 
-    scale_x_continuous(expand = c(0,0)) +
-    theme(axis.title = element_blank(), 
-          axis.text = element_blank(), 
-          axis.ticks = element_blank(), 
-          axis.line = element_blank(), 
-          legend.position = "none", 
-          panel.border = element_blank(), 
-          panel.grid = element_blank(), 
-          plot.margin = unit(rep(-1.25,4),"lines"), 
-          strip.background = element_blank(), 
-          strip.text = element_blank())
+    ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 
+    ggplot2::coord_equal() +
+    ggplot2::scale_fill_gradientn(colours = internalPalette) +
+    ggplot2::scale_y_continuous(expand = c(0,0)) + 
+    ggplot2::scale_x_continuous(expand = c(0,0)) +
+    ggplot2::theme(axis.title = ggplot2::element_blank(), 
+                   axis.text = ggplot2::element_blank(), 
+                   axis.ticks = ggplot2::element_blank(), 
+                   axis.line = ggplot2::element_blank(), 
+                   legend.position = "none", 
+                   panel.border = ggplot2::element_blank(), 
+                   panel.grid = ggplot2::element_blank(), 
+                   plot.margin = ggplot2::unit(rep(-1.25,4),"lines"), 
+                   strip.background = ggplot2::element_blank(), 
+                   strip.text = ggplot2::element_blank())
   
   return(painting)
 }

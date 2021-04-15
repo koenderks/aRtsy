@@ -2,6 +2,11 @@
 ^cran-comments.md$
 ^.github$
 ^Meta$
+^man/manual$
+^png$
 ^CRAN-RELEASE$
 ^docs$
 generate-painting.R
+artsyRelease.R
+^.*\.Rproj$
+^\.Rproj\.user$

@@ -36,6 +36,7 @@ arma::mat iterate_strokes(arma::mat X,
   if(backwardsprob < 0.5){ // Go forward through the loop
     
     for(int x = 0; x < n; x++) { // Loop over the columns of the frame
+	  Rcpp::checkUserInterrupt();
       for(int y = 0; y < m; y++){ // Loop over the rows of the frame
         
         std::vector<int> colors;
