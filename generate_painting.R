@@ -56,9 +56,9 @@ if (paintingType == 1){
   
   painting <- paint_turmite(width = 4500, 
                             height = 1500, 
-                            seed = 2350135, 
+                            seed = seed, 
                             iters = 1e8,
-                            p.swap = 0.2,
+                            p.swap = runif(1, 0.2, 0.5),
                             color = "#fafafa",
                             background = "#1E90FF")
   
