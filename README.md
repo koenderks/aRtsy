@@ -68,8 +68,8 @@ You can use the `paint_turmite()` function to make your own unique portrait in t
 
 According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langdon's ant is a turmite with a very specific set of rules. In particular, it moves according to the rules below:
 
-- At a non-colored square, turn 90 degrees clockwise, flip the color of the square, move forward one unit;
-- At a colored square, turn 90 degrees counter-clockwise, flip the color of the square, move forward one unit.
+- On a non-colored square, turn 90 degrees clockwise, flip the color of the square, move forward one unit;
+- On a colored square, turn 90 degrees counter-clockwise, flip the color of the square, move forward one unit.
 - Different colors may correspond different combinations of these mechanics.
 
 I like Langdon's Ant, it reminds me of a crayon painting. The problem with this thing though is that it always moves of canvas...
