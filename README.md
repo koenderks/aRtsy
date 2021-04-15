@@ -1,6 +1,8 @@
-# Generative Art Using R
+# aRtsy: Generative Art Using R
 
-I like pretty pictures and I like R. In this repository I combine those two things into what people generally call generative art.
+I like pretty pictures and I like R. In the `R` package `aRtsy` I combine those two things into what people generally call generative art.
+
+## Overview
 
 * [Paint strokes](#paint-strokes)
 * [Turmites](#turmites)
@@ -11,7 +13,7 @@ I like pretty pictures and I like R. In this repository I combine those two thin
 
 The `paint_strokes` algorithm is my first self-concocted algorithm for generative drawing on a grid-based canvas. The algorithm is based on the simple idea that each next point on the grid has a chance to take over the color of an adjacent colored point but also has a change of generating a new color. Going over the grid like this apparently results in these paint-like strokes on the canvas.
 
-You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your own unique portrait using this style. 
+You can use the `paint_strokes()` function to make your own unique portrait using this style. 
 
 <p align="center">
   <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-21.png' width='270' height='270'>
@@ -27,6 +29,8 @@ You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your
 
 ## Turmites
 
+You can use the `paint_turmite()` function to make your own unique portrait using this style. 
+
 <p align="center">
   <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/turmites/2021-03-06.png' width='270' height='270'>
   <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/turmites/2021-03-09.png' width='270' height='270'>
@@ -39,47 +43,15 @@ You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your
 
 ## Function shapes
 
-To be honest, this type of painting is plainly and completely taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package, but it makes pretty pictures nonetheless. Here are some nice variations I found using the `paint_shape()` function from `R/paint_shape.R`.
+To be honest, this type of painting is plainly and completely taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package, but it makes pretty pictures nonetheless. Here are some nice variations I found.
 
-<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/shapes/2021-03-17.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/shapes/2021-04-05.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
+You can use the `paint_shapes()` function to make your own unique portrait using this style. 
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/shapes/2021-04-04.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/shapes/2021-04-08.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+<p align="center">
+  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/shapes/2021-03-17.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/shapes/2021-04-08.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/shapes/2021-04-04.png' width='270' height='270'>
+</p>
 
 ## LP records
 
