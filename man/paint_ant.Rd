@@ -30,7 +30,7 @@ paint_ant(color = '#000000', background = '#fafafa', seed = 1,
 
 }
 \references{
-https://en.wikipedia.org/wiki/Turmite
+\url{https://en.wikipedia.org/wiki/Langton\%27s_ant}
 }
 \seealso{
 \code{\link{paint_strokes}} \code{\link{paint_shape}} \code{\link{paint_turmite}}

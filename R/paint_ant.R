@@ -11,7 +11,7 @@
 #' @param width       the width of the painting.
 #' @param height      the height of the painting.
 #'
-#' @references https://en.wikipedia.org/wiki/Turmite
+#' @references \url{https://en.wikipedia.org/wiki/Langton\%27s_ant}
 #'
 #' @return A \code{ggplot} object containing the painting.
 #'
@@ -33,13 +33,6 @@ paint_ant <- function(color = '#000000', background = '#fafafa', seed = 1,
                       iterations = 1e7, width = 1500, height = 1500){
   set.seed(seed)
   palette <- c(background, color)
-#   k <- sample(0:1, size = 1)
-#   row <- 0
-#   col <- 0
-#   if(k == 1)
-#     col <- sample(0:(width-1), size = 1)
-#   if(k == 0)
-#     row <- sample(0:(height-1), size = 1) 
   row <- ceiling(height / 2)
   col <- ceiling(width / 2)
   df <- iterate_ant(matrix(0, nrow = height, ncol = width), iterations, row, col)  

@@ -13,7 +13,7 @@
 #' @param width       the width of the painting.
 #' @param height      the height of the painting.
 #'
-#' @references https://en.wikipedia.org/wiki/Turmite
+#' @references \url{https://en.wikipedia.org/wiki/Turmite}
 #'
 #' @return A \code{ggplot} object containing the painting.
 #'

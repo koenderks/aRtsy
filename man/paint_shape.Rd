@@ -26,7 +26,7 @@ paint_shape(color = '#000000', background = bg)
 
 }
 \references{
-https://github.com/cutterkom/generativeart
+\url{https://github.com/cutterkom/generativeart}
 }
 \seealso{
 \code{\link{paint_strokes}} \code{\link{paint_turmite}} \code{\link{paint_ant}}

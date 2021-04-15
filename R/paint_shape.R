@@ -8,7 +8,7 @@
 #' @param background  the color of the background.
 #' @param seed        the seed for the painting.
 #'
-#' @references https://github.com/cutterkom/generativeart
+#' @references \url{https://github.com/cutterkom/generativeart}
 #'
 #' @return A \code{ggplot} object containing the painting.
 #'
