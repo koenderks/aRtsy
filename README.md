@@ -29,14 +29,12 @@ You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your
 
 <p align="center">
   <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/turmites/2021-03-09.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/turmites/2021-03-07.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/turmites/2021-03-06.png' width='270' height='270'>
   <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/turmites/2021-03-08.png' width='270' height='270'>
 </p>
 
 <p align="center">
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/turmites/2021-03-06.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/turmites/2021-03-06.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/turmites/2021-03-06.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/turmites/2021-03-07.png' width='1000' height='270'>
 </p>
 
 ## Function shapes

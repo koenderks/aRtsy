@@ -54,13 +54,13 @@ if (paintingType == 1){
   
 } else if (paintingType == 3){
   
-  painting <- paint_turmite(width = 1500, 
+  painting <- paint_turmite(width = 4500, 
                             height = 1500, 
-                            seed = 1241, 
-                            iters = 1e7,
-                            p.swap = 0.5,
+                            seed = 2350135, 
+                            iters = 1e8,
+                            p.swap = 0.2,
                             color = "#fafafa",
-                            background = "black")
+                            background = "#1E90FF")
   
   ggplot2::ggsave(painting, filename = paintingPNGname, width = 7, height = 7, dpi = 300)
   
