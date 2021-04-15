@@ -25,7 +25,6 @@
 #' @keywords paint
 #'
 #' @export
-#' @importFrom dplyr %>%
 
 paint_shape <- function(color = '#000000', background = '#fafafa', seed = 1){
   set.seed(seed)
