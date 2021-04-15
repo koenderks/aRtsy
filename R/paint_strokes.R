@@ -1,4 +1,4 @@
-paint_strokes <- function(width = 500, height = 500, p.newcol = 0.01, palette, seed = 120495, iter = 1){
+paint_strokes <- function(width = 500, height = 500, p.newcol = 0.01, palette, seed = 120495, neighbors = 1, iter = 1){
   
   Rcpp::sourceCpp('cpp/paint_strokes.cpp')
   
@@ -11,13 +11,13 @@ paint_strokes <- function(width = 500, height = 500, p.newcol = 0.01, palette, s
   # Initialize the painting
   df <- matrix(sample(x = canvasColor, size = width * height, replace = TRUE), nrow = height, ncol = width)
   
-  l <- expand.grid(-1:1,-1:1)
-  colnames(l) <- c("x", "y")
+  neighborsLocations <- expand.grid(-(neighbors):neighbors,-(neighbors):neighbors)
+  colnames(neighborsLocations) <- c("x", "y")
   
   df <- matrix(sample(x = 0, size = width * height, replace = TRUE), nrow = height, ncol = width)
   
   for (i in 1:iter){
-    df <- iterate_strokes(X = df, L = l, s = length(internalPalette), p = p.newcol) 
+    df <- iterate_strokes(X = df, neighbors = neighborsLocations, s = length(internalPalette), p = p.newcol) 
   }
   
   # colorder <- 1:ncol(df)

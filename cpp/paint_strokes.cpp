@@ -9,26 +9,28 @@ using namespace std;
 
 // [[Rcpp::depends(RcppArmadillo)]]
 
-int get_index(int M, int i)
+int neighboring_block(int M, int i)
 {
   if (i < 0)
-    return(i + 2);
+    return (M + i % M) % M;
+  // return(i + 2);
   if(i >= M)
-    return(i - 2);
+    return i % M;
+  // return(i - 2);
   return i;
 }
 
 // [[Rcpp::export]]
 arma::mat iterate_strokes(arma::mat X, 
-                          Rcpp::DataFrame L, 
+                          Rcpp::DataFrame neighbors, 
                           int s,
                           double p){
   int m = X.n_rows;
   int n = X.n_cols;
-  int k = L.nrows();
+  int k = neighbors.nrows();
   
-  Rcpp::IntegerVector dx = L["x"];
-  Rcpp::IntegerVector dy = L["y"];
+  Rcpp::IntegerVector dx = neighbors["x"];
+  Rcpp::IntegerVector dy = neighbors["y"];
   
   double backwardsprob = (double)rand() / RAND_MAX;
   
@@ -41,8 +43,8 @@ arma::mat iterate_strokes(arma::mat X,
         std::vector<int> colors;
         
         for(int z = 0; z < k; z++){ // Loop over all neighboring blocks of the current block
-          int ix  = get_index(n, x + dx[z]); // Select the (adjusted) neighboring x location
-          int iy  = get_index(m, y + dy[z]); // Select the (adjusted) neighboring y location
+          int ix  = neighboring_block(n, x + dx[z]); // Select the (adjusted) neighboring x location
+          int iy  = neighboring_block(m, y + dy[z]); // Select the (adjusted) neighboring y location
           int color = X(ix, iy); // Select the color of the neighboring block
           if(color > 0){
             colors.push_back (color); // Add the color of this block to the adjacent color vector
@@ -67,13 +69,13 @@ arma::mat iterate_strokes(arma::mat X,
   } else { // Go backward through the loop
     
     for(int x = 0; x < n; x++) {
-      for(int y = m - 1; y --> 0;) {
+      for(int y = m; y --> 0;) {
         
         std::vector<int> colors;
         
         for(int z = 0; z < k; z++){ // Loop over all neighboring blocks of the current block
-          int ix  = get_index(n, x + dx[z]); // Select the (adjusted) neighboring x location
-          int iy  = get_index(m, y + dy[z]); // Select the (adjusted) neighboring y location
+          int ix  = neighboring_block(n, x + dx[z]); // Select the (adjusted) neighboring x location
+          int iy  = neighboring_block(m, y + dy[z]); // Select the (adjusted) neighboring y location
           int color = X(ix, iy); // Select the color of the neighboring block
           if(color > 0){
             colors.push_back (color); // Add the color of this block to the adjacent color vector
