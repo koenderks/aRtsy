@@ -4,11 +4,11 @@
 \alias{paint_strokes}
 \title{Paint strokes}
 \usage{
-paint_strokes(palette = '#000000', neighbors = 1, p = 0.01, seed = 1, 
+paint_strokes(colors = '#000000', neighbors = 1, p = 0.01, seed = 1, 
                      iterations = 1, width = 500, height = 500)
 }
 \arguments{
-\item{palette}{a vector of colors for the painting.}
+\item{colors}{a vector of colors for the painting.}
 
 \item{neighbors}{the number of neighbors a block considers when taking over a color.}
 
@@ -29,7 +29,7 @@ A \code{ggplot} object containing the painting.
 This function creates a painting that resembles paints strokes. The algorithm is based on the simple idea that each next point on the grid has a chance to take over the color of an adjacent colored point but also has a change of generating a new color.
 }
 \examples{
-paint_strokes(palette = c('#fafafa', '#000000'), neighbors = 1, p = 0.01,
+paint_strokes(colors = c('#fafafa', '#000000'), neighbors = 1, p = 0.01,
               seed = 1, iterations = 1, width = 1500, height = 1500)
 
 }

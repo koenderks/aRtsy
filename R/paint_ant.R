@@ -2,10 +2,10 @@
 #'
 #' @description This function paints Langton's Ant. Langton's ant is a two-dimensional universal Turing machine with a very simple set of rules but complex emergent behavior.
 #'
-#' @usage paint_ant(color = '#000000', background = '#fafafa', seed = 1, 
+#' @usage paint_ant(colors = '#000000', background = '#fafafa', seed = 1, 
 #'           width = 200, height = 200)
 #'
-#' @param color   	  the color of the turmite.
+#' @param colors   	  the color of the turmite.
 #' @param background  the color of the background.
 #' @param seed        the seed for the painting.
 #' @param width       the width of the painting.
@@ -20,7 +20,7 @@
 #' @seealso \code{\link{paint_strokes}} \code{\link{paint_shape}} \code{\link{paint_turmite}}
 #'
 #' @examples
-#' paint_ant(color = '#000000', background = '#fafafa', seed = 1,
+#' paint_ant(colors = '#000000', background = '#fafafa', seed = 1,
 #'           width = 200, height = 200)
 #' 
 #' @keywords paint
@@ -29,15 +29,15 @@
 #' @useDynLib aRtsy
 #' @import Rcpp
 
-paint_ant <- function(color = '#000000', background = '#fafafa', seed = 1, 
+paint_ant <- function(colors = '#000000', background = '#fafafa', seed = 1, 
                       iterations = 1e7, width = 1500, height = 1500){
   set.seed(seed)
-  palette <- c(background, color)
+  palette <- c(background, colors)
   row <- ceiling(height / 2)
   col <- ceiling(width / 2)
-  c <- expand.grid(rep(c(0:1), length(color)), rep(c(0:1), length(color)))
+  c <- expand.grid(rep(c(0:1), length(colors)), rep(c(0:1), length(colors)))
   c[2:nrow(c), ] <- c[sample(2:nrow(c)), ]
-  c <- c[1:length(color), ]
+  c <- c[1:length(colors), ]
   colnames(c) <- c("x", "y")
   df <- iterate_ant(matrix(0, nrow = height, ncol = width), iterations, row, col, c = c)  
   df <- reshape2::melt(df)

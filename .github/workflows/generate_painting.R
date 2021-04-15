@@ -20,7 +20,7 @@ if (paintingType == 1){
   
 } else if (paintingType == 2){
   
-  painting <- aRtsy::paint_strokes(palette = randomcoloR::randomColor(count = sample(5:15, size = 1)),
+  painting <- aRtsy::paint_strokes(colors = randomcoloR::randomColor(count = sample(5:15, size = 1)),
                                    neighbors = sample(1:4, size = 1),
                                    p = runif(1, 0.0001, 0.01),
                                    seed = seed,
@@ -40,7 +40,7 @@ if (paintingType == 1){
   
 } else if (paintingType == 4){
   
-  painting <- aRtsy::paint_ant(color = randomcoloR::randomColor(count = sample(1:20, size = 1)),
+  painting <- aRtsy::paint_ant(colors = randomcoloR::randomColor(count = sample(1:20, size = 1)),
                                background = sample(c("#fafafa", "#cc7722", "#a9d2c3", "#fc7c7c", randomColor(count = 1)), size = 1),
                                seed = seed, 
                                iterations = 1e7,

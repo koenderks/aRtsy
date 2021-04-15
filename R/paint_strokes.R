@@ -2,10 +2,10 @@
 #'
 #' @description This function creates a painting that resembles paints strokes. The algorithm is based on the simple idea that each next point on the grid has a chance to take over the color of an adjacent colored point but also has a change of generating a new color.
 #'
-#' @usage paint_strokes(palette = '#000000', neighbors = 1, p = 0.01, seed = 1, 
+#' @usage paint_strokes(colors = '#000000', neighbors = 1, p = 0.01, seed = 1, 
 #'                      iterations = 1, width = 500, height = 500)
 #'
-#' @param palette     a vector of colors for the painting.
+#' @param colors     a vector of colors for the painting.
 #' @param neighbors   the number of neighbors a block considers when taking over a color.
 #' @param p           the probability of .
 #' @param seed        the seed for the painting.
@@ -20,7 +20,7 @@
 #' @seealso \code{\link{paint_turmite}} \code{\link{paint_shape}} \code{\link{paint_ant}}
 #'
 #' @examples
-#' paint_strokes(palette = c('#fafafa', '#000000'), neighbors = 1, p = 0.01,
+#' paint_strokes(colors = c('#fafafa', '#000000'), neighbors = 1, p = 0.01,
 #'               seed = 1, iterations = 1, width = 1500, height = 1500)
 #' 
 #' @keywords paint
@@ -29,24 +29,24 @@
 #' @useDynLib aRtsy
 #' @import Rcpp
 
-paint_strokes <- function(palette = '#000000', neighbors = 1, p = 0.01, seed = 1, 
+paint_strokes <- function(colors = '#000000', neighbors = 1, p = 0.01, seed = 1, 
                           iterations = 1, width = 500, height = 500){
-  
+  if(length(colors) == 1)
+    colors <- c("#fafafa", colors)
   set.seed(seed)
-  internalPalette <- c('#fafafa', palette)
   df <- matrix(0, nrow = height, ncol = width)
   neighborsLocations <- expand.grid(-(neighbors):neighbors,-(neighbors):neighbors)
   colnames(neighborsLocations) <- c("x", "y")
   df <- matrix(0, nrow = height, ncol = width)
   for (i in 1:iterations){
-    df <- iterate_strokes(X = df, neighbors = neighborsLocations, s = length(internalPalette), p = p) 
+    df <- iterate_strokes(X = df, neighbors = neighborsLocations, s = length(colors), p = p) 
   }
   df <- reshape2::melt(df)
   colnames(df) <- c("y","x","z")
   painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 
     ggplot2::coord_equal() +
-    ggplot2::scale_fill_gradientn(colours = internalPalette) +
+    ggplot2::scale_fill_gradientn(colours = colors) +
     ggplot2::scale_y_continuous(expand = c(0,0)) + 
     ggplot2::scale_x_continuous(expand = c(0,0)) +
     ggplot2::theme(axis.title = ggplot2::element_blank(), 
