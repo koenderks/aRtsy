@@ -1,5 +1,7 @@
 paint_strokes <- function(width = 500, height = 500, p.newcol = 0.01, palette, seed = 120495, xascending = TRUE, yascending = TRUE){
   
+  Rcpp::sourceCpp('cpp/paint_strokes.cpp')
+  
   set.seed(seed)
   
   internalPalette <- c("#fafafa", palette)
@@ -9,69 +11,76 @@ paint_strokes <- function(width = 500, height = 500, p.newcol = 0.01, palette, s
   # Initialize the painting
   df <- matrix(sample(x = canvasColor, size = width * height, replace = TRUE), nrow = height, ncol = width)
   
-  colorder <- 1:ncol(df)
-  if(!yascending)
-    colorder <- rev(colorder)
+  l <- expand.grid(-1:1,-1:1)
+  colnames(l) <- c("x", "y")
   
-  roworder <- 1:nrow(df)
-  if(!xascending)
-    roworder <- rev(roworder)
+  df <- matrix(sample(x = 0, size = width * height, replace = TRUE), nrow = height, ncol = width)
   
-  iter <- 0
+  df <- iterate_strokes(df, l, length(internalPalette), 0.001) 
   
-  # Loop over each block in the painting
-  for(col in colorder){
-    
-    for(row in roworder){
-      
-      if(col == 1 | row == 1 | col == ncol(df) | row == nrow(df)){
-        # If the block is an edge block, it receives the temporary canvas color
-        df[row, col] <- canvasColor
-        
-      } else {
-        
-        # Adjust for edges
-        xright <- ifelse(col + 1 > ncol(df), yes = col - 1, no = col + 1)
-        xleft <- ifelse(col - 1 < 1, yes = col + 1, no = col - 1)
-        ytop <- ifelse(row - 1 < 1, yes = row + 1, no = row - 1)
-        ybottom <- ifelse(row + 1 > nrow(df), yes = row - 1, no = row + 1)
-        
-        # If the block is no edge block, the 9 surrounding blocks are checked if they have a color
-        block.around.it.has.color <- df[ytop, xleft] > 0 | df[row, xleft] > 0 | df[ybottom, xleft] > 0 | df[ytop, col] > 0 | df[ybottom, col] > 0 | df[ytop, xright] > 0 | df[row, xright] > 0 | df[ybottom, xright] > 0
-        
-        if(sample(c(TRUE, FALSE), size = 1, prob = c(p.newcol, 1 - p.newcol)))
-          block.around.it.has.color <- FALSE
-        
-        if(block.around.it.has.color){
-          
-          # If a block around the current block is colored, the current block takes over a random color from its surroundings  
-          blocksAround <- c(df[ytop, xleft], df[row, xleft], df[ybottom, xleft], df[ytop, col], df[ybottom, col], df[ytop, xright], df[row, xright], df[ybottom, xright])
-          colorsOfBlockAroundIt <- subset(blocksAround, blocksAround > 0)
-          selectedColor <- sample(colorsOfBlockAroundIt, size = 1)
-          df[row, col] <- selectedColor
-          
-        } else {
-          
-          # If the current block does not take a color from the surroundings, a new color from the palette is sampled
-          df[row, col] <- sample(seq_along(palette), size = 1)
-        }
-      }
-    }
-    iter <- iter + 1
-    if(iter%%100 == 0)
-      print(paste0("Filling column ", iter))
-  }
-  
-  print("Coloring border blocks")
-  
-  # Color blocks on the border of the frame
-  for(row in roworder){
-    df[row, roworder[1]] <- df[row, roworder[2]]
-  }
-  
-  for(col in colorder){
-    df[colorder[length(colorder)], col] <- df[colorder[length(colorder) - 1], col]
-  }
+  # colorder <- 1:ncol(df)
+  # if(!yascending)
+  #   colorder <- rev(colorder)
+  # 
+  # roworder <- 1:nrow(df)
+  # if(!xascending)
+  #   roworder <- rev(roworder)
+  # 
+  # iter <- 0
+  # 
+  # # Loop over each block in the painting
+  # for(col in colorder){
+  #   
+  #   for(row in roworder){
+  #     
+  #     if(col == 1 | row == 1 | col == ncol(df) | row == nrow(df)){
+  #       # If the block is an edge block, it receives the temporary canvas color
+  #       df[row, col] <- canvasColor
+  #       
+  #     } else {
+  #       
+  #       # Adjust for edges
+  #       xright <- ifelse(col + 1 > ncol(df), yes = col - 1, no = col + 1)
+  #       xleft <- ifelse(col - 1 < 1, yes = col + 1, no = col - 1)
+  #       ytop <- ifelse(row - 1 < 1, yes = row + 1, no = row - 1)
+  #       ybottom <- ifelse(row + 1 > nrow(df), yes = row - 1, no = row + 1)
+  #       
+  #       # If the block is no edge block, the 9 surrounding blocks are checked if they have a color
+  #       block.around.it.has.color <- df[ytop, xleft] > 0 | df[row, xleft] > 0 | df[ybottom, xleft] > 0 | df[ytop, col] > 0 | df[ybottom, col] > 0 | df[ytop, xright] > 0 | df[row, xright] > 0 | df[ybottom, xright] > 0
+  #       
+  #       if(sample(c(TRUE, FALSE), size = 1, prob = c(p.newcol, 1 - p.newcol)))
+  #         block.around.it.has.color <- FALSE
+  #       
+  #       if(block.around.it.has.color){
+  #         
+  #         # If a block around the current block is colored, the current block takes over a random color from its surroundings  
+  #         blocksAround <- c(df[ytop, xleft], df[row, xleft], df[ybottom, xleft], df[ytop, col], df[ybottom, col], df[ytop, xright], df[row, xright], df[ybottom, xright])
+  #         colorsOfBlockAroundIt <- subset(blocksAround, blocksAround > 0)
+  #         selectedColor <- sample(colorsOfBlockAroundIt, size = 1)
+  #         df[row, col] <- selectedColor
+  #         
+  #       } else {
+  #         
+  #         # If the current block does not take a color from the surroundings, a new color from the palette is sampled
+  #         df[row, col] <- sample(seq_along(palette), size = 1)
+  #       }
+  #     }
+  #   }
+  #   iter <- iter + 1
+  #   if(iter%%100 == 0)
+  #     print(paste0("Filling column ", iter))
+  # }
+  # 
+  # print("Coloring border blocks")
+  # 
+  # # Color blocks on the border of the frame
+  # for(row in roworder){
+  #   df[row, roworder[1]] <- df[row, roworder[2]]
+  # }
+  # 
+  # for(col in colorder){
+  #   df[colorder[length(colorder)], col] <- df[colorder[length(colorder) - 1], col]
+  # }
   
   # Reshape the data to plotting format
   df <- reshape2::melt(df)

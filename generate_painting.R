@@ -5,6 +5,7 @@ library(dplyr)
 library(tweenr)
 library(randomcoloR)
 library(reshape2)
+library(RcppArmadillo)
 
 # Load the painting functions
 source("R/paint_shape.R")

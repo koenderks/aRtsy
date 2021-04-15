@@ -32,9 +32,7 @@ You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your
 <br/>
 <br/>
 
-<p align="center">
-<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-20.png' width='1000' height='390' align='center' margin-left='20' margin-right='20'/>
-</p>
+<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-20.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-12.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
 
 ## Function shapes
 
