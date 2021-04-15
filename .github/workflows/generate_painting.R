@@ -39,11 +39,12 @@ if (paintingType == 1){
   
 } else if (paintingType == 3){
   
-  painting <- aRtsy::paint_turmite(color = "#fafafa",
-                                   background = "#1E90FF",
+  bgcolor <- sample(c("#fafafa", "#cc7722", "#a9d2c3", "#fc7c7c"), size = 1)
+  painting <- aRtsy::paint_turmite(color = "#000000",
+                                   background = bgcolor,
                                    p = runif(1, 0.2, 0.5),
                                    seed = seed, 
-                                   iterations = 1e8,
+                                   iterations = 1e7,
                                    width = 1500, 
                                    height = 1500)
   
