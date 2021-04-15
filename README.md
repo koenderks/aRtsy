@@ -64,7 +64,7 @@ The "ant" moves according to the rules below:
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-03.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-04-02.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-02.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-04-04.png' width='270' height='270'>
 </p>
 
