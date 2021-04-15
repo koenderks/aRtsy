@@ -14,7 +14,7 @@ paint_strokes <- function(width = 500, height = 500, p.newcol = 0.01, palette, s
   neighborsLocations <- expand.grid(-(neighbors):neighbors,-(neighbors):neighbors)
   colnames(neighborsLocations) <- c("x", "y")
   
-  df <- matrix(sample(x = 0, size = width * height, replace = TRUE), nrow = height, ncol = width)
+  df <- matrix(0, nrow = height, ncol = width)
   
   for (i in 1:iter){
     df <- iterate_strokes(X = df, neighbors = neighborsLocations, s = length(internalPalette), p = p.newcol) 
