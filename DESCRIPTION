@@ -11,7 +11,7 @@ Authors@R:
 Description: Implements generative art.
 BugReports: https://github.com/koenderks/aRtsy/issues
 URL: https://github.com/koenderks/aRtsy
-Depends: ggplot2, dplyr, tweenr, randomcoloR, reshape2, RcppArmadillo, Rcpp, knitr
+Depends: ggplot2, dplyr, randomcoloR, reshape2, RcppArmadillo, Rcpp, knitr
 LinkingTo: Rcpp, RcppArmadillo
 Language: en-US
 License: GPL-3
