@@ -5,22 +5,24 @@
 \title{Paint strokes}
 \usage{
 paint_strokes(colors = '#000000', neighbors = 1, p = 0.01, seed = 1, 
-                     iterations = 1, width = 500, height = 500)
+                     iterations = 1, width = 500, height = 500, side = FALSE)
 }
 \arguments{
 \item{colors}{a vector of colors for the painting.}
 
 \item{neighbors}{the number of neighbors a block considers when taking over a color.}
 
-\item{p}{the probability of .}
+\item{p}{the probability of selecting a new color at each block.}
 
 \item{seed}{the seed for the painting.}
 
-\item{iterations}{the number of iterations.}
+\item{iterations}{the number of iterations on the painting.}
 
 \item{width}{the width of the painting.}
 
 \item{height}{the height of the painting.}
+
+\item{side}{whether to turn the painting on its side.}
 }
 \value{
 A \code{ggplot} object containing the painting.
@@ -30,7 +32,8 @@ This function creates a painting that resembles paints strokes. The algorithm is
 }
 \examples{
 paint_strokes(colors = c('#fafafa', '#000000'), neighbors = 1, p = 0.01,
-              seed = 1, iterations = 1, width = 1500, height = 1500)
+              seed = 1, side = FALSE, iterations = 1, 
+              width = 1500, height = 1500)
 
 }
 \seealso{

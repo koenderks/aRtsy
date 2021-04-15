@@ -3,15 +3,16 @@
 #' @description This function creates a painting that resembles paints strokes. The algorithm is based on the simple idea that each next point on the grid has a chance to take over the color of an adjacent colored point but also has a change of generating a new color.
 #'
 #' @usage paint_strokes(colors = '#000000', neighbors = 1, p = 0.01, seed = 1, 
-#'                      iterations = 1, width = 500, height = 500)
+#'                      iterations = 1, width = 500, height = 500, side = FALSE)
 #'
 #' @param colors     a vector of colors for the painting.
-#' @param neighbors   the number of neighbors a block considers when taking over a color.
-#' @param p           the probability of .
-#' @param seed        the seed for the painting.
-#' @param iterations  the number of iterations.
-#' @param width       the width of the painting.
-#' @param height      the height of the painting.
+#' @param neighbors  the number of neighbors a block considers when taking over a color.
+#' @param p          the probability of selecting a new color at each block.
+#' @param seed       the seed for the painting.
+#' @param iterations the number of iterations on the painting.
+#' @param width      the width of the painting.
+#' @param height     the height of the painting.
+#' @param side       whether to turn the painting on its side.
 #'
 #' @return A \code{ggplot} object containing the painting.
 #'
@@ -21,7 +22,8 @@
 #'
 #' @examples
 #' paint_strokes(colors = c('#fafafa', '#000000'), neighbors = 1, p = 0.01,
-#'               seed = 1, iterations = 1, width = 1500, height = 1500)
+#'               seed = 1, side = FALSE, iterations = 1, 
+#'               width = 1500, height = 1500)
 #' 
 #' @keywords paint
 #'
@@ -30,7 +32,7 @@
 #' @import Rcpp
 
 paint_strokes <- function(colors = '#000000', neighbors = 1, p = 0.01, seed = 1, 
-                          iterations = 1, width = 500, height = 500){
+                          iterations = 1, width = 500, height = 500, side = FALSE){
   if(length(colors) == 1)
     colors <- c("#fafafa", colors)
   set.seed(seed)
@@ -59,5 +61,7 @@ paint_strokes <- function(colors = '#000000', neighbors = 1, p = 0.01, seed = 1,
                    plot.margin = ggplot2::unit(rep(-1.25,4),"lines"), 
                    strip.background = ggplot2::element_blank(), 
                    strip.text = ggplot2::element_blank())
+  if(side)
+    painting <- painting + ggplot2::coord_flip()
   return(painting)
 }
