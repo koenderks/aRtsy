@@ -1,0 +1,7 @@
+^.yml$
+^cran-comments.md$
+^.github$
+^Meta$
+^CRAN-RELEASE$
+^docs$
+generate-painting.R

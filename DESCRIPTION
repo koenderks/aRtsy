@@ -1,0 +1,20 @@
+Package: aRtsy
+Title: Generative Art
+Version: 0.1.0
+Date: 2021-04-15
+Authors@R: 
+    person(given = "Koen",
+           family = "Derks",
+           role = c("aut", "cre"),
+           email = "k.derks@nyenrode.nl",
+		   comment = c(ORCID = '0000-0002-5533-9349'))
+Description: Implements generative art.
+BugReports: https://github.com/koenderks/aRtsy/issues
+URL: https://github.com/koenderks/aRtsy
+imports: ggplot2, dplyr, tweenr, randomcoloR, reshape2, RcppArmadillo
+Language: en-US
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+VignetteBuilder: knitr
