@@ -56,9 +56,11 @@ if (paintingType == 1){
   
   painting <- paint_turmite(width = 1500, 
                             height = 1500, 
-                            seed = 135, 
-                            iters = 10000000,
-                            p.color = 0.2)
+                            seed = 1241, 
+                            iters = 1e7,
+                            p.swap = 0.5,
+                            color = "#fafafa",
+                            background = "black")
   
   ggplot2::ggsave(painting, filename = paintingPNGname, width = 7, height = 7, dpi = 300)
   

@@ -1,15 +1,20 @@
-paint_turmite <- function(width = 1000, height = 1000, seed = 120495, iters = 1e6, p = 0.5){
+paint_turmite <- function(width = 1000, height = 1000, seed = 120495, iters = 1e6, row = 1, col = 1, p.swap = 0.5, color = "#fafafa", background = "black"){
   
   Rcpp::sourceCpp('cpp/paint_turmite.cpp')
   
   set.seed(seed)
   
-  palette <- c("#fafafa", "black")
+  palette <- c(background, color)
   
-  canvasColor <- 0
+  k <- sample(0:1, size = 1)
+  row <- 0
+  col <- 0
+  if(k == 1)
+    col <- sample(0:(width-1), size = 1)
+  if(k == 0)
+    row <- sample(0:(height-1), size = 1)
   
-  # Initialize the painting
-  df <- iterate_turmite(X = matrix(0, nrow = height, ncol = width), iters = iters, col = ceiling(width / 2), row = ceiling(height / 2), p = p)  
+  df <- iterate_turmite(matrix(0, nrow = height, ncol = width), iters, row, col, p = p.swap)  
   
   # Reshape the data to plotting format
   df <- reshape2::melt(df)

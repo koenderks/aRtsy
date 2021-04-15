@@ -3,6 +3,7 @@
 I like pretty pictures and I like R. In this repository I combine those two things into what people generally call generative art.
 
 * [Paint strokes](#paint-strokes)
+* [Turmites](#turmites)
 * [Function shapes](#function-shapes)
 * [LP records](#LP-records)
 
@@ -22,6 +23,14 @@ You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your
   <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-11.png' width='270' height='270'>
   <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-12.png' width='270' height='270'>
   <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-10.png' width='270' height='270'>
+</p>
+
+## Turmites
+
+<p align="center">
+  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/turmites/2021-03-09.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/turmites/2021-03-07.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/turmites/2021-03-08.png' width='270' height='270'>
 </p>
 
 ## Function shapes

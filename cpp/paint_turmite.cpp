@@ -21,19 +21,19 @@ arma::mat iterate_turmite(arma::mat X,
   int i = 0;
   int state = 0;
   while(i < iters){
-    double color = (double)rand() / RAND_MAX;
-    if(color < p){
-      if(state == 1){
-        state = 0;
-      } else if(state==0){
+    double stateSwap = (double) rand() / RAND_MAX;
+    if(stateSwap < p){
+      if (state == 0){
         state = 1;
+      } else if(state == 1){
+        state = 0;
       }
     }
+    
     if(X(row,col) == 1){
       // Color
       if(state == 0 && X(row,col) == 0){
         state = 0;
-        X(row,col) = 1;
       } else if(state == 0 && X(row,col) == 1){
         state = 1;
         X(row,col) = 0;
@@ -42,7 +42,6 @@ arma::mat iterate_turmite(arma::mat X,
         X(row,col) = 0;
       } else if(state == 1 && X(row,col) == 1){
         state = 1;
-        X(row,col) = 1;
       }
     } else {
       X(row,col) = 1;
@@ -61,13 +60,13 @@ arma::mat iterate_turmite(arma::mat X,
         col--;
       } 
     } else if(state == 1){
-      if(direction == 2 && row < (m - 1)){
-        row++; 
-      } else if(direction == 4 && row >= 1){
+      if(direction == 4 && row < (m - 2)){
+        row++;
+      } else if(direction == 1 && row >= 2){
         row--;
-      } else if(direction == 3 && col < (n - 1)){
+      } else if(direction == 2 && col < (n - 2)){
         col++;
-      } else if(direction == 1 && col >= 1) {
+      } else if(direction == 3 && col >= 2) {
         col--;
       }
     }
