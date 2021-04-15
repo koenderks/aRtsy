@@ -48,7 +48,7 @@ if (paintingType == 1){
                             xascending = sample(c(TRUE, FALSE), size = 1), 
                             yascending = sample(c(TRUE, FALSE), size = 1))
   
-  ggplot2::ggsave(painting, filename = paintingPNGname, scale = 1, dpi = 300)
+  ggplot2::ggsave(painting, filename = paintingPNGname, width = 7, height = 7, dpi = 300)
   
 } else if (paintingType == 3){
   
