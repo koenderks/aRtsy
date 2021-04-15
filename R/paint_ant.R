@@ -35,7 +35,11 @@ paint_ant <- function(color = '#000000', background = '#fafafa', seed = 1,
   palette <- c(background, color)
   row <- ceiling(height / 2)
   col <- ceiling(width / 2)
-  df <- iterate_ant(matrix(0, nrow = height, ncol = width), iterations, row, col)  
+  c <- expand.grid(rep(c(0:1), length(color)), rep(c(0:1), length(color)))
+  c[2:nrow(c), ] <- c[sample(2:nrow(c)), ]
+  c <- c[1:length(color), ]
+  colnames(c) <- c("x", "y")
+  df <- iterate_ant(matrix(0, nrow = height, ncol = width), iterations, row, col, c = c)  
   df <- reshape2::melt(df)
   colnames(df) <- c("y","x","z")
   painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) +
