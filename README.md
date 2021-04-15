@@ -18,7 +18,7 @@ library(aRtsy)
 
 ## Paint strokes
 
-The `paint_strokes` algorithm is my first self-concocted algorithm for generative drawing on a grid-based canvas. The algorithm is based on the simple idea that each next point on the grid has a chance to take over the color of an adjacent colored point but also has a change of generating a new color. Going over the grid like this apparently results in these paint-like strokes on the canvas.
+The `paint_strokes` algorithm is my first self-concocted algorithm for generative drawing on a grid-based canvas. This algorithm is based on the simple idea that each next point on the grid has a chance to take over the color of an adjacent colored point but also has a change of generating a new color. Going over the grid like this apparently results in these paint-like strokes on the canvas.
 
 You can use the `paint_strokes()` function to make your own unique portrait using this style. 
 
@@ -36,7 +36,11 @@ You can use the `paint_strokes()` function to make your own unique portrait usin
 
 ## Turmites
 
-According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells. The algorithm is simple: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.
+According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is a Turing machine which has an orientation in addition to a current state and a trail that consists of a two-dimensional grid of cells. Basically, it's a moving block. The algorithm consists of three simple steps that are repeated: 
+
+- Turn on the spot (left, right, up, or down),
+- Change the color of the square,
+- Move forward one square.
 
 You can use the `paint_turmite()` function to make your own unique portrait using this style. 
 
@@ -64,7 +68,7 @@ You can use the `paint_shapes()` function to make your own unique portrait using
 
 ## LP records
 
-This type of painting is a special case of the shape painting created by `paint_shape()`. I like this specific type of painting because of its close resemblence to the LP record, making it ideal as a poster for a music room or something. You got to have a lucky seed for these though.
+This type of painting is a special case of the shape painting created by `paint_shape()`. I like this specific type of painting because of its close resemblence to the LP record, making it ideal as a poster for a music room or something. You got to find a lucky seed to get these though.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/records/2021-03-16.png' width='270' height='270'>
