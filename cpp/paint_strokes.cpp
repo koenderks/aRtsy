@@ -30,32 +30,71 @@ arma::mat iterate_strokes(arma::mat X,
   Rcpp::IntegerVector dx = L["x"];
   Rcpp::IntegerVector dy = L["y"];
   
-  for(int x = 0; x < n; x++) { // Loop over the columns of the frame
-    for(int y = 0; y < m; y++){ // Loop over the rows of the frame
-      
-      std::vector<int> colors;
-      
-      for(int z = 0; z < k; z++){ // Loop over all neighboring blocks of the current block
-        int ix  = get_index(n, x + dx[z]); // Select the (adjusted) neighboring x location
-        int iy  = get_index(m, y + dy[z]); // Select the (adjusted) neighboring y location
-        int X_n = X(ix, iy); // Select the color of the neighboring block
-        if(X_n > 0){
-          colors.push_back (X_n); // Add the color of this block to the adjacent color vector
-        }
-      }
-      
-      double rndDouble = (double)rand() / RAND_MAX; // Check whether the block is subject to a random change
+  double backwardsprob = (double)rand() / RAND_MAX;
+  
+  
+  if(backwardsprob < 0.5){ // Go forward through the loop
+    
+    for(int x = 0; x < n; x++) { // Loop over the columns of the frame
+      for(int y = 0; y < m; y++){ // Loop over the rows of the frame
         
-      if(colors.size() > 0 && rndDouble > p){ // The current block takes over the color of an adjacent block with probability p
-        int randomIndex = rand() % colors.size();
-        X(x,y) = colors[randomIndex];
-      } else {
-        // If the current block does not take a color from the surroundings, a new color selected from the palette
-        int randomNumber2;
-        randomNumber2 = (rand() % s) + 2;
-        X(x,y) = randomNumber2;
+        std::vector<int> colors;
+        
+        for(int z = 0; z < k; z++){ // Loop over all neighboring blocks of the current block
+          int ix  = get_index(n, x + dx[z]); // Select the (adjusted) neighboring x location
+          int iy  = get_index(m, y + dy[z]); // Select the (adjusted) neighboring y location
+          int color = X(ix, iy); // Select the color of the neighboring block
+          if(color > 0){
+            colors.push_back (color); // Add the color of this block to the adjacent color vector
+          }
+        }
+        
+        double noTake = (double)rand() / RAND_MAX; // Check whether the block is subject to a random change
+        
+        if(colors.size() > 0 && noTake > p){ // The current block takes over the color of an adjacent block with probability p
+          int takeIndex = rand() % colors.size();
+          X(x,y) = colors[takeIndex];
+        } else {
+          // If the current block does not take a color from the surroundings, a new color selected from the palette
+          int newColor;
+          newColor = (rand() % s) + 2;
+          X(x,y) = newColor;
+        }
+        
       }
     }
+    
+  } else { // Go backward through the loop
+    
+    for(int x = 0; x < n; x++) {
+      for(int y = m - 1; y --> 0;) {
+        
+        std::vector<int> colors;
+        
+        for(int z = 0; z < k; z++){ // Loop over all neighboring blocks of the current block
+          int ix  = get_index(n, x + dx[z]); // Select the (adjusted) neighboring x location
+          int iy  = get_index(m, y + dy[z]); // Select the (adjusted) neighboring y location
+          int color = X(ix, iy); // Select the color of the neighboring block
+          if(color > 0){
+            colors.push_back (color); // Add the color of this block to the adjacent color vector
+          }
+        }
+        
+        double noTake = (double)rand() / RAND_MAX; // Check whether the block is subject to a random change
+        
+        if(colors.size() > 0 && noTake > p){ // The current block takes over the color of an adjacent block with probability p
+          int takeIndex = rand() % colors.size();
+          X(x,y) = colors[takeIndex];
+        } else {
+          // If the current block does not take a color from the surroundings, a new color selected from the palette
+          int newColor;
+          newColor = (rand() % s) + 2;
+          X(x,y) = newColor;
+        }
+        
+      }
+    }
+    
   }
   return X;
 };

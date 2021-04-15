@@ -42,7 +42,7 @@ if (paintingType == 1){
   
   painting <- paint_strokes(width = 1500, 
                             height = 1500, 
-                            p.newcol = runif(1, 0.0001, 0.001), 
+                            p.newcol = runif(1, 0.0001, 0.01), 
                             palette = randomcoloR::randomColor(count = sample(5:15, size = 1)), 
                             seed = seed,
                             iter = 1)
