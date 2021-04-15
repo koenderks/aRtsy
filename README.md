@@ -14,8 +14,8 @@ You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your
 
 <p align="center">
   <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-21.png' width='250' height='250'>
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-21.png' width='250' height='250'>
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-21.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-25.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-20.png' width='250' height='250'>
 </p>
 
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-21.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-25.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
