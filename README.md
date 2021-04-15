@@ -4,6 +4,7 @@ I like pretty pictures and I like R. In this repository I combine those two thin
 
 * [Paint strokes](#paint-strokes)
 * [Function shapes](#function-shapes)
+* [LP records](#LP-records)
 
 ## Paint strokes
 
@@ -11,7 +12,7 @@ The `paint_strokes` algorithm is my first self-concocted algorithm for generativ
 
 You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your own unique portrait using this style. 
 
-<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-21.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-25.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
+<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-21.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-25.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
 
 <br/>
 <br/>
@@ -32,7 +33,7 @@ You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your
 <br/>
 
 <p align="center">
-<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-20.png' width='1000' height='390' align='center' margin-left='20' margin-right='20'/>
+<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-20.png' width='1000' height='390' align='center' margin-left='20' margin-right='20'/>
 </p>
 
 ## Function shapes
@@ -80,3 +81,9 @@ To be honest, this last type of painting is plainly taken over from other people
 <br/>
 
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-31.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/2021-03-30.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
+
+## LP records
+
+A special case of the shape painting, I like this type of painting because of its close resemblence to the LP record.
+
+<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/records/2021-03-17.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/records/2021-03-15.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
