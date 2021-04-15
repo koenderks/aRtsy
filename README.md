@@ -23,7 +23,7 @@ library(aRtsy)
 Each day this repository generates a random painting with the `aRtsy` package. This is today's painting:
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/daily.png' width='500' height='500'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/daily.png' width='400' height='400'>
 </p>
 
 ## Paint strokes
