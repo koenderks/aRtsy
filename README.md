@@ -82,6 +82,6 @@ To be honest, this type of painting is plainly and completely taken over from ot
 
 ## LP records
 
-This type of painting is a special case of the shape painting created by `paint_shape()`. I like this specific type of painting because of its close resemblence to the LP record, making it ideal as a poster for a music room or something.
+This type of painting is a special case of the shape painting created by `paint_shape()`. I like this specific type of painting because of its close resemblence to the LP record, making it ideal as a poster for a music room or something. You got to have a lucky seed for these though.
 
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/records/2021-03-16.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/records/2021-03-15.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
