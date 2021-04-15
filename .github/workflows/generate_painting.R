@@ -3,7 +3,7 @@ library(aRtsy)
 library(randomcoloR)
 
 # Name of the painting
-paintingPNGname <- paste0('png/', Sys.Date(), ".png")
+paintingPNGname <- paste0('png/daily.png')
 
 # Painting seed dependent on the date
 seed <- as.numeric(Sys.Date())

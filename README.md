@@ -11,11 +11,20 @@ library(aRtsy)
 
 ## Overview
 
+* [Painting of the day](#painting-of-the-day)
 * [Paint strokes](#paint-strokes)
 * [Turmites](#turmites)
 * [Landon's ant](#langdons-ant)
 * [Function shapes](#function-shapes)
 * [LP records](#LP-records)
+
+# Painting of the day
+
+Each day this repository generates a random painting using these function.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/daily.png' width='500' height='500'>
+</p>
 
 ## Paint strokes
 
