@@ -57,18 +57,19 @@ You can use the `paint_turmite()` function to make your own unique portrait usin
 
 ## Langdon's ant
 
-The "ant" moves according to the rules below:
+Langdon's ant is a turmite with a specific rule set. It moves according to the rules below:
 
-- At a white square, turn 90 degrees clockwise, flip the color of the square, move forward one unit;
-- At a black square, turn 90 degrees counter-clockwise, flip the color of the square, move forward one unit.
+- At a non-colored square, turn 90 degrees clockwise, flip the color of the square, move forward one unit;
+- At a colored square, turn 90 degrees counter-clockwise, flip the color of the square, move forward one unit.
+- Different colors may correspond different combinations of these mechanics.
+
+You can use the `paint_ant()` function to make your own unique portrait using this style.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-03.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-02.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-04-04.png' width='270' height='270'>
-</p>
-
-You can use the `paint_ant()` function to make your own unique portrait using this style. 
+</p> 
 
 ## Function shapes
 
