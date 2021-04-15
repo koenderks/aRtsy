@@ -34,6 +34,24 @@ You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your
 
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-20.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-12.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## Function shapes
 
 To be honest, this type of painting is plainly and completely taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package, but it makes pretty pictures nonetheless. Here are some nice variations I found using the `paint_shape()` function from `R/paint_shape.R`.
