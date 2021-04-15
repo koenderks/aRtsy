@@ -5,7 +5,7 @@
 \title{Paint strokes}
 \usage{
 paint_strokes(palette = '#000000', neighbors = 1, p = 0.01, seed = 1, 
-                     iter = 1, width = 500, height = 500)
+                     iterations = 1, width = 500, height = 500)
 }
 \arguments{
 \item{palette}{a vector of colors for the painting.}
@@ -16,7 +16,7 @@ paint_strokes(palette = '#000000', neighbors = 1, p = 0.01, seed = 1,
 
 \item{seed}{the seed for the painting.}
 
-\item{iter}{the number of iterations.}
+\item{iterations}{the number of iterations.}
 
 \item{width}{the width of the painting.}
 
@@ -30,7 +30,7 @@ This function creates a painting that resembles paints strokes. The algorithm is
 }
 \examples{
 paint_strokes(palette = c('#fafafa', '#000000'), neighbors = 1, p = 0.01,
-              seed = 1, iter = 1, width = 1500, height = 1500)
+              seed = 1, iterations = 1, width = 1500, height = 1500)
 
 }
 \seealso{

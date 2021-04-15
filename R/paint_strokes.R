@@ -3,15 +3,15 @@
 #' @description This function creates a painting that resembles paints strokes. The algorithm is based on the simple idea that each next point on the grid has a chance to take over the color of an adjacent colored point but also has a change of generating a new color.
 #'
 #' @usage paint_strokes(palette = '#000000', neighbors = 1, p = 0.01, seed = 1, 
-#'                      iter = 1, width = 500, height = 500)
+#'                      iterations = 1, width = 500, height = 500)
 #'
-#' @param palette    a vector of colors for the painting.
-#' @param neighbors  the number of neighbors a block considers when taking over a color.
-#' @param p          the probability of .
-#' @param seed       the seed for the painting.
-#' @param iter       the number of iterations.
-#' @param width      the width of the painting.
-#' @param height     the height of the painting.
+#' @param palette     a vector of colors for the painting.
+#' @param neighbors   the number of neighbors a block considers when taking over a color.
+#' @param p           the probability of .
+#' @param seed        the seed for the painting.
+#' @param iterations  the number of iterations.
+#' @param width       the width of the painting.
+#' @param height      the height of the painting.
 #'
 #' @return A \code{ggplot} object containing the painting.
 #'
@@ -21,7 +21,7 @@
 #'
 #' @examples
 #' paint_strokes(palette = c('#fafafa', '#000000'), neighbors = 1, p = 0.01,
-#'               seed = 1, iter = 1, width = 1500, height = 1500)
+#'               seed = 1, iterations = 1, width = 1500, height = 1500)
 #' 
 #' @keywords paint
 #'
@@ -30,7 +30,7 @@
 #' @import Rcpp
 
 paint_strokes <- function(palette = '#000000', neighbors = 1, p = 0.01, seed = 1, 
-                          iter = 1, width = 500, height = 500){
+                          iterations = 1, width = 500, height = 500){
   
   set.seed(seed)
   internalPalette <- c('#fafafa', palette)
