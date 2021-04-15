@@ -23,15 +23,15 @@ The `paint_strokes` algorithm is my first self-concocted algorithm for generativ
 You can use the `paint_strokes()` function to make your own unique portrait using this style. 
 
 <p align="center">
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-21.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-25.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-20.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-21.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-25.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-20.png' width='270' height='270'>
 </p>
 
 <p align="center">
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-11.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-12.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-10.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-11.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-12.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-10.png' width='270' height='270'>
 </p>
 
 ## Turmites
@@ -41,13 +41,13 @@ According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is a 
 You can use the `paint_turmite()` function to make your own unique portrait using this style. 
 
 <p align="center">
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/turmites/2021-03-06.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/turmites/2021-03-09.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/turmites/2021-03-08.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-06.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-09.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-08.png' width='270' height='270'>
 </p>
 
 <p align="center">
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/turmites/2021-03-07.png' width='1000' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-07.png' width='1000' height='270'>
 </p>
 
 ## Function shapes
@@ -57,9 +57,9 @@ To be honest, this type of painting is plainly and completely taken over from th
 You can use the `paint_shapes()` function to make your own unique portrait using this style. 
 
 <p align="center">
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/shapes/2021-03-17.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/shapes/2021-04-08.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/shapes/2021-04-04.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/shapes/2021-03-17.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/shapes/2021-04-08.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/shapes/2021-04-04.png' width='270' height='270'>
 </p>
 
 ## LP records
@@ -67,6 +67,6 @@ You can use the `paint_shapes()` function to make your own unique portrait using
 This type of painting is a special case of the shape painting created by `paint_shape()`. I like this specific type of painting because of its close resemblence to the LP record, making it ideal as a poster for a music room or something. You got to have a lucky seed for these though.
 
 <p align="center">
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/records/2021-03-16.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/records/2021-03-15.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/records/2021-03-16.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/records/2021-03-15.png' width='270' height='270'>
 </p>
