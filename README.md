@@ -21,7 +21,7 @@ You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your
 <p align="center">
   <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-11.png' width='270' height='270'>
   <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-12.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-20.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/strokes/2021-03-10.png' width='270' height='270'>
 </p>
 
 ## Function shapes
