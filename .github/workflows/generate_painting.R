@@ -10,7 +10,7 @@ seed <- as.numeric(Sys.Date())
 set.seed(seed)
 
 # Select painting type
-paintingType <- sample(1:3, size = 1)
+paintingType <- sample(1:4, size = 1)
 
 if (paintingType == 1){
   
@@ -43,6 +43,16 @@ if (paintingType == 1){
                                    iterations = 1e7,
                                    width = 1500, 
                                    height = 1500)
+  
+} else if (paintingType == 4){
+  
+  bgcolor <- sample(c("#fafafa", "#cc7722", "#a9d2c3", "#fc7c7c"), size = 1)
+  painting <- aRtsy::paint_ant(color = randomcoloR::randomColor(count = sample(1:20, size = 1)),
+                               background = bgcolor,
+                               seed = seed, 
+                               iterations = 1e7,
+                               width = 500, 
+                               height = 500)
   
 }
 
