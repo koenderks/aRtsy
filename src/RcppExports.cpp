@@ -6,6 +6,20 @@
 
 using namespace Rcpp;
 
+// iterate_ant
+arma::mat iterate_ant(arma::mat X, int iters, int row, int col);
+RcppExport SEXP _aRtsy_iterate_ant(SEXP XSEXP, SEXP itersSEXP, SEXP rowSEXP, SEXP colSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type X(XSEXP);
+    Rcpp::traits::input_parameter< int >::type iters(itersSEXP);
+    Rcpp::traits::input_parameter< int >::type row(rowSEXP);
+    Rcpp::traits::input_parameter< int >::type col(colSEXP);
+    rcpp_result_gen = Rcpp::wrap(iterate_ant(X, iters, row, col));
+    return rcpp_result_gen;
+END_RCPP
+}
 // iterate_strokes
 arma::mat iterate_strokes(arma::mat X, Rcpp::DataFrame neighbors, int s, double p);
 RcppExport SEXP _aRtsy_iterate_strokes(SEXP XSEXP, SEXP neighborsSEXP, SEXP sSEXP, SEXP pSEXP) {
@@ -37,6 +51,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_aRtsy_iterate_ant", (DL_FUNC) &_aRtsy_iterate_ant, 4},
     {"_aRtsy_iterate_strokes", (DL_FUNC) &_aRtsy_iterate_strokes, 4},
     {"_aRtsy_iterate_turmite", (DL_FUNC) &_aRtsy_iterate_turmite, 5},
     {NULL, NULL, 0}

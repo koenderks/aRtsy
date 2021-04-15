@@ -37,7 +37,7 @@ paint_turmite(color = "#fafafa", background = "#1E90FF", p = 0.5,
 https://en.wikipedia.org/wiki/Turmite
 }
 \seealso{
-\code{\link{paint_strokes}} \code{\link{paint_shape}}
+\code{\link{paint_strokes}} \code{\link{paint_shape}} \code{\link{paint_ant}}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

@@ -29,7 +29,7 @@ paint_shape(color = '#000000', background = bg)
 https://github.com/cutterkom/generativeart
 }
 \seealso{
-\code{\link{paint_strokes}} \code{\link{paint_turmite}}
+\code{\link{paint_strokes}} \code{\link{paint_turmite}} \code{\link{paint_ant}}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

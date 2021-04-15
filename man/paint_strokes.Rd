@@ -34,7 +34,7 @@ paint_strokes(palette = c('#fafafa', '#000000'), neighbors = 1, p = 0.01,
 
 }
 \seealso{
-\code{\link{paint_turmite}} \code{\link{paint_shape}}
+\code{\link{paint_turmite}} \code{\link{paint_shape}} \code{\link{paint_ant}}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

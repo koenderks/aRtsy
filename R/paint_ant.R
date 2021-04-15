@@ -1,15 +1,13 @@
-#' Paint turmites
+#' Paint Langton's Ant
 #'
-#' @description This function paints turmites. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells. The algorithm is simple: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.
+#' @description This function paints Langton's Ant. 
 #'
-#' @usage paint_turmite(color = '#fafafa', background = '#000000', p = 0.5, seed = 1, 
-#'                      iterations = 1e7, width = 1500, height = 1500)
+#' @usage paint_ant(color = '#000000', background = '#fafafa', seed = 1, 
+#'           width = 200, height = 200)
 #'
 #' @param color   	  the color of the turmite.
 #' @param background  the color of the background.
-#' @param p           the probability of a state switch within the turmite.
 #' @param seed        the seed for the painting.
-#' @param iterations  the number of iterations of the turmite.
 #' @param width       the width of the painting.
 #' @param height      the height of the painting.
 #'
@@ -19,11 +17,11 @@
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
-#' @seealso \code{\link{paint_strokes}} \code{\link{paint_shape}} \code{\link{paint_ant}}
+#' @seealso \code{\link{paint_strokes}} \code{\link{paint_shape}} \code{\link{paint_turmite}}
 #'
 #' @examples
-#' paint_turmite(color = "#fafafa", background = "#1E90FF", p = 0.5,
-#'               seed = 1, iterations = 1e7, width = 1500, height = 1500)
+#' paint_ant(color = '#000000', background = '#fafafa', seed = 1,
+#'           width = 200, height = 200)
 #' 
 #' @keywords paint
 #'
@@ -31,18 +29,20 @@
 #' @useDynLib aRtsy
 #' @import Rcpp
 
-paint_turmite <- function(color = '#fafafa', background = '#000000', p = 0.5, seed = 1, 
-                          iterations = 1e7, width = 1500, height = 1500){
+paint_ant <- function(color = '#000000', background = '#fafafa', seed = 1, 
+                      iterations = 1e7, width = 1500, height = 1500){
   set.seed(seed)
   palette <- c(background, color)
-  k <- sample(0:1, size = 1)
-  row <- 0
-  col <- 0
-  if(k == 1)
-    col <- sample(0:(width-1), size = 1)
-  if(k == 0)
-    row <- sample(0:(height-1), size = 1) 
-  df <- iterate_turmite(matrix(0, nrow = height, ncol = width), iterations, row, col, p = p)  
+#   k <- sample(0:1, size = 1)
+#   row <- 0
+#   col <- 0
+#   if(k == 1)
+#     col <- sample(0:(width-1), size = 1)
+#   if(k == 0)
+#     row <- sample(0:(height-1), size = 1) 
+  row <- ceiling(height / 2)
+  col <- ceiling(width / 2)
+  df <- iterate_ant(matrix(0, nrow = height, ncol = width), iterations, row, col)  
   df <- reshape2::melt(df)
   colnames(df) <- c("y","x","z")
   painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) +
