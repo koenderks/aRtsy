@@ -18,7 +18,7 @@ library(aRtsy)
 * [Function shapes](#function-shapes)
 * [LP records](#LP-records)
 
-# Painting of the day
+## Painting of the day
 
 Each day this repository generates a random painting using the functions from the `aRtsy` package. Below is today's painting.
 
