@@ -14,14 +14,9 @@ paintingType <- sample(1:4, size = 1)
 
 if (paintingType == 1){
   
-  bgcolor <- sample(c("#fafafa", "#1a3657", "#343434", "#cc7722", "#a9d2c3", "#fc7c7c"), size = 1)
-  if(bgcolor %in% c("#fafafa",  "#cc7722", "#a9d2c3", "#fc7c7c")){
-    color <- sample(c("black", randomcoloR::randomColor(1, luminosity = "dark")), size = 1)
-  } else {
-    color <- randomcoloR::randomColor(1, luminosity = "light")
-  }
-  
-  painting <- aRtsy::paint_shape(color = color, background = bgcolor, seed = seed)
+  painting <- aRtsy::paint_shape(color = sample(c("black", randomcoloR::randomColor(1)), size = 1), 
+                                 background = sample(c("#fafafa", "#1a3657", "#343434", "#cc7722", "#a9d2c3", "#fc7c7c"), size = 1), 
+                                 seed = seed)
   
 } else if (paintingType == 2){
   
@@ -35,9 +30,8 @@ if (paintingType == 1){
   
 } else if (paintingType == 3){
   
-  bgcolor <- sample(c("#fafafa", "#cc7722", "#a9d2c3", "#fc7c7c"), size = 1)
-  painting <- aRtsy::paint_turmite(color = "#000000",
-                                   background = bgcolor,
+  painting <- aRtsy::paint_turmite(color = sample(c("#000000", randomColor(count = 1)), size = 1),
+                                   background = sample(c("#fafafa", "#cc7722", "#a9d2c3", "#fc7c7c", randomColor(count = 1)), size = 1),
                                    p = runif(1, 0.2, 0.5),
                                    seed = seed, 
                                    iterations = 1e7,
@@ -46,9 +40,8 @@ if (paintingType == 1){
   
 } else if (paintingType == 4){
   
-  bgcolor <- sample(c("#fafafa", "#cc7722", "#a9d2c3", "#fc7c7c"), size = 1)
   painting <- aRtsy::paint_ant(color = randomcoloR::randomColor(count = sample(1:20, size = 1)),
-                               background = bgcolor,
+                               background = sample(c("#fafafa", "#cc7722", "#a9d2c3", "#fc7c7c", randomColor(count = 1)), size = 1),
                                seed = seed, 
                                iterations = 1e7,
                                width = 500, 
