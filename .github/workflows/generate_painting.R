@@ -1,5 +1,6 @@
 # Packages required for painting
 library(aRtsy)
+library(randomcoloR)
 
 # Name of the painting
 paintingPNGname <- paste0('png/', Sys.Date(), ".png")
