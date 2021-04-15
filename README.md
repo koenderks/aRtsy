@@ -38,7 +38,7 @@ You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your
 
 ## Function shapes
 
-To be honest, this last type of painting is plainly taken over from other people (like [here](https://github.com/cutterkom/generativeart)) but it makes pretty pictures nonetheless. Here are some nice variations I found using the `paint_shape()` function from `R/paint_shape.R`.
+To be honest, this type of painting is plainly and completely taken over from other people (like [here](https://github.com/cutterkom/generativeart)), but it makes pretty pictures nonetheless. Here are some nice variations I found using the `paint_shape()` function from `R/paint_shape.R`.
 
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/shapes/2021-03-17.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/shapes/2021-04-05.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
 
@@ -82,6 +82,6 @@ To be honest, this last type of painting is plainly taken over from other people
 
 ## LP records
 
-A special case of the shape painting, I like this type of painting because of its close resemblence to the LP record.
+This type of painting ia a special case of the shape painting. I like this type of painting because of its close resemblence to the LP record, making it ideal for in some kind of music room.
 
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/records/2021-03-16.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/records/2021-03-15.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
