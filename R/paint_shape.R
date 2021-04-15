@@ -1,6 +1,6 @@
 #' Paint shapes
 #'
-#' @description This function paints shapes.
+#' @description This function paints shapes and mimics the functionality of the \code{generativeart} package.
 #'
 #' @usage paint_shape(color = '#000000', background = '#fafafa', seed = 1)
 #'
