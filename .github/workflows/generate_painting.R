@@ -26,7 +26,8 @@ if (paintingType == 1){
                                    seed = seed,
                                    iter = sample(1:3, size = 1),
                                    width = 1500, 
-                                   height = 1500)
+                                   height = 1500,
+								   side = sample(c(TRUE, FALSE), size = 1))
   
 } else if (paintingType == 3){
   
