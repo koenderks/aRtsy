@@ -20,7 +20,7 @@ library(aRtsy)
 
 ## Painting of the day
 
-Each day this repository generates a random painting using the functions from the `aRtsy` package. Below is today's painting.
+Each day this repository generates a random painting using the functions in the `aRtsy` package. Below is today's painting.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/daily.png' width='500' height='500'>
