@@ -13,6 +13,7 @@ library(aRtsy)
 
 * [Paint strokes](#paint-strokes)
 * [Turmites](#turmites)
+* [Landon's ant](#langdons-ant)
 * [Function shapes](#function-shapes)
 * [LP records](#LP-records)
 
@@ -53,6 +54,21 @@ You can use the `paint_turmite()` function to make your own unique portrait usin
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-07.png' width='1000' height='270'>
 </p>
+
+## Langdon's ant
+
+The "ant" moves according to the rules below:
+
+- At a white square, turn 90 degrees clockwise, flip the color of the square, move forward one unit;
+- At a black square, turn 90 degrees counter-clockwise, flip the color of the square, move forward one unit.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-03.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-04-02.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-04-04.png' width='270' height='270'>
+</p>
+
+You can use the `paint_ant()` function to make your own unique portrait using this style. 
 
 ## Function shapes
 
