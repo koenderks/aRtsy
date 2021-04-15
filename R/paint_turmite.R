@@ -33,26 +33,19 @@
 #' @import Rcpp
 
 paint_turmite <- function(color = '#fafafa', background = '#000000', p = 0.5, seed = 1, 
-						  iterations = 1e7, width = 1500, height = 1500){
-
+                          iterations = 1e7, width = 1500, height = 1500){
   set.seed(seed)
-  
   palette <- c(background, color)
-  
   k <- sample(0:1, size = 1)
   row <- 0
   col <- 0
   if(k == 1)
     col <- sample(0:(width-1), size = 1)
   if(k == 0)
-    row <- sample(0:(height-1), size = 1)
-  
+    row <- sample(0:(height-1), size = 1) 
   df <- iterate_turmite(matrix(0, nrow = height, ncol = width), iterations, row, col, p = p)  
-  
-  # Reshape the data to plotting format
   df <- reshape2::melt(df)
-  colnames(df) <- c("y","x","z") # to name columns
-  
+  colnames(df) <- c("y","x","z")
   painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 
     ggplot2::coord_equal() +
@@ -60,15 +53,14 @@ paint_turmite <- function(color = '#fafafa', background = '#000000', p = 0.5, se
     ggplot2::scale_y_continuous(expand = c(0,0)) + 
     ggplot2::scale_x_continuous(expand = c(0,0)) +
     ggplot2::theme(axis.title = ggplot2::element_blank(), 
-          axis.text = ggplot2::element_blank(), 
-          axis.ticks = ggplot2::element_blank(), 
-          axis.line = ggplot2::element_blank(), 
-          legend.position = "none", 
-          panel.border = ggplot2::element_blank(), 
-          panel.grid = ggplot2::element_blank(), 
-          plot.margin = ggplot2::unit(rep(-1.25,4),"lines"), 
-          strip.background = ggplot2::element_blank(), 
-          strip.text = ggplot2::element_blank())
-  
+                   axis.text = ggplot2::element_blank(), 
+                   axis.ticks = ggplot2::element_blank(), 
+                   axis.line = ggplot2::element_blank(), 
+                   legend.position = "none", 
+                   panel.border = ggplot2::element_blank(), 
+                   panel.grid = ggplot2::element_blank(), 
+                   plot.margin = ggplot2::unit(rep(-1.25,4),"lines"), 
+                   strip.background = ggplot2::element_blank(), 
+                   strip.text = ggplot2::element_blank())
   return(painting)
 }

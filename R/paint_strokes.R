@@ -36,20 +36,14 @@ paint_strokes <- function(palette = '#000000', neighbors = 1, p = 0.01, seed = 1
   set.seed(seed)
   internalPalette <- c('#fafafa', palette)
   df <- matrix(0, nrow = height, ncol = width)
-  
   neighborsLocations <- expand.grid(-(neighbors):neighbors,-(neighbors):neighbors)
   colnames(neighborsLocations) <- c("x", "y")
-  
   df <- matrix(0, nrow = height, ncol = width)
-  
   for (i in 1:iter){
     df <- iterate_strokes(X = df, neighbors = neighborsLocations, s = length(internalPalette), p = p) 
   }
-  
-  # Reshape the data to plotting format
   df <- reshape2::melt(df)
-  colnames(df) <- c("y","x","z") # to name columns
-  
+  colnames(df) <- c("y","x","z")
   painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 
     ggplot2::coord_equal() +
@@ -66,6 +60,5 @@ paint_strokes <- function(palette = '#000000', neighbors = 1, p = 0.01, seed = 1
                    plot.margin = ggplot2::unit(rep(-1.25,4),"lines"), 
                    strip.background = ggplot2::element_blank(), 
                    strip.text = ggplot2::element_blank())
-  
   return(painting)
 }
