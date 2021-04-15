@@ -82,6 +82,6 @@ To be honest, this type of painting is plainly and completely taken over from ot
 
 ## LP records
 
-This type of painting ia a special case of the shape painting. I like this type of painting because of its close resemblence to the LP record, making it ideal as a poster in some kind of music room.
+This type of painting ia a special case of the shape painting. I like this type of painting because of its close resemblence to the LP record, making it ideal as a poster in some kind of music room. However, it only generates on rare occurrences.
 
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/records/2021-03-16.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/records/2021-03-15.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
