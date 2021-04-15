@@ -23,8 +23,6 @@ set.seed(seed)
 
 paintingType <- sample(1:2, size = 1)
 
-paintingType <- 2
-
 if (paintingType == 1){
   
   bgcolor <- sample(c("#fafafa", "#1a3657", "#343434", "#cc7722", "#a9d2c3", "#fc7c7c"), size = 1)
@@ -47,7 +45,7 @@ if (paintingType == 1){
                             p.newcol = runif(1, 0.0001, 0.01), 
                             palette = randomcoloR::randomColor(count = sample(5:15, size = 1)), 
                             seed = seed,
-                            neighbors = sample(1:5, size = 1),
+                            neighbors = sample(1:4, size = 1),
                             iter = sample(1:3, size = 1))
   
   ggplot2::ggsave(painting, filename = paintingPNGname, width = 7, height = 7, dpi = 300)

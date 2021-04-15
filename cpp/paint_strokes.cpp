@@ -9,14 +9,12 @@ using namespace std;
 
 // [[Rcpp::depends(RcppArmadillo)]]
 
-int neighboring_block(int M, int i)
+int neighboring_block(int L, int i)
 {
   if (i < 0)
-    return (M + i % M) % M;
-  // return(i + 2);
-  if(i >= M)
-    return i % M;
-  // return(i - 2);
+    return (L + i % L) % L;
+  if(i >= L)
+    return i % L;
   return i;
 }
 
@@ -82,7 +80,7 @@ arma::mat iterate_strokes(arma::mat X,
           }
         }
         
-        double noTake = (double)rand() / RAND_MAX; // Check whether the block is subject to a random change
+        double noTake = (double) rand() / RAND_MAX; // Check whether the block is subject to a random change
         
         if(colors.size() > 0 && noTake > p){ // The current block takes over the color of an adjacent block with probability p
           int takeIndex = rand() % colors.size();
