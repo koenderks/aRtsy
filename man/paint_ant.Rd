@@ -22,7 +22,7 @@ paint_ant(color = '#000000', background = '#fafafa', seed = 1,
 A \code{ggplot} object containing the painting.
 }
 \description{
-This function paints Langton's Ant.
+This function paints Langton's Ant. Langton's ant is a two-dimensional universal Turing machine with a very simple set of rules but complex emergent behavior.
 }
 \examples{
 paint_ant(color = '#000000', background = '#fafafa', seed = 1,
