@@ -1,4 +1,4 @@
-paint_strokes <- function(width = 500, height = 500, p.newcol = 0.01, palette, seed = 120495, xascending = TRUE, yascending = TRUE){
+paint_strokes <- function(width = 500, height = 500, p.newcol = 0.01, palette, seed = 120495, iter = 1){
   
   Rcpp::sourceCpp('cpp/paint_strokes.cpp')
   
@@ -16,7 +16,9 @@ paint_strokes <- function(width = 500, height = 500, p.newcol = 0.01, palette, s
   
   df <- matrix(sample(x = 0, size = width * height, replace = TRUE), nrow = height, ncol = width)
   
-  df <- iterate_strokes(df, l, length(internalPalette), 0.001) 
+  for (i in 1:iter){
+    df <- iterate_strokes(X = df, L = l, s = length(internalPalette), p = p.newcol) 
+  }
   
   # colorder <- 1:ncol(df)
   # if(!yascending)

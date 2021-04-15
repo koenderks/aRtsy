@@ -44,9 +44,8 @@ if (paintingType == 1){
                             height = 1500, 
                             p.newcol = runif(1, 0.0001, 0.001), 
                             palette = randomcoloR::randomColor(count = sample(5:15, size = 1)), 
-                            seed = seed, 
-                            xascending = sample(c(TRUE, FALSE), size = 1), 
-                            yascending = sample(c(TRUE, FALSE), size = 1))
+                            seed = seed,
+                            iter = 1)
   
   ggplot2::ggsave(painting, filename = paintingPNGname, width = 7, height = 7, dpi = 300)
   
