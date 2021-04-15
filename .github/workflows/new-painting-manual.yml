@@ -38,7 +38,7 @@ jobs:
           body: |
             Today's painting:
 
-            ![image](https://github.com/koenderks/aRtsy/raw/new-painting//png/daily.png)
+            ![image](https://github.com/koenderks/aRtsy/raw/new-painting/png/daily.png)
           draft: false
 
       # Check outputs of workflow
