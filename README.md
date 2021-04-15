@@ -84,4 +84,4 @@ To be honest, this last type of painting is plainly taken over from other people
 
 A special case of the shape painting, I like this type of painting because of its close resemblence to the LP record.
 
-<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/records/2021-03-17.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/records/2021-03-15.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
+<img src='https://github.com/koenderks/Art-Gallery/raw/master/png/records/2021-03-16.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/records/2021-03-15.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
