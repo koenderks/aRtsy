@@ -1,4 +1,28 @@
-paint_new <- function(width = 500, height = 500, p.newcol = 0.001, palette, seed = 120495, initialpoints = 10){
+convolution_indexes <- function(r, n){
+  tidytable::crossing.(x = -r:r, y = -r:r) %>% 
+    mutate(M = ((x != 0) | (y != 0)) * 1 ,
+           N = (abs(x) + abs(y) <= r) * M,
+           Mr = ((abs(x) == r) | (abs(y) == r)) * M,
+           Nr = (abs(x) + abs(y) == r) * M,
+           Cr = ((x == 0) | (y == 0)) * M,
+           S1 = (((x > 0) & (y > 0))|((x < 0) & (y < 0))) * 1,
+           Bl = (abs(x) == abs(y)) * M,
+           D1 = (abs(x) > abs(y)) * M,
+           D2 = ((abs(x) == abs(y)) | abs(x) == r) * M,
+           C2 = M - N,
+           Z = ((abs(y) == r) | (x == y)) * M,
+           t = ((y == r) | (x == 0)) * M,
+           U = ((abs(x) == r) | (y == -r)) * M,
+           H = (abs(x) == r | y == 0) * M,
+           TM = ((abs(x) == abs(y)) | abs(x) == r | abs(y) == r) * M,
+           S2 = ((y==0) | ((x == r) & (y > 0)) |((x == -r) & (y < 0))) * M,
+           M2 = ((abs(x) == r) | (abs(x) == abs(y) & y > 0)) * M) %>% 
+    select(x, y, matches(n)) %>% 
+    filter_at(3, all_vars(. > 0)) %>% 
+    select(x,y)
+}
+
+paint_new <- function(width = 500, height = 500, palette, seed = 120495, range = 5, threshold = 3, max.iter = 10000){
   
   set.seed(seed)
   
@@ -7,115 +31,49 @@ paint_new <- function(width = 500, height = 500, p.newcol = 0.001, palette, seed
   canvasColor <- 0
   
   # Initialize the painting
-  df <- matrix(sample(x = canvasColor, size = width * height, replace = TRUE), nrow = height, ncol = width)
+  df <- matrix(sample(x = seq_along(palette), size = width * height, replace = TRUE), nrow = height, ncol = width)
   
-  # Initialize the iterations
-  filled <- 0
-  allfilled <- FALSE
+  col <- ceiling(width / 2)
+  row <- ceiling(height / 2)
+  iter <- 0
   
-  # Pick a random starting point on the canvas
-  row <- sample(1:height, size = 1)
-  col <- sample(1:width, size = 1)
+  neighbourhoords <- convolution_indexes(range, "M")
   
-  # Color initial points
-  initialRows <- sample(1:nrow(df), size = initialpoints, replace = T)
-  initialCols <- sample(1:ncol(df), size = initialpoints, replace = T)
-  df[initialRows, initialCols] <- sample(2:length(palette), size = initialpoints, replace = T)
-  
-  while (!allfilled){
+  while (iter < max.iter){
     
-    # Check if all the blocks have a color and end
-    allfilled <- all(df > 0)
-    if(allfilled)
-      next
-    
-    # If there is nothing on the canvas at all, draw a random colored block
-    if(filled == 0){
-      df[row, col] <- sample(2:length(palette), size = 1)
-    }
-    
-    if(col <= 1 | row <= 1 | col >= ncol(df) | row >= nrow(df)){
+    for (row in 1:nrow(df)) {
       
-      # If the trails hits an edge it moves to a random empty block (the block is to be revisited again)
-      zeros <- which(df == 0, arr.ind=TRUE)
-      i <- sample(1:nrow(zeros), size = 1)
-      row <- as.numeric(zeros[i, 1])
-      col <- as.numeric(zeros[i, 2])
-      df[row, col] <- sample(2:length(palette), size = 1)
-      
-    } else {
-      
-      # Adjust the indices for edges
-      xright <- ifelse(col + 1 > ncol(df), yes = col - 1, no = col + 1)
-      xleft <- ifelse(col - 1 < 1, yes = col + 1, no = col - 1)
-      ytop <- ifelse(row - 1 < 1, yes = row + 1, no = row - 1)
-      ybottom <- ifelse(row + 1 > nrow(df), yes = row - 1, no = row + 1)
-      
-      # The current block will detect by which sides it is surrounded by other colored blocks
-      leftprob <- ifelse(df[xleft, col] > 0, yes = 0, no = 1)
-      rightprob <- ifelse(df[xleft, col] > 0, yes = 0, no = 1)
-      upprob <- ifelse(df[row, ytop] > 0, yes = 0, no = 1)
-      downprob <- ifelse(df[row, ybottom] > 0, yes = 0, no = 1)
-      
-      # The current block will get the color of a surrounding block, or a new color if no surrounding blocks are colored
-      blocksAround <- c(df[ytop, xleft], df[row, xleft], df[ybottom, xleft], df[ytop, col], df[ybottom, col], df[ytop, xright], df[row, xright], df[ybottom, xright])
-      if(all(blocksAround == 0)){
-        newcol <- sample(c(TRUE, FALSE), size = 1, prob = c(p.newcol, 1 - p.newcol))
-        df[row, col] <- sample(2:length(palette), size = 1)
-      } else {
-        colorsOfBlockAroundIt <- subset(blocksAround, blocksAround > 0)
-        selectedColor <- sample(colorsOfBlockAroundIt, size = 1)
-        df[row, col] <- selectedColor 
-      }
-      
-      # If the current block is completely surrounded by colored blocks, a fresh starting block will be selected
-      if (all(c(leftprob, rightprob, upprob, downprob) == 0)){
-        zeros <- which(df == 0, arr.ind=TRUE)
-        i <- sample(1:nrow(zeros), size = 1)
-        row <- as.numeric(zeros[i, 1])
-        col <- as.numeric(zeros[i, 2])
+      for (col in 1:ncol(df)){
         
-      } else {
+        # Select the current block
+        currentBlock <- df[row, col]
         
-        # If the current block is not completely surrounded by colored blocks, move the next block up/down or left/right
-        dir <- sample(1:4, size = 1, prob = c(leftprob, rightprob, upprob, downprob))
-        if(dir == 1){
-          row <- row - 1
-        } else if (dir == 2){
-          row <- row + 1
-        } else if (dir == 3){
-          col <- col - 1
-        } else if (dir == 4){
-          col <- col + 1
+        # Count the state of each block in the neighborhood of the current block
+        nnRows <- row + as.numeric(neighbourhoords$x)
+        nnCols <- row + as.numeric(neighbourhoords$y)
+        nnRows <- ifelse(nnRows < 1, yes = nrow(df) + (nnRows - 1), no = nnRows)
+        nnRows <- ifelse(nnRows > nrow(df), yes = nnRows - nrow(df), no = nnRows)
+        nnCols <- ifelse(nnCols < 1, yes = ncol(df) + (nnCols - 1), no = nnCols)
+        nnCols <- ifelse(nnCols > ncol(df), yes = nnCols - ncol(df), no = nnCols)
+        
+        blocksAround <- df[nnRows, nnCols]
+        
+        # Calculate how many of these blocks have a state exactly one above the current block
+        howmany <- length(which(blocksAround == currentBlock + 1))
+        
+        # If there are more than threshold blocks with that state, increase the state of the current block
+        if(howmany > threshold){
+          df[row, col] <- df[row, col] + 1%%length(palette)
         }
       }
+      
+      if(row%%100 == 0)
+        print(paste0("Inside-iter ", row))
     }
     
-    filled <- length(which(df > 0))
-    
-    if(filled%%1000 == 0){
-      if(tim == 1){
-        print(paste0(filled, " of ", width * height, " blocks filled")) 
-        tim <- tim + 1
-      }
-    } else {
-      tim <- 1
-    }
-  }
-  
-  print("Coloring border blocks")
-  
-  # Color blocks on the border of the frame
-  roworder <- 1:nrow(df)
-  for(row in roworder){
-    df[row, roworder[1]] <- df[row, roworder[2]]
-    df[row, roworder[length(roworder)]] <- df[row, roworder[length(roworder)-1]]
-  }
-  
-  colorder <- 1:ncol(df)
-  for(col in colorder){
-    df[colorder[length(colorder)], col] <- df[colorder[length(colorder) - 1], col]
-    df[colorder[1], col] <- df[colorder[2], col]
+    iter <- iter + 1
+    if(iter%%1 == 0)
+      print(paste0("Iter ", iter))
   }
   
   # Reshape the data to plotting format

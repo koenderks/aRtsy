@@ -38,7 +38,7 @@ You can use the `paint_strokes()` function from `R/paint_strokes.R` to make your
 
 ## Function shapes
 
-To be honest, this type of painting is plainly and completely taken over from other people (like [here](https://github.com/cutterkom/generativeart)), but it makes pretty pictures nonetheless. Here are some nice variations I found using the `paint_shape()` function from `R/paint_shape.R`.
+To be honest, this type of painting is plainly and completely taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package, but it makes pretty pictures nonetheless. Here are some nice variations I found using the `paint_shape()` function from `R/paint_shape.R`.
 
 <img src='https://github.com/koenderks/Art-Gallery/raw/master/png/shapes/2021-03-17.png' width='390' height='390' align='left' margin-left='20' margin-right='20'/><img src='https://github.com/koenderks/Art-Gallery/raw/master/png/shapes/2021-04-05.png' width='390' height='390' align='right' margin-left='20' margin-right='20'/>
 
