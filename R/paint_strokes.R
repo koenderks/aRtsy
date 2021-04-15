@@ -1,7 +1,6 @@
 #' Paint strokes
 #'
-#' @description This function paints strokes.
-#'
+#' @description This function creates a painting that resembles paints strokes. The algorithm is based on the simple idea that each next point on the grid has a chance to take over the color of an adjacent colored point but also has a change of generating a new color.
 #'
 #' @usage paint_strokes(palette = '#000000', neighbors = 1, p = 0.01, seed = 1, 
 #'                      iter = 1, width = 500, height = 500)
@@ -14,7 +13,7 @@
 #' @param width      the width of the painting.
 #' @param height     the height of the painting.
 #'
-#' @return A \code{ggplot} object with the painting.
+#' @return A \code{ggplot} object containing the painting.
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'

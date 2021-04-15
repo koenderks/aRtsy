@@ -23,10 +23,10 @@ paint_strokes(palette = '#000000', neighbors = 1, p = 0.01, seed = 1,
 \item{height}{the height of the painting.}
 }
 \value{
-A \code{ggplot} object with the painting.
+A \code{ggplot} object containing the painting.
 }
 \description{
-This function paints strokes.
+This function creates a painting that resembles paints strokes. The algorithm is based on the simple idea that each next point on the grid has a chance to take over the color of an adjacent colored point but also has a change of generating a new color.
 }
 \examples{
 paint_strokes(palette = c('#fafafa', '#000000'), neighbors = 1, p = 0.01,

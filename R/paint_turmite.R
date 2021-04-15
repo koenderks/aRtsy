@@ -16,7 +16,7 @@
 #'
 #' @references https://en.wikipedia.org/wiki/Turmite
 #'
-#' @return A \code{ggplot} object with the painting.
+#' @return A \code{ggplot} object containing the painting.
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'

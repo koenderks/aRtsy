@@ -14,7 +14,7 @@ paint_shape(color = '#000000', background = '#fafafa', seed = 1)
 \item{seed}{the seed for the painting.}
 }
 \value{
-A \code{ggplot} object with the painting.
+A \code{ggplot} object containing the painting.
 }
 \description{
 This function paints shapes.

@@ -23,7 +23,7 @@ paint_turmite(color = '#fafafa', background = '#000000', p = 0.5, seed = 1,
 \item{height}{the height of the painting.}
 }
 \value{
-A \code{ggplot} object with the painting.
+A \code{ggplot} object containing the painting.
 }
 \description{
 This function paints turmites.
