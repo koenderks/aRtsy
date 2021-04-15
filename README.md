@@ -1,6 +1,6 @@
 # aRtsy: Generative Art Using R
 
-I like pretty pictures and I like R. In the `R` package `aRtsy` I combine those two things into what people generally call generative art. If you want to use the package to create your own images, you can download and load in into `R` by running the code below.
+I like pretty pictures and I like R. In the `R` package `aRtsy` I combine these two things into what people generally call generative art, resulting in some(times) nice looking pictures. If you want to use the package to create your own pictures, you can download and load in into `R` by running the code below.
 
 ```
 devtools::install.github('koenderks/aRtsy')
