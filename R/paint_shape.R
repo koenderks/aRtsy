@@ -2,7 +2,6 @@
 #'
 #' @description This function paints shapes.
 #'
-#'
 #' @usage paint_shape(color = '#000000', background = '#fafafa', seed = 1)
 #'
 #' @param color   	  the color of the shape.

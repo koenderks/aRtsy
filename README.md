@@ -2,6 +2,11 @@
 
 I like pretty pictures and I like R. In the `R` package `aRtsy` I combine those two things into what people generally call generative art.
 
+```
+devtools::install.github('koenderks/aRtsy')
+library(aRtsy)
+```
+
 ## Overview
 
 * [Paint strokes](#paint-strokes)
