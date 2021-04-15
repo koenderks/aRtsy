@@ -63,7 +63,9 @@ According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langdon
 - At a colored square, turn 90 degrees counter-clockwise, flip the color of the square, move forward one unit.
 - Different colors may correspond different combinations of these mechanics.
 
-I like Langdon's Ant, it reminds me of crayon painting. You can use the `paint_ant()` function to make your own unique portrait using this style.
+I like Langdon's Ant, it reminds me of a crayon painting. The problem with this thing though is that it always moves of canvas...
+
+You can use the `paint_ant()` function to make your own unique portrait using this style.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-03.png' width='270' height='270'>
