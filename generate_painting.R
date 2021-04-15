@@ -23,6 +23,8 @@ set.seed(seed)
 
 paintingType <- sample(1:2, size = 1)
 
+paintingType <- 2
+
 if (paintingType == 1){
   
   bgcolor <- sample(c("#fafafa", "#1a3657", "#343434", "#cc7722", "#a9d2c3", "#fc7c7c"), size = 1)
