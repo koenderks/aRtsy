@@ -10,7 +10,7 @@ library(RcppArmadillo)
 # Load the painting functions
 source("R/paint_shape.R")
 source("R/paint_strokes.R")
-source("R/paint_new.R")
+source("R/paint_turmite.R")
 
 # Name of the painting
 
@@ -21,7 +21,9 @@ paintingPNGname <- paste0('png/', Sys.Date(), ".png")
 seed <- as.numeric(Sys.Date())
 set.seed(seed)
 
-paintingType <- sample(1:2, size = 1)
+paintingType <- sample(1:3, size = 1)
+
+paintingType <- 3
 
 if (paintingType == 1){
   
@@ -52,13 +54,12 @@ if (paintingType == 1){
   
 } else if (paintingType == 3){
   
-  painting <- paint_new(width = 500, 
-                        height = 500, 
-                        palette = randomcoloR::randomColor(count = sample(5:15, size = 1)), 
-                        seed = seed,
-                        p.newcol = 0.001,
-                        initialpoints = 10)
+  painting <- paint_turmite(width = 1500, 
+                            height = 1500, 
+                            seed = 135, 
+                            iters = 10000000,
+                            p.color = 0.2)
   
-  ggplot2::ggsave(painting, filename = paintingPNGname, scale = 1, dpi = 300)
+  ggplot2::ggsave(painting, filename = paintingPNGname, width = 7, height = 7, dpi = 300)
   
 }
