@@ -1,7 +1,7 @@
 ## This is a submission for version 0.1.0
 This is aRtsy version 0.1.0. In this version I have:
 
-* Added functions.
+* Added the initial four functions.
 
 ## Test environments
 * OS X install (on travis-ci), R release
