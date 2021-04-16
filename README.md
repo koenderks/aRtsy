@@ -46,7 +46,7 @@ You can use the `paint_strokes()` function to make your own unique painting in t
 
 ## Turmite
 
-According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is a Turing machine which has an orientation in addition to a current state and a trail that consists of a two-dimensional grid of cells. Basically, it's a moving block. The algorithm consists of three simple steps that are repeated, but I've added some rules so that it bounces off the edge of the canvas. 
+According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is a Turing machine which has an orientation in addition to a current state and a trail that consists of a two-dimensional grid of cells. Basically, it's a moving block. The algorithm consists of three simple steps that are repeated, but I've added some logic so that it bounces off the edge of the canvas. 
 
 - Turn on the spot (left, right, up, or down),
 - Change the color of the square,
