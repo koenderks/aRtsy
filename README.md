@@ -2,7 +2,7 @@
 
 I like pretty pictures and I like `R`. In the `aRtsy` package I combine these two things into what people generally call generative art, resulting in some(times) nice looking pictures. I am lucky I got `R` because I cannot paint at all.
 
-You can install and load the `aRtsy` package by running the code below.
+You can install and load the package by running the code below.
 
 ```
 devtools::install.github('koenderks/aRtsy')
