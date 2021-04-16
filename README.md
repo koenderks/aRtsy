@@ -70,9 +70,9 @@ You can use the `paint_turmite()` function to make your own unique painting with
 
 According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langton's ant is a turmite with a very specific set of rules. In particular, it moves according to the three rules below. Langton's ant reminds me of a crayon painting. The problem with this thing is that it always moves off the canvas though...
 
-1. On a non-colored square, turn 90 degrees clockwise, flip the color of the square, move forward one unit;
-1. On a colored square, turn 90 degrees counter-clockwise, flip the color of the square, move forward one unit.
-1. Different colors may correspond different combinations of these mechanics.
+1. On a non-colored square, turn 90 degrees clockwise, un-color of the square, move forward one unit;
+1. On a colored square, turn 90 degrees counter-clockwise, color the square, move forward one unit.
+1. The ant is able to cycle through different colors, which correspond to different combinations of the two rules above.
 
 You can use the `paint_ant()` function to make your own unique painting with this algorithm.
 
