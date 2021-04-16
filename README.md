@@ -72,7 +72,7 @@ According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langton
 
 1. On a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block.
 1. On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block.
-1. The ant is able to cycle through different colors which correspond to different combinations of the rules above.
+1. The ant is able to cycle through different colors which correspond to different combinations of these rules.
 
 You can use the `paint_ant()` function to make your own unique painting with this algorithm.
 
