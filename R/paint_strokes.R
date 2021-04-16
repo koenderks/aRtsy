@@ -33,6 +33,10 @@
 
 paint_strokes <- function(colors = '#000000', neighbors = 1, p = 0.01, seed = 1, 
                           iterations = 1, width = 500, height = 500, side = FALSE){
+  if(neighbors < 1)
+	stop("Neighbors must be equal to, or larger than, one.")
+  if(width != height)
+	stop("This painting can only handle a square canvas.")
   if(length(colors) == 1)
     colors <- c("#fafafa", colors)
   set.seed(seed)
