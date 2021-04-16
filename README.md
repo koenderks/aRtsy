@@ -84,7 +84,7 @@ You can use the `paint_ant()` function to make your own unique painting with thi
 
 ## Functions
 
-To be honest, this type of painting is plainly and completely taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package, but it makes pretty pictures nonetheless. Here are some nice variations I found.
+To be honest, this type of painting is plainly and completely taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package, but it makes pretty pictures nonetheless. In this algorithm, the position of every single point is calculated by a formula which has random parameters.
 
 You can use the `paint_function()` function to make your own unique painting with this algorithm. 
 
