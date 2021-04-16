@@ -20,9 +20,9 @@
 #' @seealso \code{\link{paint_strokes}} \code{\link{paint_turmite}} \code{\link{paint_ant}} \code{\link{paint_function}}
 #'
 #' @examples
-#' paint_mondriaan(colors = c('#000000', '#cc7722', '#a9d2c3', '#fc7c7c'), 
-#'                 background = '#fafafa', cuts = 50, ratio = 1.618, 
-#'                 seed = 1, width = 100, height = 100)
+#' paint_mondriaan(colors = c('white', 'yellow', 'red'), 
+#'                 background = '#000000', cuts = 20, ratio = 1.618, 
+#'                 seed = 12, width = 100, height = 100)
 #' 
 #' @keywords paint
 #'
@@ -37,7 +37,7 @@ paint_mondriaan <- function(colors = '#fafafa', background = '#000000', cuts = 5
   x <- y <- z <- NULL
   set.seed(seed)
   palette <- c(background, colors)
-  df <- matrix(sample(1:(length(palette)-1), size = 1), nrow = height, ncol = width)  
+  df <- matrix(0, nrow = height, ncol = width)  
   l <- nrow(df)
   w <- ncol(df)
   # Specify colors
