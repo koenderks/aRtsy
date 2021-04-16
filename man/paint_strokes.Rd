@@ -31,9 +31,7 @@ A \code{ggplot} object containing the painting.
 This function creates a painting that resembles paints strokes. The algorithm is based on the simple idea that each next point on the grid has a chance to take over the color of an adjacent colored point but also has a change of generating a new color.
 }
 \examples{
-paint_strokes(colors = c('#fafafa', '#000000'), neighbors = 1, p = 0.01,
-              seed = 1, side = FALSE, iterations = 1, 
-              width = 1500, height = 1500)
+paint_strokes(colors = c('#fafafa', '#000000'))
 
 }
 \seealso{
