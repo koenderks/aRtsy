@@ -20,9 +20,7 @@
 #' @seealso \code{\link{paint_strokes}} \code{\link{paint_turmite}} \code{\link{paint_ant}} \code{\link{paint_function}}
 #'
 #' @examples
-#' paint_mondriaan(colors = c('white', 'yellow', 'red'), 
-#'                 background = '#000000', 
-#'                 cuts = 20, ratio = 1.618, seed = 12)
+#' paint_mondriaan(colors = c('white', 'red', 'yellow', 'blue'), seed = 5)
 #' 
 #' @keywords paint
 #'

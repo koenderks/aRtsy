@@ -29,9 +29,7 @@ A \code{ggplot} object containing the painting.
 This function paints a Mondriaan.
 }
 \examples{
-paint_mondriaan(colors = c('white', 'yellow', 'red'), 
-                background = '#000000', 
-                cuts = 20, ratio = 1.618, seed = 12)
+paint_mondriaan(colors = c('white', 'red', 'yellow', 'blue'), seed = 5)
 
 }
 \seealso{
