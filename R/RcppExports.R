@@ -5,6 +5,10 @@ iterate_ant <- function(X, iters, row, col, c, seed) {
     .Call('_aRtsy_iterate_ant', PACKAGE = 'aRtsy', X, iters, row, col, c, seed)
 }
 
+iterate_mondriaan <- function(X, neighbors, s, cuts, ratio, seed) {
+    .Call('_aRtsy_iterate_mondriaan', PACKAGE = 'aRtsy', X, neighbors, s, cuts, ratio, seed)
+}
+
 iterate_strokes <- function(X, neighbors, s, p, seed) {
     .Call('_aRtsy_iterate_strokes', PACKAGE = 'aRtsy', X, neighbors, s, p, seed)
 }

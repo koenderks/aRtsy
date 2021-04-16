@@ -30,56 +30,22 @@
 
 paint_mondriaan <- function(colors, background = '#000000', cuts = 50, ratio = 1.618, 
                             seed = 1, width = 100, height = 100){
+  x <- y <- z <- NULL
   if(length(colors) <= 1)
 	stop("You must specify more than one color.")
   if(length(background) > 1)
     stop("Can only take one background value.")
   if(cuts <= 1)
     stop("Cuts must be higher than 1.")
-  x <- y <- z <- NULL
   set.seed(seed)
   palette <- c(background, colors)
-  df <- matrix(0, nrow = height, ncol = width)  
-  l <- nrow(df)
-  w <- ncol(df)
-  # Specify colors
-  for(i in 1:cuts){
-    cutx <- ceiling(l / ratio) # Determine the x value of the cut
-    cuty <- ceiling(w / ratio) # Determine the y value of the cut
-    cutfromtop <- sample(c(TRUE, FALSE), 1) # Determine whether to cut from the top
-    cutfromleft <- sample(c(TRUE, FALSE), 1) # Determine whether to cut from the left
-    # Cut
-    if(cutfromtop && cutfromleft){
-      df[1:cutx, 1:cuty] <- sample(1:(length(palette)-1), size = 1) 
-    } else if(cutfromtop && !cutfromleft){
-      df[cutx:ncol(df), 1:cuty] <- sample(1:(length(palette)-1), size = 1)
-    } else if (!cutfromtop && cutfromleft){
-      df[1:cutx, cuty:nrow(df)] <- sample(1:(length(palette)-1), size = 1)
-    } else if(!cutfromtop && !cutfromleft){
-      df[cutx:ncol(df), cuty:nrow(df)] <- sample(1:(length(palette)-1), size = 1)
-    }
-    # Reset for new cut
-    l <- sample(1:ncol(df), 1)#cutx
-    w <- sample(1:nrow(df), 1)#cuty
-  }
-  df_new <- df
-  # Color borders
-  for(i in 1:nrow(df_new)){
-    for(j in 1:ncol(df_new)){
-      # If the blocks around if contain more than one unique value it is an edge
-      xleft <- ifelse(j - 1 < 0, yes = 0, no = j - 1)
-      xright <- ifelse(j + 1 > ncol(df_new), yes = ncol(df_new), no = j + 1)
-      ytop <- ifelse(i - 1 < 0, yes = 0, no = i - 1)
-      ybottom <- ifelse(i + 1 > nrow(df_new), yes = nrow(df_new), no = i + 1)
-      values <- c(df[ybottom, xleft], df[y, xleft], df[ytop, xleft], df[ybottom, x], df[ytop, x], df[ybottom, xright], df[y, xright], df[ytop, xright])
-      if(!(length(unique(values)) == 1)){
-        df_new[i, j] <- 0
-      } 
-    }
-  }
-  df_new <- reshape2::melt(df_new)
-  colnames(df_new) <- c("y", "x", "z")
-  painting <- ggplot2::ggplot(data = df_new, ggplot2::aes(x = x, y = y, fill = z)) +
+  neighbors <- expand.grid(-1:1,-1:1)
+  colnames(neighbors) <- c("x", "y")
+  canvas <- matrix(0, nrow = height, ncol = width)  
+  full_canvas <- iterate_mondriaan(canvas, neighbors, length(colors), cuts, ratio, seed)
+  full_canvas <- reshape2::melt(full_canvas)
+  colnames(full_canvas) <- c("y", "x", "z")
+  painting <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = FALSE, alpha = 1) + 
     ggplot2::coord_equal() +
     ggplot2::scale_fill_gradientn(colours = palette) +
