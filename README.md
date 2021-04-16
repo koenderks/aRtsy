@@ -17,7 +17,7 @@ Let's go hunting for some good `seed`'s!
 * [Paint strokes](#paint-strokes)
 * [Turmite](#turmite)
 * [Langton's ant](#langtons-ant)
-* [Function shapes](#function-shapes)
+* [Functions](#functions)
 * [LP records](#LP-records)
 
 ## Painting of the day
