@@ -85,7 +85,7 @@ You can use the `paint_ant()` function to make your own unique painting with thi
 
 ## Mondriaan
 
-This algorithm micics the well-known paintings of the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan).
+This algorithm mimics the style of the well-known paintings by the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan). It works by cutting into the painting from two random directions and drawing a square.
 
 You can use the `paint_mondriaan()` function to make your own unique painting with this algorithm.
 
