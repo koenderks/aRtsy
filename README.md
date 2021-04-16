@@ -86,7 +86,7 @@ You can use the `paint_ant()` function to make your own unique painting in this 
 
 To be honest, this type of painting is plainly and completely taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package, but it makes pretty pictures nonetheless. Here are some nice variations I found.
 
-You can use the `paint_shapes()` function to make your own unique painting in this style. 
+You can use the `paint_shape()` function to make your own unique painting in this style. 
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/shapes/2021-03-17.png' width='270' height='270'>
