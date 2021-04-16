@@ -2,11 +2,11 @@
 #'
 #' @description This function paints a turmite. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells. The algorithm is simple: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.
 #'
-#' @usage paint_turmite(color = '#fafafa', background = '#000000', p = 0.5, seed = 1, 
-#'                      iterations = 1e7, width = 1500, height = 1500)
+#' @usage paint_turmite(color, background = '#fafafa', p = 0.5, iterations = 1e7, 
+#'                      seed = 1, width = 1500, height = 1500)
 #'
-#' @param color   	  the color of the turmite.
-#' @param background  the color of the background.
+#' @param color   	  a character specifying the color used for the turmite.
+#' @param background  a character specifying the color used for the background.
 #' @param p           the probability of a state switch within the turmite.
 #' @param seed        the seed for the painting.
 #' @param iterations  the number of iterations of the turmite.
@@ -22,8 +22,7 @@
 #' @seealso \code{\link{paint_strokes}} \code{\link{paint_function}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
 #'
 #' @examples
-#' paint_turmite(color = "#fafafa", background = "#1E90FF", p = 0.5,
-#'               seed = 1, iterations = 1e7, width = 1500, height = 1500)
+#' paint_turmite(color = "#fafafa", background = "#1E90FF", p = 0.5)
 #' 
 #' @keywords paint
 #'
@@ -31,8 +30,8 @@
 #' @useDynLib aRtsy
 #' @import Rcpp
 
-paint_turmite <- function(color = '#fafafa', background = '#000000', p = 0.5, seed = 1, 
-                          iterations = 1e7, width = 1500, height = 1500){
+paint_turmite <- function(color, background = '#fafafa', p = 0.5, iterations = 1e7, 
+                          seed = 1, width = 1500, height = 1500){
   x <- y <- z <- NULL
   if(length(color) > 1)
     stop("Can only take one color value.")

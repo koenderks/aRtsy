@@ -4,13 +4,13 @@
 \alias{paint_mondriaan}
 \title{Paint a Mondriaan on a Canvas}
 \usage{
-paint_mondriaan(colors = '#fafafa', background = '#000000', cuts = 50,
-                ratio = 1.618, seed = 1, width = 200, height = 200)
+paint_mondriaan(colors, background = '#000000', cuts = 50, ratio = 1.618,
+                seed = 1, width = 200, height = 200)
 }
 \arguments{
-\item{colors}{the colors of the squares.}
+\item{colors}{a character vector specifying the colors used in the squares.}
 
-\item{background}{the color of the background (borders).}
+\item{background}{a character specifying the color used for the background (borders).}
 
 \item{cuts}{the number of cuts to make.}
 

@@ -2,13 +2,13 @@
 #'
 #' @description This function paints Langton's Ant. Langton's ant is a two-dimensional universal Turing machine with a very simple set of rules but complex emergent behavior.
 #'
-#' @usage paint_ant(colors = '#000000', background = '#fafafa', seed = 1, 
-#'           iterations = 1e7, width = 200, height = 200)
+#' @usage paint_ant(colors, background = '#fafafa', iterations = 1e7,
+#'           seed = 1, width = 200, height = 200)
 #'
-#' @param colors   	  the colors for the ant.
-#' @param background  the color of the background.
-#' @param seed        the seed for the painting.
+#' @param colors   	  a character (vector) specifying the colors for the ant.
+#' @param background  a character specifying the color of the background.
 #' @param iterations  the number of iterations of the ant.
+#' @param seed        the seed for the painting.
 #' @param width       the width of the painting in pixels.
 #' @param height      the height of the painting in pixels.
 #'
@@ -21,8 +21,8 @@
 #' @seealso \code{\link{paint_strokes}} \code{\link{paint_function}} \code{\link{paint_turmite}} \code{\link{paint_mondriaan}}
 #'
 #' @examples
-#' paint_ant(colors = '#000000', background = '#fafafa', seed = 1,
-#'           iterations = 1e7, width = 200, height = 200)
+#' paint_ant(colors = '#000000', background = '#fafafa', iterations = 1e7,
+#'           seed = 1, width = 200, height = 200)
 #' 
 #' @keywords paint
 #'
@@ -30,8 +30,8 @@
 #' @useDynLib aRtsy
 #' @import Rcpp
 
-paint_ant <- function(colors = '#000000', background = '#fafafa', seed = 1, 
-                      iterations = 1e7, width = 200, height = 200){
+paint_ant <- function(colors, background = '#fafafa', iterations = 1e7, 
+                      seed = 1, width = 200, height = 200){
   x <- y <- z <- NULL
   if(length(background) > 1)
     stop("Can only take one background value.")

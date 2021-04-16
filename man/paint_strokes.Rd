@@ -4,19 +4,19 @@
 \alias{paint_strokes}
 \title{Paint Strokes on a Canvas}
 \usage{
-paint_strokes(colors = '#000000', neighbors = 1, p = 0.01, seed = 1, 
-                     iterations = 1, width = 500, height = 500, side = FALSE)
+paint_strokes(colors, neighbors = 1, p = 0.01, iterations = 1, 
+                     seed = 1, width = 500, height = 500, side = FALSE)
 }
 \arguments{
-\item{colors}{a vector of colors for the painting.}
+\item{colors}{a character (vector) specifying the colors used for the strokes.}
 
 \item{neighbors}{the number of neighbors a block considers when taking over a color. More neighbors fades the painting.}
 
 \item{p}{the probability of selecting a new color at each block. A higher probability adds more noise to the painting.}
 
-\item{seed}{the seed for the painting.}
-
 \item{iterations}{the number of iterations on the painting. More iterations fade the painting.}
+
+\item{seed}{the seed for the painting.}
 
 \item{width}{the width of the painting in pixels.}
 

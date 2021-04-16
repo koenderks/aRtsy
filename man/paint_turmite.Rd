@@ -4,19 +4,19 @@
 \alias{paint_turmite}
 \title{Paint a Turmite on a Canvas}
 \usage{
-paint_turmite(color = '#fafafa', background = '#000000', p = 0.5, seed = 1, 
-                     iterations = 1e7, width = 1500, height = 1500)
+paint_turmite(color, background = '#fafafa', p = 0.5, iterations = 1e7, 
+                     seed = 1, width = 1500, height = 1500)
 }
 \arguments{
-\item{color}{the color of the turmite.}
+\item{color}{a character specifying the color used for the turmite.}
 
-\item{background}{the color of the background.}
+\item{background}{a character specifying the color used for the background.}
 
 \item{p}{the probability of a state switch within the turmite.}
 
-\item{seed}{the seed for the painting.}
-
 \item{iterations}{the number of iterations of the turmite.}
+
+\item{seed}{the seed for the painting.}
 
 \item{width}{the width of the painting in pixels.}
 
@@ -29,8 +29,7 @@ A \code{ggplot} object containing the painting.
 This function paints a turmite. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells. The algorithm is simple: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.
 }
 \examples{
-paint_turmite(color = "#fafafa", background = "#1E90FF", p = 0.5,
-              seed = 1, iterations = 1e7, width = 1500, height = 1500)
+paint_turmite(color = "#fafafa", background = "#1E90FF", p = 0.5)
 
 }
 \references{

@@ -2,11 +2,11 @@
 #'
 #' @description This function paints a Mondriaan.
 #'
-#' @usage paint_mondriaan(colors = '#fafafa', background = '#000000', cuts = 50,
-#'                 ratio = 1.618, seed = 1, width = 200, height = 200)
+#' @usage paint_mondriaan(colors, background = '#000000', cuts = 50, ratio = 1.618,
+#'                 seed = 1, width = 200, height = 200)
 #'
-#' @param colors   	  the colors of the squares.
-#' @param background  the color of the background (borders).
+#' @param colors   	  a character vector specifying the colors used in the squares.
+#' @param background  a character specifying the color used for the background (borders).
 #' @param cuts        the number of cuts to make.
 #' @param ratio       the \code{1:1} ratio for each cut.
 #' @param seed        the seed for the painting.
@@ -28,8 +28,10 @@
 #'
 #' @export
 
-paint_mondriaan <- function(colors = '#fafafa', background = '#000000', cuts = 50, 
-                            ratio = 1.618, seed = 1, width = 200, height = 200){
+paint_mondriaan <- function(colors, background = '#000000', cuts = 50, ratio = 1.618, 
+                            seed = 1, width = 200, height = 200){
+  if(length(colors) <= 1)
+	stop("You must specify more than one color.")
   if(length(background) > 1)
     stop("Can only take one background value.")
   if(cuts <= 1)

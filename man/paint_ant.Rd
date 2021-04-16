@@ -4,17 +4,17 @@
 \alias{paint_ant}
 \title{Paint Langton's Ant on a Canvas}
 \usage{
-paint_ant(colors = '#000000', background = '#fafafa', seed = 1, 
-          iterations = 1e7, width = 200, height = 200)
+paint_ant(colors, background = '#fafafa', iterations = 1e7,
+          seed = 1, width = 200, height = 200)
 }
 \arguments{
-\item{colors}{the colors for the ant.}
+\item{colors}{a character (vector) specifying the colors for the ant.}
 
-\item{background}{the color of the background.}
-
-\item{seed}{the seed for the painting.}
+\item{background}{a character specifying the color of the background.}
 
 \item{iterations}{the number of iterations of the ant.}
+
+\item{seed}{the seed for the painting.}
 
 \item{width}{the width of the painting in pixels.}
 
@@ -27,8 +27,8 @@ A \code{ggplot} object containing the painting.
 This function paints Langton's Ant. Langton's ant is a two-dimensional universal Turing machine with a very simple set of rules but complex emergent behavior.
 }
 \examples{
-paint_ant(colors = '#000000', background = '#fafafa', seed = 1,
-          iterations = 1e7, width = 200, height = 200)
+paint_ant(colors = '#000000', background = '#fafafa', iterations = 1e7,
+          seed = 1, width = 200, height = 200)
 
 }
 \references{

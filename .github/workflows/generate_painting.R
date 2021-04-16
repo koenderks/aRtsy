@@ -52,11 +52,11 @@ if (paintingType == 1){
 
   painting <- aRtsy::paint_mondriaan(colors = randomcoloR::randomColor(count = sample(1:20, size = 1)),
                                      background = '#000000',
-									 cuts = sample(1:200, 1),
+									 cuts = sample(5:200, 1),
 									 ratio = 1.618,
 									 seed = seed,
-									 width = 100,
-									 height = 100)
+									 width = sample(c(100, 200), size = 1),
+									 height = sample(c(100, 200), size = 1))
 
 }
 
