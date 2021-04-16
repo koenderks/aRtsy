@@ -54,15 +54,15 @@ arma::mat iterate_mondriaan(arma::mat X,
           X(y, x) = color;
         }
       }
-    } else if (cutfromtop < 0.5 && cutfromleft >= 0.5) {
+    } else if (cutfromtop < 0.5 && cutfromleft < 0.5) {
       for (int x = cutx; x < n; x++) {
         for (int y = cuty; y < m; y++) {
           X(y, x) = color;
         }
       }
     }
-    row = (rand() % m) - 1;
-    col = (rand() % n) - 1;
+    row = (rand() % (m-1));
+    col = (rand() % (n-1));
   }
   arma::mat X_new = X;
   for (int x = 0; x < n; x++) {
