@@ -85,7 +85,7 @@ You can use the `paint_ant()` function to make your own unique painting with thi
 
 ## Mondriaan
 
-This algorithm micics the well-known paintings by [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan).
+This algorithm micics the well-known paintings of the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan).
 
 You can use the `paint_mondriaan()` function to make your own unique painting with this algorithm.
 
