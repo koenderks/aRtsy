@@ -3,7 +3,7 @@
 #' @description This function paints a Mondriaan.
 #'
 #' @usage paint_mondriaan(colors, background = '#000000', cuts = 50, ratio = 1.618,
-#'                 seed = 1, width = 200, height = 200)
+#'                 seed = 1, width = 100, height = 100)
 #'
 #' @param colors   	  a character vector specifying the colors used in the squares.
 #' @param background  a character specifying the color used for the background (borders).
@@ -22,14 +22,14 @@
 #' @examples
 #' paint_mondriaan(colors = c('white', 'yellow', 'red'), 
 #'                 background = '#000000', cuts = 20, ratio = 1.618, 
-#'                 seed = 12, width = 200, height = 200)
+#'                 seed = 12, width = 100, height = 100)
 #' 
 #' @keywords paint
 #'
 #' @export
 
 paint_mondriaan <- function(colors, background = '#000000', cuts = 50, ratio = 1.618, 
-                            seed = 1, width = 200, height = 200){
+                            seed = 1, width = 100, height = 100){
   if(length(colors) <= 1)
 	stop("You must specify more than one color.")
   if(length(background) > 1)

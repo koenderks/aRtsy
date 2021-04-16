@@ -5,7 +5,7 @@
 \title{Paint a Mondriaan on a Canvas}
 \usage{
 paint_mondriaan(colors, background = '#000000', cuts = 50, ratio = 1.618,
-                seed = 1, width = 200, height = 200)
+                seed = 1, width = 100, height = 100)
 }
 \arguments{
 \item{colors}{a character vector specifying the colors used in the squares.}
@@ -31,7 +31,7 @@ This function paints a Mondriaan.
 \examples{
 paint_mondriaan(colors = c('white', 'yellow', 'red'), 
                 background = '#000000', cuts = 20, ratio = 1.618, 
-                seed = 12, width = 200, height = 200)
+                seed = 12, width = 100, height = 100)
 
 }
 \seealso{
