@@ -51,8 +51,8 @@ You can use the `paint_strokes()` function to make your own unique painting with
 According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *a Turing machine which has an orientation in addition to a current state and a "tape" that consists of an infinite two-dimensional grid of cells*. Basically, it's a moving block. The algorithm consists of the following three simple steps that are repeated, but I've added some logic so that the block does not go off the canvas. 
 
 1. Turn on the spot (left, right, up, or down),
-1. Change the color of the square,
-1. Move forward one square.
+1. Change the color of the block,
+1. Move forward one block.
 
 You can use the `paint_turmite()` function to make your own unique painting with this algorithm. 
 
@@ -70,9 +70,9 @@ You can use the `paint_turmite()` function to make your own unique painting with
 
 According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langton's ant is a turmite with a very specific set of rules. In particular, it moves according to the three rules below. Langton's ant reminds me of a crayon painting. The problem with this thing is that it always moves off the canvas though...
 
-1. On a non-colored square, turn 90 degrees clockwise, un-color the square, move forward one unit;
-1. On a colored square, turn 90 degrees counter-clockwise, color the square, move forward one unit.
-1. The ant is able to cycle through different colors, which correspond to different combinations of the two rules above.
+1. On a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block.
+1. On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block.
+1. The ant is able to cycle through different colors which correspond to different combinations of the rules above.
 
 You can use the `paint_ant()` function to make your own unique painting with this algorithm.
 
