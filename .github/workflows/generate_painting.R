@@ -10,7 +10,7 @@ seed <- as.numeric(Sys.Date())
 set.seed(seed)
 
 # Select painting type
-paintingType <- sample(1:4, size = 1)
+paintingType <- sample(1:5, size = 1)
 
 if (paintingType == 1){
   
@@ -48,6 +48,16 @@ if (paintingType == 1){
                                width = 500, 
                                height = 500)
   
+} else if(paintingType == 5){
+
+  painting <- aRtsy::paint_mondriaan(colors = randomcoloR::randomColor(count = sample(1:20, size = 1)),
+                                     background = '#000000',
+									 cuts = sample(1:200, 1),
+									 ratio = 1.618,
+									 seed = seed,
+									 width = 100,
+									 height = 100)
+
 }
 
 ggplot2::ggsave(painting, filename = paintingPNGname, width = 7, height = 7, dpi = 300)
