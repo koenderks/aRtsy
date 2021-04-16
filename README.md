@@ -87,6 +87,8 @@ You can use the `paint_ant()` function to make your own unique painting with thi
 
 This algorithm micics the well-known paintings by [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan).
 
+You can use the `paint_mondriaan()` function to make your own unique painting with this algorithm.
+
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-03-01.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-29.png' width='270' height='270'>
