@@ -17,6 +17,7 @@ Let's go hunting for some good `seed`'s!
 * [Paint strokes](#paint-strokes)
 * [Turmite](#turmite)
 * [Langton's ant](#langtons-ant)
+* [Mondriaan](#mondriaan)
 * [Functions](#functions)
 * [LP records](#LP-records)
 
@@ -80,6 +81,14 @@ You can use the `paint_ant()` function to make your own unique painting with thi
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-03.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-02.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-01.png' width='270' height='270'>
+</p> 
+
+## Mondriaan
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-03-01.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-29.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-28.png' width='270' height='270'>
 </p> 
 
 ## Functions

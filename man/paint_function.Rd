@@ -28,7 +28,7 @@ paint_function(color = '#000000', background = bg)
 \url{https://github.com/cutterkom/generativeart}
 }
 \seealso{
-\code{\link{paint_strokes}} \code{\link{paint_turmite}} \code{\link{paint_ant}}
+\code{\link{paint_strokes}} \code{\link{paint_turmite}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

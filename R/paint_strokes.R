@@ -18,7 +18,7 @@
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
-#' @seealso \code{\link{paint_turmite}} \code{\link{paint_function}} \code{\link{paint_ant}}
+#' @seealso \code{\link{paint_turmite}} \code{\link{paint_function}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
 #'
 #' @examples
 #' paint_strokes(colors = c('#fafafa', '#000000'), neighbors = 1, p = 0.01,
@@ -33,6 +33,7 @@
 
 paint_strokes <- function(colors = '#000000', neighbors = 1, p = 0.01, seed = 1, 
                           iterations = 1, width = 500, height = 500, side = FALSE){
+  x <- y <- z <- NULL
   if(neighbors < 1)
 	stop("Neighbors must be equal to, or larger than, one.")
   if(width != height)
@@ -48,8 +49,7 @@ paint_strokes <- function(colors = '#000000', neighbors = 1, p = 0.01, seed = 1,
     df <- iterate_strokes(X = df, neighbors = neighborsLocations, s = length(colors), p = p, seed = seed) 
   }
   df <- reshape2::melt(df)
-  x <- y <- z <- NULL
-  df <- data.frame(y = df[, 1], x = df[, 2], z = df[, 3])
+  colnames(df) <- c("y", "x", "z")
   painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 
     ggplot2::coord_equal() +

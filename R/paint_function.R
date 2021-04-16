@@ -14,7 +14,7 @@
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
-#' @seealso \code{\link{paint_strokes}} \code{\link{paint_turmite}} \code{\link{paint_ant}}
+#' @seealso \code{\link{paint_strokes}} \code{\link{paint_turmite}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
 #'
 #' @examples
 #' bg <- sample(c('#fafafa', '#cc7722', '#a9d2c3', '#fc7c7c'), size = 1)
@@ -26,11 +26,11 @@
 #' @importFrom dplyr %>%
 
 paint_function <- function(color = '#000000', background = '#fafafa', seed = 1){
+  x <- y <- z <- NULL
   if(length(color) > 1)
     stop("Can only take one color value.")
   if(length(background) > 1)
     stop("Can only take one background value.")
-  x <- y <- z <- NULL
   set.seed(seed)
   painting_formulas <- list()
   painting_formulas[[1]] <- list( 

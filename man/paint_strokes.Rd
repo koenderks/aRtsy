@@ -37,7 +37,7 @@ paint_strokes(colors = c('#fafafa', '#000000'), neighbors = 1, p = 0.01,
 
 }
 \seealso{
-\code{\link{paint_turmite}} \code{\link{paint_function}} \code{\link{paint_ant}}
+\code{\link{paint_turmite}} \code{\link{paint_function}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

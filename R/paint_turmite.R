@@ -19,7 +19,7 @@
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
-#' @seealso \code{\link{paint_strokes}} \code{\link{paint_function}} \code{\link{paint_ant}}
+#' @seealso \code{\link{paint_strokes}} \code{\link{paint_function}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
 #'
 #' @examples
 #' paint_turmite(color = "#fafafa", background = "#1E90FF", p = 0.5,
@@ -33,11 +33,11 @@
 
 paint_turmite <- function(color = '#fafafa', background = '#000000', p = 0.5, seed = 1, 
                           iterations = 1e7, width = 1500, height = 1500){
+  x <- y <- z <- NULL
   if(length(color) > 1)
     stop("Can only take one color value.")
   if(length(background) > 1)
     stop("Can only take one background value.")
-  x <- y <- z <- NULL
   set.seed(seed)
   palette <- c(background, color)
   k <- sample(0:1, size = 1)

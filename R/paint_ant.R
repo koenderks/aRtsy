@@ -18,7 +18,7 @@
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
-#' @seealso \code{\link{paint_strokes}} \code{\link{paint_function}} \code{\link{paint_turmite}}
+#' @seealso \code{\link{paint_strokes}} \code{\link{paint_function}} \code{\link{paint_turmite}} \code{\link{paint_mondriaan}}
 #'
 #' @examples
 #' paint_ant(colors = '#000000', background = '#fafafa', seed = 1,
@@ -32,9 +32,9 @@
 
 paint_ant <- function(colors = '#000000', background = '#fafafa', seed = 1, 
                       iterations = 1e7, width = 200, height = 200){
+  x <- y <- z <- NULL
   if(length(background) > 1)
     stop("Can only take one background value.")
-  x <- y <- z <- NULL
   set.seed(seed)
   palette <- c(background, colors)
   row <- ceiling(height / 2)
@@ -45,7 +45,7 @@ paint_ant <- function(colors = '#000000', background = '#fafafa', seed = 1,
   colnames(c) <- c("x", "y")
   df <- iterate_ant(matrix(0, nrow = height, ncol = width), iterations, row, col, c = c, seed = seed)  
   df <- reshape2::melt(df)
-  colnames(df) <- c("y","x","z")
+  colnames(df) <- c("y", "x", "z")
   painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 
     ggplot2::coord_equal() +

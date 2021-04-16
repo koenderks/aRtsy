@@ -2,6 +2,7 @@
 
 export(paint_ant)
 export(paint_function)
+export(paint_mondriaan)
 export(paint_strokes)
 export(paint_turmite)
 import(Rcpp)
