@@ -5,14 +5,16 @@
 \title{Paint Langton's Ant}
 \usage{
 paint_ant(colors = '#000000', background = '#fafafa', seed = 1, 
-          width = 200, height = 200)
+          iterations = 1e7, width = 200, height = 200)
 }
 \arguments{
-\item{colors}{the color of the turmite.}
+\item{colors}{the colors of the ant}
 
 \item{background}{the color of the background.}
 
 \item{seed}{the seed for the painting.}
+
+\item{iterations}{the number of iterations of the ant}
 
 \item{width}{the width of the painting.}
 
@@ -26,7 +28,7 @@ This function paints Langton's Ant. Langton's ant is a two-dimensional universal
 }
 \examples{
 paint_ant(colors = '#000000', background = '#fafafa', seed = 1,
-          width = 200, height = 200)
+          iterations = 1e7, width = 200, height = 200)
 
 }
 \references{

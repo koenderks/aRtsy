@@ -33,6 +33,11 @@
 
 paint_turmite <- function(color = '#fafafa', background = '#000000', p = 0.5, seed = 1, 
                           iterations = 1e7, width = 1500, height = 1500){
+  if(length(color) > 1)
+    stop("Can only take one color value.")
+  if(length(background) > 1)
+    stop("Can only take one background value.")
+  x <- y <- z <- NULL
   set.seed(seed)
   palette <- c(background, color)
   k <- sample(0:1, size = 1)
@@ -44,7 +49,7 @@ paint_turmite <- function(color = '#fafafa', background = '#000000', p = 0.5, se
     row <- sample(0:(height-1), size = 1) 
   df <- iterate_turmite(matrix(0, nrow = height, ncol = width), iterations, row, col, p = p)  
   df <- reshape2::melt(df)
-  colnames(df) <- c("y","x","z")
+  colnames(df) <- c("y", "x", "z")
   painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 
     ggplot2::coord_equal() +

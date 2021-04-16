@@ -3,11 +3,12 @@
 #' @description This function paints Langton's Ant. Langton's ant is a two-dimensional universal Turing machine with a very simple set of rules but complex emergent behavior.
 #'
 #' @usage paint_ant(colors = '#000000', background = '#fafafa', seed = 1, 
-#'           width = 200, height = 200)
+#'           iterations = 1e7, width = 200, height = 200)
 #'
-#' @param colors   	  the color of the turmite.
+#' @param colors   	  the colors of the ant
 #' @param background  the color of the background.
 #' @param seed        the seed for the painting.
+#' @param iterations  the number of iterations of the ant
 #' @param width       the width of the painting.
 #' @param height      the height of the painting.
 #'
@@ -21,7 +22,7 @@
 #'
 #' @examples
 #' paint_ant(colors = '#000000', background = '#fafafa', seed = 1,
-#'           width = 200, height = 200)
+#'           iterations = 1e7, width = 200, height = 200)
 #' 
 #' @keywords paint
 #'
@@ -30,7 +31,10 @@
 #' @import Rcpp
 
 paint_ant <- function(colors = '#000000', background = '#fafafa', seed = 1, 
-                      iterations = 1e7, width = 1500, height = 1500){
+                      iterations = 1e7, width = 200, height = 200){
+  if(length(background) > 1)
+    stop("Can only take one background value.")
+  x <- y <- z <- NULL
   set.seed(seed)
   palette <- c(background, colors)
   row <- ceiling(height / 2)

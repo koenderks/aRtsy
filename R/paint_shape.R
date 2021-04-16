@@ -24,8 +24,14 @@
 #' @keywords paint
 #'
 #' @export
+#' @importFrom dplyr %>%
 
 paint_shape <- function(color = '#000000', background = '#fafafa', seed = 1){
+  if(length(color) > 1)
+    stop("Can only take one color value.")
+  if(length(background) > 1)
+    stop("Can only take one background value.")
+  x <- y <- z <- NULL
   set.seed(seed)
   painting_formulas <- list()
   painting_formulas[[1]] <- list( 
@@ -37,7 +43,7 @@ paint_shape <- function(color = '#000000', background = '#fafafa', seed = 1){
     y = quote(runif(1, -1, 10) * y_i^sample(c(0.5, 1:6), 1) - cos(x_i^sample(c(0.5, 1:6), 1)) * y_i^sample(c(0.5, 1:6), 1))
   )
   painting_formula <- painting_formulas[[sample(1:length(painting_formulas), 1)]]
-  df <- seq(from = -pi, to = pi, by = 0.01) %>% expand.grid(x_i = ., y_i = .) %>% dplyr::mutate(!!!painting_formula)
+  df <- expand.grid(x_i = seq(from = -pi, to = pi, by = 0.01), y_i = seq(from = -pi, to = pi, by = 0.01)) %>% dplyr::mutate(!!!painting_formula)
   painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y)) + 
     ggplot2::geom_point(alpha = 0.1, size = 0, shape = 20, color = color) + 
     ggplot2::theme_void() + 

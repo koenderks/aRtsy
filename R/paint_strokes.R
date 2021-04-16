@@ -44,7 +44,8 @@ paint_strokes <- function(colors = '#000000', neighbors = 1, p = 0.01, seed = 1,
     df <- iterate_strokes(X = df, neighbors = neighborsLocations, s = length(colors), p = p) 
   }
   df <- reshape2::melt(df)
-  colnames(df) <- c("y","x","z")
+  x <- y <- z <- NULL
+  df <- data.frame(y = df[, 1], x = df[, 2], z = df[, 3])
   painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 
     ggplot2::coord_equal() +
