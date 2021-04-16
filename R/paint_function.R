@@ -17,8 +17,7 @@
 #' @seealso \code{\link{paint_strokes}} \code{\link{paint_turmite}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
 #'
 #' @examples
-#' bg <- sample(c('#fafafa', '#cc7722', '#a9d2c3', '#fc7c7c'), size = 1)
-#' paint_function(color = '#000000', background = bg)
+#' paint_function(color = '#000000', background = '#fafafa')
 #' 
 #' @keywords paint
 #'

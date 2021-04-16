@@ -22,7 +22,7 @@
 #' @seealso \code{\link{paint_strokes}} \code{\link{paint_function}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
 #'
 #' @examples
-#' paint_turmite(color = "#fafafa", background = "#000000")
+#' paint_turmite(color = "#000000", background = "#fafafa")
 #' 
 #' @keywords paint
 #'

@@ -20,8 +20,7 @@ A \code{ggplot} object containing the painting.
 This function paints functions and mimics the functionality of the \code{generativeart} package.
 }
 \examples{
-bg <- sample(c('#fafafa', '#cc7722', '#a9d2c3', '#fc7c7c'), size = 1)
-paint_function(color = '#000000', background = bg)
+paint_function(color = '#000000', background = '#fafafa')
 
 }
 \references{
