@@ -32,7 +32,7 @@ Every day this repository generates a random painting with the `aRtsy` package. 
 
 The `paint_strokes` algorithm is my first self-concocted algorithm for generative drawing on a grid-based canvas. This algorithm is based on the simple idea that each next point on the grid has a chance to take over the color of an adjacent colored point but also has a change of generating a new color. Going over the grid like this apparently results in these paint-like strokes on the canvas.
 
-You can use the `paint_strokes()` function to make your own unique painting in this style. 
+You can use the `paint_strokes()` function to make your own unique painting with this algorithm. 
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-21.png' width='270' height='270'>
@@ -54,7 +54,7 @@ According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *a
 - Change the color of the square,
 - Move forward one square.
 
-You can use the `paint_turmite()` function to make your own unique painting in this style. 
+You can use the `paint_turmite()` function to make your own unique painting with this algorithm. 
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-06.png' width='270' height='270'>
@@ -76,7 +76,7 @@ According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langton
 
 I like Langton's ant, it reminds me of a crayon painting. The problem with this thing is that it always moves off the canvas though...
 
-You can use the `paint_ant()` function to make your own unique painting in this style.
+You can use the `paint_ant()` function to make your own unique painting with this algorithm.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-03.png' width='270' height='270'>
@@ -88,7 +88,7 @@ You can use the `paint_ant()` function to make your own unique painting in this 
 
 To be honest, this type of painting is plainly and completely taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package, but it makes pretty pictures nonetheless. Here are some nice variations I found.
 
-You can use the `paint_function()` function to make your own unique painting in this style. 
+You can use the `paint_function()` function to make your own unique painting with this algorithm. 
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/functions/2021-03-17.png' width='270' height='270'>
