@@ -50,9 +50,9 @@ You can use the `paint_strokes()` function to make your own unique painting with
 
 According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *a Turing machine which has an orientation in addition to a current state and a "tape" that consists of an infinite two-dimensional grid of cells*. Basically, it's a moving block. The algorithm consists of the following three simple steps that are repeated, but I've added some logic so that the block does not go off the canvas. 
 
-- Turn on the spot (left, right, up, or down),
-- Change the color of the square,
-- Move forward one square.
+1. Turn on the spot (left, right, up, or down),
+1. Change the color of the square,
+1. Move forward one square.
 
 You can use the `paint_turmite()` function to make your own unique painting with this algorithm. 
 
@@ -68,13 +68,11 @@ You can use the `paint_turmite()` function to make your own unique painting with
 
 ## Langton's ant
 
-According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langton's ant is a turmite with a very specific set of rules. In particular, it moves according to the rules below:
+According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langton's ant is a turmite with a very specific set of rules. In particular, it moves according to the three rules below. Langton's ant reminds me of a crayon painting. The problem with this thing is that it always moves off the canvas though...
 
-- On a non-colored square, turn 90 degrees clockwise, flip the color of the square, move forward one unit;
-- On a colored square, turn 90 degrees counter-clockwise, flip the color of the square, move forward one unit.
-- Different colors may correspond different combinations of these mechanics.
-
-I like Langton's ant, it reminds me of a crayon painting. The problem with this thing is that it always moves off the canvas though...
+1. On a non-colored square, turn 90 degrees clockwise, flip the color of the square, move forward one unit;
+1. On a colored square, turn 90 degrees counter-clockwise, flip the color of the square, move forward one unit.
+1. Different colors may correspond different combinations of these mechanics.
 
 You can use the `paint_ant()` function to make your own unique painting with this algorithm.
 
