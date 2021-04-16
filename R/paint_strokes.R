@@ -21,9 +21,7 @@
 #' @seealso \code{\link{paint_turmite}} \code{\link{paint_function}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
 #'
 #' @examples
-#' paint_strokes(colors = c('#fafafa', '#000000'), neighbors = 1, p = 0.01,
-#'               seed = 1, side = FALSE, iterations = 1, 
-#'               width = 1500, height = 1500)
+#' paint_strokes(colors = c('#fafafa', '#000000'))
 #' 
 #' @keywords paint
 #'
