@@ -72,7 +72,7 @@ According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langton
 - On a colored square, turn 90 degrees counter-clockwise, flip the color of the square, move forward one unit.
 - Different colors may correspond different combinations of these mechanics.
 
-I like Langton's Ant, it reminds me of a crayon painting. The problem with this thing is that it always moves off the canvas though...
+I like Langton's ant, it reminds me of a crayon painting. The problem with this thing is that it always moves off the canvas though...
 
 You can use the `paint_ant()` function to make your own unique painting in this style.
 
