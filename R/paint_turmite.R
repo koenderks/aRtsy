@@ -10,8 +10,8 @@
 #' @param p           the probability of a state switch within the turmite.
 #' @param seed        the seed for the painting.
 #' @param iterations  the number of iterations of the turmite.
-#' @param width       the width of the painting.
-#' @param height      the height of the painting.
+#' @param width       the width of the painting in pixels.
+#' @param height      the height of the painting in pixels.
 #'
 #' @references \url{https://en.wikipedia.org/wiki/Turmite}
 #'

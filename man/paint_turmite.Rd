@@ -18,9 +18,9 @@ paint_turmite(color = '#fafafa', background = '#000000', p = 0.5, seed = 1,
 
 \item{iterations}{the number of iterations of the turmite.}
 
-\item{width}{the width of the painting.}
+\item{width}{the width of the painting in pixels.}
 
-\item{height}{the height of the painting.}
+\item{height}{the height of the painting in pixels.}
 }
 \value{
 A \code{ggplot} object containing the painting.

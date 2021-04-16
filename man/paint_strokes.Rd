@@ -10,17 +10,17 @@ paint_strokes(colors = '#000000', neighbors = 1, p = 0.01, seed = 1,
 \arguments{
 \item{colors}{a vector of colors for the painting.}
 
-\item{neighbors}{the number of neighbors a block considers when taking over a color.}
+\item{neighbors}{the number of neighbors a block considers when taking over a color. More neighbors fades the painting.}
 
-\item{p}{the probability of selecting a new color at each block.}
+\item{p}{the probability of selecting a new color at each block. A higher probability adds more noise to the painting.}
 
 \item{seed}{the seed for the painting.}
 
-\item{iterations}{the number of iterations on the painting.}
+\item{iterations}{the number of iterations on the painting. More iterations fade the painting.}
 
-\item{width}{the width of the painting.}
+\item{width}{the width of the painting in pixels.}
 
-\item{height}{the height of the painting.}
+\item{height}{the height of the painting in pixels.}
 
 \item{side}{whether to turn the painting on its side.}
 }

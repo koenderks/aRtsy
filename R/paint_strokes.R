@@ -6,12 +6,12 @@
 #'                      iterations = 1, width = 500, height = 500, side = FALSE)
 #'
 #' @param colors     a vector of colors for the painting.
-#' @param neighbors  the number of neighbors a block considers when taking over a color.
-#' @param p          the probability of selecting a new color at each block.
+#' @param neighbors  the number of neighbors a block considers when taking over a color. More neighbors fades the painting.
+#' @param p          the probability of selecting a new color at each block. A higher probability adds more noise to the painting.
 #' @param seed       the seed for the painting.
-#' @param iterations the number of iterations on the painting.
-#' @param width      the width of the painting.
-#' @param height     the height of the painting.
+#' @param iterations the number of iterations on the painting. More iterations fade the painting.
+#' @param width      the width of the painting in pixels.
+#' @param height     the height of the painting in pixels.
 #' @param side       whether to turn the painting on its side.
 #'
 #' @return A \code{ggplot} object containing the painting.

@@ -8,17 +8,17 @@ paint_ant(colors = '#000000', background = '#fafafa', seed = 1,
           iterations = 1e7, width = 200, height = 200)
 }
 \arguments{
-\item{colors}{the colors of the ant}
+\item{colors}{the colors for the ant.}
 
 \item{background}{the color of the background.}
 
 \item{seed}{the seed for the painting.}
 
-\item{iterations}{the number of iterations of the ant}
+\item{iterations}{the number of iterations of the ant.}
 
-\item{width}{the width of the painting.}
+\item{width}{the width of the painting in pixels.}
 
-\item{height}{the height of the painting.}
+\item{height}{the height of the painting in pixels.}
 }
 \value{
 A \code{ggplot} object containing the painting.

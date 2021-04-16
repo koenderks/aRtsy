@@ -5,12 +5,12 @@
 #' @usage paint_ant(colors = '#000000', background = '#fafafa', seed = 1, 
 #'           iterations = 1e7, width = 200, height = 200)
 #'
-#' @param colors   	  the colors of the ant
+#' @param colors   	  the colors for the ant.
 #' @param background  the color of the background.
 #' @param seed        the seed for the painting.
-#' @param iterations  the number of iterations of the ant
-#' @param width       the width of the painting.
-#' @param height      the height of the painting.
+#' @param iterations  the number of iterations of the ant.
+#' @param width       the width of the painting in pixels.
+#' @param height      the height of the painting in pixels.
 #'
 #' @references \url{https://en.wikipedia.org/wiki/Langton\%27s_ant}
 #'
