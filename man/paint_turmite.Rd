@@ -26,7 +26,7 @@ paint_turmite(color = '#fafafa', background = '#000000', p = 0.5, seed = 1,
 A \code{ggplot} object containing the painting.
 }
 \description{
-This function paints turmites. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells. The algorithm is simple: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.
+This function paints a turmite. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells. The algorithm is simple: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.
 }
 \examples{
 paint_turmite(color = "#fafafa", background = "#1E90FF", p = 0.5,

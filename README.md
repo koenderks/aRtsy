@@ -14,7 +14,7 @@ library(aRtsy)
 * [Painting of the day](#painting-of-the-day)
 * [Paint strokes](#paint-strokes)
 * [Turmite](#turmite)
-* [Landon's ant](#langdons-ant)
+* [Langton's ant](#langtons-ant)
 * [Function shapes](#function-shapes)
 * [LP records](#LP-records)
 
@@ -64,15 +64,15 @@ You can use the `paint_turmite()` function to make your own unique painting in t
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-07.png' width='1000' height='270'>
 </p>
 
-## Langdon's ant
+## Langton's ant
 
-According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langdon's ant is a turmite with a very specific set of rules. In particular, it moves according to the rules below:
+According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langton's ant is a turmite with a very specific set of rules. In particular, it moves according to the rules below:
 
 - On a non-colored square, turn 90 degrees clockwise, flip the color of the square, move forward one unit;
 - On a colored square, turn 90 degrees counter-clockwise, flip the color of the square, move forward one unit.
 - Different colors may correspond different combinations of these mechanics.
 
-I like Langdon's Ant, it reminds me of a crayon painting. The problem with this thing is that it always moves off the canvas though...
+I like Langton's Ant, it reminds me of a crayon painting. The problem with this thing is that it always moves off the canvas though...
 
 You can use the `paint_ant()` function to make your own unique painting in this style.
 
@@ -96,7 +96,7 @@ You can use the `paint_function()` function to make your own unique painting in 
 
 ## LP records
 
-This type of painting is a special case of the shape painting created by `paint_function()`. I like this specific type of painting because of its close resemblence to the LP record, making it ideal as a poster for a music room or something. You got to find a lucky seed to get these though.
+This type of painting is a special case of the shape painting created by `paint_function()`. I like this specific type of painting because of its close resemblance to the LP record, making it ideal as a poster for a music room or something. You got to find a lucky seed to get these though.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/records/2021-03-16.png' width='270' height='270'>
