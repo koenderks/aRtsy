@@ -9,6 +9,8 @@ devtools::install.github('koenderks/aRtsy')
 library(aRtsy)
 ```
 
+Let's go hunting for some good `seed`'s!
+
 ## Overview
 
 * [Painting of the day](#painting-of-the-day)
