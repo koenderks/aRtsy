@@ -4,7 +4,7 @@
 \alias{paint_mondriaan}
 \title{Paint a Mondriaan on a Canvas}
 \usage{
-paint_mondriaan(colors = '#fafafa', background = '#000000', cuts = 5,
+paint_mondriaan(colors = '#fafafa', background = '#000000', cuts = 50,
                 ratio = 1.618, seed = 1, width = 100, height = 100)
 }
 \arguments{
@@ -30,7 +30,7 @@ This function paints a Mondriaan.
 }
 \examples{
 paint_mondriaan(colors = c('#000000', '#cc7722', '#a9d2c3', '#fc7c7c'), 
-                background = '#fafafa', cuts = 5, ratio = 1.618, 
+                background = '#fafafa', cuts = 50, ratio = 1.618, 
                 seed = 1, width = 100, height = 100)
 
 }

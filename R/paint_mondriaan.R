@@ -2,7 +2,7 @@
 #'
 #' @description This function paints a Mondriaan.
 #'
-#' @usage paint_mondriaan(colors = '#fafafa', background = '#000000', cuts = 5,
+#' @usage paint_mondriaan(colors = '#fafafa', background = '#000000', cuts = 50,
 #'                 ratio = 1.618, seed = 1, width = 100, height = 100)
 #'
 #' @param colors   	  the colors of the squares.
@@ -21,15 +21,15 @@
 #'
 #' @examples
 #' paint_mondriaan(colors = c('#000000', '#cc7722', '#a9d2c3', '#fc7c7c'), 
-#'                 background = '#fafafa', cuts = 5, ratio = 1.618, 
+#'                 background = '#fafafa', cuts = 50, ratio = 1.618, 
 #'                 seed = 1, width = 100, height = 100)
 #' 
 #' @keywords paint
 #'
 #' @export
 
-paint_mondriaan <- function(colors = '#fafafa', background = '#000000', cuts = 50, ratio = 1.618, 
-                            seed = 1, width = 100, height = 100){
+paint_mondriaan <- function(colors = '#fafafa', background = '#000000', cuts = 50, 
+                            ratio = 1.618, seed = 1, width = 100, height = 100){
   if(length(background) > 1)
     stop("Can only take one background value.")
   if(cuts <= 1)
