@@ -1,4 +1,4 @@
-#' Paint strokes
+#' Paint Strokes on a Canvas
 #'
 #' @description This function creates a painting that resembles paints strokes. The algorithm is based on the simple idea that each next point on the grid has a chance to take over the color of an adjacent colored point but also has a change of generating a new color.
 #'
@@ -18,7 +18,7 @@
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
-#' @seealso \code{\link{paint_turmite}} \code{\link{paint_shape}} \code{\link{paint_ant}}
+#' @seealso \code{\link{paint_turmite}} \code{\link{paint_function}} \code{\link{paint_ant}}
 #'
 #' @examples
 #' paint_strokes(colors = c('#fafafa', '#000000'), neighbors = 1, p = 0.01,

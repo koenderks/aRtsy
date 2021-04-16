@@ -2,7 +2,7 @@
 % Please edit documentation in R/paint_strokes.R
 \name{paint_strokes}
 \alias{paint_strokes}
-\title{Paint strokes}
+\title{Paint Strokes on a Canvas}
 \usage{
 paint_strokes(colors = '#000000', neighbors = 1, p = 0.01, seed = 1, 
                      iterations = 1, width = 500, height = 500, side = FALSE)
@@ -37,7 +37,7 @@ paint_strokes(colors = c('#fafafa', '#000000'), neighbors = 1, p = 0.01,
 
 }
 \seealso{
-\code{\link{paint_turmite}} \code{\link{paint_shape}} \code{\link{paint_ant}}
+\code{\link{paint_turmite}} \code{\link{paint_function}} \code{\link{paint_ant}}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

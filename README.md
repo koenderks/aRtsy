@@ -13,7 +13,7 @@ library(aRtsy)
 
 * [Painting of the day](#painting-of-the-day)
 * [Paint strokes](#paint-strokes)
-* [Turmites](#turmites)
+* [Turmite](#turmite)
 * [Landon's ant](#langdons-ant)
 * [Function shapes](#function-shapes)
 * [LP records](#LP-records)
@@ -44,7 +44,7 @@ You can use the `paint_strokes()` function to make your own unique painting in t
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-10.png' width='270' height='270'>
 </p>
 
-## Turmites
+## Turmite
 
 According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is a Turing machine which has an orientation in addition to a current state and a trail that consists of a two-dimensional grid of cells. Basically, it's a moving block. The algorithm consists of three simple steps that are repeated: 
 
@@ -82,21 +82,21 @@ You can use the `paint_ant()` function to make your own unique painting in this 
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-01.png' width='270' height='270'>
 </p> 
 
-## Function shapes
+## Functions
 
 To be honest, this type of painting is plainly and completely taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package, but it makes pretty pictures nonetheless. Here are some nice variations I found.
 
-You can use the `paint_shape()` function to make your own unique painting in this style. 
+You can use the `paint_function()` function to make your own unique painting in this style. 
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/shapes/2021-03-17.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/shapes/2021-04-08.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/shapes/2021-04-04.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/functions/2021-03-17.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/functions/2021-04-08.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/functions/2021-04-04.png' width='270' height='270'>
 </p>
 
 ## LP records
 
-This type of painting is a special case of the shape painting created by `paint_shape()`. I like this specific type of painting because of its close resemblence to the LP record, making it ideal as a poster for a music room or something. You got to find a lucky seed to get these though.
+This type of painting is a special case of the shape painting created by `paint_function()`. I like this specific type of painting because of its close resemblence to the LP record, making it ideal as a poster for a music room or something. You got to find a lucky seed to get these though.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/records/2021-03-16.png' width='270' height='270'>

@@ -1,8 +1,8 @@
-#' Paint shapes
+#' Paint Functions on a Canvas
 #'
-#' @description This function paints shapes and mimics the functionality of the \code{generativeart} package.
+#' @description This function paints functions and mimics the functionality of the \code{generativeart} package.
 #'
-#' @usage paint_shape(color = '#000000', background = '#fafafa', seed = 1)
+#' @usage paint_function(color = '#000000', background = '#fafafa', seed = 1)
 #'
 #' @param color   	  the color of the shape.
 #' @param background  the color of the background.
@@ -18,15 +18,14 @@
 #'
 #' @examples
 #' bg <- sample(c('#fafafa', '#cc7722', '#a9d2c3', '#fc7c7c'), size = 1)
-#' 
-#' paint_shape(color = '#000000', background = bg)
+#' paint_function(color = '#000000', background = bg)
 #' 
 #' @keywords paint
 #'
 #' @export
 #' @importFrom dplyr %>%
 
-paint_shape <- function(color = '#000000', background = '#fafafa', seed = 1){
+paint_function <- function(color = '#000000', background = '#fafafa', seed = 1){
   if(length(color) > 1)
     stop("Can only take one color value.")
   if(length(background) > 1)

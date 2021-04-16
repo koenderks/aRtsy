@@ -14,9 +14,9 @@ paintingType <- sample(1:4, size = 1)
 
 if (paintingType == 1){
   
-  painting <- aRtsy::paint_shape(color = sample(c("black", randomcoloR::randomColor(1)), size = 1), 
-                                 background = sample(c("#fafafa", "#1a3657", "#343434", "#cc7722", "#a9d2c3", "#fc7c7c"), size = 1), 
-                                 seed = seed)
+  painting <- aRtsy::paint_function(color = sample(c("black", randomcoloR::randomColor(1)), size = 1), 
+                                    background = sample(c("#fafafa", "#1a3657", "#343434", "#cc7722", "#a9d2c3", "#fc7c7c"), size = 1), 
+                                    seed = seed)
   
 } else if (paintingType == 2){
   

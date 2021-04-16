@@ -1,4 +1,4 @@
-#' Paint turmites
+#' Paint a Turmite on a Canvas
 #'
 #' @description This function paints turmites. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells. The algorithm is simple: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.
 #'
@@ -19,7 +19,7 @@
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
-#' @seealso \code{\link{paint_strokes}} \code{\link{paint_shape}} \code{\link{paint_ant}}
+#' @seealso \code{\link{paint_strokes}} \code{\link{paint_function}} \code{\link{paint_ant}}
 #'
 #' @examples
 #' paint_turmite(color = "#fafafa", background = "#1E90FF", p = 0.5,

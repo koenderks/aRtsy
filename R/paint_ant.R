@@ -1,4 +1,4 @@
-#' Paint Langton's Ant
+#' Paint Langton's Ant on a Canvas
 #'
 #' @description This function paints Langton's Ant. Langton's ant is a two-dimensional universal Turing machine with a very simple set of rules but complex emergent behavior.
 #'
@@ -18,7 +18,7 @@
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
-#' @seealso \code{\link{paint_strokes}} \code{\link{paint_shape}} \code{\link{paint_turmite}}
+#' @seealso \code{\link{paint_strokes}} \code{\link{paint_function}} \code{\link{paint_turmite}}
 #'
 #' @examples
 #' paint_ant(colors = '#000000', background = '#fafafa', seed = 1,

@@ -2,7 +2,7 @@
 % Please edit documentation in R/paint_turmite.R
 \name{paint_turmite}
 \alias{paint_turmite}
-\title{Paint turmites}
+\title{Paint a Turmite on a Canvas}
 \usage{
 paint_turmite(color = '#fafafa', background = '#000000', p = 0.5, seed = 1, 
                      iterations = 1e7, width = 1500, height = 1500)
@@ -37,7 +37,7 @@ paint_turmite(color = "#fafafa", background = "#1E90FF", p = 0.5,
 \url{https://en.wikipedia.org/wiki/Turmite}
 }
 \seealso{
-\code{\link{paint_strokes}} \code{\link{paint_shape}} \code{\link{paint_ant}}
+\code{\link{paint_strokes}} \code{\link{paint_function}} \code{\link{paint_ant}}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

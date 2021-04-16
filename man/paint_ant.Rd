@@ -2,7 +2,7 @@
 % Please edit documentation in R/paint_ant.R
 \name{paint_ant}
 \alias{paint_ant}
-\title{Paint Langton's Ant}
+\title{Paint Langton's Ant on a Canvas}
 \usage{
 paint_ant(colors = '#000000', background = '#fafafa', seed = 1, 
           iterations = 1e7, width = 200, height = 200)
@@ -35,7 +35,7 @@ paint_ant(colors = '#000000', background = '#fafafa', seed = 1,
 \url{https://en.wikipedia.org/wiki/Langton\%27s_ant}
 }
 \seealso{
-\code{\link{paint_strokes}} \code{\link{paint_shape}} \code{\link{paint_turmite}}
+\code{\link{paint_strokes}} \code{\link{paint_function}} \code{\link{paint_turmite}}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
