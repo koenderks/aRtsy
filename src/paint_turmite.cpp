@@ -6,8 +6,6 @@
 #include <iterator>
 #include <math.h>
 
-using namespace std;
-
 // [[Rcpp::depends(RcppArmadillo)]]
 
 // [[Rcpp::export]]
@@ -15,11 +13,13 @@ arma::mat iterate_turmite(arma::mat X,
                           int iters,
                           int row,
                           int col,
-                          double p){
+                          double p,
+						  int seed){
   int m = X.n_rows;
   int n = X.n_cols;
   int i = 0;
   int state = 0;
+  srand (seed);
   while(i < iters){
     double stateSwap = (double) rand() / RAND_MAX;
     if(stateSwap < p){
@@ -29,7 +29,6 @@ arma::mat iterate_turmite(arma::mat X,
         state = 0;
       }
     }
-    
     if(X(row,col) == 1){
       // Color
       if(state == 0 && X(row,col) == 0){

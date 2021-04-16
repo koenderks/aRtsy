@@ -5,8 +5,6 @@
 #include <cstdlib>
 #include <iterator>
 
-using namespace std;
-
 // [[Rcpp::depends(RcppArmadillo)]]
 
 int neighboring_block(int L, int i)
@@ -22,25 +20,19 @@ int neighboring_block(int L, int i)
 arma::mat iterate_strokes(arma::mat X, 
                           Rcpp::DataFrame neighbors, 
                           int s,
-                          double p){
+                          double p,
+						  int seed){
   int m = X.n_rows;
   int n = X.n_cols;
   int k = neighbors.nrows();
-  
   Rcpp::IntegerVector dx = neighbors["x"];
   Rcpp::IntegerVector dy = neighbors["y"];
-  
+  srand (seed);
   double backwardsprob = (double)rand() / RAND_MAX;
-  
-  
   if(backwardsprob < 0.5){ // Go forward through the loop
-    
     for(int x = 0; x < n; x++) { // Loop over the columns of the frame
-
-      for(int y = 0; y < m; y++){ // Loop over the rows of the frame
-        
-        std::vector<int> colors;
-        
+      for(int y = 0; y < m; y++){ // Loop over the rows of the frame    
+        std::vector<int> colors;  
         for(int z = 0; z < k; z++){ // Loop over all neighboring blocks of the current block
           int ix  = neighboring_block(n, x + dx[z]); // Select the (adjusted) neighboring x location
           int iy  = neighboring_block(m, y + dy[z]); // Select the (adjusted) neighboring y location
@@ -49,9 +41,7 @@ arma::mat iterate_strokes(arma::mat X,
             colors.push_back (color); // Add the color of this block to the adjacent color vector
           }
         }
-        
         double noTake = (double)rand() / RAND_MAX; // Check whether the block is subject to a random change
-        
         if(colors.size() > 0 && noTake > p){ // The current block takes over the color of an adjacent block with probability p
           int takeIndex = rand() % colors.size();
           X(x,y) = colors[takeIndex];
@@ -60,18 +50,13 @@ arma::mat iterate_strokes(arma::mat X,
           int newColor;
           newColor = (rand() % s) + 2;
           X(x,y) = newColor;
-        }
-        
+        }     
       }
     }
-    
-  } else { // Go backward through the loop
-    
+  } else { // Go backward through the loop  
     for(int x = 0; x < n; x++) {
-      for(int y = m; y --> 0;) {
-        
-        std::vector<int> colors;
-        
+      for(int y = m; y --> 0;) {    
+        std::vector<int> colors;    
         for(int z = 0; z < k; z++){ // Loop over all neighboring blocks of the current block
           int ix  = neighboring_block(n, x + dx[z]); // Select the (adjusted) neighboring x location
           int iy  = neighboring_block(m, y + dy[z]); // Select the (adjusted) neighboring y location
@@ -79,10 +64,8 @@ arma::mat iterate_strokes(arma::mat X,
           if(color > 0){
             colors.push_back (color); // Add the color of this block to the adjacent color vector
           }
-        }
-        
-        double noTake = (double) rand() / RAND_MAX; // Check whether the block is subject to a random change
-        
+        }    
+        double noTake = (double) rand() / RAND_MAX; // Check whether the block is subject to a random change      
         if(colors.size() > 0 && noTake > p){ // The current block takes over the color of an adjacent block with probability p
           int takeIndex = rand() % colors.size();
           X(x,y) = colors[takeIndex];
@@ -91,11 +74,9 @@ arma::mat iterate_strokes(arma::mat X,
           int newColor;
           newColor = (rand() % s) + 2;
           X(x,y) = newColor;
-        }
-        
+        }     
       }
-    }
-    
+    }   
   }
   return X;
 };

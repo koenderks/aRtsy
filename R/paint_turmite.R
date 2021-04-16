@@ -47,7 +47,7 @@ paint_turmite <- function(color = '#fafafa', background = '#000000', p = 0.5, se
     col <- sample(0:(width-1), size = 1)
   if(k == 0)
     row <- sample(0:(height-1), size = 1) 
-  df <- iterate_turmite(matrix(0, nrow = height, ncol = width), iterations, row, col, p = p)  
+  df <- iterate_turmite(matrix(0, nrow = height, ncol = width), iterations, row, col, p = p, seed = seed)  
   df <- reshape2::melt(df)
   colnames(df) <- c("y", "x", "z")
   painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) +

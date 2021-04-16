@@ -7,8 +7,8 @@
 using namespace Rcpp;
 
 // iterate_ant
-arma::mat iterate_ant(arma::mat X, int iters, int row, int col, Rcpp::DataFrame c);
-RcppExport SEXP _aRtsy_iterate_ant(SEXP XSEXP, SEXP itersSEXP, SEXP rowSEXP, SEXP colSEXP, SEXP cSEXP) {
+arma::mat iterate_ant(arma::mat X, int iters, int row, int col, Rcpp::DataFrame c, int seed);
+RcppExport SEXP _aRtsy_iterate_ant(SEXP XSEXP, SEXP itersSEXP, SEXP rowSEXP, SEXP colSEXP, SEXP cSEXP, SEXP seedSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -17,13 +17,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type row(rowSEXP);
     Rcpp::traits::input_parameter< int >::type col(colSEXP);
     Rcpp::traits::input_parameter< Rcpp::DataFrame >::type c(cSEXP);
-    rcpp_result_gen = Rcpp::wrap(iterate_ant(X, iters, row, col, c));
+    Rcpp::traits::input_parameter< int >::type seed(seedSEXP);
+    rcpp_result_gen = Rcpp::wrap(iterate_ant(X, iters, row, col, c, seed));
     return rcpp_result_gen;
 END_RCPP
 }
 // iterate_strokes
-arma::mat iterate_strokes(arma::mat X, Rcpp::DataFrame neighbors, int s, double p);
-RcppExport SEXP _aRtsy_iterate_strokes(SEXP XSEXP, SEXP neighborsSEXP, SEXP sSEXP, SEXP pSEXP) {
+arma::mat iterate_strokes(arma::mat X, Rcpp::DataFrame neighbors, int s, double p, int seed);
+RcppExport SEXP _aRtsy_iterate_strokes(SEXP XSEXP, SEXP neighborsSEXP, SEXP sSEXP, SEXP pSEXP, SEXP seedSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -31,13 +32,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< Rcpp::DataFrame >::type neighbors(neighborsSEXP);
     Rcpp::traits::input_parameter< int >::type s(sSEXP);
     Rcpp::traits::input_parameter< double >::type p(pSEXP);
-    rcpp_result_gen = Rcpp::wrap(iterate_strokes(X, neighbors, s, p));
+    Rcpp::traits::input_parameter< int >::type seed(seedSEXP);
+    rcpp_result_gen = Rcpp::wrap(iterate_strokes(X, neighbors, s, p, seed));
     return rcpp_result_gen;
 END_RCPP
 }
 // iterate_turmite
-arma::mat iterate_turmite(arma::mat X, int iters, int row, int col, double p);
-RcppExport SEXP _aRtsy_iterate_turmite(SEXP XSEXP, SEXP itersSEXP, SEXP rowSEXP, SEXP colSEXP, SEXP pSEXP) {
+arma::mat iterate_turmite(arma::mat X, int iters, int row, int col, double p, int seed);
+RcppExport SEXP _aRtsy_iterate_turmite(SEXP XSEXP, SEXP itersSEXP, SEXP rowSEXP, SEXP colSEXP, SEXP pSEXP, SEXP seedSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -46,15 +48,16 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type row(rowSEXP);
     Rcpp::traits::input_parameter< int >::type col(colSEXP);
     Rcpp::traits::input_parameter< double >::type p(pSEXP);
-    rcpp_result_gen = Rcpp::wrap(iterate_turmite(X, iters, row, col, p));
+    Rcpp::traits::input_parameter< int >::type seed(seedSEXP);
+    rcpp_result_gen = Rcpp::wrap(iterate_turmite(X, iters, row, col, p, seed));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_aRtsy_iterate_ant", (DL_FUNC) &_aRtsy_iterate_ant, 5},
-    {"_aRtsy_iterate_strokes", (DL_FUNC) &_aRtsy_iterate_strokes, 4},
-    {"_aRtsy_iterate_turmite", (DL_FUNC) &_aRtsy_iterate_turmite, 5},
+    {"_aRtsy_iterate_ant", (DL_FUNC) &_aRtsy_iterate_ant, 6},
+    {"_aRtsy_iterate_strokes", (DL_FUNC) &_aRtsy_iterate_strokes, 5},
+    {"_aRtsy_iterate_turmite", (DL_FUNC) &_aRtsy_iterate_turmite, 6},
     {NULL, NULL, 0}
 };
 

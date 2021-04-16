@@ -41,7 +41,7 @@ paint_strokes <- function(colors = '#000000', neighbors = 1, p = 0.01, seed = 1,
   colnames(neighborsLocations) <- c("x", "y")
   df <- matrix(0, nrow = height, ncol = width)
   for (i in 1:iterations){
-    df <- iterate_strokes(X = df, neighbors = neighborsLocations, s = length(colors), p = p) 
+    df <- iterate_strokes(X = df, neighbors = neighborsLocations, s = length(colors), p = p, seed = seed) 
   }
   df <- reshape2::melt(df)
   x <- y <- z <- NULL

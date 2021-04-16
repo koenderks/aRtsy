@@ -43,7 +43,7 @@ paint_ant <- function(colors = '#000000', background = '#fafafa', seed = 1,
   c[2:nrow(c), ] <- c[sample(2:nrow(c)), ]
   c <- c[1:length(colors), ]
   colnames(c) <- c("x", "y")
-  df <- iterate_ant(matrix(0, nrow = height, ncol = width), iterations, row, col, c = c)  
+  df <- iterate_ant(matrix(0, nrow = height, ncol = width), iterations, row, col, c = c, seed = seed)  
   df <- reshape2::melt(df)
   colnames(df) <- c("y","x","z")
   painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) +
