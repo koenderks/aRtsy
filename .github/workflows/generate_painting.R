@@ -10,7 +10,7 @@ seed <- as.numeric(Sys.Date())
 set.seed(seed)
 
 # Select painting type
-paintingType <- sample(1:5, size = 1)
+paintingType <- sample(1:6, size = 1)
 
 if (paintingType == 1){
   
