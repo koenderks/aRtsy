@@ -57,7 +57,6 @@ arma::mat iterate_planet(arma::mat X,
     }
   }
   // Fill the circle
-  arma::mat X_ref = X;
   for (int i = 0; i < iterations; i++) {
     for (int ii = 0; ii < xcircle.size(); ii++) {
       int xpoint = xcircle[ii];
@@ -70,14 +69,14 @@ arma::mat iterate_planet(arma::mat X,
 		}
         //int newlevel = ((level + 1) % (ncolors - 1)) + 3; // New level can be 3 to ncolors
         int higherlevels = 0;
-        if (X_ref(ypoint - 1, xpoint) == newlevel)     higherlevels++;
-        if (X_ref(ypoint + 1, xpoint) == newlevel)     higherlevels++;
-        if (X_ref(ypoint - 1, xpoint - 1) == newlevel) higherlevels++;
-        if (X_ref(ypoint, xpoint - 1) == newlevel)     higherlevels++;
-        if (X_ref(ypoint + 1, xpoint - 1) == newlevel) higherlevels++;
-        if (X_ref(ypoint - 1, xpoint + 1) == newlevel) higherlevels++;
-        if (X_ref(ypoint, xpoint + 1) == newlevel)     higherlevels++;
-        if (X_ref(ypoint + 1, xpoint + 1) == newlevel) higherlevels++;
+        if (X(ypoint - 1, xpoint) == newlevel)     higherlevels++;
+        if (X(ypoint + 1, xpoint) == newlevel)     higherlevels++;
+        if (X(ypoint - 1, xpoint - 1) == newlevel) higherlevels++;
+        if (X(ypoint, xpoint - 1) == newlevel)     higherlevels++;
+        if (X(ypoint + 1, xpoint - 1) == newlevel) higherlevels++;
+        if (X(ypoint - 1, xpoint + 1) == newlevel) higherlevels++;
+        if (X(ypoint, xpoint + 1) == newlevel)     higherlevels++;
+        if (X(ypoint + 1, xpoint + 1) == newlevel) higherlevels++;
         if (higherlevels >= threshold) {
           X(ypoint, xpoint) = newlevel;
         } else {
@@ -85,7 +84,6 @@ arma::mat iterate_planet(arma::mat X,
         }
       }
     }
-	X_ref = X;
   }
   return X;
 };
