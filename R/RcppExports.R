@@ -9,6 +9,10 @@ iterate_mondriaan <- function(X, neighbors, s, cuts, ratio, seed) {
     .Call('_aRtsy_iterate_mondriaan', PACKAGE = 'aRtsy', X, neighbors, s, cuts, ratio, seed)
 }
 
+iterate_planet <- function(X, radius, xcenter, ycenter, threshold, iterations, seed, ncolors) {
+    .Call('_aRtsy_iterate_planet', PACKAGE = 'aRtsy', X, radius, xcenter, ycenter, threshold, iterations, seed, ncolors)
+}
+
 iterate_strokes <- function(X, neighbors, s, p, seed) {
     .Call('_aRtsy_iterate_strokes', PACKAGE = 'aRtsy', X, neighbors, s, p, seed)
 }
