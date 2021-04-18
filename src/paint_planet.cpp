@@ -15,6 +15,7 @@ arma::mat iterate_planet(arma::mat X,
                          int ycenter,
                          int threshold,
                          int iterations,
+						 double starprob,
                          int seed,
                          int ncolors){
   int m = X.n_rows;
@@ -29,10 +30,15 @@ arma::mat iterate_planet(arma::mat X,
       float ydist = ycenter - row;
       double dist = sqrt(xdist * xdist + ydist * ydist);
       if (dist <= radius) { // Check if circle point
-        X(row, col) = (rand() % ncolors) + 1; // Sample random color from the palette
+        X(row, col) = (rand() % ncolors) + 2; // Sample random color from the palette
         xcircle.push_back (col); // Store x-location of circle point
         ycircle.push_back (row); // Store y-location of circle point
-      }
+      } else {
+	    double star = (double) rand() / RAND_MAX;
+		if (star < starprob) {
+          X(row, col) = 1;
+		}
+	  }
     }
   }
   // Fill the circle
@@ -42,7 +48,7 @@ arma::mat iterate_planet(arma::mat X,
       int ypoint = ycircle[ii];
       if (ypoint > 0 && ypoint < (m-1) && xpoint > 0 && xpoint < (n-1)) {
         int level = X(ypoint, xpoint); // Get the current level 
-        int newlevel = ((level + 1) % ncolors) + 1;
+        int newlevel = ((level + 1) % ncolors) + 2;
         int higherlevels = 0;
         if (X(ypoint - 1, xpoint) == newlevel)     higherlevels++;
         if (X(ypoint + 1, xpoint) == newlevel)     higherlevels++;

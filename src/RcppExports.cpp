@@ -39,8 +39,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // iterate_planet
-arma::mat iterate_planet(arma::mat X, int radius, int xcenter, int ycenter, int threshold, int iterations, int seed, int ncolors);
-RcppExport SEXP _aRtsy_iterate_planet(SEXP XSEXP, SEXP radiusSEXP, SEXP xcenterSEXP, SEXP ycenterSEXP, SEXP thresholdSEXP, SEXP iterationsSEXP, SEXP seedSEXP, SEXP ncolorsSEXP) {
+arma::mat iterate_planet(arma::mat X, int radius, int xcenter, int ycenter, int threshold, int iterations, double starprob, int seed, int ncolors);
+RcppExport SEXP _aRtsy_iterate_planet(SEXP XSEXP, SEXP radiusSEXP, SEXP xcenterSEXP, SEXP ycenterSEXP, SEXP thresholdSEXP, SEXP iterationsSEXP, SEXP starprobSEXP, SEXP seedSEXP, SEXP ncolorsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -50,9 +50,10 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type ycenter(ycenterSEXP);
     Rcpp::traits::input_parameter< int >::type threshold(thresholdSEXP);
     Rcpp::traits::input_parameter< int >::type iterations(iterationsSEXP);
+    Rcpp::traits::input_parameter< double >::type starprob(starprobSEXP);
     Rcpp::traits::input_parameter< int >::type seed(seedSEXP);
     Rcpp::traits::input_parameter< int >::type ncolors(ncolorsSEXP);
-    rcpp_result_gen = Rcpp::wrap(iterate_planet(X, radius, xcenter, ycenter, threshold, iterations, seed, ncolors));
+    rcpp_result_gen = Rcpp::wrap(iterate_planet(X, radius, xcenter, ycenter, threshold, iterations, starprob, seed, ncolors));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -91,7 +92,7 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"_aRtsy_iterate_ant", (DL_FUNC) &_aRtsy_iterate_ant, 6},
     {"_aRtsy_iterate_mondriaan", (DL_FUNC) &_aRtsy_iterate_mondriaan, 6},
-    {"_aRtsy_iterate_planet", (DL_FUNC) &_aRtsy_iterate_planet, 8},
+    {"_aRtsy_iterate_planet", (DL_FUNC) &_aRtsy_iterate_planet, 9},
     {"_aRtsy_iterate_strokes", (DL_FUNC) &_aRtsy_iterate_strokes, 5},
     {"_aRtsy_iterate_turmite", (DL_FUNC) &_aRtsy_iterate_turmite, 6},
     {NULL, NULL, 0}

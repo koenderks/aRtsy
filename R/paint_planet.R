@@ -2,12 +2,13 @@
 #'
 #' @description This function paints one or multiple planets.
 #'
-#' @usage paint_planet <- function(colors, threshold = 3, iterations = 10,
+#' @usage paint_planet <- function(colors, threshold = 3, iterations = 10, starprob = 0.00001,
 #'                      radius = NULL, center.x = NULL, center.y = NULL, 
 #'                      seed = 1, width = 500, height = 500)
 #'
 #' @param colors   	  a character specifying the colors used for the planets
 #' @param threshold   a character specifying the threshold for a color take.
+#' @param starprob    the probability of drawing a star in outer space.
 #' @param iterations  the number of iterations of the planets
 #' @param radius      a numeric (vector) specifying the radius of the planet(s).
 #' @param center.x    the x-axis coordinate(s) for the center(s) of the planet(s).
@@ -31,11 +32,11 @@
 #' @useDynLib aRtsy
 #' @import Rcpp
 
-paint_planet <- function(colors, threshold = 3, iterations = 10,
+paint_planet <- function(colors, threshold = 3, iterations = 10, starprob = 0.00001,
                          radius = NULL, center.x = NULL, center.y = NULL, 
                          seed = 1, width = 500, height = 500){
   x <- y <- z <- NULL
-  palette <- c('#000000', colors)
+  palette <- c('#000000', '#FFFFFF', colors)
   canvas <- matrix(0, nrow = height, ncol = width)
   if(is.null(radius))
     radius <- ceiling(width / 2 / 1.5)
@@ -47,7 +48,7 @@ paint_planet <- function(colors, threshold = 3, iterations = 10,
      stop("Radius, center.y, and center.x do not have equal length.")
   planets <- length(radius)
   for(i in 1:planets){
-    canvas <- iterate_planet(canvas, radius[i], center.x[i], center.y[i], threshold, iterations + runif(1, 10, 100), seed + i, length(palette)) 
+    canvas <- iterate_planet(canvas, radius[i], center.x[i], center.y[i], threshold, iterations + runif(1, 10, 100), starprob, seed + i, length(palette)) 
   }
   full_canvas <- reshape2::melt(canvas)
   colnames(full_canvas) <- c("y", "x", "z")

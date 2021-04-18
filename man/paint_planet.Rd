@@ -4,7 +4,7 @@
 \alias{paint_planet}
 \title{Paint a Planet on a Canvas}
 \usage{
-paint_planet <- function(colors, threshold = 3, iterations = 10,
+paint_planet <- function(colors, threshold = 3, iterations = 10, starprob = 0.00001,
                      radius = NULL, center.x = NULL, center.y = NULL, 
                      seed = 1, width = 500, height = 500)
 }
@@ -14,6 +14,8 @@ paint_planet <- function(colors, threshold = 3, iterations = 10,
 \item{threshold}{a character specifying the threshold for a color take.}
 
 \item{iterations}{the number of iterations of the planets}
+
+\item{starprob}{the probability of drawing a star in outer space.}
 
 \item{radius}{a numeric (vector) specifying the radius of the planet(s).}
 
