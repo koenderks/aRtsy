@@ -4,7 +4,7 @@
 #'
 #' @usage paint_planet <- function(colors, threshold = 3, iterations = 10, starprob = 0.00001,
 #'                      radius = NULL, center.x = NULL, center.y = NULL, 
-#'                      seed = 1, width = 500, height = 500)
+#'                      seed = 1, width = 1500, height = 1500)
 #'
 #' @param colors   	  a character specifying the colors used for the planets
 #' @param threshold   a character specifying the threshold for a color take.
@@ -34,7 +34,7 @@
 
 paint_planet <- function(colors, threshold = 3, iterations = 10, starprob = 0.00001,
                          radius = NULL, center.x = NULL, center.y = NULL, 
-                         seed = 1, width = 500, height = 500){
+                         seed = 1, width = 1500, height = 1500){
   x <- y <- z <- NULL
   palette <- c('#000000', '#FFFFFF', colors)
   canvas <- matrix(0, nrow = height, ncol = width)
@@ -48,7 +48,7 @@ paint_planet <- function(colors, threshold = 3, iterations = 10, starprob = 0.00
      stop("Radius, center.y, and center.x do not have equal length.")
   planets <- length(radius)
   for(i in 1:planets){
-    canvas <- iterate_planet(canvas, radius[i], center.x[i], center.y[i], threshold, iterations + runif(1, 10, 100), starprob, seed + i, length(palette)) 
+    canvas <- iterate_planet(canvas, radius[i], center.x[i], center.y[i], threshold, iterations + i, starprob, seed + i, length(palette)) 
   }
   full_canvas <- reshape2::melt(canvas)
   colnames(full_canvas) <- c("y", "x", "z")

@@ -6,7 +6,7 @@
 \usage{
 paint_planet <- function(colors, threshold = 3, iterations = 10, starprob = 0.00001,
                      radius = NULL, center.x = NULL, center.y = NULL, 
-                     seed = 1, width = 500, height = 500)
+                     seed = 1, width = 1500, height = 1500)
 }
 \arguments{
 \item{colors}{a character specifying the colors used for the planets}

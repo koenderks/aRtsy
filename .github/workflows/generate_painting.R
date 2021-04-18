@@ -50,13 +50,20 @@ if (paintingType == 1){
   
 } else if(paintingType == 5){
 
-  painting <- aRtsy::paint_mondriaan(colors = randomcoloR::randomColor(count = sample(1:20, size = 1)),
+  painting <- aRtsy::paint_mondriaan(colors = randomcoloR::randomColor(count = sample(3:10, size = 1)),
                                      background = '#000000',
-									 cuts = sample(5:200, 1),
+									 cuts = sample(5:200, size = 1),
 									 ratio = 1.618,
 									 seed = seed,
-									 width = sample(c(100, 200), size = 1),
-									 height = sample(c(100, 200), size = 1))
+									 width = 100,
+									 height = 100)
+
+} else if (paintintType == 6) {
+  
+  painting <- aRtsy::paint_planet(colors = randomcoloR::randomColor(3), 
+  								  iterations = 30, 
+								  seed = seed, 
+								  starprob = runif(1, 0.001, 0.1))
 
 }
 
