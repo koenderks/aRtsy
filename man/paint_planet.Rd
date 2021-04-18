@@ -2,34 +2,39 @@
 % Please edit documentation in R/paint_planet.R
 \name{paint_planet}
 \alias{paint_planet}
-\title{Paint a Turmite on a Canvas}
+\title{Paint a Planet on a Canvas}
 \usage{
-paint_planet(color, background = '#fafafa', p = 0.5, iterations = 1e7, 
-                     seed = 1, width = 1500, height = 1500)
+paint_planet <- function(colors, threshold = 3, iterations = 10,
+                     radius = NULL, center.x = NULL, center.y = NULL, 
+                     seed = 1, width = 500, height = 500)
 }
 \arguments{
-\item{iterations}{the number of iterations of the turmite.}
+\item{colors}{a character specifying the colors used for the planets}
+
+\item{threshold}{a character specifying the threshold for a color take.}
+
+\item{iterations}{the number of iterations of the planets}
+
+\item{radius}{a numeric (vector) specifying the radius of the planet(s).}
+
+\item{center.x}{the x-axis coordinate(s) for the center(s) of the planet(s).}
+
+\item{center.y}{the y-axis coordinate(s) for the center(s) of the planet(s).}
 
 \item{seed}{the seed for the painting.}
 
 \item{width}{the width of the painting in pixels.}
 
 \item{height}{the height of the painting in pixels.}
-
-\item{color}{a character specifying the color used for the turmite.}
-
-\item{background}{a character specifying the color used for the background.}
-
-\item{p}{the probability of a state switch within the turmite.}
 }
 \value{
 A \code{ggplot} object containing the painting.
 }
 \description{
-This function paints a turmite. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells. The algorithm is simple: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.
+This function paints one or multiple planets.
 }
 \examples{
-paint_turmite(color = "#000000", background = "#fafafa")
+paint_planet(colors = c("dodgerblue", "forestgreen"))
 
 }
 \seealso{

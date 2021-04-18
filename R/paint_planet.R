@@ -1,15 +1,18 @@
-#' Paint a Turmite on a Canvas
+#' Paint a Planet on a Canvas
 #'
-#' @description This function paints a turmite. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells. The algorithm is simple: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.
+#' @description This function paints one or multiple planets.
 #'
-#' @usage paint_planet(color, background = '#fafafa', p = 0.5, iterations = 1e7, 
-#'                      seed = 1, width = 1500, height = 1500)
+#' @usage paint_planet <- function(colors, threshold = 3, iterations = 10,
+#'                      radius = NULL, center.x = NULL, center.y = NULL, 
+#'                      seed = 1, width = 500, height = 500)
 #'
-#' @param color   	  a character specifying the color used for the turmite.
-#' @param background  a character specifying the color used for the background.
-#' @param p           the probability of a state switch within the turmite.
+#' @param colors   	  a character specifying the colors used for the planets
+#' @param threshold   a character specifying the threshold for a color take.
+#' @param iterations  the number of iterations of the planets
+#' @param radius      a numeric (vector) specifying the radius of the planet(s).
+#' @param center.x    the x-axis coordinate(s) for the center(s) of the planet(s).
+#' @param center.y    the y-axis coordinate(s) for the center(s) of the planet(s).
 #' @param seed        the seed for the painting.
-#' @param iterations  the number of iterations of the turmite.
 #' @param width       the width of the painting in pixels.
 #' @param height      the height of the painting in pixels.
 #'
@@ -20,7 +23,7 @@
 #' @seealso \code{\link{paint_strokes}} \code{\link{paint_function}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
 #'
 #' @examples
-#' paint_turmite(color = "#000000", background = "#fafafa")
+#' paint_planet(colors = c("dodgerblue", "forestgreen"))
 #' 
 #' @keywords paint
 #'
@@ -28,7 +31,9 @@
 #' @useDynLib aRtsy
 #' @import Rcpp
 
-paint_planet <- function(colors, radius = NULL, center.x = NULL, center.y = NULL, threshold = 3, iterations = 10, seed = 1, width = 500, height = 500){
+paint_planet <- function(colors, threshold = 3, iterations = 10,
+                         radius = NULL, center.x = NULL, center.y = NULL, 
+                         seed = 1, width = 500, height = 500){
   x <- y <- z <- NULL
   palette <- c('#000000', colors)
   canvas <- matrix(0, nrow = height, ncol = width)
@@ -38,9 +43,11 @@ paint_planet <- function(colors, radius = NULL, center.x = NULL, center.y = NULL
     center.x <- ceiling(width / 2)
   if(is.null(center.y))
     center.y <- ceiling(height / 2)
+  if(length(unique(c(length(radius), length(center.y), length(center.x)))) != 1)
+     stop("Radius, center.y, and center.x do not have equal length.")
   planets <- length(radius)
   for(i in 1:planets){
-    canvas <- iterate_planet(canvas, radius[i], center.x[i], center.y[i], threshold, iterations, seed + i, length(palette)) 
+    canvas <- iterate_planet(canvas, radius[i], center.x[i], center.y[i], threshold, iterations + runif(1, 10, 100), seed + i, length(palette)) 
   }
   full_canvas <- reshape2::melt(canvas)
   colnames(full_canvas) <- c("y", "x", "z")

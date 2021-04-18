@@ -13,7 +13,7 @@ arma::mat iterate_planet(arma::mat X,
                          int radius,
                          int xcenter,
                          int ycenter,
-						 int threshold,
+                         int threshold,
                          int iterations,
                          int seed,
                          int ncolors){
@@ -38,26 +38,26 @@ arma::mat iterate_planet(arma::mat X,
   // Fill the circle
   for (int i = 0; i < iterations; i++) {
     for (int ii = 0; ii < xcircle.size(); ii++) {
-			int xpoint = xcircle[ii];
-			int ypoint = ycircle[ii];
-		if (ypoint > 0 && ypoint < (m-1) && xpoint > 0 && xpoint < (n-1)) {
-			int level = X(ypoint, xpoint); // Get the current level 
-			int newlevel = ((level + 1) % ncolors) + 1;
-			int higherlevels = 0;
-			if (X(ypoint - 1, xpoint) == newlevel)     higherlevels++;
-			if (X(ypoint + 1, xpoint) == newlevel)     higherlevels++;
-			if (X(ypoint - 1, xpoint - 1) == newlevel) higherlevels++;
-			if (X(ypoint, xpoint - 1) == newlevel)     higherlevels++;
-			if (X(ypoint + 1, xpoint - 1) == newlevel) higherlevels++;
-			if (X(ypoint - 1, xpoint + 1) == newlevel) higherlevels++;
-			if (X(ypoint, xpoint + 1) == newlevel)     higherlevels++;
-			if (X(ypoint + 1, xpoint + 1) == newlevel) higherlevels++;
-			if (higherlevels >= threshold) {
-				X(ypoint, xpoint) = newlevel;
-			} else {
-				X(ypoint, xpoint) = level;
-			}
-	 }
+      int xpoint = xcircle[ii];
+      int ypoint = ycircle[ii];
+      if (ypoint > 0 && ypoint < (m-1) && xpoint > 0 && xpoint < (n-1)) {
+        int level = X(ypoint, xpoint); // Get the current level 
+        int newlevel = ((level + 1) % ncolors) + 1;
+        int higherlevels = 0;
+        if (X(ypoint - 1, xpoint) == newlevel)     higherlevels++;
+        if (X(ypoint + 1, xpoint) == newlevel)     higherlevels++;
+        if (X(ypoint - 1, xpoint - 1) == newlevel) higherlevels++;
+        if (X(ypoint, xpoint - 1) == newlevel)     higherlevels++;
+        if (X(ypoint + 1, xpoint - 1) == newlevel) higherlevels++;
+        if (X(ypoint - 1, xpoint + 1) == newlevel) higherlevels++;
+        if (X(ypoint, xpoint + 1) == newlevel)     higherlevels++;
+        if (X(ypoint + 1, xpoint + 1) == newlevel) higherlevels++;
+        if (higherlevels >= threshold) {
+          X(ypoint, xpoint) = newlevel;
+        } else {
+          X(ypoint, xpoint) = level;
+        }
+      }
     }
   }
   return X;
