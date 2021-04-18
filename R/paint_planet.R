@@ -36,7 +36,7 @@ paint_planet <- function(colors, threshold = 3, iterations = 500, starprob = 0.0
                          radius = NULL, center.x = NULL, center.y = NULL, 
                          seed = 1, width = 1500, height = 1500){
   x <- y <- z <- NULL
-  palette <- c('#000000', '#FFFFFF', colors)
+  palette <- c('#000000', '#787878', '#fafafa', colors)
   canvas <- matrix(0, nrow = height, ncol = width)
   if(is.null(radius))
     radius <- ceiling(width / 2 / 1.5)
