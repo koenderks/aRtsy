@@ -4,7 +4,7 @@
 \alias{paint_planet}
 \title{Paint a Planet on a Canvas}
 \usage{
-paint_planet <- function(colors, threshold = 3, iterations = 10, starprob = 0.00001,
+paint_planet <- function(colors, threshold = 3, iterations = 500, starprob = 0.01,
                      radius = NULL, center.x = NULL, center.y = NULL, 
                      seed = 1, width = 1500, height = 1500)
 }

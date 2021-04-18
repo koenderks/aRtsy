@@ -33,10 +33,12 @@ arma::mat iterate_planet(arma::mat X,
         X(row, col) = (rand() % ncolors) + 2; // Sample random color from the palette
         xcircle.push_back (col); // Store x-location of circle point
         ycircle.push_back (row); // Store y-location of circle point
-      } else {
+      } if(dist > (radius + 1) && dist < radius * 1.01) {
+		  X(row, col) = 1; // Edge
+	  } else {
 	    double star = (double) rand() / RAND_MAX;
 		if (star < starprob) {
-          X(row, col) = 1;
+          X(row, col) = 1; // Star
 		}
 	  }
     }

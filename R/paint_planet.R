@@ -2,7 +2,7 @@
 #'
 #' @description This function paints one or multiple planets.
 #'
-#' @usage paint_planet <- function(colors, threshold = 3, iterations = 10, starprob = 0.00001,
+#' @usage paint_planet <- function(colors, threshold = 3, iterations = 500, starprob = 0.01,
 #'                      radius = NULL, center.x = NULL, center.y = NULL, 
 #'                      seed = 1, width = 1500, height = 1500)
 #'
@@ -32,7 +32,7 @@
 #' @useDynLib aRtsy
 #' @import Rcpp
 
-paint_planet <- function(colors, threshold = 3, iterations = 10, starprob = 0.00001,
+paint_planet <- function(colors, threshold = 3, iterations = 500, starprob = 0.01,
                          radius = NULL, center.x = NULL, center.y = NULL, 
                          seed = 1, width = 1500, height = 1500){
   x <- y <- z <- NULL
