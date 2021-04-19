@@ -17,7 +17,8 @@ arma::mat iterate_planet(arma::mat X,
                          int iterations,
 						 double starprob,
                          int seed,
-                         int ncolors){
+                         int ncolors,
+						 int colorsused){
   int m = X.n_rows;
   int n = X.n_cols;
   std::vector<int> xcircle; // Vector of x-locations of all circle points
@@ -33,7 +34,7 @@ arma::mat iterate_planet(arma::mat X,
       if (dist <= radius) { // Check if circle point
 	    xcircle.push_back (col); // Store x-location of circle point
         ycircle.push_back (row); // Store y-location of circle point
-        X(row, col) = 3 + rand() % (ncolors - 3); // Sample random color from 3 to ncolors
+        X(row, col) = (3 + colorsused) + rand() % (ncolors - 3); // Sample random color from 3 to 3 + ncolors - 3
       } if(dist > (radius + 1) && dist < ceil(radius * 1.01)) { // Check if edge point
 		if (edgeright < 0.5) {
 		  if(col > xcenter) {
@@ -64,8 +65,8 @@ arma::mat iterate_planet(arma::mat X,
       if (ypoint > 0 && ypoint < (m - 1) && xpoint > 0 && xpoint < (n - 1)) {
         int level = X(ypoint, xpoint); // Get the current level 
 		int newlevel = level + 1;
-		if (newlevel == ncolors) {
-			newlevel = 3;
+		if (newlevel == (ncolors + colorsused)) {
+			newlevel = 3 + colorsused;
 		}
         //int newlevel = ((level + 1) % (ncolors - 1)) + 3; // New level can be 3 to ncolors
         int higherlevels = 0;

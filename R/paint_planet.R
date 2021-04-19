@@ -36,7 +36,10 @@ paint_planet <- function(colors, threshold = 3, iterations = 500, starprob = 0.0
                          radius = NULL, center.x = NULL, center.y = NULL, 
                          seed = 1, width = 1500, height = 1500){
   x <- y <- z <- NULL
-  palette <- c('#000000', '#787878', '#fafafa', colors)
+  palette <- list()
+  for(i in 1:length(colors)){
+	  palette[[i]] <- c('#000000', '#787878', '#fafafa', colors[[i]])
+  }
   canvas <- matrix(0, nrow = height, ncol = width)
   if(is.null(radius))
     radius <- ceiling(width / 2 / 1.5)
@@ -47,15 +50,18 @@ paint_planet <- function(colors, threshold = 3, iterations = 500, starprob = 0.0
   if(length(unique(c(length(radius), length(center.y), length(center.x)))) != 1)
      stop("Radius, center.y, and center.x do not have equal length.")
   planets <- length(radius)
+  colorsused <- 0
   for(i in 1:planets){
-    canvas <- iterate_planet(canvas, radius[i], center.x[i], center.y[i], threshold, iterations + i, starprob, seed + i, length(palette)) 
+    canvas <- iterate_planet(canvas, radius[i], center.x[i], center.y[i], threshold, iterations + i, starprob, seed + i, length(palette[[i]]), colorsused)
+	  colorsused <- colorsused + length(colors[[i]]) 
   }
   full_canvas <- reshape2::melt(canvas)
   colnames(full_canvas) <- c("y", "x", "z")
+  full_palette <- c('#000000', '#787878', '#fafafa', unlist(colors))
   painting <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 
     ggplot2::coord_equal() +
-    ggplot2::scale_fill_gradientn(colours = palette) +
+    ggplot2::scale_fill_gradientn(colours = full_palette) +
     ggplot2::scale_y_continuous(expand = c(0,0)) + 
     ggplot2::scale_x_continuous(expand = c(0,0)) +
     ggplot2::theme(axis.title = ggplot2::element_blank(), 
