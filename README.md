@@ -58,6 +58,10 @@ You can use the `paint_planet()` function to make your own unique painting with 
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-28.png' width='270' height='270'>
 </p>
 
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-29.png' width='1000' height='270'>
+</p>
+
 ## Turmite
 
 According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *a Turing machine which has an orientation in addition to a current state and a "tape" that consists of an infinite two-dimensional grid of cells*. Basically, it's a moving block. The algorithm consists of the following three simple steps that are repeated, but I've added some logic so that the block does not go off the canvas. 
