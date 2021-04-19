@@ -53,8 +53,8 @@ You can use the `paint_strokes()` function to make your own unique painting with
 You can use the `paint_planet()` function to make your own unique painting with this algorithm. 
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-27.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-26.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-27.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-28.png' width='270' height='270'>
 </p>
 

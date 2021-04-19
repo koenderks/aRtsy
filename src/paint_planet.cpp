@@ -36,16 +36,16 @@ arma::mat iterate_planet(arma::mat X,
 	    xcircle.push_back (col); // Store x-location of circle point
         ycircle.push_back (row); // Store y-location of circle point
         X(row, col) = (3 + colorsused) + rand() % (ncolors - 3); // Sample random color from 3 to 3 + ncolors - 3
-      } else if(dist > (radius + 1) && dist < ceil(radius * 1.005)) { // Check if edge point
+      } else if(dist > (radius + 1) && dist < ceil(radius * 1.01)) { // Check if edge point
 		if (lightright == 0) {
 		  if(col > xcenter) {
-			X(row, col) = 0;//1; // Dark edge = gray
+			X(row, col) = 1;//1; // Dark edge = gray
 		  } else {
 			X(row, col) = 2; // Light edge = white
 		  }
 		} else {
 		  if(col < xcenter) {
-			X(row, col) = 0;//1; // Dark edge = gray
+			X(row, col) = 1;//1; // Dark edge = gray
 		  } else {
 			X(row, col) = 2; // Light edge = white
 		  }			
