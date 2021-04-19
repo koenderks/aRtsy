@@ -52,7 +52,7 @@ paint_planet <- function(colors, threshold = 3, iterations = 500, starprob = 0.0
   planets <- length(radius)
   colorsused <- 0
   for(i in 1:planets){
-    canvas <- iterate_planet(canvas, radius[i], center.x[i], center.y[i], threshold, iterations + i, starprob, seed + i, length(palette[[i]]), colorsused)
+    canvas <- iterate_planet(canvas, radius[i], center.x[i], center.y[i], threshold, ceiling(iterations / i), starprob, seed + i, length(palette[[i]]), colorsused)
 	  colorsused <- colorsused + length(colors[[i]]) 
   }
   full_canvas <- reshape2::melt(canvas)
