@@ -59,7 +59,7 @@ You can use the `paint_planet()` function to make your own unique painting with 
 </p>
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-29.png' width='900' height='225'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-29.png' width='800' height='225'>
 </p>
 
 ## Turmite
