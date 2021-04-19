@@ -43,7 +43,7 @@ arma::mat iterate_strokes(arma::mat X,
         }
         double noTake = (double) rand() / RAND_MAX; // Check whether the block is subject to a random change
         if(colors.size() > 0 && noTake > p){ // The current block takes over the color of an adjacent block with probability p
-          int takeIndex = rand() % colors.size();
+          int takeIndex = rand() % colors.size(); // Sample a number between 0 and colors.size()
           X(x,y) = colors[takeIndex];
         } else {
           // If the current block does not take a color from the surroundings, a new color selected from the palette

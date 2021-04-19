@@ -35,7 +35,7 @@ arma::mat iterate_mondriaan(arma::mat X,
     int cuty = ceil(col / ratio);
 	double cutfromtop = (double) rand() / RAND_MAX;
 	double cutfromleft = (double) rand() / RAND_MAX;
-	int color = (rand() % s) + 1;
+	int color = 1 + rand() % s; // Sample color from 1 to s
     if (cutfromtop >= 0.5 && cutfromleft >= 0.5) {
       for (int x = 0; x < cutx; x++) {
         for (int y = 0; y < cuty; y++) {
