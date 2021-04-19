@@ -28,13 +28,13 @@
 #'
 #' @examples
 #' # Sun behind Earth and Moon
-#' colors = list(c("khaki1", "indianred1", "lightcoral"),
+#' colors = list(c("khaki1", "lightcoral", "lightsalmon"),
 #'               c("dodgerblue", "forestgreen", "white"), 
 #'               c("gray", "darkgray", "beige"))
 #' painting <- paint_planet(colors, radius = c(800, 400, 150), 
 #'                          center.x = c(1, 500, 1100),
 #'                          center.y = c(1400, 500, 1000), 
-#'                          starprob = 0.005, light_right = FALSE)
+#'                          starprob = 0.005)
 #' 
 #' @keywords paint
 #'
