@@ -1,3 +1,7 @@
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-29.png' width='800' height='225'>
+</p>
+
 # aRtsy: Generative Art Using R
 
 I like pretty pictures and I like `R`. In the `aRtsy` package I combine these two things into what people generally call generative art, resulting in some(times) nice looking paintings. I am lucky I got `R` because I cannot paint at all.
@@ -56,10 +60,6 @@ You can use the `paint_planet()` function to make your own unique painting with 
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-26.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-27.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-28.png' width='270' height='270'>
-</p>
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-29.png' width='800' height='225'>
 </p>
 
 ## Turmite
