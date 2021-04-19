@@ -15,10 +15,10 @@ Let's go hunting for some good `seed`'s!
 
 * [Painting of the day](#painting-of-the-day)
 * [Paint strokes](#paint-strokes)
-* [Planets](#planets)
 * [Turmite](#turmite)
 * [Langton's ant](#langtons-ant)
 * [Mondriaan](#mondriaan)
+* [Planets](#planets)
 * [Functions](#functions)
 * [LP records](#LP-records)
 
@@ -46,20 +46,6 @@ You can use the `paint_strokes()` function to make your own unique painting with
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-11.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-12.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-10.png' width='270' height='270'>
-</p>
-
-## Planets
-
-You can use the `paint_planet()` function to make your own unique painting with this algorithm. 
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-26.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-27.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-28.png' width='270' height='270'>
-</p>
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-29.png' width='800' height='225'>
 </p>
 
 ## Turmite
@@ -109,6 +95,20 @@ You can use the `paint_mondriaan()` function to make your own unique painting wi
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-28.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-29.png' width='270' height='270'>
 </p> 
+
+## Planets
+
+You can use the `paint_planet()` function to make your own unique painting with this algorithm. 
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-26.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-27.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-28.png' width='270' height='270'>
+</p>
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-29.png' width='800' height='225'>
+</p>
 
 ## Functions
 
