@@ -2,7 +2,8 @@
 #'
 #' @description This function paints one or multiple planets.
 #'
-#' @usage paint_planet <- function(colors, threshold = 4, iterations = 200, starprob = 0.01, fade = 0.2,
+#' @usage paint_planet <- function(colors, threshold = 4, iterations = 200, 
+#'                      starprob = 0.01, fade = 0.2,
 #'                      radius = NULL, center.x = NULL, center.y = NULL, 
 #'                      seed = 1, width = 1500, height = 1500)
 #'
@@ -26,7 +27,14 @@
 #' @seealso \code{\link{paint_strokes}} \code{\link{paint_function}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
 #'
 #' @examples
-#' paint_planet(colors = c("dodgerblue", "forestgreen"))
+#' # Sun behind Earth and Moon
+#' colors = list(c("khaki1", "indianred1", "lightcoral"),
+#'               c("dodgerblue", "forestgreen", "white"), 
+#'               c("gray", "darkgray", "beige"))
+#' painting <- paint_planet(colors, radius = c(800, 400, 150), 
+#'                          center.x = c(1, 500, 1100),
+#'                          center.y = c(1400, 500, 1000), 
+#'                          starprob = 0.005, light_right = FALSE)
 #' 
 #' @keywords paint
 #'
