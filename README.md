@@ -17,8 +17,8 @@ Let's go hunting for some good `seed`'s!
 * [Paint strokes](#paint-strokes)
 * [Turmite](#turmite)
 * [Langton's ant](#langtons-ant)
-* [Mondriaan](#mondriaan)
 * [Planets](#planets)
+* [Mondriaan](#mondriaan)
 * [Functions](#functions)
 * [LP records](#LP-records)
 
@@ -84,18 +84,6 @@ You can use the `paint_ant()` function to make your own unique painting with thi
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-01.png' width='270' height='270'>
 </p> 
 
-## Mondriaan
-
-This algorithm mimics the style of the well-known paintings by the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan). It works by repeatedly cutting into the canvas at random locations and coloring the square that these cuts create.
-
-You can use the `paint_mondriaan()` function to make your own unique painting with this algorithm.
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-03-01.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-28.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-29.png' width='270' height='270'>
-</p> 
-
 ## Planets
 
 This algorithm paints one or multiple planets in space and uses a cellular automata (idea mimicked from [Fronkonstin](https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/)) to populate their surfaces.
@@ -111,6 +99,18 @@ You can use the `paint_planet()` function to make your own unique painting with 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-29.png' width='800' height='225'>
 </p>
+
+## Mondriaan
+
+This algorithm mimics the style of the well-known paintings by the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan). It works by repeatedly cutting into the canvas at random locations and coloring the square that these cuts create.
+
+You can use the `paint_mondriaan()` function to make your own unique painting with this algorithm.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-03-01.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-28.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-29.png' width='270' height='270'>
+</p> 
 
 ## Functions
 
