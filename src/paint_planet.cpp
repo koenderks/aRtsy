@@ -18,14 +18,15 @@ arma::mat iterate_planet(arma::mat X,
 						 double starprob,
                          int seed,
                          int ncolors,
-						 int colorsused){
+						 int colorsused,
+						 double fade,
+						 int lightright){
   int m = X.n_rows;
   int n = X.n_cols;
   std::vector<int> xcircle; // Vector of x-locations of all circle points
   std::vector<int> ycircle; // Vector of y-locations of all circle points
   srand (seed);
   // Draw planet circle
-  double edgeright = (double) rand() / RAND_MAX;
   for (int row = 0; row < m; row++) {
     for (int col = 0; col < n; col++) {
       float xdist = xcenter - col;
@@ -35,8 +36,8 @@ arma::mat iterate_planet(arma::mat X,
 	    xcircle.push_back (col); // Store x-location of circle point
         ycircle.push_back (row); // Store y-location of circle point
         X(row, col) = (3 + colorsused) + rand() % (ncolors - 3); // Sample random color from 3 to 3 + ncolors - 3
-      } if(dist > (radius + 1) && dist < ceil(radius * 1.01)) { // Check if edge point
-		if (edgeright < 0.5) {
+      } else if(dist > (radius + 1) && dist < ceil(radius * 1.01)) { // Check if edge point
+		if (lightright == 0) {
 		  if(col > xcenter) {
 			X(row, col) = 1; // Dark edge = gray
 		  } else {
@@ -87,6 +88,16 @@ arma::mat iterate_planet(arma::mat X,
       }
     }
 	X_ref = X;
+  }
+  for (int ii = 0; ii < xcircle.size(); ii++) {
+      int xpoint = xcircle[ii];
+      int ypoint = ycircle[ii];
+	  float xdist = abs(xcenter - xpoint);
+	  if(lightright == 1 && xpoint < xcenter) {
+		X(ypoint, xpoint) = X(ypoint, xpoint) - (fade * (xdist / radius));
+	  } else if(lightright == 0 && xpoint > xcenter) {
+		X(ypoint, xpoint) = X(ypoint, xpoint) - (fade * (xdist / radius));
+	  }
   }
   return X;
 };

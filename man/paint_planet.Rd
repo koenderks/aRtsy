@@ -4,7 +4,7 @@
 \alias{paint_planet}
 \title{Paint a Planet on a Canvas}
 \usage{
-paint_planet <- function(colors, threshold = 3, iterations = 500, starprob = 0.01,
+paint_planet <- function(colors, threshold = 3, iterations = 500, starprob = 0.01, fade = 0.2,
                      radius = NULL, center.x = NULL, center.y = NULL, 
                      seed = 1, width = 1500, height = 1500)
 }
@@ -17,11 +17,15 @@ paint_planet <- function(colors, threshold = 3, iterations = 500, starprob = 0.0
 
 \item{starprob}{the probability of drawing a star in outer space.}
 
+\item{fade}{the fading factor.}
+
 \item{radius}{a numeric (vector) specifying the radius of the planet(s).}
 
 \item{center.x}{the x-axis coordinate(s) for the center(s) of the planet(s).}
 
 \item{center.y}{the y-axis coordinate(s) for the center(s) of the planet(s).}
+
+\item{light_right}{whether to draw the light from the right or the left.}
 
 \item{seed}{the seed for the painting.}
 

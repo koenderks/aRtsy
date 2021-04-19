@@ -2,17 +2,19 @@
 #'
 #' @description This function paints one or multiple planets.
 #'
-#' @usage paint_planet <- function(colors, threshold = 3, iterations = 500, starprob = 0.01,
+#' @usage paint_planet <- function(colors, threshold = 3, iterations = 500, starprob = 0.01, fade = 0.2,
 #'                      radius = NULL, center.x = NULL, center.y = NULL, 
 #'                      seed = 1, width = 1500, height = 1500)
 #'
 #' @param colors   	  a character specifying the colors used for the planets
 #' @param threshold   a character specifying the threshold for a color take.
 #' @param starprob    the probability of drawing a star in outer space.
+#' @param fade        the fading factor.
 #' @param iterations  the number of iterations of the planets
 #' @param radius      a numeric (vector) specifying the radius of the planet(s).
 #' @param center.x    the x-axis coordinate(s) for the center(s) of the planet(s).
 #' @param center.y    the y-axis coordinate(s) for the center(s) of the planet(s).
+#' @param light_right whether to draw the light from the right or the left.
 #' @param seed        the seed for the painting.
 #' @param width       the width of the painting in pixels.
 #' @param height      the height of the painting in pixels.
@@ -32,8 +34,8 @@
 #' @useDynLib aRtsy
 #' @import Rcpp
 
-paint_planet <- function(colors, threshold = 3, iterations = 500, starprob = 0.01,
-                         radius = NULL, center.x = NULL, center.y = NULL, 
+paint_planet <- function(colors, threshold = 3, iterations = 500, starprob = 0.01, fade = 0.2,
+                         radius = NULL, center.x = NULL, center.y = NULL, light_right = TRUE,
                          seed = 1, width = 1500, height = 1500){
   x <- y <- z <- NULL
   palette <- list()
@@ -49,10 +51,26 @@ paint_planet <- function(colors, threshold = 3, iterations = 500, starprob = 0.0
     center.y <- ceiling(height / 2)
   if(length(unique(c(length(radius), length(center.y), length(center.x)))) != 1)
      stop("Radius, center.y, and center.x do not have equal length.")
+	if(light_right) {
+		lightright = 1
+	} else {
+		lightright = 0
+	}
   planets <- length(radius)
   colorsused <- 0
   for(i in 1:planets){
-    canvas <- iterate_planet(canvas, radius[i], center.x[i], center.y[i], threshold, ceiling(iterations / i), starprob, seed + i, length(palette[[i]]), colorsused)
+    canvas <- iterate_planet(X = canvas, 
+							 radius = radius[i], 
+							 xcenter = center.x[i], 
+							 ycenter = center.y[i], 
+							 threshold = threshold, 
+							 iterations = ceiling(iterations / i), 
+							 starprob = starprob, 
+							 seed = seed + i, 
+							 ncolors = length(palette[[i]]), 
+							 colorsused = colorsused, 
+							 fade = fade,
+							 lightright = lightright)
 	  colorsused <- colorsused + length(colors[[i]]) 
   }
   full_canvas <- reshape2::melt(canvas)
