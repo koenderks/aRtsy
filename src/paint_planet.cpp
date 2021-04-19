@@ -39,15 +39,15 @@ arma::mat iterate_planet(arma::mat X,
       } else if(dist > (radius + 1) && dist < ceil(radius * 1.01)) { // Check if edge point
 		if (lightright == 0) {
 		  if(col > xcenter) {
-			X(row, col) = 1;//1; // Dark edge = gray
+			X(row, col) = 0;//1; // Dark edge = gray
 		  } else {
-			X(row, col) = 2; // Light edge = white
+			X(row, col) = 0;//2; // Light edge = white
 		  }
 		} else {
 		  if(col < xcenter) {
-			X(row, col) = 1;//1; // Dark edge = gray
+			X(row, col) = 0;//1; // Dark edge = gray
 		  } else {
-			X(row, col) = 2; // Light edge = white
+			X(row, col) = 0;//2; // Light edge = white
 		  }			
 		}
 	  } else { // Check if star point
@@ -93,10 +93,18 @@ arma::mat iterate_planet(arma::mat X,
       int xpoint = xcircle[ii];
       int ypoint = ycircle[ii];
 	  float xdist = abs(xcenter - xpoint);
-	  if(lightright == 0 && xpoint < xcenter) {
-		X(ypoint, xpoint) = X(ypoint, xpoint) - (fade * (xdist / radius));
-	  } else if(lightright == 1 && xpoint > xcenter) {
-		X(ypoint, xpoint) = X(ypoint, xpoint) - (fade * (xdist / radius));
+	  if(lightright == 0) {
+		  if(xpoint < xcenter) {
+			  X(ypoint, xpoint) = X(ypoint, xpoint) - (fade * (xdist / radius));
+		  } else {
+			  X(ypoint, xpoint) = X(ypoint, xpoint) + (fade * (xdist / radius));
+		  }
+	  } else if(lightright == 1) {
+		  if(xpoint > xcenter) {
+			  X(ypoint, xpoint) = X(ypoint, xpoint) - (fade * (xdist / radius));
+		  } else {
+			  X(ypoint, xpoint) = X(ypoint, xpoint) + (fade * (xdist / radius));
+		  }
 	  }
   }
   return X;
