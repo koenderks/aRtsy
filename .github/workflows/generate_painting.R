@@ -60,7 +60,7 @@ if (paintingType == 1){
 
 } else if (paintintType == 6) {
   
-  painting <- aRtsy::paint_planet(colors = randomcoloR::randomColor(3), 
+  painting <- aRtsy::paint_planet(colors = list(randomcoloR::randomColor(3)), 
   								  iterations = 30, 
 								  seed = seed, 
 								  starprob = runif(1, 0.001, 0.1))
