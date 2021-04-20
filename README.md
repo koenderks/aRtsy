@@ -86,7 +86,7 @@ You can use the `paint_ant()` function to make your own unique painting with thi
 
 ## Planets
 
-This algorithm paints one or multiple planets in space and uses a cellular automata (idea mimicked from [Fronkonstin](https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/)) to populate their surfaces.
+This algorithm paints one or multiple planets in space and uses a cellular automata (inspired by an idea from [Fronkonstin](https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/)) to fill in their surfaces.
 
 You can use the `paint_planet()` function to make your own unique painting with this algorithm. 
 
