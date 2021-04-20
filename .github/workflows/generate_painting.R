@@ -6,7 +6,7 @@ library(randomcoloR)
 paintingPNGname <- paste0('png/daily.png')
 
 # Painting seed dependent on the date
-seed <- set.seed(as.numeric(Sys.time()))
+seed <- as.numeric(Sys.time())
 set.seed(seed)
 
 # Select painting type
