@@ -1,0 +1,19 @@
+Package: aRtsy
+Title: Generative Art
+Description: Implements generative art using ggplot2.
+Version: 0.1.0
+Date: 2021-04-15
+Authors@R: 
+    person(given = "Koen",
+           family = "Derks",
+           role = c("aut", "cre"),
+           email = "koen-derks@hotmail.com",
+		   comment = c(ORCID = '0000-0002-5533-9349'))
+BugReports: https://github.com/koenderks/aRtsy/issues
+URL: https://github.com/koenderks/aRtsy
+Imports: ggplot2, dplyr, reshape2, Rcpp
+LinkingTo: Rcpp, RcppArmadillo
+Language: en-US
+License: GPL-3
+Encoding: UTF-8
+RoxygenNote: 7.1.1
