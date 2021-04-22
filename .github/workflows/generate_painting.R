@@ -58,13 +58,24 @@ if (paintingType == 1){
 									 width = 100,
 									 height = 100)
 
-} else if (paintintType == 6) {
+} else if (paintingType == 6) {
   
   painting <- aRtsy::paint_planet(colors = list(randomcoloR::randomColor(3)), 
   								  iterations = 30, 
 								  seed = seed, 
 								  starprob = runif(1, 0.001, 0.1))
 
+} else if (paintingType == 7) {
+	
+	painting <- aRtsy::paint_circlemap(colors = randomcoloR::randomColor(3, luminosity = "dark"),
+	                   x_min = runif(1, -4, 0),
+									   x_max = runif(1, 1, 14),
+									   y_min = 0,
+									   y_max = 1,
+									   iterations = sample(1:30, size = 1),
+									   seed = seed,
+									   width = 1500,
+									   height = 1500)
 }
 
 ggplot2::ggsave(painting, filename = paintingPNGname, width = 7, height = 7, dpi = 300)

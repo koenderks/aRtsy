@@ -22,6 +22,23 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// iterate_circlemap
+arma::mat iterate_circlemap(arma::mat X, double kmin, double kmax, double phimin, double phimax, int iterations, int seed);
+RcppExport SEXP _aRtsy_iterate_circlemap(SEXP XSEXP, SEXP kminSEXP, SEXP kmaxSEXP, SEXP phiminSEXP, SEXP phimaxSEXP, SEXP iterationsSEXP, SEXP seedSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type X(XSEXP);
+    Rcpp::traits::input_parameter< double >::type kmin(kminSEXP);
+    Rcpp::traits::input_parameter< double >::type kmax(kmaxSEXP);
+    Rcpp::traits::input_parameter< double >::type phimin(phiminSEXP);
+    Rcpp::traits::input_parameter< double >::type phimax(phimaxSEXP);
+    Rcpp::traits::input_parameter< int >::type iterations(iterationsSEXP);
+    Rcpp::traits::input_parameter< int >::type seed(seedSEXP);
+    rcpp_result_gen = Rcpp::wrap(iterate_circlemap(X, kmin, kmax, phimin, phimax, iterations, seed));
+    return rcpp_result_gen;
+END_RCPP
+}
 // iterate_mondriaan
 arma::mat iterate_mondriaan(arma::mat X, Rcpp::DataFrame neighbors, int s, int cuts, double ratio, int seed);
 RcppExport SEXP _aRtsy_iterate_mondriaan(SEXP XSEXP, SEXP neighborsSEXP, SEXP sSEXP, SEXP cutsSEXP, SEXP ratioSEXP, SEXP seedSEXP) {
@@ -94,6 +111,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_aRtsy_iterate_ant", (DL_FUNC) &_aRtsy_iterate_ant, 6},
+    {"_aRtsy_iterate_circlemap", (DL_FUNC) &_aRtsy_iterate_circlemap, 7},
     {"_aRtsy_iterate_mondriaan", (DL_FUNC) &_aRtsy_iterate_mondriaan, 6},
     {"_aRtsy_iterate_planet", (DL_FUNC) &_aRtsy_iterate_planet, 12},
     {"_aRtsy_iterate_strokes", (DL_FUNC) &_aRtsy_iterate_strokes, 5},

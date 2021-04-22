@@ -19,6 +19,7 @@ Let's go hunting for some good `seed`'s!
 * [Langton's ant](#langtons-ant)
 * [Planets](#planets)
 * [Mondriaan](#mondriaan)
+* [Circle maps](#circle-maps)
 * [Functions](#functions)
 * [LP records](#LP-records)
 
@@ -112,9 +113,21 @@ You can use the `paint_mondriaan()` function to make your own unique painting wi
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-29.png' width='270' height='270'>
 </p> 
 
+## Circle maps
+
+This next painting is based on the concept of an [Arnold's tongue](https://en.wikipedia.org/wiki/Arnold_tongue).
+
+You can use the `paint_circlemap()` function to make your own unique painting with this algorithm.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22b.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22c.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22a.png' width='270' height='270'>
+</p> 
+
 ## Functions
 
-To be honest, this type of painting is plainly and completely taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package, but it makes pretty pictures nonetheless. In this algorithm, the position of every single point is calculated by a formula which has random parameters.
+To be honest, this last type of painting is plainly and completely taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package, but it makes pretty pictures nonetheless. In this algorithm, the position of every single point is calculated by a formula which has random parameters.
 
 You can use the `paint_function()` function to make your own unique painting with this algorithm. 
 
