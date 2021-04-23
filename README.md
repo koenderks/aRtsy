@@ -115,7 +115,7 @@ You can use the `paint_mondriaan()` function to make your own unique painting wi
 
 ## Circle maps
 
-This next painting is based on the concept of an [Arnold's tongue](https://en.wikipedia.org/wiki/Arnold_tongue).
+This next painting is based on the concept of an [Arnold tongue](https://en.wikipedia.org/wiki/Arnold_tongue).
 
 You can use the `paint_circlemap()` function to make your own unique painting with this algorithm.
 
