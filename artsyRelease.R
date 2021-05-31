@@ -23,7 +23,7 @@ install.packages("C:\\Users\\derksk\\OneDrive - NBU\\Desktop\\aRtsy",
                  INSTALL_opts = "--no-multiarch", 
                  type = "source", 
                  repos = NULL,
-                 lib = "C:/Users/derksk/R/R-3.6.3/library")
+                 lib = "C:/Users/derksk/R/R-4.0.5/library")
 
 #####################################################################
 ############## RELEASE WORKFLOW #####################################
