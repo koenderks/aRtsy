@@ -12,6 +12,9 @@ jobs:
       
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
       - uses: r-lib/actions/setup-r@v1
 
       # Install required packages and update README
@@ -26,24 +29,13 @@ jobs:
           source(".github/workflows/generate_painting.R")
         shell: Rscript {0}
 
-      # Create a pull request with changes to master
-      - name: Create pull request
-        id: cpr
-        uses: peter-evans/create-pull-request@v3
-        with:
-          commit-message: New painting
-          signoff: false
-          branch: new-painting
-          delete-branch: true
-          title: 'New painting'
-          body: |
-            Today's painting:
-
-            ![image](https://github.com/koenderks/aRtsy/raw/new-painting/png/daily.png)
-          draft: false
-
-      # Check outputs of workflow
-      - name: Check outputs
-        run: |
-          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
-          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
+      - name: Commit files
+            run: |
+              git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+              git config --local user.name "github-actions[bot]"
+              git commit -m "New painting" -a
+          - name: Push changes
+            uses: ad-m/github-push-action@master
+            with:
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+              branch: ${{ github.ref }}
