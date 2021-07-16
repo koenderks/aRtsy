@@ -1,6 +1,6 @@
 Package: aRtsy
-Title: Randomized Generative Art
-Description: Implements generative art using ggplot2.
+Title: Generative Art using ggplot2
+Description: Implements the ideas of multiple generative artists in the ggplot2 language.
 Version: 0.1.0
 Date: 2021-07-16
 Authors@R: 

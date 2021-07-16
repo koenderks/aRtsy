@@ -29,7 +29,7 @@ A \code{ggplot} object containing the painting.
 This function paints arcs.
 }
 \examples{
-paint_arcs(colors = c('black', 'red', 'yellow'))
+paint_arcs(colors = c('black', 'red', 'yellow'), n = 9)
 
 }
 \seealso{

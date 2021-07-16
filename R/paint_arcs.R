@@ -20,7 +20,7 @@
 #' @seealso \code{\link{paint_strokes}} \code{\link{paint_turmite}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
 #'
 #' @examples
-#' paint_arcs(colors = c('black', 'red', 'yellow'))
+#' paint_arcs(colors = c('black', 'red', 'yellow'), n = 9)
 #' 
 #' @keywords paint
 #'
