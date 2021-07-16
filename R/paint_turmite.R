@@ -27,7 +27,7 @@
 #' @keywords paint
 #'
 #' @export
-#' @useDynLib aRtsy
+#' @useDynLib ggart
 #' @import Rcpp
 
 paint_turmite <- function(color, background = '#fafafa', p = 0.5, iterations = 1e7, 

@@ -39,7 +39,7 @@
 #' @keywords paint
 #'
 #' @export
-#' @useDynLib aRtsy
+#' @useDynLib ggart
 #' @import Rcpp
 
 paint_planet <- function(colors, threshold = 4, iterations = 200, starprob = 0.01, fade = 0.2,

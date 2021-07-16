@@ -26,7 +26,7 @@
 #' @keywords paint
 #'
 #' @export
-#' @useDynLib aRtsy
+#' @useDynLib ggart
 #' @import Rcpp
 
 paint_ant <- function(colors, background = '#fafafa', iterations = 1e7, 
