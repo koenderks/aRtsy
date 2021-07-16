@@ -128,12 +128,12 @@ You can use the `paint_circlemap()` function to make your own unique painting wi
 
 ## Arcs
 
-This painting is taken over from 
+Inspired by the work of [@ijeamaka_a](https://twitter.com/ijeamaka_a), I wanted to make my own version of her [Arc Series](https://www.etsy.com/listing/1032142006/arcs-series-geometric-art-generative-art?ref=shop_home_recs_1&crt=1). The `paint_arcs()` function allows you to make one for your wall as well.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/arcs/2021-07-14.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/arcs/2021-07-15.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/arcs/2021-07-16.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/arcs/2021-07-15.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/arcs/2021-07-14.png' width='270' height='270'>
 </p>
 
 ## Functions

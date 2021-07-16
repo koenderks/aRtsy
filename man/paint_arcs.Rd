@@ -4,14 +4,20 @@
 \alias{paint_arcs}
 \title{Paint Arcs on a Canvas}
 \usage{
-paint_arcs(colors, background = '#fafafa', n = 9, nrow = NULL, ncol = NULL, seed = 1)
+paint_arcs(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL, dir = 'right')
 }
 \arguments{
 \item{background}{a character specifying the color used for the background.}
 
-\item{seed}{the seed for the painting.}
+\item{n}{an integer specifying how many paintings should be put on the canvas.}
 
-\item{color}{a character specifying the three colors used for the painting.}
+\item{nrow}{(optional) number of rows on the canvas}
+
+\item{ncol}{(optional) number of columns on the canvas.}
+
+\item{dir}{a character specifying which direction the arcs turn.}
+
+\item{color}{a character specifying the 3 colors used for the arcs.}
 }
 \value{
 A \code{ggplot} object containing the painting.

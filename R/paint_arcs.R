@@ -2,11 +2,14 @@
 #'
 #' @description This function paints arcs.
 #'
-#' @usage paint_arcs(colors, background = '#fdf5e6', n = 9, nrow = NULL, ncol = NULL, seed = 1)
+#' @usage paint_arcs(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL, dir = 'right')
 #'
-#' @param color   	  a character specifying the three colors used for the painting.
+#' @param color   	  a character specifying the 3 colors used for the arcs.
 #' @param background  a character specifying the color used for the background.
-#' @param seed        the seed for the painting.
+#' @param n           an integer specifying how many paintings should be put on the canvas.
+#' @param nrow        (optional) number of rows on the canvas
+#' @param ncol        (optional) number of columns on the canvas.
+#' @param dir         a character specifying which direction the arcs turn.
 #'
 #' @return A \code{ggplot} object containing the painting.
 #'
@@ -22,24 +25,28 @@
 #' @export
 #' @importFrom ggpubr ggarrange
 
-paint_arcs <- function(colors, background = '#fdf5e6', n = 9, nrow = NULL, ncol = NULL, seed = 1) {
+paint_arcs <- function(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL, dir = 'right') {
   if(length(colors) != 3)
     stop("You must provide three color names.")
-  set.seed(seed)
+  if (n <= 0)
+    stop("You must specify n > 0.")
+  if (!(dir %in% c("left", "right")))
+    stop("dir must be 'left' or 'right'")
   transparent <- grDevices::rgb(0, 0, 0, alpha = 0)
-  plotList <- list()
+  starts <- seq(from = 0, to = 360, length.out = n)
   # Nice layer 1: ymin: 0,   ymax: 216
   # Nice layer 2: ymin: 100, ymax: 360
   # Nice layer 3: ymin: 20,  ymax: 270
+  plotList <- list()
   for(i in 1:n) {
-    # x = size of circle
-    # y = position of circle
+    # xmax = size of arc
+    # ymin, ymax = position(s) of arc
     p <- ggplot2::ggplot() +
-      ggplot2::annotate("rect", xmin = 0, xmax = 1, ymin = 0, ymax = 216, alpha=1, colour = NA, fill = colors[1]) +
-      ggplot2::annotate("rect", xmin = 0, xmax = 0.6, ymin = 100, ymax = 360, alpha=0.9, colour = NA, fill = colors[2]) +
-      ggplot2::annotate("rect", xmin = 0, xmax = 0.3, ymin = 20, ymax = 270, alpha=1, colour = NA, fill = colors[3]) +
+      ggplot2::annotate("rect", xmin = 0, xmax = 1, ymin = 0, ymax = 216, alpha = 1, colour = NA, fill = colors[1]) +
+      ggplot2::annotate("rect", xmin = 0, xmax = 0.6, ymin = 100, ymax = 360, alpha = 0.9, colour = NA, fill = colors[2]) +
+      ggplot2::annotate("rect", xmin = 0, xmax = 0.3, ymin = 20, ymax = 270, alpha = 1, colour = NA, fill = colors[3]) +
       ggplot2::ylim(c(0, 360)) + 
-      ggplot2::coord_polar(theta = "y", start=runif(n = 1, min = 0, max = 360), direction = sample(c(-1, 1), 1)) +
+      ggplot2::coord_polar(theta = "y", start = starts[i], direction = if (dir == "right") 1 else -1) +
       ggplot2::theme(axis.title = ggplot2::element_blank(), 
                      axis.text = ggplot2::element_blank(), 
                      axis.ticks = ggplot2::element_blank(), 
