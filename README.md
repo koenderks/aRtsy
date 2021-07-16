@@ -63,7 +63,7 @@ You can use the `paint_strokes()` function to make your own painting using this 
 
 ## Turmite
 
-This type of painting creates a turmite. According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *a Turing machine which has an orientation in addition to a current state and a "tape" that consists of an infinite two-dimensional grid of cells*. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in `ggart` is slightly modified so that the block does not go off the canvas, but instead bounces back onto the canvas.
+According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *a Turing machine which has an orientation in addition to a current state and a "tape" that consists of an infinite two-dimensional grid of cells*. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in `ggart` is slightly modified so that the block does not go off the canvas, but instead bounces back onto the canvas.
 
 1. Turn on the spot (left, right, up, or down),
 2. Change the color of the block,
@@ -79,7 +79,7 @@ You can use the `paint_turmite()` function to make your own painting using this 
 
 ## Langton's ant
 
-This type of painting creates Langton's ant. According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langton's ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below. The problem with this type of painting is that it always moves off the canvas though...
+According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langton's ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below. The problem with this type of painting is that it always moves off the canvas though...
 
 1. On a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block.
 1. On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block.
@@ -95,7 +95,7 @@ You can use the `paint_ant()` function to make your own painting using this algo
 
 ## Planets
 
-This type of painting creates one or multiple planets in space and uses a cellular automata (inspired by an idea from [Fronkonstin](https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/)) to fill in their surfaces.
+We all love space and this type of painting puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (inspired by an idea from [Fronkonstin](https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/)) to fill in their surfaces.
 
 You can use the `paint_planet()` function to make your own painting using this algorithm.
 
