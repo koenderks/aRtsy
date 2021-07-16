@@ -4,20 +4,23 @@
 \alias{paint_arcs}
 \title{Paint Arcs on a Canvas}
 \usage{
-paint_arcs(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL, dir = 'right')
+paint_arcs(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL, 
+           dir = 'right', starts = 'clockwise')
 }
 \arguments{
-\item{background}{a character specifying the color used for the background.}
+\item{background}{a character string specifying the color used for the background.}
 
 \item{n}{an integer specifying how many paintings should be put on the canvas.}
 
-\item{nrow}{(optional) number of rows on the canvas}
+\item{nrow}{an (optional) integer specifying the number of rows on the canvas.}
 
-\item{ncol}{(optional) number of columns on the canvas.}
+\item{ncol}{an (optional) integer specifying the number of columns on the canvas.}
 
-\item{dir}{a character specifying which direction the arcs turn.}
+\item{dir}{a character string specifying which direction the arcs turn. Can be one of \code{"right"} (default) or \code{"left"}.}
 
-\item{color}{a character specifying the 3 colors used for the arcs.}
+\item{starts}{a character sting specifying where the arcs should start. Can be one of \code{"clockwise"} (default) or \code{"random"}.}
+
+\item{color}{a character vector specifying the 3 colors used for the arcs.}
 }
 \value{
 A \code{ggplot} object containing the painting.

@@ -2,14 +2,16 @@
 #'
 #' @description This function paints arcs.
 #'
-#' @usage paint_arcs(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL, dir = 'right')
+#' @usage paint_arcs(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL, 
+#'            dir = 'right', starts = 'clockwise')
 #'
-#' @param color   	  a character specifying the 3 colors used for the arcs.
-#' @param background  a character specifying the color used for the background.
+#' @param color   	  a character vector specifying the 3 colors used for the arcs.
+#' @param background  a character string specifying the color used for the background.
 #' @param n           an integer specifying how many paintings should be put on the canvas.
-#' @param nrow        (optional) number of rows on the canvas
-#' @param ncol        (optional) number of columns on the canvas.
-#' @param dir         a character specifying which direction the arcs turn.
+#' @param nrow        an (optional) integer specifying the number of rows on the canvas.
+#' @param ncol        an (optional) integer specifying the number of columns on the canvas.
+#' @param dir         a character string specifying which direction the arcs turn. Can be one of \code{"right"} (default) or \code{"left"}.
+#' @param starts      a character sting specifying where the arcs should start. Can be one of \code{"clockwise"} (default) or \code{"random"}.
 #'
 #' @return A \code{ggplot} object containing the painting.
 #'
@@ -25,15 +27,18 @@
 #' @export
 #' @importFrom ggpubr ggarrange
 
-paint_arcs <- function(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL, dir = 'right') {
+paint_arcs <- function(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL, 
+                       dir = 'right', starts = 'clockwise') {
   if(length(colors) != 3)
     stop("You must provide three color names.")
   if (n <= 0)
     stop("You must specify n > 0.")
   if (!(dir %in% c("left", "right")))
     stop("dir must be 'left' or 'right'")
+  if (!(starts %in% c("clockwise", "random")))
+    stop("starts must be 'clockwise' or 'random'")
   transparent <- grDevices::rgb(0, 0, 0, alpha = 0)
-  starts <- seq(from = 0, to = 360, length.out = n)
+  starts <- if (starts == 'clockwise') seq(from = 0, to = 360, length.out = n) else sample(0:360, size = n, replace = FALSE)
   # Nice layer 1: ymin: 0,   ymax: 216
   # Nice layer 2: ymin: 100, ymax: 360
   # Nice layer 3: ymin: 20,  ymax: 270

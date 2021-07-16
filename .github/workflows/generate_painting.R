@@ -81,8 +81,11 @@ if (paintingType == 1){
   
   painting <- aRtsy::paint_arcs(colors = randomcoloR::randomColor(3, luminosity = "dark"), 
                                 background = randomcoloR::randomColor(1, luminosity = "light"), 
-                                n = sample(c(3, 6, 9, 12), size = 1), 
-                                seed = sample(1:10000, size = 1))
+                                nrow = NULL,
+                                ncol = NULL,
+                                n = sample(c(4, 6, 9, 12, 16), size = 1), 
+                                dir = sample(c("right", "left"), size = 1),
+                                starts = sample(c("clockwise", "random"), size = 1))
 
 }
 
