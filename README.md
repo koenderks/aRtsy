@@ -68,9 +68,9 @@ You can use the `paint_strokes()` function to make your own painting using this 
 This function paints colored ribbons with (or without) a triangle that breaks their paths. This path of the ribbon polygon is creating by picking one point on the left side of the triangle and one point on the right side at random and using these points as nodes.
 
 <p align="center">
-  <img src='https://github.com/koenderks/ggart/raw/master/png/triangles/2021-07-16.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/triangles/2021-07-14.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/triangles/2021-07-15.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/ggart/raw/master/png/ribbons/2021-07-16.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/ggart/raw/master/png/ribbons/2021-07-15.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/ggart/raw/master/png/ribbons/2021-07-14.png' width='270' height='270'>
 </p>
 
 ## Paint turmite

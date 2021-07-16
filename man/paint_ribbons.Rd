@@ -2,7 +2,7 @@
 % Please edit documentation in R/paint_triangle.R
 \name{paint_ribbons}
 \alias{paint_ribbons}
-\title{Paint A Triangle with Lines on a Canvas}
+\title{Paint Ribbons on a Canvas}
 \usage{
 paint_ribbons(colors, background = '#fdf5e6', seed = 1)
 }
@@ -11,7 +11,7 @@ paint_ribbons(colors, background = '#fdf5e6', seed = 1)
 
 \item{background}{a character specifying the color of the background.}
 
-\item{triangle}{logical. Whether to draw the triangle itself.}
+\item{triangle}{logical. Whether to draw the triangle.}
 
 \item{seed}{the seed for the painting.}
 }
@@ -19,7 +19,7 @@ paint_ribbons(colors, background = '#fdf5e6', seed = 1)
 A \code{ggplot} object containing the painting.
 }
 \description{
-This function paints triangles and lines.
+This function paints ribbons and (optionally) a triangle in the middle.
 }
 \examples{
 paint_ribbons(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod"))

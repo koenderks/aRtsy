@@ -1,12 +1,12 @@
-#' Paint A Triangle with Lines on a Canvas
+#' Paint Ribbons on a Canvas
 #'
-#' @description This function paints triangles and lines.
+#' @description This function paints ribbons and (optionally) a triangle in the middle.
 #'
 #' @usage paint_ribbons(colors, background = '#fdf5e6', seed = 1)
 #'
 #' @param colors      a character (vector) specifying the colors for the lines.
 #' @param background  a character specifying the color of the background.
-#' @param triangle    logical. Whether to draw the triangle itself.
+#' @param triangle    logical. Whether to draw the triangle.
 #' @param seed        the seed for the painting.
 #'
 #' @return A \code{ggplot} object containing the painting.
