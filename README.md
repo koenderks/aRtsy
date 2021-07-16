@@ -53,7 +53,7 @@ Every day this repository generates a random painting using the `ggart` package.
 
 ## Paint strokes
 
-When you thinks of the act of painting, you probably imagine stroking paint on a canvas. This type of painting tries to mimic that activity. The paint strokes algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor change of generating a new color. Going over the canvas like this results in strokes of paint that are similar to how I would paint. Not sure if that is a good or a bad thing...
+When you thinks of the act of painting, you probably imagine stroking paint on a canvas. This type of painting tries to mimic that activity. The paint strokes algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor change of generating a new color. Going over the canvas like this results in strokes of paint.
 
 You can use the `paint_strokes()` function to make your own painting using this algorithm.
 
