@@ -5,7 +5,7 @@
 [![Monthly](https://cranlogs.r-pkg.org/badges/ggart?color=blue)](https://cranlogs.r-pkg.org)
 [![Total](https://cranlogs.r-pkg.org/badges/grand-total/ggart?color=blue)](https://cranlogs.r-pkg.org)
 
-# ggart: Generative Art Using R
+# ggart: Generative Art with `ggplot2`
 
 `ggart` is an attempt at making generative art available for the masses. The package mimics the ideas of multiple generative artists in the `ggplot2` language and implements each of these ideas in a separate function.
 
