@@ -10,7 +10,7 @@ seed <- as.numeric(Sys.time())
 set.seed(seed)
 
 # Select painting type
-paintingType <- sample(1:8, size = 1)
+paintingType <- sample(1:9, size = 1)
 
 if (paintingType == 1){
   
@@ -86,6 +86,12 @@ if (paintingType == 1){
                                 n = sample(c(4, 6, 9, 12, 16), size = 1), 
                                 dir = sample(c("right", "left"), size = 1),
                                 starts = sample(c("clockwise", "random"), size = 1))
+
+} else if (paintingType == 9) {
+
+  painting <- ggart::paint_ribbons(colors = randomcoloR::randomColor(sample(3:6, size = 1), luminosity = "dark"),
+                                   background = randomcoloR::randomColor(1, luminosity = "light"),
+                                   seed = seed)
 
 }
 
