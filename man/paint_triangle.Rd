@@ -11,6 +11,8 @@ paint_triangle(colors, background = '#fdf5e6', seed = 1)
 
 \item{background}{a character specifying the color of the background.}
 
+\item{triangle}{logical. Whether to draw the triangle itself.}
+
 \item{seed}{the seed for the painting.}
 }
 \value{
@@ -20,7 +22,7 @@ A \code{ggplot} object containing the painting.
 This function paints triangles and lines.
 }
 \examples{
-paint_triangle(colors = c('black', 'red', 'yellow'))
+paint_triangle(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod"))
 
 }
 \seealso{

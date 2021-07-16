@@ -4,8 +4,9 @@
 #'
 #' @usage paint_triangle(colors, background = '#fdf5e6', seed = 1)
 #'
-#' @param colors   	  a character (vector) specifying the colors for the lines.
+#' @param colors      a character (vector) specifying the colors for the lines.
 #' @param background  a character specifying the color of the background.
+#' @param triangle    logical. Whether to draw the triangle itself.
 #' @param seed        the seed for the painting.
 #'
 #' @return A \code{ggplot} object containing the painting.
@@ -22,15 +23,15 @@
 #' @export
 #' @importFrom ggpubr ggarrange
 
-paint_triangle <- function(colors, background = '#fdf5e6', seed = 1) {
+paint_triangle <- function(colors, background = '#fdf5e6', triangle = TRUE, seed = 1) {
   p <- ggplot2::ggplot() +
     ggplot2::xlim(c(0, 100)) +
     ggplot2::ylim(0, 100)
   
-  y_max_top <- 75 - 5# length(colors) * 5
-  trainglePointsLeft <- data.frame(x = 26:49, y = seq(from = 26, to = 75, length.out = 24))
+  y_max_top <- 75 - 7
+  trainglePointsLeft <- data.frame(x = 16:49, y = seq(from = 16, to = 75, length.out = 34))
   trainglePointsLeft <- trainglePointsLeft[which(trainglePointsLeft$y < y_max_top), ]
-  trainglePointsRight <- data.frame(x = 51:74, y = seq(from = 74, to = 26, length.out = 24))
+  trainglePointsRight <- data.frame(x = 51:84, y = seq(from = 74, to = 16, length.out = 34))
   trainglePointsRight <- trainglePointsRight[which(trainglePointsRight$y < y_max_top), ]
   set.seed(seed)
   for(i in 1:length(colors)) {
@@ -59,10 +60,12 @@ paint_triangle <- function(colors, background = '#fdf5e6', seed = 1) {
                                    stat = "identity", alpha = 1)
   }
   
-  d <- data.frame(x = c(25, 50, 75), y = c(25, 75, 25))
+  if (triangle) {
+  d <- data.frame(x = c(15, 50, 85), y = c(15, 75, 15))
   p <- p + ggplot2::geom_polygon(data = d, mapping = ggplot2::aes(x = x, y = y), 
                                  fill = NA, color = "black", 
                                  stat = "identity", size = 1)
+  }
   
   p <- p + ggplot2::theme(axis.title = ggplot2::element_blank(),
                           axis.text = ggplot2::element_blank(),
