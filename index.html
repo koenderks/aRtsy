@@ -96,12 +96,12 @@
 <ul>
 <li><a href="#painting-of-the-day">Painting of the day</a></li>
 <li><a href="#paint-strokes"><code>paint_strokes()</code></a></li>
+<li><a href="#triangle"><code>paint_triangle()</code></a></li>
 <li><a href="#turmite"><code>paint_turmite()</code></a></li>
 <li><a href="#langtons-ant"><code>paint_ant()</code></a></li>
 <li><a href="#planets"><code>paint_planet()</code></a></li>
 <li><a href="#mondriaan"><code>paint_mondriaan()</code></a></li>
 <li><a href="#circle-maps"><code>paint_cirlemap()</code></a></li>
-<li><a href="#arcs"><code>paint_arcs()</code></a></li>
 <li><a href="#functions"><code>paint_function()</code></a></li>
 </ul>
 </div>
@@ -115,10 +115,17 @@
 <div id="paint-strokes" class="section level2">
 <h2 class="hasAnchor">
 <a href="#paint-strokes" class="anchor"></a>Paint strokes</h2>
-<p>When you thinks of the act of painting, you probably imagine stroking paint on a canvas. This type of painting tries to mimic that activity. The paint strokes algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor change of generating a new color. Going over the canvas like this results in strokes of paint.</p>
+<p>When you think of the act of painting, you probably imagine stroking paint on a canvas. This type of painting tries to mimic that activity. The paint strokes algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor change of generating a new color. Going over the canvas like this results in strokes of paint.</p>
 <p>You can use the <code><a href="reference/paint_strokes.html">paint_strokes()</a></code> function to make your own painting using this algorithm.</p>
 <p align="center">
 <img src="https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-21.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-20.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-10.png" width="270" height="270"></p>
+</div>
+<div id="triangle" class="section level2">
+<h2 class="hasAnchor">
+<a href="#triangle" class="anchor"></a>Triangle</h2>
+<p>This function paints a triangle with colored ribbons.</p>
+<p align="center">
+<img src="https://github.com/koenderks/ggart/raw/master/png/triangles/2021-07-16.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/triangles/2021-07-14.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/triangles/2021-07-15.png" width="270" height="270"></p>
 </div>
 <div id="turmite" class="section level2">
 <h2 class="hasAnchor">
@@ -170,18 +177,10 @@
 <p align="center">
 <img src="https://github.com/koenderks/ggart/raw/master/png/circlemaps/2021-04-22b.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/circlemaps/2021-04-22c.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/circlemaps/2021-04-22a.png" width="270" height="270"></p>
 </div>
-<div id="arcs" class="section level2">
-<h2 class="hasAnchor">
-<a href="#arcs" class="anchor"></a>Arcs</h2>
-<p>Inspired by the work of <a href="https://twitter.com/ijeamaka_a">@ijeamaka_a</a>, this type of painting mimics her beautiful <a href="https://www.etsy.com/listing/1032142006/arcs-series-geometric-art-generative-art?ref=shop_home_recs_1&amp;crt=1">Arc Series</a>.</p>
-<p>You can use the <code><a href="reference/paint_arcs.html">paint_arcs()</a></code> function to make your own painting using this algorithm.</p>
-<p align="center">
-<img src="https://github.com/koenderks/ggart/raw/master/png/arcs/2021-07-16.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/arcs/2021-07-14.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/arcs/2021-07-15.png" width="270" height="270"></p>
-</div>
 <div id="functions" class="section level2">
 <h2 class="hasAnchor">
 <a href="#functions" class="anchor"></a>Functions</h2>
-<p>To be honest, this last type of painting is plainly and completely taken over from the <a href="https://github.com/cutterkom/generativeart"><code>generativeart</code></a> package, but it makes pretty pictures nonetheless. In this algorithm, the position of every single point is calculated by a formula which has random parameters.</p>
+<p>The idea for this type of painting is taken over from the <a href="https://github.com/cutterkom/generativeart"><code>generativeart</code></a> package. In this algorithm, the position of every single point is calculated by a formula which has random parameters.</p>
 <p>You can use the <code><a href="reference/paint_function.html">paint_function()</a></code> function to make your own painting using this algorithm.</p>
 <p align="center">
 <img src="https://github.com/koenderks/ggart/raw/master/png/functions/2021-03-17.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/functions/2021-04-08.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/functions/2021-04-04.png" width="270" height="270"></p>
