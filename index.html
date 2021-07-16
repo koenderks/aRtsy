@@ -96,13 +96,13 @@
 <ul>
 <li><a href="#painting-of-the-day">Painting of the day</a></li>
 <li><a href="#paint-strokes"><code>paint_strokes()</code></a></li>
-<li><a href="#triangle"><code>paint_ribbons()</code></a></li>
-<li><a href="#turmite"><code>paint_turmite()</code></a></li>
-<li><a href="#langtons-ant"><code>paint_ant()</code></a></li>
-<li><a href="#planets"><code>paint_planet()</code></a></li>
-<li><a href="#mondriaan"><code>paint_mondriaan()</code></a></li>
-<li><a href="#circle-maps"><code>paint_cirlemap()</code></a></li>
-<li><a href="#functions"><code>paint_function()</code></a></li>
+<li><a href="#paint-ribbons"><code>paint_ribbons()</code></a></li>
+<li><a href="#paint-turmite"><code>paint_turmite()</code></a></li>
+<li><a href="#paint-ant"><code>paint_ant()</code></a></li>
+<li><a href="#paint-planets"><code>paint_planet()</code></a></li>
+<li><a href="#paint-mondriaan"><code>paint_mondriaan()</code></a></li>
+<li><a href="#paint-circle-maps"><code>paint_cirlemap()</code></a></li>
+<li><a href="#paint-function"><code>paint_function()</code></a></li>
 </ul>
 </div>
 <div id="painting-of-the-day" class="section level2">
@@ -120,16 +120,16 @@
 <p align="center">
 <img src="https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-21.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-20.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-10.png" width="270" height="270"></p>
 </div>
-<div id="ribbons" class="section level2">
+<div id="paint-ribbons" class="section level2">
 <h2 class="hasAnchor">
-<a href="#ribbons" class="anchor"></a>Ribbons</h2>
+<a href="#paint-ribbons" class="anchor"></a>Paint ribbons</h2>
 <p>This function paints colored ribbons with (or without) a triangle that breaks their paths. This path of the ribbon polygon is creating by picking one point on the left side of the triangle and one point on the right side at random and using these points as nodes.</p>
 <p align="center">
 <img src="https://github.com/koenderks/ggart/raw/master/png/triangles/2021-07-16.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/triangles/2021-07-14.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/triangles/2021-07-15.png" width="270" height="270"></p>
 </div>
-<div id="turmite" class="section level2">
+<div id="paint-turmite" class="section level2">
 <h2 class="hasAnchor">
-<a href="#turmite" class="anchor"></a>Turmite</h2>
+<a href="#paint-turmite" class="anchor"></a>Paint turmite</h2>
 <p>According to <a href="https://en.wikipedia.org/wiki/Turmite">wikipedia</a>, a turmite is <em>a Turing machine which has an orientation in addition to a current state and a “tape” that consists of an infinite two-dimensional grid of cells</em>. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in <code>ggart</code> is slightly modified so that the block does not go off the canvas, but instead bounces back onto the canvas.</p>
 <ol>
 <li>Turn on the spot (left, right, up, or down),</li>
@@ -140,9 +140,9 @@
 <p align="center">
 <img src="https://github.com/koenderks/ggart/raw/master/png/turmites/2021-03-06.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/turmites/2021-03-09.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/turmites/2021-03-08.png" width="270" height="270"></p>
 </div>
-<div id="langtons-ant" class="section level2">
+<div id="paint-ant" class="section level2">
 <h2 class="hasAnchor">
-<a href="#langtons-ant" class="anchor"></a>Langton’s ant</h2>
+<a href="#paint-ant" class="anchor"></a>Paint ant</h2>
 <p>According to <a href="https://en.wikipedia.org/wiki/Langton%27s_ant">wikipedia</a>, Langton’s ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below. The problem with this type of painting is that it always moves off the canvas though…</p>
 <ol>
 <li>On a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block.</li>
@@ -153,33 +153,33 @@
 <p align="center">
 <img src="https://github.com/koenderks/ggart/raw/master/png/ants/2021-03-03.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/ants/2021-03-02.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/ants/2021-03-01.png" width="270" height="270"></p>
 </div>
-<div id="planets" class="section level2">
+<div id="paint-planets" class="section level2">
 <h2 class="hasAnchor">
-<a href="#planets" class="anchor"></a>Planets</h2>
+<a href="#paint-planets" class="anchor"></a>Paint planets</h2>
 <p>We all love space and this type of painting puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (inspired by an idea from <a href="https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/">Fronkonstin</a>) to fill in their surfaces.</p>
 <p>You can use the <code><a href="reference/paint_planet.html">paint_planet()</a></code> function to make your own painting using this algorithm.</p>
 <p align="center">
 <img src="https://github.com/koenderks/ggart/raw/master/png/planets/2021-02-26.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/planets/2021-02-27.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/planets/2021-02-28.png" width="270" height="270"></p>
 </div>
-<div id="mondriaan" class="section level2">
+<div id="paint-mondriaan" class="section level2">
 <h2 class="hasAnchor">
-<a href="#mondriaan" class="anchor"></a>Mondriaan</h2>
+<a href="#paint-mondriaan" class="anchor"></a>Paint Mondriaan</h2>
 <p>This type of painting mimics the style of the well-known paintings by the Dutch artist <a href="https://nl.wikipedia.org/wiki/Piet_Mondriaan">Piet Mondriaan</a>. It works by repeatedly cutting into the canvas at random locations and coloring the square that these cuts create.</p>
 <p>You can use the <code><a href="reference/paint_mondriaan.html">paint_mondriaan()</a></code> function to make your own painting using this algorithm.</p>
 <p align="center">
 <img src="https://github.com/koenderks/ggart/raw/master/png/mondriaans/2021-03-01.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/mondriaans/2021-02-28.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/mondriaans/2021-02-29.png" width="270" height="270"></p>
 </div>
-<div id="circle-maps" class="section level2">
+<div id="paint-circle-maps" class="section level2">
 <h2 class="hasAnchor">
-<a href="#circle-maps" class="anchor"></a>Circle maps</h2>
+<a href="#paint-circle-maps" class="anchor"></a>Paint circle maps</h2>
 <p>This type of painting is based on the concept of an <a href="https://en.wikipedia.org/wiki/Arnold_tongue">Arnold tongue</a>.</p>
 <p>You can use the <code><a href="reference/paint_circlemap.html">paint_circlemap()</a></code> function to make your own painting using this algorithm.</p>
 <p align="center">
 <img src="https://github.com/koenderks/ggart/raw/master/png/circlemaps/2021-04-22b.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/circlemaps/2021-04-22c.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/circlemaps/2021-04-22a.png" width="270" height="270"></p>
 </div>
-<div id="functions" class="section level2">
+<div id="paint-function" class="section level2">
 <h2 class="hasAnchor">
-<a href="#functions" class="anchor"></a>Functions</h2>
+<a href="#paint-function" class="anchor"></a>Paint function</h2>
 <p>The idea for this type of painting is taken over from the <a href="https://github.com/cutterkom/generativeart"><code>generativeart</code></a> package. In this algorithm, the position of every single point is calculated by a formula which has random parameters.</p>
 <p>You can use the <code><a href="reference/paint_function.html">paint_function()</a></code> function to make your own painting using this algorithm.</p>
 <p align="center">
