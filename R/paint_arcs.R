@@ -2,7 +2,7 @@
 #'
 #' @description This function paints arcs.
 #'
-#' @usage paint_arcs(colors, background = '#fafafa', n = 9, nrow = NULL, ncol = NULL, seed = 1)
+#' @usage paint_arcs(colors, background = '#fdf5e6', n = 9, nrow = NULL, ncol = NULL, seed = 1)
 #'
 #' @param color   	  a character specifying the three colors used for the painting.
 #' @param background  a character specifying the color used for the background.
@@ -22,7 +22,7 @@
 #' @export
 #' @importFrom ggpubr ggarrange
 
-paint_arcs <- function(colors, background = '#fafafa', n = 9, nrow = NULL, ncol = NULL, seed = 1) {
+paint_arcs <- function(colors, background = '#fdf5e6', n = 9, nrow = NULL, ncol = NULL, seed = 1) {
   if(length(colors) != 3)
     stop("You must provide three color names.")
   set.seed(seed)

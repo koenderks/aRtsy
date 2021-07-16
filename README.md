@@ -20,6 +20,7 @@ Let's go hunting for some good `seed`'s!
 * [Planets](#planets)
 * [Mondriaan](#mondriaan)
 * [Circle maps](#circle-maps)
+* [Arcs](#arcs)
 * [Functions](#functions)
 * [LP records](#LP-records)
 
@@ -124,6 +125,16 @@ You can use the `paint_circlemap()` function to make your own unique painting wi
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22c.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22a.png' width='270' height='270'>
 </p> 
+
+## Arcs
+
+This painting is taken over from 
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/arcs/2021-07-14.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/arcs/2021-07-15.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/arcs/2021-07-16.png' width='270' height='270'>
+</p>
 
 ## Functions
 

@@ -10,7 +10,7 @@ seed <- as.numeric(Sys.time())
 set.seed(seed)
 
 # Select painting type
-paintingType <- sample(1:6, size = 1)
+paintingType <- sample(1:8, size = 1)
 
 if (paintingType == 1){
   
@@ -76,6 +76,14 @@ if (paintingType == 1){
 									   seed = seed,
 									   width = 1500,
 									   height = 1500)
+	
+} else if (paintingType == 8) {
+  
+  painting <- aRtsy::paint_arcs(colors = randomcoloR::randomColor(3, luminosity = "dark"), 
+                                background = randomcoloR::randomColor(1, luminosity = "light"), 
+                                n = sample(c(3, 6, 9, 12), size = 1), 
+                                seed = sample(1:10000, size = 1))
+
 }
 
 ggplot2::ggsave(painting, filename = paintingPNGname, width = 7, height = 7, dpi = 300)
