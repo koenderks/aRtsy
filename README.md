@@ -1,6 +1,6 @@
 # aRtsy: Generative Art Using R
 
-I like pretty pictures and I like `R`. In the `aRtsy` package I combine these two things into what people generally call generative art, resulting in some(times) nice looking paintings.
+`aRtsy` is an R package that mimicks the ideas of multiple generative artists in the `ggplot2` language.
 
 You can install and load the package by running the code below.
 
@@ -14,14 +14,14 @@ Let's go hunting for some good `seed`'s!
 ## Overview
 
 * [Painting of the day](#painting-of-the-day)
-* [Paint strokes](#paint-strokes)
-* [Turmite](#turmite)
-* [Langton's ant](#langtons-ant)
-* [Planets](#planets)
-* [Mondriaan](#mondriaan)
-* [Circle maps](#circle-maps)
-* [Arcs](#arcs)
-* [Functions](#functions)
+* [`paint_strokes()`](#paint-strokes)
+* [`paint_turmite()`](#turmite)
+* [`paint_ant()`](#langtons-ant)
+* [`paint_planet()`](#planets)
+* [`paint_mondriaan()`](#mondriaan)
+* [`paint_cirlemap()`](#circle-maps)
+* [`paint_arcs()`](#arcs)
+* [`paint_function()`](#functions)
 
 ## Painting of the day
 
