@@ -118,7 +118,7 @@
 <div id="turmite" class="section level2">
 <h2 class="hasAnchor">
 <a href="#turmite" class="anchor"></a>Turmite</h2>
-<p>This type of painting creates a turmite. According to <a href="https://en.wikipedia.org/wiki/Turmite">wikipedia</a>, a turmite is <em>a Turing machine which has an orientation in addition to a current state and a “tape” that consists of an infinite two-dimensional grid of cells</em>. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in <code>ggart</code> is slightly modified so that the block does not go off the canvas, but instead bounces back onto the canvas.</p>
+<p>According to <a href="https://en.wikipedia.org/wiki/Turmite">wikipedia</a>, a turmite is <em>a Turing machine which has an orientation in addition to a current state and a “tape” that consists of an infinite two-dimensional grid of cells</em>. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in <code>ggart</code> is slightly modified so that the block does not go off the canvas, but instead bounces back onto the canvas.</p>
 <ol>
 <li>Turn on the spot (left, right, up, or down),</li>
 <li>Change the color of the block,</li>
@@ -131,7 +131,7 @@
 <div id="langtons-ant" class="section level2">
 <h2 class="hasAnchor">
 <a href="#langtons-ant" class="anchor"></a>Langton’s ant</h2>
-<p>This type of painting creates Langton’s ant. According to <a href="https://en.wikipedia.org/wiki/Langton%27s_ant">wikipedia</a>, Langton’s ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below. The problem with this type of painting is that it always moves off the canvas though…</p>
+<p>According to <a href="https://en.wikipedia.org/wiki/Langton%27s_ant">wikipedia</a>, Langton’s ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below. The problem with this type of painting is that it always moves off the canvas though…</p>
 <ol>
 <li>On a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block.</li>
 <li>On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block.</li>
@@ -144,7 +144,7 @@
 <div id="planets" class="section level2">
 <h2 class="hasAnchor">
 <a href="#planets" class="anchor"></a>Planets</h2>
-<p>This type of painting creates one or multiple planets in space and uses a cellular automata (inspired by an idea from <a href="https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/">Fronkonstin</a>) to fill in their surfaces.</p>
+<p>We all love space and this type of painting puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (inspired by an idea from <a href="https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/">Fronkonstin</a>) to fill in their surfaces.</p>
 <p>You can use the <code><a href="reference/paint_planet.html">paint_planet()</a></code> function to make your own painting using this algorithm.</p>
 <p align="center">
 <img src="https://github.com/koenderks/ggart/raw/master/png/planets/2021-02-26.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/planets/2021-02-27.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/planets/2021-02-28.png" width="270" height="270"></p>
