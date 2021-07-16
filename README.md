@@ -7,7 +7,7 @@
 
 # ggart: Generative Art with `ggplot2`
 
-`ggart` is an attempt at making generative art available for the masses. The package mimics the ideas of multiple generative artists in the `ggplot2` language and implements each of these ideas in a separate function.
+`ggart` is an attempt at making generative art available for the masses. The package combines several algorithms for creating paintings in `ggplot2` that can be different every time. Each type of painting is implemented in a separate function.
 
 Contributions to `ggart` are very welcome. Good luck hunting for some great `seed`'s!
 
