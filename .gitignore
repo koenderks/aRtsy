@@ -2,7 +2,8 @@
 .Rhistory
 .RData
 .Ruserdata
-artsyRelease.R
+ggart.Rproj
+ggartRelease.R
 src/*.o
 src/*.so
 src/*.dll
