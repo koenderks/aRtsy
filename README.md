@@ -133,7 +133,7 @@ You can use the `paint_circlemap()` function to make your own painting using thi
 
 ## Arcs
 
-Inspired by the work of [@ijeamaka_a](https://twitter.com/ijeamaka_a), this type of painting mimicks her beautiful [Arc Series](https://www.etsy.com/listing/1032142006/arcs-series-geometric-art-generative-art?ref=shop_home_recs_1&crt=1).
+Inspired by the work of [@ijeamaka_a](https://twitter.com/ijeamaka_a), this type of painting mimics her beautiful [Arc Series](https://www.etsy.com/listing/1032142006/arcs-series-geometric-art-generative-art?ref=shop_home_recs_1&crt=1).
 
 You can use the `paint_arcs()` function to make your own painting using this algorithm.
 
