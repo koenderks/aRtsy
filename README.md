@@ -35,13 +35,13 @@ library(ggart)
 
 * [Painting of the day](#painting-of-the-day)
 * [`paint_strokes()`](#paint-strokes)
-* [`paint_ribbons()`](#triangle)
-* [`paint_turmite()`](#turmite)
-* [`paint_ant()`](#langtons-ant)
-* [`paint_planet()`](#planets)
-* [`paint_mondriaan()`](#mondriaan)
-* [`paint_cirlemap()`](#circle-maps)
-* [`paint_function()`](#functions)
+* [`paint_ribbons()`](#paint-ribbons)
+* [`paint_turmite()`](#paint-turmite)
+* [`paint_ant()`](#paint-ant)
+* [`paint_planet()`](#paint-planets)
+* [`paint_mondriaan()`](#paint-mondriaan)
+* [`paint_cirlemap()`](#paint-circle-maps)
+* [`paint_function()`](#paint-function)
 
 ## Painting of the day
 
@@ -63,7 +63,7 @@ You can use the `paint_strokes()` function to make your own painting using this 
   <img src='https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-10.png' width='270' height='270'>
 </p>
 
-## Ribbons
+## Paint ribbons
 
 This function paints colored ribbons with (or without) a triangle that breaks their paths. This path of the ribbon polygon is creating by picking one point on the left side of the triangle and one point on the right side at random and using these points as nodes.
 
@@ -73,7 +73,7 @@ This function paints colored ribbons with (or without) a triangle that breaks th
   <img src='https://github.com/koenderks/ggart/raw/master/png/triangles/2021-07-15.png' width='270' height='270'>
 </p>
 
-## Turmite
+## Paint turmite
 
 According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *a Turing machine which has an orientation in addition to a current state and a "tape" that consists of an infinite two-dimensional grid of cells*. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in `ggart` is slightly modified so that the block does not go off the canvas, but instead bounces back onto the canvas.
 
@@ -89,7 +89,7 @@ You can use the `paint_turmite()` function to make your own painting using this 
   <img src='https://github.com/koenderks/ggart/raw/master/png/turmites/2021-03-08.png' width='270' height='270'>
 </p>
 
-## Langton's ant
+## Paint ant
 
 According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langton's ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below. The problem with this type of painting is that it always moves off the canvas though...
 
@@ -105,7 +105,7 @@ You can use the `paint_ant()` function to make your own painting using this algo
   <img src='https://github.com/koenderks/ggart/raw/master/png/ants/2021-03-01.png' width='270' height='270'>
 </p> 
 
-## Planets
+## Paint planets
 
 We all love space and this type of painting puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (inspired by an idea from [Fronkonstin](https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/)) to fill in their surfaces.
 
@@ -117,7 +117,7 @@ You can use the `paint_planet()` function to make your own painting using this a
   <img src='https://github.com/koenderks/ggart/raw/master/png/planets/2021-02-28.png' width='270' height='270'>
 </p>
 
-## Mondriaan
+## Paint Mondriaan
 
 This type of painting mimics the style of the well-known paintings by the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan). It works by repeatedly cutting into the canvas at random locations and coloring the square that these cuts create.
 
@@ -129,7 +129,7 @@ You can use the `paint_mondriaan()` function to make your own painting using thi
   <img src='https://github.com/koenderks/ggart/raw/master/png/mondriaans/2021-02-29.png' width='270' height='270'>
 </p> 
 
-## Circle maps
+## Paint circle maps
 
 This type of painting is based on the concept of an [Arnold tongue](https://en.wikipedia.org/wiki/Arnold_tongue).
 
@@ -141,7 +141,7 @@ You can use the `paint_circlemap()` function to make your own painting using thi
   <img src='https://github.com/koenderks/ggart/raw/master/png/circlemaps/2021-04-22a.png' width='270' height='270'>
 </p> 
 
-## Functions
+## Paint function
 
 The idea for this type of painting is taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package. In this algorithm, the position of every single point is calculated by a formula which has random parameters.
 
