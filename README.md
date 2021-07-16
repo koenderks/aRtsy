@@ -132,8 +132,8 @@ Inspired by the work of [@ijeamaka_a](https://twitter.com/ijeamaka_a), I wanted 
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/arcs/2021-07-16.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/arcs/2021-07-15.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/arcs/2021-07-14.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/arcs/2021-07-15.png' width='270' height='270'>
 </p>
 
 ## Functions
