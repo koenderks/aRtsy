@@ -57,13 +57,7 @@ You can use the `paint_strokes()` function to make your own painting using this 
 
 <p align="center">
   <img src='https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-21.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-25.png' width='270' height='270'>
   <img src='https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-20.png' width='270' height='270'>
-</p>
-
-<p align="center">
-  <img src='https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-11.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-12.png' width='270' height='270'>
   <img src='https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-10.png' width='270' height='270'>
 </p>
 
@@ -81,10 +75,6 @@ You can use the `paint_turmite()` function to make your own painting using this 
   <img src='https://github.com/koenderks/ggart/raw/master/png/turmites/2021-03-06.png' width='270' height='270'>
   <img src='https://github.com/koenderks/ggart/raw/master/png/turmites/2021-03-09.png' width='270' height='270'>
   <img src='https://github.com/koenderks/ggart/raw/master/png/turmites/2021-03-08.png' width='270' height='270'>
-</p>
-
-<p align="center">
-  <img src='https://github.com/koenderks/ggart/raw/master/png/turmites/2021-03-07.png' width='1000' height='270'>
 </p>
 
 ## Langton's ant
@@ -113,10 +103,6 @@ You can use the `paint_planet()` function to make your own painting using this a
   <img src='https://github.com/koenderks/ggart/raw/master/png/planets/2021-02-26.png' width='270' height='270'>
   <img src='https://github.com/koenderks/ggart/raw/master/png/planets/2021-02-27.png' width='270' height='270'>
   <img src='https://github.com/koenderks/ggart/raw/master/png/planets/2021-02-28.png' width='270' height='270'>
-</p>
-
-<p align="center">
-  <img src='https://github.com/koenderks/ggart/raw/master/png/planets/2021-02-29.png' width='800' height='225'>
 </p>
 
 ## Mondriaan

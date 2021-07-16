@@ -6,7 +6,6 @@
 ^png$
 ^CRAN-RELEASE$
 ^docs$
-generate-painting.R
-artsyRelease.R
+ggartRelease.R
 ^.*\.Rproj$
 ^\.Rproj\.user$
