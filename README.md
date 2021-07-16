@@ -35,7 +35,7 @@ library(ggart)
 
 * [Painting of the day](#painting-of-the-day)
 * [`paint_strokes()`](#paint-strokes)
-* [`paint_triangle()`](#triangle)
+* [`paint_ribbons()`](#triangle)
 * [`paint_turmite()`](#turmite)
 * [`paint_ant()`](#langtons-ant)
 * [`paint_planet()`](#planets)
@@ -63,9 +63,9 @@ You can use the `paint_strokes()` function to make your own painting using this 
   <img src='https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-10.png' width='270' height='270'>
 </p>
 
-## Triangle
+## Ribbons
 
-This function paints a triangle with colored ribbons.
+This function paints colored ribbons with (or without) a triangle that breaks their paths. This path of the ribbon polygon is creating by picking one point on the left side of the triangle and one point on the right side at random and using these points as nodes.
 
 <p align="center">
   <img src='https://github.com/koenderks/ggart/raw/master/png/triangles/2021-07-16.png' width='270' height='270'>

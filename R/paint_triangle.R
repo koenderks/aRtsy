@@ -2,7 +2,7 @@
 #'
 #' @description This function paints triangles and lines.
 #'
-#' @usage paint_triangle(colors, background = '#fdf5e6', seed = 1)
+#' @usage paint_ribbons(colors, background = '#fdf5e6', seed = 1)
 #'
 #' @param colors      a character (vector) specifying the colors for the lines.
 #' @param background  a character specifying the color of the background.
@@ -16,14 +16,14 @@
 #' @seealso \code{\link{paint_strokes}} \code{\link{paint_turmite}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
 #'
 #' @examples
-#' paint_triangle(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod"))
+#' paint_ribbons(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod"))
 #' 
 #' @keywords paint
 #'
 #' @export
 #' @importFrom ggpubr ggarrange
 
-paint_triangle <- function(colors, background = '#fdf5e6', triangle = TRUE, seed = 1) {
+paint_ribbons <- function(colors, background = '#fdf5e6', triangle = TRUE, seed = 1) {
   p <- ggplot2::ggplot() +
     ggplot2::xlim(c(0, 100)) +
     ggplot2::ylim(0, 100)
