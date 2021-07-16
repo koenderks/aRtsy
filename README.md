@@ -7,7 +7,7 @@
 
 # ggart: Generative Art Using R
 
-`ggart` is an attempt at making generative art available for the masses. The package mimicks the ideas of multiple generative artists in the `ggplot2` language and encapsulates each of these ideas in their own function.
+`ggart` is an attempt at making generative art available for the masses. The package mimics the ideas of multiple generative artists in the `ggplot2` language and implements each of these ideas in a separate function.
 
 The most recently released version of `ggart` can be downloaded from [CRAN](https://cran.r-project.org/package=ggart) by running the following command in R:
 
@@ -27,7 +27,7 @@ After installation, the `ggart` package can be loaded with:
 library(ggart)
 ```
 
-Let's go hunting for some good `seed`'s!
+Good luck hunting for some great `seed`'s!
 
 ## Overview
 
