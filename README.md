@@ -5,9 +5,9 @@
 [![Monthly](https://cranlogs.r-pkg.org/badges/aRtsy?color=blue)](https://cranlogs.r-pkg.org)
 [![Total](https://cranlogs.r-pkg.org/badges/grand-total/aRtsy?color=blue)](https://cranlogs.r-pkg.org)
 
-# aRtsy: Generative Art with R and `ggplot2`
+# aRtsy: Generative Art with `R` and `ggplot2`
 
-`aRtsy` is an attempt at making generative art available for the masses. The package combines several algorithms for creating paintings in `ggplot2` that can be different every time. Each type of painting is implemented in a separate function.
+`aRtsy` is an attempt at making generative art available for the masses in a simple and standardized format. The package combines several algorithms for creating paintings in `ggplot2` that have the potential to be different (often depending on their `seed`). Each type of algorithm is implemented in a separate function.
 
 Contributions to `aRtsy` are much appreciated. Good luck hunting for some great `seed`'s!
 
