@@ -5,14 +5,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Generative Art with ggplot2 • ggart</title>
+<title>Generative Art with ggplot2 • aRtsy</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Generative Art with ggplot2">
-<meta property="og:description" content="Mimics the ideas of multiple generative artists in the ggplot2 language.">
+<meta property="og:description" content="Combines the ideas of multiple generative artists in the ggplot2 language.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -30,7 +30,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">ggart</a>
+        <a class="navbar-link" href="index.html">aRtsy</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
@@ -52,7 +52,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/koenderks/ggart/">
+  <a href="https://github.com/koenderks/aRtsy/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -71,24 +71,24 @@
   <div class="contents col-md-9">
 
 
-<div id="ggart-generative-art-with-ggplot2" class="section level1">
+<div id="artsy-generative-art-with-r-and-ggplot2" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#ggart-generative-art-with-ggplot2" class="anchor"></a>ggart: Generative Art with <code>ggplot2</code>
+<a href="#artsy-generative-art-with-r-and-ggplot2" class="anchor"></a>aRtsy: Generative Art with R and <code>ggplot2</code>
 </h1></div>
-<p><code>ggart</code> is an attempt at making generative art available for the masses. The package combines several algorithms for creating paintings in <code>ggplot2</code> that can be different every time. Each type of painting is implemented in a separate function.</p>
-<p>Contributions to <code>ggart</code> are very welcome. Good luck hunting for some great <code>seed</code>’s!</p>
+<p><code>aRtsy</code> is an attempt at making generative art available for the masses. The package combines several algorithms for creating paintings in <code>ggplot2</code> that can be different every time. Each type of painting is implemented in a separate function.</p>
+<p>Contributions to <code>aRtsy</code> are much appreciated. Good luck hunting for some great <code>seed</code>’s!</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>The most recently released version of <code>ggart</code> can be downloaded from <a href="https://cran.r-project.org/package=ggart">CRAN</a> by running the following command in R:</p>
+<p>The most recently released version of <code>aRtsy</code> can be downloaded from <a href="https://cran.r-project.org/package=aRtsy">CRAN</a> by running the following command in R:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'ggart'</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'aRtsy'</span><span class="op">)</span></code></pre></div>
 <p>Alternatively, you can download the development version from GitHub using:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'koenderks/ggart'</span><span class="op">)</span></code></pre></div>
-<p>After installation, the <code>ggart</code> package can be loaded with:</p>
+<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'koenderks/aRtsy'</span><span class="op">)</span></code></pre></div>
+<p>After installation, the <code>aRtsy</code> package can be loaded with:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/koenderks/ggart">ggart</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/koenderks/aRtsy">aRtsy</a></span><span class="op">)</span></code></pre></div>
 </div>
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
@@ -108,9 +108,9 @@
 <div id="painting-of-the-day" class="section level2">
 <h2 class="hasAnchor">
 <a href="#painting-of-the-day" class="anchor"></a>Painting of the day</h2>
-<p>Every day this repository generates a random painting using the <code>ggart</code> package. This is today’s painting:</p>
+<p>Every day this repository generates a random painting using the <code>aRtsy</code> package. This is today’s painting:</p>
 <p align="center">
-<img src="https://github.com/koenderks/ggart/raw/master/png/daily.png" width="400" height="400"></p>
+<img src="https://github.com/koenderks/aRtsy/raw/master/png/daily.png" width="400" height="400"></p>
 </div>
 <div id="paint-strokes" class="section level2">
 <h2 class="hasAnchor">
@@ -118,19 +118,19 @@
 <p>When you think of the act of painting, you probably imagine stroking paint on a canvas. This type of painting tries to mimic that activity. The paint strokes algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor change of generating a new color. Going over the canvas like this results in strokes of paint.</p>
 <p>You can use the <code><a href="reference/paint_strokes.html">paint_strokes()</a></code> function to make your own painting using this algorithm.</p>
 <p align="center">
-<img src="https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-21.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-20.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-10.png" width="270" height="270"></p>
+<img src="https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-21.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-20.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-10.png" width="270" height="270"></p>
 </div>
 <div id="paint-ribbons" class="section level2">
 <h2 class="hasAnchor">
 <a href="#paint-ribbons" class="anchor"></a>Paint ribbons</h2>
 <p>This function paints colored ribbons with (or without) a triangle that breaks their paths. This path of the ribbon polygon is creating by picking one point on the left side of the triangle and one point on the right side at random and using these points as nodes.</p>
 <p align="center">
-<img src="https://github.com/koenderks/ggart/raw/master/png/ribbons/2021-07-16.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/ribbons/2021-07-15.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/ribbons/2021-07-14.png" width="270" height="270"></p>
+<img src="https://github.com/koenderks/aRtsy/raw/master/png/ribbons/2021-07-16.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/ribbons/2021-07-15.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/ribbons/2021-07-14.png" width="270" height="270"></p>
 </div>
 <div id="paint-turmite" class="section level2">
 <h2 class="hasAnchor">
 <a href="#paint-turmite" class="anchor"></a>Paint turmite</h2>
-<p>According to <a href="https://en.wikipedia.org/wiki/Turmite">wikipedia</a>, a turmite is <em>a Turing machine which has an orientation in addition to a current state and a “tape” that consists of an infinite two-dimensional grid of cells</em>. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in <code>ggart</code> is slightly modified so that the block does not go off the canvas, but instead bounces back onto the canvas.</p>
+<p>According to <a href="https://en.wikipedia.org/wiki/Turmite">wikipedia</a>, a turmite is <em>a Turing machine which has an orientation in addition to a current state and a “tape” that consists of an infinite two-dimensional grid of cells</em>. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in <code>aRtsy</code> is slightly modified so that the block does not go off the canvas, but instead bounces back onto the canvas.</p>
 <ol>
 <li>Turn on the spot (left, right, up, or down),</li>
 <li>Change the color of the block,</li>
@@ -138,7 +138,7 @@
 </ol>
 <p>You can use the <code><a href="reference/paint_turmite.html">paint_turmite()</a></code> function to make your own painting using this algorithm.</p>
 <p align="center">
-<img src="https://github.com/koenderks/ggart/raw/master/png/turmites/2021-03-06.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/turmites/2021-03-09.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/turmites/2021-03-08.png" width="270" height="270"></p>
+<img src="https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-06.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-09.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-08.png" width="270" height="270"></p>
 </div>
 <div id="paint-ant" class="section level2">
 <h2 class="hasAnchor">
@@ -151,7 +151,7 @@
 </ol>
 <p>You can use the <code><a href="reference/paint_ant.html">paint_ant()</a></code> function to make your own painting using this algorithm.</p>
 <p align="center">
-<img src="https://github.com/koenderks/ggart/raw/master/png/ants/2021-03-03.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/ants/2021-03-02.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/ants/2021-03-01.png" width="270" height="270"></p>
+<img src="https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-03.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-02.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-01.png" width="270" height="270"></p>
 </div>
 <div id="paint-planets" class="section level2">
 <h2 class="hasAnchor">
@@ -159,7 +159,7 @@
 <p>We all love space and this type of painting puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (inspired by an idea from <a href="https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/">Fronkonstin</a>) to fill in their surfaces.</p>
 <p>You can use the <code><a href="reference/paint_planet.html">paint_planet()</a></code> function to make your own painting using this algorithm.</p>
 <p align="center">
-<img src="https://github.com/koenderks/ggart/raw/master/png/planets/2021-02-26.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/planets/2021-02-27.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/planets/2021-02-28.png" width="270" height="270"></p>
+<img src="https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-26.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-27.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-28.png" width="270" height="270"></p>
 </div>
 <div id="paint-mondriaan" class="section level2">
 <h2 class="hasAnchor">
@@ -167,7 +167,7 @@
 <p>This type of painting mimics the style of the well-known paintings by the Dutch artist <a href="https://nl.wikipedia.org/wiki/Piet_Mondriaan">Piet Mondriaan</a>. It works by repeatedly cutting into the canvas at random locations and coloring the square that these cuts create.</p>
 <p>You can use the <code><a href="reference/paint_mondriaan.html">paint_mondriaan()</a></code> function to make your own painting using this algorithm.</p>
 <p align="center">
-<img src="https://github.com/koenderks/ggart/raw/master/png/mondriaans/2021-03-01.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/mondriaans/2021-02-28.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/mondriaans/2021-02-29.png" width="270" height="270"></p>
+<img src="https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-03-01.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-28.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-29.png" width="270" height="270"></p>
 </div>
 <div id="paint-circle-maps" class="section level2">
 <h2 class="hasAnchor">
@@ -175,7 +175,7 @@
 <p>This type of painting is based on the concept of an <a href="https://en.wikipedia.org/wiki/Arnold_tongue">Arnold tongue</a>.</p>
 <p>You can use the <code><a href="reference/paint_circlemap.html">paint_circlemap()</a></code> function to make your own painting using this algorithm.</p>
 <p align="center">
-<img src="https://github.com/koenderks/ggart/raw/master/png/circlemaps/2021-04-22b.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/circlemaps/2021-04-22c.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/circlemaps/2021-04-22a.png" width="270" height="270"></p>
+<img src="https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22b.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22c.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22a.png" width="270" height="270"></p>
 </div>
 <div id="paint-function" class="section level2">
 <h2 class="hasAnchor">
@@ -183,7 +183,7 @@
 <p>The idea for this type of painting is taken over from the <a href="https://github.com/cutterkom/generativeart"><code>generativeart</code></a> package. In this algorithm, the position of every single point is calculated by a formula which has random parameters.</p>
 <p>You can use the <code><a href="reference/paint_function.html">paint_function()</a></code> function to make your own painting using this algorithm.</p>
 <p align="center">
-<img src="https://github.com/koenderks/ggart/raw/master/png/functions/2021-03-17.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/functions/2021-04-08.png" width="270" height="270"><img src="https://github.com/koenderks/ggart/raw/master/png/functions/2021-04-04.png" width="270" height="270"></p>
+<img src="https://github.com/koenderks/aRtsy/raw/master/png/functions/2021-03-17.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/functions/2021-04-08.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/functions/2021-04-04.png" width="270" height="270"></p>
 </div>
 </div>
 
@@ -193,9 +193,9 @@
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/koenderks/ggart/">https://​github.com/​koenderks/​ggart/​</a>
+<li>Browse source code at <br><a href="https://github.com/koenderks/aRtsy/">https://​github.com/​koenderks/​aRtsy/​</a>
 </li>
-<li>Report a bug at <br><a href="https://github.com/koenderks/ggart/issues">https://​github.com/​koenderks/​ggart/​issues</a>
+<li>Report a bug at <br><a href="https://github.com/koenderks/aRtsy/issues">https://​github.com/​koenderks/​aRtsy/​issues</a>
 </li>
 </ul>
 </div>
@@ -221,12 +221,12 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://cran.r-project.org/package=ggart"><img src="https://img.shields.io/cran/v/ggart?color=yellow&amp;label=CRAN&amp;logo=r" alt="CRAN"></a></li>
-<li><a href="https://github.com/koenderks/ggart/actions"><img src="https://github.com/koenderks/ggart/workflows/Build/badge.svg" alt="R_build_status"></a></li>
-<li><a href="https://codecov.io/gh/koenderks/ggart"><img src="https://codecov.io/gh/koenderks/ggart/branch/master/graph/badge.svg?token=ZoxIB8p8PW" alt="Codecov"></a></li>
-<li><a href="https://github.com/koenderks/ggart/issues?q=is%3Aopen+is%3Aissue+label%3Abug"><img src="https://img.shields.io/github/issues/koenderks/ggart/bug?label=Bugs&amp;logo=github&amp;logoColor=%23FFF&amp;color=brightgreen" alt="Bugs"></a></li>
-<li><a href="https://cranlogs.r-pkg.org"><img src="https://cranlogs.r-pkg.org/badges/ggart?color=blue" alt="Monthly"></a></li>
-<li><a href="https://cranlogs.r-pkg.org"><img src="https://cranlogs.r-pkg.org/badges/grand-total/ggart?color=blue" alt="Total"></a></li>
+<li><a href="https://cran.r-project.org/package=aRtsy"><img src="https://img.shields.io/cran/v/aRtsy?color=yellow&amp;label=CRAN&amp;logo=r" alt="CRAN"></a></li>
+<li><a href="https://github.com/koenderks/aRtsy/actions"><img src="https://github.com/koenderks/aRtsy/workflows/Build/badge.svg" alt="R_build_status"></a></li>
+<li><a href="https://codecov.io/gh/koenderks/aRtsy"><img src="https://codecov.io/gh/koenderks/aRtsy/branch/master/graph/badge.svg?token=ZoxIB8p8PW" alt="Codecov"></a></li>
+<li><a href="https://github.com/koenderks/aRtsy/issues?q=is%3Aopen+is%3Aissue+label%3Abug"><img src="https://img.shields.io/github/issues/koenderks/aRtsy/bug?label=Bugs&amp;logo=github&amp;logoColor=%23FFF&amp;color=brightgreen" alt="Bugs"></a></li>
+<li><a href="https://cranlogs.r-pkg.org"><img src="https://cranlogs.r-pkg.org/badges/aRtsy?color=blue" alt="Monthly"></a></li>
+<li><a href="https://cranlogs.r-pkg.org"><img src="https://cranlogs.r-pkg.org/badges/grand-total/aRtsy?color=blue" alt="Total"></a></li>
 </ul>
 </div>
 </div>
