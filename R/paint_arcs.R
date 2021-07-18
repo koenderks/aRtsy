@@ -1,11 +1,11 @@
 #' Paint Arcs on a Canvas
 #'
-#' @description This function paints arcs.
+#' @description Inspired by the work of \href{https://twitter.com/ijeamaka_a}{@ijeamaka_a}, this type of painting mimics her beautiful \href{https://www.etsy.com/listing/1032142006/arcs-series-geometric-art-generative-art?ref=shop_home_recs_1&crt=1}{Arc Series}. For private use only.
 #'
 #' @usage paint_arcs(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL, 
 #'            dir = 'right', starts = 'clockwise')
 #'
-#' @param color   	  a character vector specifying the 3 colors used for the arcs.
+#' @param colors   	  a character vector specifying the 3 colors used for the arcs.
 #' @param background  a character string specifying the color used for the background.
 #' @param n           an integer specifying how many paintings should be put on the canvas.
 #' @param nrow        an (optional) integer specifying the number of rows on the canvas.
@@ -20,11 +20,10 @@
 #' @seealso \code{\link{paint_strokes}} \code{\link{paint_turmite}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
 #'
 #' @examples
-#' paint_arcs(colors = c('black', 'red', 'yellow'), n = 9)
+#' paint_arcs(colors = c('darkgreen', 'goldenrod', 'firebrick'), n = 9)
 #' 
 #' @keywords paint
 #'
-#' @export
 #' @importFrom ggpubr ggarrange
 
 paint_arcs <- function(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL, 

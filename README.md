@@ -1,34 +1,34 @@
-[![CRAN](https://img.shields.io/cran/v/ggart?color=yellow&label=CRAN&logo=r)](https://cran.r-project.org/package=ggart)
-[![R_build_status](https://github.com/koenderks/ggart/workflows/Build/badge.svg)](https://github.com/koenderks/ggart/actions)
-[![Codecov](https://codecov.io/gh/koenderks/ggart/branch/master/graph/badge.svg?token=ZoxIB8p8PW)](https://codecov.io/gh/koenderks/ggart)
-[![Bugs](https://img.shields.io/github/issues/koenderks/ggart/bug?label=Bugs&logo=github&logoColor=%23FFF&color=brightgreen)](https://github.com/koenderks/ggart/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
-[![Monthly](https://cranlogs.r-pkg.org/badges/ggart?color=blue)](https://cranlogs.r-pkg.org)
-[![Total](https://cranlogs.r-pkg.org/badges/grand-total/ggart?color=blue)](https://cranlogs.r-pkg.org)
+[![CRAN](https://img.shields.io/cran/v/aRtsy?color=yellow&label=CRAN&logo=r)](https://cran.r-project.org/package=aRtsy)
+[![R_build_status](https://github.com/koenderks/aRtsy/workflows/Build/badge.svg)](https://github.com/koenderks/aRtsy/actions)
+[![Codecov](https://codecov.io/gh/koenderks/aRtsy/branch/master/graph/badge.svg?token=ZoxIB8p8PW)](https://codecov.io/gh/koenderks/aRtsy)
+[![Bugs](https://img.shields.io/github/issues/koenderks/aRtsy/bug?label=Bugs&logo=github&logoColor=%23FFF&color=brightgreen)](https://github.com/koenderks/aRtsy/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
+[![Monthly](https://cranlogs.r-pkg.org/badges/aRtsy?color=blue)](https://cranlogs.r-pkg.org)
+[![Total](https://cranlogs.r-pkg.org/badges/grand-total/aRtsy?color=blue)](https://cranlogs.r-pkg.org)
 
-# ggart: Generative Art with `ggplot2`
+# aRtsy: Generative Art with R and `ggplot2`
 
-`ggart` is an attempt at making generative art available for the masses. The package combines several algorithms for creating paintings in `ggplot2` that can be different every time. Each type of painting is implemented in a separate function.
+`aRtsy` is an attempt at making generative art available for the masses. The package combines several algorithms for creating paintings in `ggplot2` that can be different every time. Each type of painting is implemented in a separate function.
 
-Contributions to `ggart` are very welcome. Good luck hunting for some great `seed`'s!
+Contributions to `aRtsy` are much appreciated. Good luck hunting for some great `seed`'s!
 
 ## Installation
 
-The most recently released version of `ggart` can be downloaded from [CRAN](https://cran.r-project.org/package=ggart) by running the following command in R:
+The most recently released version of `aRtsy` can be downloaded from [CRAN](https://cran.r-project.org/package=aRtsy) by running the following command in R:
 
 ```r
-install.packages('ggart')
+install.packages('aRtsy')
 ```
 
 Alternatively, you can download the development version from GitHub using:
 
 ```r
-devtools::install_github('koenderks/ggart')
+devtools::install_github('koenderks/aRtsy')
 ```
 
-After installation, the `ggart` package can be loaded with:
+After installation, the `aRtsy` package can be loaded with:
 
 ```r
-library(ggart)
+library(aRtsy)
 ```
 
 ## Overview
@@ -45,10 +45,10 @@ library(ggart)
 
 ## Painting of the day
 
-Every day this repository generates a random painting using the `ggart` package. This is today's painting:
+Every day this repository generates a random painting using the `aRtsy` package. This is today's painting:
 
 <p align="center">
-  <img src='https://github.com/koenderks/ggart/raw/master/png/daily.png' width='400' height='400'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/daily.png' width='400' height='400'>
 </p>
 
 ## Paint strokes
@@ -58,9 +58,9 @@ When you think of the act of painting, you probably imagine stroking paint on a 
 You can use the `paint_strokes()` function to make your own painting using this algorithm.
 
 <p align="center">
-  <img src='https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-21.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-20.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/strokes/2021-03-10.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-21.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-20.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-10.png' width='270' height='270'>
 </p>
 
 ## Paint ribbons
@@ -68,14 +68,14 @@ You can use the `paint_strokes()` function to make your own painting using this 
 This function paints colored ribbons with (or without) a triangle that breaks their paths. This path of the ribbon polygon is creating by picking one point on the left side of the triangle and one point on the right side at random and using these points as nodes.
 
 <p align="center">
-  <img src='https://github.com/koenderks/ggart/raw/master/png/ribbons/2021-07-16.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/ribbons/2021-07-15.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/ribbons/2021-07-14.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/ribbons/2021-07-16.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/ribbons/2021-07-15.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/ribbons/2021-07-14.png' width='270' height='270'>
 </p>
 
 ## Paint turmite
 
-According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *a Turing machine which has an orientation in addition to a current state and a "tape" that consists of an infinite two-dimensional grid of cells*. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in `ggart` is slightly modified so that the block does not go off the canvas, but instead bounces back onto the canvas.
+According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *a Turing machine which has an orientation in addition to a current state and a "tape" that consists of an infinite two-dimensional grid of cells*. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in `aRtsy` is slightly modified so that the block does not go off the canvas, but instead bounces back onto the canvas.
 
 1. Turn on the spot (left, right, up, or down),
 2. Change the color of the block,
@@ -84,9 +84,9 @@ According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *a
 You can use the `paint_turmite()` function to make your own painting using this algorithm.
 
 <p align="center">
-  <img src='https://github.com/koenderks/ggart/raw/master/png/turmites/2021-03-06.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/turmites/2021-03-09.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/turmites/2021-03-08.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-06.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-09.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-08.png' width='270' height='270'>
 </p>
 
 ## Paint ant
@@ -100,9 +100,9 @@ According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langton
 You can use the `paint_ant()` function to make your own painting using this algorithm.
 
 <p align="center">
-  <img src='https://github.com/koenderks/ggart/raw/master/png/ants/2021-03-03.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/ants/2021-03-02.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/ants/2021-03-01.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-03.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-02.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-01.png' width='270' height='270'>
 </p> 
 
 ## Paint planets
@@ -112,9 +112,9 @@ We all love space and this type of painting puts you right between the planets. 
 You can use the `paint_planet()` function to make your own painting using this algorithm.
 
 <p align="center">
-  <img src='https://github.com/koenderks/ggart/raw/master/png/planets/2021-02-26.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/planets/2021-02-27.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/planets/2021-02-28.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-26.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-27.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-28.png' width='270' height='270'>
 </p>
 
 ## Paint Mondriaan
@@ -124,9 +124,9 @@ This type of painting mimics the style of the well-known paintings by the Dutch 
 You can use the `paint_mondriaan()` function to make your own painting using this algorithm.
 
 <p align="center">
-  <img src='https://github.com/koenderks/ggart/raw/master/png/mondriaans/2021-03-01.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/mondriaans/2021-02-28.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/mondriaans/2021-02-29.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-03-01.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-28.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-29.png' width='270' height='270'>
 </p> 
 
 ## Paint circle maps
@@ -136,9 +136,9 @@ This type of painting is based on the concept of an [Arnold tongue](https://en.w
 You can use the `paint_circlemap()` function to make your own painting using this algorithm.
 
 <p align="center">
-  <img src='https://github.com/koenderks/ggart/raw/master/png/circlemaps/2021-04-22b.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/circlemaps/2021-04-22c.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/circlemaps/2021-04-22a.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22b.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22c.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22a.png' width='270' height='270'>
 </p> 
 
 ## Paint function
@@ -148,7 +148,7 @@ The idea for this type of painting is taken over from the [`generativeart`](http
 You can use the `paint_function()` function to make your own painting using this algorithm.
 
 <p align="center">
-  <img src='https://github.com/koenderks/ggart/raw/master/png/functions/2021-03-17.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/functions/2021-04-08.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/ggart/raw/master/png/functions/2021-04-04.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/functions/2021-03-17.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/functions/2021-04-08.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/functions/2021-04-04.png' width='270' height='270'>
 </p>

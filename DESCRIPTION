@@ -1,6 +1,6 @@
-Package: ggart
+Package: aRtsy
 Title: Generative Art with 'ggplot2'
-Description: Mimics the ideas of multiple generative artists in the ggplot2 language.
+Description: Combines the ideas of multiple generative artists in the ggplot2 language.
 Version: 0.1.0
 Date: 2021-07-16
 Authors@R: 
@@ -9,8 +9,8 @@ Authors@R:
            role = c("aut", "cre"),
            email = "koen-derks@hotmail.com",
 		   comment = c(ORCID = '0000-0002-5533-9349'))
-BugReports: https://github.com/koenderks/ggart/issues
-URL: https://github.com/koenderks/ggart
+BugReports: https://github.com/koenderks/aRtsy/issues
+URL: https://github.com/koenderks/aRtsy
 Imports: dplyr, ggplot2, ggpubr, Rcpp, reshape2
 LinkingTo: Rcpp, RcppArmadillo
 Language: en-US

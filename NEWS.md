@@ -1,3 +1,3 @@
-# ggart 0.1.0
+# aRtsy 0.1.0
 
-- First implementation of the ggart package.
+- First implementation of the aRtsy package.

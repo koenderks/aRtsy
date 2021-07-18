@@ -8,6 +8,8 @@ paint_arcs(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL,
            dir = 'right', starts = 'clockwise')
 }
 \arguments{
+\item{colors}{a character vector specifying the 3 colors used for the arcs.}
+
 \item{background}{a character string specifying the color used for the background.}
 
 \item{n}{an integer specifying how many paintings should be put on the canvas.}
@@ -19,17 +21,15 @@ paint_arcs(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL,
 \item{dir}{a character string specifying which direction the arcs turn. Can be one of \code{"right"} (default) or \code{"left"}.}
 
 \item{starts}{a character sting specifying where the arcs should start. Can be one of \code{"clockwise"} (default) or \code{"random"}.}
-
-\item{color}{a character vector specifying the 3 colors used for the arcs.}
 }
 \value{
 A \code{ggplot} object containing the painting.
 }
 \description{
-This function paints arcs.
+Inspired by the work of \href{https://twitter.com/ijeamaka_a}{@ijeamaka_a}, this type of painting mimics her beautiful \href{https://www.etsy.com/listing/1032142006/arcs-series-geometric-art-generative-art?ref=shop_home_recs_1&crt=1}{Arc Series}. For private use only.
 }
 \examples{
-paint_arcs(colors = c('black', 'red', 'yellow'), n = 9)
+paint_arcs(colors = c('darkgreen', 'goldenrod', 'firebrick'), n = 9)
 
 }
 \seealso{

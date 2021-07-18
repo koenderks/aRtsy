@@ -26,7 +26,7 @@
 #' @keywords paint
 #'
 #' @export
-#' @useDynLib ggart
+#' @useDynLib aRtsy
 #' @import Rcpp
 
 paint_strokes <- function(colors, neighbors = 1, p = 0.01, iterations = 1, 

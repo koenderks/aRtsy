@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea for ggart
+about: Suggest an idea for aRtsy
 title: "[Feature] "
 labels: enhancement
 assignees: ''

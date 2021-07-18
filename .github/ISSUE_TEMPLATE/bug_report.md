@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a bug in ggart
+about: Report a bug in aRtsy
 title: "[Bug] "
 labels: bug
 assignees: ''
@@ -26,7 +26,7 @@ If applicable, add screenshots to help explain your problem.
 **Desktop (please complete the following information):**
  - OS: [e.g. iOS]
  - R version [e.g. R 3.6.1]
- - Package version [e.g. ggart 0.4.0]
+ - Package version [e.g. aRtsy 0.4.0]
 
 **Additional context**
 Add any other context about the problem here.

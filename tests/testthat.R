@@ -1,4 +1,4 @@
 library(testthat)
-library(ggart)
+library(aRtsy)
 
-test_check("ggart")
+test_check("aRtsy")

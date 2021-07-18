@@ -1,5 +1,5 @@
 ## This is a submission for version 0.1.0
-This is ggart version 0.1.0. In this version I have:
+This is aRtsy version 0.1.0. In this version I have:
 
 * Added the initial four functions.
 

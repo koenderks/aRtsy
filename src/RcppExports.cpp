@@ -13,7 +13,7 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 
 // iterate_ant
 arma::mat iterate_ant(arma::mat X, int iters, int row, int col, Rcpp::DataFrame c, int seed);
-RcppExport SEXP _ggart_iterate_ant(SEXP XSEXP, SEXP itersSEXP, SEXP rowSEXP, SEXP colSEXP, SEXP cSEXP, SEXP seedSEXP) {
+RcppExport SEXP _aRtsy_iterate_ant(SEXP XSEXP, SEXP itersSEXP, SEXP rowSEXP, SEXP colSEXP, SEXP cSEXP, SEXP seedSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -29,7 +29,7 @@ END_RCPP
 }
 // iterate_circlemap
 arma::mat iterate_circlemap(arma::mat X, double kmin, double kmax, double phimin, double phimax, int iterations, int seed);
-RcppExport SEXP _ggart_iterate_circlemap(SEXP XSEXP, SEXP kminSEXP, SEXP kmaxSEXP, SEXP phiminSEXP, SEXP phimaxSEXP, SEXP iterationsSEXP, SEXP seedSEXP) {
+RcppExport SEXP _aRtsy_iterate_circlemap(SEXP XSEXP, SEXP kminSEXP, SEXP kmaxSEXP, SEXP phiminSEXP, SEXP phimaxSEXP, SEXP iterationsSEXP, SEXP seedSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -46,7 +46,7 @@ END_RCPP
 }
 // iterate_mondriaan
 arma::mat iterate_mondriaan(arma::mat X, Rcpp::DataFrame neighbors, int s, int cuts, double ratio, int seed);
-RcppExport SEXP _ggart_iterate_mondriaan(SEXP XSEXP, SEXP neighborsSEXP, SEXP sSEXP, SEXP cutsSEXP, SEXP ratioSEXP, SEXP seedSEXP) {
+RcppExport SEXP _aRtsy_iterate_mondriaan(SEXP XSEXP, SEXP neighborsSEXP, SEXP sSEXP, SEXP cutsSEXP, SEXP ratioSEXP, SEXP seedSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -62,7 +62,7 @@ END_RCPP
 }
 // iterate_planet
 arma::mat iterate_planet(arma::mat X, int radius, int xcenter, int ycenter, int threshold, int iterations, double starprob, int seed, int ncolors, int colorsused, double fade, int lightright);
-RcppExport SEXP _ggart_iterate_planet(SEXP XSEXP, SEXP radiusSEXP, SEXP xcenterSEXP, SEXP ycenterSEXP, SEXP thresholdSEXP, SEXP iterationsSEXP, SEXP starprobSEXP, SEXP seedSEXP, SEXP ncolorsSEXP, SEXP colorsusedSEXP, SEXP fadeSEXP, SEXP lightrightSEXP) {
+RcppExport SEXP _aRtsy_iterate_planet(SEXP XSEXP, SEXP radiusSEXP, SEXP xcenterSEXP, SEXP ycenterSEXP, SEXP thresholdSEXP, SEXP iterationsSEXP, SEXP starprobSEXP, SEXP seedSEXP, SEXP ncolorsSEXP, SEXP colorsusedSEXP, SEXP fadeSEXP, SEXP lightrightSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -84,7 +84,7 @@ END_RCPP
 }
 // iterate_strokes
 arma::mat iterate_strokes(arma::mat X, Rcpp::DataFrame neighbors, int s, double p, int seed);
-RcppExport SEXP _ggart_iterate_strokes(SEXP XSEXP, SEXP neighborsSEXP, SEXP sSEXP, SEXP pSEXP, SEXP seedSEXP) {
+RcppExport SEXP _aRtsy_iterate_strokes(SEXP XSEXP, SEXP neighborsSEXP, SEXP sSEXP, SEXP pSEXP, SEXP seedSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -99,7 +99,7 @@ END_RCPP
 }
 // iterate_turmite
 arma::mat iterate_turmite(arma::mat X, int iters, int row, int col, double p, int seed);
-RcppExport SEXP _ggart_iterate_turmite(SEXP XSEXP, SEXP itersSEXP, SEXP rowSEXP, SEXP colSEXP, SEXP pSEXP, SEXP seedSEXP) {
+RcppExport SEXP _aRtsy_iterate_turmite(SEXP XSEXP, SEXP itersSEXP, SEXP rowSEXP, SEXP colSEXP, SEXP pSEXP, SEXP seedSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -115,16 +115,16 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_ggart_iterate_ant", (DL_FUNC) &_ggart_iterate_ant, 6},
-    {"_ggart_iterate_circlemap", (DL_FUNC) &_ggart_iterate_circlemap, 7},
-    {"_ggart_iterate_mondriaan", (DL_FUNC) &_ggart_iterate_mondriaan, 6},
-    {"_ggart_iterate_planet", (DL_FUNC) &_ggart_iterate_planet, 12},
-    {"_ggart_iterate_strokes", (DL_FUNC) &_ggart_iterate_strokes, 5},
-    {"_ggart_iterate_turmite", (DL_FUNC) &_ggart_iterate_turmite, 6},
+    {"_aRtsy_iterate_ant", (DL_FUNC) &_aRtsy_iterate_ant, 6},
+    {"_aRtsy_iterate_circlemap", (DL_FUNC) &_aRtsy_iterate_circlemap, 7},
+    {"_aRtsy_iterate_mondriaan", (DL_FUNC) &_aRtsy_iterate_mondriaan, 6},
+    {"_aRtsy_iterate_planet", (DL_FUNC) &_aRtsy_iterate_planet, 12},
+    {"_aRtsy_iterate_strokes", (DL_FUNC) &_aRtsy_iterate_strokes, 5},
+    {"_aRtsy_iterate_turmite", (DL_FUNC) &_aRtsy_iterate_turmite, 6},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_ggart(DllInfo *dll) {
+RcppExport void R_init_aRtsy(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }
