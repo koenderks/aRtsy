@@ -18,10 +18,8 @@
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
-#' @seealso \code{\link{paint_turmite}} \code{\link{paint_function}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
-#'
 #' @examples
-#' paint_strokes(colors = c('#fafafa', '#000000'))
+#' paint_strokes(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
 #' 
 #' @keywords paint
 #'

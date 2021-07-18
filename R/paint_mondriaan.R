@@ -17,10 +17,8 @@
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
-#' @seealso \code{\link{paint_strokes}} \code{\link{paint_turmite}} \code{\link{paint_ant}} \code{\link{paint_function}}
-#'
 #' @examples
-#' paint_mondriaan(colors = c('white', 'red', 'yellow', 'blue'), seed = 5)
+#' paint_mondriaan(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
 #' 
 #' @keywords paint
 #'

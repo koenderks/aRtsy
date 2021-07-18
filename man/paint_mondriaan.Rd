@@ -29,11 +29,8 @@ A \code{ggplot} object containing the painting.
 This function paints a Mondriaan.
 }
 \examples{
-paint_mondriaan(colors = c('white', 'red', 'yellow', 'blue'), seed = 5)
+paint_mondriaan(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
 
-}
-\seealso{
-\code{\link{paint_strokes}} \code{\link{paint_turmite}} \code{\link{paint_ant}} \code{\link{paint_function}}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

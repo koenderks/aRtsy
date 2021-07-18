@@ -51,9 +51,6 @@ painting <- paint_planet(colors, radius = c(800, 400, 150),
                          starprob = 0.005)
 
 }
-\seealso{
-\code{\link{paint_strokes}} \code{\link{paint_function}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
-}
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
 }

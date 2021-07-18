@@ -24,8 +24,6 @@
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
-#' @seealso \code{\link{paint_strokes}} \code{\link{paint_function}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
-#'
 #' @examples
 #' # Sun behind Earth and Moon
 #' colors = list(c("khaki1", "lightcoral", "lightsalmon"),

@@ -32,9 +32,6 @@ Inspired by the work of \href{https://twitter.com/ijeamaka_a}{@ijeamaka_a}, this
 paint_arcs(colors = c('darkgreen', 'goldenrod', 'firebrick'), n = 9)
 
 }
-\seealso{
-\code{\link{paint_strokes}} \code{\link{paint_turmite}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
-}
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
 }

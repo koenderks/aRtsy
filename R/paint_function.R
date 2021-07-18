@@ -14,8 +14,6 @@
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
-#' @seealso \code{\link{paint_strokes}} \code{\link{paint_turmite}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
-#'
 #' @examples
 #' paint_function(color = '#000000', background = '#fafafa')
 #' 

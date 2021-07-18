@@ -25,9 +25,6 @@ This function paints ribbons and (optionally) a triangle in the middle.
 paint_ribbons(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod"))
 
 }
-\seealso{
-\code{\link{paint_strokes}} \code{\link{paint_turmite}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
-}
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
 }

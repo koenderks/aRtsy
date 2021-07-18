@@ -33,9 +33,6 @@ paint_ant(colors = '#000000', background = '#fafafa')
 \references{
 \url{https://en.wikipedia.org/wiki/Langton\%27s_ant}
 }
-\seealso{
-\code{\link{paint_strokes}} \code{\link{paint_function}} \code{\link{paint_turmite}} \code{\link{paint_mondriaan}}
-}
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
 }

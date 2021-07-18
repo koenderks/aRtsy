@@ -31,14 +31,11 @@ A \code{ggplot} object containing the painting.
 This function is my attempt at a circle map.
 }
 \examples{
-paint_circlemap(colors = c('black', 'red', 'yellow'))
+paint_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'))
 
 }
 \references{
 \url{https://linas.org/art-gallery/circle-map/circle-map.html}
-}
-\seealso{
-\code{\link{paint_strokes}} \code{\link{paint_turmite}} \code{\link{paint_ant}} \code{\link{paint_mondriaan}}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
