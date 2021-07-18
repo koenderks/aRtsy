@@ -5,7 +5,7 @@
 \title{Paint a Circle Map on a Canvas}
 \usage{
 paint_circlemap(colors, x_min = 0, x_max = 12.56, y_min = 0, y_max = 1, 
-               iterations = 10, width = 1500, height = 1500)
+                iterations = 10, width = 1500, height = 1500)
 }
 \arguments{
 \item{colors}{a character specifying the color used for the function shape.}

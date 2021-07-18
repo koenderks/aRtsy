@@ -3,7 +3,7 @@
 #' @description This function is my attempt at a circle map.
 #'
 #' @usage paint_circlemap(colors, x_min = 0, x_max = 12.56, y_min = 0, y_max = 1, 
-#'                iterations = 10, width = 1500, height = 1500)
+#'                 iterations = 10, width = 1500, height = 1500)
 #'
 #' @param colors   	  a character (vector) specifying the colors used for the painting.
 #' @param x_min   	  a numeric value specifying the minimum value for the x-axis.

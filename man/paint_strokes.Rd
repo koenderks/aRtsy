@@ -5,7 +5,7 @@
 \title{Paint Strokes on a Canvas}
 \usage{
 paint_strokes(colors, neighbors = 1, p = 0.01, iterations = 1, 
-                     seed = 1, width = 500, height = 500, side = FALSE)
+              seed = 1, width = 500, height = 500, side = FALSE)
 }
 \arguments{
 \item{colors}{a character (vector) specifying the colors used for the strokes.}

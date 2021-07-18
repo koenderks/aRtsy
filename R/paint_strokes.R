@@ -3,7 +3,7 @@
 #' @description This function creates a painting that resembles paints strokes. The algorithm is based on the simple idea that each next point on the grid has a chance to take over the color of an adjacent colored point but also has a change of generating a new color.
 #'
 #' @usage paint_strokes(colors, neighbors = 1, p = 0.01, iterations = 1, 
-#'                      seed = 1, width = 500, height = 500, side = FALSE)
+#'               seed = 1, width = 500, height = 500, side = FALSE)
 #'
 #' @param colors     a character (vector) specifying the colors used for the strokes.
 #' @param neighbors  the number of neighbors a block considers when taking over a color. More neighbors fades the painting.

@@ -5,7 +5,7 @@
 \title{Paint a Turmite on a Canvas}
 \usage{
 paint_turmite(color, background = '#fafafa', p = 0.5, iterations = 1e7, 
-                     seed = 1, width = 1500, height = 1500)
+              seed = 1, width = 1500, height = 1500)
 }
 \arguments{
 \item{color}{a character specifying the color used for the turmite.}

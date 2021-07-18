@@ -3,7 +3,7 @@
 #' @description This function paints a turmite. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells. The algorithm is simple: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.
 #'
 #' @usage paint_turmite(color, background = '#fafafa', p = 0.5, iterations = 1e7, 
-#'                      seed = 1, width = 1500, height = 1500)
+#'               seed = 1, width = 1500, height = 1500)
 #'
 #' @param color   	  a character specifying the color used for the turmite.
 #' @param background  a character specifying the color used for the background.

@@ -4,10 +4,10 @@
 \alias{paint_planet}
 \title{Paint a Planet on a Canvas}
 \usage{
-paint_planet <- function(colors, threshold = 4, iterations = 200, 
-                     starprob = 0.01, fade = 0.2,
-                     radius = NULL, center.x = NULL, center.y = NULL, 
-                     seed = 1, width = 1500, height = 1500)
+paint_planet(colors, threshold = 4, iterations = 200, 
+             starprob = 0.01, fade = 0.2,
+             radius = NULL, center.x = NULL, center.y = NULL, 
+             seed = 1, width = 1500, height = 1500)
 }
 \arguments{
 \item{colors}{a character specifying the colors used for the planets}
