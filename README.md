@@ -11,6 +11,14 @@
 
 Contributions to `aRtsy` are much appreciated. Good luck hunting for some great `seed`'s!
 
+## Painting of the day
+
+Every day this repository generates a random painting using the `aRtsy` package. This is today's painting:
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/daily.png' width='400' height='400'>
+</p>
+
 ## Installation
 
 The most recently released version of `aRtsy` can be downloaded from [CRAN](https://cran.r-project.org/package=aRtsy) by running the following command in R:
@@ -33,7 +41,6 @@ library(aRtsy)
 
 ## Overview
 
-* [Painting of the day](#painting-of-the-day)
 * [`paint_strokes()`](#paint-strokes)
 * [`paint_ribbons()`](#paint-ribbons)
 * [`paint_turmite()`](#paint-turmite)
@@ -42,14 +49,6 @@ library(aRtsy)
 * [`paint_mondriaan()`](#paint-mondriaan)
 * [`paint_cirlemap()`](#paint-circle-maps)
 * [`paint_function()`](#paint-function)
-
-## Painting of the day
-
-Every day this repository generates a random painting using the `aRtsy` package. This is today's painting:
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/daily.png' width='400' height='400'>
-</p>
 
 ## Paint strokes
 
