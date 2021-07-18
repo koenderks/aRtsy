@@ -6,6 +6,6 @@
 ^png$
 ^CRAN-RELEASE$
 ^docs$
-ggartRelease.R
+aRtsyRelease.R
 ^.*\.Rproj$
 ^\.Rproj\.user$
