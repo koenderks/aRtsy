@@ -76,7 +76,7 @@ This function paints colored ribbons with (or without) a triangle that breaks th
 
 ## Paint turmite
 
-According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *a Turing machine which has an orientation in addition to a current state and a "tape" that consists of an infinite two-dimensional grid of cells*. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in `aRtsy` is slightly modified so that the block does not go off the canvas, but instead bounces back onto the canvas.
+According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *"a Turing machine which has an orientation in addition to a current state and a "tape" that consists of an infinite two-dimensional grid of cells"*. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in `aRtsy` is slightly modified so that the block does not go off the canvas, but instead bounces back onto the canvas.
 
 1. Turn on the spot (left, right, up, or down),
 2. Change the color of the block,
@@ -132,7 +132,7 @@ You can use the `paint_mondriaan()` function to make your own painting using thi
 
 ## Paint circle maps
 
-This type of painting is based on the concept of an [Arnold tongue](https://en.wikipedia.org/wiki/Arnold_tongue).
+This type of painting is based on the concept of an [Arnold tongue](https://en.wikipedia.org/wiki/Arnold_tongue). According to wikipedia, Arnold tongues *"are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters"*.
 
 You can use the `paint_circlemap()` function to make your own painting using this algorithm.
 
