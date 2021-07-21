@@ -7,6 +7,8 @@
 
 # aRtsy: Generative Art with `R` and `ggplot2`
 
+<img src='https://github.com/koenderks/aRtsy/raw/master/man/figures/logo.png' width='149' height='173' alt='logo' align='right' margin-left='20' margin-right='20'/>
+
 `aRtsy` is an attempt at making generative art available for the masses in a simple and standardized format. The package combines several algorithms for creating paintings in `ggplot2` that have the potential to be different (often depending on their `seed`). Each type of algorithm is implemented in a separate function.
 
 Contributions to `aRtsy` are much appreciated. Good luck hunting for some great `seed`'s!
