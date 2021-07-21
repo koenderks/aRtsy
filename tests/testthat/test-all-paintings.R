@@ -23,17 +23,22 @@ test_that("paint_planet()", {
   expect_equal(!is.null(painting), TRUE)
 })
 
-test_that("paint_planet()", {
+test_that("paint_mondriaan()", {
   painting <- aRtsy::paint_mondriaan(colors = c("black", "white"))
   expect_equal(!is.null(painting), TRUE)
 })
 
-test_that("paint_planet()", {
+test_that("paint_circlemap()", {
   painting <- aRtsy::paint_circlemap(colors = c("black", "white"))
   expect_equal(!is.null(painting), TRUE)
 })
 
-test_that("paint_planet()", {
+test_that("paint_function()", {
   painting <- aRtsy::paint_function(color = "black")
+  expect_equal(!is.null(painting), TRUE)
+})
+
+test_that("paint_arcs()", {
+  painting <- aRtsy:::paint_arcs(colors = c("black", "gray", "white"), n = 9)
   expect_equal(!is.null(painting), TRUE)
 })
