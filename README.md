@@ -21,6 +21,8 @@ Each day at 12 pm (CET) this repository generates a random painting using the `a
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/daily.png' width='400' height='400'>
 </p>
 
+The full collection of daily paintings can be viewed on the [aRtsy twitter page](https://twitter.com/aRtsy_package).
+
 ## Installation
 
 The most recently released version of `aRtsy` can be downloaded from [CRAN](https://cran.r-project.org/package=aRtsy) by running the following command in R:

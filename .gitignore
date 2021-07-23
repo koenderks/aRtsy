@@ -8,7 +8,3 @@ src/*.o
 src/*.so
 src/*.dll
 .vscode
-config.js
-package.json
-package-lock.json
-node_modules
