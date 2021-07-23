@@ -28,8 +28,6 @@ paint_function <- function(color, background = '#fafafa'){
     stop("Can only take one color value.")
   if(length(background) > 1)
     stop("Can only take one background value.")
-  if (!(style %in% c("aRtsy", "cutterkom")))
-    stop("style must be one of 'aRtsy' or 'cutterkom'.")
   painting_formulas <- list()
   painting_formulas[[1]] <- list( 
     x = quote(runif(1, -10, 10) * x_i^sample(c(0.5, 1:6), 1) - sin(y_i^sample(c(0.5, 1:6), 1)) * runif(1, -100, 100)),
