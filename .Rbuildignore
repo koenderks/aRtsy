@@ -9,3 +9,9 @@
 aRtsyRelease.R
 ^.*\.Rproj$
 ^\.Rproj\.user$
+.vscode
+config.js
+package.json
+package-lock.json
+server.js
+^node_modules$

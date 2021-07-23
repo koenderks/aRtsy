@@ -7,3 +7,9 @@ aRtsyRelease.R
 src/*.o
 src/*.so
 src/*.dll
+.vscode
+config.js
+package.json
+package-lock.json
+server.js
+node_modules
