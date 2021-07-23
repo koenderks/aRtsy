@@ -27,56 +27,56 @@ arma::mat iterate_ant(arma::mat X,
   int prc = 0; // Counter keeps track of when we need to switch
   int s = 10000;
   while (i < iters) {
-	if (prc == s) { // Switch color every s itertions
-	  prc = 0; // Reset the switch counter
-	  color = color + 1; // Next color
-	  if (color > k) {
-	    color = 1;
-	  }
-	  typeZero = dx[color];
-	  typeOne = dy[color];
-	}
+    if (prc == s) { // Switch color every s itertions
+      prc = 0; // Reset the switch counter
+      color = color + 1; // Next color
+      if (color > k) {
+        color = 1;
+      }
+      typeZero = dx[color];
+      typeOne = dy[color];
+    }
     if (X(row,col) == 0) { // White square
-	  if (typeZero == 0) { // Turn 90 degrees clockwise for R (Langtons Ant)
-		direction = direction + 1;
-	    if (direction == 5) {
+      if (typeZero == 0) { // Turn 90 degrees clockwise for R (Langtons Ant)
+        direction = direction + 1;
+        if (direction == 5) {
           direction = 1;
-		}
-	  } else if (typeZero == 1) { // Turn 90 degrees counter-clockwise for L
-		direction = direction - 1;
-	    if (direction == 0) {
+        }
+      } else if (typeZero == 1) { // Turn 90 degrees counter-clockwise for L
+        direction = direction - 1;
+        if (direction == 0) {
           direction = 4;
-		}	  
-	  }
+        }	  
+      }
       // Color the square
-	  X(row,col) = color;
-	} else { // Colored square
-	  if (typeOne == 0) { // Turn 90 degrees counter-clockwise for L (Langtons ant)
-	    direction = direction - 1;
-	    if (direction == 0) {
-	     direction = 4;
-	    }
-	  } else if (typeOne == 1) { // Turn 90 degrees clockwise for R
-		direction = direction + 1;
-	    if (direction == 5) {
+      X(row,col) = color;
+    } else { // Colored square
+      if (typeOne == 0) { // Turn 90 degrees counter-clockwise for L (Langtons ant)
+        direction = direction - 1;
+        if (direction == 0) {
+          direction = 4;
+        }
+      } else if (typeOne == 1) { // Turn 90 degrees clockwise for R
+        direction = direction + 1;
+        if (direction == 5) {
           direction = 1;
-		}	  
-	  }
-	  // Undo the color on the square
-	  X(row,col) = 0;
-	}
-	prc++;
-	// Move the ant
-	if (direction == 1 && row >= 1) {
-	  row--; 
-	} else if (direction == 2 && col >= 1) {
-	  col--;
-	} else if (direction == 3 && row < (m - 1)) {
-	  row++;
-	} else if (direction == 4 && col < (n - 1)) {
-	  col++;
-	} 
+        }	  
+      }
+      // Undo the color on the square
+      X(row,col) = 0;
+    }
+    prc++;
+    // Move the ant
+    if (direction == 1 && row >= 1) {
+      row--; 
+    } else if (direction == 2 && col >= 1) {
+      col--;
+    } else if (direction == 3 && row < (m - 1)) {
+      row++;
+    } else if (direction == 4 && col < (n - 1)) {
+      col++;
+    } 
     i++;
   }
   return X;
-};
+}
