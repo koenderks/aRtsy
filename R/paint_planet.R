@@ -7,7 +7,7 @@
 #'              radius = NULL, center.x = NULL, center.y = NULL, 
 #'              light.right = TRUE, width = 1500, height = 1500)
 #'
-#' @param colors   	  a character specifying the colors used for the planets
+#' @param colors   	  a character specifying the colors used for the planet(s). Can also be a list where each entry is a vector of colors for each planet.
 #' @param threshold   a character specifying the threshold for a color take.
 #' @param starprob    the probability of drawing a star in outer space.
 #' @param fade        the fading factor.
@@ -25,13 +25,14 @@
 #'
 #' @examples
 #' # Sun behind Earth and Moon
-#' colors = list(c("khaki1", "lightcoral", "lightsalmon"),
-#'               c("dodgerblue", "forestgreen", "white"), 
-#'               c("gray", "darkgray", "beige"))
-#' painting <- paint_planet(colors, radius = c(800, 400, 150), 
-#'                          center.x = c(1, 500, 1100),
-#'                          center.y = c(1400, 500, 1000), 
-#'                          starprob = 0.005)
+#' set.seed(1)
+#' colors <- list(c("khaki1", "lightcoral", "lightsalmon"),
+#'                c("dodgerblue", "forestgreen", "white"), 
+#'                c("gray", "darkgray", "beige"))
+#' paint_planet(colors, radius = c(800, 400, 150), 
+#'              center.x = c(1, 500, 1100),
+#'              center.y = c(1400, 500, 1000), 
+#'              starprob = 0.005)
 #' 
 #' @keywords paint
 #'
