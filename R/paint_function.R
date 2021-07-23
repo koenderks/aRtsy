@@ -1,6 +1,6 @@
 #' Paint Functions on a Canvas
 #'
-#' @description This function paints functions and mimics the functionality of the \code{generativeart} package.
+#' @description This function paints functions with random parameters and mimics the functionality of the \code{generativeart} package.
 #'
 #' @usage paint_function(color, background = '#fafafa')
 #'
@@ -14,6 +14,7 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
+#' set.seed(1)
 #' paint_function(color = '#000000', background = '#fafafa')
 #' 
 #' @keywords paint
@@ -27,6 +28,8 @@ paint_function <- function(color, background = '#fafafa'){
     stop("Can only take one color value.")
   if(length(background) > 1)
     stop("Can only take one background value.")
+  if (!(style %in% c("aRtsy", "cutterkom")))
+    stop("style must be one of 'aRtsy' or 'cutterkom'.")
   painting_formulas <- list()
   painting_formulas[[1]] <- list( 
     x = quote(runif(1, -10, 10) * x_i^sample(c(0.5, 1:6), 1) - sin(y_i^sample(c(0.5, 1:6), 1)) * runif(1, -100, 100)),
@@ -36,6 +39,8 @@ paint_function <- function(color, background = '#fafafa'){
     x = quote(runif(1, -1, 10) * x_i^sample(c(0.5, 1:6), 1) - sin(y_i^sample(c(0.5, 1:6), 1))),
     y = quote(runif(1, -1, 10) * y_i^sample(c(0.5, 1:6), 1) - cos(x_i^sample(c(0.5, 1:6), 1)) * y_i^sample(c(0.5, 1:6), 1))
   )
+  painting_formulas[[3]] <- list(x = quote(runif(1, -1, 1) * x_i^2 -sin(y_i^2)),
+                                 y = quote(runif(1, -1, 1) * y_i^3-cos(x_i^2)))
   painting_formula <- painting_formulas[[sample(1:length(painting_formulas), 1)]]
   df <- expand.grid(x_i = seq(from = -pi, to = pi, by = 0.01), y_i = seq(from = -pi, to = pi, by = 0.01)) %>% dplyr::mutate(!!!painting_formula)
   painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y)) + 

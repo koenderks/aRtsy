@@ -15,9 +15,10 @@ paint_function(color, background = '#fafafa')
 A \code{ggplot} object containing the painting.
 }
 \description{
-This function paints functions and mimics the functionality of the \code{generativeart} package.
+This function paints functions with random parameters and mimics the functionality of the \code{generativeart} package.
 }
 \examples{
+set.seed(1)
 paint_function(color = '#000000', background = '#fafafa')
 
 }
