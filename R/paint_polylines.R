@@ -3,7 +3,7 @@
 #' @description This function creates polygons with lines.
 #'
 #' @usage paint_polylines(colors, background = '#fafafa', ratio = 0.5, iterations = 1000, 
-#'                 alpha = NULL, size = 0.5, width = 500, height = 500)
+#'                 alpha = NULL, size = 0.25, width = 500, height = 500)
 #'
 #' @param colors      a character (vector) specifying the colors used for the strokes.
 #' @param background  a character specifying the color used for the background (borders).
@@ -29,7 +29,7 @@
 #' @import Rcpp
 
 paint_polylines <- function(colors, background = '#fafafa', ratio = 0.5, iterations = 1000, 
-                    alpha = NULL, size = 0.5, width = 500, height = 500){
+                    alpha = NULL, size = 0.25, width = 500, height = 500){
   if(is.null(alpha)) {
     alphas <- seq(from = 1, to = 0.1, length.out = length(colors))
   } else {
@@ -37,7 +37,7 @@ paint_polylines <- function(colors, background = '#fafafa', ratio = 0.5, iterati
   }
   d <- data.frame(x = numeric(), y = numeric(), type = character())
   for(i in 1:length(colors)){
-    mat <- iterate_x(matrix(NA, nrow = iterations, ncol = 2), ratio, iterations, height, width)
+    mat <- iterate_polylines(matrix(NA, nrow = iterations, ncol = 2), ratio, iterations, height, width)
     d_tmp <- data.frame(x = mat[, 1], y = mat[, 2], type = rep(colors[i], iterations))
     d <- rbind(d, d_tmp)
   }
