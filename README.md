@@ -146,9 +146,9 @@ You can use the `paint_circlemap()` function to make your own painting using thi
 ## Paint polylines
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-22.jpg' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-22.jpg' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-22.jpg' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-22.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-22.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-22.png' width='270' height='270'>
 </p>
 
 ## Paint function
