@@ -31,9 +31,9 @@ arma::mat iterate_mondriaan(arma::mat X,
   for (int i = 0; i < cuts; i++) {
     int cutx = ceil(row / ratio);
     int cuty = ceil(col / ratio);
-	double cutfromtop = (double) rand() / RAND_MAX;
-	double cutfromleft = (double) rand() / RAND_MAX;
-	int color = 1 + rand() % s; // Sample color from 1 to s
+	  double cutfromtop = R::runif(0, 1);
+	  double cutfromleft = R::runif(0, 1);
+	  int color = ceil(R::runif(0, s)); // Sample color from 1 to s
     if (cutfromtop >= 0.5 && cutfromleft >= 0.5) {
       for (int x = 0; x < cutx; x++) {
         for (int y = 0; y < cuty; y++) {
@@ -59,8 +59,8 @@ arma::mat iterate_mondriaan(arma::mat X,
         }
       }
     }
-    row = (rand() % (m-1));
-    col = (rand() % (n-1));
+    row = floor(R::runif(0, m));
+    col = floor(R::runif(0, n));
   }
   arma::mat X_new = X;
   for (int x = 0; x < n; x++) {
@@ -72,7 +72,7 @@ arma::mat iterate_mondriaan(arma::mat X,
         int color = X(iy, ix);
         colors.push_back (color);
       }
-	  std::sort(colors.begin(), colors.end());
+      std::sort(colors.begin(), colors.end());
       int uniqueCount = std::unique(colors.begin(), colors.end()) - colors.begin();
       if (uniqueCount > 1) {
         X_new(y, x) = 0;
@@ -80,5 +80,4 @@ arma::mat iterate_mondriaan(arma::mat X,
     }
   }  
   return X_new;
-};
-  
+}

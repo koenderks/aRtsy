@@ -40,6 +40,7 @@ This function paints one or multiple planets.
 }
 \examples{
 # Sun behind Earth and Moon
+set.seed(1)
 colors <- list(c("khaki1", "lightcoral", "lightsalmon"),
                c("dodgerblue", "forestgreen", "white"), 
                c("gray", "darkgray", "beige"))

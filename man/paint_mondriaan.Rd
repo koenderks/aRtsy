@@ -27,6 +27,7 @@ A \code{ggplot} object containing the painting.
 This function paints a Mondriaan.
 }
 \examples{
+set.seed(6)
 paint_mondriaan(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
 
 }
