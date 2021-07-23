@@ -42,3 +42,8 @@ test_that("paint_arcs()", {
   painting <- aRtsy:::paint_arcs(colors = c("black", "gray", "white"), n = 9)
   expect_equal(!is.null(painting), TRUE)
 })
+
+test_that("paint_polylines()", {
+  painting <- aRtsy::paint_polylines(colors = c("black", "gray", "white"))
+  expect_equal(!is.null(painting), TRUE)
+})

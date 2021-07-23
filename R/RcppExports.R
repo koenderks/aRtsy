@@ -17,15 +17,15 @@ iterate_planet <- function(X, radius, xcenter, ycenter, threshold, iterations, s
     .Call('_aRtsy_iterate_planet', PACKAGE = 'aRtsy', X, radius, xcenter, ycenter, threshold, iterations, starprob, ncolors, colorsused, fade, lightright)
 }
 
+iterate_polylines <- function(X, ratio, iters, rows, cols) {
+    .Call('_aRtsy_iterate_polylines', PACKAGE = 'aRtsy', X, ratio, iters, rows, cols)
+}
+
 iterate_strokes <- function(X, neighbors, s, p) {
     .Call('_aRtsy_iterate_strokes', PACKAGE = 'aRtsy', X, neighbors, s, p)
 }
 
 iterate_turmite <- function(X, iters, row, col, p) {
     .Call('_aRtsy_iterate_turmite', PACKAGE = 'aRtsy', X, iters, row, col, p)
-}
-
-iterate_x <- function(X, ratio, iters, rows, cols) {
-    .Call('_aRtsy_iterate_x', PACKAGE = 'aRtsy', X, ratio, iters, rows, cols)
 }
 

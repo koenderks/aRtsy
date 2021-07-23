@@ -10,7 +10,7 @@ seed <- as.numeric(Sys.time())
 set.seed(seed)
 
 # Select painting type
-paintingType <- sample(1:9, size = 1)
+paintingType <- sample(1:10, size = 1)
 
 if (paintingType == 1){
   
@@ -84,6 +84,11 @@ if (paintingType == 1){
   
   painting <- aRtsy::paint_ribbons(colors = randomcoloR::randomColor(sample(3:6, size = 1), luminosity = "dark"),
                                    background = randomcoloR::randomColor(1, luminosity = "light"))
+  
+} else if (paintingType == 10) {
+  
+  painting <- aRtsy::paint_polylines(colors = randomcoloR::randomColor(sample(3:6, size = 1), luminosity = "dark"),
+                                     background = randomcoloR::randomColor(1, luminosity = "light"))
   
 }
 
