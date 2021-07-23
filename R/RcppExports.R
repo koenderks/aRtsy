@@ -25,3 +25,7 @@ iterate_turmite <- function(X, iters, row, col, p) {
     .Call('_aRtsy_iterate_turmite', PACKAGE = 'aRtsy', X, iters, row, col, p)
 }
 
+iterate_x <- function(X, ratio, iters, rows, cols) {
+    .Call('_aRtsy_iterate_x', PACKAGE = 'aRtsy', X, ratio, iters, rows, cols)
+}
+

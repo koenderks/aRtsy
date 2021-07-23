@@ -107,6 +107,21 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// iterate_x
+arma::mat iterate_x(arma::mat X, double ratio, int iters, int rows, int cols);
+RcppExport SEXP _aRtsy_iterate_x(SEXP XSEXP, SEXP ratioSEXP, SEXP itersSEXP, SEXP rowsSEXP, SEXP colsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type X(XSEXP);
+    Rcpp::traits::input_parameter< double >::type ratio(ratioSEXP);
+    Rcpp::traits::input_parameter< int >::type iters(itersSEXP);
+    Rcpp::traits::input_parameter< int >::type rows(rowsSEXP);
+    Rcpp::traits::input_parameter< int >::type cols(colsSEXP);
+    rcpp_result_gen = Rcpp::wrap(iterate_x(X, ratio, iters, rows, cols));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_aRtsy_iterate_ant", (DL_FUNC) &_aRtsy_iterate_ant, 5},
@@ -115,6 +130,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_aRtsy_iterate_planet", (DL_FUNC) &_aRtsy_iterate_planet, 11},
     {"_aRtsy_iterate_strokes", (DL_FUNC) &_aRtsy_iterate_strokes, 4},
     {"_aRtsy_iterate_turmite", (DL_FUNC) &_aRtsy_iterate_turmite, 5},
+    {"_aRtsy_iterate_x", (DL_FUNC) &_aRtsy_iterate_x, 5},
     {NULL, NULL, 0}
 };
 
