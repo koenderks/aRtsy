@@ -4,7 +4,7 @@
 #'
 #' @usage paint_ribbons(colors, background = '#fdf5e6', triangle = TRUE)
 #'
-#' @param colors      a character (vector) specifying the colors for the ribbons.
+#' @param colors      a character (vector) specifying the colors for the ribbons. Colors determine the number of ribbons.
 #' @param background  a character specifying the color of the background.
 #' @param triangle    logical. Whether to draw the triangle that breaks the ribbon polygons.
 #'
@@ -13,6 +13,7 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
+#' set.seed(1)
 #' paint_ribbons(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod"))
 #' 
 #' @keywords paint

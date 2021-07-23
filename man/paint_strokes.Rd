@@ -29,6 +29,7 @@ A \code{ggplot} object containing the painting.
 This function creates a painting that resembles paints strokes. The algorithm is based on the simple idea that each next point on the grid has a chance to take over the color of an adjacent colored point but also has a change of generating a new color.
 }
 \examples{
+set.seed(1)
 paint_strokes(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
 
 }

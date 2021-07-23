@@ -7,7 +7,7 @@
 paint_ribbons(colors, background = '#fdf5e6', triangle = TRUE)
 }
 \arguments{
-\item{colors}{a character (vector) specifying the colors for the ribbons.}
+\item{colors}{a character (vector) specifying the colors for the ribbons. Colors determine the number of ribbons.}
 
 \item{background}{a character specifying the color of the background.}
 
@@ -20,6 +20,7 @@ A \code{ggplot} object containing the painting.
 This function paints ribbons and (optionally) a triangle in the middle.
 }
 \examples{
+set.seed(1)
 paint_ribbons(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod"))
 
 }

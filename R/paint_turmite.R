@@ -19,6 +19,7 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
+#' set.seed(1)
 #' paint_turmite(color = "#000000", background = "#fafafa")
 #' 
 #' @keywords paint
