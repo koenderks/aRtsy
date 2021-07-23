@@ -1,4 +1,5 @@
 #include <RcppArmadillo.h>
+#include <Rcpp.h>
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -19,7 +20,7 @@ arma::mat iterate_turmite(arma::mat X,
   int i = 0;
   int state = 0;
   while(i < iters){
-    double stateSwap = (double) rand() / RAND_MAX;
+    double stateSwap = ceil(R::runif(0, 2));
     if(stateSwap < p){
       if (state == 0){
         state = 1;
@@ -45,7 +46,7 @@ arma::mat iterate_turmite(arma::mat X,
     }
     // Turn
     int direction;
-    direction = (rand() % 4) + 1;
+    direction = ceil(R::runif(0, 4));
     if(state == 0){
       if(direction == 1 && row < (m - 1)){
         row++; 
@@ -70,4 +71,4 @@ arma::mat iterate_turmite(arma::mat X,
     i++;
   }
   return X;
-};
+}
