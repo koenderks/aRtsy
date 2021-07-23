@@ -45,12 +45,12 @@ library(aRtsy)
 
 * [`paint_strokes()`](#paint-strokes)
 * [`paint_ribbons()`](#paint-ribbons)
+* [`paint_polylines()`](#paint-polylines)
 * [`paint_turmite()`](#paint-turmite)
 * [`paint_ant()`](#paint-ant)
 * [`paint_planet()`](#paint-planets)
 * [`paint_mondriaan()`](#paint-mondriaan)
 * [`paint_cirlemap()`](#paint-circle-maps)
-* [`paint_polylines()`](#paint-polylines)
 * [`paint_function()`](#paint-function)
 
 ## Paint strokes
@@ -73,6 +73,14 @@ This function paints colored ribbons with (or without) a triangle that breaks th
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ribbons/2021-07-16.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ribbons/2021-07-15.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ribbons/2021-07-14.png' width='270' height='270'>
+</p>
+
+## Paint polylines
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-22.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-23.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-21.png' width='270' height='270'>
 </p>
 
 ## Paint turmite
@@ -141,14 +149,6 @@ You can use the `paint_circlemap()` function to make your own painting using thi
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22b.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22c.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22a.png' width='270' height='270'>
-</p>
-
-## Paint polylines
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-22.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-23.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-21.png' width='270' height='270'>
 </p>
 
 ## Paint function
