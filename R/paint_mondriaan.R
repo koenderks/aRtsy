@@ -3,13 +3,12 @@
 #' @description This function paints a Mondriaan.
 #'
 #' @usage paint_mondriaan(colors, background = '#000000', cuts = 50, ratio = 1.618,
-#'                 seed = 1, width = 100, height = 100)
+#'                 width = 100, height = 100)
 #'
 #' @param colors   	  a character vector specifying the colors used in the squares.
 #' @param background  a character specifying the color used for the background (borders).
 #' @param cuts        the number of cuts to make.
 #' @param ratio       the \code{1:1} ratio for each cut.
-#' @param seed        the seed for the painting.
 #' @param width       the width of the painting in pixels.
 #' @param height      the height of the painting in pixels.
 #'
@@ -25,7 +24,7 @@
 #' @export
 
 paint_mondriaan <- function(colors, background = '#000000', cuts = 50, ratio = 1.618, 
-                            seed = 1, width = 100, height = 100){
+                            width = 100, height = 100){
   x <- y <- z <- NULL
   if(length(colors) <= 1)
 	stop("You must specify more than one color.")
@@ -33,12 +32,11 @@ paint_mondriaan <- function(colors, background = '#000000', cuts = 50, ratio = 1
     stop("Can only take one background value.")
   if(cuts <= 1)
     stop("Cuts must be higher than 1.")
-  set.seed(seed)
   palette <- c(background, colors)
   neighbors <- expand.grid(-1:1,-1:1)
   colnames(neighbors) <- c("x", "y")
   canvas <- matrix(0, nrow = height, ncol = width)  
-  full_canvas <- iterate_mondriaan(canvas, neighbors, length(colors), cuts, ratio, seed)
+  full_canvas <- iterate_mondriaan(canvas, neighbors, length(colors), cuts, ratio)
   full_canvas <- reshape2::melt(full_canvas)
   colnames(full_canvas) <- c("y", "x", "z")
   painting <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +

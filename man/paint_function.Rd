@@ -4,14 +4,12 @@
 \alias{paint_function}
 \title{Paint Functions on a Canvas}
 \usage{
-paint_function(color, background = '#fafafa', seed = 1)
+paint_function(color, background = '#fafafa')
 }
 \arguments{
 \item{color}{a character specifying the color used for the function shape.}
 
 \item{background}{a character specifying the color used for the background.}
-
-\item{seed}{the seed for the painting.}
 }
 \value{
 A \code{ggplot} object containing the painting.

@@ -12,8 +12,8 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 // iterate_ant
-arma::mat iterate_ant(arma::mat X, int iters, int row, int col, Rcpp::DataFrame c, int seed);
-RcppExport SEXP _aRtsy_iterate_ant(SEXP XSEXP, SEXP itersSEXP, SEXP rowSEXP, SEXP colSEXP, SEXP cSEXP, SEXP seedSEXP) {
+arma::mat iterate_ant(arma::mat X, int iters, int row, int col, Rcpp::DataFrame c);
+RcppExport SEXP _aRtsy_iterate_ant(SEXP XSEXP, SEXP itersSEXP, SEXP rowSEXP, SEXP colSEXP, SEXP cSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -22,8 +22,7 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type row(rowSEXP);
     Rcpp::traits::input_parameter< int >::type col(colSEXP);
     Rcpp::traits::input_parameter< Rcpp::DataFrame >::type c(cSEXP);
-    Rcpp::traits::input_parameter< int >::type seed(seedSEXP);
-    rcpp_result_gen = Rcpp::wrap(iterate_ant(X, iters, row, col, c, seed));
+    rcpp_result_gen = Rcpp::wrap(iterate_ant(X, iters, row, col, c));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -44,8 +43,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // iterate_mondriaan
-arma::mat iterate_mondriaan(arma::mat X, Rcpp::DataFrame neighbors, int s, int cuts, double ratio, int seed);
-RcppExport SEXP _aRtsy_iterate_mondriaan(SEXP XSEXP, SEXP neighborsSEXP, SEXP sSEXP, SEXP cutsSEXP, SEXP ratioSEXP, SEXP seedSEXP) {
+arma::mat iterate_mondriaan(arma::mat X, Rcpp::DataFrame neighbors, int s, int cuts, double ratio);
+RcppExport SEXP _aRtsy_iterate_mondriaan(SEXP XSEXP, SEXP neighborsSEXP, SEXP sSEXP, SEXP cutsSEXP, SEXP ratioSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -54,14 +53,13 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type s(sSEXP);
     Rcpp::traits::input_parameter< int >::type cuts(cutsSEXP);
     Rcpp::traits::input_parameter< double >::type ratio(ratioSEXP);
-    Rcpp::traits::input_parameter< int >::type seed(seedSEXP);
-    rcpp_result_gen = Rcpp::wrap(iterate_mondriaan(X, neighbors, s, cuts, ratio, seed));
+    rcpp_result_gen = Rcpp::wrap(iterate_mondriaan(X, neighbors, s, cuts, ratio));
     return rcpp_result_gen;
 END_RCPP
 }
 // iterate_planet
-arma::mat iterate_planet(arma::mat X, int radius, int xcenter, int ycenter, int threshold, int iterations, double starprob, int seed, int ncolors, int colorsused, double fade, int lightright);
-RcppExport SEXP _aRtsy_iterate_planet(SEXP XSEXP, SEXP radiusSEXP, SEXP xcenterSEXP, SEXP ycenterSEXP, SEXP thresholdSEXP, SEXP iterationsSEXP, SEXP starprobSEXP, SEXP seedSEXP, SEXP ncolorsSEXP, SEXP colorsusedSEXP, SEXP fadeSEXP, SEXP lightrightSEXP) {
+arma::mat iterate_planet(arma::mat X, int radius, int xcenter, int ycenter, int threshold, int iterations, double starprob, int ncolors, int colorsused, double fade, int lightright);
+RcppExport SEXP _aRtsy_iterate_planet(SEXP XSEXP, SEXP radiusSEXP, SEXP xcenterSEXP, SEXP ycenterSEXP, SEXP thresholdSEXP, SEXP iterationsSEXP, SEXP starprobSEXP, SEXP ncolorsSEXP, SEXP colorsusedSEXP, SEXP fadeSEXP, SEXP lightrightSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -72,18 +70,17 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type threshold(thresholdSEXP);
     Rcpp::traits::input_parameter< int >::type iterations(iterationsSEXP);
     Rcpp::traits::input_parameter< double >::type starprob(starprobSEXP);
-    Rcpp::traits::input_parameter< int >::type seed(seedSEXP);
     Rcpp::traits::input_parameter< int >::type ncolors(ncolorsSEXP);
     Rcpp::traits::input_parameter< int >::type colorsused(colorsusedSEXP);
     Rcpp::traits::input_parameter< double >::type fade(fadeSEXP);
     Rcpp::traits::input_parameter< int >::type lightright(lightrightSEXP);
-    rcpp_result_gen = Rcpp::wrap(iterate_planet(X, radius, xcenter, ycenter, threshold, iterations, starprob, seed, ncolors, colorsused, fade, lightright));
+    rcpp_result_gen = Rcpp::wrap(iterate_planet(X, radius, xcenter, ycenter, threshold, iterations, starprob, ncolors, colorsused, fade, lightright));
     return rcpp_result_gen;
 END_RCPP
 }
 // iterate_strokes
-arma::mat iterate_strokes(arma::mat X, Rcpp::DataFrame neighbors, int s, double p, int seed);
-RcppExport SEXP _aRtsy_iterate_strokes(SEXP XSEXP, SEXP neighborsSEXP, SEXP sSEXP, SEXP pSEXP, SEXP seedSEXP) {
+arma::mat iterate_strokes(arma::mat X, Rcpp::DataFrame neighbors, int s, double p);
+RcppExport SEXP _aRtsy_iterate_strokes(SEXP XSEXP, SEXP neighborsSEXP, SEXP sSEXP, SEXP pSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -91,14 +88,13 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< Rcpp::DataFrame >::type neighbors(neighborsSEXP);
     Rcpp::traits::input_parameter< int >::type s(sSEXP);
     Rcpp::traits::input_parameter< double >::type p(pSEXP);
-    Rcpp::traits::input_parameter< int >::type seed(seedSEXP);
-    rcpp_result_gen = Rcpp::wrap(iterate_strokes(X, neighbors, s, p, seed));
+    rcpp_result_gen = Rcpp::wrap(iterate_strokes(X, neighbors, s, p));
     return rcpp_result_gen;
 END_RCPP
 }
 // iterate_turmite
-arma::mat iterate_turmite(arma::mat X, int iters, int row, int col, double p, int seed);
-RcppExport SEXP _aRtsy_iterate_turmite(SEXP XSEXP, SEXP itersSEXP, SEXP rowSEXP, SEXP colSEXP, SEXP pSEXP, SEXP seedSEXP) {
+arma::mat iterate_turmite(arma::mat X, int iters, int row, int col, double p);
+RcppExport SEXP _aRtsy_iterate_turmite(SEXP XSEXP, SEXP itersSEXP, SEXP rowSEXP, SEXP colSEXP, SEXP pSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -107,19 +103,18 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type row(rowSEXP);
     Rcpp::traits::input_parameter< int >::type col(colSEXP);
     Rcpp::traits::input_parameter< double >::type p(pSEXP);
-    Rcpp::traits::input_parameter< int >::type seed(seedSEXP);
-    rcpp_result_gen = Rcpp::wrap(iterate_turmite(X, iters, row, col, p, seed));
+    rcpp_result_gen = Rcpp::wrap(iterate_turmite(X, iters, row, col, p));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_aRtsy_iterate_ant", (DL_FUNC) &_aRtsy_iterate_ant, 6},
+    {"_aRtsy_iterate_ant", (DL_FUNC) &_aRtsy_iterate_ant, 5},
     {"_aRtsy_iterate_circlemap", (DL_FUNC) &_aRtsy_iterate_circlemap, 6},
-    {"_aRtsy_iterate_mondriaan", (DL_FUNC) &_aRtsy_iterate_mondriaan, 6},
-    {"_aRtsy_iterate_planet", (DL_FUNC) &_aRtsy_iterate_planet, 12},
-    {"_aRtsy_iterate_strokes", (DL_FUNC) &_aRtsy_iterate_strokes, 5},
-    {"_aRtsy_iterate_turmite", (DL_FUNC) &_aRtsy_iterate_turmite, 6},
+    {"_aRtsy_iterate_mondriaan", (DL_FUNC) &_aRtsy_iterate_mondriaan, 5},
+    {"_aRtsy_iterate_planet", (DL_FUNC) &_aRtsy_iterate_planet, 11},
+    {"_aRtsy_iterate_strokes", (DL_FUNC) &_aRtsy_iterate_strokes, 4},
+    {"_aRtsy_iterate_turmite", (DL_FUNC) &_aRtsy_iterate_turmite, 5},
     {NULL, NULL, 0}
 };
 

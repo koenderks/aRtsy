@@ -3,12 +3,11 @@
 #' @description This function paints Langton's Ant. Langton's ant is a two-dimensional universal Turing machine with a very simple set of rules but complex emergent behavior.
 #'
 #' @usage paint_ant(colors, background = '#fafafa', iterations = 1e7,
-#'           seed = 1, width = 200, height = 200)
+#'           width = 200, height = 200)
 #'
 #' @param colors   	  a character (vector) specifying the colors for the ant.
 #' @param background  a character specifying the color of the background.
 #' @param iterations  the number of iterations of the ant.
-#' @param seed        the seed for the painting.
 #' @param width       the width of the painting in pixels.
 #' @param height      the height of the painting in pixels.
 #'
@@ -28,11 +27,10 @@
 #' @import Rcpp
 
 paint_ant <- function(colors, background = '#fafafa', iterations = 1e7, 
-                      seed = 1, width = 200, height = 200){
+                      width = 200, height = 200){
   x <- y <- z <- NULL
   if(length(background) > 1)
     stop("Can only take one background value.")
-  set.seed(seed)
   palette <- c(background, colors)
   row <- ceiling(height / 2)
   col <- ceiling(width / 2)
@@ -40,7 +38,7 @@ paint_ant <- function(colors, background = '#fafafa', iterations = 1e7,
   c[2:nrow(c), ] <- c[sample(2:nrow(c)), ]
   c <- c[1:length(colors), ]
   colnames(c) <- c("x", "y")
-  df <- iterate_ant(matrix(0, nrow = height, ncol = width), iterations, row, col, c = c, seed = seed)  
+  df <- iterate_ant(matrix(0, nrow = height, ncol = width), iterations, row, col, c = c)  
   df <- reshape2::melt(df)
   colnames(df) <- c("y", "x", "z")
   painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) +

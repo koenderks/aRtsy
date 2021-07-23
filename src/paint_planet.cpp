@@ -15,17 +15,15 @@ arma::mat iterate_planet(arma::mat X,
                          int ycenter,
                          int threshold,
                          int iterations,
-						 double starprob,
-                         int seed,
+                         double starprob,
                          int ncolors,
-						 int colorsused,
-						 double fade,
-						 int lightright){
+                         int colorsused,
+                         double fade,
+                         int lightright){
   int m = X.n_rows;
   int n = X.n_cols;
   std::vector<int> xcircle; // Vector of x-locations of all circle points
   std::vector<int> ycircle; // Vector of y-locations of all circle points
-  srand (seed);
   // Draw planet circle
   for (int row = 0; row < m; row++) {
     for (int col = 0; col < n; col++) {

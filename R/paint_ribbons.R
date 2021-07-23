@@ -2,12 +2,11 @@
 #'
 #' @description This function paints ribbons and (optionally) a triangle in the middle.
 #'
-#' @usage paint_ribbons(colors, background = '#fdf5e6', triangle = TRUE, seed = 1)
+#' @usage paint_ribbons(colors, background = '#fdf5e6', triangle = TRUE)
 #'
-#' @param colors      a character (vector) specifying the colors for the lines.
+#' @param colors      a character (vector) specifying the colors for the ribbons.
 #' @param background  a character specifying the color of the background.
-#' @param triangle    logical. Whether to draw the triangle.
-#' @param seed        the seed for the painting.
+#' @param triangle    logical. Whether to draw the triangle that breaks the ribbon polygons.
 #'
 #' @return A \code{ggplot} object containing the painting.
 #'
@@ -21,7 +20,7 @@
 #' @export
 #' @importFrom ggpubr ggarrange
 
-paint_ribbons <- function(colors, background = '#fdf5e6', triangle = TRUE, seed = 1) {
+paint_ribbons <- function(colors, background = '#fdf5e6', triangle = TRUE) {
   # Create an empty figure
   p <- ggplot2::ggplot() +
     ggplot2::xlim(c(0, 100)) +
@@ -32,7 +31,6 @@ paint_ribbons <- function(colors, background = '#fdf5e6', triangle = TRUE, seed 
   tpl <- tpl[which(tpl$y < y_max_top), ]
   tpr <- data.frame(x = 51:84, y = seq(from = 74, to = 16, length.out = 34))
   tpr <- tpr[which(tpr$y < y_max_top), ]
-  set.seed(seed)
   for(i in 1:length(colors)) {
     # Determine points on left side of triangle
     bpb <- data.frame(x = 0, y = sample(10:90, size = 1))

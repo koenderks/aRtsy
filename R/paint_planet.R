@@ -5,7 +5,7 @@
 #' @usage paint_planet(colors, threshold = 4, iterations = 200, 
 #'              starprob = 0.01, fade = 0.2,
 #'              radius = NULL, center.x = NULL, center.y = NULL, 
-#'              light.right = TRUE, seed = 1, width = 1500, height = 1500)
+#'              light.right = TRUE, width = 1500, height = 1500)
 #'
 #' @param colors   	  a character specifying the colors used for the planets
 #' @param threshold   a character specifying the threshold for a color take.
@@ -16,7 +16,6 @@
 #' @param center.x    the x-axis coordinate(s) for the center(s) of the planet(s).
 #' @param center.y    the y-axis coordinate(s) for the center(s) of the planet(s).
 #' @param light.right whether to draw the light from the right or the left.
-#' @param seed        the seed for the painting.
 #' @param width       the width of the painting in pixels.
 #' @param height      the height of the painting in pixels.
 #'
@@ -42,7 +41,7 @@
 
 paint_planet <- function(colors, threshold = 4, iterations = 200, starprob = 0.01, fade = 0.2,
                          radius = NULL, center.x = NULL, center.y = NULL, light.right = TRUE,
-                         seed = 1, width = 1500, height = 1500){
+                         width = 1500, height = 1500){
   x <- y <- z <- NULL
   palette <- list()
   for(i in 1:length(colors)){
@@ -72,7 +71,6 @@ paint_planet <- function(colors, threshold = 4, iterations = 200, starprob = 0.0
 							 threshold = threshold, 
 							 iterations = ceiling(iterations / i), 
 							 starprob = starprob, 
-							 seed = seed + i, 
 							 ncolors = length(palette[[i]]), 
 							 colorsused = colorsused, 
 							 fade = fade,

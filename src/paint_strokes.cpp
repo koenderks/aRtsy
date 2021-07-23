@@ -20,14 +20,12 @@ int neighboring_block(int L, int i)
 arma::mat iterate_strokes(arma::mat X, 
                           Rcpp::DataFrame neighbors, 
                           int s,
-                          double p,
-						  int seed){
+                          double p){
   int m = X.n_rows;
   int n = X.n_cols;
   int k = neighbors.nrows();
   Rcpp::IntegerVector dx = neighbors["x"];
   Rcpp::IntegerVector dy = neighbors["y"];
-  srand (seed);
   double backwardsprob = (double) rand() / RAND_MAX;
   if(backwardsprob < 0.5){ // Go forward through the loop
     for(int x = 0; x < n; x++) { // Loop over the columns of the frame

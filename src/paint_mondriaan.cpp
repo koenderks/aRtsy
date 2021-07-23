@@ -21,15 +21,13 @@ arma::mat iterate_mondriaan(arma::mat X,
                             Rcpp::DataFrame neighbors, 
                             int s,
                             int cuts,
-                            double ratio,
-                            int seed){
+                            double ratio){
   int m = X.n_rows;
   int n = X.n_cols;
   int row = m;
   int col = n;
   Rcpp::IntegerVector dx = neighbors["x"];
   Rcpp::IntegerVector dy = neighbors["y"];
-  srand (seed);
   for (int i = 0; i < cuts; i++) {
     int cutx = ceil(row / ratio);
     int cuty = ceil(col / ratio);

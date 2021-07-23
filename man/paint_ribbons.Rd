@@ -4,16 +4,14 @@
 \alias{paint_ribbons}
 \title{Paint Ribbons on a Canvas}
 \usage{
-paint_ribbons(colors, background = '#fdf5e6', triangle = TRUE, seed = 1)
+paint_ribbons(colors, background = '#fdf5e6', triangle = TRUE)
 }
 \arguments{
-\item{colors}{a character (vector) specifying the colors for the lines.}
+\item{colors}{a character (vector) specifying the colors for the ribbons.}
 
 \item{background}{a character specifying the color of the background.}
 
-\item{triangle}{logical. Whether to draw the triangle.}
-
-\item{seed}{the seed for the painting.}
+\item{triangle}{logical. Whether to draw the triangle that breaks the ribbon polygons.}
 }
 \value{
 A \code{ggplot} object containing the painting.

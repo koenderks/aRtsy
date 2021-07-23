@@ -5,7 +5,7 @@
 \title{Paint Langton's Ant on a Canvas}
 \usage{
 paint_ant(colors, background = '#fafafa', iterations = 1e7,
-          seed = 1, width = 200, height = 200)
+          width = 200, height = 200)
 }
 \arguments{
 \item{colors}{a character (vector) specifying the colors for the ant.}
@@ -13,8 +13,6 @@ paint_ant(colors, background = '#fafafa', iterations = 1e7,
 \item{background}{a character specifying the color of the background.}
 
 \item{iterations}{the number of iterations of the ant.}
-
-\item{seed}{the seed for the painting.}
 
 \item{width}{the width of the painting in pixels.}
 

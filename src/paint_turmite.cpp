@@ -13,13 +13,11 @@ arma::mat iterate_turmite(arma::mat X,
                           int iters,
                           int row,
                           int col,
-                          double p,
-						  int seed){
+                          double p){
   int m = X.n_rows;
   int n = X.n_cols;
   int i = 0;
   int state = 0;
-  srand (seed);
   while(i < iters){
     double stateSwap = (double) rand() / RAND_MAX;
     if(stateSwap < p){

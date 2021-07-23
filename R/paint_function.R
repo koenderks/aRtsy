@@ -2,11 +2,10 @@
 #'
 #' @description This function paints functions and mimics the functionality of the \code{generativeart} package.
 #'
-#' @usage paint_function(color, background = '#fafafa', seed = 1)
+#' @usage paint_function(color, background = '#fafafa')
 #'
 #' @param color   	  a character specifying the color used for the function shape.
 #' @param background  a character specifying the color used for the background.
-#' @param seed        the seed for the painting.
 #'
 #' @references \url{https://github.com/cutterkom/generativeart}
 #'
@@ -22,13 +21,12 @@
 #' @export
 #' @importFrom dplyr %>%
 
-paint_function <- function(color, background = '#fafafa', seed = 1){
+paint_function <- function(color, background = '#fafafa'){
   x <- y <- z <- NULL
   if(length(color) > 1)
     stop("Can only take one color value.")
   if(length(background) > 1)
     stop("Can only take one background value.")
-  set.seed(seed)
   painting_formulas <- list()
   painting_formulas[[1]] <- list( 
     x = quote(runif(1, -10, 10) * x_i^sample(c(0.5, 1:6), 1) - sin(y_i^sample(c(0.5, 1:6), 1)) * runif(1, -100, 100)),

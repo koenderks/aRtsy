@@ -5,7 +5,7 @@
 \title{Paint Strokes on a Canvas}
 \usage{
 paint_strokes(colors, neighbors = 1, p = 0.01, iterations = 1, 
-              seed = 1, width = 500, height = 500, side = FALSE)
+              width = 500, height = 500, side = FALSE)
 }
 \arguments{
 \item{colors}{a character (vector) specifying the colors used for the strokes.}
@@ -15,8 +15,6 @@ paint_strokes(colors, neighbors = 1, p = 0.01, iterations = 1,
 \item{p}{the probability of selecting a new color at each block. A higher probability adds more noise to the painting.}
 
 \item{iterations}{the number of iterations on the painting. More iterations fade the painting.}
-
-\item{seed}{the seed for the painting.}
 
 \item{width}{the width of the painting in pixels.}
 

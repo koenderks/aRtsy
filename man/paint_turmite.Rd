@@ -5,7 +5,7 @@
 \title{Paint a Turmite on a Canvas}
 \usage{
 paint_turmite(color, background = '#fafafa', p = 0.5, iterations = 1e7, 
-              seed = 1, width = 1500, height = 1500)
+              width = 1500, height = 1500)
 }
 \arguments{
 \item{color}{a character specifying the color used for the turmite.}
@@ -15,8 +15,6 @@ paint_turmite(color, background = '#fafafa', p = 0.5, iterations = 1e7,
 \item{p}{the probability of a state switch within the turmite.}
 
 \item{iterations}{the number of iterations of the turmite.}
-
-\item{seed}{the seed for the painting.}
 
 \item{width}{the width of the painting in pixels.}
 

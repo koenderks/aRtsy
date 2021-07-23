@@ -13,8 +13,7 @@ arma::mat iterate_ant(arma::mat X,
                       int iters,
                       int row,
                       int col,
-					  Rcpp::DataFrame c,
-					  int seed){
+                      Rcpp::DataFrame c){
   Rcpp::IntegerVector dx = c["x"];
   Rcpp::IntegerVector dy = c["y"];
   int m = X.n_rows;
@@ -27,7 +26,6 @@ arma::mat iterate_ant(arma::mat X,
   int typeOne = 0; // 0 = L; 1 = R
   int prc = 0; // Counter keeps track of when we need to switch
   int s = 10000;
-  srand (seed);
   while (i < iters) {
 	if (prc == s) { // Switch color every s itertions
 	  prc = 0; // Reset the switch counter

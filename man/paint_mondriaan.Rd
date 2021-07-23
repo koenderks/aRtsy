@@ -5,7 +5,7 @@
 \title{Paint a Mondriaan on a Canvas}
 \usage{
 paint_mondriaan(colors, background = '#000000', cuts = 50, ratio = 1.618,
-                seed = 1, width = 100, height = 100)
+                width = 100, height = 100)
 }
 \arguments{
 \item{colors}{a character vector specifying the colors used in the squares.}
@@ -15,8 +15,6 @@ paint_mondriaan(colors, background = '#000000', cuts = 50, ratio = 1.618,
 \item{cuts}{the number of cuts to make.}
 
 \item{ratio}{the \code{1:1} ratio for each cut.}
-
-\item{seed}{the seed for the painting.}
 
 \item{width}{the width of the painting in pixels.}
 
