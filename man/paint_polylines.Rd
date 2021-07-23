@@ -5,7 +5,7 @@
 \title{Paint Polygons and Lines on Canvas}
 \usage{
 paint_polylines(colors, background = '#fafafa', ratio = 0.5, iterations = 1000, 
-                alpha = NULL, size = 0.25, width = 500, height = 500)
+                alpha = NULL, size = 0.1, width = 500, height = 500)
 }
 \arguments{
 \item{colors}{a character (vector) specifying the colors used for the strokes.}
