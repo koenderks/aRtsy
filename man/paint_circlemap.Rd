@@ -18,7 +18,7 @@ paint_circlemap(colors, x_min = 0, x_max = 12.56, y_min = 0, y_max = 1,
 
 \item{y_max}{a numeric value specifying the maximum value for the y-axis.}
 
-\item{seed}{the seed for the painting.}
+\item{iterations}{the number of iterations.}
 
 \item{width}{the width of the painting in pixels.}
 

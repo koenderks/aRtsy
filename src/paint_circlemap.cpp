@@ -13,13 +13,11 @@ arma::mat iterate_circlemap(arma::mat X,
 							double kmax,
 							double phimin,
 							double phimax,
-						    int iterations,
-						    int seed){
+						    int iterations){
   int m = X.n_rows;
   int n = X.n_cols;
   double K = kmax;
   double phi = phimin;
-  srand (seed);
   for (int iter = 0; iter < iterations; iter++) {
 	for (int row = 0; row < m; row++) {
 		for (int col = 0; col < n; col++) {

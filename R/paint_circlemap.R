@@ -10,8 +10,8 @@
 #' @param x_max   	  a numeric value specifying the maximum value for the x-axis.
 #' @param y_min   	  a numeric value specifying the minimum value for the y-axis.
 #' @param y_max   	  a numeric value specifying the maximum value for the y-axis.
+#' @param iterations  the number of iterations.
 #' @param colors   	  a character specifying the color used for the function shape.
-#' @param seed        the seed for the painting.
 #' @param width       the width of the painting in pixels.
 #' @param height      the height of the painting in pixels.
 #'
@@ -30,9 +30,9 @@
 #' @importFrom dplyr %>%
 
 paint_circlemap <- function(colors, x_min = 0, x_max = 12.56, y_min = 0, y_max = 1, 
-							              iterations = 10, seed = 1, width = 1500, height = 1500) {
+							              iterations = 10, width = 1500, height = 1500) {
   canvas <- matrix(1, nrow = height, ncol = width)
-  canvas <- iterate_circlemap(canvas, x_min, x_max, y_min, y_max, iterations, seed)
+  canvas <- iterate_circlemap(canvas, x_min, x_max, y_min, y_max, iterations)
   canvas <- (canvas / iterations) / length(colors)
   full_canvas <- reshape2::melt(canvas)
   colnames(full_canvas) <- c("y", "x", "z")

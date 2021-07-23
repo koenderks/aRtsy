@@ -18,7 +18,7 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
-#' paint_arcs(colors = c('darkgreen', 'goldenrod', 'firebrick'), n = 9)
+#' aRtsy:::paint_arcs(colors = c('darkgreen', 'goldenrod', 'firebrick'), n = 9)
 #' 
 #' @keywords paint
 #'

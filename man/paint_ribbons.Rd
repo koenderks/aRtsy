@@ -4,7 +4,7 @@
 \alias{paint_ribbons}
 \title{Paint Ribbons on a Canvas}
 \usage{
-paint_ribbons(colors, background = '#fdf5e6', seed = 1)
+paint_ribbons(colors, background = '#fdf5e6', triangle = TRUE, seed = 1)
 }
 \arguments{
 \item{colors}{a character (vector) specifying the colors for the lines.}

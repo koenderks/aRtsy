@@ -28,8 +28,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // iterate_circlemap
-arma::mat iterate_circlemap(arma::mat X, double kmin, double kmax, double phimin, double phimax, int iterations, int seed);
-RcppExport SEXP _aRtsy_iterate_circlemap(SEXP XSEXP, SEXP kminSEXP, SEXP kmaxSEXP, SEXP phiminSEXP, SEXP phimaxSEXP, SEXP iterationsSEXP, SEXP seedSEXP) {
+arma::mat iterate_circlemap(arma::mat X, double kmin, double kmax, double phimin, double phimax, int iterations);
+RcppExport SEXP _aRtsy_iterate_circlemap(SEXP XSEXP, SEXP kminSEXP, SEXP kmaxSEXP, SEXP phiminSEXP, SEXP phimaxSEXP, SEXP iterationsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -39,8 +39,7 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type phimin(phiminSEXP);
     Rcpp::traits::input_parameter< double >::type phimax(phimaxSEXP);
     Rcpp::traits::input_parameter< int >::type iterations(iterationsSEXP);
-    Rcpp::traits::input_parameter< int >::type seed(seedSEXP);
-    rcpp_result_gen = Rcpp::wrap(iterate_circlemap(X, kmin, kmax, phimin, phimax, iterations, seed));
+    rcpp_result_gen = Rcpp::wrap(iterate_circlemap(X, kmin, kmax, phimin, phimax, iterations));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -116,7 +115,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_aRtsy_iterate_ant", (DL_FUNC) &_aRtsy_iterate_ant, 6},
-    {"_aRtsy_iterate_circlemap", (DL_FUNC) &_aRtsy_iterate_circlemap, 7},
+    {"_aRtsy_iterate_circlemap", (DL_FUNC) &_aRtsy_iterate_circlemap, 6},
     {"_aRtsy_iterate_mondriaan", (DL_FUNC) &_aRtsy_iterate_mondriaan, 6},
     {"_aRtsy_iterate_planet", (DL_FUNC) &_aRtsy_iterate_planet, 12},
     {"_aRtsy_iterate_strokes", (DL_FUNC) &_aRtsy_iterate_strokes, 5},

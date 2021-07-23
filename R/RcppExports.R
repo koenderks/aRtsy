@@ -5,8 +5,8 @@ iterate_ant <- function(X, iters, row, col, c, seed) {
     .Call('_aRtsy_iterate_ant', PACKAGE = 'aRtsy', X, iters, row, col, c, seed)
 }
 
-iterate_circlemap <- function(X, kmin, kmax, phimin, phimax, iterations, seed) {
-    .Call('_aRtsy_iterate_circlemap', PACKAGE = 'aRtsy', X, kmin, kmax, phimin, phimax, iterations, seed)
+iterate_circlemap <- function(X, kmin, kmax, phimin, phimax, iterations) {
+    .Call('_aRtsy_iterate_circlemap', PACKAGE = 'aRtsy', X, kmin, kmax, phimin, phimax, iterations)
 }
 
 iterate_mondriaan <- function(X, neighbors, s, cuts, ratio, seed) {

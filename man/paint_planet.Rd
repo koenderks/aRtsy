@@ -7,7 +7,7 @@
 paint_planet(colors, threshold = 4, iterations = 200, 
              starprob = 0.01, fade = 0.2,
              radius = NULL, center.x = NULL, center.y = NULL, 
-             seed = 1, width = 1500, height = 1500)
+             light.right = TRUE, seed = 1, width = 1500, height = 1500)
 }
 \arguments{
 \item{colors}{a character specifying the colors used for the planets}
@@ -26,7 +26,7 @@ paint_planet(colors, threshold = 4, iterations = 200,
 
 \item{center.y}{the y-axis coordinate(s) for the center(s) of the planet(s).}
 
-\item{light_right}{whether to draw the light from the right or the left.}
+\item{light.right}{whether to draw the light from the right or the left.}
 
 \item{seed}{the seed for the painting.}
 

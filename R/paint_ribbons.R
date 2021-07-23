@@ -2,7 +2,7 @@
 #'
 #' @description This function paints ribbons and (optionally) a triangle in the middle.
 #'
-#' @usage paint_ribbons(colors, background = '#fdf5e6', seed = 1)
+#' @usage paint_ribbons(colors, background = '#fdf5e6', triangle = TRUE, seed = 1)
 #'
 #' @param colors      a character (vector) specifying the colors for the lines.
 #' @param background  a character specifying the color of the background.
