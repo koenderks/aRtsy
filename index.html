@@ -83,7 +83,7 @@
 <a href="#artsy-generative-art-with-r-and-ggplot2" class="anchor"></a>aRtsy: Generative Art with <code>R</code> and <code>ggplot2</code>
 </h1></div>
 <p><img src="https://github.com/koenderks/aRtsy/raw/master/man/figures/logo.png" width="149" height="173" alt="logo" align="right" margin-left="20" margin-right="20"></p>
-<p><code>aRtsy</code> is an attempt at making generative art available for the masses in a simple and standardized format. The package combines several algorithms for creating paintings in <code>ggplot2</code> that have the potential to be different (often depending on the set <code>seed</code>). Each type of algorithm is implemented in a separate function.</p>
+<p><code>aRtsy</code> is an attempt at making generative art available for the masses in a simple and standardized format. The package combines several algorithms for creating paintings in <code>ggplot2</code> that have the potential to be different (often depending on the set <code>seed</code>). Each type of painting is implemented in a separate function.</p>
 <p>Contributions to <code>aRtsy</code> are much appreciated. Good luck hunting for some great <code>seed</code>’s!</p>
 <div id="painting-of-the-day" class="section level2">
 <h2 class="hasAnchor">
@@ -96,26 +96,26 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can download the development version of the <code>aRtsy</code> package from GitHub using:</p>
+<p>You can download the <code>aRtsy</code> package from GitHub using:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'koenderks/aRtsy'</span><span class="op">)</span></code></pre></div>
 <p>After installation, the <code>aRtsy</code> package can be loaded with:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/koenderks/aRtsy">aRtsy</a></span><span class="op">)</span></code></pre></div>
 </div>
-<div id="overview" class="section level2">
+<div id="available-paintings" class="section level2">
 <h2 class="hasAnchor">
-<a href="#overview" class="anchor"></a>Overview</h2>
+<a href="#available-paintings" class="anchor"></a>Available paintings</h2>
 <ul>
 <li><a href="#paint-strokes"><code>paint_strokes()</code></a></li>
-<li><a href="#paint-ribbons"><code>paint_ribbons()</code></a></li>
-<li><a href="#paint-polylines"><code>paint_polylines()</code></a></li>
-<li><a href="#paint-turmite"><code>paint_turmite()</code></a></li>
-<li><a href="#paint-ant"><code>paint_ant()</code></a></li>
-<li><a href="#paint-planets"><code>paint_planet()</code></a></li>
-<li><a href="#paint-mondriaan"><code>paint_mondriaan()</code></a></li>
-<li><a href="#paint-circle-maps"><code>paint_cirlemap()</code></a></li>
-<li><a href="#paint-function"><code>paint_function()</code></a></li>
+<li><a href="#ribbons"><code>paint_ribbons()</code></a></li>
+<li><a href="#polylines"><code>paint_polylines()</code></a></li>
+<li><a href="#turmite"><code>paint_turmite()</code></a></li>
+<li><a href="#langtons-ant"><code>paint_ant()</code></a></li>
+<li><a href="#planets"><code>paint_planet()</code></a></li>
+<li><a href="#mondriaan"><code>paint_mondriaan()</code></a></li>
+<li><a href="#circle-maps"><code>paint_cirlemap()</code></a></li>
+<li><a href="#functions"><code>paint_function()</code></a></li>
 </ul>
 </div>
 <div id="paint-strokes" class="section level2">
@@ -126,23 +126,23 @@
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-21.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-20.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-10.png" width="270" height="270"></p>
 </div>
-<div id="paint-ribbons" class="section level2">
+<div id="ribbons" class="section level2">
 <h2 class="hasAnchor">
-<a href="#paint-ribbons" class="anchor"></a>Paint ribbons</h2>
+<a href="#ribbons" class="anchor"></a>Ribbons</h2>
 <p>This function paints colored ribbons with (or without) a triangle that breaks their paths. This path of the ribbon polygon is creating by picking one point on the left side of the triangle and one point on the right side at random and using these points as nodes.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/master/png/ribbons/2021-07-16.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/ribbons/2021-07-15.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/ribbons/2021-07-14.png" width="270" height="270"></p>
 </div>
-<div id="paint-polylines" class="section level2">
+<div id="polylines" class="section level2">
 <h2 class="hasAnchor">
-<a href="#paint-polylines" class="anchor"></a>Paint polylines</h2>
+<a href="#polylines" class="anchor"></a>Polylines</h2>
 <p>This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the painting.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-22.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-23.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-21.png" width="270" height="270"></p>
 </div>
-<div id="paint-turmite" class="section level2">
+<div id="turmite" class="section level2">
 <h2 class="hasAnchor">
-<a href="#paint-turmite" class="anchor"></a>Paint turmite</h2>
+<a href="#turmite" class="anchor"></a>Turmite</h2>
 <p>According to <a href="https://en.wikipedia.org/wiki/Turmite">wikipedia</a>, a turmite is <em>“a Turing machine which has an orientation in addition to a current state and a”tape" that consists of an infinite two-dimensional grid of cells"</em>. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in <code>aRtsy</code> is slightly modified so that the turmite does not go off the canvas, but instead bounces back onto the canvas.</p>
 <ol>
 <li>Turn on the spot (left, right, up, or down),</li>
@@ -153,9 +153,9 @@
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-06.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-09.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-08.png" width="270" height="270"></p>
 </div>
-<div id="paint-ant" class="section level2">
+<div id="langtons-ant" class="section level2">
 <h2 class="hasAnchor">
-<a href="#paint-ant" class="anchor"></a>Paint ant</h2>
+<a href="#langtons-ant" class="anchor"></a>Langton’s ant</h2>
 <p>According to <a href="https://en.wikipedia.org/wiki/Langton%27s_ant">wikipedia</a>, Langton’s ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below. Beware, the problem (or blessing) of Langton’s ant is that it always moves off the canvas…</p>
 <ol>
 <li>On a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block.</li>
@@ -166,33 +166,33 @@
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-03.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-02.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-01.png" width="270" height="270"></p>
 </div>
-<div id="paint-planets" class="section level2">
+<div id="planets" class="section level2">
 <h2 class="hasAnchor">
-<a href="#paint-planets" class="anchor"></a>Paint planets</h2>
+<a href="#planets" class="anchor"></a>Planets</h2>
 <p>We all love space, and this type of painting puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (inspired by an idea from <a href="https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/">Fronkonstin</a>) to fill in their surfaces.</p>
 <p>You can use the <code><a href="reference/paint_planet.html">paint_planet()</a></code> function to make your own painting using this algorithm.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-26.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-27.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-28.png" width="270" height="270"></p>
 </div>
-<div id="paint-mondriaan" class="section level2">
+<div id="mondriaan" class="section level2">
 <h2 class="hasAnchor">
-<a href="#paint-mondriaan" class="anchor"></a>Paint Mondriaan</h2>
+<a href="#mondriaan" class="anchor"></a>Mondriaan</h2>
 <p>This type of painting mimics the style of the well-known paintings by the Dutch artist <a href="https://nl.wikipedia.org/wiki/Piet_Mondriaan">Piet Mondriaan</a>. It works by repeatedly cutting into the canvas at random locations and coloring the square that these cuts create.</p>
 <p>You can use the <code><a href="reference/paint_mondriaan.html">paint_mondriaan()</a></code> function to make your own painting using this algorithm.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-03-01.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-28.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-29.png" width="270" height="270"></p>
 </div>
-<div id="paint-circle-maps" class="section level2">
+<div id="circle-maps" class="section level2">
 <h2 class="hasAnchor">
-<a href="#paint-circle-maps" class="anchor"></a>Paint circle maps</h2>
+<a href="#circle-maps" class="anchor"></a>Circle maps</h2>
 <p>This type of painting is based on the concept of an <a href="https://en.wikipedia.org/wiki/Arnold_tongue">Arnold tongue</a>. According to wikipedia, Arnold tongues <em>“are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters”</em>.</p>
 <p>You can use the <code><a href="reference/paint_circlemap.html">paint_circlemap()</a></code> function to make your own painting using this algorithm.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22b.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22c.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22a.png" width="270" height="270"></p>
 </div>
-<div id="paint-function" class="section level2">
+<div id="functions" class="section level2">
 <h2 class="hasAnchor">
-<a href="#paint-function" class="anchor"></a>Paint function</h2>
+<a href="#functions" class="anchor"></a>Functions</h2>
 <p>The idea for this type of painting is taken over from the <a href="https://github.com/cutterkom/generativeart"><code>generativeart</code></a> package. In this algorithm, the position of every single point is calculated by a formula which has random parameters.</p>
 <p>You can use the <code><a href="reference/paint_function.html">paint_function()</a></code> function to make your own painting using this algorithm.</p>
 <p align="center">
