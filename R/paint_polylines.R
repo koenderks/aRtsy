@@ -1,6 +1,6 @@
 #' Paint Polygons and Lines on Canvas
 #'
-#' @description This function creates polygons with lines.
+#' @description This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the painting.
 #'
 #' @usage paint_polylines(colors, background = '#fafafa', ratio = 0.5, iterations = 1000, 
 #'                 alpha = NULL, size = 0.1, width = 500, height = 500)

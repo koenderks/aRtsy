@@ -28,7 +28,7 @@ paint_polylines(colors, background = '#fafafa', ratio = 0.5, iterations = 1000,
 A \code{ggplot} object containing the painting.
 }
 \description{
-This function creates polygons with lines.
+This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the painting.
 }
 \examples{
 set.seed(1)
