@@ -22,6 +22,7 @@
 #' @importFrom ggpubr ggarrange
 
 paint_ribbons <- function(colors, background = '#fdf5e6', triangle = TRUE) {
+  x <- y <- NULL
   # Create an empty figure
   p <- ggplot2::ggplot() +
     ggplot2::xlim(c(0, 100)) +

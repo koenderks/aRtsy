@@ -25,13 +25,7 @@ The full collection of daily paintings can be viewed on the [aRtsy twitter page]
 
 ## Installation
 
-The most recently released version of `aRtsy` can be downloaded from [CRAN](https://cran.r-project.org/package=aRtsy) by running the following command in R:
-
-```r
-install.packages('aRtsy')
-```
-
-Alternatively, you can download the development version from GitHub using:
+You can download the development version of the `aRtsy` package from GitHub using:
 
 ```r
 devtools::install_github('koenderks/aRtsy')
@@ -78,6 +72,8 @@ This function paints colored ribbons with (or without) a triangle that breaks th
 </p>
 
 ## Paint polylines
+
+This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the painting.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-22.png' width='270' height='270'>
