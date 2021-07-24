@@ -96,14 +96,11 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>The most recently released version of <code>aRtsy</code> can be downloaded from <a href="https://cran.r-project.org/package=aRtsy">CRAN</a> by running the following command in R:</p>
+<p>You can download the development version of the <code>aRtsy</code> package from GitHub using:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'aRtsy'</span><span class="op">)</span></code></pre></div>
-<p>Alternatively, you can download the development version from GitHub using:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'koenderks/aRtsy'</span><span class="op">)</span></code></pre></div>
 <p>After installation, the <code>aRtsy</code> package can be loaded with:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/koenderks/aRtsy">aRtsy</a></span><span class="op">)</span></code></pre></div>
 </div>
 <div id="overview" class="section level2">
@@ -139,6 +136,7 @@
 <div id="paint-polylines" class="section level2">
 <h2 class="hasAnchor">
 <a href="#paint-polylines" class="anchor"></a>Paint polylines</h2>
+<p>This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the painting.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-22.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-23.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-21.png" width="270" height="270"></p>
 </div>
