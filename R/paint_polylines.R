@@ -56,7 +56,7 @@ paint_polylines <- function(colors, background = '#fafafa', ratio = 0.5, iterati
                                         panel.background = ggplot2::element_rect(fill = background, colour = background),
                                         panel.border = ggplot2::element_blank(),
                                         panel.grid = ggplot2::element_blank(),
-                                        plot.margin = ggplot2::unit(c(0,0,0,0), "cm"),
+                                        plot.margin = ggplot2::unit(rep(-1.25,4),"lines"),
                                         plot.background = ggplot2::element_rect(fill = background, colour = background),
                                         strip.background = ggplot2::element_blank(),
                                         strip.text = ggplot2::element_blank())

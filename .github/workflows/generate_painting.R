@@ -38,17 +38,18 @@ if (type == 1){
   
 } else if (type == 4){
   
+  dims <- sample(c(500, 1000, 1500), size = 1)
   painting <- aRtsy::paint_ant(colors = randomcoloR::randomColor(count = sample(1:20, size = 1)),
                                background = sample(c("#fafafa", "#cc7722", "#a9d2c3", "#fc7c7c", randomColor(count = 1)), size = 1),
                                iterations = 1e7,
-                               width = 500, 
-                               height = 500)
+                               width = dims, 
+                               height = dims)
   
 } else if(type == 5){
   
   painting <- aRtsy::paint_mondriaan(colors = randomcoloR::randomColor(count = sample(3:10, size = 1)),
                                      background = '#000000',
-                                     cuts = sample(5:200, size = 1),
+                                     cuts = sample(10:200, size = 1),
                                      ratio = 1.618,
                                      width = 100,
                                      height = 100)
