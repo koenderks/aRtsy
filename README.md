@@ -55,13 +55,20 @@ library(aRtsy)
 
 When you think of the act of painting, you probably imagine stroking paint on a canvas. This type of painting tries to mimic that activity. The paint strokes algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor chance of generating a new color. Going over the canvas like this results in strokes of paint. Repeating this a number of times creates more faded strokes of paint.
 
-You can use the `paint_strokes()` function to make your own painting using this algorithm.
-
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-21.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-20.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-10.png' width='270' height='270'>
 </p>
+
+You can use the `paint_strokes()` function to make your own painting using this algorithm.
+
+```r
+set.seed(1)
+paint_strokes(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), 
+              neighbors = 1, p = 0.01, iterations = 1, 
+              width = 500, height = 500, side = FALSE))
+```
 
 ## Ribbons
 
@@ -73,6 +80,14 @@ This function paints colored ribbons with (or without) a triangle that breaks th
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ribbons/2021-07-14.png' width='270' height='270'>
 </p>
 
+You can use the `paint_ribbons()` function to make your own painting using this algorithm.
+
+```r
+set.seed(1)
+paint_ribbons(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod"),
+              background = '#fdf5e6', triangle = TRUE)
+```
+
 ## Polylines
 
 This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the painting.
@@ -83,6 +98,15 @@ This function draws many points on the canvas and connects these points into a p
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-21.png' width='270' height='270'>
 </p>
 
+You can use the `paint_polylines()` function to make your own painting using this algorithm.
+
+```r
+set.seed(1)
+paint_polylines(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), 
+                background = '#fafafa', ratio = 0.5, iterations = 1000, 
+                alpha = NULL, size = 0.1, width = 500, height = 500)
+```
+
 ## Turmite
 
 According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *"a Turing machine which has an orientation in addition to a current state and a "tape" that consists of an infinite two-dimensional grid of cells"*. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in `aRtsy` is slightly modified so that the turmite does not go off the canvas, but instead bounces back onto the canvas.
@@ -91,13 +115,19 @@ According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *"
 2. Change the color of the block,
 3. Move forward one block.
 
-You can use the `paint_turmite()` function to make your own painting using this algorithm.
-
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-06.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-09.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-08.png' width='270' height='270'>
 </p>
+
+You can use the `paint_turmite()` function to make your own painting using this algorithm.
+
+```r
+set.seed(1)
+paint_turmite(color = "#000000", background = "#fafafa", p = 0.5, 
+              iterations = 1e7, width = 1500, height = 1500)
+```
 
 ## Langton's ant
 
@@ -107,19 +137,22 @@ According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langton
 1. On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block.
 1. The ant is able to cycle through different colors which correspond to different combinations of these rules.
 
-You can use the `paint_ant()` function to make your own painting using this algorithm.
-
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-03.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-02.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-01.png' width='270' height='270'>
-</p> 
+</p>
+
+You can use the `paint_ant()` function to make your own painting using this algorithm.
+
+```r
+paint_ant(colors = '#000000', background = '#fafafa', iterations = 1e7,
+          width = 200, height = 200)
+```
 
 ## Planets
 
 We all love space, and this type of painting puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (inspired by an idea from [Fronkonstin](https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/)) to fill in their surfaces.
-
-You can use the `paint_planet()` function to make your own painting using this algorithm.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-26.png' width='270' height='270'>
@@ -127,23 +160,41 @@ You can use the `paint_planet()` function to make your own painting using this a
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-28.png' width='270' height='270'>
 </p>
 
+You can use the `paint_planet()` function to make your own painting using this algorithm.
+
+```r
+# Sun behind Earth and Moon
+set.seed(1)
+colors <- list(c("khaki1", "lightcoral", "lightsalmon"),
+               c("dodgerblue", "forestgreen", "white"), 
+               c("gray", "darkgray", "beige"))
+paint_planet(colors, radius = c(800, 400, 150), 
+             center.x = c(1, 500, 1100),
+             center.y = c(1400, 500, 1000), 
+             starprob = 0.005)
+```
+
 ## Mondriaan
 
 This type of painting mimics the style of the well-known paintings by the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan). It works by repeatedly cutting into the canvas at random locations and coloring the square that these cuts create.
-
-You can use the `paint_mondriaan()` function to make your own painting using this algorithm.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-03-01.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-28.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-29.png' width='270' height='270'>
-</p> 
+</p>
+
+You can use the `paint_mondriaan()` function to make your own painting using this algorithm.
+
+```r
+set.seed(6)
+paint_mondriaan(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'),
+                cuts = 50, ratio = 1.618, width = 100, height = 100)
+```
 
 ## Circle maps
 
 This type of painting is based on the concept of an [Arnold tongue](https://en.wikipedia.org/wiki/Arnold_tongue). According to wikipedia, Arnold tongues *"are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters"*.
-
-You can use the `paint_circlemap()` function to make your own painting using this algorithm.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22b.png' width='270' height='270'>
@@ -151,14 +202,27 @@ You can use the `paint_circlemap()` function to make your own painting using thi
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22a.png' width='270' height='270'>
 </p>
 
+You can use the `paint_circlemap()` function to make your own painting using this algorithm.
+
+```r
+paint_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'),
+                x_min = 0, x_max = 12.56, y_min = 0, y_max = 1, 
+                iterations = 10, width = 1500, height = 1500)
+```
+
 ## Functions
 
 The idea for this type of painting is taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package. In this algorithm, the position of every single point is calculated by a formula which has random parameters.
-
-You can use the `paint_function()` function to make your own painting using this algorithm.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/functions/2021-03-17.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/functions/2021-04-08.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/functions/2021-04-04.png' width='270' height='270'>
 </p>
+
+You can use the `paint_function()` function to make your own painting using this algorithm.
+
+```r
+set.seed(1)
+paint_function(color = '#000000', background = '#fafafa')
+```
