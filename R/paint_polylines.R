@@ -6,10 +6,10 @@
 #'                 alpha = NULL, size = 0.1, width = 500, height = 500)
 #'
 #' @param colors      a character (vector) specifying the colors used for the strokes.
-#' @param background  a character specifying the color used for the background (borders).
+#' @param background  a character specifying the color used for the borders.
 #' @param ratio       width of the polygons. Larger ratios cause more overlap.
-#' @param iterations  the number of iterations on the painting.
-#' @param alpha       transparency of the polygons.
+#' @param iterations  the number of points for each polygon.
+#' @param alpha       transparency of the polygons. If \code{NULL}, added layers become increasingly more transparent.
 #' @param size        size of the borders.
 #' @param width       the width of the painting in pixels.
 #' @param height      the height of the painting in pixels.

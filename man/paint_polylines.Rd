@@ -10,13 +10,13 @@ paint_polylines(colors, background = '#fafafa', ratio = 0.5, iterations = 1000,
 \arguments{
 \item{colors}{a character (vector) specifying the colors used for the strokes.}
 
-\item{background}{a character specifying the color used for the background (borders).}
+\item{background}{a character specifying the color used for the borders.}
 
 \item{ratio}{width of the polygons. Larger ratios cause more overlap.}
 
-\item{iterations}{the number of iterations on the painting.}
+\item{iterations}{the number of points for each polygon.}
 
-\item{alpha}{transparency of the polygons.}
+\item{alpha}{transparency of the polygons. If \code{NULL}, added layers become increasingly more transparent.}
 
 \item{size}{size of the borders.}
 
