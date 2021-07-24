@@ -28,7 +28,7 @@ arma::mat iterate_polylines(arma::mat X,
         x1 = 0;
       if (x1 > cols)
         x1 = cols;
-      if (x1 > X(0, 0) + (xradius * R::runif(0.5, 2)) | x1 < X(0, 0) - (xradius * R::runif(0.5, 2)))
+      if ((x1 > (X(0, 0) + (xradius * R::runif(0.5, 2)))) | (x1 < (X(0, 0) - (xradius * R::runif(0.5, 2)))))
         x1 = X(i-1, 0);
     } else {
       x1 = X(i-1, 0);
@@ -41,7 +41,7 @@ arma::mat iterate_polylines(arma::mat X,
         y1 = 0;
       if (y1 > rows)
         y1 = rows;
-      if (y1 > X(0, 1) + (yradius * R::runif(0.5, 2)) | y1 < X(0, 1) - (yradius * R::runif(0.5, 2)))
+      if ((y1 > (X(0, 1) + (yradius * R::runif(0.5, 2)))) | (y1 < (X(0, 1) - (yradius * R::runif(0.5, 2)))))
         y1 = X(i-1, 1);
     } else {
       y1 = X(i-1, 1);
