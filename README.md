@@ -11,7 +11,9 @@
 
 `aRtsy` is an attempt at making generative art available for the masses in a simple and standardized format. The package combines several algorithms for creating paintings in `ggplot2` that have the potential to be different (often depending on the set `seed`). Each type of painting is implemented in a separate function.
 
-Contributions to `aRtsy` are much appreciated. Good luck hunting for some great `seed`'s!
+Contributions to `aRtsy` are much appreciated. If you want to add your own type of painting to the package so that others can use them, feel free to make a pull request to the [github repository](https://github.com/koenderks/aRtsy). Don't forget to adjust [generate-painting.R](https://github.com/koenderks/aRtsy/blob/master/.github/workflows/generate_painting.R) if you also want the painting to show up in the 'painting of the day' category and the twitter feed.
+
+Good luck hunting for some good `seed`'s!
 
 ## Painting of the day
 
