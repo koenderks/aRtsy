@@ -15,7 +15,7 @@ Contributions to `aRtsy` are much appreciated. Good luck hunting for some great 
 
 ## Painting of the day
 
-Each day at 12 pm (CET) this repository generates a random painting using the `aRtsy` package. This is today's painting:
+Every 24 hours this repository generates a random painting using the `aRtsy` package. This is today's painting:
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/daily.png' width='400' height='400'>
