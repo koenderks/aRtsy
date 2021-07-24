@@ -27,13 +27,7 @@ The full collection of daily paintings is available on the [aRtsy twitter feed](
 
 ## Installation
 
-The most recently released version of `aRtsy` can be downloaded from [CRAN](https://cran.r-project.org/package=aRtsy) by running the following command in R:
-
-```r
-install.packages('aRtsy')
-```
-
-Alternatively, you can download the development version from GitHub using:
+You can download the `aRtsy` package from GitHub using:
 
 ```r
 devtools::install_github('koenderks/aRtsy')
