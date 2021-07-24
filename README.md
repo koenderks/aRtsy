@@ -9,7 +9,7 @@
 
 <img src='https://github.com/koenderks/aRtsy/raw/master/man/figures/logo.png' width='149' height='173' alt='logo' align='right' margin-left='20' margin-right='20'/>
 
-`aRtsy` is an attempt at making generative art available for the masses in a simple and standardized format. The package combines several algorithms for creating paintings in `ggplot2` that have the potential to be different (often depending on the set `seed`). Each type of algorithm is implemented in a separate function.
+`aRtsy` is an attempt at making generative art available for the masses in a simple and standardized format. The package combines several algorithms for creating paintings in `ggplot2` that have the potential to be different (often depending on the set `seed`). Each type of painting is implemented in a separate function.
 
 Contributions to `aRtsy` are much appreciated. Good luck hunting for some great `seed`'s!
 
@@ -25,7 +25,7 @@ The full collection of daily paintings can be viewed on the [aRtsy twitter page]
 
 ## Installation
 
-You can download the development version of the `aRtsy` package from GitHub using:
+You can download the `aRtsy` package from GitHub using:
 
 ```r
 devtools::install_github('koenderks/aRtsy')
@@ -37,17 +37,17 @@ After installation, the `aRtsy` package can be loaded with:
 library(aRtsy)
 ```
 
-## Overview
+## Available paintings
 
 * [`paint_strokes()`](#paint-strokes)
-* [`paint_ribbons()`](#paint-ribbons)
-* [`paint_polylines()`](#paint-polylines)
-* [`paint_turmite()`](#paint-turmite)
-* [`paint_ant()`](#paint-ant)
-* [`paint_planet()`](#paint-planets)
-* [`paint_mondriaan()`](#paint-mondriaan)
-* [`paint_cirlemap()`](#paint-circle-maps)
-* [`paint_function()`](#paint-function)
+* [`paint_ribbons()`](#ribbons)
+* [`paint_polylines()`](#polylines)
+* [`paint_turmite()`](#turmite)
+* [`paint_ant()`](#langtons-ant)
+* [`paint_planet()`](#planets)
+* [`paint_mondriaan()`](#mondriaan)
+* [`paint_cirlemap()`](#circle-maps)
+* [`paint_function()`](#functions)
 
 ## Paint strokes
 
@@ -61,7 +61,7 @@ You can use the `paint_strokes()` function to make your own painting using this 
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-10.png' width='270' height='270'>
 </p>
 
-## Paint ribbons
+## Ribbons
 
 This function paints colored ribbons with (or without) a triangle that breaks their paths. This path of the ribbon polygon is creating by picking one point on the left side of the triangle and one point on the right side at random and using these points as nodes.
 
@@ -71,7 +71,7 @@ This function paints colored ribbons with (or without) a triangle that breaks th
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ribbons/2021-07-14.png' width='270' height='270'>
 </p>
 
-## Paint polylines
+## Polylines
 
 This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the painting.
 
@@ -81,7 +81,7 @@ This function draws many points on the canvas and connects these points into a p
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-21.png' width='270' height='270'>
 </p>
 
-## Paint turmite
+## Turmite
 
 According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *"a Turing machine which has an orientation in addition to a current state and a "tape" that consists of an infinite two-dimensional grid of cells"*. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in `aRtsy` is slightly modified so that the turmite does not go off the canvas, but instead bounces back onto the canvas.
 
@@ -97,7 +97,7 @@ You can use the `paint_turmite()` function to make your own painting using this 
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-08.png' width='270' height='270'>
 </p>
 
-## Paint ant
+## Langton's ant
 
 According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langton's ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below. Beware, the problem (or blessing) of Langton's ant is that it always moves off the canvas...
 
@@ -113,7 +113,7 @@ You can use the `paint_ant()` function to make your own painting using this algo
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-01.png' width='270' height='270'>
 </p> 
 
-## Paint planets
+## Planets
 
 We all love space, and this type of painting puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (inspired by an idea from [Fronkonstin](https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/)) to fill in their surfaces.
 
@@ -125,7 +125,7 @@ You can use the `paint_planet()` function to make your own painting using this a
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-28.png' width='270' height='270'>
 </p>
 
-## Paint Mondriaan
+## Mondriaan
 
 This type of painting mimics the style of the well-known paintings by the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan). It works by repeatedly cutting into the canvas at random locations and coloring the square that these cuts create.
 
@@ -137,7 +137,7 @@ You can use the `paint_mondriaan()` function to make your own painting using thi
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-29.png' width='270' height='270'>
 </p> 
 
-## Paint circle maps
+## Circle maps
 
 This type of painting is based on the concept of an [Arnold tongue](https://en.wikipedia.org/wiki/Arnold_tongue). According to wikipedia, Arnold tongues *"are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters"*.
 
@@ -149,7 +149,7 @@ You can use the `paint_circlemap()` function to make your own painting using thi
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22a.png' width='270' height='270'>
 </p>
 
-## Paint function
+## Functions
 
 The idea for this type of painting is taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package. In this algorithm, the position of every single point is calculated by a formula which has random parameters.
 
