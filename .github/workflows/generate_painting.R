@@ -83,4 +83,4 @@ if (type == 1){
   
 }
 
-ggplot2::ggsave(painting, filename = filename, width = 7, height = 7, dpi = 500)
+ggplot2::ggsave(painting, filename = filename, width = 7, height = 7, dpi = 300)
