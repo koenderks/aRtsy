@@ -6,7 +6,7 @@ name: Create new painting manually
 jobs:
   update:
     name: Create new painting
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
