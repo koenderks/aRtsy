@@ -7,6 +7,8 @@ jobs:
   update:
     name: Create new painting
     runs-on: windows-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
 
       - name: Get current date
@@ -23,8 +25,8 @@ jobs:
       # Install required packages and update README
       - name: Install required packages
         run: |
-          install.packages(c("remotes", "randomcoloR"))
-          remotes::install_github("koenderks/aRtsy")
+          install.packages(c("devtools", "randomcoloR"))
+          devtools::install_github("koenderks/aRtsy")
         shell: Rscript {0}
 
       - name: Create new painting
