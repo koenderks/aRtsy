@@ -11,21 +11,21 @@
 
 *Why would anyone want to make art using computers? - Marcus du Sautoy, The Creative Code*
 
-`aRtsy` is an attempt at making generative art available for the masses in a simple and standardized format. The package combines several algorithms for creating paintings in `ggplot2` that have the potential to be different (often depending on the set `seed`). Each type of painting is implemented in a separate function.
+`aRtsy` is an attempt at making generative art available for the masses in a simple and standardized format. The package combines several algorithms for creating artworks in `ggplot2` that involve some form of randomness in their creation (depending on the set `seed`). Each type of artwork is implemented in a separate function.
 
-Contributions to `aRtsy` are much appreciated. If you want to add your own type of painting to the package so that others can use them, feel free to make a pull request to the [GitHub repository](https://github.com/koenderks/aRtsy). Don't forget to adjust [generate-painting.R](https://github.com/koenderks/aRtsy/blob/master/.github/workflows/generate_painting.R) if you also want the painting to show up in the 'painting of the day' category and the twitter feed.
+Contributions to `aRtsy` are much appreciated. If you want to add your own type of artwork to the package so that others can use them, feel free to make a pull request to the [GitHub repository](https://github.com/koenderks/aRtsy). Don't forget to adjust [generate-painting.R](https://github.com/koenderks/aRtsy/blob/master/.github/workflows/generate_painting.R) if you also want the artwork to show up in the 'artwork of the day' category and the twitter feed.
 
 Good luck hunting for some good `seed`'s!
 
-## Painting of the day
+## Artwork of the day
 
-Every 24 hours this repository generates a random painting using the `aRtsy` package. This is today's painting:
+Every 24 hours this repository generates a random artwork using the `aRtsy` package. This is today's artwork:
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/daily.png' width='400' height='400'>
 </p>
 
-The full collection of daily paintings is available on the [aRtsy twitter feed](https://twitter.com/aRtsy_package).
+The full collection of daily atworks is available on the [aRtsy twitter feed](https://twitter.com/aRtsy_package).
 
 ## Installation
 
@@ -41,7 +41,7 @@ After installation, the `aRtsy` package can be loaded with:
 library(aRtsy)
 ```
 
-## Available paintings
+## Available artworks
 
 * [`paint_strokes()`](#paint-strokes)
 * [`paint_ribbons()`](#ribbons)
@@ -49,6 +49,7 @@ library(aRtsy)
 * [`paint_turmite()`](#turmite)
 * [`paint_ant()`](#langtons-ant)
 * [`paint_planet()`](#planets)
+* [`paint_diamond()`](#diamonds)
 * [`paint_mondriaan()`](#mondriaan)
 * [`paint_cirlemap()`](#circle-maps)
 * [`paint_function()`](#functions)
@@ -63,7 +64,7 @@ When you think of the act of painting, you probably imagine stroking paint on a 
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-10.png' width='270' height='270'>
 </p>
 
-You can use the `paint_strokes()` function to make your own painting using this algorithm.
+You can use the `paint_strokes()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(1)
@@ -74,7 +75,7 @@ paint_strokes(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'),
 
 ## Ribbons
 
-This function paints colored ribbons with (or without) a triangle that breaks their paths. This path of the ribbon polygon is creating by picking one point on the left side of the triangle and one point on the right side at random and using these points as nodes.
+This function creates colored ribbons with (or without) a triangle that breaks their paths. This path of the ribbon polygon is creating by picking one point on the left side of the triangle and one point on the right side at random and using these points as nodes.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ribbons/2021-07-16.png' width='270' height='270'>
@@ -82,7 +83,7 @@ This function paints colored ribbons with (or without) a triangle that breaks th
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ribbons/2021-07-14.png' width='270' height='270'>
 </p>
 
-You can use the `paint_ribbons()` function to make your own painting using this algorithm.
+You can use the `paint_ribbons()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(1)
@@ -100,7 +101,7 @@ This function draws many points on the canvas and connects these points into a p
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-21.png' width='270' height='270'>
 </p>
 
-You can use the `paint_polylines()` function to make your own painting using this algorithm.
+You can use the `paint_polylines()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(1)
@@ -123,7 +124,7 @@ According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *"
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-08.png' width='270' height='270'>
 </p>
 
-You can use the `paint_turmite()` function to make your own painting using this algorithm.
+You can use the `paint_turmite()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(1)
@@ -145,7 +146,7 @@ According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langton
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-01.png' width='270' height='270'>
 </p>
 
-You can use the `paint_ant()` function to make your own painting using this algorithm.
+You can use the `paint_ant()` function to make your own artwork using this algorithm.
 
 ```r
 paint_ant(colors = '#000000', background = '#fafafa', iterations = 1e7,
@@ -154,7 +155,7 @@ paint_ant(colors = '#000000', background = '#fafafa', iterations = 1e7,
 
 ## Planets
 
-We all love space, and this type of painting puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (inspired by an idea from [Fronkonstin](https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/)) to fill in their surfaces.
+We all love space, and this type of artwork puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (inspired by an idea from [Fronkonstin](https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/)) to fill in their surfaces.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-26.png' width='270' height='270'>
@@ -162,7 +163,7 @@ We all love space, and this type of painting puts you right between the planets.
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-28.png' width='270' height='270'>
 </p>
 
-You can use the `paint_planet()` function to make your own painting using this algorithm.
+You can use the `paint_planet()` function to make your own artwork using this algorithm.
 
 ```r
 # Sun behind Earth and Moon
@@ -176,9 +177,21 @@ paint_planet(colors, radius = c(800, 400, 150),
              starprob = 0.005)
 ```
 
+## Diamonds
+
+This function creates a set of diamonds on a canvas.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/diamonds/2021-08-06.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/diamonds/2021-08-04.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/master/png/diamonds/2021-08-05.png' width='270' height='270'>
+</p>
+
+You can use the `paint_diamond()` function to make your own artwork using this algorithm.
+
 ## Mondriaan
 
-This type of painting mimics the style of the well-known paintings by the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan). It works by repeatedly cutting into the canvas at random locations and coloring the square that these cuts create.
+This type of artwork mimics the style of the well-known paintings by the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan). It works by repeatedly cutting into the canvas at random locations and coloring the square that these cuts create.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-03-01.png' width='270' height='270'>
@@ -186,7 +199,7 @@ This type of painting mimics the style of the well-known paintings by the Dutch 
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-29.png' width='270' height='270'>
 </p>
 
-You can use the `paint_mondriaan()` function to make your own painting using this algorithm.
+You can use the `paint_mondriaan()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(6)
@@ -196,7 +209,7 @@ paint_mondriaan(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'),
 
 ## Circle maps
 
-This type of painting is based on the concept of an [Arnold tongue](https://en.wikipedia.org/wiki/Arnold_tongue). According to wikipedia, Arnold tongues *"are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters"*.
+This type of artwork is based on the concept of an [Arnold tongue](https://en.wikipedia.org/wiki/Arnold_tongue). According to wikipedia, Arnold tongues *"are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters"*.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22b.png' width='270' height='270'>
@@ -204,7 +217,7 @@ This type of painting is based on the concept of an [Arnold tongue](https://en.w
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22a.png' width='270' height='270'>
 </p>
 
-You can use the `paint_circlemap()` function to make your own painting using this algorithm.
+You can use the `paint_circlemap()` function to make your own artwork using this algorithm.
 
 ```r
 paint_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'),
@@ -214,7 +227,7 @@ paint_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'),
 
 ## Functions
 
-The idea for this type of painting is taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package. In this algorithm, the position of every single point is calculated by a formula which has random parameters.
+The idea for this type of artwork is taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package. In this algorithm, the position of every single point is calculated by a formula which has random parameters.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/functions/2021-03-17.png' width='270' height='270'>
@@ -222,7 +235,7 @@ The idea for this type of painting is taken over from the [`generativeart`](http
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/functions/2021-04-04.png' width='270' height='270'>
 </p>
 
-You can use the `paint_function()` function to make your own painting using this algorithm.
+You can use the `paint_function()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(1)

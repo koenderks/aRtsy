@@ -10,7 +10,8 @@ seed <- as.numeric(Sys.time())
 set.seed(seed)
 
 # Select painting type
-type <- sample(1:9, size = 1)
+type <- sample(1:10, size = 1)
+type <- 10
 
 if (type == 1){
   
@@ -81,6 +82,14 @@ if (type == 1){
   painting <- aRtsy::paint_polylines(colors = randomcoloR::randomColor(sample(3:6, size = 1), luminosity = "dark"),
                                      background = sample(c("#fafafa", "black", randomcoloR::randomColor(1, luminosity = "light")), size = 1))
   
+} else if (type == 10) {
+
+  painting <- aRtsy::paint_diamond(colors = randomcoloR::randomColor(sample(3:10, size = 1)), 
+                                   background = sample(c("#fafafa", "black", randomcoloR::randomColor(1, luminosity = "light")), size = 1),
+                                   col.line = sample(c("#fafafa", "black", randomcoloR::randomColor(1, luminosity = "dark")), size = 1),
+                                   radius = sample(c(5, 7, 10, 15), size = 1),
+                                   p = sample(seq(0, 0.7, 0.1), size = 1))
+
 }
 
 ggplot2::ggsave(painting, filename = filename, width = 7, height = 7, dpi = 300)
