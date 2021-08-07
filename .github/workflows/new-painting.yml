@@ -9,7 +9,8 @@ jobs:
     name: Create new painting
     runs-on: macos-latest
     steps:
-
+      
+      # Get current date
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
