@@ -179,7 +179,7 @@ paint_planet(colors, radius = c(800, 400, 150),
 
 ## Diamonds
 
-This function creates a set of diamonds on a canvas.
+This function creates a set of diamonds on a canvas. The diamonds are filled in using a random color assignment.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/diamonds/2021-08-06.png' width='270' height='270'>
