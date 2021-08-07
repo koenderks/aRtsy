@@ -2,8 +2,8 @@
 #'
 #' @description This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the painting.
 #'
-#' @usage paint_diamond(colors, background = '#fafafa', col.line = 'black', 
-#'                  radius = 10, alpha = 1, size = 0.25, p = 0.2, width = 500, height = 500)
+#' @usage paint_diamonds(colors, background = '#fafafa', col.line = 'black', 
+#'                   radius = 10, alpha = 1, size = 0.25, p = 0.2, width = 500, height = 500)
 #'
 #' @param colors      a character (vector) specifying the colors used for the strokes.
 #' @param background  a character specifying the color used for the borders.
@@ -21,14 +21,14 @@
 #'
 #' @examples
 #' set.seed(1)
-#' paint_diamond(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), radius = 10)
+#' paint_diamonds(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), radius = 10)
 #' 
 #' @keywords paint
 #'
 #' @export
 
-paint_diamond <- function(colors, background = '#fafafa', col.line = 'black', 
-                          radius = 10, alpha = 1, size = 0.25, p = 0.2, width = 500, height = 500) {
+paint_diamonds <- function(colors, background = '#fafafa', col.line = 'black', 
+                           radius = 10, alpha = 1, size = 0.25, p = 0.2, width = 500, height = 500) {
   x <- y <- xend <- yend <- NULL
   painting <- ggplot2::ggplot() +
     ggplot2::xlim(c(0, width)) +

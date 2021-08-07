@@ -49,7 +49,7 @@ library(aRtsy)
 * [`paint_turmite()`](#turmite)
 * [`paint_ant()`](#langtons-ant)
 * [`paint_planet()`](#planets)
-* [`paint_diamond()`](#diamonds)
+* [`paint_diamonds()`](#diamonds)
 * [`paint_mondriaan()`](#mondriaan)
 * [`paint_cirlemap()`](#circle-maps)
 * [`paint_function()`](#functions)
@@ -187,11 +187,11 @@ This function creates a set of diamonds on a canvas.
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/diamonds/2021-08-05.png' width='270' height='270'>
 </p>
 
-You can use the `paint_diamond()` function to make your own artwork using this algorithm.
+You can use the `paint_diamonds()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(1)
-paint_diamond(colors = c("forestgreen", "navyblue", "goldenrod", "firebrick"), background = "#fafafa", radius = 10)
+paint_diamonds(colors = c("forestgreen", "navyblue", "goldenrod", "firebrick"), background = "#fafafa", radius = 10)
 ```
 
 ## Mondriaan
