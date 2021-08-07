@@ -20,6 +20,8 @@ paint_diamond(colors, background = '#fafafa', col.line = 'black',
 
 \item{size}{size of the borders}
 
+\item{p}{takeover probability.}
+
 \item{width}{the width of the painting in pixels.}
 
 \item{height}{the height of the painting in pixels.}
@@ -32,7 +34,7 @@ This function draws many points on the canvas and connects these points into a p
 }
 \examples{
 set.seed(1)
-paint_diamonds(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
+paint_diamond(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), radius = 10)
 
 }
 \author{

@@ -11,6 +11,7 @@
 #' @param radius      radius of the diamonds.
 #' @param alpha       transparency of the diamonds If \code{NULL}, added layers become increasingly more transparent.
 #' @param size        size of the borders
+#' @param p           takeover probability.
 #' @param width       the width of the painting in pixels.
 #' @param height      the height of the painting in pixels.
 #'
@@ -20,7 +21,7 @@
 #'
 #' @examples
 #' set.seed(1)
-#' paint_diamonds(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
+#' paint_diamond(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), radius = 10)
 #' 
 #' @keywords paint
 #'
@@ -28,8 +29,7 @@
 
 paint_diamond <- function(colors, background = '#fafafa', col.line = 'black', 
                           radius = 10, alpha = 1, size = 0.25, p = 0.2, width = 500, height = 500) {
-  if (radius < 15) 
-    warning("This may take a long time.")
+  x <- y <- xend <- yend <- NULL
   painting <- ggplot2::ggplot() +
     ggplot2::xlim(c(0, width)) +
     ggplot2::ylim(c(0, height)) + 
