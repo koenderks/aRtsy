@@ -189,6 +189,11 @@ This function creates a set of diamonds on a canvas.
 
 You can use the `paint_diamond()` function to make your own artwork using this algorithm.
 
+```r
+set.seed(1)
+paint_diamond(colors = c("forestgreen", "navyblue", "goldenrod", "firebrick"), background = "#fafafa", radius = 10)
+```
+
 ## Mondriaan
 
 This type of artwork mimics the style of the well-known paintings by the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan). It works by repeatedly cutting into the canvas at random locations and coloring the square that these cuts create.
