@@ -9,10 +9,10 @@
 #' @param background  a character specifying the color used for the background (borders).
 #' @param cuts        the number of cuts to make.
 #' @param ratio       the \code{1:1} ratio for each cut.
-#' @param width       the width of the painting in pixels.
-#' @param height      the height of the painting in pixels.
+#' @param width       the width of the artwork in pixels.
+#' @param height      the height of the artwork in pixels.
 #'
-#' @return A \code{ggplot} object containing the painting.
+#' @return A \code{ggplot} object containing the artwork.
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
@@ -40,7 +40,7 @@ paint_mondriaan <- function(colors, background = '#000000', cuts = 50, ratio = 1
   full_canvas <- iterate_mondriaan(canvas, neighbors, length(colors), cuts, ratio)
   full_canvas <- reshape2::melt(full_canvas)
   colnames(full_canvas) <- c("y", "x", "z")
-  painting <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
+  artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = FALSE, alpha = 1) + 
     ggplot2::coord_equal() +
     ggplot2::scale_fill_gradientn(colours = palette) +
@@ -56,5 +56,5 @@ paint_mondriaan <- function(colors, background = '#000000', cuts = 50, ratio = 1
                    plot.margin = ggplot2::unit(rep(-1.25,4),"lines"), 
                    strip.background = ggplot2::element_blank(), 
                    strip.text = ggplot2::element_blank())
-  return(painting) 
+  return(artwork) 
 }

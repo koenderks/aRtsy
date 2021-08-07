@@ -8,7 +8,7 @@
 #' @param background  a character specifying the color of the background.
 #' @param triangle    logical. Whether to draw the triangle that breaks the ribbon polygons.
 #'
-#' @return A \code{ggplot} object containing the painting.
+#' @return A \code{ggplot} object containing the artwork.
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
@@ -24,7 +24,7 @@
 paint_ribbons <- function(colors, background = '#fdf5e6', triangle = TRUE) {
   x <- y <- NULL
   # Create an empty figure
-  p <- ggplot2::ggplot() +
+  artwork <- ggplot2::ggplot() +
     ggplot2::xlim(c(0, 100)) +
     ggplot2::ylim(0, 100)
   # Determine points on the triangle
@@ -46,18 +46,18 @@ paint_ribbons <- function(colors, background = '#fdf5e6', triangle = TRUE) {
     ept <- data.frame(x = 100, y = epb$y + 5)
     # Combine polygon points
     points <- rbind(bpb, fpb, spb, epb, ept, spt, fpt, bpt)
-    p <- p + ggplot2::geom_polygon(data = points, mapping = ggplot2::aes(x = x, y = y), 
+    artwork <- artwork + ggplot2::geom_polygon(data = points, mapping = ggplot2::aes(x = x, y = y), 
                                    fill = colors[i], color = NA, 
                                    stat = "identity", alpha = 1)
   }
   # (Optionally) draw the triangle 
   if (triangle) {
     d <- data.frame(x = c(15, 50, 85), y = c(15, 75, 15))
-    p <- p + ggplot2::geom_polygon(data = d, mapping = ggplot2::aes(x = x, y = y), 
+    artwork <- artwork + ggplot2::geom_polygon(data = d, mapping = ggplot2::aes(x = x, y = y), 
                                    fill = NA, color = "black", 
                                    stat = "identity", size = 1)
   }
-  p <- p + ggplot2::theme(axis.title = ggplot2::element_blank(),
+  artwork <- artwork + ggplot2::theme(axis.title = ggplot2::element_blank(),
                           axis.text = ggplot2::element_blank(),
                           axis.ticks = ggplot2::element_blank(),
                           axis.line = ggplot2::element_blank(),
@@ -69,5 +69,5 @@ paint_ribbons <- function(colors, background = '#fdf5e6', triangle = TRUE) {
                           plot.background = ggplot2::element_rect(fill = background, colour = background),
                           strip.background = ggplot2::element_blank(),
                           strip.text = ggplot2::element_blank())
-  return(p)
+  return(artwork)
 }

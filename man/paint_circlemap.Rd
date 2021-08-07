@@ -20,12 +20,12 @@ paint_circlemap(colors, x_min = 0, x_max = 12.56, y_min = 0, y_max = 1,
 
 \item{iterations}{the number of iterations.}
 
-\item{width}{the width of the painting in pixels.}
+\item{width}{the width of the artwork in pixels.}
 
-\item{height}{the height of the painting in pixels.}
+\item{height}{the height of the artwork in pixels.}
 }
 \value{
-A \code{ggplot} object containing the painting.
+A \code{ggplot} object containing the artwork.
 }
 \description{
 This function is my attempt at a circle map.

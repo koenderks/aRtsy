@@ -16,10 +16,10 @@
 #' @param center.x    the x-axis coordinate(s) for the center(s) of the planet(s).
 #' @param center.y    the y-axis coordinate(s) for the center(s) of the planet(s).
 #' @param light.right whether to draw the light from the right or the left.
-#' @param width       the width of the painting in pixels.
-#' @param height      the height of the painting in pixels.
+#' @param width       the width of the artwork in pixels.
+#' @param height      the height of the artwork in pixels.
 #'
-#' @return A \code{ggplot} object containing the painting.
+#' @return A \code{ggplot} object containing the artwork.
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
@@ -81,7 +81,7 @@ paint_planet <- function(colors, threshold = 4, iterations = 200, starprob = 0.0
   full_canvas <- reshape2::melt(canvas)
   colnames(full_canvas) <- c("y", "x", "z")
   full_palette <- c('#000000', '#787878', '#fafafa', unlist(colors))
-  painting <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
+  artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 
     ggplot2::coord_equal() +
     ggplot2::scale_fill_gradientn(colours = full_palette) +
@@ -97,5 +97,5 @@ paint_planet <- function(colors, threshold = 4, iterations = 200, starprob = 0.0
                    plot.margin = ggplot2::unit(rep(-1.25,4),"lines"), 
                    strip.background = ggplot2::element_blank(), 
                    strip.text = ggplot2::element_blank())
-  return(painting)
+  return(artwork)
 }

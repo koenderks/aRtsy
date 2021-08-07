@@ -10,23 +10,23 @@ paint_strokes(colors, neighbors = 1, p = 0.01, iterations = 1,
 \arguments{
 \item{colors}{a character (vector) specifying the colors used for the strokes.}
 
-\item{neighbors}{the number of neighbors a block considers when taking over a color. More neighbors fades the painting.}
+\item{neighbors}{the number of neighbors a block considers when taking over a color. More neighbors fades the artwork.}
 
-\item{p}{the probability of selecting a new color at each block. A higher probability adds more noise to the painting.}
+\item{p}{the probability of selecting a new color at each block. A higher probability adds more noise to the artwork.}
 
-\item{iterations}{the number of iterations on the painting. More iterations fade the painting.}
+\item{iterations}{the number of iterations on the artwork. More iterations fade the artwork.}
 
-\item{width}{the width of the painting in pixels.}
+\item{width}{the width of the artwork in pixels.}
 
-\item{height}{the height of the painting in pixels.}
+\item{height}{the height of the artwork in pixels.}
 
-\item{side}{whether to turn the painting on its side.}
+\item{side}{whether to turn the artwork on its side.}
 }
 \value{
-A \code{ggplot} object containing the painting.
+A \code{ggplot} object containing the artwork.
 }
 \description{
-This function creates a painting that resembles paints strokes. The algorithm is based on the simple idea that each next point on the grid has a chance to take over the color of an adjacent colored point but also has a change of generating a new color.
+This function creates an artwork that resembles paints strokes. The algorithm is based on the simple idea that each next point on the grid has a chance to take over the color of an adjacent colored point but also has a change of generating a new color.
 }
 \examples{
 set.seed(1)

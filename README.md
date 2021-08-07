@@ -9,11 +9,11 @@
 
 <img src='https://github.com/koenderks/aRtsy/raw/master/man/figures/logo.png' width='149' height='173' alt='logo' align='right' margin-left='20' margin-right='20'/>
 
-*Why would anyone want to make art using computers? - Marcus du Sautoy, The Creative Code*
+*"Why would anyone want to make art using computers?" - Marcus du Sautoy, The Creative Code*
 
 `aRtsy` is an attempt at making generative art available for the masses in a simple and standardized format. The package combines several algorithms for creating artworks in `ggplot2` that incorporate some form of randomness (depending on the set `seed`). Each type of artwork is implemented in a separate function.
 
-Contributions to `aRtsy` are much appreciated. If you want to add your own type of artwork to the package so that others can use them, feel free to make a pull request to the [GitHub repository](https://github.com/koenderks/aRtsy). Don't forget to adjust [generate-painting.R](https://github.com/koenderks/aRtsy/blob/master/.github/workflows/generate_painting.R) if you also want the artwork to show up in the 'artwork of the day' category and the twitter feed.
+Contributions to `aRtsy` are very much appreciated! If you want to add your own type of artwork to the package so that others can use them, feel free to make a pull request to the [GitHub repository](https://github.com/koenderks/aRtsy). Don't forget to adjust [generate-artwork.R](https://github.com/koenderks/aRtsy/blob/master/.github/workflows/generate_artwork.R) if you also want the artwork to show up in the 'Artwork of the day' category and the twitter feed.
 
 Good luck hunting for some good `seed`'s!
 
@@ -25,7 +25,7 @@ Every 24 hours this repository generates a random artwork using the `aRtsy` pack
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/daily.png' width='400' height='400'>
 </p>
 
-The full collection of daily atworks is available on the [aRtsy twitter feed](https://twitter.com/aRtsy_package).
+The full collection of daily artworks is available on the [aRtsy twitter feed](https://twitter.com/aRtsy_package).
 
 ## Installation
 
@@ -56,7 +56,7 @@ library(aRtsy)
 
 ## Paint strokes
 
-When you think of the act of painting, you probably imagine stroking paint on a canvas. This type of painting tries to mimic that activity. The paint strokes algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor chance of generating a new color. Going over the canvas like this results in strokes of paint. Repeating this a number of times creates more faded strokes of paint.
+When you think of the act of painting, you probably imagine stroking paint on a canvas. This type of artwork tries to mimic that activity. The paint strokes algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor chance of generating a new color. Going over the canvas like this results in strokes of paint. Repeating this a number of times creates more faded strokes of paint.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-21.png' width='270' height='270'>
@@ -93,7 +93,7 @@ paint_ribbons(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod"),
 
 ## Polylines
 
-This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the painting.
+This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-22.png' width='270' height='270'>

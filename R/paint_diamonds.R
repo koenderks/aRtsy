@@ -1,6 +1,6 @@
 #' Paint A Diamond on Canvas
 #'
-#' @description This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the painting.
+#' @description This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork.
 #'
 #' @usage paint_diamonds(colors, background = '#fafafa', col.line = 'black', 
 #'                   radius = 10, alpha = 1, size = 0.25, p = 0.2, width = 500, height = 500)
@@ -12,10 +12,10 @@
 #' @param alpha       transparency of the diamonds If \code{NULL}, added layers become increasingly more transparent.
 #' @param size        size of the borders
 #' @param p           takeover probability.
-#' @param width       the width of the painting in pixels.
-#' @param height      the height of the painting in pixels.
+#' @param width       the width of the artwork in pixels.
+#' @param height      the height of the artwork in pixels.
 #'
-#' @return A \code{ggplot} object containing the painting.
+#' @return A \code{ggplot} object containing the artwork.
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
@@ -30,7 +30,7 @@
 paint_diamonds <- function(colors, background = '#fafafa', col.line = 'black', 
                            radius = 10, alpha = 1, size = 0.25, p = 0.2, width = 500, height = 500) {
   x <- y <- xend <- yend <- NULL
-  painting <- ggplot2::ggplot() +
+  artwork <- ggplot2::ggplot() +
     ggplot2::xlim(c(0, width)) +
     ggplot2::ylim(c(0, height)) + 
     ggplot2::geom_curve(data = data.frame(x = 0, y = sample(0:height/2, size = 1), xend = width, yend = sample((height/2):height, size = 1)),
@@ -67,12 +67,12 @@ paint_diamonds <- function(colors, background = '#fafafa', col.line = 'black',
         palette <- c(palette, col)
       }
         
-      painting <- painting + 
+      artwork <- artwork + 
         ggplot2::geom_polygon(data = d, mapping = ggplot2::aes(x = x, y = y), fill = col, color = background, alpha = alpha, size = size)
     }
   }
   
-  painting <- painting +
+  artwork <- artwork +
     ggplot2::scale_fill_manual(values = palette) +
     ggplot2::theme(axis.title = ggplot2::element_blank(),
                    axis.text = ggplot2::element_blank(),
@@ -86,5 +86,5 @@ paint_diamonds <- function(colors, background = '#fafafa', col.line = 'black',
                    plot.background = ggplot2::element_rect(fill = background, colour = background),
                    strip.background = ggplot2::element_blank(),
                    strip.text = ggplot2::element_blank())
-  return(painting)
+  return(artwork)
 }

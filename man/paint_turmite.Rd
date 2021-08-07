@@ -16,12 +16,12 @@ paint_turmite(color, background = '#fafafa', p = 0.5, iterations = 1e7,
 
 \item{iterations}{the number of iterations of the turmite.}
 
-\item{width}{the width of the painting in pixels.}
+\item{width}{the width of the artwork in pixels.}
 
-\item{height}{the height of the painting in pixels.}
+\item{height}{the height of the artwork in pixels.}
 }
 \value{
-A \code{ggplot} object containing the painting.
+A \code{ggplot} object containing the artwork.
 }
 \description{
 This function paints a turmite. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells. The algorithm is simple: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.

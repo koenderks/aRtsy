@@ -14,12 +14,12 @@ paint_ant(colors, background = '#fafafa', iterations = 1e7,
 
 \item{iterations}{the number of iterations of the ant.}
 
-\item{width}{the width of the painting in pixels.}
+\item{width}{the width of the artwork in pixels.}
 
-\item{height}{the height of the painting in pixels.}
+\item{height}{the height of the artwork in pixels.}
 }
 \value{
-A \code{ggplot} object containing the painting.
+A \code{ggplot} object containing the artwork.
 }
 \description{
 This function paints Langton's Ant. Langton's ant is a two-dimensional universal Turing machine with a very simple set of rules but complex emergent behavior.

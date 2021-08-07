@@ -16,12 +16,12 @@ paint_mondriaan(colors, background = '#000000', cuts = 50, ratio = 1.618,
 
 \item{ratio}{the \code{1:1} ratio for each cut.}
 
-\item{width}{the width of the painting in pixels.}
+\item{width}{the width of the artwork in pixels.}
 
-\item{height}{the height of the painting in pixels.}
+\item{height}{the height of the artwork in pixels.}
 }
 \value{
-A \code{ggplot} object containing the painting.
+A \code{ggplot} object containing the artwork.
 }
 \description{
 This function paints a Mondriaan.

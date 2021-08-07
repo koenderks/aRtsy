@@ -12,7 +12,7 @@ paint_arcs(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL,
 
 \item{background}{a character string specifying the color used for the background.}
 
-\item{n}{an integer specifying how many paintings should be put on the canvas.}
+\item{n}{an integer specifying how many arcs should be put on the canvas.}
 
 \item{nrow}{an (optional) integer specifying the number of rows on the canvas.}
 
@@ -23,10 +23,10 @@ paint_arcs(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL,
 \item{starts}{a character sting specifying where the arcs should start. Can be one of \code{"clockwise"} (default) or \code{"random"}.}
 }
 \value{
-A \code{ggplot} object containing the painting.
+A \code{ggplot} object containing the artwork.
 }
 \description{
-Inspired by the work of \href{https://twitter.com/ijeamaka_a}{@ijeamaka_a}, this type of painting mimics her beautiful \href{https://www.etsy.com/listing/1032142006/arcs-series-geometric-art-generative-art?ref=shop_home_recs_1&crt=1}{Arc Series}. For private use only.
+Inspired by the work of \href{https://twitter.com/ijeamaka_a}{@ijeamaka_a}, this type of artwork mimics her beautiful \href{https://www.etsy.com/listing/1032142006/arcs-series-geometric-art-generative-art?ref=shop_home_recs_1&crt=1}{Arc Series}. For private use only.
 }
 \examples{
 aRtsy:::paint_arcs(colors = c('darkgreen', 'goldenrod', 'firebrick'), n = 9)

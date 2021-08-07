@@ -9,7 +9,7 @@
 #'
 #' @references \url{https://github.com/cutterkom/generativeart}
 #'
-#' @return A \code{ggplot} object containing the painting.
+#' @return A \code{ggplot} object containing the artwork.
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
@@ -41,7 +41,7 @@ paint_function <- function(color, background = '#fafafa'){
                                  y = quote(runif(1, -1, 1) * y_i^3-cos(x_i^2)))
   painting_formula <- painting_formulas[[sample(1:length(painting_formulas), 1)]]
   df <- expand.grid(x_i = seq(from = -pi, to = pi, by = 0.01), y_i = seq(from = -pi, to = pi, by = 0.01)) %>% dplyr::mutate(!!!painting_formula)
-  painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y)) + 
+  artwork <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y)) + 
     ggplot2::geom_point(alpha = 0.1, size = 0, shape = 20, color = color) + 
     ggplot2::theme_void() + 
     ggplot2::coord_fixed() + 
@@ -58,5 +58,5 @@ paint_function <- function(color, background = '#fafafa'){
                    plot.margin = ggplot2::unit(rep(-1.25,4),"lines"), 
                    strip.background = ggplot2::element_blank(), 
                    strip.text = ggplot2::element_blank())
-  return(painting) 
+  return(artwork) 
 }

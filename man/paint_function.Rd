@@ -12,7 +12,7 @@ paint_function(color, background = '#fafafa')
 \item{background}{a character specifying the color used for the background.}
 }
 \value{
-A \code{ggplot} object containing the painting.
+A \code{ggplot} object containing the artwork.
 }
 \description{
 This function paints functions with random parameters and mimics the functionality of the \code{generativeart} package.

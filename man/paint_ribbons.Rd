@@ -14,7 +14,7 @@ paint_ribbons(colors, background = '#fdf5e6', triangle = TRUE)
 \item{triangle}{logical. Whether to draw the triangle that breaks the ribbon polygons.}
 }
 \value{
-A \code{ggplot} object containing the painting.
+A \code{ggplot} object containing the artwork.
 }
 \description{
 This function paints ribbons and (optionally) a triangle in the middle.

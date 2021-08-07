@@ -1,6 +1,6 @@
 #' Paint Polygons and Lines on Canvas
 #'
-#' @description This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the painting.
+#' @description This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork.
 #'
 #' @usage paint_polylines(colors, background = '#fafafa', ratio = 0.5, iterations = 1000, 
 #'                 alpha = NULL, size = 0.1, width = 500, height = 500)
@@ -11,10 +11,10 @@
 #' @param iterations  the number of points for each polygon.
 #' @param alpha       transparency of the polygons. If \code{NULL}, added layers become increasingly more transparent.
 #' @param size        size of the borders.
-#' @param width       the width of the painting in pixels.
-#' @param height      the height of the painting in pixels.
+#' @param width       the width of the artwork in pixels.
+#' @param height      the height of the artwork in pixels.
 #'
-#' @return A \code{ggplot} object containing the painting.
+#' @return A \code{ggplot} object containing the artwork.
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
@@ -42,7 +42,7 @@ paint_polylines <- function(colors, background = '#fafafa', ratio = 0.5, iterati
     d_tmp <- data.frame(x = mat[, 1], y = mat[, 2], type = rep(colors[i], iterations))
     d <- rbind(d, d_tmp)
   }
-  painting <- ggplot2::ggplot(data = d, mapping = ggplot2::aes(x = x, y = y, fill = type)) +
+  artwork <- ggplot2::ggplot(data = d, mapping = ggplot2::aes(x = x, y = y, fill = type)) +
     ggplot2::xlim(c(0, width)) +
     ggplot2::ylim(c(0, height)) + 
     ggplot2::geom_polygon(color = NA, alpha = rep(alphas, each = iterations)) +
@@ -60,5 +60,5 @@ paint_polylines <- function(colors, background = '#fafafa', ratio = 0.5, iterati
                                         plot.background = ggplot2::element_rect(fill = background, colour = background),
                                         strip.background = ggplot2::element_blank(),
                                         strip.text = ggplot2::element_blank())
-  return(painting)
+  return(artwork)
 }

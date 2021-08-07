@@ -8,12 +8,12 @@
 #' @param colors   	  a character (vector) specifying the colors for the ant.
 #' @param background  a character specifying the color of the background.
 #' @param iterations  the number of iterations of the ant.
-#' @param width       the width of the painting in pixels.
-#' @param height      the height of the painting in pixels.
+#' @param width       the width of the artwork in pixels.
+#' @param height      the height of the artwork in pixels.
 #'
 #' @references \url{https://en.wikipedia.org/wiki/Langton\%27s_ant}
 #'
-#' @return A \code{ggplot} object containing the painting.
+#' @return A \code{ggplot} object containing the artwork.
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
@@ -41,7 +41,7 @@ paint_ant <- function(colors, background = '#fafafa', iterations = 1e7,
   df <- iterate_ant(matrix(0, nrow = height, ncol = width), iterations, row, col, c = c)  
   df <- reshape2::melt(df)
   colnames(df) <- c("y", "x", "z")
-  painting <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) +
+  artwork <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 
     ggplot2::coord_equal() +
     ggplot2::scale_fill_gradientn(colours = palette) +
@@ -57,5 +57,5 @@ paint_ant <- function(colors, background = '#fafafa', iterations = 1e7,
                    plot.margin = ggplot2::unit(rep(-1.25,4),"lines"), 
                    strip.background = ggplot2::element_blank(), 
                    strip.text = ggplot2::element_blank())
-  return(painting)
+  return(artwork)
 }
