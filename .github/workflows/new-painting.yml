@@ -26,6 +26,7 @@ jobs:
       - name: Install required packages
         run: |
           install.packages(c("remotes", "randomcoloR"))
+          Sys.unsetenv("GITHUB_PAT")
           remotes::install_github("koenderks/aRtsy")
         shell: Rscript {0}
 
