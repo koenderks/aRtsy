@@ -8,7 +8,7 @@ jobs:
     name: Create new painting
     runs-on: macos-latest
     env:
-      GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
+      GITHUB_PAT: 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
     steps:
 
       - name: Get current date
