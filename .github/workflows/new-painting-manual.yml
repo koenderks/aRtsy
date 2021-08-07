@@ -6,9 +6,9 @@ name: Create new painting manually
 jobs:
   update:
     name: Create new painting
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_PAT: ${{ secrets.R:GITHUB_PAT }}
     steps:
 
       - name: Get current date
@@ -25,8 +25,8 @@ jobs:
       # Install required packages and update README
       - name: Install required packages
         run: |
-          install.packages(c("devtools", "randomcoloR"))
-          devtools::install_github("koenderks/aRtsy")
+          install.packages(c("remotes", "randomcoloR"))
+          remotes::install_github("koenderks/aRtsy")
         shell: Rscript {0}
 
       - name: Create new painting
