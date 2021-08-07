@@ -1,19 +1,19 @@
 [![CRAN](https://img.shields.io/cran/v/aRtsy?color=yellow&label=CRAN&logo=r)](https://cran.r-project.org/package=aRtsy)
 [![R_build_status](https://github.com/koenderks/aRtsy/workflows/Build/badge.svg)](https://github.com/koenderks/aRtsy/actions)
-[![Codecov](https://codecov.io/gh/koenderks/aRtsy/branch/master/graph/badge.svg?token=ZoxIB8p8PW)](https://codecov.io/gh/koenderks/aRtsy)
+[![Codecov](https://codecov.io/gh/koenderks/aRtsy/branch/development/graph/badge.svg?token=ZoxIB8p8PW)](https://codecov.io/gh/koenderks/aRtsy)
 [![Bugs](https://img.shields.io/github/issues/koenderks/aRtsy/bug?label=Bugs&logo=github&logoColor=%23FFF&color=brightgreen)](https://github.com/koenderks/aRtsy/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
 [![Monthly](https://cranlogs.r-pkg.org/badges/aRtsy?color=blue)](https://cranlogs.r-pkg.org)
 [![Total](https://cranlogs.r-pkg.org/badges/grand-total/aRtsy?color=blue)](https://cranlogs.r-pkg.org)
 
 # aRtsy: Generative Art with `R` and `ggplot2`
 
-<img src='https://github.com/koenderks/aRtsy/raw/master/man/figures/logo.png' width='149' height='173' alt='logo' align='right' margin-left='20' margin-right='20'/>
+<img src='https://github.com/koenderks/aRtsy/raw/development/man/figures/logo.png' width='149' height='173' alt='logo' align='right' margin-left='20' margin-right='20'/>
 
 *"Why would anyone want to make art using computers?" - Marcus du Sautoy, The Creative Code*
 
 `aRtsy` is an attempt at making generative art available for the masses in a simple and standardized format. The package combines several algorithms for creating artworks in `ggplot2` that incorporate some form of randomness (depending on the set `seed`). Each type of artwork is implemented in a separate function.
 
-Contributions to `aRtsy` are very much appreciated! If you want to add your own type of artwork to the package so that others can use them, feel free to make a pull request to the [GitHub repository](https://github.com/koenderks/aRtsy). Don't forget to adjust [generate-artwork.R](https://github.com/koenderks/aRtsy/blob/master/.github/workflows/generate_artwork.R) if you also want the artwork to show up in the 'Artwork of the day' category and the twitter feed.
+Contributions to `aRtsy` are very much appreciated! If you want to add your own type of artwork to the package so that others can use them, feel free to make a pull request to the [GitHub repository](https://github.com/koenderks/aRtsy). Don't forget to adjust [generate-artwork.R](https://github.com/koenderks/aRtsy/blob/development/.github/workflows/generate_artwork.R) if you also want the artwork to show up in the 'Artwork of the day' category and the twitter feed.
 
 Good luck hunting for some good `seed`'s!
 
@@ -22,7 +22,7 @@ Good luck hunting for some good `seed`'s!
 Every 24 hours this repository generates a random artwork using the `aRtsy` package. This is today's artwork:
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/daily.png' width='400' height='400'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/daily.png' width='400' height='400'>
 </p>
 
 The full collection of daily artworks is available on the [aRtsy twitter feed](https://twitter.com/aRtsy_package).
@@ -59,9 +59,9 @@ library(aRtsy)
 When you think of the act of painting, you probably imagine stroking paint on a canvas. This type of artwork tries to mimic that activity. The paint strokes algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor chance of generating a new color. Going over the canvas like this results in strokes of paint. Repeating this a number of times creates more faded strokes of paint.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-21.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-20.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/strokes/2021-03-10.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-21.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-20.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-10.png' width='270' height='270'>
 </p>
 
 You can use the `paint_strokes()` function to make your own artwork using this algorithm.
@@ -78,9 +78,9 @@ paint_strokes(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'),
 This function creates colored ribbons with (or without) a triangle that breaks their paths. This path of the ribbon polygon is creating by picking one point on the left side of the triangle and one point on the right side at random and using these points as nodes.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/ribbons/2021-07-16.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/ribbons/2021-07-15.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/ribbons/2021-07-14.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-16.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-15.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-14.png' width='270' height='270'>
 </p>
 
 You can use the `paint_ribbons()` function to make your own artwork using this algorithm.
@@ -96,9 +96,9 @@ paint_ribbons(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod"),
 This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-22.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-23.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/polylines/2021-07-21.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-22.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-23.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-21.png' width='270' height='270'>
 </p>
 
 You can use the `paint_polylines()` function to make your own artwork using this algorithm.
@@ -119,9 +119,9 @@ According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *"
 3. Move forward one block.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-06.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-09.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/turmites/2021-03-08.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-06.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-09.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-08.png' width='270' height='270'>
 </p>
 
 You can use the `paint_turmite()` function to make your own artwork using this algorithm.
@@ -141,9 +141,9 @@ According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langton
 1. The ant is able to cycle through different colors which correspond to different combinations of these rules.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-03.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-02.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/ants/2021-03-01.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-03.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-02.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-01.png' width='270' height='270'>
 </p>
 
 You can use the `paint_ant()` function to make your own artwork using this algorithm.
@@ -158,9 +158,9 @@ paint_ant(colors = '#000000', background = '#fafafa', iterations = 1e7,
 We all love space, and this type of artwork puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (inspired by an idea from [Fronkonstin](https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/)) to fill in their surfaces.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-26.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-27.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/planets/2021-02-28.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-26.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-27.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-28.png' width='270' height='270'>
 </p>
 
 You can use the `paint_planet()` function to make your own artwork using this algorithm.
@@ -182,9 +182,9 @@ paint_planet(colors, radius = c(800, 400, 150),
 This function creates a set of diamonds on a canvas. The diamonds are filled in using a random color assignment.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/diamonds/2021-08-06.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/diamonds/2021-08-04.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/diamonds/2021-08-05.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-06.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-04.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-05.png' width='270' height='270'>
 </p>
 
 You can use the `paint_diamonds()` function to make your own artwork using this algorithm.
@@ -199,9 +199,9 @@ paint_diamonds(colors = c("forestgreen", "navyblue", "goldenrod", "firebrick"), 
 This type of artwork mimics the style of the well-known paintings by the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan). It works by repeatedly cutting into the canvas at random locations and coloring the square that these cuts create.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-03-01.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-28.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/mondriaans/2021-02-29.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mondriaans/2021-03-01.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mondriaans/2021-02-28.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mondriaans/2021-02-29.png' width='270' height='270'>
 </p>
 
 You can use the `paint_mondriaan()` function to make your own artwork using this algorithm.
@@ -217,9 +217,9 @@ paint_mondriaan(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'),
 This type of artwork is based on the concept of an [Arnold tongue](https://en.wikipedia.org/wiki/Arnold_tongue). According to wikipedia, Arnold tongues *"are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters"*.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22b.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22c.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/circlemaps/2021-04-22a.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22b.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22c.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22a.png' width='270' height='270'>
 </p>
 
 You can use the `paint_circlemap()` function to make your own artwork using this algorithm.
@@ -235,9 +235,9 @@ paint_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'),
 The idea for this type of artwork is taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package. In this algorithm, the position of every single point is calculated by a formula which has random parameters.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/functions/2021-03-17.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/functions/2021-04-08.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/master/png/functions/2021-04-04.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-03-17.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-04-08.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-04-04.png' width='270' height='270'>
 </p>
 
 You can use the `paint_function()` function to make your own artwork using this algorithm.
