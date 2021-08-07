@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Generative Art with ggplot2">
-<meta property="og:description" content="Combines the ideas of multiple generative artists in the ggplot2 language.">
+<meta property="og:description" content="Combines several algorithms for creating artworks in the ggplot2 language that incorporate some form of randomness (depending on the set seed).">
 <meta property="og:image" content="/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -109,16 +109,16 @@
 <h2 class="hasAnchor">
 <a href="#available-artworks" class="anchor"></a>Available artworks</h2>
 <ul>
-<li><a href="#paint-strokes"><code>paint_strokes()</code></a></li>
-<li><a href="#ribbons"><code>paint_ribbons()</code></a></li>
-<li><a href="#polylines"><code>paint_polylines()</code></a></li>
-<li><a href="#turmite"><code>paint_turmite()</code></a></li>
-<li><a href="#langtons-ant"><code>paint_ant()</code></a></li>
-<li><a href="#planets"><code>paint_planet()</code></a></li>
-<li><a href="#diamonds"><code>paint_diamonds()</code></a></li>
-<li><a href="#mondriaan"><code>paint_mondriaan()</code></a></li>
-<li><a href="#circle-maps"><code>paint_cirlemap()</code></a></li>
-<li><a href="#functions"><code>paint_function()</code></a></li>
+<li><a href="#paint-strokes"><code>canvas_strokes()</code></a></li>
+<li><a href="#ribbons"><code>canvas_ribbons()</code></a></li>
+<li><a href="#polylines"><code>canvas_polylines()</code></a></li>
+<li><a href="#turmite"><code>canvas_turmite()</code></a></li>
+<li><a href="#langtons-ant"><code>canvas_ant()</code></a></li>
+<li><a href="#planets"><code>canvas_planet()</code></a></li>
+<li><a href="#diamonds"><code>canvas_diamonds()</code></a></li>
+<li><a href="#mondriaan"><code>canvas_mondriaan()</code></a></li>
+<li><a href="#circle-maps"><code>canvas_cirlemap()</code></a></li>
+<li><a href="#functions"><code>canvas_function()</code></a></li>
 </ul>
 </div>
 <div id="paint-strokes" class="section level2">
@@ -127,9 +127,9 @@
 <p>When you think of the act of painting, you probably imagine stroking paint on a canvas. This type of artwork tries to mimic that activity. The paint strokes algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor chance of generating a new color. Going over the canvas like this results in strokes of paint. Repeating this a number of times creates more faded strokes of paint.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-21.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-20.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-10.png" width="270" height="270"></p>
-<p>You can use the <code><a href="reference/paint_strokes.html">paint_strokes()</a></code> function to make your own artwork using this algorithm.</p>
+<p>You can use the <code><a href="reference/canvas_strokes.html">canvas_strokes()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>)</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="kw">paint_strokes</span>(<span class="dt">colors =</span> <span class="kw">c</span>(<span class="st">'forestgreen'</span>, <span class="st">'goldenrod'</span>, <span class="st">'firebrick'</span>, <span class="st">'navyblue'</span>), </span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="kw">canvas_strokes</span>(<span class="dt">colors =</span> <span class="kw">c</span>(<span class="st">'forestgreen'</span>, <span class="st">'goldenrod'</span>, <span class="st">'firebrick'</span>, <span class="st">'navyblue'</span>), </span>
 <span id="cb3-3"><a href="#cb3-3"></a>              <span class="dt">neighbors =</span> <span class="dv">1</span>, <span class="dt">p =</span> <span class="fl">0.01</span>, <span class="dt">iterations =</span> <span class="dv">1</span>, </span>
 <span id="cb3-4"><a href="#cb3-4"></a>              <span class="dt">width =</span> <span class="dv">500</span>, <span class="dt">height =</span> <span class="dv">500</span>, <span class="dt">side =</span> <span class="ot">FALSE</span>)<span class="er">)</span></span></code></pre></div>
 </div>
@@ -139,10 +139,10 @@
 <p>This function creates colored ribbons with (or without) a triangle that breaks their paths. This path of the ribbon polygon is creating by picking one point on the left side of the triangle and one point on the right side at random and using these points as nodes.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-16.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-15.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-14.png" width="270" height="270"></p>
-<p>You can use the <code><a href="reference/paint_ribbons.html">paint_ribbons()</a></code> function to make your own artwork using this algorithm.</p>
+<p>You can use the <code><a href="reference/canvas_ribbons.html">canvas_ribbons()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
-<span class="fu"><a href="reference/paint_ribbons.html">paint_ribbons</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"forestgreen"</span>, <span class="st">"firebrick"</span>, <span class="st">"dodgerblue"</span>, <span class="st">"goldenrod"</span><span class="op">)</span>,
+<span class="fu"><a href="reference/canvas_ribbons.html">canvas_ribbons</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"forestgreen"</span>, <span class="st">"firebrick"</span>, <span class="st">"dodgerblue"</span>, <span class="st">"goldenrod"</span><span class="op">)</span>,
               background <span class="op">=</span> <span class="st">'#fdf5e6'</span>, triangle <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="polylines" class="section level2">
@@ -151,10 +151,10 @@
 <p>This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-22.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-23.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-21.png" width="270" height="270"></p>
-<p>You can use the <code><a href="reference/paint_polylines.html">paint_polylines()</a></code> function to make your own artwork using this algorithm.</p>
+<p>You can use the <code><a href="reference/canvas_polylines.html">canvas_polylines()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
-<span class="fu"><a href="reference/paint_polylines.html">paint_polylines</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'goldenrod'</span>, <span class="st">'firebrick'</span>, <span class="st">'navyblue'</span><span class="op">)</span>, 
+<span class="fu"><a href="reference/canvas_polylines.html">canvas_polylines</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'goldenrod'</span>, <span class="st">'firebrick'</span>, <span class="st">'navyblue'</span><span class="op">)</span>, 
                 background <span class="op">=</span> <span class="st">'#fafafa'</span>, ratio <span class="op">=</span> <span class="fl">0.5</span>, iterations <span class="op">=</span> <span class="fl">1000</span>, 
                 alpha <span class="op">=</span> <span class="cn">NULL</span>, size <span class="op">=</span> <span class="fl">0.1</span>, width <span class="op">=</span> <span class="fl">500</span>, height <span class="op">=</span> <span class="fl">500</span><span class="op">)</span></code></pre></div>
 </div>
@@ -169,10 +169,10 @@
 </ol>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-06.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-09.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-08.png" width="270" height="270"></p>
-<p>You can use the <code><a href="reference/paint_turmite.html">paint_turmite()</a></code> function to make your own artwork using this algorithm.</p>
+<p>You can use the <code><a href="reference/canvas_turmite.html">canvas_turmite()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
-<span class="fu"><a href="reference/paint_turmite.html">paint_turmite</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"#000000"</span>, background <span class="op">=</span> <span class="st">"#fafafa"</span>, p <span class="op">=</span> <span class="fl">0.5</span>, 
+<span class="fu"><a href="reference/canvas_turmite.html">canvas_turmite</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"#000000"</span>, background <span class="op">=</span> <span class="st">"#fafafa"</span>, p <span class="op">=</span> <span class="fl">0.5</span>, 
               iterations <span class="op">=</span> <span class="fl">1e7</span>, width <span class="op">=</span> <span class="fl">1500</span>, height <span class="op">=</span> <span class="fl">1500</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="langtons-ant" class="section level2">
@@ -186,9 +186,9 @@
 </ol>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-03.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-02.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-01.png" width="270" height="270"></p>
-<p>You can use the <code><a href="reference/paint_ant.html">paint_ant()</a></code> function to make your own artwork using this algorithm.</p>
+<p>You can use the <code><a href="reference/canvas_ant.html">canvas_ant()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/paint_ant.html">paint_ant</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="st">'#000000'</span>, background <span class="op">=</span> <span class="st">'#fafafa'</span>, iterations <span class="op">=</span> <span class="fl">1e7</span>,
+<code class="sourceCode R"><span class="fu"><a href="reference/canvas_ant.html">canvas_ant</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="st">'#000000'</span>, background <span class="op">=</span> <span class="st">'#fafafa'</span>, iterations <span class="op">=</span> <span class="fl">1e7</span>,
           width <span class="op">=</span> <span class="fl">200</span>, height <span class="op">=</span> <span class="fl">200</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="planets" class="section level2">
@@ -197,14 +197,14 @@
 <p>We all love space, and this type of artwork puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (inspired by an idea from <a href="https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/">Fronkonstin</a>) to fill in their surfaces.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-26.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-27.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-28.png" width="270" height="270"></p>
-<p>You can use the <code><a href="reference/paint_planet.html">paint_planet()</a></code> function to make your own artwork using this algorithm.</p>
+<p>You can use the <code><a href="reference/canvas_planet.html">canvas_planet()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Sun behind Earth and Moon</span>
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="va">colors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"khaki1"</span>, <span class="st">"lightcoral"</span>, <span class="st">"lightsalmon"</span><span class="op">)</span>,
                <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"dodgerblue"</span>, <span class="st">"forestgreen"</span>, <span class="st">"white"</span><span class="op">)</span>, 
                <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"gray"</span>, <span class="st">"darkgray"</span>, <span class="st">"beige"</span><span class="op">)</span><span class="op">)</span>
-<span class="fu"><a href="reference/paint_planet.html">paint_planet</a></span><span class="op">(</span><span class="va">colors</span>, radius <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">800</span>, <span class="fl">400</span>, <span class="fl">150</span><span class="op">)</span>, 
+<span class="fu"><a href="reference/canvas_planet.html">canvas_planet</a></span><span class="op">(</span><span class="va">colors</span>, radius <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">800</span>, <span class="fl">400</span>, <span class="fl">150</span><span class="op">)</span>, 
              center.x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">500</span>, <span class="fl">1100</span><span class="op">)</span>,
              center.y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1400</span>, <span class="fl">500</span>, <span class="fl">1000</span><span class="op">)</span>, 
              starprob <span class="op">=</span> <span class="fl">0.005</span><span class="op">)</span></code></pre></div>
@@ -215,10 +215,10 @@
 <p>This function creates a set of diamonds on a canvas. The diamonds are filled in using a random color assignment.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-06.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-04.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-05.png" width="270" height="270"></p>
-<p>You can use the <code><a href="reference/paint_diamonds.html">paint_diamonds()</a></code> function to make your own artwork using this algorithm.</p>
+<p>You can use the <code><a href="reference/canvas_diamonds.html">canvas_diamonds()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
-<span class="fu"><a href="reference/paint_diamonds.html">paint_diamonds</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"forestgreen"</span>, <span class="st">"navyblue"</span>, <span class="st">"goldenrod"</span>, <span class="st">"firebrick"</span><span class="op">)</span>, 
+<span class="fu"><a href="reference/canvas_diamonds.html">canvas_diamonds</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"forestgreen"</span>, <span class="st">"navyblue"</span>, <span class="st">"goldenrod"</span>, <span class="st">"firebrick"</span><span class="op">)</span>, 
                background <span class="op">=</span> <span class="st">'#fafafa'</span>, col.line <span class="op">=</span> <span class="st">'black'</span>, radius <span class="op">=</span> <span class="fl">10</span>, alpha <span class="op">=</span> <span class="fl">1</span>, 
                size <span class="op">=</span> <span class="fl">0.25</span>, p <span class="op">=</span> <span class="fl">0.2</span>, width <span class="op">=</span> <span class="fl">500</span>, height <span class="op">=</span> <span class="fl">500</span><span class="op">)</span></code></pre></div>
 </div>
@@ -228,10 +228,10 @@
 <p>This type of artwork mimics the style of the well-known paintings by the Dutch artist <a href="https://nl.wikipedia.org/wiki/Piet_Mondriaan">Piet Mondriaan</a>. It works by repeatedly cutting into the canvas at random locations and coloring the square that these cuts create.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/mondriaans/2021-03-01.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/mondriaans/2021-02-28.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/mondriaans/2021-02-29.png" width="270" height="270"></p>
-<p>You can use the <code><a href="reference/paint_mondriaan.html">paint_mondriaan()</a></code> function to make your own artwork using this algorithm.</p>
+<p>You can use the <code><a href="reference/canvas_mondriaan.html">canvas_mondriaan()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span>
-<span class="fu"><a href="reference/paint_mondriaan.html">paint_mondriaan</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'goldenrod'</span>, <span class="st">'firebrick'</span>, <span class="st">'navyblue'</span><span class="op">)</span>,
+<span class="fu"><a href="reference/canvas_mondriaan.html">canvas_mondriaan</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'goldenrod'</span>, <span class="st">'firebrick'</span>, <span class="st">'navyblue'</span><span class="op">)</span>,
                 cuts <span class="op">=</span> <span class="fl">50</span>, ratio <span class="op">=</span> <span class="fl">1.618</span>, width <span class="op">=</span> <span class="fl">100</span>, height <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="circle-maps" class="section level2">
@@ -240,9 +240,9 @@
 <p>This type of artwork is based on the concept of an <a href="https://en.wikipedia.org/wiki/Arnold_tongue">Arnold tongue</a>. According to wikipedia, Arnold tongues <em>“are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters”</em>.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22b.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22c.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22a.png" width="270" height="270"></p>
-<p>You can use the <code><a href="reference/paint_circlemap.html">paint_circlemap()</a></code> function to make your own artwork using this algorithm.</p>
+<p>You can use the <code><a href="reference/canvas_circlemap.html">canvas_circlemap()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/paint_circlemap.html">paint_circlemap</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'firebrick'</span>, <span class="st">'goldenrod'</span>, <span class="st">'navyblue'</span><span class="op">)</span>,
+<code class="sourceCode R"><span class="fu"><a href="reference/canvas_circlemap.html">canvas_circlemap</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'firebrick'</span>, <span class="st">'goldenrod'</span>, <span class="st">'navyblue'</span><span class="op">)</span>,
                 x_min <span class="op">=</span> <span class="fl">0</span>, x_max <span class="op">=</span> <span class="fl">12.56</span>, y_min <span class="op">=</span> <span class="fl">0</span>, y_max <span class="op">=</span> <span class="fl">1</span>, 
                 iterations <span class="op">=</span> <span class="fl">10</span>, width <span class="op">=</span> <span class="fl">1500</span>, height <span class="op">=</span> <span class="fl">1500</span><span class="op">)</span></code></pre></div>
 </div>
@@ -252,10 +252,10 @@
 <p>The idea for this type of artwork is taken over from the <a href="https://github.com/cutterkom/generativeart"><code>generativeart</code></a> package. In this algorithm, the position of every single point is calculated by a formula which has random parameters.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-03-17.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-04-08.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-04-04.png" width="270" height="270"></p>
-<p>You can use the <code><a href="reference/paint_function.html">paint_function()</a></code> function to make your own artwork using this algorithm.</p>
+<p>You can use the <code><a href="reference/canvas_function.html">canvas_function()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
-<span class="fu"><a href="reference/paint_function.html">paint_function</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">'#000000'</span>, background <span class="op">=</span> <span class="st">'#fafafa'</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="reference/canvas_function.html">canvas_function</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">'#000000'</span>, background <span class="op">=</span> <span class="st">'#fafafa'</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
 
@@ -281,6 +281,12 @@
 <h2>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
+</ul>
+</div>
+<div class="citation">
+<h2>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html">Citing aRtsy</a></li>
 </ul>
 </div>
 <div class="developers">
