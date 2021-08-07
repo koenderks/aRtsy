@@ -191,7 +191,7 @@ You can use the `paint_diamonds()` function to make your own artwork using this 
 
 ```r
 set.seed(1)
-paint_diamonds(colors = c("forestgreen", "navyblue", "goldenrod", "firebrick"), background = "#fafafa", radius = 10)
+paint_diamonds(colors = c("forestgreen", "navyblue", "goldenrod", "firebrick"), radius = 10)
 ```
 
 ## Mondriaan
