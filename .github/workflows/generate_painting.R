@@ -87,7 +87,7 @@ if (type == 1){
   painting <- aRtsy::paint_diamond(colors = randomcoloR::randomColor(sample(4:8, size = 1)), 
                                    background = sample(c("#fafafa", "black", randomcoloR::randomColor(1, luminosity = "light")), size = 1),
                                    col.line = sample(c("#fafafa", "black", randomcoloR::randomColor(1, luminosity = "dark")), size = 1),
-                                   radius = sample(c(5, 7, 10), size = 1),
+                                   radius = sample(c(2.5, 5, 7, 7.5), size = 1),
                                    p = sample(seq(0, 0.7, 0.1), size = 1),
                                    size = sample(c(0, 0.2), size = 1))
 
