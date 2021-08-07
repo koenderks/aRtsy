@@ -11,7 +11,7 @@
 
 *Why would anyone want to make art using computers? - Marcus du Sautoy, The Creative Code*
 
-`aRtsy` is an attempt at making generative art available for the masses in a simple and standardized format. The package combines several algorithms for creating artworks in `ggplot2` that involve some form of randomness in their creation (depending on the set `seed`). Each type of artwork is implemented in a separate function.
+`aRtsy` is an attempt at making generative art available for the masses in a simple and standardized format. The package combines several algorithms for creating artworks in `ggplot2` that incorporate some form of randomness (depending on the set `seed`). Each type of artwork is implemented in a separate function.
 
 Contributions to `aRtsy` are much appreciated. If you want to add your own type of artwork to the package so that others can use them, feel free to make a pull request to the [GitHub repository](https://github.com/koenderks/aRtsy). Don't forget to adjust [generate-painting.R](https://github.com/koenderks/aRtsy/blob/master/.github/workflows/generate_painting.R) if you also want the artwork to show up in the 'artwork of the day' category and the twitter feed.
 

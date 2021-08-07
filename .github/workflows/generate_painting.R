@@ -11,7 +11,6 @@ set.seed(seed)
 
 # Select painting type
 type <- sample(1:10, size = 1)
-type <- 10
 
 if (type == 1){
   
