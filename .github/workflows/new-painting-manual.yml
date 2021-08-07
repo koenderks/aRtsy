@@ -7,8 +7,6 @@ jobs:
   update:
     name: Create new painting
     runs-on: macos-latest
-    env:
-      GITHUB_PAT: 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
     steps:
 
       - name: Get current date
@@ -20,6 +18,7 @@ jobs:
         with:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
           fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+          token: ${{ secrets.PAT }}
       - uses: r-lib/actions/setup-r@v1
 
       # Install required packages and update README
