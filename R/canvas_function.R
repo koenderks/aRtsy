@@ -2,7 +2,7 @@
 #'
 #' @description This function paints functions with random parameters and mimics the functionality of the \code{generativeart} package.
 #'
-#' @usage paint_function(color, background = '#fafafa')
+#' @usage canvas_function(color, background = '#fafafa')
 #'
 #' @param color   	  a character specifying the color used for the function shape.
 #' @param background  a character specifying the color used for the background.
@@ -15,14 +15,14 @@
 #'
 #' @examples
 #' set.seed(1)
-#' paint_function(color = '#000000', background = '#fafafa')
+#' canvas_function(color = '#000000', background = '#fafafa')
 #' 
 #' @keywords paint
 #'
 #' @export
 #' @importFrom dplyr %>%
 
-paint_function <- function(color, background = '#fafafa'){
+canvas_function <- function(color, background = '#fafafa'){
   x <- y <- z <- NULL
   if(length(color) > 1)
     stop("Can only take one color value.")

@@ -2,8 +2,8 @@
 #'
 #' @description This function paints a Mondriaan.
 #'
-#' @usage paint_mondriaan(colors, background = '#000000', cuts = 50, ratio = 1.618,
-#'                 width = 100, height = 100)
+#' @usage canvas_mondriaan(colors, background = '#000000', cuts = 50, ratio = 1.618,
+#'                  width = 100, height = 100)
 #'
 #' @param colors   	  a character vector specifying the colors used in the squares.
 #' @param background  a character specifying the color used for the background (borders).
@@ -18,14 +18,14 @@
 #'
 #' @examples
 #' set.seed(6)
-#' paint_mondriaan(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
+#' canvas_mondriaan(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
 #' 
 #' @keywords paint
 #'
 #' @export
 
-paint_mondriaan <- function(colors, background = '#000000', cuts = 50, ratio = 1.618, 
-                            width = 100, height = 100){
+canvas_mondriaan <- function(colors, background = '#000000', cuts = 50, ratio = 1.618, 
+                             width = 100, height = 100){
   x <- y <- z <- NULL
   if(length(colors) <= 1)
 	stop("You must specify more than one color.")

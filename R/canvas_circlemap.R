@@ -2,8 +2,8 @@
 #'
 #' @description This function is my attempt at a circle map.
 #'
-#' @usage paint_circlemap(colors, x_min = 0, x_max = 12.56, y_min = 0, y_max = 1, 
-#'                 iterations = 10, width = 1500, height = 1500)
+#' @usage canvas_circlemap(colors, x_min = 0, x_max = 12.56, y_min = 0, y_max = 1, 
+#'                  iterations = 10, width = 1500, height = 1500)
 #'
 #' @param colors   	  a character (vector) specifying the colors used for the artwork.
 #' @param x_min   	  a numeric value specifying the minimum value for the x-axis.
@@ -22,15 +22,15 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
-#' paint_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'))
+#' canvas_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'))
 #' 
 #' @keywords paint
 #'
 #' @export
 #' @importFrom dplyr %>%
 
-paint_circlemap <- function(colors, x_min = 0, x_max = 12.56, y_min = 0, y_max = 1, 
-							              iterations = 10, width = 1500, height = 1500) {
+canvas_circlemap <- function(colors, x_min = 0, x_max = 12.56, y_min = 0, y_max = 1, 
+							               iterations = 10, width = 1500, height = 1500) {
   x <- y <- z <- NULL
   canvas <- matrix(1, nrow = height, ncol = width)
   canvas <- iterate_circlemap(canvas, x_min, x_max, y_min, y_max, iterations)

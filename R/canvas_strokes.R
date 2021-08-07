@@ -2,8 +2,8 @@
 #'
 #' @description This function creates an artwork that resembles paints strokes. The algorithm is based on the simple idea that each next point on the grid has a chance to take over the color of an adjacent colored point but also has a change of generating a new color.
 #'
-#' @usage paint_strokes(colors, neighbors = 1, p = 0.01, iterations = 1, 
-#'               width = 500, height = 500, side = FALSE)
+#' @usage canvas_strokes(colors, neighbors = 1, p = 0.01, iterations = 1, 
+#'                width = 500, height = 500, side = FALSE)
 #'
 #' @param colors     a character (vector) specifying the colors used for the strokes.
 #' @param neighbors  the number of neighbors a block considers when taking over a color. More neighbors fades the artwork.
@@ -19,7 +19,7 @@
 #'
 #' @examples
 #' set.seed(1)
-#' paint_strokes(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
+#' canvas_strokes(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
 #' 
 #' @keywords paint
 #'
@@ -27,8 +27,8 @@
 #' @useDynLib aRtsy
 #' @import Rcpp
 
-paint_strokes <- function(colors, neighbors = 1, p = 0.01, iterations = 1, 
-                          width = 500, height = 500, side = FALSE){
+canvas_strokes <- function(colors, neighbors = 1, p = 0.01, iterations = 1, 
+                           width = 500, height = 500, side = FALSE){
   x <- y <- z <- NULL
   if(neighbors < 1)
 	stop("Neighbors must be equal to, or larger than, one.")

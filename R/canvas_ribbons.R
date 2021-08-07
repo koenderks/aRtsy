@@ -2,7 +2,7 @@
 #'
 #' @description This function paints ribbons and (optionally) a triangle in the middle.
 #'
-#' @usage paint_ribbons(colors, background = '#fdf5e6', triangle = TRUE)
+#' @usage canvas_ribbons(colors, background = '#fdf5e6', triangle = TRUE)
 #'
 #' @param colors      a character (vector) specifying the colors for the ribbons. Colors determine the number of ribbons.
 #' @param background  a character specifying the color of the background.
@@ -14,14 +14,14 @@
 #'
 #' @examples
 #' set.seed(1)
-#' paint_ribbons(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod"))
+#' canvas_ribbons(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod"))
 #' 
 #' @keywords paint
 #'
 #' @export
 #' @importFrom ggpubr ggarrange
 
-paint_ribbons <- function(colors, background = '#fdf5e6', triangle = TRUE) {
+canvas_ribbons <- function(colors, background = '#fdf5e6', triangle = TRUE) {
   x <- y <- NULL
   # Create an empty figure
   artwork <- ggplot2::ggplot() +

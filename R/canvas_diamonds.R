@@ -1,9 +1,9 @@
 #' Paint A Diamond on Canvas
 #'
-#' @description This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork.
+#' @description This function draws many diamonds on the canvas and places two lines behind them. The diamonds can be transparent or have a random color sampled from the input.
 #'
-#' @usage paint_diamonds(colors, background = '#fafafa', col.line = 'black', 
-#'                   radius = 10, alpha = 1, size = 0.25, p = 0.2, width = 500, height = 500)
+#' @usage canvas_diamonds(colors, background = '#fafafa', col.line = 'black', 
+#'                    radius = 10, alpha = 1, size = 0.25, p = 0.2, width = 500, height = 500)
 #'
 #' @param colors      a character (vector) specifying the colors used for the strokes.
 #' @param background  a character specifying the color used for the borders.
@@ -21,14 +21,14 @@
 #'
 #' @examples
 #' set.seed(1)
-#' paint_diamonds(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), radius = 10)
+#' canvas_diamonds(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), radius = 10)
 #' 
 #' @keywords paint
 #'
 #' @export
 
-paint_diamonds <- function(colors, background = '#fafafa', col.line = 'black', 
-                           radius = 10, alpha = 1, size = 0.25, p = 0.2, width = 500, height = 500) {
+canvas_diamonds <- function(colors, background = '#fafafa', col.line = 'black', 
+                            radius = 10, alpha = 1, size = 0.25, p = 0.2, width = 500, height = 500) {
   x <- y <- xend <- yend <- type <- col <- NULL
   
   x <- seq(from = width / 5, to = width / 5 * 4, by = radius)

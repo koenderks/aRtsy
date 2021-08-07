@@ -43,16 +43,16 @@ library(aRtsy)
 
 ## Available artworks
 
-* [`paint_strokes()`](#paint-strokes)
-* [`paint_ribbons()`](#ribbons)
-* [`paint_polylines()`](#polylines)
-* [`paint_turmite()`](#turmite)
-* [`paint_ant()`](#langtons-ant)
-* [`paint_planet()`](#planets)
-* [`paint_diamonds()`](#diamonds)
-* [`paint_mondriaan()`](#mondriaan)
-* [`paint_cirlemap()`](#circle-maps)
-* [`paint_function()`](#functions)
+* [`canvas_strokes()`](#paint-strokes)
+* [`canvas_ribbons()`](#ribbons)
+* [`canvas_polylines()`](#polylines)
+* [`canvas_turmite()`](#turmite)
+* [`canvas_ant()`](#langtons-ant)
+* [`canvas_planet()`](#planets)
+* [`canvas_diamonds()`](#diamonds)
+* [`canvas_mondriaan()`](#mondriaan)
+* [`canvas_cirlemap()`](#circle-maps)
+* [`canvas_function()`](#functions)
 
 ## Paint strokes
 
@@ -64,11 +64,11 @@ When you think of the act of painting, you probably imagine stroking paint on a 
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-10.png' width='270' height='270'>
 </p>
 
-You can use the `paint_strokes()` function to make your own artwork using this algorithm.
+You can use the `canvas_strokes()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(1)
-paint_strokes(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), 
+canvas_strokes(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), 
               neighbors = 1, p = 0.01, iterations = 1, 
               width = 500, height = 500, side = FALSE))
 ```
@@ -83,11 +83,11 @@ This function creates colored ribbons with (or without) a triangle that breaks t
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-14.png' width='270' height='270'>
 </p>
 
-You can use the `paint_ribbons()` function to make your own artwork using this algorithm.
+You can use the `canvas_ribbons()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(1)
-paint_ribbons(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod"),
+canvas_ribbons(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod"),
               background = '#fdf5e6', triangle = TRUE)
 ```
 
@@ -101,11 +101,11 @@ This function draws many points on the canvas and connects these points into a p
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-21.png' width='270' height='270'>
 </p>
 
-You can use the `paint_polylines()` function to make your own artwork using this algorithm.
+You can use the `canvas_polylines()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(1)
-paint_polylines(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), 
+canvas_polylines(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), 
                 background = '#fafafa', ratio = 0.5, iterations = 1000, 
                 alpha = NULL, size = 0.1, width = 500, height = 500)
 ```
@@ -124,11 +124,11 @@ According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *"
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-08.png' width='270' height='270'>
 </p>
 
-You can use the `paint_turmite()` function to make your own artwork using this algorithm.
+You can use the `canvas_turmite()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(1)
-paint_turmite(color = "#000000", background = "#fafafa", p = 0.5, 
+canvas_turmite(color = "#000000", background = "#fafafa", p = 0.5, 
               iterations = 1e7, width = 1500, height = 1500)
 ```
 
@@ -146,10 +146,10 @@ According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langton
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-01.png' width='270' height='270'>
 </p>
 
-You can use the `paint_ant()` function to make your own artwork using this algorithm.
+You can use the `canvas_ant()` function to make your own artwork using this algorithm.
 
 ```r
-paint_ant(colors = '#000000', background = '#fafafa', iterations = 1e7,
+canvas_ant(colors = '#000000', background = '#fafafa', iterations = 1e7,
           width = 200, height = 200)
 ```
 
@@ -163,7 +163,7 @@ We all love space, and this type of artwork puts you right between the planets. 
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-28.png' width='270' height='270'>
 </p>
 
-You can use the `paint_planet()` function to make your own artwork using this algorithm.
+You can use the `canvas_planet()` function to make your own artwork using this algorithm.
 
 ```r
 # Sun behind Earth and Moon
@@ -171,7 +171,7 @@ set.seed(1)
 colors <- list(c("khaki1", "lightcoral", "lightsalmon"),
                c("dodgerblue", "forestgreen", "white"), 
                c("gray", "darkgray", "beige"))
-paint_planet(colors, radius = c(800, 400, 150), 
+canvas_planet(colors, radius = c(800, 400, 150), 
              center.x = c(1, 500, 1100),
              center.y = c(1400, 500, 1000), 
              starprob = 0.005)
@@ -187,11 +187,11 @@ This function creates a set of diamonds on a canvas. The diamonds are filled in 
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-05.png' width='270' height='270'>
 </p>
 
-You can use the `paint_diamonds()` function to make your own artwork using this algorithm.
+You can use the `canvas_diamonds()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(1)
-paint_diamonds(colors = c("forestgreen", "navyblue", "goldenrod", "firebrick"), 
+canvas_diamonds(colors = c("forestgreen", "navyblue", "goldenrod", "firebrick"), 
                background = '#fafafa', col.line = 'black', radius = 10, alpha = 1, 
                size = 0.25, p = 0.2, width = 500, height = 500)
 ```
@@ -206,11 +206,11 @@ This type of artwork mimics the style of the well-known paintings by the Dutch a
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/mondriaans/2021-02-29.png' width='270' height='270'>
 </p>
 
-You can use the `paint_mondriaan()` function to make your own artwork using this algorithm.
+You can use the `canvas_mondriaan()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(6)
-paint_mondriaan(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'),
+canvas_mondriaan(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'),
                 cuts = 50, ratio = 1.618, width = 100, height = 100)
 ```
 
@@ -224,10 +224,10 @@ This type of artwork is based on the concept of an [Arnold tongue](https://en.wi
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22a.png' width='270' height='270'>
 </p>
 
-You can use the `paint_circlemap()` function to make your own artwork using this algorithm.
+You can use the `canvas_circlemap()` function to make your own artwork using this algorithm.
 
 ```r
-paint_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'),
+canvas_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'),
                 x_min = 0, x_max = 12.56, y_min = 0, y_max = 1, 
                 iterations = 10, width = 1500, height = 1500)
 ```
@@ -242,9 +242,9 @@ The idea for this type of artwork is taken over from the [`generativeart`](https
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-04-04.png' width='270' height='270'>
 </p>
 
-You can use the `paint_function()` function to make your own artwork using this algorithm.
+You can use the `canvas_function()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(1)
-paint_function(color = '#000000', background = '#fafafa')
+canvas_function(color = '#000000', background = '#fafafa')
 ```

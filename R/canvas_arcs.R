@@ -2,8 +2,8 @@
 #'
 #' @description Inspired by the work of \href{https://twitter.com/ijeamaka_a}{@ijeamaka_a}, this type of artwork mimics her beautiful \href{https://www.etsy.com/listing/1032142006/arcs-series-geometric-art-generative-art?ref=shop_home_recs_1&crt=1}{Arc Series}. For private use only.
 #'
-#' @usage paint_arcs(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL, 
-#'            dir = 'right', starts = 'clockwise')
+#' @usage canvas_arcs(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL, 
+#'             dir = 'right', starts = 'clockwise')
 #'
 #' @param colors   	  a character vector specifying the 3 colors used for the arcs.
 #' @param background  a character string specifying the color used for the background.
@@ -18,13 +18,13 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
-#' aRtsy:::paint_arcs(colors = c('darkgreen', 'goldenrod', 'firebrick'), n = 9)
+#' aRtsy:::canvas_arcs(colors = c('darkgreen', 'goldenrod', 'firebrick'), n = 9)
 #' 
 #' @keywords paint
 #'
 #' @importFrom ggpubr ggarrange
 
-paint_arcs <- function(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL, 
+canvas_arcs <- function(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL, 
                        dir = 'right', starts = 'clockwise') {
   if(length(colors) != 3)
     stop("You must provide three color names.")

@@ -2,8 +2,8 @@
 #'
 #' @description This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork.
 #'
-#' @usage paint_polylines(colors, background = '#fafafa', ratio = 0.5, iterations = 1000, 
-#'                 alpha = NULL, size = 0.1, width = 500, height = 500)
+#' @usage canvas_polylines(colors, background = '#fafafa', ratio = 0.5, iterations = 1000, 
+#'                  alpha = NULL, size = 0.1, width = 500, height = 500)
 #'
 #' @param colors      a character (vector) specifying the colors used for the strokes.
 #' @param background  a character specifying the color used for the borders.
@@ -20,7 +20,7 @@
 #'
 #' @examples
 #' set.seed(1)
-#' paint_polylines(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
+#' canvas_polylines(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
 #' 
 #' @keywords paint
 #'
@@ -28,8 +28,8 @@
 #' @useDynLib aRtsy
 #' @import Rcpp
 
-paint_polylines <- function(colors, background = '#fafafa', ratio = 0.5, iterations = 1000, 
-                    alpha = NULL, size = 0.1, width = 500, height = 500){
+canvas_polylines <- function(colors, background = '#fafafa', ratio = 0.5, iterations = 1000, 
+                     alpha = NULL, size = 0.1, width = 500, height = 500){
   x <- y <- type <- NULL
   if(is.null(alpha)) {
     alphas <- seq(from = 1, to = 0.1, length.out = length(colors))
