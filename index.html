@@ -115,7 +115,7 @@
 <li><a href="#turmite"><code>paint_turmite()</code></a></li>
 <li><a href="#langtons-ant"><code>paint_ant()</code></a></li>
 <li><a href="#planets"><code>paint_planet()</code></a></li>
-<li><a href="#diamonds"><code>paint_diamond()</code></a></li>
+<li><a href="#diamonds"><code>paint_diamonds()</code></a></li>
 <li><a href="#mondriaan"><code>paint_mondriaan()</code></a></li>
 <li><a href="#circle-maps"><code>paint_cirlemap()</code></a></li>
 <li><a href="#functions"><code>paint_function()</code></a></li>
@@ -212,13 +212,13 @@
 <div id="diamonds" class="section level2">
 <h2 class="hasAnchor">
 <a href="#diamonds" class="anchor"></a>Diamonds</h2>
-<p>This function creates a set of diamonds on a canvas.</p>
+<p>This function creates a set of diamonds on a canvas. The diamonds are filled in using a random color assignment.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/master/png/diamonds/2021-08-06.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/diamonds/2021-08-04.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/master/png/diamonds/2021-08-05.png" width="270" height="270"></p>
-<p>You can use the <code><a href="reference/paint_diamond.html">paint_diamond()</a></code> function to make your own artwork using this algorithm.</p>
+<p>You can use the <code><a href="reference/paint_diamonds.html">paint_diamonds()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
-<span class="fu"><a href="reference/paint_diamond.html">paint_diamond</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"forestgreen"</span>, <span class="st">"navyblue"</span>, <span class="st">"goldenrod"</span>, <span class="st">"firebrick"</span><span class="op">)</span>, background <span class="op">=</span> <span class="st">"#fafafa"</span>, radius <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="reference/paint_diamonds.html">paint_diamonds</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"forestgreen"</span>, <span class="st">"navyblue"</span>, <span class="st">"goldenrod"</span>, <span class="st">"firebrick"</span><span class="op">)</span>, radius <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="mondriaan" class="section level2">
 <h2 class="hasAnchor">
