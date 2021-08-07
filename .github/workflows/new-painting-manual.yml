@@ -8,7 +8,7 @@ jobs:
     name: Create new painting
     runs-on: windows-latest
     env:
-      GITHUB_PAT: ${{ secrets.R:GITHUB_PAT }}
+      GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
     steps:
 
       - name: Get current date
