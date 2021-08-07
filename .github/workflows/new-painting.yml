@@ -8,6 +8,8 @@ jobs:
   update:
     name: Create new painting
     runs-on: macos-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       
       # Get current date
@@ -26,7 +28,6 @@ jobs:
       - name: Install required packages
         run: |
           install.packages(c("remotes", "randomcoloR"))
-          Sys.unsetenv("GITHUB_PAT")
           remotes::install_github("koenderks/aRtsy")
         shell: Rscript {0}
 
