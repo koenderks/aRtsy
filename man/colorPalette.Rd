@@ -7,7 +7,7 @@
 colorPalette(name, n = NULL)
 }
 \arguments{
-\item{name}{name of the color palette. See the \code{details} section for a list of implemented palettes.}
+\item{name}{name of the color palette. Can be \code{random} for random colors, but can also be the name of a pre-implemented palette. See the \code{details} section for a list of pre-implemented palettes.}
 
 \item{n}{the number of colors to select from the palette. Required if \code{name = 'random'}. Otherwise, if \code{NULL}, automatically selects all colors from the chosen palette.}
 }

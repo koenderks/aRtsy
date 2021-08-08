@@ -1,9 +1,13 @@
 library(ggpubr)
+library(aRtsy)
 
 palettes <- c('blackwhite', 
               "dark1", 
-              "dark2", 
-              'nature', 
+              "dark2",
+              "dark3",
+              'nature',
+              "neon1",
+              "neon2",
               'retro1', 
               'retro2', 
               'retro3', 

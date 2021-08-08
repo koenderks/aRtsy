@@ -4,7 +4,7 @@
 #'
 #' @usage colorPalette(name, n = NULL)
 #'
-#' @param name   name of the color palette. See the \code{details} section for a list of implemented palettes.
+#' @param name   name of the color palette. Can be \code{random} for random colors, but can also be the name of a pre-implemented palette. See the \code{details} section for a list of pre-implemented palettes.
 #' @param n      the number of colors to select from the palette. Required if \code{name = 'random'}. Otherwise, if \code{NULL}, automatically selects all colors from the chosen palette.
 #'
 #' @details The following color palettes are implemented:
@@ -34,7 +34,10 @@ colorPalette <- function(name, n = NULL) {
                       "blackwhite" = c('black', 'white'),
                       'dark1' = c('#161616', '#346751', '#C84B31', '#ECDBBA'),
                       'dark2' = c('#1B262C', '#0F4C75', '#3282B8', '#BBE1FA'),
+                      'dark3' = c('#222831', '#393E46', '#00ADB5', '#EEEEEE'),
                       'nature' = c('forestgreen', 'dodgerblue', 'brown', 'white', 'gray'),
+                      'neon1' = c('#F7FD04', '#F9B208', '#F98404', '#FC5404'),
+                      'neon2' = c('#F5F7B2', '#1CC5DC', '#890596', '#CF0000'),
                       'retro1' = c('#0A1931', '#185ADB', '#FFC947', '#EFEFEF'),
                       'retro2' = c('#DDDDDD', '#222831', '#30475E', '#F05454'),
                       'retro3' = c('#111D5E', '#C70039', '#F37121', '#C0E218'),
