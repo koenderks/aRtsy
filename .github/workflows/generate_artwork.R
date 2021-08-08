@@ -93,7 +93,9 @@ if (type == 1) {
   
   artwork <- aRtsy::canvas_segments(colors = aRtsy::colorPalette('random', sample(1:8, size = 1)), 
                                     background = aRtsy::colorPalette('random', 1), 
-                                    n = sample(c(100, 200, 300, 400, 500), H = 0.1, size = 1))
+                                    n = sample(c(100, 200, 300, 400, 500), size = 1),
+                                    H = 0.1,
+                                    p = sample(c(0.3, 0.4, 0.5, 0.6, 0.7), size = 1))
   
 }
 
