@@ -83,7 +83,7 @@ canvas_strokes(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'),
                width = 500, height = 500, side = FALSE)
 ```
 
-### Turmite
+#### Turmite
 
 According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *"a Turing machine which has an orientation in addition to a current state and a "tape" that consists of an infinite two-dimensional grid of cells"*. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in `aRtsy` is slightly modified so that the turmite does not go off the canvas, but instead bounces back onto the canvas.
 
@@ -105,7 +105,7 @@ canvas_turmite(color = "#000000", background = "#fafafa", p = 0.5,
                iterations = 1e7, width = 1500, height = 1500)
 ```
 
-### Langton's ant
+#### Langton's ant
 
 According to [wikipedia](https://en.wikipedia.org/wiki/Langton%27s_ant), Langton's ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below. Beware, the problem (or blessing) of Langton's ant is that it always moves off the canvas...
 
@@ -126,7 +126,7 @@ canvas_ant(colors = '#000000', background = '#fafafa', iterations = 1e7,
            width = 200, height = 200)
 ```
 
-### Planets
+#### Planets
 
 We all love space, and this type of artwork puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (inspired by an idea from [Fronkonstin](https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/)) to fill in their surfaces.
 
@@ -150,7 +150,7 @@ canvas_planet(colors, radius = c(800, 400, 150),
               starprob = 0.005)
 ```
 
-### Circle maps
+#### Circle maps
 
 This type of artwork is based on the concept of an [Arnold tongue](https://en.wikipedia.org/wiki/Arnold_tongue). According to wikipedia, Arnold tongues *"are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters"*.
 
@@ -168,11 +168,11 @@ canvas_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue')
                  iterations = 10, width = 1500, height = 1500)
 ```
 
-## The Geometric collection
+### The Geometric collection
 
 The Geometric collection implements algorithms that draw a geometric shape and apply a random color to it.
 
-### Segments
+#### Segments
 
 This type of artwork mimics the style of the well-known paintings by the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan). The position and direction of each line segment is determined randomly.
 
@@ -189,7 +189,7 @@ set.seed(1)
 canvas_segments(colors = 'black', background = '#fafafa', n = 100, p = 0.5, H = 0.1)
 ```
 
-### Diamonds
+#### Diamonds
 
 This function creates a set of diamonds on a canvas. The diamonds are filled in using a random color assignment.
 
@@ -208,7 +208,7 @@ canvas_diamonds(colors = c("forestgreen", "navyblue", "goldenrod", "firebrick"),
                 size = 0.25, p = 0.2, width = 500, height = 500)
 ```
 
-### Squares and rectangles
+#### Squares and rectangles
 
 This type of artwork is also a la Mondriaan, but uses a variety of squares and rectangles instead of lines. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.
 
@@ -226,7 +226,7 @@ canvas_squares(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'),
                cuts = 50, ratio = 1.618, width = 100, height = 100)
 ```
 
-### Ribbons
+#### Ribbons
 
 This function creates colored ribbons with (or without) a triangle that breaks their paths. This path of the ribbon polygon is creating by picking one point on the left side of the triangle and one point on the right side at random and using these points as nodes.
 
@@ -244,7 +244,7 @@ canvas_ribbons(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod")
                background = '#fdf5e6', triangle = TRUE)
 ```
 
-### Polylines
+#### Polylines
 
 This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork.
 
@@ -263,7 +263,7 @@ canvas_polylines(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue')
                  alpha = NULL, size = 0.1, width = 500, height = 500)
 ```
 
-### Functions
+#### Functions
 
 The idea for this type of artwork is taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package. In this algorithm, the position of every single point is calculated by a formula which has random parameters.
 
