@@ -31,7 +31,7 @@ A \code{ggplot} object containing the artwork.
 This function is my attempt at a circle map.
 }
 \examples{
-canvas_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'))
+canvas_circlemap(colors = colorPalette('tuscany2'))
 
 }
 \references{

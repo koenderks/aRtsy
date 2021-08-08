@@ -1,3 +1,8 @@
+test_that("colorPalette()", {
+  palette <- aRtsy::colorPalette(name = 'random', n = 4)
+  expect_equal(length(palette), 4)
+})
+
 test_that("canvas_strokes()", {
   artwork <- aRtsy::canvas_strokes(colors = c("black", "white"))
   expect_equal(!is.null(artwork), TRUE)

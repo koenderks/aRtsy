@@ -14,7 +14,6 @@
 #' 
 #' @keywords canvas theme
 #' 
-#'
 #' @export
 
 themeCanvas <- function(x, background = '#fafafa', margin = -1.25) {

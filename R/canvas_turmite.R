@@ -32,9 +32,9 @@ canvas_turmite <- function(color, background = '#fafafa', p = 0.5, iterations = 
                            width = 1500, height = 1500) {
   x <- y <- z <- NULL
   if (length(color) > 1)
-    stop("Can only take one color value.")
+    stop("This artwork can only take one color value.")
   if (length(background) > 1)
-    stop("Can only take one background value.")
+    stop("This artwork can only take one background value.")
   palette <- c(background, color)
   k <- sample(0:1, size = 1)
   row <- 0

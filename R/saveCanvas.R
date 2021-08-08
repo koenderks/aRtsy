@@ -8,13 +8,10 @@
 #' @param filename   the filename of the export.
 #' @param resolution the \code{dpi} of the export.
 #'
-#' @return A \code{ggplot} object containing the artwork.
-#'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #' 
 #' @keywords canvas save
 #' 
-#'
 #' @export
 
 saveCanvas <- function(plot, filename, resolution = 300) {

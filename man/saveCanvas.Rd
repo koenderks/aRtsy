@@ -13,9 +13,6 @@ saveCanvas(plot, filename, resolution)
 
 \item{resolution}{the \code{dpi} of the export.}
 }
-\value{
-A \code{ggplot} object containing the artwork.
-}
 \description{
 This function is a wrapper around \code{ggplot2::ggsave}. It provides a suggested export with square dimensions for a canvas created using the \code{aRtsy} package.
 }

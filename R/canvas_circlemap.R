@@ -22,7 +22,7 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
-#' canvas_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'))
+#' canvas_circlemap(colors = colorPalette('tuscany2'))
 #' 
 #' @keywords artwork canvas
 #'
