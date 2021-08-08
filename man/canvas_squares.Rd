@@ -5,7 +5,7 @@
 \title{Paint Squares on a Canvas}
 \usage{
 canvas_squares(colors, background = '#000000', cuts = 50, ratio = 1.618,
-              width = 100, height = 100)
+               width = 100, height = 100)
 }
 \arguments{
 \item{colors}{a character vector specifying the colors used in the squares.}

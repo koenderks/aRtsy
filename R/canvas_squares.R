@@ -3,7 +3,7 @@
 #' @description This function paints a squares. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.
 #'
 #' @usage canvas_squares(colors, background = '#000000', cuts = 50, ratio = 1.618,
-#'               width = 100, height = 100)
+#'                width = 100, height = 100)
 #'
 #' @param colors   	  a character vector specifying the colors used in the squares.
 #' @param background  a character specifying the color used for the background (borders).
