@@ -2,9 +2,11 @@
 #'
 #' @description Add a canvas theme to the plot. The canvas theme by default has no margins and fills any empty canvas with a background color.
 #'
-#' @usage themeCanvas(x)
+#' @usage themeCanvas(x, background = '#fafafa', margin = -1.25)
 #'
-#' @param x   a ggplot2 object.
+#' @param x            a ggplot2 object.
+#' @param background   a character specifying the color used for the empty canvas.
+#' @param margin       margins of the plot.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'

@@ -27,10 +27,9 @@
 #' @keywords artwork canvas
 #'
 #' @export
-#' @importFrom dplyr %>%
 
 canvas_circlemap <- function(colors, x_min = 0, x_max = 12.56, y_min = 0, y_max = 1, 
-							               iterations = 10, width = 1500, height = 1500) {
+                             iterations = 10, width = 1500, height = 1500) {
   x <- y <- z <- NULL
   canvas <- matrix(1, nrow = height, ncol = width)
   canvas <- iterate_circlemap(canvas, x_min, x_max, y_min, y_max, iterations)
@@ -42,16 +41,7 @@ canvas_circlemap <- function(colors, x_min = 0, x_max = 12.56, y_min = 0, y_max 
     ggplot2::coord_equal() +
     ggplot2::scale_fill_gradientn(colours = colors) +
     ggplot2::scale_y_continuous(expand = c(0,0)) + 
-    ggplot2::scale_x_continuous(expand = c(0,0)) +
-    ggplot2::theme(axis.title = ggplot2::element_blank(), 
-                   axis.text = ggplot2::element_blank(), 
-                   axis.ticks = ggplot2::element_blank(), 
-                   axis.line = ggplot2::element_blank(), 
-                   legend.position = "none", 
-                   panel.border = ggplot2::element_blank(), 
-                   panel.grid = ggplot2::element_blank(), 
-                   plot.margin = ggplot2::unit(rep(-1.25,4),"lines"), 
-                   strip.background = ggplot2::element_blank(), 
-                   strip.text = ggplot2::element_blank())
+    ggplot2::scale_x_continuous(expand = c(0,0))
+  artwork <- themeCanvas(artwork, background = NULL)
   return(artwork) 
 }

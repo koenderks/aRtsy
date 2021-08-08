@@ -5,7 +5,8 @@
 \title{Paint A Diamond on Canvas}
 \usage{
 canvas_diamonds(colors, background = '#fafafa', col.line = 'black', 
-                   radius = 10, alpha = 1, size = 0.25, p = 0.2, width = 500, height = 500)
+                radius = 10, alpha = 1, size = 0.25, p = 0.2, 
+                width = 500, height = 500)
 }
 \arguments{
 \item{colors}{a character (vector) specifying the colors used for the strokes.}

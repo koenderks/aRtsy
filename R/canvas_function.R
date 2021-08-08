@@ -40,23 +40,11 @@ canvas_function <- function(color, background = '#fafafa'){
   painting_formulas[[3]] <- list(x = quote(runif(1, -1, 1) * x_i^2 -sin(y_i^2)),
                                  y = quote(runif(1, -1, 1) * y_i^3-cos(x_i^2)))
   painting_formula <- painting_formulas[[sample(1:length(painting_formulas), 1)]]
-  df <- expand.grid(x_i = seq(from = -pi, to = pi, by = 0.01), y_i = seq(from = -pi, to = pi, by = 0.01)) %>% dplyr::mutate(!!!painting_formula)
-  artwork <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y)) + 
+  full_canvas <- expand.grid(x_i = seq(from = -pi, to = pi, by = 0.01), y_i = seq(from = -pi, to = pi, by = 0.01)) %>% dplyr::mutate(!!!painting_formula)
+  artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y)) + 
     ggplot2::geom_point(alpha = 0.1, size = 0, shape = 20, color = color) + 
-    ggplot2::theme_void() + 
     ggplot2::coord_fixed() + 
-    ggplot2::coord_polar() + 
-    ggplot2::theme(axis.title = ggplot2::element_blank(), 
-                   axis.text = ggplot2::element_blank(), 
-                   axis.ticks = ggplot2::element_blank(), 
-                   axis.line = ggplot2::element_blank(), 
-                   legend.position = "none", 
-                   panel.background = ggplot2::element_rect(fill = background, colour = background), 
-                   panel.border = ggplot2::element_blank(), 
-                   panel.grid = ggplot2::element_blank(), 
-                   plot.background = ggplot2::element_rect(fill = background, colour = background), 
-                   plot.margin = ggplot2::unit(rep(-1.25,4),"lines"), 
-                   strip.background = ggplot2::element_blank(), 
-                   strip.text = ggplot2::element_blank())
+    ggplot2::coord_polar()
+  artwork <- themeCanvas(artwork, background)
   return(artwork) 
 }

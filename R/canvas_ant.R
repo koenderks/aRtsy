@@ -23,8 +23,6 @@
 #' @keywords artwork canvas
 #'
 #' @export
-#' @useDynLib aRtsy
-#' @import Rcpp
 
 canvas_ant <- function(colors, background = '#fafafa', iterations = 1e7, 
                        width = 200, height = 200){
@@ -47,6 +45,6 @@ canvas_ant <- function(colors, background = '#fafafa', iterations = 1e7,
     ggplot2::scale_fill_gradientn(colours = palette) +
     ggplot2::scale_y_continuous(expand = c(0,0)) + 
     ggplot2::scale_x_continuous(expand = c(0,0))
-  artwork <- themeCanvas(artwork)
+  artwork <- themeCanvas(artwork, background)
   return(artwork)
 }
