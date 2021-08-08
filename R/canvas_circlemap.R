@@ -27,6 +27,8 @@
 #' @keywords artwork canvas
 #'
 #' @export
+#' @useDynLib aRtsy
+#' @import Rcpp
 
 canvas_circlemap <- function(colors, x_min = 0, x_max = 12.56, y_min = 0, y_max = 1, 
                              iterations = 10, width = 1500, height = 1500) {

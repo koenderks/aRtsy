@@ -23,6 +23,8 @@
 #' @keywords artwork canvas
 #'
 #' @export
+#' @useDynLib aRtsy
+#' @import Rcpp
 
 canvas_mondriaan <- function(colors, background = '#000000', cuts = 50, ratio = 1.618, 
                              width = 100, height = 100) {

@@ -23,6 +23,8 @@
 #' @keywords artwork canvas
 #'
 #' @export
+#' @useDynLib aRtsy
+#' @import Rcpp
 
 canvas_ant <- function(colors, background = '#fafafa', iterations = 1e7, 
                        width = 200, height = 200) {

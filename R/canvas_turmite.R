@@ -25,6 +25,8 @@
 #' @keywords artwork canvas
 #'
 #' @export
+#' @useDynLib aRtsy
+#' @import Rcpp
 
 canvas_turmite <- function(color, background = '#fafafa', p = 0.5, iterations = 1e7, 
                            width = 1500, height = 1500) {

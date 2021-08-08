@@ -24,6 +24,8 @@
 #' @keywords artwork canvas
 #'
 #' @export
+#' @useDynLib aRtsy
+#' @import Rcpp
 
 canvas_strokes <- function(colors, neighbors = 1, p = 0.01, iterations = 1, 
                            width = 500, height = 500, side = FALSE) {

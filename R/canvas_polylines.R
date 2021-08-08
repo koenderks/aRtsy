@@ -25,6 +25,8 @@
 #' @keywords artwork canvas
 #'
 #' @export
+#' @useDynLib aRtsy
+#' @import Rcpp
 
 canvas_polylines <- function(colors, background = '#fafafa', ratio = 0.5, iterations = 1000, 
                              alpha = NULL, size = 0.1, width = 500, height = 500) {
