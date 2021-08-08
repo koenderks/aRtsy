@@ -55,7 +55,7 @@ library(aRtsy)
 
 * [`canvas_segments()`](#segments)
 * [`canvas_diamonds()`](#diamonds)
-* [`canvas_mondriaan()`](#mondriaan)
+* [`canvas_squares()`](#Squares)
 * [`canvas_ribbons()`](#ribbons)
 * [`canvas_polylines()`](#polylines)
 * [`canvas_function()`](#functions)
@@ -208,22 +208,22 @@ canvas_diamonds(colors = c("forestgreen", "navyblue", "goldenrod", "firebrick"),
                 size = 0.25, p = 0.2, width = 500, height = 500)
 ```
 
-### Mondriaan
+### Squares and rectangles
 
-This type of artwork is also a la Mondriaan, but uses a variety of squares instead of lines. It works by repeatedly cutting into the canvas at random locations and coloring the square that these cuts create.
+This type of artwork is also a la Mondriaan, but uses a variety of squares and rectangles instead of lines. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mondriaans/2021-03-01.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mondriaans/2021-02-28.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mondriaans/2021-02-29.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-03-01.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-02-28.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-02-29.png' width='270' height='270'>
 </p>
 
-You can use the `canvas_mondriaan()` function to make your own artwork using this algorithm.
+You can use the `canvas_squares()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(6)
-canvas_mondriaan(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'),
-                 cuts = 50, ratio = 1.618, width = 100, height = 100)
+canvas_squares(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'),
+               cuts = 50, ratio = 1.618, width = 100, height = 100)
 ```
 
 ### Ribbons

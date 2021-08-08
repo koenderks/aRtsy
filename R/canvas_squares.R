@@ -1,9 +1,9 @@
-#' Paint a Mondriaan on a Canvas
+#' Paint Squares on a Canvas
 #'
-#' @description This function paints a Mondriaan.
+#' @description This function paints a squares. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.
 #'
-#' @usage canvas_mondriaan(colors, background = '#000000', cuts = 50, ratio = 1.618,
-#'                  width = 100, height = 100)
+#' @usage canvas_squares(colors, background = '#000000', cuts = 50, ratio = 1.618,
+#'               width = 100, height = 100)
 #'
 #' @param colors   	  a character vector specifying the colors used in the squares.
 #' @param background  a character specifying the color used for the background (borders).
@@ -18,7 +18,7 @@
 #'
 #' @examples
 #' set.seed(6)
-#' canvas_mondriaan(colors = colorPalette('tuscany1'))
+#' canvas_squares(colors = colorPalette('tuscany1'))
 #' 
 #' @keywords artwork canvas
 #'
@@ -26,8 +26,8 @@
 #' @useDynLib aRtsy
 #' @import Rcpp
 
-canvas_mondriaan <- function(colors, background = '#000000', cuts = 50, ratio = 1.618, 
-                             width = 100, height = 100) {
+canvas_squares <- function(colors, background = '#000000', cuts = 50, ratio = 1.618, 
+                           width = 100, height = 100) {
   x <- y <- z <- NULL
   if (length(colors) <= 1)
     stop("You must specify more than one color.")
@@ -39,7 +39,7 @@ canvas_mondriaan <- function(colors, background = '#000000', cuts = 50, ratio = 
   neighbors <- expand.grid(-1:1,-1:1)
   colnames(neighbors) <- c("x", "y")
   canvas <- matrix(0, nrow = height, ncol = width)  
-  full_canvas <- iterate_mondriaan(canvas, neighbors, length(colors), cuts, ratio)
+  full_canvas <- iterate_squares(canvas, neighbors, length(colors), cuts, ratio)
   full_canvas <- reshape2::melt(full_canvas)
   colnames(full_canvas) <- c("y", "x", "z")
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +

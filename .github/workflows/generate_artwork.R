@@ -46,12 +46,12 @@ if (type == 1) {
   
 } else if (type == 5) {
   
-  artwork <- aRtsy::canvas_mondriaan(colors = aRtsy::colorPalette('random', sample(3:10, size = 1)),
-                                     background = '#000000',
-                                     cuts = sample(10:200, size = 1),
-                                     ratio = 1.618,
-                                     width = 100,
-                                     height = 100)
+  artwork <- aRtsy::canvas_squares(colors = aRtsy::colorPalette('random', sample(3:10, size = 1)),
+                                   background = '#000000',
+                                   cuts = sample(10:200, size = 1),
+                                   ratio = 1.618,
+                                   width = 100,
+                                   height = 100)
   
 } else if (type == 6) {
   

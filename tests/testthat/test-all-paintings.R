@@ -28,8 +28,8 @@ test_that("canvas_planet()", {
   expect_equal(!is.null(artwork), TRUE)
 })
 
-test_that("canvas_mondriaan()", {
-  artwork <- aRtsy::canvas_mondriaan(colors = c("black", "white"))
+test_that("canvas_squares()", {
+  artwork <- aRtsy::canvas_squares(colors = c("black", "white"))
   expect_equal(!is.null(artwork), TRUE)
 })
 

@@ -42,9 +42,9 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// iterate_mondriaan
-arma::mat iterate_mondriaan(arma::mat X, Rcpp::DataFrame neighbors, int s, int cuts, double ratio);
-RcppExport SEXP _aRtsy_iterate_mondriaan(SEXP XSEXP, SEXP neighborsSEXP, SEXP sSEXP, SEXP cutsSEXP, SEXP ratioSEXP) {
+// iterate_squares
+arma::mat iterate_squares(arma::mat X, Rcpp::DataFrame neighbors, int s, int cuts, double ratio);
+RcppExport SEXP _aRtsy_iterate_squares(SEXP XSEXP, SEXP neighborsSEXP, SEXP sSEXP, SEXP cutsSEXP, SEXP ratioSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -53,7 +53,7 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type s(sSEXP);
     Rcpp::traits::input_parameter< int >::type cuts(cutsSEXP);
     Rcpp::traits::input_parameter< double >::type ratio(ratioSEXP);
-    rcpp_result_gen = Rcpp::wrap(iterate_mondriaan(X, neighbors, s, cuts, ratio));
+    rcpp_result_gen = Rcpp::wrap(iterate_squares(X, neighbors, s, cuts, ratio));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -126,7 +126,7 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"_aRtsy_iterate_ant", (DL_FUNC) &_aRtsy_iterate_ant, 5},
     {"_aRtsy_iterate_circlemap", (DL_FUNC) &_aRtsy_iterate_circlemap, 6},
-    {"_aRtsy_iterate_mondriaan", (DL_FUNC) &_aRtsy_iterate_mondriaan, 5},
+    {"_aRtsy_iterate_squares", (DL_FUNC) &_aRtsy_iterate_squares, 5},
     {"_aRtsy_iterate_planet", (DL_FUNC) &_aRtsy_iterate_planet, 11},
     {"_aRtsy_iterate_polylines", (DL_FUNC) &_aRtsy_iterate_polylines, 5},
     {"_aRtsy_iterate_strokes", (DL_FUNC) &_aRtsy_iterate_strokes, 4},
