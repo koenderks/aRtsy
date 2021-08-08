@@ -24,8 +24,6 @@
 #' @keywords artwork canvas
 #'
 #' @export
-#' @useDynLib aRtsy
-#' @import Rcpp
 
 canvas_strokes <- function(colors, neighbors = 1, p = 0.01, iterations = 1, 
                            width = 500, height = 500, side = FALSE) {
@@ -36,32 +34,22 @@ canvas_strokes <- function(colors, neighbors = 1, p = 0.01, iterations = 1,
 	stop("This artwork can only handle a square canvas.")
   if (length(colors) == 1)
     colors <- c("#fafafa", colors)
-  df <- matrix(0, nrow = height, ncol = width)
   neighborsLocations <- expand.grid(-(neighbors):neighbors,-(neighbors):neighbors)
   colnames(neighborsLocations) <- c("x", "y")
-  df <- matrix(0, nrow = height, ncol = width)
+  canvas <- matrix(0, nrow = height, ncol = width)
   for (i in 1:iterations) {
-    df <- iterate_strokes(X = df, neighbors = neighborsLocations, s = length(colors), p = p) 
+    canvas <- iterate_strokes(X = canvas, neighbors = neighborsLocations, s = length(colors), p = p) 
   }
-  df <- reshape2::melt(df)
-  colnames(df) <- c("y", "x", "z")
-  artwork <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) +
+  full_canvas <- reshape2::melt(canvas)
+  colnames(full_canvas) <- c("y", "x", "z")
+  artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 
     ggplot2::coord_equal() +
     ggplot2::scale_fill_gradientn(colours = colors) +
     ggplot2::scale_y_continuous(expand = c(0,0)) + 
-    ggplot2::scale_x_continuous(expand = c(0,0)) +
-    ggplot2::theme(axis.title = ggplot2::element_blank(), 
-                   axis.text = ggplot2::element_blank(), 
-                   axis.ticks = ggplot2::element_blank(), 
-                   axis.line = ggplot2::element_blank(), 
-                   legend.position = "none", 
-                   panel.border = ggplot2::element_blank(), 
-                   panel.grid = ggplot2::element_blank(), 
-                   plot.margin = ggplot2::unit(rep(-1.25,4),"lines"), 
-                   strip.background = ggplot2::element_blank(), 
-                   strip.text = ggplot2::element_blank())
+    ggplot2::scale_x_continuous(expand = c(0,0))
   if (side)
     artwork <- artwork + ggplot2::coord_flip()
+  artwork <- themeCanvas(artwork, background = NULL)
   return(artwork)
 }

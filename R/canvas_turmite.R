@@ -25,8 +25,6 @@
 #' @keywords artwork canvas
 #'
 #' @export
-#' @useDynLib aRtsy
-#' @import Rcpp
 
 canvas_turmite <- function(color, background = '#fafafa', p = 0.5, iterations = 1e7, 
                            width = 1500, height = 1500) {
@@ -43,24 +41,15 @@ canvas_turmite <- function(color, background = '#fafafa', p = 0.5, iterations = 
     col <- sample(0:(width-1), size = 1)
   if (k == 0)
     row <- sample(0:(height-1), size = 1) 
-  df <- iterate_turmite(matrix(0, nrow = height, ncol = width), iterations, row, col, p = p)  
-  df <- reshape2::melt(df)
-  colnames(df) <- c("y", "x", "z")
-  artwork <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) +
+  full_canvas <- iterate_turmite(matrix(0, nrow = height, ncol = width), iterations, row, col, p = p)  
+  full_canvas <- reshape2::melt(full_canvas)
+  colnames(full_canvas) <- c("y", "x", "z")
+  artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 
     ggplot2::coord_equal() +
     ggplot2::scale_fill_gradientn(colours = palette) +
     ggplot2::scale_y_continuous(expand = c(0,0)) + 
-    ggplot2::scale_x_continuous(expand = c(0,0)) +
-    ggplot2::theme(axis.title = ggplot2::element_blank(), 
-                   axis.text = ggplot2::element_blank(), 
-                   axis.ticks = ggplot2::element_blank(), 
-                   axis.line = ggplot2::element_blank(), 
-                   legend.position = "none", 
-                   panel.border = ggplot2::element_blank(), 
-                   panel.grid = ggplot2::element_blank(), 
-                   plot.margin = ggplot2::unit(rep(-1.25,4),"lines"), 
-                   strip.background = ggplot2::element_blank(), 
-                   strip.text = ggplot2::element_blank())
+    ggplot2::scale_x_continuous(expand = c(0,0))
+  artwork <- themeCanvas(artwork, background = NULL)
   return(artwork)
 }

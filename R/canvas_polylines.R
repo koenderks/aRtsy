@@ -34,29 +34,18 @@ canvas_polylines <- function(colors, background = '#fafafa', ratio = 0.5, iterat
   } else {
     alphas <- rep(alpha, length(colors))
   }
-  d <- data.frame(x = numeric(), y = numeric(), type = character())
+  full_canvas <- data.frame(x = numeric(), y = numeric(), type = character())
   for (i in 1:length(colors)) {
     mat <- iterate_polylines(matrix(NA, nrow = iterations, ncol = 2), ratio, iterations, height, width)
-    d_tmp <- data.frame(x = mat[, 1], y = mat[, 2], type = rep(colors[i], iterations))
-    d <- rbind(d, d_tmp)
+    polygon <- data.frame(x = mat[, 1], y = mat[, 2], type = rep(colors[i], iterations))
+    full_canvas <- rbind(full_canvas, polygon)
   }
-  artwork <- ggplot2::ggplot(data = d, mapping = ggplot2::aes(x = x, y = y, fill = type)) +
+  artwork <- ggplot2::ggplot(data = full_canvas, mapping = ggplot2::aes(x = x, y = y, fill = type)) +
     ggplot2::xlim(c(0, width)) +
     ggplot2::ylim(c(0, height)) + 
     ggplot2::geom_polygon(color = NA, alpha = rep(alphas, each = iterations)) +
     ggplot2::geom_path(color = background, size = size) +
-    ggplot2::scale_fill_manual(values = colors) +
-    ggplot2::theme(axis.title = ggplot2::element_blank(),
-                                        axis.text = ggplot2::element_blank(),
-                                        axis.ticks = ggplot2::element_blank(),
-                                        axis.line = ggplot2::element_blank(),
-                                        legend.position = "none",
-                                        panel.background = ggplot2::element_rect(fill = background, colour = background),
-                                        panel.border = ggplot2::element_blank(),
-                                        panel.grid = ggplot2::element_blank(),
-                                        plot.margin = ggplot2::unit(rep(-1.25,4),"lines"),
-                                        plot.background = ggplot2::element_rect(fill = background, colour = background),
-                                        strip.background = ggplot2::element_blank(),
-                                        strip.text = ggplot2::element_blank())
+    ggplot2::scale_fill_manual(values = colors)
+  artwork <- themeCanvas(artwork, background)
   return(artwork)
 }

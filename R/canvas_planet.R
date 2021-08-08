@@ -44,7 +44,7 @@ canvas_planet <- function(colors, threshold = 4, iterations = 200, starprob = 0.
   x <- y <- z <- NULL
   palette <- list()
   for (i in 1:length(colors)) {
-	  palette[[i]] <- c('#000000', '#787878', '#fafafa', colors[[i]])
+    palette[[i]] <- c('#000000', '#787878', '#fafafa', colors[[i]])
   }
   canvas <- matrix(0, nrow = height, ncol = width)
   if (is.null(radius))
@@ -54,27 +54,27 @@ canvas_planet <- function(colors, threshold = 4, iterations = 200, starprob = 0.
   if (is.null(center.y))
     center.y <- ceiling(height / 2)
   if (length(unique(c(length(radius), length(center.y), length(center.x)))) != 1)
-     stop("Radius, center.y, and center.x do not have equal length.")
-	if (light.right) {
-		lightright = 1
-	} else {
-		lightright = 0
-	}
+    stop("Radius, center.y, and center.x do not have equal length.")
+  if (light.right) {
+    lightright = 1
+  } else {
+    lightright = 0
+  }
   planets <- length(radius)
   colorsused <- 0
   for (i in 1:planets) {
     canvas <- iterate_planet(X = canvas, 
-							 radius = radius[i], 
-							 xcenter = center.x[i], 
-							 ycenter = center.y[i], 
-							 threshold = threshold, 
-							 iterations = ceiling(iterations / i), 
-							 starprob = starprob, 
-							 ncolors = length(palette[[i]]), 
-							 colorsused = colorsused, 
-							 fade = fade,
-							 lightright = lightright)
-	  colorsused <- colorsused + length(colors[[i]]) 
+                             radius = radius[i], 
+                             xcenter = center.x[i], 
+                             ycenter = center.y[i], 
+                             threshold = threshold, 
+                             iterations = ceiling(iterations / i), 
+                             starprob = starprob, 
+                             ncolors = length(palette[[i]]), 
+                             colorsused = colorsused, 
+                             fade = fade,
+                             lightright = lightright)
+    colorsused <- colorsused + length(colors[[i]]) 
   }
   full_canvas <- reshape2::melt(canvas)
   colnames(full_canvas) <- c("y", "x", "z")
