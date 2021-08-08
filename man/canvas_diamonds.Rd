@@ -35,7 +35,7 @@ This function draws many diamonds on the canvas and places two lines behind them
 }
 \examples{
 set.seed(1)
-canvas_diamonds(colors = colorPalette('tuscany3'), radius = 10)
+canvas_diamonds(colors = colorPalette('house'), radius = 10)
 
 }
 \author{

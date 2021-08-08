@@ -9,16 +9,16 @@ iterate_circlemap <- function(X, kmin, kmax, phimin, phimax, iterations) {
     .Call('_aRtsy_iterate_circlemap', PACKAGE = 'aRtsy', X, kmin, kmax, phimin, phimax, iterations)
 }
 
-iterate_squares <- function(X, neighbors, s, cuts, ratio) {
-    .Call('_aRtsy_iterate_squares', PACKAGE = 'aRtsy', X, neighbors, s, cuts, ratio)
-}
-
 iterate_planet <- function(X, radius, xcenter, ycenter, threshold, iterations, starprob, ncolors, colorsused, fade, lightright) {
     .Call('_aRtsy_iterate_planet', PACKAGE = 'aRtsy', X, radius, xcenter, ycenter, threshold, iterations, starprob, ncolors, colorsused, fade, lightright)
 }
 
 iterate_polylines <- function(X, ratio, iters, rows, cols) {
     .Call('_aRtsy_iterate_polylines', PACKAGE = 'aRtsy', X, ratio, iters, rows, cols)
+}
+
+iterate_squares <- function(X, neighbors, s, cuts, ratio) {
+    .Call('_aRtsy_iterate_squares', PACKAGE = 'aRtsy', X, neighbors, s, cuts, ratio)
 }
 
 iterate_strokes <- function(X, neighbors, s, p) {

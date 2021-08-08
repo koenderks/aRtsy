@@ -22,7 +22,7 @@
 #'
 #' @examples
 #' set.seed(1)
-#' canvas_diamonds(colors = colorPalette('tuscany3'), radius = 10)
+#' canvas_diamonds(colors = colorPalette('house'), radius = 10)
 #' 
 #' @keywords artwork canvas
 #'
