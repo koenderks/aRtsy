@@ -45,6 +45,8 @@ colorPalette <- function(name, n = NULL) {
                       'tuscany1' = c("firebrick", "goldenrod", "forestgreen", "navyblue"),
                       'tuscany2' = c('#500342', '#023b59', '#f9efdd', '#deaa70', '#711308'),
                       'tuscany3' = c('#b08653', '#f5daba', '#c9673c', '#f2ab4e', '#a1863b'))
+    if (is.null(palette))
+      stop('Not a valid palette name.')
     if (is.null(n))
       n <- length(palette)
     if (n > length(palette))
