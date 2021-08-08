@@ -62,6 +62,8 @@ library(aRtsy)
 
 ## The Iterative collection
 
+The Itarative collection implements algorithms whose state depend on the previous state.
+
 ### Paint strokes
 
 When you think of the act of painting, you probably imagine stroking paint on a canvas. This type of artwork tries to mimic that activity. The paint strokes algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor chance of generating a new color. Going over the canvas like this results in strokes of paint. Repeating this a number of times creates more faded strokes of paint.
@@ -78,7 +80,7 @@ You can use the `canvas_strokes()` function to make your own artwork using this 
 set.seed(1)
 canvas_strokes(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), 
                neighbors = 1, p = 0.01, iterations = 1, 
-               width = 500, height = 500, side = FALSE))
+               width = 500, height = 500, side = FALSE)
 ```
 
 ### Turmite
@@ -168,9 +170,11 @@ canvas_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue')
 
 ## The Geometric collection
 
+The Geometric collection implements algorithms that draw a geometric shape and apply a random color to it.
+
 ### Segments
 
-This type of artwork is also a la Mondriaan, but uses a variety of lines instead of squares. The position and direction of each line segment is determined randomly.
+This type of artwork mimics the style of the well-known paintings by the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan). The position and direction of each line segment is determined randomly.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-07.png' width='270' height='270'>
@@ -206,7 +210,7 @@ canvas_diamonds(colors = c("forestgreen", "navyblue", "goldenrod", "firebrick"),
 
 ### Mondriaan
 
-This type of artwork mimics the style of the well-known paintings by the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan). It works by repeatedly cutting into the canvas at random locations and coloring the square that these cuts create.
+This type of artwork is also a la Mondriaan, but uses a variety of squares instead of lines. It works by repeatedly cutting into the canvas at random locations and coloring the square that these cuts create.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/mondriaans/2021-03-01.png' width='270' height='270'>
