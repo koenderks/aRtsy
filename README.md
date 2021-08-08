@@ -62,7 +62,7 @@ library(aRtsy)
 
 ### The Iterative collection
 
-The Itarative collection implements algorithms whose state depend on the previous state.
+The Itarative collection implements algorithms whose state depend on the previous state. These algorithms draw on a grid based canvas in which every point represents a pixel of the final image. By assigning a color to these points according to certain rules, one can create the images in this collection.
 
 #### Paint strokes
 
@@ -170,7 +170,7 @@ canvas_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue')
 
 ### The Geometric collection
 
-The Geometric collection implements algorithms that draw a geometric shape and apply a random color to it.
+The Geometric collection mostly implements algorithms that draw a geometric shape and apply a random color to it.
 
 #### Segments
 
