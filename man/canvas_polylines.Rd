@@ -32,7 +32,7 @@ This function draws many points on the canvas and connects these points into a p
 }
 \examples{
 set.seed(1)
-canvas_polylines(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
+canvas_polylines(colors = colorPalette('tuscany1'))
 
 }
 \author{

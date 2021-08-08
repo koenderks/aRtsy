@@ -20,7 +20,7 @@
 #'
 #' @examples
 #' set.seed(1)
-#' canvas_polylines(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
+#' canvas_polylines(colors = colorPalette('tuscany1'))
 #' 
 #' @keywords artwork canvas
 #'

@@ -14,7 +14,7 @@
 #'
 #' @examples
 #' set.seed(1)
-#' canvas_ribbons(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod"))
+#' canvas_ribbons(colors = colorPalette('tuscany1'))
 #' 
 #' @keywords artwork canvas
 #'
