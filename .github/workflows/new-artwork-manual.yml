@@ -26,7 +26,7 @@ jobs:
       # Install required packages and update README
       - name: Install required packages
         run: |
-          install.packages(c("remotes", "randomcoloR"))
+          install.packages("remotes")
           remotes::install_github("koenderks/aRtsy")
         shell: Rscript {0}
 
