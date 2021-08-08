@@ -25,19 +25,17 @@
 #' @keywords artwork canvas
 #'
 #' @export
-#' @useDynLib aRtsy
-#' @import Rcpp
 
 canvas_polylines <- function(colors, background = '#fafafa', ratio = 0.5, iterations = 1000, 
-                     alpha = NULL, size = 0.1, width = 500, height = 500){
+                             alpha = NULL, size = 0.1, width = 500, height = 500) {
   x <- y <- type <- NULL
-  if(is.null(alpha)) {
+  if (is.null(alpha)) {
     alphas <- seq(from = 1, to = 0.1, length.out = length(colors))
   } else {
     alphas <- rep(alpha, length(colors))
   }
   d <- data.frame(x = numeric(), y = numeric(), type = character())
-  for(i in 1:length(colors)){
+  for (i in 1:length(colors)) {
     mat <- iterate_polylines(matrix(NA, nrow = iterations, ncol = 2), ratio, iterations, height, width)
     d_tmp <- data.frame(x = mat[, 1], y = mat[, 2], type = rep(colors[i], iterations))
     d <- rbind(d, d_tmp)

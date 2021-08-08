@@ -13,12 +13,12 @@ arma::mat iterate_polylines(arma::mat X,
                             double ratio,
                             int iters,
                             int rows,
-                            int cols){
+                            int cols) {
   X(0, 0) = R::runif(0, cols);
   X(0, 1) = R::runif(0, rows);
   int xradius = cols * ratio;
   int yradius = rows * ratio;
-  for(int i = 1; i < iters; i++){
+  for (int i = 1; i < iters; i++) {
     double v = R::runif(0, 1);
     double h = R::runif(0, 1);
     double x1;

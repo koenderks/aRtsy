@@ -26,7 +26,7 @@
 
 canvas_arcs <- function(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL, 
                         dir = 'right', starts = 'clockwise') {
-  if(length(colors) != 3)
+  if (length(colors) != 3)
     stop("You must provide three color names.")
   if (n <= 0)
     stop("You must specify n > 0.")
@@ -40,7 +40,7 @@ canvas_arcs <- function(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol
   # Nice layer 2: ymin: 100, ymax: 360
   # Nice layer 3: ymin: 20,  ymax: 270
   full_canvas <- list()
-  for(i in 1:n) {
+  for (i in 1:n) {
     # xmax = size of arc
     # ymin, ymax = position(s) of arc
     full_sub_canvas <- ggplot2::ggplot() +
@@ -54,7 +54,7 @@ canvas_arcs <- function(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol
   }
   artwork <- do.call("ggarrange", c(full_canvas, nrow = nrow, ncol = ncol))
   artwork <- artwork + ggplot2::theme(panel.background = ggplot2::element_rect(fill = background, colour = background))
-  if(is.null(artwork))
+  if (is.null(artwork))
     stop("Not all figures can be placed on the canvas. Increase the canvas dimensions.")
   return(artwork)
 }

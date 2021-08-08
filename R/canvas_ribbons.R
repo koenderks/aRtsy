@@ -33,7 +33,7 @@ canvas_ribbons <- function(colors, background = '#fdf5e6', triangle = TRUE) {
   tpl <- tpl[which(tpl$y < y_max_top), ]
   tpr <- data.frame(x = 51:84, y = seq(from = 74, to = 16, length.out = 34))
   tpr <- tpr[which(tpr$y < y_max_top), ]
-  for(i in 1:length(colors)) {
+  for (i in 1:length(colors)) {
     # Determine points on left side of triangle
     bpb <- data.frame(x = 0, y = sample(10:90, size = 1))
     fpb <- tpl[sample(1:nrow(tpl), size = 1), ]

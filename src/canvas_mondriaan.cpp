@@ -11,7 +11,7 @@ int neighbor(int L, int i)
 {
   if (i < 0)
     return 0;
-  if(i >= L)
+  if (i >= L)
     return L - 1;
   return i;
 }
@@ -21,7 +21,7 @@ arma::mat iterate_mondriaan(arma::mat X,
                             Rcpp::DataFrame neighbors, 
                             int s,
                             int cuts,
-                            double ratio){
+                            double ratio) {
   int m = X.n_rows;
   int n = X.n_cols;
   int row = m;

@@ -13,7 +13,7 @@ arma::mat iterate_circlemap(arma::mat X,
                             double kmax,
                             double phimin,
                             double phimax,
-                            int iterations){
+                            int iterations) {
   int m = X.n_rows;
   int n = X.n_cols;
   double K = kmax;

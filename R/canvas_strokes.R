@@ -28,19 +28,19 @@
 #' @import Rcpp
 
 canvas_strokes <- function(colors, neighbors = 1, p = 0.01, iterations = 1, 
-                           width = 500, height = 500, side = FALSE){
+                           width = 500, height = 500, side = FALSE) {
   x <- y <- z <- NULL
-  if(neighbors < 1)
+  if (neighbors < 1)
 	stop("Neighbors must be equal to, or larger than, one.")
-  if(width != height)
+  if (width != height)
 	stop("This artwork can only handle a square canvas.")
-  if(length(colors) == 1)
+  if (length(colors) == 1)
     colors <- c("#fafafa", colors)
   df <- matrix(0, nrow = height, ncol = width)
   neighborsLocations <- expand.grid(-(neighbors):neighbors,-(neighbors):neighbors)
   colnames(neighborsLocations) <- c("x", "y")
   df <- matrix(0, nrow = height, ncol = width)
-  for (i in 1:iterations){
+  for (i in 1:iterations) {
     df <- iterate_strokes(X = df, neighbors = neighborsLocations, s = length(colors), p = p) 
   }
   df <- reshape2::melt(df)
@@ -61,7 +61,7 @@ canvas_strokes <- function(colors, neighbors = 1, p = 0.01, iterations = 1,
                    plot.margin = ggplot2::unit(rep(-1.25,4),"lines"), 
                    strip.background = ggplot2::element_blank(), 
                    strip.text = ggplot2::element_blank())
-  if(side)
+  if (side)
     artwork <- artwork + ggplot2::coord_flip()
   return(artwork)
 }

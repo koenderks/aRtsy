@@ -22,11 +22,11 @@
 #' @export
 #' @importFrom dplyr %>%
 
-canvas_function <- function(color, background = '#fafafa'){
+canvas_function <- function(color, background = '#fafafa') {
   x <- y <- z <- NULL
-  if(length(color) > 1)
+  if (length(color) > 1)
     stop("Can only take one color value.")
-  if(length(background) > 1)
+  if (length(background) > 1)
     stop("Can only take one background value.")
   painting_formulas <- list()
   painting_formulas[[1]] <- list( 

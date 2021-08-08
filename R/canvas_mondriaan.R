@@ -25,13 +25,13 @@
 #' @export
 
 canvas_mondriaan <- function(colors, background = '#000000', cuts = 50, ratio = 1.618, 
-                             width = 100, height = 100){
+                             width = 100, height = 100) {
   x <- y <- z <- NULL
-  if(length(colors) <= 1)
-	stop("You must specify more than one color.")
-  if(length(background) > 1)
+  if (length(colors) <= 1)
+    stop("You must specify more than one color.")
+  if (length(background) > 1)
     stop("Can only take one background value.")
-  if(cuts <= 1)
+  if (cuts <= 1)
     stop("Cuts must be higher than 1.")
   palette <- c(background, colors)
   neighbors <- expand.grid(-1:1,-1:1)
@@ -45,16 +45,7 @@ canvas_mondriaan <- function(colors, background = '#000000', cuts = 50, ratio = 
     ggplot2::coord_equal() +
     ggplot2::scale_fill_gradientn(colours = palette) +
     ggplot2::scale_y_continuous(expand = c(0,0)) + 
-    ggplot2::scale_x_continuous(expand = c(0,0)) +
-    ggplot2::theme(axis.title = ggplot2::element_blank(), 
-                   axis.text = ggplot2::element_blank(), 
-                   axis.ticks = ggplot2::element_blank(), 
-                   axis.line = ggplot2::element_blank(), 
-                   legend.position = "none", 
-                   panel.border = ggplot2::element_blank(), 
-                   panel.grid = ggplot2::element_blank(), 
-                   plot.margin = ggplot2::unit(rep(-1.25,4),"lines"), 
-                   strip.background = ggplot2::element_blank(), 
-                   strip.text = ggplot2::element_blank())
+    ggplot2::scale_x_continuous(expand = c(0,0))
+  artwork <- themeCanvas(artwork, background = NULL)
   return(artwork) 
 }

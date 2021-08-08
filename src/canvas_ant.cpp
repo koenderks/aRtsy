@@ -13,7 +13,7 @@ arma::mat iterate_ant(arma::mat X,
                       int iters,
                       int row,
                       int col,
-                      Rcpp::DataFrame c){
+                      Rcpp::DataFrame c) {
   Rcpp::IntegerVector dx = c["x"];
   Rcpp::IntegerVector dy = c["y"];
   int m = X.n_rows;

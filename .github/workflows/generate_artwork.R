@@ -12,12 +12,12 @@ set.seed(seed)
 # Select artwork type
 type <- sample(1:10, size = 1)
 
-if (type == 1){
+if (type == 1) {
   
   artwork <- aRtsy::canvas_function(color = sample(c("black", randomcoloR::randomColor(1)), size = 1), 
                                     background = sample(c("#fafafa", "#1a3657", "#343434", "#cc7722", "#a9d2c3", "#fc7c7c"), size = 1))
   
-} else if (type == 2){
+} else if (type == 2) {
   
   artwork <- aRtsy::canvas_strokes(colors = randomcoloR::randomColor(count = sample(5:15, size = 1)),
                                    neighbors = sample(1:4, size = 1),
@@ -27,7 +27,7 @@ if (type == 1){
                                    height = 1500,
                                    side = sample(c(TRUE, FALSE), size = 1))
   
-} else if (type == 3){
+} else if (type == 3) {
   
   artwork <- aRtsy::canvas_turmite(color = sample(c("#000000", randomColor(count = 1)), size = 1),
                                    background = sample(c("#fafafa", "#cc7722", "#a9d2c3", "#fc7c7c", randomColor(count = 1)), size = 1),
@@ -36,7 +36,7 @@ if (type == 1){
                                    width = 1500, 
                                    height = 1500)
   
-} else if (type == 4){
+} else if (type == 4) {
   
   dims <- sample(c(500, 1000, 1500), size = 1)
   artwork <- aRtsy::canvas_ant(colors = randomcoloR::randomColor(count = sample(6:20, size = 1)),
@@ -45,7 +45,7 @@ if (type == 1){
                                width = dims, 
                                height = dims)
   
-} else if(type == 5){
+} else if (type == 5) {
   
   artwork <- aRtsy::canvas_mondriaan(colors = randomcoloR::randomColor(count = sample(3:10, size = 1)),
                                      background = '#000000',

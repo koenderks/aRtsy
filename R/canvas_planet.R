@@ -37,34 +37,32 @@
 #' @keywords artwork canvas
 #'
 #' @export
-#' @useDynLib aRtsy
-#' @import Rcpp
 
 canvas_planet <- function(colors, threshold = 4, iterations = 200, starprob = 0.01, fade = 0.2,
-                         radius = NULL, center.x = NULL, center.y = NULL, light.right = TRUE,
-                         width = 1500, height = 1500){
+                          radius = NULL, center.x = NULL, center.y = NULL, light.right = TRUE,
+                          width = 1500, height = 1500) {
   x <- y <- z <- NULL
   palette <- list()
-  for(i in 1:length(colors)){
+  for (i in 1:length(colors)) {
 	  palette[[i]] <- c('#000000', '#787878', '#fafafa', colors[[i]])
   }
   canvas <- matrix(0, nrow = height, ncol = width)
-  if(is.null(radius))
+  if (is.null(radius))
     radius <- ceiling(width / 2 / 1.5)
-  if(is.null(center.x))
+  if (is.null(center.x))
     center.x <- ceiling(width / 2)
-  if(is.null(center.y))
+  if (is.null(center.y))
     center.y <- ceiling(height / 2)
-  if(length(unique(c(length(radius), length(center.y), length(center.x)))) != 1)
+  if (length(unique(c(length(radius), length(center.y), length(center.x)))) != 1)
      stop("Radius, center.y, and center.x do not have equal length.")
-	if(light.right) {
+	if (light.right) {
 		lightright = 1
 	} else {
 		lightright = 0
 	}
   planets <- length(radius)
   colorsused <- 0
-  for(i in 1:planets){
+  for (i in 1:planets) {
     canvas <- iterate_planet(X = canvas, 
 							 radius = radius[i], 
 							 xcenter = center.x[i], 
@@ -86,16 +84,7 @@ canvas_planet <- function(colors, threshold = 4, iterations = 200, starprob = 0.
     ggplot2::coord_equal() +
     ggplot2::scale_fill_gradientn(colours = full_palette) +
     ggplot2::scale_y_continuous(expand = c(0,0)) + 
-    ggplot2::scale_x_continuous(expand = c(0,0)) +
-    ggplot2::theme(axis.title = ggplot2::element_blank(), 
-                   axis.text = ggplot2::element_blank(), 
-                   axis.ticks = ggplot2::element_blank(), 
-                   axis.line = ggplot2::element_blank(), 
-                   legend.position = "none", 
-                   panel.border = ggplot2::element_blank(), 
-                   panel.grid = ggplot2::element_blank(), 
-                   plot.margin = ggplot2::unit(rep(-1.25,4),"lines"), 
-                   strip.background = ggplot2::element_blank(), 
-                   strip.text = ggplot2::element_blank())
+    ggplot2::scale_x_continuous(expand = c(0,0))
+  artwork <- themeCanvas(artwork, background = NULL)
   return(artwork)
 }

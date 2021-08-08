@@ -42,7 +42,7 @@ canvas_diamonds <- function(colors, background = '#fafafa', col.line = 'black',
   locs <- data.frame(x = x, ymin = ymin, ymax = ymax)
   palette <- NULL
   full_canvas <- data.frame(x = numeric(), y = numeric(), type = numeric())
-  for (j in 1:nrow(locs)){
+  for (j in 1:nrow(locs)) {
     rs <- ceiling((ymax[j] - ymin[j]) / (radius * 2)) # required squares
     for (i in 1:rs) {
       xvec <- c(locs$x[j], locs$x[j] + radius, locs$x[j], locs$x[j] - radius, locs$x[j])

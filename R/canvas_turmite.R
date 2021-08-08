@@ -29,19 +29,19 @@
 #' @import Rcpp
 
 canvas_turmite <- function(color, background = '#fafafa', p = 0.5, iterations = 1e7, 
-                           width = 1500, height = 1500){
+                           width = 1500, height = 1500) {
   x <- y <- z <- NULL
-  if(length(color) > 1)
+  if (length(color) > 1)
     stop("Can only take one color value.")
-  if(length(background) > 1)
+  if (length(background) > 1)
     stop("Can only take one background value.")
   palette <- c(background, color)
   k <- sample(0:1, size = 1)
   row <- 0
   col <- 0
-  if(k == 1)
+  if (k == 1)
     col <- sample(0:(width-1), size = 1)
-  if(k == 0)
+  if (k == 0)
     row <- sample(0:(height-1), size = 1) 
   df <- iterate_turmite(matrix(0, nrow = height, ncol = width), iterations, row, col, p = p)  
   df <- reshape2::melt(df)

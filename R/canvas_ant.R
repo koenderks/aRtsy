@@ -25,9 +25,9 @@
 #' @export
 
 canvas_ant <- function(colors, background = '#fafafa', iterations = 1e7, 
-                       width = 200, height = 200){
+                       width = 200, height = 200) {
   x <- y <- z <- NULL
-  if(length(background) > 1)
+  if (length(background) > 1)
     stop("Can only take one background value.")
   palette <- c(background, colors)
   row <- ceiling(height / 2)
