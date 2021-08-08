@@ -120,19 +120,18 @@
 <ul>
 <li><a href="#segments"><code>canvas_segments()</code></a></li>
 <li><a href="#diamonds"><code>canvas_diamonds()</code></a></li>
-<li><a href="#Squares"><code>canvas_squares()</code></a></li>
+<li><a href="#squares-and-rectangles"><code>canvas_squares()</code></a></li>
 <li><a href="#ribbons"><code>canvas_ribbons()</code></a></li>
 <li><a href="#polylines"><code>canvas_polylines()</code></a></li>
 <li><a href="#functions"><code>canvas_function()</code></a></li>
 </ul>
-</div>
-<div id="the-iterative-collection" class="section level2">
-<h2 class="hasAnchor">
-<a href="#the-iterative-collection" class="anchor"></a>The Iterative collection</h2>
-<p>The Itarative collection implements algorithms whose state depend on the previous state.</p>
-<div id="paint-strokes" class="section level3">
+<div id="the-iterative-collection" class="section level3">
 <h3 class="hasAnchor">
-<a href="#paint-strokes" class="anchor"></a>Paint strokes</h3>
+<a href="#the-iterative-collection" class="anchor"></a>The Iterative collection</h3>
+<p>The Itarative collection implements algorithms whose state depend on the previous state.</p>
+<div id="paint-strokes" class="section level4">
+<h4 class="hasAnchor">
+<a href="#paint-strokes" class="anchor"></a>Paint strokes</h4>
 <p>When you think of the act of painting, you probably imagine stroking paint on a canvas. This type of artwork tries to mimic that activity. The paint strokes algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor chance of generating a new color. Going over the canvas like this results in strokes of paint. Repeating this a number of times creates more faded strokes of paint.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-21.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-20.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-10.png" width="270" height="270"></p>
@@ -142,6 +141,7 @@
 <span class="fu"><a href="reference/canvas_strokes.html">canvas_strokes</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'goldenrod'</span>, <span class="st">'firebrick'</span>, <span class="st">'navyblue'</span><span class="op">)</span>, 
                neighbors <span class="op">=</span> <span class="fl">1</span>, p <span class="op">=</span> <span class="fl">0.01</span>, iterations <span class="op">=</span> <span class="fl">1</span>, 
                width <span class="op">=</span> <span class="fl">500</span>, height <span class="op">=</span> <span class="fl">500</span>, side <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+</div>
 </div>
 <div id="turmite" class="section level3">
 <h3 class="hasAnchor">
@@ -283,6 +283,13 @@
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_function.html">canvas_function</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">'#000000'</span>, background <span class="op">=</span> <span class="st">'#fafafa'</span><span class="op">)</span></code></pre></div>
 </div>
+</div>
+<div id="color-palettes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#color-palettes" class="anchor"></a>Color palettes</h2>
+<p>The function <code><a href="reference/colorPalette.html">colorPalette()</a></code> can be used to generate a random color palette, or pick a pre-implemented color palette. Currently, the color palettes displayed below are implemented in <code>aRtsy</code>. Feel free to suggest or add a new palette!</p>
+<p align="center">
+<img src="https://github.com/koenderks/aRtsy/raw/development/man/figures/colors.svg"></p>
 </div>
 </div>
 
