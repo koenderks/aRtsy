@@ -55,16 +55,16 @@ library(aRtsy)
 
 * [`canvas_segments()`](#segments)
 * [`canvas_diamonds()`](#diamonds)
-* [`canvas_squares()`](#Squares)
+* [`canvas_squares()`](#squares-and-rectangles)
 * [`canvas_ribbons()`](#ribbons)
 * [`canvas_polylines()`](#polylines)
 * [`canvas_function()`](#functions)
 
-## The Iterative collection
+### The Iterative collection
 
 The Itarative collection implements algorithms whose state depend on the previous state.
 
-### Paint strokes
+#### Paint strokes
 
 When you think of the act of painting, you probably imagine stroking paint on a canvas. This type of artwork tries to mimic that activity. The paint strokes algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor chance of generating a new color. Going over the canvas like this results in strokes of paint. Repeating this a number of times creates more faded strokes of paint.
 
@@ -279,3 +279,11 @@ You can use the `canvas_function()` function to make your own artwork using this
 set.seed(1)
 canvas_function(color = '#000000', background = '#fafafa')
 ```
+
+## Color palettes
+
+The function `colorPalette()` can be used to generate a random color palette, or pick a pre-implemented color palette. Currently, the color palettes displayed below are implemented in `aRtsy`. Feel free to suggest or add a new palette!
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/man/figures/colors.svg'>
+</p>
