@@ -18,7 +18,7 @@ A \code{ggplot} object containing the artwork.
 This function paints functions with random parameters and mimics the functionality of the \code{generativeart} package.
 }
 \examples{
-set.seed(1)
+set.seed(10)
 canvas_function(color = '#000000', background = '#fafafa')
 
 }

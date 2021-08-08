@@ -17,7 +17,7 @@ canvas_diamonds(colors, background = '#fafafa', col.line = 'black',
 
 \item{radius}{radius of the diamonds.}
 
-\item{alpha}{transparency of the diamonds If \code{NULL}, added layers become increasingly more transparent.}
+\item{alpha}{transparency of the diamonds. If \code{NULL}, added layers become increasingly more transparent.}
 
 \item{size}{size of the borders}
 

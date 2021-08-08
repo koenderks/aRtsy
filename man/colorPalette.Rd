@@ -20,11 +20,8 @@ This function creates a random color palette, or allows the user to select a pre
 \details{
 The following color palettes are implemented:
 
-\itemize{
- \item{\code{random}}
- \item{\code{tuscany1}}
- \item{\code{tuscany2}}
-}
+\if{html}{\figure{colors.svg}{options: width=600 alt="colors"}}
+\if{latex}{\figure{colors.pdf}{options: width=5in}}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

@@ -9,11 +9,8 @@
 #'
 #' @details The following color palettes are implemented:
 #'
-#' \itemize{
-#'  \item{\code{random}}
-#'  \item{\code{tuscany1}}
-#'  \item{\code{tuscany2}}
-#' }
+#' \if{html}{\figure{colors.svg}{options: width=600 alt="colors"}}
+#' \if{latex}{\figure{colors.pdf}{options: width=5in}}
 #'
 #' @return A vector of colors.
 #'
@@ -34,6 +31,13 @@ colorPalette <- function(name, n = NULL) {
       palette[i] <- grDevices::rgb(stats::runif(1, 0, 255), stats::runif(1, 0, 255), stats::runif(1, 0, 255), maxColorValue = 255)
   } else {
     palette <- switch(name,
+                      "blackwhite" = c('black', 'white'),
+                      'dark1' = c('#161616', '#346751', '#C84B31', '#ECDBBA'),
+                      'dark2' = c('#1B262C', '#0F4C75', '#3282B8', '#BBE1FA'),
+                      'nature' = c('forestgreen', 'dodgerblue', 'brown', 'white', 'gray'),
+                      'retro1' = c('#0A1931', '#185ADB', '#FFC947', '#EFEFEF'),
+                      'retro2' = c('#DDDDDD', '#222831', '#30475E', '#F05454'),
+                      'retro3' = c('#111D5E', '#C70039', '#F37121', '#C0E218'),
                       'tuscany1' = c("firebrick", "goldenrod", "forestgreen", "navyblue"),
                       'tuscany2' = c('#500342', '#023b59', '#f9efdd', '#deaa70', '#711308'),
                       'tuscany3' = c('#b08653', '#f5daba', '#c9673c', '#f2ab4e', '#a1863b'))

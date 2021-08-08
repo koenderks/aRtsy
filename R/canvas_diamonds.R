@@ -10,7 +10,7 @@
 #' @param background  a character specifying the color used for the borders.
 #' @param col.line    color of the lines.
 #' @param radius      radius of the diamonds.
-#' @param alpha       transparency of the diamonds If \code{NULL}, added layers become increasingly more transparent.
+#' @param alpha       transparency of the diamonds. If \code{NULL}, added layers become increasingly more transparent.
 #' @param size        size of the borders
 #' @param p           takeover probability.
 #' @param width       the width of the artwork in pixels.
