@@ -182,7 +182,7 @@ You can use the `canvas_segments()` function to make your own artwork using this
 
 ```r
 set.seed(1)
-canvas_segments(colors = 'black', background = '#fafafa', n = 100, H = 0.1)
+canvas_segments(colors = 'black', background = '#fafafa', n = 100, p = 0.5, H = 0.1)
 ```
 
 ### Diamonds
