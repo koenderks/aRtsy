@@ -130,8 +130,8 @@
 <p>You can use the <code><a href="reference/canvas_strokes.html">canvas_strokes()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>)</span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="kw">canvas_strokes</span>(<span class="dt">colors =</span> <span class="kw">c</span>(<span class="st">'forestgreen'</span>, <span class="st">'goldenrod'</span>, <span class="st">'firebrick'</span>, <span class="st">'navyblue'</span>), </span>
-<span id="cb3-3"><a href="#cb3-3"></a>              <span class="dt">neighbors =</span> <span class="dv">1</span>, <span class="dt">p =</span> <span class="fl">0.01</span>, <span class="dt">iterations =</span> <span class="dv">1</span>, </span>
-<span id="cb3-4"><a href="#cb3-4"></a>              <span class="dt">width =</span> <span class="dv">500</span>, <span class="dt">height =</span> <span class="dv">500</span>, <span class="dt">side =</span> <span class="ot">FALSE</span>)<span class="er">)</span></span></code></pre></div>
+<span id="cb3-3"><a href="#cb3-3"></a>               <span class="dt">neighbors =</span> <span class="dv">1</span>, <span class="dt">p =</span> <span class="fl">0.01</span>, <span class="dt">iterations =</span> <span class="dv">1</span>, </span>
+<span id="cb3-4"><a href="#cb3-4"></a>               <span class="dt">width =</span> <span class="dv">500</span>, <span class="dt">height =</span> <span class="dv">500</span>, <span class="dt">side =</span> <span class="ot">FALSE</span>)<span class="er">)</span></span></code></pre></div>
 </div>
 <div id="ribbons" class="section level2">
 <h2 class="hasAnchor">
@@ -143,7 +143,7 @@
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_ribbons.html">canvas_ribbons</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"forestgreen"</span>, <span class="st">"firebrick"</span>, <span class="st">"dodgerblue"</span>, <span class="st">"goldenrod"</span><span class="op">)</span>,
-              background <span class="op">=</span> <span class="st">'#fdf5e6'</span>, triangle <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+               background <span class="op">=</span> <span class="st">'#fdf5e6'</span>, triangle <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="polylines" class="section level2">
 <h2 class="hasAnchor">
@@ -155,8 +155,8 @@
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_polylines.html">canvas_polylines</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'goldenrod'</span>, <span class="st">'firebrick'</span>, <span class="st">'navyblue'</span><span class="op">)</span>, 
-                background <span class="op">=</span> <span class="st">'#fafafa'</span>, ratio <span class="op">=</span> <span class="fl">0.5</span>, iterations <span class="op">=</span> <span class="fl">1000</span>, 
-                alpha <span class="op">=</span> <span class="cn">NULL</span>, size <span class="op">=</span> <span class="fl">0.1</span>, width <span class="op">=</span> <span class="fl">500</span>, height <span class="op">=</span> <span class="fl">500</span><span class="op">)</span></code></pre></div>
+                 background <span class="op">=</span> <span class="st">'#fafafa'</span>, ratio <span class="op">=</span> <span class="fl">0.5</span>, iterations <span class="op">=</span> <span class="fl">1000</span>, 
+                 alpha <span class="op">=</span> <span class="cn">NULL</span>, size <span class="op">=</span> <span class="fl">0.1</span>, width <span class="op">=</span> <span class="fl">500</span>, height <span class="op">=</span> <span class="fl">500</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="turmite" class="section level2">
 <h2 class="hasAnchor">
@@ -173,7 +173,7 @@
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_turmite.html">canvas_turmite</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"#000000"</span>, background <span class="op">=</span> <span class="st">"#fafafa"</span>, p <span class="op">=</span> <span class="fl">0.5</span>, 
-              iterations <span class="op">=</span> <span class="fl">1e7</span>, width <span class="op">=</span> <span class="fl">1500</span>, height <span class="op">=</span> <span class="fl">1500</span><span class="op">)</span></code></pre></div>
+               iterations <span class="op">=</span> <span class="fl">1e7</span>, width <span class="op">=</span> <span class="fl">1500</span>, height <span class="op">=</span> <span class="fl">1500</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="langtons-ant" class="section level2">
 <h2 class="hasAnchor">
@@ -189,7 +189,7 @@
 <p>You can use the <code><a href="reference/canvas_ant.html">canvas_ant()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/canvas_ant.html">canvas_ant</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="st">'#000000'</span>, background <span class="op">=</span> <span class="st">'#fafafa'</span>, iterations <span class="op">=</span> <span class="fl">1e7</span>,
-          width <span class="op">=</span> <span class="fl">200</span>, height <span class="op">=</span> <span class="fl">200</span><span class="op">)</span></code></pre></div>
+           width <span class="op">=</span> <span class="fl">200</span>, height <span class="op">=</span> <span class="fl">200</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="planets" class="section level2">
 <h2 class="hasAnchor">
@@ -205,9 +205,9 @@
                <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"dodgerblue"</span>, <span class="st">"forestgreen"</span>, <span class="st">"white"</span><span class="op">)</span>, 
                <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"gray"</span>, <span class="st">"darkgray"</span>, <span class="st">"beige"</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_planet.html">canvas_planet</a></span><span class="op">(</span><span class="va">colors</span>, radius <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">800</span>, <span class="fl">400</span>, <span class="fl">150</span><span class="op">)</span>, 
-             center.x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">500</span>, <span class="fl">1100</span><span class="op">)</span>,
-             center.y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1400</span>, <span class="fl">500</span>, <span class="fl">1000</span><span class="op">)</span>, 
-             starprob <span class="op">=</span> <span class="fl">0.005</span><span class="op">)</span></code></pre></div>
+              center.x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">500</span>, <span class="fl">1100</span><span class="op">)</span>,
+              center.y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1400</span>, <span class="fl">500</span>, <span class="fl">1000</span><span class="op">)</span>, 
+              starprob <span class="op">=</span> <span class="fl">0.005</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="diamonds" class="section level2">
 <h2 class="hasAnchor">
@@ -219,8 +219,8 @@
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_diamonds.html">canvas_diamonds</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"forestgreen"</span>, <span class="st">"navyblue"</span>, <span class="st">"goldenrod"</span>, <span class="st">"firebrick"</span><span class="op">)</span>, 
-               background <span class="op">=</span> <span class="st">'#fafafa'</span>, col.line <span class="op">=</span> <span class="st">'black'</span>, radius <span class="op">=</span> <span class="fl">10</span>, alpha <span class="op">=</span> <span class="fl">1</span>, 
-               size <span class="op">=</span> <span class="fl">0.25</span>, p <span class="op">=</span> <span class="fl">0.2</span>, width <span class="op">=</span> <span class="fl">500</span>, height <span class="op">=</span> <span class="fl">500</span><span class="op">)</span></code></pre></div>
+                background <span class="op">=</span> <span class="st">'#fafafa'</span>, col.line <span class="op">=</span> <span class="st">'black'</span>, radius <span class="op">=</span> <span class="fl">10</span>, alpha <span class="op">=</span> <span class="fl">1</span>, 
+                size <span class="op">=</span> <span class="fl">0.25</span>, p <span class="op">=</span> <span class="fl">0.2</span>, width <span class="op">=</span> <span class="fl">500</span>, height <span class="op">=</span> <span class="fl">500</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="mondriaan" class="section level2">
 <h2 class="hasAnchor">
@@ -232,7 +232,7 @@
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_mondriaan.html">canvas_mondriaan</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'goldenrod'</span>, <span class="st">'firebrick'</span>, <span class="st">'navyblue'</span><span class="op">)</span>,
-                cuts <span class="op">=</span> <span class="fl">50</span>, ratio <span class="op">=</span> <span class="fl">1.618</span>, width <span class="op">=</span> <span class="fl">100</span>, height <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></code></pre></div>
+                 cuts <span class="op">=</span> <span class="fl">50</span>, ratio <span class="op">=</span> <span class="fl">1.618</span>, width <span class="op">=</span> <span class="fl">100</span>, height <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="circle-maps" class="section level2">
 <h2 class="hasAnchor">
@@ -243,8 +243,8 @@
 <p>You can use the <code><a href="reference/canvas_circlemap.html">canvas_circlemap()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/canvas_circlemap.html">canvas_circlemap</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'firebrick'</span>, <span class="st">'goldenrod'</span>, <span class="st">'navyblue'</span><span class="op">)</span>,
-                x_min <span class="op">=</span> <span class="fl">0</span>, x_max <span class="op">=</span> <span class="fl">12.56</span>, y_min <span class="op">=</span> <span class="fl">0</span>, y_max <span class="op">=</span> <span class="fl">1</span>, 
-                iterations <span class="op">=</span> <span class="fl">10</span>, width <span class="op">=</span> <span class="fl">1500</span>, height <span class="op">=</span> <span class="fl">1500</span><span class="op">)</span></code></pre></div>
+                 x_min <span class="op">=</span> <span class="fl">0</span>, x_max <span class="op">=</span> <span class="fl">12.56</span>, y_min <span class="op">=</span> <span class="fl">0</span>, y_max <span class="op">=</span> <span class="fl">1</span>, 
+                 iterations <span class="op">=</span> <span class="fl">10</span>, width <span class="op">=</span> <span class="fl">1500</span>, height <span class="op">=</span> <span class="fl">1500</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="functions" class="section level2">
 <h2 class="hasAnchor">
