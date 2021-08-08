@@ -35,6 +35,7 @@ colorPalette <- function(name, n = NULL) {
                       'dark1' = c('#161616', '#346751', '#C84B31', '#ECDBBA'),
                       'dark2' = c('#1B262C', '#0F4C75', '#3282B8', '#BBE1FA'),
                       'dark3' = c('#222831', '#393E46', '#00ADB5', '#EEEEEE'),
+                      'house' = c('#191919', '#E5E5E5', '#960606', '#cca222', '#036440'),
                       'nature' = c('forestgreen', 'dodgerblue', 'brown', 'white', 'gray'),
                       'neon1' = c('#F7FD04', '#F9B208', '#F98404', '#FC5404'),
                       'neon2' = c('#F5F7B2', '#1CC5DC', '#890596', '#CF0000'),
