@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • aRtsy</title>
+<title>Paint Squares on a Canvas — canvas_squares • aRtsy</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Paint Squares on a Canvas — canvas_squares" />
+<meta property="og:description" content="This function paints a squares. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -66,7 +67,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -116,132 +117,62 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Paint Squares on a Canvas</h1>
+    <small class="dont-index">Source: <a href='https://github.com/koenderks/aRtsy/blob/master/R/canvas_squares.R'><code>R/canvas_squares.R</code></a></small>
+    <div class="hidden name"><code>canvas_squares.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>This function paints a squares. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>canvas_squares</span><span class='op'>(</span><span class='va'>colors</span>, background <span class='op'>=</span> <span class='st'>'#000000'</span>, cuts <span class='op'>=</span> <span class='fl'>50</span>, ratio <span class='op'>=</span> <span class='fl'>1.618</span>,
+              width <span class='op'>=</span> <span class='fl'>100</span>, height <span class='op'>=</span> <span class='fl'>100</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="aRtsy.html">aRtsy-package</a></code> </p>
-        </td>
-        <td><p>aRtsy --- Generative Art using <code>ggplot2</code></p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_ant.html">canvas_ant()</a></code> </p>
-        </td>
-        <td><p>Paint Langton's Ant on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_arcs.html">canvas_arcs()</a></code> </p>
-        </td>
-        <td><p>Paint Arcs on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_circlemap.html">canvas_circlemap()</a></code> </p>
-        </td>
-        <td><p>Paint a Circle Map on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_diamonds.html">canvas_diamonds()</a></code> </p>
-        </td>
-        <td><p>Paint A Diamond on Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_function.html">canvas_function()</a></code> </p>
-        </td>
-        <td><p>Paint Functions on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_planet.html">canvas_planet()</a></code> </p>
-        </td>
-        <td><p>Paint a Planet on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_polylines.html">canvas_polylines()</a></code> </p>
-        </td>
-        <td><p>Paint Polygons and Lines on Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_ribbons.html">canvas_ribbons()</a></code> </p>
-        </td>
-        <td><p>Paint Ribbons on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_segments.html">canvas_segments()</a></code> </p>
-        </td>
-        <td><p>Paint Line Segments on Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_squares.html">canvas_squares()</a></code> </p>
-        </td>
-        <td><p>Paint Squares on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_strokes.html">canvas_strokes()</a></code> </p>
-        </td>
-        <td><p>Paint Strokes on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_turmite.html">canvas_turmite()</a></code> </p>
-        </td>
-        <td><p>Paint a Turmite on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="colorPalette.html">colorPalette()</a></code> </p>
-        </td>
-        <td><p>Color palette generator.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="saveCanvas.html">saveCanvas()</a></code> </p>
-        </td>
-        <td><p>Save a canvas to an external device.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="themeCanvas.html">themeCanvas()</a></code> </p>
-        </td>
-        <td><p>Canvas theme for ggplot2 objects</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>colors</th>
+      <td><p>a character vector specifying the colors used in the squares.</p></td>
+    </tr>
+    <tr>
+      <th>background</th>
+      <td><p>a character specifying the color used for the background (borders).</p></td>
+    </tr>
+    <tr>
+      <th>cuts</th>
+      <td><p>the number of cuts to make.</p></td>
+    </tr>
+    <tr>
+      <th>ratio</th>
+      <td><p>the <code>1:1</code> ratio for each cut.</p></td>
+    </tr>
+    <tr>
+      <th>width</th>
+      <td><p>the width of the artwork in pixels.</p></td>
+    </tr>
+    <tr>
+      <th>height</th>
+      <td><p>the height of the artwork in pixels.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A <code>ggplot</code> object containing the artwork.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Koen Derks, <a href='mailto:koen-derks@hotmail.com'>koen-derks@hotmail.com</a></p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>6</span><span class='op'>)</span>
+<span class='fu'>canvas_squares</span><span class='op'>(</span>colors <span class='op'>=</span> <span class='fu'><a href='colorPalette.html'>colorPalette</a></span><span class='op'>(</span><span class='st'>'tuscany1'</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='img'><img src='canvas_squares-1.png' alt='' width='700' height='433' /></div><div class='input'>
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
