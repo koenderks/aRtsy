@@ -7,7 +7,7 @@
 #'                 width = 500, height = 500)
 #'
 #' @param colors      a character (vector) specifying the colors used for the strokes.
-#' @param background  a character specifying the color used for the borders.
+#' @param background  a character specifying the color used for the background.
 #' @param col.line    color of the lines.
 #' @param radius      radius of the diamonds.
 #' @param alpha       transparency of the diamonds. If \code{NULL}, added layers become increasingly more transparent.

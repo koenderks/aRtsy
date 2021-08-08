@@ -11,7 +11,7 @@ canvas_diamonds(colors, background = '#fafafa', col.line = 'black',
 \arguments{
 \item{colors}{a character (vector) specifying the colors used for the strokes.}
 
-\item{background}{a character specifying the color used for the borders.}
+\item{background}{a character specifying the color used for the background.}
 
 \item{col.line}{color of the lines.}
 

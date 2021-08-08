@@ -9,7 +9,7 @@ seed <- as.numeric(Sys.time())
 set.seed(seed)
 
 # Select artwork type
-type <- sample(1:10, size = 1)
+type <- sample(1:11, size = 1)
 
 if (type == 1) {
   
@@ -88,6 +88,12 @@ if (type == 1) {
                                     radius = sample(c(2, 2.5, 5, 7, 7.5, 10), size = 1),
                                     p = sample(seq(0, 0.7, 0.1), size = 1),
                                     size = sample(c(0, 0.2), size = 1))
+  
+} else if (type == 11) {
+  
+  artwork <- aRtsy::canvas_segments(colors = aRtsy::colorPalette('random', sample(1:8, size = 1)), 
+                                    background = aRtsy::colorPalette('random', 1), 
+                                    n = sample(c(100, 200, 300, 400, 500), H = 0.1, size = 1))
   
 }
 

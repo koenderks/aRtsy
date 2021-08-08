@@ -57,3 +57,8 @@ test_that("canvas_diamonds()", {
   artwork <- aRtsy::canvas_diamonds(colors = c("black", "gray", "white"), radius = 50)
   expect_equal(!is.null(artwork), TRUE)
 })
+
+test_that("canvas_segments()", {
+  artwork <- aRtsy::canvas_segments(colors = c("black", "gray", "white"))
+  expect_equal(!is.null(artwork), TRUE)
+})

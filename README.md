@@ -214,6 +214,23 @@ canvas_mondriaan(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue')
                  cuts = 50, ratio = 1.618, width = 100, height = 100)
 ```
 
+## Segments
+
+This type of artwork is also a la Mondriaan, but uses a variety of lines instead of squares. The position and direction of each line segment is determined randomly.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-07.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-08.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-06.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_segments()` function to make your own artwork using this algorithm.
+
+```r
+set.seed(1)
+canvas_segments(colors = 'black', background = '#fafafa', n = 100, H = 0.1)
+```
+
 ## Circle maps
 
 This type of artwork is based on the concept of an [Arnold tongue](https://en.wikipedia.org/wiki/Arnold_tongue). According to wikipedia, Arnold tongues *"are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters"*.
