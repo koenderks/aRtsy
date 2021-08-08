@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • aRtsy</title>
+<title>Color palette generator. — colorPalette • aRtsy</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Color palette generator. — colorPalette" />
+<meta property="og:description" content="This function creates a random color palette, or allows the user to select a pre-implemented palette." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -66,7 +67,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -116,120 +117,49 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Color palette generator.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/koenderks/aRtsy/blob/master/R/colorPalette.R'><code>R/colorPalette.R</code></a></small>
+    <div class="hidden name"><code>colorPalette.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>This function creates a random color palette, or allows the user to select a pre-implemented palette.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>colorPalette</span><span class='op'>(</span><span class='va'>name</span>, n <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="canvas_ant.html">canvas_ant()</a></code> </p>
-        </td>
-        <td><p>Paint Langton's Ant on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_arcs.html">canvas_arcs()</a></code> </p>
-        </td>
-        <td><p>Paint Arcs on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_circlemap.html">canvas_circlemap()</a></code> </p>
-        </td>
-        <td><p>Paint a Circle Map on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_diamonds.html">canvas_diamonds()</a></code> </p>
-        </td>
-        <td><p>Paint A Diamond on Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_function.html">canvas_function()</a></code> </p>
-        </td>
-        <td><p>Paint Functions on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_mondriaan.html">canvas_mondriaan()</a></code> </p>
-        </td>
-        <td><p>Paint a Mondriaan on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_planet.html">canvas_planet()</a></code> </p>
-        </td>
-        <td><p>Paint a Planet on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_polylines.html">canvas_polylines()</a></code> </p>
-        </td>
-        <td><p>Paint Polygons and Lines on Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_ribbons.html">canvas_ribbons()</a></code> </p>
-        </td>
-        <td><p>Paint Ribbons on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_strokes.html">canvas_strokes()</a></code> </p>
-        </td>
-        <td><p>Paint Strokes on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_turmite.html">canvas_turmite()</a></code> </p>
-        </td>
-        <td><p>Paint a Turmite on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="colorPalette.html">colorPalette()</a></code> </p>
-        </td>
-        <td><p>Color palette generator.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="saveCanvas.html">saveCanvas()</a></code> </p>
-        </td>
-        <td><p>Save a canvas to an external device.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="themeCanvas.html">themeCanvas()</a></code> </p>
-        </td>
-        <td><p>Canvas theme for ggplot2 objects</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>name</th>
+      <td><p>name of the color palette. See the <code>details</code> section for a list of implemented palettes.</p></td>
+    </tr>
+    <tr>
+      <th>n</th>
+      <td><p>the number of colors to select from the palette. Required if <code>name = 'random'</code>. Otherwise, if <code>NULL</code>, automatically selects all colors from the chosen palette.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A vector of colors.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The following color palettes are implemented:</p>
+<ul>
+<li><p><code>random</code></p></li>
+<li><p><code>tuscany1</code></p></li>
+<li><p><code>tuscany2</code></p></li>
+</ul>
+
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Koen Derks, <a href='mailto:koen-derks@hotmail.com'>koen-derks@hotmail.com</a></p>
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
