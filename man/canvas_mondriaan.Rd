@@ -28,7 +28,7 @@ This function paints a Mondriaan.
 }
 \examples{
 set.seed(6)
-canvas_mondriaan(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
+canvas_mondriaan(colors = colorPalette('tuscany1'))
 
 }
 \author{

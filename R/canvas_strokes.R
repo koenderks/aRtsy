@@ -19,7 +19,7 @@
 #'
 #' @examples
 #' set.seed(1)
-#' canvas_strokes(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
+#' canvas_strokes(colors = colorPalette('tuscany3'))
 #' 
 #' @keywords artwork canvas
 #'

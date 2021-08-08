@@ -24,23 +24,21 @@
 #' @export
 
 colorPalette <- function(name, n = NULL) {
-  if (n < 1)
+  if (!is.null(n) && n < 1)
     stop("You must select at least one color.")
-  # ----------------
-  # Color palettes
   if (name == 'random') {
     if (is.null(n))
       stop("The random palette requires that you specify how many colors should be selected.")
     palette <- character(n)
     for (i in 1:n)
       palette[i] <- grDevices::rgb(stats::runif(1, 0, 255), stats::runif(1, 0, 255), stats::runif(1, 0, 255), maxColorValue = 255)
-  } else if (name == "tuscany1") {
-    palette <- c("firebrick", "goldenrod", "forestgreen", "navyblue")
-  } else if (name == "tuscany2") {
-    palette <- c('#500342', '#023b59', '#f9efdd', '#deaa70', '#711308')
-  }
-  # ----------------
-  if (!is.null(n)) {
+  } else {
+    palette <- switch(name,
+                      'tuscany1' = c("firebrick", "goldenrod", "forestgreen", "navyblue"),
+                      'tuscany2' = c('#500342', '#023b59', '#f9efdd', '#deaa70', '#711308'),
+                      'tuscany3' = c('#b08653', '#f5daba', '#c9673c', '#f2ab4e', '#a1863b'))
+    if (is.null(n))
+      n <- length(palette)
     if (n > length(palette))
       stop("Attempt to select more colors than are available in this palette.")
     palette <- palette[1:n]
