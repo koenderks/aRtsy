@@ -34,4 +34,5 @@ canvas_mondriaan(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue')
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
 }
-\keyword{paint}
+\keyword{artwork}
+\keyword{canvas}

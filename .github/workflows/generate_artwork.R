@@ -39,7 +39,7 @@ if (type == 1){
 } else if (type == 4){
   
   dims <- sample(c(500, 1000, 1500), size = 1)
-  artwork <- aRtsy::canvas_ant(colors = randomcoloR::randomColor(count = sample(1:20, size = 1)),
+  artwork <- aRtsy::canvas_ant(colors = randomcoloR::randomColor(count = sample(6:20, size = 1)),
                                background = sample(c("#fafafa", "#cc7722", "#a9d2c3", "#fc7c7c", randomColor(count = 1)), size = 1),
                                iterations = 1e7,
                                width = dims, 

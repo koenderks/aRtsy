@@ -37,4 +37,5 @@ canvas_turmite(color = "#000000", background = "#fafafa")
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
 }
-\keyword{paint}
+\keyword{artwork}
+\keyword{canvas}

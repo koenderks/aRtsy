@@ -22,7 +22,7 @@
 #' set.seed(1)
 #' canvas_polylines(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
 #' 
-#' @keywords paint
+#' @keywords artwork canvas
 #'
 #' @export
 #' @useDynLib aRtsy

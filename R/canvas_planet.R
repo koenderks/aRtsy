@@ -34,7 +34,7 @@
 #'               center.y = c(1400, 500, 1000), 
 #'               starprob = 0.005)
 #' 
-#' @keywords paint
+#' @keywords artwork canvas
 #'
 #' @export
 #' @useDynLib aRtsy

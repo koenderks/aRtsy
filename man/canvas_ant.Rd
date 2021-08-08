@@ -34,4 +34,5 @@ canvas_ant(colors = '#000000', background = '#fafafa')
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
 }
-\keyword{paint}
+\keyword{artwork}
+\keyword{canvas}

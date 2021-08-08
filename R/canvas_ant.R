@@ -20,7 +20,7 @@
 #' @examples
 #' canvas_ant(colors = '#000000', background = '#fafafa')
 #' 
-#' @keywords paint
+#' @keywords artwork canvas
 #'
 #' @export
 #' @useDynLib aRtsy
@@ -34,28 +34,19 @@ canvas_ant <- function(colors, background = '#fafafa', iterations = 1e7,
   palette <- c(background, colors)
   row <- ceiling(height / 2)
   col <- ceiling(width / 2)
-  c <- expand.grid(rep(c(0:1), length(colors)), rep(c(0:1), length(colors)))
-  c[2:nrow(c), ] <- c[sample(2:nrow(c)), ]
-  c <- c[1:length(colors), ]
-  colnames(c) <- c("x", "y")
-  df <- iterate_ant(matrix(0, nrow = height, ncol = width), iterations, row, col, c = c)  
-  df <- reshape2::melt(df)
-  colnames(df) <- c("y", "x", "z")
-  artwork <- ggplot2::ggplot(data = df, ggplot2::aes(x = x, y = y, fill = z)) +
+  canvas <- expand.grid(rep(c(0:1), length(colors)), rep(c(0:1), length(colors)))
+  canvas[2:nrow(canvas), ] <- canvas[sample(2:nrow(canvas)), ]
+  canvas <- canvas[1:length(colors), ]
+  colnames(canvas) <- c("x", "y")
+  full_canvas <- iterate_ant(matrix(0, nrow = height, ncol = width), iterations, row, col, c = canvas)  
+  full_canvas <- reshape2::melt(full_canvas)
+  colnames(full_canvas) <- c("y", "x", "z")
+  artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 
     ggplot2::coord_equal() +
     ggplot2::scale_fill_gradientn(colours = palette) +
     ggplot2::scale_y_continuous(expand = c(0,0)) + 
-    ggplot2::scale_x_continuous(expand = c(0,0)) +
-    ggplot2::theme(axis.title = ggplot2::element_blank(), 
-                   axis.text = ggplot2::element_blank(), 
-                   axis.ticks = ggplot2::element_blank(), 
-                   axis.line = ggplot2::element_blank(), 
-                   legend.position = "none", 
-                   panel.border = ggplot2::element_blank(), 
-                   panel.grid = ggplot2::element_blank(), 
-                   plot.margin = ggplot2::unit(rep(-1.25,4),"lines"), 
-                   strip.background = ggplot2::element_blank(), 
-                   strip.text = ggplot2::element_blank())
+    ggplot2::scale_x_continuous(expand = c(0,0))
+  artwork <- themeCanvas(artwork)
   return(artwork)
 }

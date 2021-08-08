@@ -24,7 +24,7 @@
 #' @examples
 #' canvas_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'))
 #' 
-#' @keywords paint
+#' @keywords artwork canvas
 #'
 #' @export
 #' @importFrom dplyr %>%

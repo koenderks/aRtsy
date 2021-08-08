@@ -22,7 +22,7 @@
 #' set.seed(1)
 #' canvas_turmite(color = "#000000", background = "#fafafa")
 #' 
-#' @keywords paint
+#' @keywords artwork canvas
 #'
 #' @export
 #' @useDynLib aRtsy

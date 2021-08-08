@@ -27,4 +27,5 @@ canvas_ribbons(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod")
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
 }
-\keyword{paint}
+\keyword{artwork}
+\keyword{canvas}

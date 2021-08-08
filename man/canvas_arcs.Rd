@@ -35,4 +35,5 @@ aRtsy:::canvas_arcs(colors = c('darkgreen', 'goldenrod', 'firebrick'), n = 9)
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
 }
-\keyword{paint}
+\keyword{artwork}
+\keyword{canvas}

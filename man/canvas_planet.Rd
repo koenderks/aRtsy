@@ -53,4 +53,5 @@ canvas_planet(colors, radius = c(800, 400, 150),
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
 }
-\keyword{paint}
+\keyword{artwork}
+\keyword{canvas}

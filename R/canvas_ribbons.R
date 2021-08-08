@@ -16,7 +16,7 @@
 #' set.seed(1)
 #' canvas_ribbons(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod"))
 #' 
-#' @keywords paint
+#' @keywords artwork canvas
 #'
 #' @export
 #' @importFrom ggpubr ggarrange

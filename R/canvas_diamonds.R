@@ -23,7 +23,7 @@
 #' set.seed(1)
 #' canvas_diamonds(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), radius = 10)
 #' 
-#' @keywords paint
+#' @keywords artwork canvas
 #'
 #' @export
 

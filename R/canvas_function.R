@@ -17,7 +17,7 @@
 #' set.seed(1)
 #' canvas_function(color = '#000000', background = '#fafafa')
 #' 
-#' @keywords paint
+#' @keywords artwork canvas
 #'
 #' @export
 #' @importFrom dplyr %>%

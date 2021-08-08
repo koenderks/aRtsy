@@ -20,7 +20,7 @@
 #' set.seed(6)
 #' canvas_mondriaan(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
 #' 
-#' @keywords paint
+#' @keywords artwork canvas
 #'
 #' @export
 

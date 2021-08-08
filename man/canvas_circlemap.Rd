@@ -40,4 +40,5 @@ canvas_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue')
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
 }
-\keyword{paint}
+\keyword{artwork}
+\keyword{canvas}

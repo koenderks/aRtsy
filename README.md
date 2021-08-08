@@ -69,8 +69,8 @@ You can use the `canvas_strokes()` function to make your own artwork using this 
 ```r
 set.seed(1)
 canvas_strokes(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), 
-              neighbors = 1, p = 0.01, iterations = 1, 
-              width = 500, height = 500, side = FALSE))
+               neighbors = 1, p = 0.01, iterations = 1, 
+               width = 500, height = 500, side = FALSE))
 ```
 
 ## Ribbons
@@ -88,7 +88,7 @@ You can use the `canvas_ribbons()` function to make your own artwork using this 
 ```r
 set.seed(1)
 canvas_ribbons(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod"),
-              background = '#fdf5e6', triangle = TRUE)
+               background = '#fdf5e6', triangle = TRUE)
 ```
 
 ## Polylines
@@ -106,8 +106,8 @@ You can use the `canvas_polylines()` function to make your own artwork using thi
 ```r
 set.seed(1)
 canvas_polylines(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), 
-                background = '#fafafa', ratio = 0.5, iterations = 1000, 
-                alpha = NULL, size = 0.1, width = 500, height = 500)
+                 background = '#fafafa', ratio = 0.5, iterations = 1000, 
+                 alpha = NULL, size = 0.1, width = 500, height = 500)
 ```
 
 ## Turmite
@@ -129,7 +129,7 @@ You can use the `canvas_turmite()` function to make your own artwork using this 
 ```r
 set.seed(1)
 canvas_turmite(color = "#000000", background = "#fafafa", p = 0.5, 
-              iterations = 1e7, width = 1500, height = 1500)
+               iterations = 1e7, width = 1500, height = 1500)
 ```
 
 ## Langton's ant
@@ -150,7 +150,7 @@ You can use the `canvas_ant()` function to make your own artwork using this algo
 
 ```r
 canvas_ant(colors = '#000000', background = '#fafafa', iterations = 1e7,
-          width = 200, height = 200)
+           width = 200, height = 200)
 ```
 
 ## Planets
@@ -172,9 +172,9 @@ colors <- list(c("khaki1", "lightcoral", "lightsalmon"),
                c("dodgerblue", "forestgreen", "white"), 
                c("gray", "darkgray", "beige"))
 canvas_planet(colors, radius = c(800, 400, 150), 
-             center.x = c(1, 500, 1100),
-             center.y = c(1400, 500, 1000), 
-             starprob = 0.005)
+              center.x = c(1, 500, 1100),
+              center.y = c(1400, 500, 1000), 
+              starprob = 0.005)
 ```
 
 ## Diamonds
@@ -192,8 +192,8 @@ You can use the `canvas_diamonds()` function to make your own artwork using this
 ```r
 set.seed(1)
 canvas_diamonds(colors = c("forestgreen", "navyblue", "goldenrod", "firebrick"), 
-               background = '#fafafa', col.line = 'black', radius = 10, alpha = 1, 
-               size = 0.25, p = 0.2, width = 500, height = 500)
+                background = '#fafafa', col.line = 'black', radius = 10, alpha = 1, 
+                size = 0.25, p = 0.2, width = 500, height = 500)
 ```
 
 ## Mondriaan
@@ -211,7 +211,7 @@ You can use the `canvas_mondriaan()` function to make your own artwork using thi
 ```r
 set.seed(6)
 canvas_mondriaan(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'),
-                cuts = 50, ratio = 1.618, width = 100, height = 100)
+                 cuts = 50, ratio = 1.618, width = 100, height = 100)
 ```
 
 ## Circle maps
@@ -228,8 +228,8 @@ You can use the `canvas_circlemap()` function to make your own artwork using thi
 
 ```r
 canvas_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'),
-                x_min = 0, x_max = 12.56, y_min = 0, y_max = 1, 
-                iterations = 10, width = 1500, height = 1500)
+                 x_min = 0, x_max = 12.56, y_min = 0, y_max = 1, 
+                 iterations = 10, width = 1500, height = 1500)
 ```
 
 ## Functions
