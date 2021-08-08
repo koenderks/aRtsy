@@ -142,10 +142,9 @@
                neighbors <span class="op">=</span> <span class="fl">1</span>, p <span class="op">=</span> <span class="fl">0.01</span>, iterations <span class="op">=</span> <span class="fl">1</span>, 
                width <span class="op">=</span> <span class="fl">500</span>, height <span class="op">=</span> <span class="fl">500</span>, side <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 </div>
-</div>
-<div id="turmite" class="section level3">
-<h3 class="hasAnchor">
-<a href="#turmite" class="anchor"></a>Turmite</h3>
+<div id="turmite" class="section level4">
+<h4 class="hasAnchor">
+<a href="#turmite" class="anchor"></a>Turmite</h4>
 <p>According to <a href="https://en.wikipedia.org/wiki/Turmite">wikipedia</a>, a turmite is <em>“a Turing machine which has an orientation in addition to a current state and a”tape" that consists of an infinite two-dimensional grid of cells"</em>. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in <code>aRtsy</code> is slightly modified so that the turmite does not go off the canvas, but instead bounces back onto the canvas.</p>
 <ol>
 <li>Turn on the spot (left, right, up, or down),</li>
@@ -160,9 +159,9 @@
 <span class="fu"><a href="reference/canvas_turmite.html">canvas_turmite</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"#000000"</span>, background <span class="op">=</span> <span class="st">"#fafafa"</span>, p <span class="op">=</span> <span class="fl">0.5</span>, 
                iterations <span class="op">=</span> <span class="fl">1e7</span>, width <span class="op">=</span> <span class="fl">1500</span>, height <span class="op">=</span> <span class="fl">1500</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="langtons-ant" class="section level3">
-<h3 class="hasAnchor">
-<a href="#langtons-ant" class="anchor"></a>Langton’s ant</h3>
+<div id="langtons-ant" class="section level4">
+<h4 class="hasAnchor">
+<a href="#langtons-ant" class="anchor"></a>Langton’s ant</h4>
 <p>According to <a href="https://en.wikipedia.org/wiki/Langton%27s_ant">wikipedia</a>, Langton’s ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below. Beware, the problem (or blessing) of Langton’s ant is that it always moves off the canvas…</p>
 <ol>
 <li>On a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block.</li>
@@ -176,9 +175,9 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/canvas_ant.html">canvas_ant</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="st">'#000000'</span>, background <span class="op">=</span> <span class="st">'#fafafa'</span>, iterations <span class="op">=</span> <span class="fl">1e7</span>,
            width <span class="op">=</span> <span class="fl">200</span>, height <span class="op">=</span> <span class="fl">200</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="planets" class="section level3">
-<h3 class="hasAnchor">
-<a href="#planets" class="anchor"></a>Planets</h3>
+<div id="planets" class="section level4">
+<h4 class="hasAnchor">
+<a href="#planets" class="anchor"></a>Planets</h4>
 <p>We all love space, and this type of artwork puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (inspired by an idea from <a href="https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/">Fronkonstin</a>) to fill in their surfaces.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-26.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-27.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-28.png" width="270" height="270"></p>
@@ -194,9 +193,9 @@
               center.y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1400</span>, <span class="fl">500</span>, <span class="fl">1000</span><span class="op">)</span>, 
               starprob <span class="op">=</span> <span class="fl">0.005</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="circle-maps" class="section level3">
-<h3 class="hasAnchor">
-<a href="#circle-maps" class="anchor"></a>Circle maps</h3>
+<div id="circle-maps" class="section level4">
+<h4 class="hasAnchor">
+<a href="#circle-maps" class="anchor"></a>Circle maps</h4>
 <p>This type of artwork is based on the concept of an <a href="https://en.wikipedia.org/wiki/Arnold_tongue">Arnold tongue</a>. According to wikipedia, Arnold tongues <em>“are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters”</em>.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22b.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22c.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22a.png" width="270" height="270"></p>
@@ -207,13 +206,13 @@
                  iterations <span class="op">=</span> <span class="fl">10</span>, width <span class="op">=</span> <span class="fl">1500</span>, height <span class="op">=</span> <span class="fl">1500</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
-<div id="the-geometric-collection" class="section level2">
-<h2 class="hasAnchor">
-<a href="#the-geometric-collection" class="anchor"></a>The Geometric collection</h2>
-<p>The Geometric collection implements algorithms that draw a geometric shape and apply a random color to it.</p>
-<div id="segments" class="section level3">
+<div id="the-geometric-collection" class="section level3">
 <h3 class="hasAnchor">
-<a href="#segments" class="anchor"></a>Segments</h3>
+<a href="#the-geometric-collection" class="anchor"></a>The Geometric collection</h3>
+<p>The Geometric collection implements algorithms that draw a geometric shape and apply a random color to it.</p>
+<div id="segments" class="section level4">
+<h4 class="hasAnchor">
+<a href="#segments" class="anchor"></a>Segments</h4>
 <p>This type of artwork mimics the style of the well-known paintings by the Dutch artist <a href="https://nl.wikipedia.org/wiki/Piet_Mondriaan">Piet Mondriaan</a>. The position and direction of each line segment is determined randomly.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-07.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-08.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-06.png" width="270" height="270"></p>
@@ -222,9 +221,9 @@
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_segments.html">canvas_segments</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="st">'black'</span>, background <span class="op">=</span> <span class="st">'#fafafa'</span>, n <span class="op">=</span> <span class="fl">100</span>, p <span class="op">=</span> <span class="fl">0.5</span>, H <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="diamonds" class="section level3">
-<h3 class="hasAnchor">
-<a href="#diamonds" class="anchor"></a>Diamonds</h3>
+<div id="diamonds" class="section level4">
+<h4 class="hasAnchor">
+<a href="#diamonds" class="anchor"></a>Diamonds</h4>
 <p>This function creates a set of diamonds on a canvas. The diamonds are filled in using a random color assignment.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-06.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-04.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-05.png" width="270" height="270"></p>
@@ -235,9 +234,9 @@
                 background <span class="op">=</span> <span class="st">'#fafafa'</span>, col.line <span class="op">=</span> <span class="st">'black'</span>, radius <span class="op">=</span> <span class="fl">10</span>, alpha <span class="op">=</span> <span class="fl">1</span>, 
                 size <span class="op">=</span> <span class="fl">0.25</span>, p <span class="op">=</span> <span class="fl">0.2</span>, width <span class="op">=</span> <span class="fl">500</span>, height <span class="op">=</span> <span class="fl">500</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="squares-and-rectangles" class="section level3">
-<h3 class="hasAnchor">
-<a href="#squares-and-rectangles" class="anchor"></a>Squares and rectangles</h3>
+<div id="squares-and-rectangles" class="section level4">
+<h4 class="hasAnchor">
+<a href="#squares-and-rectangles" class="anchor"></a>Squares and rectangles</h4>
 <p>This type of artwork is also a la Mondriaan, but uses a variety of squares and rectangles instead of lines. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-03-01.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-02-28.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-02-29.png" width="270" height="270"></p>
@@ -247,9 +246,9 @@
 <span class="fu"><a href="reference/canvas_squares.html">canvas_squares</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'goldenrod'</span>, <span class="st">'firebrick'</span>, <span class="st">'navyblue'</span><span class="op">)</span>,
                cuts <span class="op">=</span> <span class="fl">50</span>, ratio <span class="op">=</span> <span class="fl">1.618</span>, width <span class="op">=</span> <span class="fl">100</span>, height <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="ribbons" class="section level3">
-<h3 class="hasAnchor">
-<a href="#ribbons" class="anchor"></a>Ribbons</h3>
+<div id="ribbons" class="section level4">
+<h4 class="hasAnchor">
+<a href="#ribbons" class="anchor"></a>Ribbons</h4>
 <p>This function creates colored ribbons with (or without) a triangle that breaks their paths. This path of the ribbon polygon is creating by picking one point on the left side of the triangle and one point on the right side at random and using these points as nodes.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-16.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-15.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-14.png" width="270" height="270"></p>
@@ -259,9 +258,9 @@
 <span class="fu"><a href="reference/canvas_ribbons.html">canvas_ribbons</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"forestgreen"</span>, <span class="st">"firebrick"</span>, <span class="st">"dodgerblue"</span>, <span class="st">"goldenrod"</span><span class="op">)</span>,
                background <span class="op">=</span> <span class="st">'#fdf5e6'</span>, triangle <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="polylines" class="section level3">
-<h3 class="hasAnchor">
-<a href="#polylines" class="anchor"></a>Polylines</h3>
+<div id="polylines" class="section level4">
+<h4 class="hasAnchor">
+<a href="#polylines" class="anchor"></a>Polylines</h4>
 <p>This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-22.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-23.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-21.png" width="270" height="270"></p>
@@ -272,9 +271,9 @@
                  background <span class="op">=</span> <span class="st">'#fafafa'</span>, ratio <span class="op">=</span> <span class="fl">0.5</span>, iterations <span class="op">=</span> <span class="fl">1000</span>, 
                  alpha <span class="op">=</span> <span class="cn">NULL</span>, size <span class="op">=</span> <span class="fl">0.1</span>, width <span class="op">=</span> <span class="fl">500</span>, height <span class="op">=</span> <span class="fl">500</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="functions" class="section level3">
-<h3 class="hasAnchor">
-<a href="#functions" class="anchor"></a>Functions</h3>
+<div id="functions" class="section level4">
+<h4 class="hasAnchor">
+<a href="#functions" class="anchor"></a>Functions</h4>
 <p>The idea for this type of artwork is taken over from the <a href="https://github.com/cutterkom/generativeart"><code>generativeart</code></a> package. In this algorithm, the position of every single point is calculated by a formula which has random parameters.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-03-17.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-04-08.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-04-04.png" width="270" height="270"></p>
@@ -282,6 +281,7 @@
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_function.html">canvas_function</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">'#000000'</span>, background <span class="op">=</span> <span class="st">'#fafafa'</span><span class="op">)</span></code></pre></div>
+</div>
 </div>
 </div>
 <div id="color-palettes" class="section level2">
