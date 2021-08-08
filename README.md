@@ -51,6 +51,7 @@ library(aRtsy)
 * [`canvas_planet()`](#planets)
 * [`canvas_diamonds()`](#diamonds)
 * [`canvas_mondriaan()`](#mondriaan)
+* [`canvas_segments()`](#segments)
 * [`canvas_cirlemap()`](#circle-maps)
 * [`canvas_function()`](#functions)
 
