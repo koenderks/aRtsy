@@ -4,8 +4,8 @@
 \alias{canvas_mandelbrot}
 \title{Paint the Mandelbrot Set on Canvas}
 \usage{
-canvas_mandelbrot(colors, n = 100, xmin = -1.7, xmax = -0.2, ymin = -0.2999, ymax = 0.8001,
-                   zoom = 1, width = 1500, height = 1500)
+canvas_mandelbrot(colors, n = 100, xmin = -1.7, xmax = -0.2, ymin = -0.2999, 
+                   ymax = 0.8001, zoom = 1, width = 500, height = 500)
 }
 \arguments{
 \item{colors}{a character (vector) specifying the colors used for the artwork.}
@@ -34,7 +34,7 @@ This function draws the Mandelbrot set on the canvas.
 }
 \examples{
 set.seed(1)
-canvas_fractal(colors = colorPalette('tuscany1'), n = 100)
+canvas_mandelbrot(colors = colorPalette('dark'), n = 100)
 
 }
 \author{

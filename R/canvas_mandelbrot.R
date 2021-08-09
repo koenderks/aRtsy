@@ -2,8 +2,8 @@
 #'
 #' @description This function draws the Mandelbrot set on the canvas.
 #'
-#' @usage canvas_mandelbrot(colors, n = 100, xmin = -1.7, xmax = -0.2, ymin = -0.2999, ymax = 0.8001,
-#'                    zoom = 1, width = 1500, height = 1500)
+#' @usage canvas_mandelbrot(colors, n = 100, xmin = -1.7, xmax = -0.2, ymin = -0.2999, 
+#'                    ymax = 0.8001, zoom = 1, width = 500, height = 500)
 #'
 #' @param colors    a character (vector) specifying the colors used for the artwork.
 #' @param n         the number of iterations.
@@ -21,14 +21,14 @@
 #'
 #' @examples
 #' set.seed(1)
-#' canvas_fractal(colors = colorPalette('tuscany1'), n = 100)
+#' canvas_mandelbrot(colors = colorPalette('dark'), n = 100)
 #' 
 #' @keywords artwork canvas
 #'
 #' @export
 
-canvas_mandelbrot <- function(colors, n = 100, xmin = -1.7, xmax = -0.2, ymin = -0.2999, ymax = 0.8001, 
-                              zoom = 1, width = 500, height = 500) {
+canvas_mandelbrot <- function(colors, n = 100, xmin = -1.7, xmax = -0.2, ymin = -0.2999, 
+                              ymax = 0.8001, zoom = 1, width = 500, height = 500) {
   x <- y <- z <- NULL
   if (zoom > 1) {
     for(i in 1:(zoom - 1)) {
