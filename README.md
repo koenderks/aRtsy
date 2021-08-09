@@ -19,13 +19,11 @@ Good luck hunting for some good `seed`'s! Feel free to post a comment with your 
 
 ## Artwork of the day
 
-Every 24 hours this repository generates a random artwork using the `aRtsy` package. This is today's artwork:
+Every 24 hours this repository generates and tweets a random artwork using the `aRtsy` package. The full collection of daily artworks is available on the [aRtsy twitter feed](https://twitter.com/aRtsy_package). This is today's artwork:
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/daily.png' width='400' height='400'>
 </p>
-
-The full collection of daily artworks is available on the [aRtsy twitter feed](https://twitter.com/aRtsy_package).
 
 ## Installation
 
