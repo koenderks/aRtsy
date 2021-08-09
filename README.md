@@ -49,6 +49,7 @@ library(aRtsy)
 * [`canvas_turmite()`](#turmite)
 * [`canvas_ant()`](#langtons-ant)
 * [`canvas_planet()`](#planets)
+* [`canvas_mandelbrot()`](#the-mandelbrot-set)
 * [`canvas_cirlemap()`](#circle-maps)
 
 *The Geometric collection*
@@ -148,6 +149,22 @@ canvas_planet(colors, radius = c(800, 400, 150),
               center.x = c(1, 500, 1100),
               center.y = c(1400, 500, 1000), 
               starprob = 0.005)
+```
+
+#### The Mandelbrot set
+
+The [Mandelbrot set](https://en.wikipedia.org/wiki/Mandelbrot_set) always produces nice images.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-08.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-09.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-07.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_mandelbrot()` function to make your own artwork using this algorithm.
+
+```r
+canvas_mandelbrot(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'), zoom = 10)
 ```
 
 #### Circle maps
