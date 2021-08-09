@@ -5,7 +5,7 @@
 \title{Paint A Diamond on Canvas}
 \usage{
 canvas_diamonds(colors, background = '#fafafa', col.line = 'black', 
-                radius = 10, alpha = 1, size = 0.25, p = 0.2, 
+                radius = 10, alpha = 1, p = 0.2, 
                 width = 500, height = 500)
 }
 \arguments{
@@ -18,8 +18,6 @@ canvas_diamonds(colors, background = '#fafafa', col.line = 'black',
 \item{radius}{radius of the diamonds.}
 
 \item{alpha}{transparency of the diamonds. If \code{NULL}, added layers become increasingly more transparent.}
-
-\item{size}{size of the borders}
 
 \item{p}{takeover probability.}
 

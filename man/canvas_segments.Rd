@@ -8,7 +8,7 @@ canvas_segments(colors, background = '#fafafa', n = 100,
                 p = 0.5, H = 0.1, size = 0.2)
 }
 \arguments{
-\item{colors}{a character (vector) specifying the colors used for the strokes.}
+\item{colors}{a character (vector) specifying the colors used for the line segments.}
 
 \item{background}{a character specifying the color used for the background.}
 

@@ -3,7 +3,7 @@
 #' @description This function draws many diamonds on the canvas and places two lines behind them. The diamonds can be transparent or have a random color sampled from the input.
 #'
 #' @usage canvas_diamonds(colors, background = '#fafafa', col.line = 'black', 
-#'                 radius = 10, alpha = 1, size = 0.25, p = 0.2, 
+#'                 radius = 10, alpha = 1, p = 0.2, 
 #'                 width = 500, height = 500)
 #'
 #' @param colors      a character (vector) specifying the colors used for the strokes.
@@ -11,7 +11,6 @@
 #' @param col.line    color of the lines.
 #' @param radius      radius of the diamonds.
 #' @param alpha       transparency of the diamonds. If \code{NULL}, added layers become increasingly more transparent.
-#' @param size        size of the borders
 #' @param p           takeover probability.
 #' @param width       the width of the artwork in pixels.
 #' @param height      the height of the artwork in pixels.
@@ -29,7 +28,7 @@
 #' @export
 
 canvas_diamonds <- function(colors, background = '#fafafa', col.line = 'black', 
-                            radius = 10, alpha = 1, size = 0.25, p = 0.2, 
+                            radius = 10, alpha = 1, p = 0.2, 
                             width = 500, height = 500) {
   x <- y <- xend <- yend <- type <- col <- NULL
   x <- seq(from = width / 5, to = width / 5 * 4, by = radius)
@@ -63,7 +62,7 @@ canvas_diamonds <- function(colors, background = '#fafafa', col.line = 'black',
     ggplot2::geom_curve(data = data.frame(x = 0, y = sample((height/2):height, size = 1), xend = width, yend = sample(0:height/2, size = 1), type = 999),
                         mapping = ggplot2::aes(x = x, y = y, xend = xend, yend = yend),
                         colour = col.line, size = stats::runif(1, 5, 15), curvature = stats::runif(1, -0.5, 0)) +
-    ggplot2::geom_polygon(fill = full_canvas$col, color = background, alpha = alpha, size = size) +
+    ggplot2::geom_polygon(fill = full_canvas$col, color = NA, alpha = alpha) +
     ggplot2::scale_fill_manual(values = palette)
   artwork <- themeCanvas(artwork, background)
   return(artwork)

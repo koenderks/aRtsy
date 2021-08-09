@@ -5,7 +5,7 @@
 #' @usage canvas_segments(colors, background = '#fafafa', n = 100, 
 #'                 p = 0.5, H = 0.1, size = 0.2)
 #'
-#' @param colors      a character (vector) specifying the colors used for the strokes.
+#' @param colors      a character (vector) specifying the colors used for the line segments.
 #' @param background  a character specifying the color used for the background.
 #' @param n           the number of line segments to draw.
 #' @param p           probability of drawing a vectical line segment.

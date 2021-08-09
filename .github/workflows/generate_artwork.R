@@ -84,10 +84,9 @@ if (type == 1) {
   
   artwork <- aRtsy::canvas_diamonds(colors = aRtsy::colorPalette('random', sample(4:8, size = 1)), 
                                     background = sample(c("#fafafa", "black", aRtsy::colorPalette('random', 1)), size = 1),
-                                    col.line = sample(c("#fafafa", "black", aRtsy::colorPalette('random', 1)), size = 1),
-                                    radius = sample(c(2, 2.5, 5, 7, 7.5, 10), size = 1),
-                                    p = sample(seq(0, 0.7, 0.1), size = 1),
-                                    size = sample(c(0, 0.2), size = 1))
+                                    col.line = sample(c(NA, sample(c("#fafafa", "black", aRtsy::colorPalette('random', 1)), size = 1)), size = 1),
+                                    radius = sample(c(1, 2, 2.5, 5, 7, 7.5), size = 1),
+                                    p = sample(seq(0.1, 0.7, 0.1), size = 1))
   
 } else if (type == 11) {
   
