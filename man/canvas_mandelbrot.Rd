@@ -34,7 +34,7 @@ This function draws the Mandelbrot set on the canvas.
 }
 \examples{
 set.seed(1)
-canvas_mandelbrot(colors = colorPalette('dark'), n = 100)
+canvas_mandelbrot(colors = colorPalette('dark1'), n = 100)
 
 }
 \author{
