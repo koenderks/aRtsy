@@ -49,8 +49,6 @@ library(aRtsy)
 * [`canvas_turmite()`](#turmite)
 * [`canvas_ant()`](#langtons-ant)
 * [`canvas_planet()`](#planets)
-* [`canvas_mandelbrot()`](#the-mandelbrot-set)
-* [`canvas_cirlemap()`](#circle-maps)
 
 *The Geometric collection*
 
@@ -60,6 +58,11 @@ library(aRtsy)
 * [`canvas_ribbons()`](#ribbons)
 * [`canvas_polylines()`](#polylines)
 * [`canvas_function()`](#functions)
+
+*The Static collection*
+
+* [`canvas_mandelbrot()`](#the-mandelbrot-set)
+* [`canvas_cirlemap()`](#circle-maps)
 
 ### The Iterative collection
 
@@ -149,40 +152,6 @@ canvas_planet(colors, radius = c(800, 400, 150),
               center.x = c(1, 500, 1100),
               center.y = c(1400, 500, 1000), 
               starprob = 0.005)
-```
-
-#### The Mandelbrot set
-
-The [Mandelbrot set](https://en.wikipedia.org/wiki/Mandelbrot_set) always produces nice images.
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-08.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-09.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-07.png' width='270' height='270'>
-</p>
-
-You can use the `canvas_mandelbrot()` function to make your own artwork using this algorithm.
-
-```r
-canvas_mandelbrot(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'), zoom = 10)
-```
-
-#### Circle maps
-
-This type of artwork is based on the concept of an [Arnold tongue](https://en.wikipedia.org/wiki/Arnold_tongue). According to wikipedia, Arnold tongues *"are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters"*.
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22b.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22c.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22a.png' width='270' height='270'>
-</p>
-
-You can use the `canvas_circlemap()` function to make your own artwork using this algorithm.
-
-```r
-canvas_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'),
-                 x_min = 0, x_max = 12.56, y_min = 0, y_max = 1, 
-                 iterations = 10, width = 1500, height = 1500)
 ```
 
 ### The Geometric collection
@@ -295,6 +264,44 @@ You can use the `canvas_function()` function to make your own artwork using this
 ```r
 set.seed(1)
 canvas_function(color = '#000000', background = '#fafafa')
+```
+
+### The Static collection
+
+The Static collection implements static images that produce nice pictures.
+
+#### The Mandelbrot set
+
+The [Mandelbrot set](https://en.wikipedia.org/wiki/Mandelbrot_set) always produces nice images.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-08.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-09.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-07.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_mandelbrot()` function to make your own artwork using this algorithm.
+
+```r
+canvas_mandelbrot(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'), zoom = 10)
+```
+
+#### Circle maps
+
+This type of artwork is based on the concept of an [Arnold tongue](https://en.wikipedia.org/wiki/Arnold_tongue). According to wikipedia, Arnold tongues *"are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters"*.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22b.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22c.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22a.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_circlemap()` function to make your own artwork using this algorithm.
+
+```r
+canvas_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'),
+                 x_min = 0, x_max = 12.56, y_min = 0, y_max = 1, 
+                 iterations = 10, width = 1500, height = 1500)
 ```
 
 ## Color palettes
