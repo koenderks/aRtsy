@@ -9,7 +9,7 @@
 
 <img src='https://github.com/koenderks/aRtsy/raw/development/man/figures/logo.png' width='149' height='173' alt='logo' align='right' margin-left='20' margin-right='20'/>
 
-*"Why would anyone want to make art using computers?" - Marcus du Sautoy, The Creative Code*
+*"But why would anyone want to use computers to create art?" - Marcus du Sautoy, The Creative Code*
 
 `aRtsy` is an attempt at making generative art available for the masses in a simple and standardized format. The package provides various algorithms for creating artworks in `ggplot2` that incorporate some form of randomness (depending on the set `seed`). Each type of artwork is implemented in a separate function.
 
