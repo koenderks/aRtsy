@@ -88,7 +88,13 @@ canvas_strokes(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'),
 
 #### Collatz conjecture
 
-The Collatz conjecture is also known as 3x+1.
+The Collatz conjecture is also known as 3x+1. The algorithm draws lines according to a simple rule set:
+
+1. Take any number
+2. If the number is even, divide it by 2.
+3. If the number is odd, multiply the number by 3 and add 1.
+
+By visualizing the sequence for each number, overlaying numbers that are the same, and bending the edges, very distinct coral structures can occur.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-09.png' width='270' height='270'>
@@ -100,8 +106,8 @@ The Collatz conjecture is also known as 3x+1.
 You can use the `canvas_collatz()` function to make your own artwork using this algorithm.
 
 ```r
-canvas_collatz(colors = '#000000', background = '#fafafa', n = 100, 
-               angle.even = 0.007, angle.odd = 0.014)
+canvas_collatz(colors = '#000000', background = '#fafafa', n = 200, 
+               angle.even = 0.0075, angle.odd = 0.0145)
 ```
 
 #### Turmite

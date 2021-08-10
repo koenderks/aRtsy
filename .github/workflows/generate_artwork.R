@@ -105,7 +105,8 @@ if (type == 1) {
   
   artwork <- aRtsy::canvas_collatz(colors = aRtsy::colorPalette('random', n = 5), 
                                    background = "black",
-                                   n = sample(200:10000, size = 1))
+                                   n = sample(200:2000, size = 1),
+                                   side = sample(c(TRUE, FALSE), size = 1))
   
 }
 

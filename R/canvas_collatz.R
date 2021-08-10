@@ -3,7 +3,7 @@
 #' @description This function draws the Collatz conjecture on the canvas.
 #'
 #' @usage canvas_collatz(colors, background = '#fafafa', n = 200, 
-#'                 angle.even = 0.007, angle.odd = 0.013, side = TRUE)
+#'                 angle.even = 0.0075, angle.odd = 0.0145, side = FALSE)
 #'
 #' @param colors     a character (vector) specifying the colors used for the artwork.
 #' @param background a character specifying the color used for the background.
@@ -25,7 +25,7 @@
 #' @export
 
 canvas_collatz <- function(colors, background = '#fafafa', n = 200, 
-                           angle.even = 0.007, angle.odd = 0.013, side = TRUE) {
+                           angle.even = 0.0075, angle.odd = 0.0145, side = FALSE) {
   canvas <- data.frame(x = numeric(), y = numeric(), col = numeric(), type = numeric())
   if (length(n) == 1)
     n <- sample(1:1000000, size = n, replace = F)

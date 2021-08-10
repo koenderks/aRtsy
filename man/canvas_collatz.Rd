@@ -5,7 +5,7 @@
 \title{Paint the Collatz Conjecture on Canvas}
 \usage{
 canvas_collatz(colors, background = '#fafafa', n = 200, 
-                angle.even = 0.007, angle.odd = 0.013, side = TRUE)
+                angle.even = 0.0075, angle.odd = 0.0145, side = FALSE)
 }
 \arguments{
 \item{colors}{a character (vector) specifying the colors used for the artwork.}
