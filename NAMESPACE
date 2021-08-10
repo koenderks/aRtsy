@@ -2,6 +2,7 @@
 
 export(canvas_ant)
 export(canvas_circlemap)
+export(canvas_collatz)
 export(canvas_diamonds)
 export(canvas_function)
 export(canvas_mandelbrot)

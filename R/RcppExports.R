@@ -9,6 +9,14 @@ iterate_circlemap <- function(X, kmin, kmax, phimin, phimax, iterations) {
     .Call('_aRtsy_iterate_circlemap', PACKAGE = 'aRtsy', X, kmin, kmax, phimin, phimax, iterations)
 }
 
+iterate_collatz <- function(x) {
+    .Call('_aRtsy_iterate_collatz', PACKAGE = 'aRtsy', x)
+}
+
+draw_line <- function(empty, series, even, odd) {
+    .Call('_aRtsy_draw_line', PACKAGE = 'aRtsy', empty, series, even, odd)
+}
+
 iterate_planet <- function(X, radius, xcenter, ycenter, threshold, iterations, starprob, ncolors, colorsused, fade, lightright) {
     .Call('_aRtsy_iterate_planet', PACKAGE = 'aRtsy', X, radius, xcenter, ycenter, threshold, iterations, starprob, ncolors, colorsused, fade, lightright)
 }

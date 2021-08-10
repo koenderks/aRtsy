@@ -4,12 +4,16 @@
 \alias{saveCanvas}
 \title{Save a canvas to an external device.}
 \usage{
-saveCanvas(plot, filename, resolution)
+saveCanvas(plot, filename, width = 7, height = 7, resolution)
 }
 \arguments{
 \item{plot}{a ggplot2 object to be saved.}
 
 \item{filename}{the filename of the export.}
+
+\item{width}{the width of the artwork in cm.}
+
+\item{height}{the height of the artwork in cm.}
 
 \item{resolution}{the \code{dpi} of the export.}
 }

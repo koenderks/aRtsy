@@ -67,3 +67,8 @@ test_that("canvas_mandelbrot()", {
   artwork <- aRtsy::canvas_mandelbrot(colors = c("black", "gray", "white"))
   expect_equal(!is.null(artwork), TRUE)
 })
+
+test_that("canvas_collatz()", {
+  artwork <- aRtsy::canvas_collatz(colors = c("black", "gray", "white"))
+  expect_equal(!is.null(artwork), TRUE)
+})

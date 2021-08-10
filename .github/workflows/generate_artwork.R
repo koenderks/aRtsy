@@ -9,7 +9,7 @@ seed <- as.numeric(Sys.time())
 set.seed(seed)
 
 # Select artwork type
-type <- sample(1:12, size = 1)
+type <- sample(1:13, size = 1)
 
 if (type == 1) {
   
@@ -100,6 +100,12 @@ if (type == 1) {
   
   artwork <- aRtsy::canvas_mandelbrot(colors = aRtsy::colorPalette('random', n = 5), 
                                       zoom = sample(2:23, 1))
+  
+} else if (type == 13) {
+  
+  artwork <- aRtsy::canvas_collatz(colors = aRtsy::colorPalette('random', n = 5), 
+                                   background = "black",
+                                   n = sample(200:10000, size = 1))
   
 }
 

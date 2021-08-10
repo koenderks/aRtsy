@@ -2,10 +2,12 @@
 #'
 #' @description This function is a wrapper around \code{ggplot2::ggsave}. It provides a suggested export with square dimensions for a canvas created using the \code{aRtsy} package.
 #'
-#' @usage saveCanvas(plot, filename, resolution)
+#' @usage saveCanvas(plot, filename, width = 7, height = 7, resolution)
 #'
 #' @param plot       a ggplot2 object to be saved.
 #' @param filename   the filename of the export.
+#' @param width      the width of the artwork in cm.
+#' @param height     the height of the artwork in cm.
 #' @param resolution the \code{dpi} of the export.
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
@@ -14,6 +16,6 @@
 #' 
 #' @export
 
-saveCanvas <- function(plot, filename, resolution = 300) {
-  ggplot2::ggsave(plot = plot, filename = filename, width = 7, height = 7, units = 'cm', dpi = resolution)
+saveCanvas <- function(plot, filename, width = 7, height = 7, resolution = 300) {
+  ggplot2::ggsave(plot = plot, filename = filename, width = width, height = height, units = 'cm', dpi = resolution)
 }

@@ -42,6 +42,31 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// iterate_collatz
+std::vector<int> iterate_collatz(int x);
+RcppExport SEXP _aRtsy_iterate_collatz(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(iterate_collatz(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// draw_line
+arma::mat draw_line(arma::mat empty, std::vector<int> series, double even, double odd);
+RcppExport SEXP _aRtsy_draw_line(SEXP emptySEXP, SEXP seriesSEXP, SEXP evenSEXP, SEXP oddSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type empty(emptySEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type series(seriesSEXP);
+    Rcpp::traits::input_parameter< double >::type even(evenSEXP);
+    Rcpp::traits::input_parameter< double >::type odd(oddSEXP);
+    rcpp_result_gen = Rcpp::wrap(draw_line(empty, series, even, odd));
+    return rcpp_result_gen;
+END_RCPP
+}
 // iterate_planet
 arma::mat iterate_planet(arma::mat X, int radius, int xcenter, int ycenter, int threshold, int iterations, double starprob, int ncolors, int colorsused, double fade, int lightright);
 RcppExport SEXP _aRtsy_iterate_planet(SEXP XSEXP, SEXP radiusSEXP, SEXP xcenterSEXP, SEXP ycenterSEXP, SEXP thresholdSEXP, SEXP iterationsSEXP, SEXP starprobSEXP, SEXP ncolorsSEXP, SEXP colorsusedSEXP, SEXP fadeSEXP, SEXP lightrightSEXP) {
@@ -126,6 +151,8 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"_aRtsy_iterate_ant", (DL_FUNC) &_aRtsy_iterate_ant, 5},
     {"_aRtsy_iterate_circlemap", (DL_FUNC) &_aRtsy_iterate_circlemap, 6},
+    {"_aRtsy_iterate_collatz", (DL_FUNC) &_aRtsy_iterate_collatz, 1},
+    {"_aRtsy_draw_line", (DL_FUNC) &_aRtsy_draw_line, 4},
     {"_aRtsy_iterate_planet", (DL_FUNC) &_aRtsy_iterate_planet, 11},
     {"_aRtsy_iterate_polylines", (DL_FUNC) &_aRtsy_iterate_polylines, 5},
     {"_aRtsy_iterate_squares", (DL_FUNC) &_aRtsy_iterate_squares, 5},

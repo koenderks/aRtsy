@@ -46,6 +46,7 @@ library(aRtsy)
 * [`canvas_strokes()`](#paint-strokes)
 * [`canvas_turmite()`](#turmite)
 * [`canvas_ant()`](#langtons-ant)
+* [`canvas_collatz()`](#collatz-conjecture)
 * [`canvas_planet()`](#planets)
 
 *The Geometric collection*
@@ -126,6 +127,24 @@ You can use the `canvas_ant()` function to make your own artwork using this algo
 ```r
 canvas_ant(colors = '#000000', background = '#fafafa', iterations = 1e7,
            width = 200, height = 200)
+```
+
+#### Collatz conjecture
+
+The Collatz conjecture is also known as 3x+1.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-10.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-10.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-10.png' width='270' height='270'>
+</p>
+
+
+You can use the `canvas_collatz()` function to make your own artwork using this algorithm.
+
+```r
+canvas_collatz(colors = '#000000', background = '#fafafa', n = 100, 
+               angle.even = 0.007, angle.odd = 0.014)
 ```
 
 #### Planets
