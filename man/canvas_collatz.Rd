@@ -5,7 +5,7 @@
 \title{Paint the Collatz Conjecture on Canvas}
 \usage{
 canvas_collatz(colors, background = '#fafafa', n = 200, 
-                angle.even = 0.007, angle.odd = 0.013)
+                angle.even = 0.007, angle.odd = 0.013, side = TRUE)
 }
 \arguments{
 \item{colors}{a character (vector) specifying the colors used for the artwork.}
@@ -17,6 +17,8 @@ canvas_collatz(colors, background = '#fafafa', n = 200,
 \item{angle.even}{the angle (radials) to use after odd numbers.}
 
 \item{angle.odd}{the angle (radials) to use after even numbers.}
+
+\item{side}{logical. Whether to put the artwork on its side.}
 }
 \value{
 A \code{ggplot} object containing the artwork.

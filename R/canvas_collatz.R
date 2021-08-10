@@ -3,13 +3,14 @@
 #' @description This function draws the Collatz conjecture on the canvas.
 #'
 #' @usage canvas_collatz(colors, background = '#fafafa', n = 200, 
-#'                 angle.even = 0.007, angle.odd = 0.013)
+#'                 angle.even = 0.007, angle.odd = 0.013, side = TRUE)
 #'
 #' @param colors     a character (vector) specifying the colors used for the artwork.
 #' @param background a character specifying the color used for the background.
 #' @param n          the number of numbers to sample for the lines. Can also be a vector of numbers to use.
 #' @param angle.even the angle (radials) to use after odd numbers.
 #' @param angle.odd  the angle (radials) to use after even numbers.
+#' @param side       logical. Whether to put the artwork on its side.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
@@ -24,10 +25,10 @@
 #' @export
 
 canvas_collatz <- function(colors, background = '#fafafa', n = 200, 
-                           angle.even = 0.007, angle.odd = 0.014) {
+                           angle.even = 0.007, angle.odd = 0.013, side = TRUE) {
   canvas <- data.frame(x = numeric(), y = numeric(), col = numeric(), type = numeric())
   if (length(n) == 1)
-    n <- sample(1:100000000, size = n, replace = F)
+    n <- sample(1:1000000, size = n, replace = F)
   for (i in n) {
     series <- rev(iterate_collatz(i))
     line <- matrix(0, nrow = length(series), ncol = 2)
@@ -42,8 +43,9 @@ canvas_collatz <- function(colors, background = '#fafafa', n = 200,
   artwork <- ggplot2::ggplot(data = canvas, mapping = ggplot2::aes(x = x, y = y, group = type)) +
     ggplot2::geom_path(size = canvas$size, color = canvas$col, alpha = canvas$alpha, lineend = "round",) +
     ggplot2::xlim(range(canvas$x)) +
-    ggplot2::ylim(range(canvas$y)) +
-    ggplot2::coord_flip()
+    ggplot2::ylim(range(canvas$y))
+  if (side)
+    artwork <- artwork + ggplot2::coord_flip()
   artwork <- aRtsy::themeCanvas(artwork, background)
   return(artwork)
 }
