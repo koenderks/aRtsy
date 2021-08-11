@@ -26,6 +26,7 @@
 
 canvas_collatz <- function(colors, background = '#fafafa', n = 200, 
                            angle.even = 0.0075, angle.odd = 0.0145, side = FALSE) {
+  x <- y <- type <- NULL
   canvas <- data.frame(x = numeric(), y = numeric(), col = numeric(), type = numeric())
   if (length(n) == 1)
     n <- sample(1:1000000, size = n, replace = F)
@@ -46,6 +47,6 @@ canvas_collatz <- function(colors, background = '#fafafa', n = 200,
     ggplot2::ylim(range(canvas$y))
   if (side)
     artwork <- artwork + ggplot2::coord_flip()
-  artwork <- aRtsy::themeCanvas(artwork, background)
+  artwork <- aRtsy::themeCanvas(artwork, background, margin = 0)
   return(artwork)
 }

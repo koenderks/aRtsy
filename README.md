@@ -9,7 +9,7 @@
 
 <img src='https://github.com/koenderks/aRtsy/raw/development/man/figures/logo.png' width='149' height='173' alt='logo' align='right' margin-left='20' margin-right='20'/>
 
-*"If you laugh at a joke, what difference does it make if subsequently you are told that the joke was created by an algorithm? The fact that you laughed is good enough." - Marcus du Sautoy, The Creative Code*
+*"If you laugh at a joke, what difference does it make if subsequently you are told that the joke was created by an algorithm?" - Marcus du Sautoy, The Creative Code*
 
 `aRtsy` is an attempt at making generative art available for the masses in a simple and standardized format. The package provides various algorithms for creating artworks in `ggplot2` that incorporate some form of randomness (depending on the set `seed`). Each type of artwork is implemented in a separate function.
 
@@ -93,8 +93,9 @@ The Collatz conjecture is also known as `3x+1`. The algorithm draws lines accord
 1. Take a random positive number.
 2. If the number is even, divide it by 2.
 3. If the number is odd, multiply the number by 3 and add 1.
+4. Repeat to get a sequence of numbers.
 
-By visualizing the sequence for each number, overlaying numbers that are the same, and bending the edges, very distinct coral structures can occur.
+By visualizing the sequence for each number, overlaying sequences that are the same, and bending the edges differently for even and odd numbers in the sequence, organic looking coral structures can occur.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-09.png' width='270' height='270'>
