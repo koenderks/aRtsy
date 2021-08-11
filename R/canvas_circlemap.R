@@ -22,7 +22,9 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' canvas_circlemap(colors = colorPalette('tuscany2'))
+#' }
 #' 
 #' @keywords artwork canvas
 #'

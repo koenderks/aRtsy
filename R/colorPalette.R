@@ -15,6 +15,9 @@
 #' @return A vector of colors.
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
+#'
+#' @examples
+#' colorPalette('random', 5)
 #' 
 #' @keywords canvas palette
 #' 

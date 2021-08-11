@@ -17,8 +17,10 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' set.seed(6)
 #' canvas_squares(colors = colorPalette('tuscany1'))
+#' }
 #' 
 #' @keywords artwork canvas
 #'

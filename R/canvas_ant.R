@@ -18,7 +18,9 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' canvas_ant(colors = '#000000', background = '#fafafa')
+#' }
 #' 
 #' @keywords artwork canvas
 #'

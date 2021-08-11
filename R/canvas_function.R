@@ -14,8 +14,10 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' set.seed(10)
 #' canvas_function(color = '#000000', background = '#fafafa')
+#' }
 #' 
 #' @keywords artwork canvas
 #'

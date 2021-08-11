@@ -25,7 +25,9 @@ A \code{ggplot} object containing the artwork.
 This function paints Langton's Ant. Langton's ant is a two-dimensional universal Turing machine with a very simple set of rules but complex emergent behavior.
 }
 \examples{
+\dontrun{
 canvas_ant(colors = '#000000', background = '#fafafa')
+}
 
 }
 \references{

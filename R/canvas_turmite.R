@@ -19,8 +19,10 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' set.seed(1)
 #' canvas_turmite(color = "#000000", background = "#fafafa")
+#' }
 #' 
 #' @keywords artwork canvas
 #'

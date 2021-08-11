@@ -29,7 +29,9 @@ A \code{ggplot} object containing the artwork.
 Inspired by the work of \href{https://twitter.com/ijeamaka_a}{@ijeamaka_a}, this type of artwork mimics her beautiful \href{https://www.etsy.com/listing/1032142006/arcs-series-geometric-art-generative-art?ref=shop_home_recs_1&crt=1}{Arc Series}. For private use only.
 }
 \examples{
+\dontrun{
 aRtsy:::canvas_arcs(colors = c('darkgreen', 'goldenrod', 'firebrick'), n = 9)
+}
 
 }
 \author{

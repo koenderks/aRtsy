@@ -32,8 +32,10 @@ A \code{ggplot} object containing the artwork.
 This function draws many diamonds on the canvas and places two lines behind them. The diamonds can be transparent or have a random color sampled from the input.
 }
 \examples{
+\dontrun{
 set.seed(1)
 canvas_diamonds(colors = colorPalette('house'), radius = 10)
+}
 
 }
 \author{

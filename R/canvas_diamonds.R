@@ -20,8 +20,10 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' set.seed(1)
 #' canvas_diamonds(colors = colorPalette('house'), radius = 10)
+#' }
 #' 
 #' @keywords artwork canvas
 #'

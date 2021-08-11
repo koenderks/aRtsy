@@ -27,8 +27,10 @@ A \code{ggplot} object containing the artwork.
 This function draws the Collatz conjecture on the canvas.
 }
 \examples{
+\dontrun{
 set.seed(1)
 canvas_collatz(colors = colorPalette('dark1'), n = 100)
+}
 
 }
 \author{

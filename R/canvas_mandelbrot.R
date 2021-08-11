@@ -20,8 +20,10 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' set.seed(1)
 #' canvas_mandelbrot(colors = colorPalette('dark1'), n = 100)
+#' }
 #' 
 #' @keywords artwork canvas
 #'

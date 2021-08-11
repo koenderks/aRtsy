@@ -31,7 +31,9 @@ A \code{ggplot} object containing the artwork.
 This function is my attempt at a circle map.
 }
 \examples{
+\dontrun{
 canvas_circlemap(colors = colorPalette('tuscany2'))
+}
 
 }
 \references{

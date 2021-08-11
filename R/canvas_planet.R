@@ -24,6 +24,7 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' # Sun behind Earth and Moon
 #' set.seed(1)
 #' colors <- list(c("khaki1", "lightcoral", "lightsalmon"),
@@ -33,6 +34,7 @@
 #'               center.x = c(1, 500, 1100),
 #'               center.y = c(1400, 500, 1000), 
 #'               starprob = 0.005)
+#' }
 #' 
 #' @keywords artwork canvas
 #'

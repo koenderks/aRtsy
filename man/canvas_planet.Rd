@@ -39,6 +39,7 @@ A \code{ggplot} object containing the artwork.
 This function paints one or multiple planets.
 }
 \examples{
+\dontrun{
 # Sun behind Earth and Moon
 set.seed(1)
 colors <- list(c("khaki1", "lightcoral", "lightsalmon"),
@@ -48,6 +49,7 @@ canvas_planet(colors, radius = c(800, 400, 150),
               center.x = c(1, 500, 1100),
               center.y = c(1400, 500, 1000), 
               starprob = 0.005)
+}
 
 }
 \author{

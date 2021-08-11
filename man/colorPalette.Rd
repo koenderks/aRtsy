@@ -23,6 +23,10 @@ The following color palettes are implemented:
 \if{html}{\figure{colors.svg}{options: width=600 alt="colors"}}
 \if{latex}{\figure{colors.pdf}{options: width=5in}}
 }
+\examples{
+colorPalette('random', 5)
+
+}
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
 }
