@@ -301,7 +301,7 @@ The Static collection implements static images that produce nice pictures.
 
 #### The Mandelbrot set
 
-The [Mandelbrot set](https://en.wikipedia.org/wiki/Mandelbrot_set) always produces nice images.
+This type of artwork visualizes the [Mandelbrot set](https://en.wikipedia.org/wiki/Mandelbrot_set) fractal, a perfect example of a complex structure arising from the application of simple rules. You can zoom in on the set and apply some color to create these nice images.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-08.png' width='270' height='270'>
