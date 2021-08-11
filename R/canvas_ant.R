@@ -11,7 +11,7 @@
 #' @param width       the width of the artwork in pixels.
 #' @param height      the height of the artwork in pixels.
 #'
-#' @references \url{https://en.wikipedia.org/wiki/Langton\%27s_ant}
+#' @references \url{https://en.wikipedia.org/wiki/Langtons_ant}
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'

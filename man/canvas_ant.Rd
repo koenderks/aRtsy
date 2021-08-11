@@ -31,7 +31,7 @@ canvas_ant(colors = '#000000', background = '#fafafa')
 
 }
 \references{
-\url{https://en.wikipedia.org/wiki/Langton\%27s_ant}
+\url{https://en.wikipedia.org/wiki/Langtons_ant}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
