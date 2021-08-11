@@ -28,7 +28,7 @@
 \seealso{
 Useful links:
 \itemize{
-  \item The \href{https://twitter.com/aRtsy_package}{twitter feeed} to check the artwork of the day.
+  \item The \href{https://twitter.com/aRtsy_package}{twitter feed} to check the artwork of the day.
   \item The \href{https://github.com/koenderks/aRtsy/issues}{issue page} to submit a bug report or feature request.
 }
 }
