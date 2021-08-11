@@ -49,6 +49,6 @@ canvas_collatz <- function(colors, background = '#fafafa', n = 200,
     ggplot2::ylim(range(canvas$y))
   if (side)
     artwork <- artwork + ggplot2::coord_flip()
-  artwork <- aRtsy::themeCanvas(artwork, background, margin = 0)
+  artwork <- aRtsy::themeCanvas(artwork, background)
   return(artwork)
 }

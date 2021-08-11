@@ -110,4 +110,4 @@ if (type == 1) {
   
 }
 
-aRtsy::saveCanvas(artwork, filename)
+aRtsy::saveCanvas(artwork, filename, width = ifelse(type == 13, yes = NA, no = 7), height = ifelse(type == 13, yes = NA, no = 7))
