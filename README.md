@@ -27,7 +27,13 @@ Every 24 hours this repository generates and tweets a random artwork using the `
 
 ## Installation
 
-You can download the `aRtsy` package from GitHub using:
+The most recently released version of `aRtsy` can be downloaded from [CRAN](https://cran.r-project.org/package=aRtsy) by running the following command in R:
+
+```r
+install.packages('aRtsy')
+```
+
+Alternatively, you can download the development version from GitHub using:
 
 ```r
 devtools::install_github('koenderks/aRtsy')
@@ -65,7 +71,7 @@ library(aRtsy)
 
 ### The Iterative collection
 
-The Itarative collection implements algorithms whose state depend on the previous state. These algorithms draw on a grid based canvas in which every point represents a pixel of the final image. By assigning a color to these points according to certain rules, one can create the images in this collection.
+The Iterative collection implements algorithms whose state depend on the previous state. These algorithms draw on a grid based canvas in which every point represents a pixel of the final image. By assigning a color to these points according to certain rules, one can create the images in this collection.
 
 #### Paint strokes
 
@@ -214,7 +220,7 @@ You can use the `canvas_diamonds()` function to make your own artwork using this
 set.seed(1)
 canvas_diamonds(colors = c("forestgreen", "navyblue", "goldenrod", "firebrick"), 
                 background = '#fafafa', col.line = 'black', radius = 10, alpha = 1, 
-                size = 0.25, p = 0.2, width = 500, height = 500)
+                p = 0.2, width = 500, height = 500)
 ```
 
 #### Squares and rectangles

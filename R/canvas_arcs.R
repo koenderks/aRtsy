@@ -1,6 +1,6 @@
 #' Paint Arcs on a Canvas
 #'
-#' @description Inspired by the work of \href{https://twitter.com/ijeamaka_a}{@ijeamaka_a}, this type of artwork mimics her beautiful \href{https://www.etsy.com/listing/1032142006/arcs-series-geometric-art-generative-art?ref=shop_home_recs_1&crt=1}{Arc Series}. For private use only.
+#' @description Inspired by the work of \href{https://twitter.com/ijeamaka_a}{@ijeamaka_a}, this type of artwork mimics her beautiful \href{https://www.etsy.com/shop/ArtSnacksPrints}{Arc Series}. For private use only.
 #'
 #' @usage canvas_arcs(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol = NULL, 
 #'             dir = 'right', starts = 'clockwise')

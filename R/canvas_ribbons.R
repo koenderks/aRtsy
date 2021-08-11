@@ -21,7 +21,6 @@
 #' @keywords artwork canvas
 #'
 #' @export
-#' @importFrom ggpubr ggarrange
 
 canvas_ribbons <- function(colors, background = '#fdf5e6', triangle = TRUE) {
   x <- y <- NULL
