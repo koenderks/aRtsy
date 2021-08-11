@@ -15,7 +15,7 @@
 
 Contributions to `aRtsy` are very much appreciated! If you want to add your own type of artwork to the package so that others can also create them, feel free to make a pull request to the [GitHub repository](https://github.com/koenderks/aRtsy). Don't forget to adjust [generate-artwork.R](https://github.com/koenderks/aRtsy/blob/development/.github/workflows/generate_artwork.R) if you also want the artwork to show up in the 'Artwork of the day' category and the twitter feed.
 
-Good luck hunting for some good `seed`'s! Feel free to post a comment with your artwork and the corresponding seed in the [GitHub discussions](https://github.com/koenderks/aRtsy/discussions).
+Good luck hunting for some good `seed`'s! Feel free to post a comment with your best artworks and the corresponding seed in the [GitHub discussions](https://github.com/koenderks/aRtsy/discussions).
 
 ## Artwork of the day
 
