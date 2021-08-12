@@ -52,12 +52,6 @@ test_that("canvas_function()", {
   expect_equal(!is.null(artwork), TRUE)
 })
 
-test_that("canvas_arcs()", {
-  set.seed(1)
-  artwork <- aRtsy:::canvas_arcs(colors = c("black", "gray", "white"), n = 9)
-  expect_equal(!is.null(artwork), TRUE)
-})
-
 test_that("canvas_polylines()", {
   set.seed(1)
   artwork <- aRtsy::canvas_polylines(colors = c("black", "gray", "white"))
