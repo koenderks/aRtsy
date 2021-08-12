@@ -33,7 +33,7 @@ A \code{ggplot} object containing the artwork.
 This function draws the Mandelbrot set on the canvas.
 }
 \examples{
-\dontrun{
+\donttest{
 set.seed(1)
 canvas_mandelbrot(colors = colorPalette('dark1'), n = 100)
 }

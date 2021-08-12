@@ -17,7 +17,7 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' set.seed(6)
 #' canvas_squares(colors = colorPalette('tuscany1'))
 #' }

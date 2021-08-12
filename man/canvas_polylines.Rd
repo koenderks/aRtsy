@@ -31,7 +31,7 @@ A \code{ggplot} object containing the artwork.
 This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork.
 }
 \examples{
-\dontrun{
+\donttest{
 set.seed(1)
 canvas_polylines(colors = colorPalette('retro2'))
 }

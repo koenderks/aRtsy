@@ -16,11 +16,6 @@
 #' @return A \code{ggplot} object containing the artwork.
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
-#'
-#' @examples
-#' \dontrun{
-#' aRtsy:::canvas_arcs(colors = c('darkgreen', 'goldenrod', 'firebrick'), n = 9)
-#' }
 #' 
 #' @keywords artwork canvas
 #'

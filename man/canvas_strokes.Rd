@@ -29,7 +29,7 @@ A \code{ggplot} object containing the artwork.
 This function creates an artwork that resembles paints strokes. The algorithm is based on the simple idea that each next point on the grid has a chance to take over the color of an adjacent colored point but also has a change of generating a new color.
 }
 \examples{
-\dontrun{
+\donttest{
 set.seed(1)
 canvas_strokes(colors = colorPalette('tuscany3'))
 }

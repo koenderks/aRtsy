@@ -39,7 +39,7 @@ A \code{ggplot} object containing the artwork.
 This function paints one or multiple planets.
 }
 \examples{
-\dontrun{
+\donttest{
 # Sun behind Earth and Moon
 set.seed(1)
 colors <- list(c("khaki1", "lightcoral", "lightsalmon"),

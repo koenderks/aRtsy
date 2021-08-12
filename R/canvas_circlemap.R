@@ -22,7 +22,7 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' canvas_circlemap(colors = colorPalette('tuscany2'))
 #' }
 #' 

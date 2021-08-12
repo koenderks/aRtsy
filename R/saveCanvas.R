@@ -10,6 +10,8 @@
 #' @param height     the height of the artwork in cm.
 #' @param resolution the \code{dpi} of the export.
 #'
+#' @return No return value, called for saving plots.
+#'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #' 
 #' @keywords canvas save

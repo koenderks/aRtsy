@@ -18,7 +18,7 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' canvas_ant(colors = '#000000', background = '#fafafa')
 #' }
 #' 

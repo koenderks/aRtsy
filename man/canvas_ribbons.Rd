@@ -20,7 +20,7 @@ A \code{ggplot} object containing the artwork.
 This function paints ribbons and (optionally) a triangle in the middle.
 }
 \examples{
-\dontrun{
+\donttest{
 set.seed(1)
 canvas_ribbons(colors = colorPalette('tuscany1'))
 }

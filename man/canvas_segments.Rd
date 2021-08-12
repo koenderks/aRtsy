@@ -27,7 +27,7 @@ A \code{ggplot} object containing the artwork.
 This function draws many line segments on the canvas.
 }
 \examples{
-\dontrun{
+\donttest{
 set.seed(1)
 canvas_segments(colors = 'black', background = '#fafafa')
 }

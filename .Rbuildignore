@@ -10,3 +10,4 @@ aRtsyRelease.R
 ^.*\.Rproj$
 ^\.Rproj\.user$
 .vscode
+^R/canvas_arcs.R

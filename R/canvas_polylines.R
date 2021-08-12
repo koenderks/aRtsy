@@ -19,7 +19,7 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' set.seed(1)
 #' canvas_polylines(colors = colorPalette('retro2'))
 #' }

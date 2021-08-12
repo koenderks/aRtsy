@@ -20,7 +20,7 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' set.seed(1)
 #' canvas_diamonds(colors = colorPalette('house'), radius = 10)
 #' }

@@ -1,7 +1,8 @@
-## This is a submission for version 0.1.0
-This is aRtsy version 0.1.0. In this version I have:
+## This is a re-submission for version 0.1.0
+This is a resubmission for aRtsy version 0.1.0. In this version I have:
 
-* Added the initial functionality for the package.
+* Added missing Rd-tags.
+* Replaced \dontrun{} with \donttest{}.
 
 ## Test environments
 * Windows install, (on github actions) R release

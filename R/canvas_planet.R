@@ -24,7 +24,7 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' # Sun behind Earth and Moon
 #' set.seed(1)
 #' colors <- list(c("khaki1", "lightcoral", "lightsalmon"),

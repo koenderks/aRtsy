@@ -27,7 +27,7 @@ A \code{ggplot} object containing the artwork.
 This function paints a squares. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.
 }
 \examples{
-\dontrun{
+\donttest{
 set.seed(6)
 canvas_squares(colors = colorPalette('tuscany1'))
 }
