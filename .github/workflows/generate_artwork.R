@@ -104,7 +104,7 @@ if (type == 1) {
 } else if (type == 13) {
   
   artwork <- aRtsy::canvas_collatz(colors = aRtsy::colorPalette('random', n = 5), 
-                                   background = "black",
+                                   background = sample(c("black", "#fdf5e6", "#fafafa"), size = 1),
                                    n = sample(200:2000, size = 1),
                                    side = sample(c(TRUE, FALSE), size = 1))
   
