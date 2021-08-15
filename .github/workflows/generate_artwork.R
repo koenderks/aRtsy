@@ -99,7 +99,7 @@ if (type == 1) {
 } else if (type == 12) {
   
   artwork <- aRtsy::canvas_mandelbrot(colors = aRtsy::colorPalette('random', n = 5), 
-                                      zoom = sample(2:23, 1))
+                                      zoom = sample(seq(4, 21, by = 0.5), 1))
   
 } else if (type == 13) {
   
