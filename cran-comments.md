@@ -1,8 +1,7 @@
-## This is a re-submission for version 0.1.0
-This is a resubmission for aRtsy version 0.1.0. In this version I have:
+## This is a submission for version 0.1.1
+This is a submission for aRtsy version 0.1.1. In this version I have:
 
-* Added missing Rd-tags.
-* Replaced \dontrun{} with \donttest{}.
+* Removed unused `ggpubr` from the Imports field in `DESCRIPTION` to make CRAN checks work.
 
 ## Test environments
 * Windows install, (on github actions) R release

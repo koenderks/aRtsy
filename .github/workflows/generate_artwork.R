@@ -4,8 +4,8 @@ library(aRtsy)
 # Name of the artwork
 filename <- paste0('png/daily.png')
 
-# Artwork seed dependent on the current time
-seed <- as.numeric(Sys.time())
+# Artwork seed dependent on the current date
+seed <- as.numeric(Sys.Date())
 set.seed(seed)
 
 # Select artwork type

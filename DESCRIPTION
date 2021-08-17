@@ -1,8 +1,8 @@
 Package: aRtsy
 Title: Generative Art with 'ggplot2'
 Description: Provides various algorithms for creating artworks in the 'ggplot2' language that incorporate some form of randomness.
-Version: 0.1.0
-Date: 2021-08-11
+Version: 0.1.1
+Date: 2021-08-17
 Authors@R: 
     person(given = "Koen",
            family = "Derks",
@@ -11,7 +11,7 @@ Authors@R:
 		   comment = c(ORCID = '0000-0002-5533-9349'))
 BugReports: https://github.com/koenderks/aRtsy/issues
 URL: https://koenderks.github.io/aRtsy/, https://github.com/koenderks/aRtsy, https://twitter.com/aRtsy_package
-Imports: dplyr, ggplot2, ggpubr, Rcpp, reshape2
+Imports: dplyr, ggplot2, Rcpp, reshape2
 LinkingTo: Rcpp, RcppArmadillo
 Language: en-US
 License: GPL-3
