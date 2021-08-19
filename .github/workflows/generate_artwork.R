@@ -124,7 +124,7 @@ if (type == 1) {
 } else if (type == 14) {
   
   print("I'm painting a mosaic today.")
-  p1 <- aRtsy::canvas_mosaic(colors = aRtsy::colorPalette('random', n = sample(2:10, size = 1),
+  p1 <- aRtsy::canvas_mosaic(colors = aRtsy::colorPalette('random', n = sample(3:10, size = 1)),
                              maxk = sample(c(1, 2, 3, 10, 50, 100), size = 1),
                              resolution = 1500)
   
