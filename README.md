@@ -54,6 +54,7 @@ library(aRtsy)
 * [`canvas_turmite()`](#turmite)
 * [`canvas_ant()`](#langtons-ant)
 * [`canvas_planet()`](#planets)
+* [`canvas_mosaic()`](#mosaics)
 
 *The Geometric collection*
 
@@ -71,7 +72,7 @@ library(aRtsy)
 
 ### The Iterative collection
 
-The Iterative collection implements algorithms whose state depend on the previous state. These algorithms draw on a grid based canvas in which every point represents a pixel of the final image. By assigning a color to these points according to certain rules, one can create the images in this collection.
+The Iterative collection mostly implements algorithms whose state depend on the previous state. Most of these algorithms draw on a grid based canvas in which every point represents a pixel of the final image. By assigning a color to these points according to certain rules, one can create the images in this collection.
 
 #### Paint strokes
 
@@ -181,6 +182,22 @@ canvas_planet(colors, radius = c(800, 400, 150),
               center.x = c(1, 500, 1100),
               center.y = c(1400, 500, 1000), 
               starprob = 0.005)
+```
+
+#### Mosaics
+
+This artwork is inspired by a supervised machine learning method called k-nearest neighbors. It generates random data points, which it then tries to model using a k-nearest neighbors algorithm. Next, it predicts the color of each pixel on the canvas. If it considers few neighbors the artwork looks like a mosaic, while higher values make the artwork look more smooth.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-17.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-19.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-18.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_mosaic()` function to make your own artwork using this algorithm.
+
+```r
+canvas_mosaic(colors = c('dodgerblue', 'forestgreen', 'white'), kmax = 1, n = 1000, resolution = 500)
 ```
 
 ### The Geometric collection

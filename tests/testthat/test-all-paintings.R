@@ -81,3 +81,9 @@ test_that("canvas_collatz()", {
   artwork <- aRtsy::canvas_collatz(colors = c("black", "gray", "white"))
   expect_equal(!is.null(artwork), TRUE)
 })
+
+test_that("canvas_mosaic()", {
+  set.seed(1)
+  artwork <- aRtsy::canvas_mosaic(colors = c("black", "gray", "white"))
+  expect_equal(!is.null(artwork), TRUE)
+})

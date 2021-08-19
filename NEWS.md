@@ -1,5 +1,9 @@
 # aRtsy 0.1.1
 
+**New features**
+
+- Added `canvas_mosaic()`.
+
 **Minor changes**
 
 - Artwork of the day is now created with `set.seed(Sys.Date())` instead of `set.seed(Sys.time())`.

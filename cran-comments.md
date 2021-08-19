@@ -2,6 +2,7 @@
 This is a submission for aRtsy version 0.1.1. In this version I have:
 
 * Removed unused `ggpubr` from the Imports field in `DESCRIPTION` to make CRAN checks work.
+* Added a new function.
 
 ## Test environments
 * Windows install, (on github actions) R release
