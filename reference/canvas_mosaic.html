@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • aRtsy</title>
+<title>Paint a mosaic on a canvas — canvas_mosaic • aRtsy</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,8 @@
 
 
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Paint a mosaic on a canvas — canvas_mosaic" />
+<meta property="og:description" content="This function paints a mosaic from randomly generated data by running a k-nearest neighbors classification algorithm to predict the color of each pixel on the canvas. Low values of maxk produce a mosaic like artwork, while higher values produce a more smooth decision boundary." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -66,7 +67,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -118,41 +119,58 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1 data-toc-skip>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/koenderks/aRtsy/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+    <h1>Paint a mosaic on a canvas</h1>
+    <small class="dont-index">Source: <a href='https://github.com/koenderks/aRtsy/blob/master/R/canvas_mosaic.R'><code>R/canvas_mosaic.R</code></a></small>
+    <div class="hidden name"><code>canvas_mosaic.Rd</code></div>
     </div>
 
-    <div id="artsy-011" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.1">
-<a href="#artsy-011" class="anchor"></a>aRtsy 0.1.1<small> Unreleased </small>
-</h1>
-<p><strong>New features</strong></p>
-<ul>
-<li>Added <code><a href="../reference/canvas_mosaic.html">canvas_mosaic()</a></code>.</li>
-</ul>
-<p><strong>Minor changes</strong></p>
-<ul>
-<li>Artwork of the day is now created with <code><a href="https://rdrr.io/r/base/Random.html">set.seed(Sys.Date())</a></code> instead of <code><a href="https://rdrr.io/r/base/Random.html">set.seed(Sys.time())</a></code>.</li>
-<li>Removed unnessecary <code>ggpubr</code> from the Imports field in <code>DESCRIPTION</code>.</li>
-</ul>
-</div>
-    <div id="artsy-010" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.0">
-<a href="#artsy-010" class="anchor"></a>aRtsy 0.1.0<small> 2021-08-16 </small>
-</h1>
-<p><strong>New features</strong></p>
-<ul>
-<li>First implementation of the aRtsy package.</li>
-</ul>
-</div>
-  </div>
+    <div class="ref-description">
+    <p>This function paints a mosaic from randomly generated data by running a k-nearest neighbors classification algorithm to predict the color of each pixel on the canvas. Low values of <code>maxk</code> produce a mosaic like artwork, while higher values produce a more smooth decision boundary.</p>
+    </div>
 
+    <pre class="usage"><span class='fu'>canvas_mosaic</span><span class='op'>(</span><span class='va'>colors</span>, maxk <span class='op'>=</span> <span class='fl'>10</span>, n <span class='op'>=</span> <span class='fl'>1000</span>, resolution <span class='op'>=</span> <span class='fl'>500</span><span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>colors</th>
+      <td><p>a character (vector) specifying the colors for the artwork.</p></td>
+    </tr>
+    <tr>
+      <th>maxk</th>
+      <td><p>the maximum number of nearest neighbors to consider.</p></td>
+    </tr>
+    <tr>
+      <th>n</th>
+      <td><p>number of data points to generate.</p></td>
+    </tr>
+    <tr>
+      <th>resolution</th>
+      <td><p>the number of pixels (width and height) of the artwork.</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A <code>ggplot</code> object containing the artwork.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Koen Derks, <a href='mailto:koen-derks@hotmail.com'>koen-derks@hotmail.com</a></p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span>
+<span class='fu'>canvas_mosaic</span><span class='op'>(</span>colors <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'forestgreen'</span>, <span class='st'>'goldenrod'</span>, <span class='st'>'firebrick'</span>, <span class='st'>'navyblue'</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='img'><img src='canvas_mosaic-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># }</span>
+
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
-
 </div>
 
 
