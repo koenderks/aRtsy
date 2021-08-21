@@ -87,3 +87,9 @@ test_that("canvas_mosaic()", {
   artwork <- aRtsy::canvas_mosaic(colors = c("black", "gray", "white"))
   expect_equal(!is.null(artwork), TRUE)
 })
+
+test_that("canvas_forest()", {
+  set.seed(1)
+  artwork <- aRtsy::canvas_forest(colors = c("black", "gray", "white"))
+  expect_equal(!is.null(artwork), TRUE)
+})

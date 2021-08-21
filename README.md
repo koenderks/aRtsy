@@ -55,6 +55,7 @@ library(aRtsy)
 * [`canvas_ant()`](#langtons-ant)
 * [`canvas_planet()`](#planets)
 * [`canvas_mosaic()`](#mosaics)
+* [`canvas_forest()`](#forests)
 
 *The Geometric collection*
 
@@ -135,7 +136,7 @@ You can use the `canvas_turmite()` function to make your own artwork using this 
 
 ```r
 set.seed(1)
-canvas_turmite(color = "#000000", background = "#fafafa", p = 0.5, 
+canvas_turmite(color = '#000000', background = '#fafafa', p = 0.5, 
                iterations = 1e7, width = 1500, height = 1500)
 ```
 
@@ -175,9 +176,9 @@ You can use the `canvas_planet()` function to make your own artwork using this a
 ```r
 # Sun behind Earth and Moon
 set.seed(1)
-colors <- list(c("khaki1", "lightcoral", "lightsalmon"),
-               c("dodgerblue", "forestgreen", "white"), 
-               c("gray", "darkgray", "beige"))
+colors <- list(c('khaki1', 'lightcoral', 'lightsalmon'),
+               c('dodgerblue', 'forestgreen', 'white'), 
+               c('gray', 'darkgray', 'beige'))
 canvas_planet(colors, radius = c(800, 400, 150), 
               center.x = c(1, 500, 1100),
               center.y = c(1400, 500, 1000), 
@@ -186,7 +187,7 @@ canvas_planet(colors, radius = c(800, 400, 150),
 
 #### Mosaics
 
-This artwork is inspired by a supervised machine learning method called k-nearest neighbors. It generates random data points, which it then tries to model using a k-nearest neighbors algorithm. Next, it predicts the color of each pixel on the canvas. If it considers few neighbors the artwork looks like a mosaic, while higher values make the artwork look more smooth.
+This artwork is inspired by a supervised machine learning method called k-nearest neighbors. It generates random data points, which it then tries to model using the k-nearest neighbors algorithm. Next, it predicts the color of each pixel on the canvas. If it considers few neighbors the artwork looks like a mosaic, while higher values make the artwork look more smooth.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-17.png' width='270' height='270'>
@@ -198,6 +199,22 @@ You can use the `canvas_mosaic()` function to make your own artwork using this a
 
 ```r
 canvas_mosaic(colors = c('dodgerblue', 'forestgreen', 'white'), kmax = 1, n = 1000, resolution = 500)
+```
+
+#### Forests
+
+This artwork is inspired by a supervised machine learning method called random forest. It generates random data points, which it then tries to model using the random forest algorithm. Next, it predicts the color of each pixel on the canvas.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-20.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-21.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-19.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_forest()` function to make your own artwork using this algorithm.
+
+```r
+canvas_forest(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'), n = 1000, resolution = 500)
 ```
 
 ### The Geometric collection
@@ -235,7 +252,7 @@ You can use the `canvas_diamonds()` function to make your own artwork using this
 
 ```r
 set.seed(1)
-canvas_diamonds(colors = c("forestgreen", "navyblue", "goldenrod", "firebrick"), 
+canvas_diamonds(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'), 
                 background = '#fafafa', col.line = 'black', radius = 10, alpha = 1, 
                 p = 0.2, width = 500, height = 500)
 ```
@@ -272,7 +289,7 @@ You can use the `canvas_ribbons()` function to make your own artwork using this 
 
 ```r
 set.seed(1)
-canvas_ribbons(colors = c("forestgreen", "firebrick", "dodgerblue", "goldenrod"),
+canvas_ribbons(colors = c('forestgreen', 'firebrick', 'dodgerblue', 'goldenrod'),
                background = '#fdf5e6', triangle = TRUE)
 ```
 

@@ -11,7 +11,7 @@ Authors@R:
 		   comment = c(ORCID = '0000-0002-5533-9349'))
 BugReports: https://github.com/koenderks/aRtsy/issues
 URL: https://koenderks.github.io/aRtsy/, https://github.com/koenderks/aRtsy, https://twitter.com/aRtsy_package
-Imports: dplyr, ggplot2, kknn, Rcpp, reshape2, stats
+Imports: dplyr, ggplot2, kknn, randomForest, Rcpp, reshape2, stats
 LinkingTo: Rcpp, RcppArmadillo
 Language: en-US
 License: GPL-3

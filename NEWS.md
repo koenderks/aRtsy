@@ -3,6 +3,7 @@
 **New features**
 
 - Added `canvas_mosaic()`.
+- Added `canvas_forest()`.
 
 **Minor changes**
 
