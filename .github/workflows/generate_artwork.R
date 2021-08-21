@@ -128,6 +128,12 @@ if (type == 1) {
                              maxk = sample(c(1, 2, 3, 10, 50, 100), size = 1),
                              resolution = 1500)
   
+} else if (type == 15) {
+  
+  print("I'm painting a forest today.")
+  p1 <- aRtsy::canvas_forest(colors = aRtsy::colorPalette('random', n = sample(2:12, size = 1)),
+                             resolution = 1500)
+  
 }
 
 aRtsy::saveCanvas(artwork, filename, width = ifelse(type == 13, yes = NA, no = 7), height = ifelse(type == 13, yes = NA, no = 7))
