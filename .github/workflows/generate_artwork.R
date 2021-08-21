@@ -9,7 +9,7 @@ seed <- as.numeric(Sys.Date())
 set.seed(seed)
 
 # Select artwork type
-type <- sample(1:14, size = 1)
+type <- sample(1:15, size = 1)
 
 if (type == 1) {
   
