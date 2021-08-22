@@ -93,3 +93,15 @@ test_that("canvas_forest()", {
   artwork <- aRtsy::canvas_forest(colors = c("black", "gray", "white"))
   expect_equal(!is.null(artwork), TRUE)
 })
+
+test_that("canvas_gemstone()", {
+  set.seed(1)
+  artwork <- aRtsy::canvas_gemstone(colors = c("black", "gray", "white"))
+  expect_equal(!is.null(artwork), TRUE)
+})
+
+test_that("canvas_blacklight()", {
+  set.seed(1)
+  artwork <- aRtsy::canvas_blacklight(colors = c("black", "gray", "white"))
+  expect_equal(!is.null(artwork), TRUE)
+})

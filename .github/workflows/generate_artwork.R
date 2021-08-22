@@ -9,7 +9,7 @@ seed <- as.numeric(Sys.Date())
 set.seed(seed)
 
 # Select artwork type
-type <- sample(1:15, size = 1)
+type <- sample(1:17, size = 1)
 
 if (type == 1) {
   
@@ -133,6 +133,18 @@ if (type == 1) {
   print("I'm painting a forest today.")
   p1 <- aRtsy::canvas_forest(colors = aRtsy::colorPalette('random', n = sample(2:12, size = 1)),
                              resolution = 1500)
+  
+} else if (type == 16) {
+  
+  print("I'm painting a gemstone today.")
+  p1 <- aRtsy::canvas_gemstone(colors = aRtsy::colorPalette('random', n = sample(15:25, size = 1)),
+                               resolution = 1500)
+  
+} else if (type == 17) {
+  
+  print("I'm painting a blacklight today.")
+  p1 <- aRtsy::canvas_blacklight(colors = aRtsy::colorPalette('random', n = sample(2:10, size = 1)),
+                                 resolution = 1500)  
   
 }
 

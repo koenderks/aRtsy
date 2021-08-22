@@ -54,8 +54,6 @@ library(aRtsy)
 * [`canvas_turmite()`](#turmite)
 * [`canvas_ant()`](#langtons-ant)
 * [`canvas_planet()`](#planets)
-* [`canvas_mosaic()`](#mosaics)
-* [`canvas_forest()`](#forests)
 
 *The Geometric collection*
 
@@ -65,6 +63,13 @@ library(aRtsy)
 * [`canvas_ribbons()`](#ribbons)
 * [`canvas_polylines()`](#polylines)
 * [`canvas_function()`](#functions)
+
+*The Supervised collection*
+
+* [`canvas_mosaic()`](#mosaics)
+* [`canvas_forest()`](#forests)
+* [`canvas_gemstone()`](#gemstones)
+* [`canvas_blacklight()`](#blacklights)
 
 *The Static collection*
 
@@ -185,38 +190,6 @@ canvas_planet(colors, radius = c(800, 400, 150),
               starprob = 0.005)
 ```
 
-#### Mosaics
-
-This artwork is inspired by a supervised machine learning method called k-nearest neighbors. It generates random data points, which it then tries to model using the k-nearest neighbors algorithm. Next, it predicts the color of each pixel on the canvas. If it considers few neighbors the artwork looks like a mosaic, while higher values make the artwork look more smooth.
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-17.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-19.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-18.png' width='270' height='270'>
-</p>
-
-You can use the `canvas_mosaic()` function to make your own artwork using this algorithm.
-
-```r
-canvas_mosaic(colors = c('dodgerblue', 'forestgreen', 'white'), kmax = 1, n = 1000, resolution = 500)
-```
-
-#### Forests
-
-This artwork is inspired by a supervised machine learning method called random forest. It generates random data points, which it then tries to model using the random forest algorithm. Next, it predicts the color of each pixel on the canvas.
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-20.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-21.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-19.png' width='270' height='270'>
-</p>
-
-You can use the `canvas_forest()` function to make your own artwork using this algorithm.
-
-```r
-canvas_forest(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'), n = 1000, resolution = 500)
-```
-
 ### The Geometric collection
 
 The Geometric collection mostly implements algorithms that draw a geometric shape and apply a random color to it.
@@ -327,6 +300,74 @@ You can use the `canvas_function()` function to make your own artwork using this
 ```r
 set.seed(1)
 canvas_function(color = '#000000', background = '#fafafa')
+```
+
+### The Supervised collection
+
+The artworks in the Supervised collection are inspired by decision boundary plots in machine learning tasks. The algorithms in this collection work by generating random data points on a two dimensional surface (with either a continuous or a categorical response variable), which they then try to model using the supervised learning algorithm. Next, they try to predict the color of each pixel on the canvas.
+
+#### Mosaics
+
+The first artwork in this collection is inspired by a supervised learning method called k-nearest neighbors. In short, the k-nearest neighbors algorithm computes the distance of each pixel on the canvas to each randomly generated data point and assigns it the color of the class of that data point. If you considers fewer neighbors the artwork looks like a mosaic, while higher values make the artwork look more smooth.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-17.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-19.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-18.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_mosaic()` function to make your own artwork using this algorithm.
+
+```r
+canvas_mosaic(colors = c('dodgerblue', 'forestgreen', 'white'), kmax = 1, n = 1000, resolution = 500)
+```
+
+#### Forests
+
+This artwork is inspired by a supervised learning method called random forest. It applies the same principle as described above, but uses a different predictive algorithm to fill in the color of the pixels.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-20.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-21.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-19.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_forest()` function to make your own artwork using this algorithm.
+
+```r
+canvas_forest(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'), n = 1000, resolution = 500)
+```
+
+#### Gemstones
+
+Returning to the previously mentioned k-nearest neighbors algorithm, this artwork uses a continuous response variable instread of a categorical one. The resulting pattern can sometimes resemble a gemstone.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-20.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-21.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-22.png' width='270' height='270'>
+</p>
+
+```r
+canvas_gemstone(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'), n = 1000, resolution = 500)
+```
+
+You can use the `canvas_gemstone()` function to make your own artwork using this algorithm.
+
+#### Blacklights
+
+This artwork is inspired by a supervised machine learning method called support vector machines. It applies the same principle as described above, but uses a different predictive algorithm to fill in the color of the pixels.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-22.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-21.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-20.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_blacklight()` function to make your own artwork using this algorithm.
+
+```r
+canvas_blacklight(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'), n = 1000, resolution = 500)
 ```
 
 ### The Static collection
