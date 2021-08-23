@@ -124,27 +124,27 @@ if (type == 1) {
 } else if (type == 14) {
   
   print("I'm painting a mosaic today.")
-  p1 <- aRtsy::canvas_mosaic(colors = aRtsy::colorPalette('random', n = sample(3:10, size = 1)),
-                             maxk = sample(c(1, 2, 3, 10, 50, 100), size = 1),
-                             resolution = 1500)
+  artwork <- aRtsy::canvas_mosaic(colors = aRtsy::colorPalette('random', n = sample(3:10, size = 1)),
+                                  maxk = sample(c(1, 2, 3, 10, 50, 100), size = 1),
+                                  resolution = 1500)
   
 } else if (type == 15) {
   
   print("I'm painting a forest today.")
-  p1 <- aRtsy::canvas_forest(colors = aRtsy::colorPalette('random', n = sample(2:12, size = 1)),
-                             resolution = 1500)
+  artwork <- aRtsy::canvas_forest(colors = aRtsy::colorPalette('random', n = sample(2:12, size = 1)),
+                                  resolution = 1500)
   
 } else if (type == 16) {
   
   print("I'm painting a gemstone today.")
-  p1 <- aRtsy::canvas_gemstone(colors = aRtsy::colorPalette('random', n = sample(15:25, size = 1)),
-                               resolution = 1500)
+  artwork <- aRtsy::canvas_gemstone(colors = aRtsy::colorPalette('random', n = sample(15:25, size = 1)),
+                                    resolution = 1500)
   
 } else if (type == 17) {
   
   print("I'm painting a blacklight today.")
-  p1 <- aRtsy::canvas_blacklight(colors = aRtsy::colorPalette('random', n = sample(2:10, size = 1)),
-                                 resolution = 1500)  
+  artwork <- aRtsy::canvas_blacklight(colors = aRtsy::colorPalette('random', n = sample(2:10, size = 1)),
+                                      resolution = 1500)  
   
 }
 
