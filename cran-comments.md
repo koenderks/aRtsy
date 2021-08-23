@@ -1,7 +1,7 @@
 ## This is a submission for version 0.1.1
 This is a submission for aRtsy version 0.1.1. In this version I have:
 
-* Removed unused `ggpubr` from the Imports field in `DESCRIPTION` to make CRAN checks work.
+* Removed unused `ggpubr` from the Imports field in `DESCRIPTION` to safely retain package on CRAN.
 * Added several new functions.
 
 ## Test environments
