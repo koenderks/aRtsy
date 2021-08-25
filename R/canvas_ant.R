@@ -34,13 +34,12 @@ canvas_ant <- function(colors, background = '#fafafa', iterations = 1e7,
   if (length(background) > 1)
     stop("Can only take one background value.")
   palette <- c(background, colors)
-  row <- ceiling(height / 2)
-  col <- ceiling(width / 2)
-  canvas <- expand.grid(rep(c(0:1), length(colors)), rep(c(0:1), length(colors)))
-  canvas[2:nrow(canvas), ] <- canvas[sample(2:nrow(canvas)), ]
-  canvas <- canvas[1:length(colors), ]
-  colnames(canvas) <- c("x", "y")
-  full_canvas <- iterate_ant(matrix(0, nrow = height, ncol = width), iterations, row, col, c = canvas)  
+  sequence <- rep(c(0:1), length(colors))
+  pos <- expand.grid(sequence, sequence) # Make matrix that holds combinations of 0 (L) and 1 (R)
+  pos[2:nrow(pos), ] <- pos[sample(2:nrow(pos)), ] # Mix the possible positions
+  pos <- pos[1:length(colors), ] # Select only as many positions as there are colors
+  canvas <- matrix(0, nrow = height, ncol = width)
+  full_canvas <- iterate_ant(canvas, iterations, ceiling(height / 2), ceiling(width / 2), pos[, 1], pos[, 2])  
   full_canvas <- reshape2::melt(full_canvas)
   colnames(full_canvas) <- c("y", "x", "z")
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +

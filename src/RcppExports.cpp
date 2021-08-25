@@ -12,8 +12,8 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 // iterate_ant
-arma::mat iterate_ant(arma::mat X, int iters, int row, int col, Rcpp::DataFrame c);
-RcppExport SEXP _aRtsy_iterate_ant(SEXP XSEXP, SEXP itersSEXP, SEXP rowSEXP, SEXP colSEXP, SEXP cSEXP) {
+arma::mat iterate_ant(arma::mat X, int iters, int row, int col, std::vector<int> dx, std::vector<int> dy);
+RcppExport SEXP _aRtsy_iterate_ant(SEXP XSEXP, SEXP itersSEXP, SEXP rowSEXP, SEXP colSEXP, SEXP dxSEXP, SEXP dySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -21,8 +21,9 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type iters(itersSEXP);
     Rcpp::traits::input_parameter< int >::type row(rowSEXP);
     Rcpp::traits::input_parameter< int >::type col(colSEXP);
-    Rcpp::traits::input_parameter< Rcpp::DataFrame >::type c(cSEXP);
-    rcpp_result_gen = Rcpp::wrap(iterate_ant(X, iters, row, col, c));
+    Rcpp::traits::input_parameter< std::vector<int> >::type dx(dxSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type dy(dySEXP);
+    rcpp_result_gen = Rcpp::wrap(iterate_ant(X, iters, row, col, dx, dy));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -149,7 +150,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_aRtsy_iterate_ant", (DL_FUNC) &_aRtsy_iterate_ant, 5},
+    {"_aRtsy_iterate_ant", (DL_FUNC) &_aRtsy_iterate_ant, 6},
     {"_aRtsy_iterate_circlemap", (DL_FUNC) &_aRtsy_iterate_circlemap, 6},
     {"_aRtsy_iterate_collatz", (DL_FUNC) &_aRtsy_iterate_collatz, 1},
     {"_aRtsy_draw_line", (DL_FUNC) &_aRtsy_draw_line, 4},
