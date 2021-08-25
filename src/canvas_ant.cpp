@@ -27,7 +27,7 @@ arma::mat iterate_ant(arma::mat X,
   int prc = 0; // Counter keeps track of when we need to switch
   int s = 10000;
   while (i < iters) {
-    if (prc == s) { // Switch color every s itertions
+    if (prc == s) { // Switch color every s iterations
       prc = 0; // Reset the switch counter
       color = color + 1; // Next color
       if (color > k) {
@@ -36,7 +36,7 @@ arma::mat iterate_ant(arma::mat X,
       typeZero = dx[color];
       typeOne = dy[color];
     }
-    if (X(row,col) == 0) { // White square
+    if (X(row, col) == 0) { // White square
       if (typeZero == 0) { // Turn 90 degrees clockwise for R (Langtons Ant)
         direction = direction + 1;
         if (direction == 5) {
@@ -49,7 +49,7 @@ arma::mat iterate_ant(arma::mat X,
         }	  
       }
       // Color the square
-      X(row,col) = color;
+      X(row, col) = color;
     } else { // Colored square
       if (typeOne == 0) { // Turn 90 degrees counter-clockwise for L (Langtons ant)
         direction = direction - 1;
@@ -63,20 +63,20 @@ arma::mat iterate_ant(arma::mat X,
         }	  
       }
       // Undo the color on the square
-      X(row,col) = 0;
+      X(row, col) = 0;
     }
-    prc++;
+    prc = prc + 1;
     // Move the ant
     if (direction == 1 && row >= 1) {
-      row--; 
+      row = row - 1; 
     } else if (direction == 2 && col >= 1) {
-      col--;
+      col = col - 1;
     } else if (direction == 3 && row < (m - 1)) {
-      row++;
+      row = row + 1;
     } else if (direction == 4 && col < (n - 1)) {
-      col++;
+      col = col + 1;
     } 
-    i++;
+    i = i + 1;
   }
   return X;
 }

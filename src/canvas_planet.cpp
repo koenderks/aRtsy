@@ -58,8 +58,9 @@ arma::mat iterate_planet(arma::mat X,
   }
   // Fill the circle
   arma::mat X_ref = X;
+  int circlesize = xcircle.size();
   for (int i = 0; i < iterations; i++) {
-    for (int ii = 0; ii < xcircle.size(); ii++) {
+    for (int ii = 0; ii < circlesize; ii++) {
       int xpoint = xcircle[ii];
       int ypoint = ycircle[ii];
       if (ypoint > 0 && ypoint < (m - 1) && xpoint > 0 && xpoint < (n - 1)) {
@@ -87,7 +88,7 @@ arma::mat iterate_planet(arma::mat X,
     }
 	X_ref = X;
   }
-  for (int ii = 0; ii < xcircle.size(); ii++) {
+  for (int ii = 0; ii < circlesize; ii++) {
     int xpoint = xcircle[ii];
     int ypoint = ycircle[ii];
 	  float xdist = abs(xcenter - xpoint);

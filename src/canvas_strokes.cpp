@@ -36,7 +36,7 @@ arma::mat iterate_strokes(arma::mat X,
           int iy  = neighboring_block(m, y + dy[z]); // Select the (adjusted) neighboring y location
           int color = X(ix, iy); // Select the color of the neighboring block
           if (color > 0) {
-            colors.push_back (color); // Add the color of this block to the adjacent color vector
+            colors.push_back(color); // Add the color of this block to the adjacent color vector
           }
         }
         double noTake = R::runif(0, 1); // Check whether the block is subject to a random change
