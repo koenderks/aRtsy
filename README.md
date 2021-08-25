@@ -54,6 +54,7 @@ library(aRtsy)
 * [`canvas_turmite()`](#turmite)
 * [`canvas_ant()`](#langtons-ant)
 * [`canvas_planet()`](#planets)
+* [`canvas_stripes()`](#stripes)
 
 *The Geometric collection*
 
@@ -190,6 +191,23 @@ canvas_planet(colors, radius = c(800, 400, 150),
               starprob = 0.005)
 ```
 
+#### Stripes
+
+This type of artwork is based on the concept of [Brownian motion](https://en.wikipedia.org/wiki/Brownian_motion). The algorithm generates a sequence of brownian motion steps on a two-dimensional surface for each row on the canvas. Next, it fills these according to their generated value. More colors usually make this artwork more interesting.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/stripes/2021-08-23.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/stripes/2021-08-24.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/stripes/2021-08-25.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_stripes()` function to make your own artwork using this algorithm.
+
+```r
+canvas_stripes(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'),
+               n = 300, H = 1, burnin = 1)
+```
+
 ### The Geometric collection
 
 The Geometric collection mostly implements algorithms that draw a geometric shape and apply a random color to it.
@@ -319,7 +337,8 @@ The first artwork in this collection is inspired by a supervised learning method
 You can use the `canvas_mosaic()` function to make your own artwork using this algorithm.
 
 ```r
-canvas_mosaic(colors = c('dodgerblue', 'forestgreen', 'white'), kmax = 1, n = 1000, resolution = 500)
+canvas_mosaic(colors = c('dodgerblue', 'forestgreen', 'white'), 
+              kmax = 1, n = 1000, resolution = 500)
 ```
 
 #### Forests
@@ -335,7 +354,8 @@ This artwork is inspired by a supervised learning method called random forest. I
 You can use the `canvas_forest()` function to make your own artwork using this algorithm.
 
 ```r
-canvas_forest(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'), n = 1000, resolution = 500)
+canvas_forest(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'), 
+              n = 1000, resolution = 500)
 ```
 
 #### Gemstones
@@ -349,7 +369,8 @@ Returning to the previously mentioned k-nearest neighbors algorithm, this artwor
 </p>
 
 ```r
-canvas_gemstone(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'), n = 1000, resolution = 500)
+canvas_gemstone(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'), 
+                n = 1000, resolution = 500)
 ```
 
 You can use the `canvas_gemstone()` function to make your own artwork using this algorithm.
@@ -367,7 +388,8 @@ This artwork is inspired by a supervised machine learning method called support 
 You can use the `canvas_blacklight()` function to make your own artwork using this algorithm.
 
 ```r
-canvas_blacklight(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'), n = 1000, resolution = 500)
+canvas_blacklight(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'), 
+                  n = 1000, resolution = 500)
 ```
 
 ### The Static collection

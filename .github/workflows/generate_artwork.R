@@ -146,6 +146,12 @@ if (type == 1) {
   artwork <- aRtsy::canvas_blacklight(colors = aRtsy::colorPalette('random', n = sample(2:10, size = 1)),
                                       resolution = 1500)  
   
+} else if (type == 18) {
+  
+  print("I'm painting stripes today.")
+  artwork <- aRtsy::canvas_stripes(colors = aRtsy::colorPalette("random", sample(10:20, size = 1)), 
+                                   burnin = sample(1:200, size = 1))
+  
 }
 
 aRtsy::saveCanvas(artwork, filename, width = ifelse(type == 13, yes = NA, no = 7), height = ifelse(type == 13, yes = NA, no = 7))

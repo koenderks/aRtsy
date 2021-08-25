@@ -2,6 +2,7 @@
 
 **New features**
 
+- Added `canvas_stripes()`
 - Added `canvas_gemstone()`
 - Added `canvas_blacklight()`
 - Added `canvas_mosaic()`.

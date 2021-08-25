@@ -105,3 +105,9 @@ test_that("canvas_blacklight()", {
   artwork <- aRtsy::canvas_blacklight(colors = c("black", "gray", "white"))
   expect_equal(!is.null(artwork), TRUE)
 })
+
+test_that("canvas_stripes()", {
+  set.seed(1)
+  artwork <- aRtsy::canvas_stripes(colors = c("black", "gray", "white"))
+  expect_equal(!is.null(artwork), TRUE)
+})
