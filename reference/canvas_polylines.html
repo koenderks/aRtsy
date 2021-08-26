@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Paint Polygons and Lines on Canvas — canvas_polylines • aRtsy</title>
+<title>Paint Random Polygons and Lines on a Canvas — canvas_polylines • aRtsy</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,7 @@
 
 
 
-<meta property="og:title" content="Paint Polygons and Lines on Canvas — canvas_polylines" />
+<meta property="og:title" content="Paint Random Polygons and Lines on a Canvas — canvas_polylines" />
 <meta property="og:description" content="This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork." />
 <meta property="og:image" content="/logo.png" />
 
@@ -119,7 +119,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Paint Polygons and Lines on Canvas</h1>
+    <h1>Paint Random Polygons and Lines on a Canvas</h1>
     <small class="dont-index">Source: <a href='https://github.com/koenderks/aRtsy/blob/master/R/canvas_polylines.R'><code>R/canvas_polylines.R</code></a></small>
     <div class="hidden name"><code>canvas_polylines.Rd</code></div>
     </div>
@@ -136,35 +136,35 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>colors</th>
-      <td><p>a character (vector) specifying the colors used for the strokes.</p></td>
+      <td><p>a string or character vector specifying the color(s) used for the artwork.</p></td>
     </tr>
     <tr>
       <th>background</th>
-      <td><p>a character specifying the color used for the borders.</p></td>
+      <td><p>a character specifying the color used for the lines.</p></td>
     </tr>
     <tr>
       <th>ratio</th>
-      <td><p>width of the polygons. Larger ratios cause more overlap.</p></td>
+      <td><p>a positive value specifying the width of the polygons. Larger ratios cause more overlap.</p></td>
     </tr>
     <tr>
       <th>iterations</th>
-      <td><p>the number of points for each polygon.</p></td>
+      <td><p>a positive integer specifying the number of iterations of the algorithm.</p></td>
     </tr>
     <tr>
       <th>alpha</th>
-      <td><p>transparency of the polygons. If <code>NULL</code>, added layers become increasingly more transparent.</p></td>
+      <td><p>a value specifying the transparency of the polygons. If <code>NULL</code> (the default), added layers become increasingly more transparent.</p></td>
     </tr>
     <tr>
       <th>size</th>
-      <td><p>size of the borders.</p></td>
+      <td><p>a positive value specifying the size of the borders.</p></td>
     </tr>
     <tr>
       <th>width</th>
-      <td><p>the width of the artwork in pixels.</p></td>
+      <td><p>a positive integer specifying the width of the artwork in pixels.</p></td>
     </tr>
     <tr>
       <th>height</th>
-      <td><p>the height of the artwork in pixels.</p></td>
+      <td><p>a positive integer specifying the height of the artwork in pixels.</p></td>
     </tr>
     </table>
 
@@ -177,8 +177,9 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span>
-<span class='fu'>canvas_polylines</span><span class='op'>(</span>colors <span class='op'>=</span> <span class='fu'><a href='colorPalette.html'>colorPalette</a></span><span class='op'>(</span><span class='st'>'retro2'</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>11</span><span class='op'>)</span>
+<span class='va'>palette</span> <span class='op'>&lt;-</span> <span class='fu'><a href='colorPalette.html'>colorPalette</a></span><span class='op'>(</span><span class='st'>'random'</span>, n <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span>
+<span class='fu'>canvas_polylines</span><span class='op'>(</span>colors <span class='op'>=</span> <span class='va'>palette</span><span class='op'>)</span>
 </div><div class='img'><img src='canvas_polylines-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># }</span>
 
 </div></pre>

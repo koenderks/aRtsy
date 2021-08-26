@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Paint a Circle Map on a Canvas — canvas_circlemap • aRtsy</title>
+<title>Canvas theme for ggplot2 objects — theme_canvas • aRtsy</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Paint a Circle Map on a Canvas — canvas_circlemap" />
-<meta property="og:description" content="This function draws a circle map on the canvas." />
+<meta property="og:title" content="Canvas theme for ggplot2 objects — theme_canvas" />
+<meta property="og:description" content="Add a canvas theme to the plot. The canvas theme by default has no margins and fills any empty canvas with a background color." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,74 +119,41 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Paint a Circle Map on a Canvas</h1>
-    <small class="dont-index">Source: <a href='https://github.com/koenderks/aRtsy/blob/master/R/canvas_circlemap.R'><code>R/canvas_circlemap.R</code></a></small>
-    <div class="hidden name"><code>canvas_circlemap.Rd</code></div>
+    <h1>Canvas theme for ggplot2 objects</h1>
+    <small class="dont-index">Source: <a href='https://github.com/koenderks/aRtsy/blob/master/R/theme_canvas.R'><code>R/theme_canvas.R</code></a></small>
+    <div class="hidden name"><code>theme_canvas.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function draws a circle map on the canvas.</p>
+    <p>Add a canvas theme to the plot. The canvas theme by default has no margins and fills any empty canvas with a background color.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>canvas_circlemap</span><span class='op'>(</span><span class='va'>colors</span>, xmin <span class='op'>=</span> <span class='fl'>0</span>, xmax <span class='op'>=</span> <span class='fl'>12.56</span>, ymin <span class='op'>=</span> <span class='fl'>0</span>, ymax <span class='op'>=</span> <span class='fl'>1</span>, 
-                 iterations <span class='op'>=</span> <span class='fl'>10</span>, width <span class='op'>=</span> <span class='fl'>1500</span>, height <span class='op'>=</span> <span class='fl'>1500</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>theme_canvas</span><span class='op'>(</span><span class='va'>x</span>, background <span class='op'>=</span> <span class='st'>'#fafafa'</span>, margin <span class='op'>=</span> <span class='op'>-</span><span class='fl'>1.25</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>colors</th>
-      <td><p>a string or character vector specifying the color(s) used for the artwork.</p></td>
+      <th>x</th>
+      <td><p>a ggplot2 object.</p></td>
     </tr>
     <tr>
-      <th>xmin</th>
-      <td><p>a value specifying the minimum location on the x-axis.</p></td>
+      <th>background</th>
+      <td><p>a character specifying the color used for the empty canvas.</p></td>
     </tr>
     <tr>
-      <th>xmax</th>
-      <td><p>a value specifying the maximum location on the x-axis.</p></td>
-    </tr>
-    <tr>
-      <th>ymin</th>
-      <td><p>a value specifying the minimum location on the y-axis.</p></td>
-    </tr>
-    <tr>
-      <th>ymax</th>
-      <td><p>a value specifying the maximum location on the y-axis.</p></td>
-    </tr>
-    <tr>
-      <th>iterations</th>
-      <td><p>a positive integer specifying the number of iterations of the algorithm.</p></td>
-    </tr>
-    <tr>
-      <th>width</th>
-      <td><p>a positive integer specifying the width of the artwork in pixels.</p></td>
-    </tr>
-    <tr>
-      <th>height</th>
-      <td><p>a positive integer specifying the height of the artwork in pixels.</p></td>
+      <th>margin</th>
+      <td><p>margins of the plot.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A <code>ggplot</code> object containing the artwork.</p>
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
-
-    <p><a href='https://en.wikipedia.org/wiki/Arnold_tongue'>https://en.wikipedia.org/wiki/Arnold_tongue</a></p>
-<p><a href='https://linas.org/art-gallery/circle-map/circle-map.html'>https://linas.org/art-gallery/circle-map/circle-map.html</a></p>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Koen Derks, <a href='mailto:koen-derks@hotmail.com'>koen-derks@hotmail.com</a></p>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>3</span><span class='op'>)</span>
-<span class='va'>palette</span> <span class='op'>&lt;-</span> <span class='fu'><a href='colorPalette.html'>colorPalette</a></span><span class='op'>(</span><span class='st'>'random'</span>, n <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span>
-<span class='fu'>canvas_circlemap</span><span class='op'>(</span>colors <span class='op'>=</span> <span class='va'>palette</span><span class='op'>)</span>
-</div><div class='img'><img src='canvas_circlemap-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># }</span>
-
-</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

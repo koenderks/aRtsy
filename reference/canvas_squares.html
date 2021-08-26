@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Paint Squares on a Canvas — canvas_squares • aRtsy</title>
+<title>Paint Random Squares on a Canvas — canvas_squares • aRtsy</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Paint Squares on a Canvas — canvas_squares" />
-<meta property="og:description" content="This function paints a squares. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create." />
+<meta property="og:title" content="Paint Random Squares on a Canvas — canvas_squares" />
+<meta property="og:description" content="This function paints random squares. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,13 +119,13 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Paint Squares on a Canvas</h1>
+    <h1>Paint Random Squares on a Canvas</h1>
     <small class="dont-index">Source: <a href='https://github.com/koenderks/aRtsy/blob/master/R/canvas_squares.R'><code>R/canvas_squares.R</code></a></small>
     <div class="hidden name"><code>canvas_squares.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function paints a squares. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.</p>
+    <p>This function paints random squares. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.</p>
     </div>
 
     <pre class="usage"><span class='fu'>canvas_squares</span><span class='op'>(</span><span class='va'>colors</span>, background <span class='op'>=</span> <span class='st'>'#000000'</span>, cuts <span class='op'>=</span> <span class='fl'>50</span>, ratio <span class='op'>=</span> <span class='fl'>1.618</span>,
@@ -136,27 +136,27 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>colors</th>
-      <td><p>a character vector specifying the colors used in the squares.</p></td>
+      <td><p>a string or character vector specifying the color(s) used for the artwork.</p></td>
     </tr>
     <tr>
       <th>background</th>
-      <td><p>a character specifying the color used for the background (borders).</p></td>
+      <td><p>a character specifying the color used for the borders of the squares.</p></td>
     </tr>
     <tr>
       <th>cuts</th>
-      <td><p>the number of cuts to make.</p></td>
+      <td><p>a positive integer specifying the number of cuts to make.</p></td>
     </tr>
     <tr>
       <th>ratio</th>
-      <td><p>the <code>1:1</code> ratio for each cut.</p></td>
+      <td><p>a value specifying the <code>1:1</code> ratio for each cut.</p></td>
     </tr>
     <tr>
       <th>width</th>
-      <td><p>the width of the artwork in pixels.</p></td>
+      <td><p>a positive integer specifying the width of the artwork in pixels.</p></td>
     </tr>
     <tr>
       <th>height</th>
-      <td><p>the height of the artwork in pixels.</p></td>
+      <td><p>a positive integer specifying the height of the artwork in pixels.</p></td>
     </tr>
     </table>
 
@@ -169,8 +169,9 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>6</span><span class='op'>)</span>
-<span class='fu'>canvas_squares</span><span class='op'>(</span>colors <span class='op'>=</span> <span class='fu'><a href='colorPalette.html'>colorPalette</a></span><span class='op'>(</span><span class='st'>'tuscany1'</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>14</span><span class='op'>)</span>
+<span class='va'>palette</span> <span class='op'>&lt;-</span> <span class='fu'><a href='colorPalette.html'>colorPalette</a></span><span class='op'>(</span><span class='st'>'random'</span>, n <span class='op'>=</span> <span class='fl'>4</span><span class='op'>)</span>
+<span class='fu'>canvas_squares</span><span class='op'>(</span>colors <span class='op'>=</span> <span class='va'>palette</span><span class='op'>)</span>
 </div><div class='img'><img src='canvas_squares-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># }</span>
 
 </div></pre>

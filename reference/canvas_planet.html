@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Paint a Planet on a Canvas — canvas_planet • aRtsy</title>
+<title>Paint a Random Planet on a Canvas — canvas_planet • aRtsy</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Paint a Planet on a Canvas — canvas_planet" />
-<meta property="og:description" content="This function paints one or multiple planets." />
+<meta property="og:title" content="Paint a Random Planet on a Canvas — canvas_planet" />
+<meta property="og:description" content="This function paints one or multiple planets and uses a cellular automata to fill their surfaces." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,13 +119,13 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Paint a Planet on a Canvas</h1>
+    <h1>Paint a Random Planet on a Canvas</h1>
     <small class="dont-index">Source: <a href='https://github.com/koenderks/aRtsy/blob/master/R/canvas_planet.R'><code>R/canvas_planet.R</code></a></small>
     <div class="hidden name"><code>canvas_planet.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function paints one or multiple planets.</p>
+    <p>This function paints one or multiple planets and uses a cellular automata to fill their surfaces.</p>
     </div>
 
     <pre class="usage"><span class='fu'>canvas_planet</span><span class='op'>(</span><span class='va'>colors</span>, threshold <span class='op'>=</span> <span class='fl'>4</span>, iterations <span class='op'>=</span> <span class='fl'>200</span>, 
@@ -146,15 +146,15 @@
     </tr>
     <tr>
       <th>iterations</th>
-      <td><p>the number of iterations of the planets</p></td>
+      <td><p>a positive integer specifying the number of iterations of the algorithm.</p></td>
     </tr>
     <tr>
       <th>starprob</th>
-      <td><p>the probability of drawing a star in outer space.</p></td>
+      <td><p>a value specyfing the probability of drawing a star in outer space.</p></td>
     </tr>
     <tr>
       <th>fade</th>
-      <td><p>the fading factor.</p></td>
+      <td><p>a value specifying the amount of fading to apply.</p></td>
     </tr>
     <tr>
       <th>radius</th>
@@ -174,17 +174,20 @@
     </tr>
     <tr>
       <th>width</th>
-      <td><p>the width of the artwork in pixels.</p></td>
+      <td><p>a positive integer specifying the width of the artwork in pixels.</p></td>
     </tr>
     <tr>
       <th>height</th>
-      <td><p>the height of the artwork in pixels.</p></td>
+      <td><p>a positive integer specifying the height of the artwork in pixels.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A <code>ggplot</code> object containing the artwork.</p>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p><a href='https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/'>https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/</a></p>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Koen Derks, <a href='mailto:koen-derks@hotmail.com'>koen-derks@hotmail.com</a></p>
