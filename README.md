@@ -15,7 +15,7 @@
 
 Good luck hunting for some good `seed`'s! Feel free to post a comment with your best artworks and the corresponding seed in the [GitHub discussions](https://github.com/koenderks/aRtsy/discussions).
 
-Contributions to `aRtsy` are very much appreciated! If you want to add your own type of artwork to the package so that others can create their own unique versions of it, feel free to make a pull request to the [GitHub repository](https://github.com/koenderks/aRtsy). Don't forget to also adjust [generate-artwork.R](https://github.com/koenderks/aRtsy/blob/development/.github/workflows/generate_artwork.R) if you want the artwork to show up in the 'Artwork of the day' category and on the twitter feed.
+Contributions to `aRtsy` are very much appreciated! If you want to add your own type of artwork to the package so that others can create their own unique versions of it, feel free to make a pull request to the [GitHub repository](https://github.com/koenderks/aRtsy). Don't forget to also adjust [generate-artwork.R](https://github.com/koenderks/aRtsy/blob/development/.github/workflows/generate_artwork.R) if you want the artwork to show up in the 'Artwork of the day' category and the twitter feed.
 
 ## Artwork of the day
 
@@ -120,6 +120,7 @@ By visualizing the sequence for each number, overlaying sequences that are the s
 You can use the `canvas_collatz()` function to make your own artwork using this algorithm.
 
 ```r
+set.seed(2)
 canvas_collatz(colors = '#000000', background = '#fafafa', n = 200, 
                angle.even = 0.0075, angle.odd = 0.0145, side = FALSE)
 ```
@@ -141,7 +142,7 @@ According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *"
 You can use the `canvas_turmite()` function to make your own artwork using this algorithm.
 
 ```r
-set.seed(1)
+set.seed(3)
 canvas_turmite(color = '#000000', background = '#fafafa', p = 0.5, 
                iterations = 1e7, width = 1500, height = 1500)
 ```
@@ -163,6 +164,7 @@ According to [wikipedia](https://en.wikipedia.org/wiki/Langtons_ant), Langton's 
 You can use the `canvas_ant()` function to make your own artwork using this algorithm.
 
 ```r
+set.seed(4)
 canvas_ant(colors = '#000000', background = '#fafafa', iterations = 1e7,
            width = 200, height = 200)
 ```
@@ -204,6 +206,7 @@ This type of artwork is based on the concept of [Brownian motion](https://en.wik
 You can use the `canvas_stripes()` function to make your own artwork using this algorithm.
 
 ```r
+set.seed(5)
 canvas_stripes(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'),
                n = 300, H = 1, burnin = 1)
 ```
@@ -225,7 +228,7 @@ This type of artwork mimics the style of the well-known paintings by the Dutch a
 You can use the `canvas_segments()` function to make your own artwork using this algorithm.
 
 ```r
-set.seed(1)
+set.seed(6)
 canvas_segments(colors = 'black', background = '#fafafa', n = 100, p = 0.5, H = 0.1)
 ```
 
@@ -242,7 +245,7 @@ This function creates a set of diamonds on a canvas. The diamonds are filled in 
 You can use the `canvas_diamonds()` function to make your own artwork using this algorithm.
 
 ```r
-set.seed(1)
+set.seed(7)
 canvas_diamonds(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'), 
                 background = '#fafafa', col.line = 'black', radius = 10, alpha = 1, 
                 p = 0.2, width = 500, height = 500)
@@ -279,7 +282,7 @@ This function creates colored ribbons with (or without) a triangle that breaks t
 You can use the `canvas_ribbons()` function to make your own artwork using this algorithm.
 
 ```r
-set.seed(1)
+set.seed(9)
 canvas_ribbons(colors = c('forestgreen', 'firebrick', 'dodgerblue', 'goldenrod'),
                background = '#fdf5e6', triangle = TRUE)
 ```
@@ -316,7 +319,7 @@ The idea for this type of artwork is taken over from the [`generativeart`](https
 You can use the `canvas_function()` function to make your own artwork using this algorithm.
 
 ```r
-set.seed(1)
+set.seed(14)
 canvas_function(color = '#000000', background = '#fafafa')
 ```
 
@@ -337,6 +340,7 @@ The first artwork in this collection is inspired by a supervised learning method
 You can use the `canvas_mosaic()` function to make your own artwork using this algorithm.
 
 ```r
+set.seed(1)
 canvas_mosaic(colors = c('dodgerblue', 'forestgreen', 'white'), 
               kmax = 1, n = 1000, resolution = 500)
 ```
@@ -354,6 +358,7 @@ This artwork is inspired by a supervised learning method called random forest. I
 You can use the `canvas_forest()` function to make your own artwork using this algorithm.
 
 ```r
+set.seed(1)
 canvas_forest(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'), 
               n = 1000, resolution = 500)
 ```
@@ -369,6 +374,7 @@ Returning to the previously mentioned k-nearest neighbors algorithm, this artwor
 </p>
 
 ```r
+set.seed(1)
 canvas_gemstone(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'), 
                 n = 1000, resolution = 500)
 ```
@@ -388,6 +394,7 @@ This artwork is inspired by a supervised machine learning method called support 
 You can use the `canvas_blacklight()` function to make your own artwork using this algorithm.
 
 ```r
+set.seed(1)
 canvas_blacklight(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'), 
                   n = 1000, resolution = 500)
 ```

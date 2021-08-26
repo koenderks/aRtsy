@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme_canvas.R
 \name{theme_canvas}
 \alias{theme_canvas}
-\title{Canvas theme for ggplot2 objects}
+\title{Canvas Theme for ggplot2 Objects}
 \usage{
 theme_canvas(x, background = '#fafafa', margin = -1.25)
 }

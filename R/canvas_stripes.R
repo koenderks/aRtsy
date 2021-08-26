@@ -16,7 +16,7 @@
 #' @examples
 #' \donttest{
 #' set.seed(15)
-#' palette <- colorPalette('random', n = 4)
+#' palette <- colorPalette('random', n = 5)
 #' canvas_stripes(colors = palette)
 #' }
 #' 

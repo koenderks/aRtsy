@@ -1,4 +1,4 @@
-#' Canvas theme for ggplot2 objects
+#' Canvas Theme for ggplot2 Objects
 #'
 #' @description Add a canvas theme to the plot. The canvas theme by default has no margins and fills any empty canvas with a background color.
 #'
