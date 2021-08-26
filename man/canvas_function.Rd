@@ -2,12 +2,12 @@
 % Please edit documentation in R/canvas_function.R
 \name{canvas_function}
 \alias{canvas_function}
-\title{Paint Functions on a Canvas}
+\title{Paint A Random Function on a Canvas}
 \usage{
 canvas_function(color, background = '#fafafa')
 }
 \arguments{
-\item{color}{a character specifying the color used for the function shape.}
+\item{color}{a string specifying the color used for the artwork.}
 
 \item{background}{a character specifying the color used for the background.}
 }
@@ -20,7 +20,7 @@ This function paints functions with random parameters and mimics the functionali
 \examples{
 \donttest{
 set.seed(10)
-canvas_function(color = '#000000', background = '#fafafa')
+canvas_function(color = '#000000')
 }
 
 }

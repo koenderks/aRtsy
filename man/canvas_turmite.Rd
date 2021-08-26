@@ -2,23 +2,23 @@
 % Please edit documentation in R/canvas_turmite.R
 \name{canvas_turmite}
 \alias{canvas_turmite}
-\title{Paint a Turmite on a Canvas}
+\title{Paint a Random Turmite on a Canvas}
 \usage{
 canvas_turmite(color, background = '#fafafa', p = 0.5, iterations = 1e7, 
                width = 1500, height = 1500)
 }
 \arguments{
-\item{color}{a character specifying the color used for the turmite.}
+\item{color}{a character specifying the color used for the artwork.}
 
 \item{background}{a character specifying the color used for the background.}
 
-\item{p}{the probability of a state switch within the turmite.}
+\item{p}{a value specifying the probability of a state switch within the turmite.}
 
-\item{iterations}{the number of iterations of the turmite.}
+\item{iterations}{a positive integer specifying the number of iterations of the algorithm.}
 
-\item{width}{the width of the artwork in pixels.}
+\item{width}{a positive integer specifying the width of the artwork in pixels.}
 
-\item{height}{the height of the artwork in pixels.}
+\item{height}{a positive integer specifying the height of the artwork in pixels.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
@@ -28,8 +28,8 @@ This function paints a turmite. A turmite is a Turing machine which has an orien
 }
 \examples{
 \donttest{
-set.seed(1)
-canvas_turmite(color = "#000000", background = "#fafafa")
+set.seed(17)
+canvas_turmite(color = '#000000')
 }
 
 }

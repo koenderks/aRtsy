@@ -1,4 +1,4 @@
-#' Paint A Diamond on Canvas
+#' Paint Random Diamonds on a Canvas
 #'
 #' @description This function draws many diamonds on the canvas and places two lines behind them. The diamonds can be transparent or have a random color sampled from the input.
 #'
@@ -6,14 +6,14 @@
 #'                 radius = 10, alpha = 1, p = 0.2, 
 #'                 width = 500, height = 500)
 #'
-#' @param colors      a character (vector) specifying the colors used for the strokes.
+#' @param colors      a string or character vector specifying the color(s) used for the artwork.
 #' @param background  a character specifying the color used for the background.
-#' @param col.line    color of the lines.
-#' @param radius      radius of the diamonds.
-#' @param alpha       transparency of the diamonds. If \code{NULL}, added layers become increasingly more transparent.
-#' @param p           takeover probability.
-#' @param width       the width of the artwork in pixels.
-#' @param height      the height of the artwork in pixels.
+#' @param col.line    a character specifying the color of the diamond borders.
+#' @param radius      a positive value specifying the radius of the diamonds.
+#' @param alpha       a value specifying the transparency of the diamonds. If \code{NULL} (the default), added layers become increasingly more transparent.
+#' @param p           a value specifying the probability of drawing an empty diamond.
+#' @param width       a positive integer specifying the width of the artwork in pixels.
+#' @param height      a positive integer specifying the height of the artwork in pixels.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
@@ -21,8 +21,9 @@
 #'
 #' @examples
 #' \donttest{
-#' set.seed(1)
-#' canvas_diamonds(colors = colorPalette('house'), radius = 10)
+#' set.seed(5)
+#' palette <- colorPalette('random', n = 5)
+#' canvas_diamonds(colors = palette, radius = 10)
 #' }
 #' 
 #' @keywords artwork canvas
@@ -66,6 +67,6 @@ canvas_diamonds <- function(colors, background = '#fafafa', col.line = 'black',
                         colour = col.line, size = stats::runif(1, 5, 15), curvature = stats::runif(1, -0.5, 0)) +
     ggplot2::geom_polygon(fill = full_canvas$col, color = NA, alpha = alpha) +
     ggplot2::scale_fill_manual(values = palette)
-  artwork <- themeCanvas(artwork, background)
+  artwork <- theme_canvas(artwork, background)
   return(artwork)
 }

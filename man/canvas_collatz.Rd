@@ -2,21 +2,21 @@
 % Please edit documentation in R/canvas_collatz.R
 \name{canvas_collatz}
 \alias{canvas_collatz}
-\title{Paint the Collatz Conjecture on Canvas}
+\title{Paint Random Collatz Sequences on a Canvas}
 \usage{
 canvas_collatz(colors, background = '#fafafa', n = 200, 
                 angle.even = 0.0075, angle.odd = 0.0145, side = FALSE)
 }
 \arguments{
-\item{colors}{a character (vector) specifying the colors used for the artwork.}
+\item{colors}{a string or character vector specifying the color(s) used for the artwork.}
 
 \item{background}{a character specifying the color used for the background.}
 
-\item{n}{the number of numbers to sample for the lines. Can also be a vector of numbers to use.}
+\item{n}{a positive integer specifying the number of random starting integers to use for the lines. Can also be a vector of numbers to use as starting numbers.}
 
-\item{angle.even}{the angle (radials) to use after odd numbers.}
+\item{angle.even}{a value specifying the angle (in radials) to use in bending the sequence at each odd number.}
 
-\item{angle.odd}{the angle (radials) to use after even numbers.}
+\item{angle.odd}{a value specifying the angle (in radials) to use in bending the sequence at each even number.}
 
 \item{side}{logical. Whether to put the artwork on its side.}
 }
@@ -28,10 +28,14 @@ This function draws the Collatz conjecture on the canvas.
 }
 \examples{
 \donttest{
-set.seed(1)
-canvas_collatz(colors = colorPalette('dark1'), n = 100)
+set.seed(4)
+palette <- colorPalette('random', n = 5)
+canvas_collatz(colors = palette, n = 100)
 }
 
+}
+\references{
+\url{https://nl.wikipedia.org/wiki/Collatz_Conjecture}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

@@ -9,17 +9,17 @@
 // [[Rcpp::depends(RcppArmadillo)]]
 
 // [[Rcpp::export]]
-arma::mat iterate_planet(arma::mat X, 
-                         int radius,
-                         int xcenter,
-                         int ycenter,
-                         int threshold,
-                         int iterations,
-                         double starprob,
-                         int ncolors,
-                         int colorsused,
-                         double fade,
-                         int lightright) {
+arma::mat draw_planet(arma::mat X, 
+                      int radius,
+                      int xcenter,
+                      int ycenter,
+                      int threshold,
+                      int iterations,
+                      double starprob,
+                      int ncolors,
+                      int colorsused,
+                      double fade,
+                      int lightright) {
   int m = X.n_rows;
   int n = X.n_cols;
   std::vector<int> xcircle; // Vector of x-locations of all circle points

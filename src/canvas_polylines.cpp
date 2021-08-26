@@ -9,11 +9,11 @@
 // [[Rcpp::depends(RcppArmadillo)]]
 
 // [[Rcpp::export]]
-arma::mat iterate_polylines(arma::mat X,
-                            double ratio,
-                            int iters,
-                            int rows,
-                            int cols) {
+arma::mat draw_polylines(arma::mat X,
+                         double ratio,
+                         int iters,
+                         int rows,
+                         int cols) {
   X(0, 0) = R::runif(0, cols);
   X(0, 1) = R::runif(0, rows);
   int xradius = cols * ratio;

@@ -9,12 +9,12 @@
 // [[Rcpp::depends(RcppArmadillo)]]
 
 // [[Rcpp::export]]
-arma::mat iterate_ant(arma::mat X,
-                      int iters,
-                      int row,
-                      int col,
-                      std::vector<int> dx,
-                      std::vector<int> dy) {
+arma::mat draw_ant(arma::mat X,
+                   int iters,
+                   int row,
+                   int col,
+                   std::vector<int> dx,
+                   std::vector<int> dy) {
   int m = X.n_rows;
   int n = X.n_cols;
   int k = dy.size(); // Number of colors is number of rows in the c data frame

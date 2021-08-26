@@ -1,10 +1,10 @@
-#' Paint Functions on a Canvas
+#' Paint A Random Function on a Canvas
 #'
 #' @description This function paints functions with random parameters and mimics the functionality of the \code{generativeart} package.
 #'
 #' @usage canvas_function(color, background = '#fafafa')
 #'
-#' @param color   	  a character specifying the color used for the function shape.
+#' @param color       a string specifying the color used for the artwork.
 #' @param background  a character specifying the color used for the background.
 #'
 #' @references \url{https://github.com/cutterkom/generativeart}
@@ -16,7 +16,7 @@
 #' @examples
 #' \donttest{
 #' set.seed(10)
-#' canvas_function(color = '#000000', background = '#fafafa')
+#' canvas_function(color = '#000000')
 #' }
 #' 
 #' @keywords artwork canvas
@@ -47,6 +47,6 @@ canvas_function <- function(color, background = '#fafafa') {
     ggplot2::geom_point(alpha = 0.1, size = 0, shape = 20, color = color) + 
     ggplot2::coord_fixed() + 
     ggplot2::coord_polar()
-  artwork <- themeCanvas(artwork, background)
+  artwork <- theme_canvas(artwork, background)
   return(artwork) 
 }

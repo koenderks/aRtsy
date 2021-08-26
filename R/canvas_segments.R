@@ -1,16 +1,16 @@
-#' Paint Line Segments on Canvas
+#' Paint Random Line Segments on a Canvas
 #'
-#' @description This function draws many line segments on the canvas.
+#' @description This function draws many random line segments on the canvas.
 #'
 #' @usage canvas_segments(colors, background = '#fafafa', n = 100, 
 #'                 p = 0.5, H = 0.1, size = 0.2)
 #'
-#' @param colors      a character (vector) specifying the colors used for the line segments.
+#' @param colors      a string or character vector specifying the color(s) used for the artwork.
 #' @param background  a character specifying the color used for the background.
-#' @param n           the number of line segments to draw.
-#' @param p           probability of drawing a vectical line segment.
-#' @param H           scaling factor for the line segments.
-#' @param size        line width of the segments.
+#' @param n           a positive integer specifying the number of line segments to draw.
+#' @param p           a value specifying the probability of drawing a vectical line segment.
+#' @param H           a positive value specifying the scaling factor for the line segments.
+#' @param size        a positive value specifying the size of the line segments.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
@@ -18,8 +18,9 @@
 #'
 #' @examples
 #' \donttest{
-#' set.seed(1)
-#' canvas_segments(colors = 'black', background = '#fafafa')
+#' set.seed(13)
+#' palette <- colorPalette('random', n = 4)
+#' canvas_segments(colors = palette)
 #' }
 #' 
 #' @keywords artwork canvas
@@ -30,7 +31,10 @@ canvas_segments <- function(colors, background = '#fafafa', n = 100,
                             p = 0.5, H = 0.1, size = 0.2) {
   x <- y <- xend <- yend <- col <- NULL
   H <- 0.1
-  full_canvas <- data.frame(x = numeric(), xend  = numeric(), y  = numeric(), yend  = numeric())
+  full_canvas <- data.frame(x = numeric(), 
+                            xend  = numeric(), 
+                            y  = numeric(), 
+                            yend  = numeric())
   for (i in 1:n) {
     x <- 0.8 * stats::runif(1, 0, 1) + 0.1
     y <- 0.8 * stats::runif(1, 0, 1) + 0.1
@@ -46,6 +50,6 @@ canvas_segments <- function(colors, background = '#fafafa', n = 100,
     ggplot2::xlim(c(0, 1)) +
     ggplot2::ylim(c(0,1)) +
     ggplot2::geom_segment(color = full_canvas$col, size = size)
-  artwork <- themeCanvas(artwork, background)
+  artwork <- theme_canvas(artwork, background)
   return(artwork)
 }

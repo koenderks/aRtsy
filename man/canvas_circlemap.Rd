@@ -4,39 +4,43 @@
 \alias{canvas_circlemap}
 \title{Paint a Circle Map on a Canvas}
 \usage{
-canvas_circlemap(colors, x_min = 0, x_max = 12.56, y_min = 0, y_max = 1, 
+canvas_circlemap(colors, xmin = 0, xmax = 12.56, ymin = 0, ymax = 1, 
                  iterations = 10, width = 1500, height = 1500)
 }
 \arguments{
-\item{colors}{a character specifying the color used for the function shape.}
+\item{colors}{a string or character vector specifying the color(s) used for the artwork.}
 
-\item{x_min}{a numeric value specifying the minimum value for the x-axis.}
+\item{xmin}{a value specifying the minimum location on the x-axis.}
 
-\item{x_max}{a numeric value specifying the maximum value for the x-axis.}
+\item{xmax}{a value specifying the maximum location on the x-axis.}
 
-\item{y_min}{a numeric value specifying the minimum value for the y-axis.}
+\item{ymin}{a value specifying the minimum location on the y-axis.}
 
-\item{y_max}{a numeric value specifying the maximum value for the y-axis.}
+\item{ymax}{a value specifying the maximum location on the y-axis.}
 
-\item{iterations}{the number of iterations.}
+\item{iterations}{a positive integer specifying the number of iterations of the algorithm.}
 
-\item{width}{the width of the artwork in pixels.}
+\item{width}{a positive integer specifying the width of the artwork in pixels.}
 
-\item{height}{the height of the artwork in pixels.}
+\item{height}{a positive integer specifying the height of the artwork in pixels.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
 }
 \description{
-This function is my attempt at a circle map.
+This function draws a circle map on the canvas.
 }
 \examples{
 \donttest{
-canvas_circlemap(colors = colorPalette('tuscany2'))
+set.seed(3)
+palette <- colorPalette('random', n = 5)
+canvas_circlemap(colors = palette)
 }
 
 }
 \references{
+\url{https://en.wikipedia.org/wiki/Arnold_tongue}
+
 \url{https://linas.org/art-gallery/circle-map/circle-map.html}
 }
 \author{

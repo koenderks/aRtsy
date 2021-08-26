@@ -17,11 +17,11 @@ int neighbor(int L, int i)
 }
 
 // [[Rcpp::export]]
-arma::mat iterate_squares(arma::mat X, 
-                          Rcpp::DataFrame neighbors, 
-                          int s,
-                          int cuts,
-                          double ratio) {
+arma::mat draw_squares(arma::mat X, 
+                       Rcpp::DataFrame neighbors, 
+                       int s,
+                       int cuts,
+                       double ratio) {
   int m = X.n_rows;
   int n = X.n_cols;
   int row = m;

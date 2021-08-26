@@ -9,11 +9,11 @@
 // [[Rcpp::depends(RcppArmadillo)]]
 
 // [[Rcpp::export]]
-arma::mat iterate_turmite(arma::mat X,
-                          int iters,
-                          int row,
-                          int col,
-                          double p) {
+arma::mat draw_turmite(arma::mat X,
+                       int iters,
+                       int row,
+                       int col,
+                       double p) {
   int m = X.n_rows;
   int n = X.n_cols;
   int i = 0;

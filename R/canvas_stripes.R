@@ -1,13 +1,13 @@
-#' Paint stripes on a canvas
+#' Paint Random Stripes on a Canvas
 #'
 #' @description This function creates a brownian motion on each row of the artwork and colors it according to the height of the motion.
 #'
 #' @usage canvas_stripes(colors, n = 300, H = 1, burnin = 1)
 #'
-#' @param colors   	  a character (vector) specifying the colors for the artwork.
-#' @param n           the length of the brownian motion.
-#' @param H           the square of the standard deviation of each step.
-#' @param burnin      the number of brownian motion steps to discard before filling a row.
+#' @param colors      a string or character vector specifying the color(s) used for the artwork.
+#' @param n           a positive integer specifying the length of the brownian motion (effectively the width of the artwork).
+#' @param H           a positive value specifying the square of the standard deviation of each step in the motion.
+#' @param burnin      a positive integer specifying the number of steps to discard before filling each row.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
@@ -15,8 +15,9 @@
 #'
 #' @examples
 #' \donttest{
-#' set.seed(1)
-#' canvas_stripes(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
+#' set.seed(15)
+#' palette <- colorPalette('random', n = 4)
+#' canvas_stripes(colors = palette)
 #' }
 #' 
 #' @keywords artwork canvas
@@ -40,6 +41,6 @@ canvas_stripes <- function(colors, n = 300, H = 1, burnin = 1) {
   artwork <- ggplot2::ggplot(data = canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE) +
     ggplot2::scale_fill_gradientn(colours = colors)
-  artwork <- themeCanvas(artwork, background = NULL)
+  artwork <- theme_canvas(artwork, background = NULL)
   return(artwork)
 }

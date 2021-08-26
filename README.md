@@ -15,7 +15,7 @@
 
 Good luck hunting for some good `seed`'s! Feel free to post a comment with your best artworks and the corresponding seed in the [GitHub discussions](https://github.com/koenderks/aRtsy/discussions).
 
-Contributions to `aRtsy` are very much appreciated! If you want to add your own type of artwork to the package so that others can also create them, feel free to make a pull request to the [GitHub repository](https://github.com/koenderks/aRtsy). Don't forget to adjust [generate-artwork.R](https://github.com/koenderks/aRtsy/blob/development/.github/workflows/generate_artwork.R) if you also want the artwork to show up in the 'Artwork of the day' category and the twitter feed.
+Contributions to `aRtsy` are very much appreciated! If you want to add your own type of artwork to the package so that others can create their own unique versions of it, feel free to make a pull request to the [GitHub repository](https://github.com/koenderks/aRtsy). Don't forget to also adjust [generate-artwork.R](https://github.com/koenderks/aRtsy/blob/development/.github/workflows/generate_artwork.R) if you want the artwork to show up in the 'Artwork of the day' category and on the twitter feed.
 
 ## Artwork of the day
 
@@ -79,7 +79,7 @@ library(aRtsy)
 
 ### The Iterative collection
 
-The Iterative collection mostly implements algorithms whose state depend on the previous state. Most of these algorithms draw on a grid based canvas in which every point represents a pixel of the final image. By assigning a color to these points according to certain rules, one can create the images in this collection.
+The Iterative collection mostly implements algorithms whose state depend on the previous state. These algorithms generally use a grid based canvas to draw on. On the grid, each point represents a pixel of the final image. By assigning a color to these points according to certain rules, one can create the images in this collection.
 
 #### Paint strokes
 

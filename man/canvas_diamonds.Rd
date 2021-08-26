@@ -2,28 +2,28 @@
 % Please edit documentation in R/canvas_diamonds.R
 \name{canvas_diamonds}
 \alias{canvas_diamonds}
-\title{Paint A Diamond on Canvas}
+\title{Paint Random Diamonds on a Canvas}
 \usage{
 canvas_diamonds(colors, background = '#fafafa', col.line = 'black', 
                 radius = 10, alpha = 1, p = 0.2, 
                 width = 500, height = 500)
 }
 \arguments{
-\item{colors}{a character (vector) specifying the colors used for the strokes.}
+\item{colors}{a string or character vector specifying the color(s) used for the artwork.}
 
 \item{background}{a character specifying the color used for the background.}
 
-\item{col.line}{color of the lines.}
+\item{col.line}{a character specifying the color of the diamond borders.}
 
-\item{radius}{radius of the diamonds.}
+\item{radius}{a positive value specifying the radius of the diamonds.}
 
-\item{alpha}{transparency of the diamonds. If \code{NULL}, added layers become increasingly more transparent.}
+\item{alpha}{a value specifying the transparency of the diamonds. If \code{NULL} (the default), added layers become increasingly more transparent.}
 
-\item{p}{takeover probability.}
+\item{p}{a value specifying the probability of drawing an empty diamond.}
 
-\item{width}{the width of the artwork in pixels.}
+\item{width}{a positive integer specifying the width of the artwork in pixels.}
 
-\item{height}{the height of the artwork in pixels.}
+\item{height}{a positive integer specifying the height of the artwork in pixels.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
@@ -33,8 +33,9 @@ This function draws many diamonds on the canvas and places two lines behind them
 }
 \examples{
 \donttest{
-set.seed(1)
-canvas_diamonds(colors = colorPalette('house'), radius = 10)
+set.seed(5)
+palette <- colorPalette('random', n = 5)
+canvas_diamonds(colors = palette, radius = 10)
 }
 
 }

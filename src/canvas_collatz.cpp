@@ -8,7 +8,7 @@
 // [[Rcpp::depends(RcppArmadillo)]]
 
 // [[Rcpp::export]]
-std::vector<int> iterate_collatz(int x) {
+std::vector<int> get_collatz_sequence(int x) {
   std::vector<int> sequence;
   sequence.push_back(1);
   while (x > 1) {
@@ -24,10 +24,10 @@ std::vector<int> iterate_collatz(int x) {
 }
 
 // [[Rcpp::export]]
-arma::mat draw_line(arma::mat empty,
-                    std::vector<int> series,
-                    double even,
-                    double odd) {
+arma::mat draw_collatz(arma::mat empty,
+                       std::vector<int> series,
+                       double even,
+                       double odd) {
   int s = series.size();
   double angle = 3.14/2;
   for (int i = 1; i < s; i++) {

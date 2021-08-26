@@ -2,7 +2,7 @@
 % Please edit documentation in R/canvas_planet.R
 \name{canvas_planet}
 \alias{canvas_planet}
-\title{Paint a Planet on a Canvas}
+\title{Paint a Random Planet on a Canvas}
 \usage{
 canvas_planet(colors, threshold = 4, iterations = 200, 
               starprob = 0.01, fade = 0.2,
@@ -14,11 +14,11 @@ canvas_planet(colors, threshold = 4, iterations = 200,
 
 \item{threshold}{a character specifying the threshold for a color take.}
 
-\item{iterations}{the number of iterations of the planets}
+\item{iterations}{a positive integer specifying the number of iterations of the algorithm.}
 
-\item{starprob}{the probability of drawing a star in outer space.}
+\item{starprob}{a value specyfing the probability of drawing a star in outer space.}
 
-\item{fade}{the fading factor.}
+\item{fade}{a value specifying the amount of fading to apply.}
 
 \item{radius}{a numeric (vector) specifying the radius of the planet(s).}
 
@@ -28,15 +28,15 @@ canvas_planet(colors, threshold = 4, iterations = 200,
 
 \item{light.right}{whether to draw the light from the right or the left.}
 
-\item{width}{the width of the artwork in pixels.}
+\item{width}{a positive integer specifying the width of the artwork in pixels.}
 
-\item{height}{the height of the artwork in pixels.}
+\item{height}{a positive integer specifying the height of the artwork in pixels.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
 }
 \description{
-This function paints one or multiple planets.
+This function paints one or multiple planets and uses a cellular automata to fill their surfaces.
 }
 \examples{
 \donttest{
@@ -51,6 +51,9 @@ canvas_planet(colors, radius = c(800, 400, 150),
               starprob = 0.005)
 }
 
+}
+\references{
+\url{https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

@@ -8,12 +8,12 @@
 // [[Rcpp::depends(RcppArmadillo)]]
 
 // [[Rcpp::export]]
-arma::mat iterate_circlemap(arma::mat X,
-                            double kmin,
-                            double kmax,
-                            double phimin,
-                            double phimax,
-                            int iterations) {
+arma::mat draw_circlemap(arma::mat X,
+                         double kmin,
+                         double kmax,
+                         double phimin,
+                         double phimax,
+                         int iterations) {
   int m = X.n_rows;
   int n = X.n_cols;
   double K = kmax;

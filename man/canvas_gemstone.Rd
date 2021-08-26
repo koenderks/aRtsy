@@ -2,18 +2,18 @@
 % Please edit documentation in R/canvas_gemstone.R
 \name{canvas_gemstone}
 \alias{canvas_gemstone}
-\title{Paint a gemstone on a canvas}
+\title{Paint a Random Gemstone on a Canvas}
 \usage{
 canvas_gemstone(colors, maxk = 1, n = 1000, resolution = 500)
 }
 \arguments{
-\item{colors}{a character (vector) specifying the colors for the artwork.}
+\item{colors}{a string or character vector specifying the color(s) used for the artwork.}
 
-\item{maxk}{the maximum number of nearest neighbors to consider.}
+\item{maxk}{a positive integer specifying the maximum number of nearest neighbors to consider.}
 
-\item{n}{number of data points to generate.}
+\item{n}{a positive integer specifying the number of random data points to generate.}
 
-\item{resolution}{the number of pixels (width and height) of the artwork.}
+\item{resolution}{a positive integer specifying the number of pixels (resolution x resolution) of the artwork.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
@@ -23,10 +23,14 @@ This function creates an artwork from randomly generated data by running a k-nea
 }
 \examples{
 \donttest{
-set.seed(1)
-canvas_gemstone(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
+set.seed(7)
+palette <- colorPalette('random', n = 10)
+canvas_gemstone(colors = palette)
 }
 
+}
+\references{
+\url{https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

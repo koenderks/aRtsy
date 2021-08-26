@@ -2,25 +2,25 @@
 % Please edit documentation in R/canvas_strokes.R
 \name{canvas_strokes}
 \alias{canvas_strokes}
-\title{Paint Strokes on a Canvas}
+\title{Paint Random Strokes on a Canvas}
 \usage{
 canvas_strokes(colors, neighbors = 1, p = 0.01, iterations = 1, 
                width = 500, height = 500, side = FALSE)
 }
 \arguments{
-\item{colors}{a character (vector) specifying the colors used for the strokes.}
+\item{colors}{a string or character vector specifying the color(s) used for the artwork.}
 
-\item{neighbors}{the number of neighbors a block considers when taking over a color. More neighbors fades the artwork.}
+\item{neighbors}{a positive integer specifying the number of neighbors a block considers when taking over a color. More neighbors fades the artwork.}
 
-\item{p}{the probability of selecting a new color at each block. A higher probability adds more noise to the artwork.}
+\item{p}{a value specifying the probability of selecting a new color at each block. A higher probability adds more noise to the artwork.}
 
-\item{iterations}{the number of iterations on the artwork. More iterations fade the artwork.}
+\item{iterations}{a positive integer specifying the number of iterations of the algorithm. More iterations generally apply more fade to the artwork.}
 
-\item{width}{the width of the artwork in pixels.}
+\item{width}{a positive integer specifying the width of the artwork in pixels.}
 
-\item{height}{the height of the artwork in pixels.}
+\item{height}{a positive integer specifying the height of the artwork in pixels.}
 
-\item{side}{whether to turn the artwork on its side.}
+\item{side}{logical. Whether to put the artwork on its side.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
@@ -30,8 +30,9 @@ This function creates an artwork that resembles paints strokes. The algorithm is
 }
 \examples{
 \donttest{
-set.seed(1)
-canvas_strokes(colors = colorPalette('tuscany3'))
+set.seed(16)
+palette <- colorPalette('random', n = 6)
+canvas_strokes(colors = palette)
 }
 
 }

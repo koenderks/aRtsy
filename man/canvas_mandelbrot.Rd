@@ -2,29 +2,29 @@
 % Please edit documentation in R/canvas_mandelbrot.R
 \name{canvas_mandelbrot}
 \alias{canvas_mandelbrot}
-\title{Paint the Mandelbrot Set on Canvas}
+\title{Paint the Mandelbrot Set on a Canvas}
 \usage{
-canvas_mandelbrot(colors, n = 100, xmin = -1.7, xmax = -0.2, ymin = -0.2999, 
-                   ymax = 0.8001, zoom = 1, width = 500, height = 500)
+canvas_mandelbrot(colors, iterations = 100, zoom = 1, xmin = -1.7, xmax = -0.2,
+                   ymin = -0.2999, ymax = 0.8001, width = 500, height = 500)
 }
 \arguments{
-\item{colors}{a character (vector) specifying the colors used for the artwork.}
+\item{colors}{a string or character vector specifying the color(s) used for the artwork.}
 
-\item{n}{the number of iterations.}
+\item{iterations}{a positive integer specifying the number of iterations of the algorithm.}
 
-\item{xmin}{the minimum x value.}
+\item{zoom}{a positive value specifying the amount of zoom to apply.}
 
-\item{xmax}{the maximum x value.}
+\item{xmin}{a value specifying the minimum location on the x-axis.}
 
-\item{ymin}{the minimum y value.}
+\item{xmax}{a value specifying the maximum location on the x-axis.}
 
-\item{ymax}{the maximum y value.}
+\item{ymin}{a value specifying the minimum location on the y-axis.}
 
-\item{zoom}{the amount of zoom to apply.}
+\item{ymax}{a value specifying the maximum location on the y-axis.}
 
-\item{width}{the width of the artwork in pixels.}
+\item{width}{a positive integer specifying the width of the artwork in pixels.}
 
-\item{height}{the height of the artwork in pixels.}
+\item{height}{a positive integer specifying the height of the artwork in pixels.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
@@ -34,10 +34,14 @@ This function draws the Mandelbrot set on the canvas.
 }
 \examples{
 \donttest{
-set.seed(1)
-canvas_mandelbrot(colors = colorPalette('dark1'), n = 100)
+set.seed(8)
+palette <- colorPalette('random', n = 6)
+canvas_mandelbrot(colors = palette, zoom = 10)
 }
 
+}
+\references{
+\url{https://en.wikipedia.org/wiki/Mandelbrot_set}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

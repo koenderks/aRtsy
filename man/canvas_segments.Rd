@@ -2,34 +2,35 @@
 % Please edit documentation in R/canvas_segments.R
 \name{canvas_segments}
 \alias{canvas_segments}
-\title{Paint Line Segments on Canvas}
+\title{Paint Random Line Segments on a Canvas}
 \usage{
 canvas_segments(colors, background = '#fafafa', n = 100, 
                 p = 0.5, H = 0.1, size = 0.2)
 }
 \arguments{
-\item{colors}{a character (vector) specifying the colors used for the line segments.}
+\item{colors}{a string or character vector specifying the color(s) used for the artwork.}
 
 \item{background}{a character specifying the color used for the background.}
 
-\item{n}{the number of line segments to draw.}
+\item{n}{a positive integer specifying the number of line segments to draw.}
 
-\item{p}{probability of drawing a vectical line segment.}
+\item{p}{a value specifying the probability of drawing a vectical line segment.}
 
-\item{H}{scaling factor for the line segments.}
+\item{H}{a positive value specifying the scaling factor for the line segments.}
 
-\item{size}{line width of the segments.}
+\item{size}{a positive value specifying the size of the line segments.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
 }
 \description{
-This function draws many line segments on the canvas.
+This function draws many random line segments on the canvas.
 }
 \examples{
 \donttest{
-set.seed(1)
-canvas_segments(colors = 'black', background = '#fafafa')
+set.seed(13)
+palette <- colorPalette('random', n = 4)
+canvas_segments(colors = palette)
 }
 
 }

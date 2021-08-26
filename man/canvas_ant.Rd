@@ -8,15 +8,15 @@ canvas_ant(colors, background = '#fafafa', iterations = 1e7,
            width = 200, height = 200)
 }
 \arguments{
-\item{colors}{a character (vector) specifying the colors for the ant.}
+\item{colors}{a string or character vector specifying the color(s) used for the artwork.}
 
-\item{background}{a character specifying the color of the background.}
+\item{background}{a character specifying the color used for the background.}
 
-\item{iterations}{the number of iterations of the ant.}
+\item{iterations}{a positive integer specifying the number of iterations of the algorithm.}
 
-\item{width}{the width of the artwork in pixels.}
+\item{width}{a positive integer specifying the width of the artwork in pixels.}
 
-\item{height}{the height of the artwork in pixels.}
+\item{height}{a positive integer specifying the height of the artwork in pixels.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
@@ -26,7 +26,9 @@ This function paints Langton's Ant. Langton's ant is a two-dimensional universal
 }
 \examples{
 \donttest{
-canvas_ant(colors = '#000000', background = '#fafafa')
+set.seed(1)
+palette <- colorPalette('random', n = 10)
+canvas_ant(colors = palette)
 }
 
 }

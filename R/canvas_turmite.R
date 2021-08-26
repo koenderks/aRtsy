@@ -1,16 +1,16 @@
-#' Paint a Turmite on a Canvas
+#' Paint a Random Turmite on a Canvas
 #'
 #' @description This function paints a turmite. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells. The algorithm is simple: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.
 #'
 #' @usage canvas_turmite(color, background = '#fafafa', p = 0.5, iterations = 1e7, 
 #'                width = 1500, height = 1500)
 #'
-#' @param color   	  a character specifying the color used for the turmite.
+#' @param color       a character specifying the color used for the artwork.
 #' @param background  a character specifying the color used for the background.
-#' @param p           the probability of a state switch within the turmite.
-#' @param iterations  the number of iterations of the turmite.
-#' @param width       the width of the artwork in pixels.
-#' @param height      the height of the artwork in pixels.
+#' @param p           a value specifying the probability of a state switch within the turmite.
+#' @param iterations  a positive integer specifying the number of iterations of the algorithm.
+#' @param width       a positive integer specifying the width of the artwork in pixels.
+#' @param height      a positive integer specifying the height of the artwork in pixels.
 #'
 #' @references \url{https://en.wikipedia.org/wiki/Turmite}
 #'
@@ -20,8 +20,8 @@
 #'
 #' @examples
 #' \donttest{
-#' set.seed(1)
-#' canvas_turmite(color = "#000000", background = "#fafafa")
+#' set.seed(17)
+#' canvas_turmite(color = '#000000')
 #' }
 #' 
 #' @keywords artwork canvas
@@ -45,7 +45,7 @@ canvas_turmite <- function(color, background = '#fafafa', p = 0.5, iterations = 
     col <- sample(0:(width-1), size = 1)
   if (k == 0)
     row <- sample(0:(height-1), size = 1) 
-  full_canvas <- iterate_turmite(matrix(0, nrow = height, ncol = width), iterations, row, col, p = p)  
+  full_canvas <- draw_turmite(matrix(0, nrow = height, ncol = width), iterations, row, col, p = p)  
   full_canvas <- reshape2::melt(full_canvas)
   colnames(full_canvas) <- c("y", "x", "z")
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
@@ -54,6 +54,6 @@ canvas_turmite <- function(color, background = '#fafafa', p = 0.5, iterations = 
     ggplot2::scale_fill_gradientn(colours = palette) +
     ggplot2::scale_y_continuous(expand = c(0,0)) + 
     ggplot2::scale_x_continuous(expand = c(0,0))
-  artwork <- themeCanvas(artwork, background = NULL)
+  artwork <- theme_canvas(artwork, background = NULL)
   return(artwork)
 }

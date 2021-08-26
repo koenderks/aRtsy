@@ -46,7 +46,7 @@ canvas_arcs <- function(colors, background = '#fdf5e6', n = 1, nrow = NULL, ncol
       ggplot2::annotate("rect", xmin = 0, xmax = 0.3, ymin = 20, ymax = 270, alpha = 1, colour = NA, fill = colors[3]) +
       ggplot2::ylim(c(0, 360)) + 
       ggplot2::coord_polar(theta = "y", start = starts[i], direction = if (dir == "right") 1 else -1)
-    full_sub_canvas <- themeCanvas(full_sub_canvas, background, margin = 0)
+    full_sub_canvas <- theme_canvas(full_sub_canvas, background, margin = 0)
     full_canvas[[i]] <- full_sub_canvas
   }
   artwork <- do.call("ggarrange", c(full_canvas, nrow = nrow, ncol = ncol))

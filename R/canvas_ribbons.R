@@ -1,10 +1,10 @@
-#' Paint Ribbons on a Canvas
+#' Paint Random Ribbons on a Canvas
 #'
-#' @description This function paints ribbons and (optionally) a triangle in the middle.
+#' @description This function paints random ribbons and (optionally) a triangle in the middle.
 #'
 #' @usage canvas_ribbons(colors, background = '#fdf5e6', triangle = TRUE)
 #'
-#' @param colors      a character (vector) specifying the colors for the ribbons. Colors determine the number of ribbons.
+#' @param colors      a string or character vector specifying the color(s) used for the artwork. The number of colors determines the number of ribbons.
 #' @param background  a character specifying the color of the background.
 #' @param triangle    logical. Whether to draw the triangle that breaks the ribbon polygons.
 #'
@@ -14,8 +14,9 @@
 #'
 #' @examples
 #' \donttest{
-#' set.seed(1)
-#' canvas_ribbons(colors = colorPalette('tuscany1'))
+#' set.seed(12)
+#' palette <- colorPalette('random', n = 4)
+#' canvas_ribbons(colors = palette)
 #' }
 #' 
 #' @keywords artwork canvas
@@ -56,6 +57,6 @@ canvas_ribbons <- function(colors, background = '#fdf5e6', triangle = TRUE) {
     artwork <- artwork + ggplot2::geom_polygon(data = data.frame(x = c(15, 50, 85), y = c(15, 75, 15)), mapping = ggplot2::aes(x = x, y = y), 
                                                fill = NA, color = "black", 
                                                stat = "identity", size = 1)
-  artwork <- themeCanvas(artwork, background)
+  artwork <- theme_canvas(artwork, background)
   return(artwork)
 }

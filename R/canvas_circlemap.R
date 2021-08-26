@@ -1,20 +1,20 @@
 #' Paint a Circle Map on a Canvas
 #'
-#' @description This function is my attempt at a circle map.
+#' @description This function draws a circle map on the canvas.
 #'
-#' @usage canvas_circlemap(colors, x_min = 0, x_max = 12.56, y_min = 0, y_max = 1, 
+#' @usage canvas_circlemap(colors, xmin = 0, xmax = 12.56, ymin = 0, ymax = 1, 
 #'                  iterations = 10, width = 1500, height = 1500)
 #'
-#' @param colors   	  a character (vector) specifying the colors used for the artwork.
-#' @param x_min   	  a numeric value specifying the minimum value for the x-axis.
-#' @param x_max   	  a numeric value specifying the maximum value for the x-axis.
-#' @param y_min   	  a numeric value specifying the minimum value for the y-axis.
-#' @param y_max   	  a numeric value specifying the maximum value for the y-axis.
-#' @param iterations  the number of iterations.
-#' @param colors   	  a character specifying the color used for the function shape.
-#' @param width       the width of the artwork in pixels.
-#' @param height      the height of the artwork in pixels.
+#' @param colors      a string or character vector specifying the color(s) used for the artwork.
+#' @param xmin        a value specifying the minimum location on the x-axis.
+#' @param xmax        a value specifying the maximum location on the x-axis.
+#' @param ymin        a value specifying the minimum location on the y-axis.
+#' @param ymax        a value specifying the maximum location on the y-axis.
+#' @param iterations  a positive integer specifying the number of iterations of the algorithm.
+#' @param width       a positive integer specifying the width of the artwork in pixels.
+#' @param height      a positive integer specifying the height of the artwork in pixels.
 #'
+#' @references \url{https://en.wikipedia.org/wiki/Arnold_tongue}
 #' @references \url{https://linas.org/art-gallery/circle-map/circle-map.html}
 #'
 #' @return A \code{ggplot} object containing the artwork.
@@ -23,7 +23,9 @@
 #'
 #' @examples
 #' \donttest{
-#' canvas_circlemap(colors = colorPalette('tuscany2'))
+#' set.seed(3)
+#' palette <- colorPalette('random', n = 5)
+#' canvas_circlemap(colors = palette)
 #' }
 #' 
 #' @keywords artwork canvas
@@ -32,11 +34,11 @@
 #' @useDynLib aRtsy
 #' @import Rcpp
 
-canvas_circlemap <- function(colors, x_min = 0, x_max = 12.56, y_min = 0, y_max = 1, 
+canvas_circlemap <- function(colors, xmin = 0, xmax = 12.56, ymin = 0, ymax = 1, 
                              iterations = 10, width = 1500, height = 1500) {
   x <- y <- z <- NULL
   canvas <- matrix(1, nrow = height, ncol = width)
-  canvas <- iterate_circlemap(canvas, x_min, x_max, y_min, y_max, iterations)
+  canvas <- draw_circlemap(canvas, xmin, xmax, ymin, ymax, iterations)
   canvas <- (canvas / iterations) / length(colors)
   full_canvas <- reshape2::melt(canvas)
   colnames(full_canvas) <- c("y", "x", "z")
@@ -46,6 +48,6 @@ canvas_circlemap <- function(colors, x_min = 0, x_max = 12.56, y_min = 0, y_max 
     ggplot2::scale_fill_gradientn(colours = colors) +
     ggplot2::scale_y_continuous(expand = c(0,0)) + 
     ggplot2::scale_x_continuous(expand = c(0,0))
-  artwork <- themeCanvas(artwork, background = NULL)
+  artwork <- theme_canvas(artwork, background = NULL)
   return(artwork) 
 }

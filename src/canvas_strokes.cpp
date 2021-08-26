@@ -17,10 +17,10 @@ int neighboring_block(int L, int i)
 }
 
 // [[Rcpp::export]]
-arma::mat iterate_strokes(arma::mat X, 
-                          Rcpp::DataFrame neighbors, 
-                          int s,
-                          double p) {
+arma::mat draw_strokes(arma::mat X, 
+                       Rcpp::DataFrame neighbors, 
+                       int s,
+                       double p) {
   int m = X.n_rows;
   int n = X.n_cols;
   int k = neighbors.nrows();

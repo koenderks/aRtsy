@@ -2,7 +2,7 @@
 #'
 #' @description Add a canvas theme to the plot. The canvas theme by default has no margins and fills any empty canvas with a background color.
 #'
-#' @usage themeCanvas(x, background = '#fafafa', margin = -1.25)
+#' @usage theme_canvas(x, background = '#fafafa', margin = -1.25)
 #'
 #' @param x            a ggplot2 object.
 #' @param background   a character specifying the color used for the empty canvas.
@@ -16,7 +16,7 @@
 #' 
 #' @export
 
-themeCanvas <- function(x, background = '#fafafa', margin = -1.25) {
+theme_canvas <- function(x, background = '#fafafa', margin = -1.25) {
   x <- x + ggplot2::theme(axis.title = ggplot2::element_blank(), 
                           axis.text = ggplot2::element_blank(), 
                           axis.ticks = ggplot2::element_blank(), 

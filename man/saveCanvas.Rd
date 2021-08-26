@@ -15,7 +15,7 @@ saveCanvas(plot, filename, width = 7, height = 7, resolution = 300)
 
 \item{height}{the height of the artwork in cm.}
 
-\item{resolution}{the \code{dpi} of the export.}
+\item{dpi}{the \code{dpi} (dots per inch) of the file.}
 }
 \value{
 No return value, called for saving plots.

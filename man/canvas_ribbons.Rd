@@ -2,12 +2,12 @@
 % Please edit documentation in R/canvas_ribbons.R
 \name{canvas_ribbons}
 \alias{canvas_ribbons}
-\title{Paint Ribbons on a Canvas}
+\title{Paint Random Ribbons on a Canvas}
 \usage{
 canvas_ribbons(colors, background = '#fdf5e6', triangle = TRUE)
 }
 \arguments{
-\item{colors}{a character (vector) specifying the colors for the ribbons. Colors determine the number of ribbons.}
+\item{colors}{a string or character vector specifying the color(s) used for the artwork. The number of colors determines the number of ribbons.}
 
 \item{background}{a character specifying the color of the background.}
 
@@ -17,12 +17,13 @@ canvas_ribbons(colors, background = '#fdf5e6', triangle = TRUE)
 A \code{ggplot} object containing the artwork.
 }
 \description{
-This function paints ribbons and (optionally) a triangle in the middle.
+This function paints random ribbons and (optionally) a triangle in the middle.
 }
 \examples{
 \donttest{
-set.seed(1)
-canvas_ribbons(colors = colorPalette('tuscany1'))
+set.seed(12)
+palette <- colorPalette('random', n = 4)
+canvas_ribbons(colors = palette)
 }
 
 }

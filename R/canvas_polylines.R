@@ -1,18 +1,18 @@
-#' Paint Polygons and Lines on Canvas
+#' Paint Random Polygons and Lines on a Canvas
 #'
 #' @description This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork.
 #'
 #' @usage canvas_polylines(colors, background = '#fafafa', ratio = 0.5, iterations = 1000, 
 #'                  alpha = NULL, size = 0.1, width = 500, height = 500)
 #'
-#' @param colors      a character (vector) specifying the colors used for the strokes.
-#' @param background  a character specifying the color used for the borders.
-#' @param ratio       width of the polygons. Larger ratios cause more overlap.
-#' @param iterations  the number of points for each polygon.
-#' @param alpha       transparency of the polygons. If \code{NULL}, added layers become increasingly more transparent.
-#' @param size        size of the borders.
-#' @param width       the width of the artwork in pixels.
-#' @param height      the height of the artwork in pixels.
+#' @param colors      a string or character vector specifying the color(s) used for the artwork.
+#' @param background  a character specifying the color used for the lines.
+#' @param ratio       a positive value specifying the width of the polygons. Larger ratios cause more overlap.
+#' @param iterations  a positive integer specifying the number of iterations of the algorithm.
+#' @param alpha       a value specifying the transparency of the polygons. If \code{NULL} (the default), added layers become increasingly more transparent.
+#' @param size        a positive value specifying the size of the borders.
+#' @param width       a positive integer specifying the width of the artwork in pixels.
+#' @param height      a positive integer specifying the height of the artwork in pixels.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
@@ -20,8 +20,9 @@
 #'
 #' @examples
 #' \donttest{
-#' set.seed(1)
-#' canvas_polylines(colors = colorPalette('retro2'))
+#' set.seed(11)
+#' palette <- colorPalette('random', n = 10)
+#' canvas_polylines(colors = palette)
 #' }
 #' 
 #' @keywords artwork canvas
@@ -40,7 +41,7 @@ canvas_polylines <- function(colors, background = '#fafafa', ratio = 0.5, iterat
   }
   full_canvas <- data.frame(x = numeric(), y = numeric(), type = character())
   for (i in 1:length(colors)) {
-    mat <- iterate_polylines(matrix(NA, nrow = iterations, ncol = 2), ratio, iterations, height, width)
+    mat <- draw_polylines(matrix(NA, nrow = iterations, ncol = 2), ratio, iterations, height, width)
     polygon <- data.frame(x = mat[, 1], y = mat[, 2], type = rep(colors[i], iterations))
     full_canvas <- rbind(full_canvas, polygon)
   }
@@ -50,6 +51,6 @@ canvas_polylines <- function(colors, background = '#fafafa', ratio = 0.5, iterat
     ggplot2::geom_polygon(color = NA, alpha = rep(alphas, each = iterations)) +
     ggplot2::geom_path(color = background, size = size) +
     ggplot2::scale_fill_manual(values = colors)
-  artwork <- themeCanvas(artwork, background)
+  artwork <- theme_canvas(artwork, background)
   return(artwork)
 }

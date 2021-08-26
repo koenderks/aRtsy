@@ -2,16 +2,16 @@
 % Please edit documentation in R/canvas_blacklight.R
 \name{canvas_blacklight}
 \alias{canvas_blacklight}
-\title{Paint blacklights on a canvas}
+\title{Paint Random Blacklights on a Canvas}
 \usage{
 canvas_blacklight(colors, n = 1000, resolution = 500)
 }
 \arguments{
-\item{colors}{a character (vector) specifying the colors for the artwork.}
+\item{colors}{a string or character vector specifying the color(s) used for the artwork.}
 
-\item{n}{number of data points to generate.}
+\item{n}{a positive integer specifying the number of random data points to generate.}
 
-\item{resolution}{the number of pixels (width and height) of the artwork.}
+\item{resolution}{a positive integer specifying the number of pixels (resolution x resolution) of the artwork.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
@@ -21,10 +21,14 @@ This function creates an artwork from randomly generated data by running a suppo
 }
 \examples{
 \donttest{
-set.seed(1)
-canvas_blacklight(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'))
+set.seed(2)
+palette <- colorPalette('random', n = 5)
+canvas_blacklight(colors = palette)
 }
 
+}
+\references{
+\url{https://en.wikipedia.org/wiki/Support-vector_machine}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

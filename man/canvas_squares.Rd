@@ -2,34 +2,35 @@
 % Please edit documentation in R/canvas_squares.R
 \name{canvas_squares}
 \alias{canvas_squares}
-\title{Paint Squares on a Canvas}
+\title{Paint Random Squares on a Canvas}
 \usage{
 canvas_squares(colors, background = '#000000', cuts = 50, ratio = 1.618,
                width = 100, height = 100)
 }
 \arguments{
-\item{colors}{a character vector specifying the colors used in the squares.}
+\item{colors}{a string or character vector specifying the color(s) used for the artwork.}
 
-\item{background}{a character specifying the color used for the background (borders).}
+\item{background}{a character specifying the color used for the borders of the squares.}
 
-\item{cuts}{the number of cuts to make.}
+\item{cuts}{a positive integer specifying the number of cuts to make.}
 
-\item{ratio}{the \code{1:1} ratio for each cut.}
+\item{ratio}{a value specifying the \code{1:1} ratio for each cut.}
 
-\item{width}{the width of the artwork in pixels.}
+\item{width}{a positive integer specifying the width of the artwork in pixels.}
 
-\item{height}{the height of the artwork in pixels.}
+\item{height}{a positive integer specifying the height of the artwork in pixels.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
 }
 \description{
-This function paints a squares. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.
+This function paints random squares. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.
 }
 \examples{
 \donttest{
-set.seed(6)
-canvas_squares(colors = colorPalette('tuscany1'))
+set.seed(14)
+palette <- colorPalette('random', n = 4)
+canvas_squares(colors = palette)
 }
 
 }
