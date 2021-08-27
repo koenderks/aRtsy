@@ -86,7 +86,7 @@
 <p><em>“If you laugh at a joke, what difference does it make if subsequently you are told that the joke was created by an algorithm?” - Marcus du Sautoy, The Creative Code</em></p>
 <p><code>aRtsy</code> is an attempt at making generative art available for the masses in a simple and standardized format. The package provides various algorithms for creating artworks in <code>ggplot2</code> that incorporate some form of randomness (depending on the set <code>seed</code>). Each type of artwork is implemented in a separate function.</p>
 <p>Good luck hunting for some good <code>seed</code>’s! Feel free to post a comment with your best artworks and the corresponding seed in the <a href="https://github.com/koenderks/aRtsy/discussions">GitHub discussions</a>.</p>
-<p>Contributions to <code>aRtsy</code> are very much appreciated! If you want to add your own type of artwork to the package so that others can create their own unique versions of it, feel free to make a pull request to the <a href="https://github.com/koenderks/aRtsy">GitHub repository</a>. Don’t forget to also adjust <a href="https://github.com/koenderks/aRtsy/blob/development/.github/workflows/generate_artwork.R">generate-artwork.R</a> if you want the artwork to show up in the ‘Artwork of the day’ category and on the twitter feed.</p>
+<p>Contributions to <code>aRtsy</code> are very much appreciated! If you want to add your own type of artwork to the package so that others can create their own unique versions of it, feel free to make a pull request to the <a href="https://github.com/koenderks/aRtsy">GitHub repository</a>. Don’t forget to also adjust <a href="https://github.com/koenderks/aRtsy/blob/development/.github/workflows/generate_artwork.R">generate-artwork.R</a> if you want the artwork to show up in the ‘Artwork of the day’ category and the twitter feed.</p>
 <div id="artwork-of-the-day" class="section level2">
 <h2 class="hasAnchor">
 <a href="#artwork-of-the-day" class="anchor"></a>Artwork of the day</h2>
@@ -172,7 +172,8 @@
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-09.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-08.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-10.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_collatz.html">canvas_collatz()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/canvas_collatz.html">canvas_collatz</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="st">'#000000'</span>, background <span class="op">=</span> <span class="st">'#fafafa'</span>, n <span class="op">=</span> <span class="fl">200</span>, 
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span>
+<span class="fu"><a href="reference/canvas_collatz.html">canvas_collatz</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="st">'#000000'</span>, background <span class="op">=</span> <span class="st">'#fafafa'</span>, n <span class="op">=</span> <span class="fl">200</span>, 
                angle.even <span class="op">=</span> <span class="fl">0.0075</span>, angle.odd <span class="op">=</span> <span class="fl">0.0145</span>, side <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="turmite" class="section level4">
@@ -188,7 +189,7 @@
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-06.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-09.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-08.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_turmite.html">canvas_turmite()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_turmite.html">canvas_turmite</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">'#000000'</span>, background <span class="op">=</span> <span class="st">'#fafafa'</span>, p <span class="op">=</span> <span class="fl">0.5</span>, 
                iterations <span class="op">=</span> <span class="fl">1e7</span>, width <span class="op">=</span> <span class="fl">1500</span>, height <span class="op">=</span> <span class="fl">1500</span><span class="op">)</span></code></pre></div>
 </div>
@@ -205,7 +206,8 @@
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-03.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-02.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-01.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_ant.html">canvas_ant()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/canvas_ant.html">canvas_ant</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="st">'#000000'</span>, background <span class="op">=</span> <span class="st">'#fafafa'</span>, iterations <span class="op">=</span> <span class="fl">1e7</span>,
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span>
+<span class="fu"><a href="reference/canvas_ant.html">canvas_ant</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="st">'#000000'</span>, background <span class="op">=</span> <span class="st">'#fafafa'</span>, iterations <span class="op">=</span> <span class="fl">1e7</span>,
            width <span class="op">=</span> <span class="fl">200</span>, height <span class="op">=</span> <span class="fl">200</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="planets" class="section level4">
@@ -234,7 +236,8 @@
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/stripes/2021-08-23.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/stripes/2021-08-24.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/stripes/2021-08-25.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_stripes.html">canvas_stripes()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/canvas_stripes.html">canvas_stripes</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'navyblue'</span>, <span class="st">'goldenrod'</span>, <span class="st">'firebrick'</span><span class="op">)</span>,
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span>
+<span class="fu"><a href="reference/canvas_stripes.html">canvas_stripes</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'navyblue'</span>, <span class="st">'goldenrod'</span>, <span class="st">'firebrick'</span><span class="op">)</span>,
                n <span class="op">=</span> <span class="fl">300</span>, H <span class="op">=</span> <span class="fl">1</span>, burnin <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
@@ -250,7 +253,7 @@
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-07.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-08.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-06.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_segments.html">canvas_segments()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_segments.html">canvas_segments</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="st">'black'</span>, background <span class="op">=</span> <span class="st">'#fafafa'</span>, n <span class="op">=</span> <span class="fl">100</span>, p <span class="op">=</span> <span class="fl">0.5</span>, H <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="diamonds" class="section level4">
@@ -261,7 +264,7 @@
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-06.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-04.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-05.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_diamonds.html">canvas_diamonds()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">7</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_diamonds.html">canvas_diamonds</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'navyblue'</span>, <span class="st">'goldenrod'</span>, <span class="st">'firebrick'</span><span class="op">)</span>, 
                 background <span class="op">=</span> <span class="st">'#fafafa'</span>, col.line <span class="op">=</span> <span class="st">'black'</span>, radius <span class="op">=</span> <span class="fl">10</span>, alpha <span class="op">=</span> <span class="fl">1</span>, 
                 p <span class="op">=</span> <span class="fl">0.2</span>, width <span class="op">=</span> <span class="fl">500</span>, height <span class="op">=</span> <span class="fl">500</span><span class="op">)</span></code></pre></div>
@@ -286,7 +289,7 @@
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-16.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-15.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-14.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_ribbons.html">canvas_ribbons()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">9</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_ribbons.html">canvas_ribbons</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'firebrick'</span>, <span class="st">'dodgerblue'</span>, <span class="st">'goldenrod'</span><span class="op">)</span>,
                background <span class="op">=</span> <span class="st">'#fdf5e6'</span>, triangle <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 </div>
@@ -311,7 +314,7 @@
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-03-17.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-04-08.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-04-04.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_function.html">canvas_function()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">14</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_function.html">canvas_function</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">'#000000'</span>, background <span class="op">=</span> <span class="st">'#fafafa'</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
@@ -327,7 +330,8 @@
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-17.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-19.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-18.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_mosaic.html">canvas_mosaic()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/canvas_mosaic.html">canvas_mosaic</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'dodgerblue'</span>, <span class="st">'forestgreen'</span>, <span class="st">'white'</span><span class="op">)</span>, 
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<span class="fu"><a href="reference/canvas_mosaic.html">canvas_mosaic</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'dodgerblue'</span>, <span class="st">'forestgreen'</span>, <span class="st">'white'</span><span class="op">)</span>, 
               kmax <span class="op">=</span> <span class="fl">1</span>, n <span class="op">=</span> <span class="fl">1000</span>, resolution <span class="op">=</span> <span class="fl">500</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="forests" class="section level4">
@@ -338,7 +342,8 @@
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-20.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-21.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-19.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_forest.html">canvas_forest()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/canvas_forest.html">canvas_forest</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'dodgerblue'</span>, <span class="st">'forestgreen'</span>, <span class="st">'firebrick'</span>, <span class="st">'goldenrod'</span><span class="op">)</span>, 
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<span class="fu"><a href="reference/canvas_forest.html">canvas_forest</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'dodgerblue'</span>, <span class="st">'forestgreen'</span>, <span class="st">'firebrick'</span>, <span class="st">'goldenrod'</span><span class="op">)</span>, 
               n <span class="op">=</span> <span class="fl">1000</span>, resolution <span class="op">=</span> <span class="fl">500</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="gemstones" class="section level4">
@@ -348,7 +353,8 @@
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-20.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-21.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-22.png" width="270" height="270"></p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/canvas_gemstone.html">canvas_gemstone</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'dodgerblue'</span>, <span class="st">'forestgreen'</span>, <span class="st">'firebrick'</span>, <span class="st">'goldenrod'</span><span class="op">)</span>, 
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<span class="fu"><a href="reference/canvas_gemstone.html">canvas_gemstone</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'dodgerblue'</span>, <span class="st">'forestgreen'</span>, <span class="st">'firebrick'</span>, <span class="st">'goldenrod'</span><span class="op">)</span>, 
                 n <span class="op">=</span> <span class="fl">1000</span>, resolution <span class="op">=</span> <span class="fl">500</span><span class="op">)</span></code></pre></div>
 <p>You can use the <code><a href="reference/canvas_gemstone.html">canvas_gemstone()</a></code> function to make your own artwork using this algorithm.</p>
 </div>
@@ -360,7 +366,8 @@
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-22.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-21.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-20.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_blacklight.html">canvas_blacklight()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/canvas_blacklight.html">canvas_blacklight</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'dodgerblue'</span>, <span class="st">'forestgreen'</span>, <span class="st">'firebrick'</span>, <span class="st">'goldenrod'</span><span class="op">)</span>, 
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<span class="fu"><a href="reference/canvas_blacklight.html">canvas_blacklight</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'dodgerblue'</span>, <span class="st">'forestgreen'</span>, <span class="st">'firebrick'</span>, <span class="st">'goldenrod'</span><span class="op">)</span>, 
                   n <span class="op">=</span> <span class="fl">1000</span>, resolution <span class="op">=</span> <span class="fl">500</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
