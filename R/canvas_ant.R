@@ -41,9 +41,8 @@ canvas_ant <- function(colors, background = '#fafafa', iterations = 1e7,
   pos[2:nrow(pos), ] <- pos[sample(2:nrow(pos)), ] # Mix the possible positions randomly
   pos <- pos[1:length(colors), ] # Select only as many positions as there are colors given by the user
   canvas <- matrix(0, nrow = height, ncol = width) # Empty canvas
-  full_canvas <- draw_ant(canvas, iterations, ceiling(height / 2), ceiling(width / 2), pos[, 1], pos[, 2])  
-  full_canvas <- reshape2::melt(full_canvas) # Convert 2D matrix to data frame
-  colnames(full_canvas) <- c("y", "x", "z")
+  full_canvas <- draw_ant(canvas, iterations, ceiling(height / 2), ceiling(width / 2), pos[, 1], pos[, 2]) # Go into c++ to draw the ant
+  full_canvas <- unraster(full_canvas, names = c('y', 'x', 'z')) # Convert 2D matrix to data frame
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 
     ggplot2::coord_equal() +

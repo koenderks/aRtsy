@@ -82,8 +82,7 @@ canvas_planet <- function(colors, threshold = 4, iterations = 200, starprob = 0.
                           lightright = lightright)
     colorsused <- colorsused + length(colors[[i]]) 
   }
-  full_canvas <- reshape2::melt(canvas)
-  colnames(full_canvas) <- c("y", "x", "z")
+  full_canvas <- unraster(canvas, names = c('y', 'x', 'z')) # Convert 2D matrix to data frame
   full_palette <- c('#000000', '#787878', '#fafafa', unlist(colors))
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 

@@ -36,8 +36,7 @@ canvas_stripes <- function(colors, n = 300, H = 1, burnin = 1) {
     x <- c(0, cumsum(x))
     mat[i, ] <- rev(x[-(1:burnin)])
   }
-  canvas <- reshape2::melt(mat)
-  colnames(canvas) <- c("x", "y", "z")
+  canvas <- unraster(mat, names = c('x', 'y', 'z')) # Convert 2D matrix to data frame
   artwork <- ggplot2::ggplot(data = canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE) +
     ggplot2::scale_fill_gradientn(colours = colors)

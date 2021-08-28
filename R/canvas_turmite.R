@@ -45,9 +45,8 @@ canvas_turmite <- function(color, background = '#fafafa', p = 0.5, iterations = 
     col <- sample(0:(width-1), size = 1)
   if (k == 0)
     row <- sample(0:(height-1), size = 1) 
-  full_canvas <- draw_turmite(matrix(0, nrow = height, ncol = width), iterations, row, col, p = p)  
-  full_canvas <- reshape2::melt(full_canvas)
-  colnames(full_canvas) <- c("y", "x", "z")
+  full_canvas <- draw_turmite(matrix(0, nrow = height, ncol = width), iterations, row, col, p = p)
+  full_canvas <- unraster(full_canvas, names = c('y', 'x', 'z')) # Convert 2D matrix to data frame
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 
     ggplot2::coord_equal() +

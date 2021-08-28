@@ -43,8 +43,7 @@ canvas_squares <- function(colors, background = '#000000', cuts = 50, ratio = 1.
   colnames(neighbors) <- c("x", "y")
   canvas <- matrix(0, nrow = height, ncol = width)  
   full_canvas <- draw_squares(canvas, neighbors, length(colors), cuts, ratio)
-  full_canvas <- reshape2::melt(full_canvas)
-  colnames(full_canvas) <- c("y", "x", "z")
+  full_canvas <- unraster(full_canvas, names = c('x', 'y', 'z')) # Convert 2D matrix to data frame
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = FALSE, alpha = 1) + 
     ggplot2::coord_equal() +
