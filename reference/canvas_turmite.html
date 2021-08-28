@@ -128,14 +128,14 @@
     <p>This function paints a turmite. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells. The algorithm is simple: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>canvas_turmite</span><span class='op'>(</span><span class='va'>color</span>, background <span class='op'>=</span> <span class='st'>'#fafafa'</span>, p <span class='op'>=</span> <span class='fl'>0.5</span>, iterations <span class='op'>=</span> <span class='fl'>1e7</span>, 
-               width <span class='op'>=</span> <span class='fl'>1500</span>, height <span class='op'>=</span> <span class='fl'>1500</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>canvas_turmite</span><span class='op'>(</span><span class='va'>colors</span>, background <span class='op'>=</span> <span class='st'>'#fafafa'</span>, p <span class='op'>=</span> <span class='fl'>0.5</span>, iterations <span class='op'>=</span> <span class='fl'>1e7</span>, 
+               width <span class='op'>=</span> <span class='fl'>1500</span>, height <span class='op'>=</span> <span class='fl'>1500</span>, noise <span class='op'>=</span> <span class='st'>'none'</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>color</th>
+      <th>colors</th>
       <td><p>a character specifying the color used for the artwork.</p></td>
     </tr>
     <tr>
@@ -158,6 +158,10 @@
       <th>height</th>
       <td><p>a positive integer specifying the height of the artwork in pixels.</p></td>
     </tr>
+    <tr>
+      <th>noise</th>
+      <td><p>a character specifying the type of noise to add to the turmite. Can be one of <code>none</code> (the default), <code>knn</code> for k-nearest neighbors noise, <code>svm</code> for support vector machine noise and <code>rf</code> for random forest noise.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -173,7 +177,8 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
 <span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>17</span><span class='op'>)</span>
-<span class='fu'>canvas_turmite</span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>'#000000'</span><span class='op'>)</span>
+<span class='va'>palette</span> <span class='op'>&lt;-</span> <span class='fu'><a href='colorPalette.html'>colorPalette</a></span><span class='op'>(</span><span class='st'>'dark2'</span><span class='op'>)</span>
+<span class='fu'>canvas_turmite</span><span class='op'>(</span>colors <span class='op'>=</span> <span class='va'>palette</span>, p <span class='op'>=</span> <span class='fl'>0</span>, noise <span class='op'>=</span> <span class='st'>"knn"</span><span class='op'>)</span>
 </div><div class='img'><img src='canvas_turmite-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># }</span>
 
 </div></pre>
