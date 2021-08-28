@@ -143,8 +143,8 @@ You can use the `canvas_turmite()` function to make your own artwork using this 
 
 ```r
 set.seed(3)
-canvas_turmite(color = '#000000', background = '#fafafa', p = 0.5, 
-               iterations = 1e7, width = 1500, height = 1500)
+canvas_turmite(colors = '#000000', background = '#fafafa', p = 0.5, 
+               iterations = 1e7, width = 1500, height = 1500, noise = 'none')
 ```
 
 #### Langton's ant

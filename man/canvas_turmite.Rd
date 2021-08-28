@@ -8,7 +8,7 @@ canvas_turmite(colors, background = '#fafafa', p = 0.5, iterations = 1e7,
                width = 1500, height = 1500, noise = 'none')
 }
 \arguments{
-\item{colors}{a character specifying the color used for the artwork.}
+\item{colors}{a character specifying the color used for the artwork. The number of colors determines the number of turmites.}
 
 \item{background}{a character specifying the color used for the background.}
 

@@ -5,7 +5,7 @@
 #' @usage canvas_turmite(colors, background = '#fafafa', p = 0.5, iterations = 1e7, 
 #'                width = 1500, height = 1500, noise = 'none')
 #'
-#' @param colors       a character specifying the color used for the artwork.
+#' @param colors       a character specifying the color used for the artwork. The number of colors determines the number of turmites.
 #' @param background  a character specifying the color used for the background.
 #' @param p           a value specifying the probability of a state switch within the turmite.
 #' @param iterations  a positive integer specifying the number of iterations of the algorithm.
