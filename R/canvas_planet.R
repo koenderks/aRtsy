@@ -7,7 +7,7 @@
 #'               radius = NULL, center.x = NULL, center.y = NULL, 
 #'               light.right = TRUE, width = 1500, height = 1500)
 #'
-#' @param colors   	  a character specifying the colors used for the planet(s). Can also be a list where each entry is a vector of colors for each planet.
+#' @param colors      a character specifying the colors used for a single planet. Can also be a list where each entry is a vector of colors for a planet.
 #' @param threshold   a character specifying the threshold for a color take.
 #' @param starprob    a value specyfing the probability of drawing a star in outer space.
 #' @param fade        a value specifying the amount of fading to apply.
@@ -48,9 +48,14 @@ canvas_planet <- function(colors, threshold = 4, iterations = 200, starprob = 0.
                           radius = NULL, center.x = NULL, center.y = NULL, light.right = TRUE,
                           width = 1500, height = 1500) {
   x <- y <- z <- NULL
-  palette <- list()
-  for (i in 1:length(colors)) {
-    palette[[i]] <- c('#000000', '#787878', '#fafafa', colors[[i]])
+  if (is.list(colors)) {
+    palette <- list()
+    for (i in 1:length(colors)) {
+      palette[[i]] <- c('#000000', '#787878', '#fafafa', colors[[i]])
+    }
+  } else {
+    palette <- list(c('#000000', '#787878', '#fafafa', colors))
+    colors <- list(colors)
   }
   canvas <- matrix(0, nrow = height, ncol = width)
   if (is.null(radius))

@@ -47,9 +47,9 @@ canvas_turmite <- function(colors, background = '#fafafa', p = 0.5, iterations =
       col <- sample(0:(width-1), size = 1)
     if (k == 0)
       row <- sample(0:(height-1), size = 1)
-    turmite <- canvas + (i - 1) + draw_turmite(matrix(0, nrow = height, ncol = width), iterations, row, col, p = p)
+    turmite <- draw_turmite(matrix(0, nrow = height, ncol = width), iterations, row, col, p = p)
     if (noise != "none") {
-      turmite[which(turmite == (i - 1))] <- NA
+      turmite[which(turmite == 0)] <- NA
       turmite <- turmite - noise(dims = c(height, width), type = noise)
       turmite[which(is.na(turmite))] <- 0
     }
