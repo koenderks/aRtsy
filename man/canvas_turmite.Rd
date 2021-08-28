@@ -4,11 +4,11 @@
 \alias{canvas_turmite}
 \title{Paint a Random Turmite on a Canvas}
 \usage{
-canvas_turmite(color, background = '#fafafa', p = 0.5, iterations = 1e7, 
-               width = 1500, height = 1500)
+canvas_turmite(colors, background = '#fafafa', p = 0.5, iterations = 1e7, 
+               width = 1500, height = 1500, noise = 'none')
 }
 \arguments{
-\item{color}{a character specifying the color used for the artwork.}
+\item{colors}{a character specifying the color used for the artwork.}
 
 \item{background}{a character specifying the color used for the background.}
 
@@ -19,6 +19,8 @@ canvas_turmite(color, background = '#fafafa', p = 0.5, iterations = 1e7,
 \item{width}{a positive integer specifying the width of the artwork in pixels.}
 
 \item{height}{a positive integer specifying the height of the artwork in pixels.}
+
+\item{noise}{a character specifying the type of noise to add to the turmite. Can be one of \code{none} (the default), \code{knn} for k-nearest neighbors noise, \code{svm} for support vector machine noise and \code{rf} for random forest noise.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
@@ -29,7 +31,8 @@ This function paints a turmite. A turmite is a Turing machine which has an orien
 \examples{
 \donttest{
 set.seed(17)
-canvas_turmite(color = '#000000')
+palette <- colorPalette('dark2')
+canvas_turmite(colors = palette, p = 0, noise = "knn")
 }
 
 }
