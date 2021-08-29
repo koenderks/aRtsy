@@ -148,6 +148,23 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// c_noise_knn
+std::vector<double> c_noise_knn(arma::rowvec x, arma::rowvec y, arma::rowvec z, arma::rowvec newx, arma::rowvec newy, int k, int n);
+RcppExport SEXP _aRtsy_c_noise_knn(SEXP xSEXP, SEXP ySEXP, SEXP zSEXP, SEXP newxSEXP, SEXP newySEXP, SEXP kSEXP, SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::rowvec >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type y(ySEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type z(zSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type newx(newxSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type newy(newySEXP);
+    Rcpp::traits::input_parameter< int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(c_noise_knn(x, y, z, newx, newy, k, n));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_aRtsy_draw_ant", (DL_FUNC) &_aRtsy_draw_ant, 6},
@@ -159,6 +176,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_aRtsy_draw_squares", (DL_FUNC) &_aRtsy_draw_squares, 5},
     {"_aRtsy_draw_strokes", (DL_FUNC) &_aRtsy_draw_strokes, 4},
     {"_aRtsy_draw_turmite", (DL_FUNC) &_aRtsy_draw_turmite, 5},
+    {"_aRtsy_c_noise_knn", (DL_FUNC) &_aRtsy_c_noise_knn, 7},
     {NULL, NULL, 0}
 };
 

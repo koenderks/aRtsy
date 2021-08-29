@@ -5,7 +5,7 @@
 \title{Paint Random Squares on a Canvas}
 \usage{
 canvas_squares(colors, background = '#000000', cuts = 50, ratio = 1.618,
-               width = 100, height = 100)
+               width = 200, height = 200, noise = FALSE)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
@@ -19,6 +19,8 @@ canvas_squares(colors, background = '#000000', cuts = 50, ratio = 1.618,
 \item{width}{a positive integer specifying the width of the artwork in pixels.}
 
 \item{height}{a positive integer specifying the height of the artwork in pixels.}
+
+\item{noise}{logical. Whether to add k-nn noise to the artwork. Caution, adding noise increases computation time significantly in large dimensions.}
 }
 \value{
 A \code{ggplot} object containing the artwork.

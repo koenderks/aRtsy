@@ -37,3 +37,7 @@ draw_turmite <- function(X, iters, row, col, p) {
     .Call('_aRtsy_draw_turmite', PACKAGE = 'aRtsy', X, iters, row, col, p)
 }
 
+c_noise_knn <- function(x, y, z, newx, newy, k, n) {
+    .Call('_aRtsy_c_noise_knn', PACKAGE = 'aRtsy', x, y, z, newx, newy, k, n)
+}
+

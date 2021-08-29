@@ -3,7 +3,7 @@
 #' @description This function paints a turmite. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells. The algorithm is simple: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.
 #'
 #' @usage canvas_turmite(colors, background = '#fafafa', p = 0.5, iterations = 1e7, 
-#'                width = 1500, height = 1500, noise = 'none')
+#'                width = 1500, height = 1500, noise = FALSE)
 #'
 #' @param colors       a character specifying the color used for the artwork. The number of colors determines the number of turmites.
 #' @param background  a character specifying the color used for the background.
@@ -11,7 +11,7 @@
 #' @param iterations  a positive integer specifying the number of iterations of the algorithm.
 #' @param width       a positive integer specifying the width of the artwork in pixels.
 #' @param height      a positive integer specifying the height of the artwork in pixels.
-#' @param noise       a character specifying the type of noise to add to the turmite. Can be one of \code{none} (the default), \code{knn} for k-nearest neighbors noise, \code{svm} for support vector machine noise and \code{rf} for random forest noise.
+#' @param noise       logical. Whether to add k-nn noise to the artwork. Caution, adding noise increases computation time significantly in large dimensions.
 #'
 #' @references \url{https://en.wikipedia.org/wiki/Turmite}
 #'
@@ -23,7 +23,7 @@
 #' \donttest{
 #' set.seed(17)
 #' palette <- colorPalette('dark2')
-#' canvas_turmite(colors = palette, p = 0, noise = "knn")
+#' canvas_turmite(colors = palette, p = 0, noise = TRUE)
 #' }
 #' 
 #' @keywords artwork canvas
@@ -33,7 +33,7 @@
 #' @import Rcpp
 
 canvas_turmite <- function(colors, background = '#fafafa', p = 0.5, iterations = 1e7, 
-                           width = 1500, height = 1500, noise = 'none') {
+                           width = 1500, height = 1500, noise = FALSE) {
   x <- y <- z <- NULL
   if (length(background) > 1)
     stop("This artwork can only take one background value.")
@@ -48,9 +48,9 @@ canvas_turmite <- function(colors, background = '#fafafa', p = 0.5, iterations =
     if (k == 0)
       row <- sample(0:(height-1), size = 1)
     turmite <- draw_turmite(matrix(0, nrow = height, ncol = width), iterations, row, col, p = p)
-    if (noise != "none") {
+    if (noise) {
       turmite[which(turmite == 0)] <- NA
-      turmite <- turmite - noise(dims = c(height, width), type = noise)
+      turmite <- turmite - noise(dims = c(height, width))
       turmite[which(is.na(turmite))] <- 0
     }
     canvas <- canvas + turmite

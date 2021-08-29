@@ -144,7 +144,7 @@ You can use the `canvas_turmite()` function to make your own artwork using this 
 ```r
 set.seed(3)
 canvas_turmite(colors = '#000000', background = '#fafafa', p = 0.5, 
-               iterations = 1e7, width = 1500, height = 1500, noise = 'none')
+               iterations = 1e7, width = 1500, height = 1500, noise = FALSE)
 ```
 
 #### Langton's ant
@@ -266,7 +266,7 @@ You can use the `canvas_squares()` function to make your own artwork using this 
 ```r
 set.seed(6)
 canvas_squares(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'),
-               cuts = 50, ratio = 1.618, width = 100, height = 100)
+               cuts = 50, ratio = 1.618, width = 200, height = 200, noise = FALSE)
 ```
 
 #### Ribbons
