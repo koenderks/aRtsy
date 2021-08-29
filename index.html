@@ -133,6 +133,7 @@
 <li><a href="#mosaics"><code>canvas_mosaic()</code></a></li>
 <li><a href="#forests"><code>canvas_forest()</code></a></li>
 <li><a href="#gemstones"><code>canvas_gemstone()</code></a></li>
+<li><a href="#noise"><code>canvas_noise()</code></a></li>
 <li><a href="#blacklights"><code>canvas_blacklight()</code></a></li>
 </ul>
 <p><em>The Static collection</em></p>
@@ -358,6 +359,16 @@
                 n <span class="op">=</span> <span class="fl">1000</span>, resolution <span class="op">=</span> <span class="fl">500</span><span class="op">)</span></code></pre></div>
 <p>You can use the <code><a href="reference/canvas_gemstone.html">canvas_gemstone()</a></code> function to make your own artwork using this algorithm.</p>
 </div>
+<div id="noise" class="section level4">
+<h4 class="hasAnchor">
+<a href="#noise" class="anchor"></a>Noise</h4>
+<p>Based on the very same principle as described in the artwork above in this next type of artwork. Howerever, it produces slightly different pictures.</p>
+<p align="center">
+<img src="https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-29.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-28.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-27.png" width="270" height="270"></p>
+<p>You can use the <code><a href="reference/canvas_noise.html">canvas_noise()</a></code> function to make your own artwork using this algorithm.</p>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/canvas_noise.html">canvas_noise</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'firebrick'</span>, <span class="st">'goldenrod'</span>, <span class="st">'navyblue'</span><span class="op">)</span>, k <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></code></pre></div>
+</div>
 <div id="blacklights" class="section level4">
 <h4 class="hasAnchor">
 <a href="#blacklights" class="anchor"></a>Blacklights</h4>
@@ -365,7 +376,7 @@
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-22.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-21.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-20.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_blacklight.html">canvas_blacklight()</a></code> function to make your own artwork using this algorithm.</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_blacklight.html">canvas_blacklight</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'dodgerblue'</span>, <span class="st">'forestgreen'</span>, <span class="st">'firebrick'</span>, <span class="st">'goldenrod'</span><span class="op">)</span>, 
                   n <span class="op">=</span> <span class="fl">1000</span>, resolution <span class="op">=</span> <span class="fl">500</span><span class="op">)</span></code></pre></div>
@@ -382,7 +393,7 @@
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-08.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-09.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-07.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_mandelbrot.html">canvas_mandelbrot()</a></code> function to make your own artwork using this algorithm.</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/canvas_mandelbrot.html">canvas_mandelbrot</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'firebrick'</span>, <span class="st">'goldenrod'</span>, <span class="st">'navyblue'</span><span class="op">)</span>, zoom <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="circle-maps" class="section level4">
@@ -392,7 +403,7 @@
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22b.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22c.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22a.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_circlemap.html">canvas_circlemap()</a></code> function to make your own artwork using this algorithm.</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/canvas_circlemap.html">canvas_circlemap</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'firebrick'</span>, <span class="st">'goldenrod'</span>, <span class="st">'navyblue'</span><span class="op">)</span>,
                  x_min <span class="op">=</span> <span class="fl">0</span>, x_max <span class="op">=</span> <span class="fl">12.56</span>, y_min <span class="op">=</span> <span class="fl">0</span>, y_max <span class="op">=</span> <span class="fl">1</span>, 
                  iterations <span class="op">=</span> <span class="fl">10</span>, width <span class="op">=</span> <span class="fl">1500</span>, height <span class="op">=</span> <span class="fl">1500</span><span class="op">)</span></code></pre></div>
@@ -405,20 +416,6 @@
 <p>The function <code><a href="reference/colorPalette.html">colorPalette()</a></code> can be used to generate a random color palette, or pick a pre-implemented color palette. Currently, the color palettes displayed below are implemented in <code>aRtsy</code>. Feel free to suggest or add a new palette!</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/man/figures/colors.svg"></p>
-</div>
-<div id="noise" class="section level2">
-<h2 class="hasAnchor">
-<a href="#noise" class="anchor"></a>Noise</h2>
-<p>You can use all sorts of techniques to generate noise. Currently, the <code><a href="reference/noise.html">noise()</a></code> function can generate a matrix of random noise values on the basis of a k-nearest neighbors algorithm. Below you see examples of <code>k = 1</code> (top left), <code>k = 10</code> (top middle), and <code>k = 50</code> (top right). Some functions in the package actually have a <code>noise</code> argument which adds this type of noise to the artwork.</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/grDevices/as.raster.html">as.raster</a></span><span class="op">(</span><span class="fu"><a href="reference/noise.html">noise</a></span><span class="op">(</span>dims <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">100</span><span class="op">)</span>, k <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/koenderks/aRtsy/raw/development/png/noise/noise1.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/noise/noise10.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/noise/noise50.png" width="270" height="270"></p>
-<p align="center">
-<img src="https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-29.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-28.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-27.png" width="270" height="270"></p>
-<p>Sometimes, simply plotting this noise can produce nice views. You can use the <code><a href="reference/canvas_noise.html">canvas_noise()</a></code> function to make your own artwork using this algorithm.</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/canvas_noise.html">canvas_noise</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'firebrick'</span>, <span class="st">'goldenrod'</span>, <span class="st">'navyblue'</span><span class="op">)</span>, k <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
 
