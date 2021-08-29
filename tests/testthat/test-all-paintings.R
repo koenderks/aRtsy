@@ -111,3 +111,9 @@ test_that("canvas_stripes()", {
   artwork <- aRtsy::canvas_stripes(colors = c("black", "gray", "white"))
   expect_equal(!is.null(artwork), TRUE)
 })
+
+test_that("canvas_noise()", {
+  set.seed(1)
+  artwork <- aRtsy::canvas_noise(colors = c("black", "gray", "white"))
+  expect_equal(!is.null(artwork), TRUE)
+})

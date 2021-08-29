@@ -70,6 +70,7 @@ library(aRtsy)
 * [`canvas_mosaic()`](#mosaics)
 * [`canvas_forest()`](#forests)
 * [`canvas_gemstone()`](#gemstones)
+* [`canvas_noise()`](#noise)
 * [`canvas_blacklight()`](#blacklights)
 
 *The Static collection*
@@ -381,6 +382,22 @@ canvas_gemstone(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'
 
 You can use the `canvas_gemstone()` function to make your own artwork using this algorithm.
 
+#### Noise
+
+Based on the very same principle as described in the artwork above in this next type of artwork. Howerever, it produces slightly different pictures.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-29.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-28.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-27.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_noise()` function to make your own artwork using this algorithm.
+
+```r
+canvas_noise(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'), k = 10)
+```
+
 #### Blacklights
 
 This artwork is inspired by a supervised machine learning method called support vector machines. It applies the same principle as described above, but uses a different predictive algorithm to fill in the color of the pixels.
@@ -444,29 +461,3 @@ The function `colorPalette()` can be used to generate a random color palette, or
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/man/figures/colors.svg'>
 </p>
-
-## Noise
-
-You can use all sorts of techniques to generate noise. Currently, the `noise()` function can generate a matrix of random noise values on the basis of a k-nearest neighbors algorithm. Below you see examples of `k = 1` (top left), `k = 10` (top middle), and `k = 50` (top right). Some functions in the package actually have a `noise` argument which adds this type of noise to the artwork.
-
-```r
-plot(as.raster(noise(dims = c(100, 100), k = 10)))
-```
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/noise1.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/noise10.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/noise50.png' width='270' height='270'>
-</p>
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-29.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-28.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-27.png' width='270' height='270'>
-</p>
-
-Sometimes, simply plotting this noise can produce nice views. You can use the `canvas_noise()` function to make your own artwork using this algorithm.
-
-```r
-canvas_noise(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'), k = 10)
-```
