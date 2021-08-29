@@ -447,7 +447,7 @@ The function `colorPalette()` can be used to generate a random color palette, or
 
 ## Noise
 
-You can use all sorts of techniques to generate noise. Currently, the `noise()` function can generate a matrix of random noise values on the basis of a k-nearest neighbors algorithm. Below you see examples of `k = 1`, `k = 10`, and `k = 50`. Some function in the package actually have a `noise` argument which applies this type of noise to the artwork.
+You can use all sorts of techniques to generate noise. Currently, the `noise()` function can generate a matrix of random noise values on the basis of a k-nearest neighbors algorithm. Below you see examples of `k = 1` (top left), `k = 10` (top middle), and `k = 50` (top right). Some functions in the package actually have a `noise` argument which adds this type of noise to the artwork.
 
 ```r
 plot(as.raster(noise(dims = c(100, 100), k = 10)))
@@ -465,7 +465,7 @@ plot(as.raster(noise(dims = c(100, 100), k = 10)))
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-27.png' width='270' height='270'>
 </p>
 
-You can use the `canvas_noise()` function to make your own artwork using this algorithm.
+Sometimes, simply plotting this noise can produce nice views. You can use the `canvas_noise()` function to make your own artwork using this algorithm.
 
 ```r
 canvas_noise(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'), k = 10)
