@@ -70,7 +70,7 @@ library(aRtsy)
 * [`canvas_mosaic()`](#mosaics)
 * [`canvas_forest()`](#forests)
 * [`canvas_gemstone()`](#gemstones)
-* [`canvas_noise()`](#noise)
+* [`canvas_nebula()`](#Nebula)
 * [`canvas_blacklight()`](#blacklights)
 
 *The Static collection*
@@ -382,9 +382,9 @@ canvas_gemstone(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'
 
 You can use the `canvas_gemstone()` function to make your own artwork using this algorithm.
 
-#### Noise
+#### Nebula
 
-Based on the very same principle as described in the artwork above in this next type of artwork. Howerever, it produces slightly different pictures.
+Based on the very same principle as described in the artwork above in this next type of artwork. Howerever, it produces slightly different pictures. Sometimes these artworks can resemble nebulas in outer space.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-29.png' width='270' height='270'>
@@ -392,10 +392,10 @@ Based on the very same principle as described in the artwork above in this next 
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-27.png' width='270' height='270'>
 </p>
 
-You can use the `canvas_noise()` function to make your own artwork using this algorithm.
+You can use the `canvas_nebula()` function to make your own artwork using this algorithm.
 
 ```r
-canvas_noise(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'), k = 10)
+canvas_nebula(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'), k = 10)
 ```
 
 #### Blacklights

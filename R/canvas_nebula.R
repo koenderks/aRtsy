@@ -1,8 +1,8 @@
-#' Paint Noise on a Canvas
+#' Paint a Nebula on a Canvas
 #'
-#' @description This function creates an artwork from randomly generated noise. Currently it is only capable of generating k-nearest neighbors noise.
+#' @description This function creates an artwork from randomly generated noise. Currently it is only capable of generating k-nearest neighbors noise. Sometimes, the noise resembles a nebula.
 #'
-#' @usage canvas_noise(colors, k = 50, n = 500, resolution = 2000)
+#' @usage canvas_nebula(colors, k = 50, n = 500, resolution = 2000)
 #'
 #' @param colors      a string or character vector specifying the color(s) used for the artwork.
 #' @param k           a positive integer specifying the number of nearest neighbors to consider.
@@ -17,14 +17,14 @@
 #' \donttest{
 #' set.seed(6)
 #' palette <- colorPalette('random', n = 5)
-#' canvas_noise(colors = palette)
+#' canvas_nebula(colors = palette)
 #' }
 #' 
 #' @keywords artwork canvas
 #'
 #' @export
 
-canvas_noise <- function(colors, k = 50, n = 500, resolution = 2000) {
+canvas_nebula <- function(colors, k = 50, n = 500, resolution = 2000) {
   x <- y <- z <- NULL
   dims <- c(resolution, resolution)
   canvas <- noise(dims = dims, k, n)
