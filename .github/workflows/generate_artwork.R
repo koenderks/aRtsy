@@ -9,7 +9,7 @@ seed <- as.numeric(Sys.Date())
 set.seed(seed)
 
 # Select artwork type
-type <- sample(1:18, size = 1)
+type <- sample(1:19, size = 1)
 
 artwork <- switch(type,
                   '1' = canvas_turmite(color = colorPalette('random', sample(6:10, size = 1)), background = "#050505", p = runif(1, 0.2, 0.5), width = 2000, height = 2000, noise = TRUE),
@@ -29,6 +29,7 @@ artwork <- switch(type,
                   '15' = canvas_stripes(colors = colorPalette("random", sample(10:20, size = 1)), burnin = sample(1:200, size = 1)),
                   '16' = canvas_gemstone(colors = colorPalette('random', n = sample(15:25, size = 1)), resolution = 1500),
                   '17' = canvas_blacklight(colors = colorPalette('random', n = sample(2:10, size = 1)), resolution = 1500),
-                  '18' = canvas_ribbons(colors = colorPalette('random', sample(3:6, size = 1)), background = colorPalette('random', 1)))
+                  '18' = canvas_ribbons(colors = colorPalette('random', sample(3:6, size = 1)), background = colorPalette('random', 1)),
+                  '19' = aRtsy:::canvas_noise(colorPalette('random', sample(6:10, size = 1)), k = sample(50:100, size = 1)))
 
 saveCanvas(artwork, filename, width = ifelse(type == 13, yes = NA, no = 7), height = ifelse(type == 13, yes = NA, no = 7))
