@@ -459,10 +459,14 @@ plot(as.raster(noise(dims = c(100, 100), k = 10)))
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/noise50.png' width='270' height='270'>
 </p>
 
-You can also use the `canvas_noise()` function to make your own artwork using this algorithm.
-
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-29.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-28.png' width='270' height='270'>
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-27.png' width='270' height='270'>
 </p>
+
+You can use the `canvas_noise()` function to make your own artwork using this algorithm.
+
+```r
+canvas_noise(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'), k = 10)
+```
