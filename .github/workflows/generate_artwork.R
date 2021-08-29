@@ -24,12 +24,12 @@ artwork <- switch(type,
                   '10' = canvas_diamonds(colors = colorPalette('random', sample(4:8, size = 1)), background = sample(c("#fafafa", "black", colorPalette('random', 1)), size = 1), col.line = sample(c(NA, sample(c("#fafafa", "black", colorPalette('random', 1)), size = 1)), size = 1), radius = sample(c(1, 2, 2.5, 5, 7, 7.5), size = 1), p = sample(seq(0.1, 0.7, 0.1), size = 1)),
                   '11' = canvas_segments(colors = colorPalette('random', sample(1:8, size = 1)), background = colorPalette('random', 1), n = sample(c(100, 200, 300, 400, 500), size = 1), H = 0.1, p = sample(c(0.3, 0.4, 0.5, 0.6, 0.7), size = 1)),
                   '12' = canvas_mandelbrot(colors = colorPalette('random', n = 5), zoom = sample(seq(4, 21, by = 0.5), 1)),
-                  '13' = canvas_collatz(colors = colorPalette('random', n = 5), background = sample(c("black", "#fdf5e6", "#fafafa"), size = 1), n = sample(200:2000, size = 1), side = sample(c(TRUE, FALSE), size = 1)),
+                  '13' = canvas_noise(colorPalette('random', sample(6:10, size = 1)), k = sample(50:100, size = 1)),
                   '14' = canvas_mosaic(colors = colorPalette('random', n = sample(3:10, size = 1)), maxk = sample(c(1, 2, 3, 10, 50, 100), size = 1), resolution = 1500),
                   '15' = canvas_stripes(colors = colorPalette("random", sample(10:20, size = 1)), burnin = sample(1:200, size = 1)),
                   '16' = canvas_gemstone(colors = colorPalette('random', n = sample(15:25, size = 1)), resolution = 1500),
                   '17' = canvas_blacklight(colors = colorPalette('random', n = sample(2:10, size = 1)), resolution = 1500),
                   '18' = canvas_ribbons(colors = colorPalette('random', sample(3:6, size = 1)), background = colorPalette('random', 1)),
-                  '19' = aRtsy:::canvas_noise(colorPalette('random', sample(6:10, size = 1)), k = sample(50:100, size = 1)))
+                  '19' = canvas_collatz(colors = colorPalette('random', n = 5), background = sample(c("black", "#fdf5e6", "#fafafa"), size = 1), n = sample(200:2000, size = 1), side = sample(c(TRUE, FALSE), size = 1)))
 
 saveCanvas(artwork, filename, width = ifelse(type == 13, yes = NA, no = 7), height = ifelse(type == 13, yes = NA, no = 7))

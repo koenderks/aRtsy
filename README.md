@@ -444,3 +444,25 @@ The function `colorPalette()` can be used to generate a random color palette, or
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/man/figures/colors.svg'>
 </p>
+
+## Noise
+
+You can use all sorts of techniques to generate noise. Currently, the `noise()` function can generate a matrix of random noise values on the basis of a k-nearest neighbors algorithm. Below you see examples of `k = 1`, `k = 10`, and `k = 50`. Some function in the package actually have a `noise` argument which applies this type of noise to the artwork.
+
+```r
+plot(as.raster(noise(dims = c(100, 100), k = 10)))
+```
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/noise1.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/noise10.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/noise50.png' width='270' height='270'>
+</p>
+
+You can also use the `canvas_noise()` function to make your own artwork using this algorithm.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-29.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-28.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/noise/2021-08-27.png' width='270' height='270'>
+</p>
