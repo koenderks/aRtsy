@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • aRtsy</title>
+<title>Generate Noise — noise • aRtsy</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Generate Noise — noise" />
+<meta property="og:description" content="This function generates noise. Currently it is only capable of generating k-nearest neighbors noise." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -66,7 +67,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -116,180 +117,46 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Generate Noise</h1>
+    <small class="dont-index">Source: <a href='https://github.com/koenderks/aRtsy/blob/master/R/noise.R'><code>R/noise.R</code></a></small>
+    <div class="hidden name"><code>noise.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>This function generates noise. Currently it is only capable of generating k-nearest neighbors noise.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>noise</span><span class='op'>(</span><span class='va'>dims</span>, k <span class='op'>=</span> <span class='fl'>20</span>, n <span class='op'>=</span> <span class='fl'>100</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="aRtsy.html">aRtsy-package</a></code> </p>
-        </td>
-        <td><p>aRtsy --- Generative Art using <code>ggplot2</code></p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_ant.html">canvas_ant()</a></code> </p>
-        </td>
-        <td><p>Paint Langton's Ant on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_blacklight.html">canvas_blacklight()</a></code> </p>
-        </td>
-        <td><p>Paint Random Blacklights on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_circlemap.html">canvas_circlemap()</a></code> </p>
-        </td>
-        <td><p>Paint a Circle Map on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_collatz.html">canvas_collatz()</a></code> </p>
-        </td>
-        <td><p>Paint Random Collatz Sequences on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_diamonds.html">canvas_diamonds()</a></code> </p>
-        </td>
-        <td><p>Paint Random Diamonds on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_forest.html">canvas_forest()</a></code> </p>
-        </td>
-        <td><p>Paint a Random Forest on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_function.html">canvas_function()</a></code> </p>
-        </td>
-        <td><p>Paint A Random Function on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_gemstone.html">canvas_gemstone()</a></code> </p>
-        </td>
-        <td><p>Paint a Random Gemstone on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_mandelbrot.html">canvas_mandelbrot()</a></code> </p>
-        </td>
-        <td><p>Paint the Mandelbrot Set on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_mosaic.html">canvas_mosaic()</a></code> </p>
-        </td>
-        <td><p>Paint a Random Mosaic on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_noise.html">canvas_noise()</a></code> </p>
-        </td>
-        <td><p>Paint Noise on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_planet.html">canvas_planet()</a></code> </p>
-        </td>
-        <td><p>Paint a Random Planet on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_polylines.html">canvas_polylines()</a></code> </p>
-        </td>
-        <td><p>Paint Random Polygons and Lines on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_ribbons.html">canvas_ribbons()</a></code> </p>
-        </td>
-        <td><p>Paint Random Ribbons on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_segments.html">canvas_segments()</a></code> </p>
-        </td>
-        <td><p>Paint Random Line Segments on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_squares.html">canvas_squares()</a></code> </p>
-        </td>
-        <td><p>Paint Random Squares on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_stripes.html">canvas_stripes()</a></code> </p>
-        </td>
-        <td><p>Paint Random Stripes on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_strokes.html">canvas_strokes()</a></code> </p>
-        </td>
-        <td><p>Paint Random Strokes on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="canvas_turmite.html">canvas_turmite()</a></code> </p>
-        </td>
-        <td><p>Paint a Random Turmite on a Canvas</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="colorPalette.html">colorPalette()</a></code> </p>
-        </td>
-        <td><p>Color palette generator.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="noise.html">noise()</a></code> </p>
-        </td>
-        <td><p>Generate Noise</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="saveCanvas.html">saveCanvas()</a></code> </p>
-        </td>
-        <td><p>Save a Canvas to an External Device.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="theme_canvas.html">theme_canvas()</a></code> </p>
-        </td>
-        <td><p>Canvas Theme for ggplot2 Objects</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>dims</th>
+      <td><p>a vector containing the two dimenstions of the output.</p></td>
+    </tr>
+    <tr>
+      <th>k</th>
+      <td><p>a positive integer specifying the number of nearest neighbors to consider.</p></td>
+    </tr>
+    <tr>
+      <th>n</th>
+      <td><p>a positive integer specifying the number of random data points to generate.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A matrix containing the noise values.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Koen Derks, <a href='mailto:koen-derks@hotmail.com'>koen-derks@hotmail.com</a></p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
