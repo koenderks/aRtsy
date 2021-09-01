@@ -180,7 +180,7 @@
 <div id="turmite" class="section level4">
 <h4 class="hasAnchor">
 <a href="#turmite" class="anchor"></a>Turmite</h4>
-<p>According to <a href="https://en.wikipedia.org/wiki/Turmite">wikipedia</a>, a turmite is <em>“a Turing machine which has an orientation in addition to a current state and a”tape" that consists of an infinite two-dimensional grid of cells"</em>. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in <code>aRtsy</code> is slightly modified so that the turmite does not go off the canvas, but instead bounces back onto the canvas.</p>
+<p>According to <a href="https://en.wikipedia.org/wiki/Turmite">Wikipedia</a>, a turmite is <em>“a Turing machine which has an orientation in addition to a current state and a”tape" that consists of an infinite two-dimensional grid of cells"</em>. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in <code>aRtsy</code> is slightly modified so that the turmite does not go off the canvas, but instead bounces back onto the canvas.</p>
 <ol>
 <li>Turn on the spot (left, right, up, or down),</li>
 <li>Change the color of the block,</li>
@@ -197,7 +197,7 @@
 <div id="langtons-ant" class="section level4">
 <h4 class="hasAnchor">
 <a href="#langtons-ant" class="anchor"></a>Langton’s ant</h4>
-<p>According to <a href="https://en.wikipedia.org/wiki/Langtons_ant">wikipedia</a>, Langton’s ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below. Beware, the problem (or blessing) of Langton’s ant is that it always moves off the canvas…</p>
+<p>According to <a href="https://en.wikipedia.org/wiki/Langtons_ant">Wikipedia</a>, Langton’s ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below. Beware, the problem (or blessing) of Langton’s ant is that it always moves off the canvas…</p>
 <ol>
 <li>On a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block.</li>
 <li>On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block.</li>
@@ -350,7 +350,7 @@
 <div id="gemstones" class="section level4">
 <h4 class="hasAnchor">
 <a href="#gemstones" class="anchor"></a>Gemstones</h4>
-<p>Returning to the previously mentioned k-nearest neighbors algorithm, this artwork uses a continuous response variable instread of a categorical one. The resulting pattern can sometimes resemble a gemstone.</p>
+<p>Returning to the previously mentioned k-nearest neighbors algorithm, this artwork uses a continuous response variable instead of a categorical one. The resulting pattern can sometimes resemble a gemstone.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-20.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-21.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-22.png" width="270" height="270"></p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
@@ -362,7 +362,7 @@
 <div id="nebula" class="section level4">
 <h4 class="hasAnchor">
 <a href="#nebula" class="anchor"></a>Nebula</h4>
-<p>Based on the very same principle as described in the artwork above is this next type of artwork. Howerever, it produces slightly different pictures as it uses different code to create a form of k-nearest neighbors noise. Some of these artworks can resemble nebulas in outer space.</p>
+<p>Based on the very same principle as described in the artwork above is this next type of artwork. However, it produces slightly different pictures as it uses different code to create a form of k-nearest neighbors noise. Some of these artworks can resemble nebulas in outer space.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/nebulas/2021-08-29.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/nebulas/2021-08-28.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/nebulas/2021-08-27.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_nebula.html">canvas_nebula()</a></code> function to make your own artwork using this algorithm.</p>
@@ -399,7 +399,7 @@
 <div id="circle-maps" class="section level4">
 <h4 class="hasAnchor">
 <a href="#circle-maps" class="anchor"></a>Circle maps</h4>
-<p>This type of artwork is based on the concept of an <a href="https://en.wikipedia.org/wiki/Arnold_tongue">Arnold tongue</a>. According to wikipedia, Arnold tongues <em>“are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters”</em>.</p>
+<p>This type of artwork is based on the concept of an <a href="https://en.wikipedia.org/wiki/Arnold_tongue">Arnold tongue</a>. According to Wikipedia, Arnold tongues <em>“are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters”</em>.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22b.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22c.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22a.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_circlemap.html">canvas_circlemap()</a></code> function to make your own artwork using this algorithm.</p>
