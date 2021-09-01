@@ -128,7 +128,7 @@ canvas_collatz(colors = '#000000', background = '#fafafa', n = 200,
 
 #### Turmite
 
-According to [wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *"a Turing machine which has an orientation in addition to a current state and a "tape" that consists of an infinite two-dimensional grid of cells"*. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in `aRtsy` is slightly modified so that the turmite does not go off the canvas, but instead bounces back onto the canvas.
+According to [Wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *"a Turing machine which has an orientation in addition to a current state and a "tape" that consists of an infinite two-dimensional grid of cells"*. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in `aRtsy` is slightly modified so that the turmite does not go off the canvas, but instead bounces back onto the canvas.
 
 1. Turn on the spot (left, right, up, or down),
 2. Change the color of the block,
@@ -150,7 +150,7 @@ canvas_turmite(colors = '#000000', background = '#fafafa', p = 0.5,
 
 #### Langton's ant
 
-According to [wikipedia](https://en.wikipedia.org/wiki/Langtons_ant), Langton's ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below. Beware, the problem (or blessing) of Langton's ant is that it always moves off the canvas...
+According to [Wikipedia](https://en.wikipedia.org/wiki/Langtons_ant), Langton's ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below. Beware, the problem (or blessing) of Langton's ant is that it always moves off the canvas...
 
 1. On a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block.
 1. On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block.
@@ -366,7 +366,7 @@ canvas_forest(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'),
 
 #### Gemstones
 
-Returning to the previously mentioned k-nearest neighbors algorithm, this artwork uses a continuous response variable instread of a categorical one. The resulting pattern can sometimes resemble a gemstone.
+Returning to the previously mentioned k-nearest neighbors algorithm, this artwork uses a continuous response variable instead of a categorical one. The resulting pattern can sometimes resemble a gemstone.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-20.png' width='270' height='270'>
@@ -384,7 +384,7 @@ You can use the `canvas_gemstone()` function to make your own artwork using this
 
 #### Nebula
 
-Based on the very same principle as described in the artwork above is this next type of artwork. Howerever, it produces slightly different pictures as it uses different code to create a form of k-nearest neighbors noise. Some of these artworks can resemble nebulas in outer space.
+Based on the very same principle as described in the artwork above is this next type of artwork. However, it produces slightly different pictures as it uses different code to create a form of k-nearest neighbors noise. Some of these artworks can resemble nebulas in outer space.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/nebulas/2021-08-29.png' width='270' height='270'>
@@ -438,7 +438,7 @@ canvas_mandelbrot(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'
 
 #### Circle maps
 
-This type of artwork is based on the concept of an [Arnold tongue](https://en.wikipedia.org/wiki/Arnold_tongue). According to wikipedia, Arnold tongues *"are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters"*.
+This type of artwork is based on the concept of an [Arnold tongue](https://en.wikipedia.org/wiki/Arnold_tongue). According to Wikipedia, Arnold tongues *"are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters"*.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22b.png' width='270' height='270'>

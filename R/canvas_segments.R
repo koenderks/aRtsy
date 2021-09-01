@@ -8,7 +8,7 @@
 #' @param colors      a string or character vector specifying the color(s) used for the artwork.
 #' @param background  a character specifying the color used for the background.
 #' @param n           a positive integer specifying the number of line segments to draw.
-#' @param p           a value specifying the probability of drawing a vectical line segment.
+#' @param p           a value specifying the probability of drawing a vertical line segment.
 #' @param H           a positive value specifying the scaling factor for the line segments.
 #' @param size        a positive value specifying the size of the line segments.
 #'

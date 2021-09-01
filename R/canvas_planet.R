@@ -9,7 +9,7 @@
 #'
 #' @param colors      a character specifying the colors used for a single planet. Can also be a list where each entry is a vector of colors for a planet.
 #' @param threshold   a character specifying the threshold for a color take.
-#' @param starprob    a value specyfing the probability of drawing a star in outer space.
+#' @param starprob    a value specifying the probability of drawing a star in outer space.
 #' @param fade        a value specifying the amount of fading to apply.
 #' @param iterations  a positive integer specifying the number of iterations of the algorithm.
 #' @param radius      a numeric (vector) specifying the radius of the planet(s).

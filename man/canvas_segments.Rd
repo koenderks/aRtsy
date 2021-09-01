@@ -14,7 +14,7 @@ canvas_segments(colors, background = '#fafafa', n = 100,
 
 \item{n}{a positive integer specifying the number of line segments to draw.}
 
-\item{p}{a value specifying the probability of drawing a vectical line segment.}
+\item{p}{a value specifying the probability of drawing a vertical line segment.}
 
 \item{H}{a positive value specifying the scaling factor for the line segments.}
 

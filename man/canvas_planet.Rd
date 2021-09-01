@@ -16,7 +16,7 @@ canvas_planet(colors, threshold = 4, iterations = 200,
 
 \item{iterations}{a positive integer specifying the number of iterations of the algorithm.}
 
-\item{starprob}{a value specyfing the probability of drawing a star in outer space.}
+\item{starprob}{a value specifying the probability of drawing a star in outer space.}
 
 \item{fade}{a value specifying the amount of fading to apply.}
 
