@@ -384,7 +384,7 @@ You can use the `canvas_gemstone()` function to make your own artwork using this
 
 #### Nebula
 
-Based on the very same principle as described in the artwork above in this next type of artwork. Howerever, it produces slightly different pictures. Sometimes these artworks can resemble nebulas in outer space.
+Based on the very same principle as described in the artwork above is this next type of artwork. Howerever, it produces slightly different pictures as it uses different code to create a form of k-nearest neighbors noise. Some of these artworks can resemble nebulas in outer space.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/nebulas/2021-08-29.png' width='270' height='270'>
