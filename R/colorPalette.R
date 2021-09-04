@@ -29,9 +29,7 @@ colorPalette <- function(name, n = NULL) {
   if (name == 'random') {
     if (is.null(n))
       stop("The random palette requires that you specify how many colors should be selected.")
-    palette <- character(n)
-    for (i in 1:n)
-      palette[i] <- grDevices::rgb(stats::runif(1, 0, 255), stats::runif(1, 0, 255), stats::runif(1, 0, 255), maxColorValue = 255)
+    palette <- grDevices::rgb(stats::runif(n, 0, 255), stats::runif(n, 0, 255), stats::runif(n, 0, 255), maxColorValue = 255)
   } else {
     palette <- switch(name,
                       "blackwhite" = c('black', 'white'),
