@@ -128,9 +128,9 @@
     <p>This function paints one or multiple planets and uses a cellular automata to fill their surfaces.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>canvas_planet</span><span class='op'>(</span><span class='va'>colors</span>, threshold <span class='op'>=</span> <span class='fl'>4</span>, iterations <span class='op'>=</span> <span class='fl'>200</span>, 
+    <pre class="usage"><span class='fu'>canvas_planet</span><span class='op'>(</span><span class='va'>colors</span>, threshold <span class='op'>=</span> <span class='fl'>4</span>, iterations <span class='op'>=</span> <span class='fl'>200</span>,
               starprob <span class='op'>=</span> <span class='fl'>0.01</span>, fade <span class='op'>=</span> <span class='fl'>0.2</span>,
-              radius <span class='op'>=</span> <span class='cn'>NULL</span>, center.x <span class='op'>=</span> <span class='cn'>NULL</span>, center.y <span class='op'>=</span> <span class='cn'>NULL</span>, 
+              radius <span class='op'>=</span> <span class='cn'>NULL</span>, center.x <span class='op'>=</span> <span class='cn'>NULL</span>, center.y <span class='op'>=</span> <span class='cn'>NULL</span>,
               light.right <span class='op'>=</span> <span class='cn'>TRUE</span>, width <span class='op'>=</span> <span class='fl'>1500</span>, height <span class='op'>=</span> <span class='fl'>1500</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -196,13 +196,17 @@
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
 <span class='co'># Sun behind Earth and Moon</span>
 <span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span>
-<span class='va'>colors</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"khaki1"</span>, <span class='st'>"lightcoral"</span>, <span class='st'>"lightsalmon"</span><span class='op'>)</span>,
-               <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"dodgerblue"</span>, <span class='st'>"forestgreen"</span>, <span class='st'>"white"</span><span class='op'>)</span>, 
-               <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"gray"</span>, <span class='st'>"darkgray"</span>, <span class='st'>"beige"</span><span class='op'>)</span><span class='op'>)</span>
-<span class='fu'>canvas_planet</span><span class='op'>(</span><span class='va'>colors</span>, radius <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>800</span>, <span class='fl'>400</span>, <span class='fl'>150</span><span class='op'>)</span>, 
-              center.x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>500</span>, <span class='fl'>1100</span><span class='op'>)</span>,
-              center.y <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1400</span>, <span class='fl'>500</span>, <span class='fl'>1000</span><span class='op'>)</span>, 
-              starprob <span class='op'>=</span> <span class='fl'>0.005</span><span class='op'>)</span>
+<span class='va'>colors</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
+  <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"khaki1"</span>, <span class='st'>"lightcoral"</span>, <span class='st'>"lightsalmon"</span><span class='op'>)</span>,
+  <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"dodgerblue"</span>, <span class='st'>"forestgreen"</span>, <span class='st'>"white"</span><span class='op'>)</span>,
+  <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"gray"</span>, <span class='st'>"darkgray"</span>, <span class='st'>"beige"</span><span class='op'>)</span>
+<span class='op'>)</span>
+<span class='fu'>canvas_planet</span><span class='op'>(</span><span class='va'>colors</span>,
+  radius <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>800</span>, <span class='fl'>400</span>, <span class='fl'>150</span><span class='op'>)</span>,
+  center.x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>500</span>, <span class='fl'>1100</span><span class='op'>)</span>,
+  center.y <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1400</span>, <span class='fl'>500</span>, <span class='fl'>1000</span><span class='op'>)</span>,
+  starprob <span class='op'>=</span> <span class='fl'>0.005</span>
+<span class='op'>)</span>
 </div><div class='img'><img src='canvas_planet-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># }</span>
 
 </div></pre>
