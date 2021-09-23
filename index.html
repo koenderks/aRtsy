@@ -121,6 +121,7 @@
 </ul>
 <p><em>The Geometric collection</em></p>
 <ul>
+<li><a href="#watercolors"><code>canvas_watercolor()</code></a></li>
 <li><a href="#segments"><code>canvas_segments()</code></a></li>
 <li><a href="#diamonds"><code>canvas_diamonds()</code></a></li>
 <li><a href="#squares-and-rectangles"><code>canvas_squares()</code></a></li>
@@ -246,6 +247,17 @@
 <h3 class="hasAnchor">
 <a href="#the-geometric-collection" class="anchor"></a>The Geometric collection</h3>
 <p>The Geometric collection mostly implements algorithms that draw a geometric shape and apply a random color to it.</p>
+<div id="watercolors" class="section level4">
+<h4 class="hasAnchor">
+<a href="#watercolors" class="anchor"></a>Watercolors</h4>
+<p>This function creates watercolors on a canvas and implements the algorithm from <a href="https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints">Tyler Hobbs</a>.</p>
+<p align="center">
+<img src="https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-23.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-22.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-21.png" width="270" height="270"></p>
+<p>You can use the <code><a href="reference/canvas_watercolors.html">canvas_watercolors()</a></code> function to make your own artwork using this algorithm.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<span class="fu"><a href="reference/canvas_watercolors.html">canvas_watercolors</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'navyblue'</span>, <span class="st">'goldenrod'</span>, <span class="st">'firebrick'</span><span class="op">)</span>, background <span class="op">=</span> <span class="st">'#ebd5b3'</span><span class="op">)</span></code></pre></div>
+</div>
 <div id="segments" class="section level4">
 <h4 class="hasAnchor">
 <a href="#segments" class="anchor"></a>Segments</h4>
@@ -253,20 +265,9 @@
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-07.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-08.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-06.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_segments.html">canvas_segments()</a></code> function to make your own artwork using this algorithm.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_segments.html">canvas_segments</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="st">'black'</span>, background <span class="op">=</span> <span class="st">'#fafafa'</span>, n <span class="op">=</span> <span class="fl">100</span>, p <span class="op">=</span> <span class="fl">0.5</span>, H <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></code></pre></div>
-</div>
-<div id="watercolors" class="section level4">
-<h4 class="hasAnchor">
-<a href="#watercolors" class="anchor"></a>Watercolors</h4>
-<p>This function creates watercolors on a canvas.</p>
-<p align="center">
-<img src="https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-23.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-22.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-21.png" width="270" height="270"></p>
-<p>You can use the <code><a href="reference/canvas_watercolors.html">canvas_watercolors()</a></code> function to make your own artwork using this algorithm.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
-<span class="fu"><a href="reference/canvas_watercolors.html">canvas_watercolors</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'forestgreen'</span>, <span class="st">'navyblue'</span>, <span class="st">'goldenrod'</span>, <span class="st">'firebrick'</span><span class="op">)</span>, background <span class="op">=</span> <span class="st">'#ebd5b3'</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="diamonds" class="section level4">
 <h4 class="hasAnchor">
