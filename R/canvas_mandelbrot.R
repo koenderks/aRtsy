@@ -24,10 +24,10 @@
 #' @examples
 #' \donttest{
 #' set.seed(8)
-#' palette <- colorPalette('random', n = 6)
+#' palette <- colorPalette("random", n = 6)
 #' canvas_mandelbrot(colors = palette, zoom = 10)
 #' }
-#' 
+#'
 #' @keywords artwork canvas
 #'
 #' @export
@@ -36,7 +36,7 @@ canvas_mandelbrot <- function(colors, iterations = 100, zoom = 1, xmin = -1.7, x
                               ymin = -0.2999, ymax = 0.8001, width = 500, height = 500) {
   x <- y <- z <- NULL
   if (zoom > 1) {
-    for(i in 1:(zoom - 1)) {
+    for (i in 1:(zoom - 1)) {
       xmin_tmp <- xmin
       xmax_tmp <- xmax
       ymin_tmp <- ymin
@@ -49,21 +49,21 @@ canvas_mandelbrot <- function(colors, iterations = 100, zoom = 1, xmin = -1.7, x
   }
   x <- seq(xmin, xmax, length.out = width)
   y <- seq(ymin, ymax, length.out = height)
-  c <- outer(x, y * 1i, FUN = '+')
+  c <- outer(x, y * 1i, FUN = "+")
   z <- matrix(0, nrow = length(x), ncol = length(y))
   canvas <- matrix(0, nrow = length(x), ncol = length(y))
-  for (rep in 1:iterations) { 
+  for (rep in 1:iterations) {
     index <- which(Mod(z) < 2)
     z[index] <- z[index]^2 + c[index]
     canvas[index] <- canvas[index] + 1
   }
-  full_canvas <- unraster(canvas, names = c('x', 'y', 'z')) # Convert 2D matrix to data frame
+  full_canvas <- unraster(canvas, names = c("x", "y", "z")) # Convert 2D matrix to data frame
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
-    ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 
+    ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) +
     ggplot2::coord_equal() +
     ggplot2::scale_fill_gradientn(colours = colors) +
-    ggplot2::scale_y_continuous(expand = c(0,0)) + 
-    ggplot2::scale_x_continuous(expand = c(0,0))
+    ggplot2::scale_y_continuous(expand = c(0, 0)) +
+    ggplot2::scale_x_continuous(expand = c(0, 0))
   artwork <- theme_canvas(artwork, background = NULL)
   return(artwork)
 }

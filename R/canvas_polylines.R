@@ -2,7 +2,7 @@
 #'
 #' @description This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork.
 #'
-#' @usage canvas_polylines(colors, background = '#fafafa', ratio = 0.5, iterations = 1000, 
+#' @usage canvas_polylines(colors, background = '#fafafa', ratio = 0.5, iterations = 1000,
 #'                  alpha = NULL, size = 0.1, width = 500, height = 500)
 #'
 #' @param colors      a string or character vector specifying the color(s) used for the artwork.
@@ -21,17 +21,17 @@
 #' @examples
 #' \donttest{
 #' set.seed(11)
-#' palette <- colorPalette('random', n = 10)
+#' palette <- colorPalette("random", n = 10)
 #' canvas_polylines(colors = palette)
 #' }
-#' 
+#'
 #' @keywords artwork canvas
 #'
 #' @export
 #' @useDynLib aRtsy
 #' @import Rcpp
 
-canvas_polylines <- function(colors, background = '#fafafa', ratio = 0.5, iterations = 1000, 
+canvas_polylines <- function(colors, background = "#fafafa", ratio = 0.5, iterations = 1000,
                              alpha = NULL, size = 0.1, width = 500, height = 500) {
   x <- y <- type <- NULL
   if (is.null(alpha)) {
@@ -47,7 +47,7 @@ canvas_polylines <- function(colors, background = '#fafafa', ratio = 0.5, iterat
   }
   artwork <- ggplot2::ggplot(data = full_canvas, mapping = ggplot2::aes(x = x, y = y, fill = type)) +
     ggplot2::xlim(c(0, width)) +
-    ggplot2::ylim(c(0, height)) + 
+    ggplot2::ylim(c(0, height)) +
     ggplot2::geom_polygon(color = NA, alpha = rep(alphas, each = iterations)) +
     ggplot2::geom_path(color = background, size = size) +
     ggplot2::scale_fill_manual(values = colors)

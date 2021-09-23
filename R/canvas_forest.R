@@ -15,10 +15,10 @@
 #' @examples
 #' \donttest{
 #' set.seed(6)
-#' palette <- colorPalette('random', n = 5)
+#' palette <- colorPalette("random", n = 5)
 #' canvas_forest(colors = palette)
 #' }
-#' 
+#'
 #' @keywords artwork canvas
 #'
 #' @export
@@ -26,9 +26,11 @@
 
 canvas_forest <- function(colors, n = 1000, resolution = 500) {
   x <- y <- z <- NULL # Global variables
-  train <- data.frame(x = stats::runif(n, 0, 1), # Create a training data set with x (predictor), y (predictor), z (response)
-                      y = stats::runif(n, 0, 1), 
-                      z = factor(sample(colors, size = n, replace = T)))
+  train <- data.frame(
+    x = stats::runif(n, 0, 1), # Create a training data set with x (predictor), y (predictor), z (response)
+    y = stats::runif(n, 0, 1),
+    z = factor(sample(colors, size = n, replace = T))
+  )
   fit <- randomForest::randomForest(formula = z ~ x + y, data = train) # Fit random forest model to training data
   sequence <- seq(0, 1, length = resolution) # Create a sequence of pixels
   canvas <- expand.grid(sequence, sequence) # Create all combinations of pixels

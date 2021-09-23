@@ -16,10 +16,10 @@
 #' @examples
 #' \donttest{
 #' set.seed(6)
-#' palette <- colorPalette('random', n = 5)
+#' palette <- colorPalette("random", n = 5)
 #' canvas_nebula(colors = palette)
 #' }
-#' 
+#'
 #' @keywords artwork canvas
 #'
 #' @export
@@ -28,7 +28,7 @@ canvas_nebula <- function(colors, k = 50, n = 500, resolution = 2000) {
   x <- y <- z <- NULL
   dims <- c(resolution, resolution)
   canvas <- noise(dims = dims, k, n)
-  canvas <- unraster(canvas, c('x', 'y', 'z'))
+  canvas <- unraster(canvas, c("x", "y", "z"))
   artwork <- ggplot2::ggplot(data = canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster() +
     ggplot2::scale_fill_gradientn(colors = colors)

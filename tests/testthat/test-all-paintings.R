@@ -1,6 +1,6 @@
 test_that("colorPalette()", {
   set.seed(1)
-  palette <- aRtsy::colorPalette(name = 'random', n = 4)
+  palette <- aRtsy::colorPalette(name = "random", n = 4)
   expect_equal(length(palette), 4)
 })
 

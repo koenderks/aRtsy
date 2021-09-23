@@ -2,7 +2,7 @@
 #'
 #' @description This function draws the Collatz conjecture on the canvas.
 #'
-#' @usage canvas_collatz(colors, background = '#fafafa', n = 200, 
+#' @usage canvas_collatz(colors, background = '#fafafa', n = 200,
 #'                 angle.even = 0.0075, angle.odd = 0.0145, side = FALSE)
 #'
 #' @param colors     a string or character vector specifying the color(s) used for the artwork.
@@ -21,33 +21,38 @@
 #' @examples
 #' \donttest{
 #' set.seed(4)
-#' palette <- colorPalette('random', n = 5)
+#' palette <- colorPalette("random", n = 5)
 #' canvas_collatz(colors = palette, n = 100)
 #' }
-#' 
+#'
 #' @keywords artwork canvas
 #'
 #' @export
 
-canvas_collatz <- function(colors, background = '#fafafa', n = 200, 
+canvas_collatz <- function(colors, background = "#fafafa", n = 200,
                            angle.even = 0.0075, angle.odd = 0.0145, side = FALSE) {
   x <- y <- z <- NULL
-  canvas <- data.frame(x = numeric(), 
-                       y = numeric(), 
-                       col = numeric(), 
-                       z = numeric())
-  if (length(n) == 1)
+  canvas <- data.frame(
+    x = numeric(),
+    y = numeric(),
+    col = numeric(),
+    z = numeric()
+  )
+  if (length(n) == 1) {
     n <- sample(1:1000000, size = n, replace = F)
+  }
   for (i in n) {
     series <- rev(get_collatz_sequence(i))
     line <- matrix(0, nrow = length(series), ncol = 2)
     line <- draw_collatz(line, series, angle.even, angle.odd)
-    line <- data.frame(x = line[, 1], 
-                       y = line[, 2], 
-                       col = rep(sample(colors, size = 1), nrow(line)), 
-                       z = i, 
-                       size = nrow(line), 
-                       alpha = nrow(line))
+    line <- data.frame(
+      x = line[, 1],
+      y = line[, 2],
+      col = rep(sample(colors, size = 1), nrow(line)),
+      z = i,
+      size = nrow(line),
+      alpha = nrow(line)
+    )
     canvas <- rbind(canvas, line)
   }
   canvas$z <- as.factor(canvas$z)
@@ -57,8 +62,9 @@ canvas_collatz <- function(colors, background = '#fafafa', n = 200,
     ggplot2::geom_path(size = canvas$size, color = canvas$col, alpha = canvas$alpha, lineend = "round") +
     ggplot2::xlim(range(canvas$x)) +
     ggplot2::ylim(range(canvas$y))
-  if (side)
+  if (side) {
     artwork <- artwork + ggplot2::coord_flip()
+  }
   artwork <- theme_canvas(artwork, background)
   return(artwork)
 }

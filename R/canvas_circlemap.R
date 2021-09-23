@@ -2,7 +2,7 @@
 #'
 #' @description This function draws a circle map on the canvas.
 #'
-#' @usage canvas_circlemap(colors, xmin = 0, xmax = 12.56, ymin = 0, ymax = 1, 
+#' @usage canvas_circlemap(colors, xmin = 0, xmax = 12.56, ymin = 0, ymax = 1,
 #'                  iterations = 10, width = 1500, height = 1500)
 #'
 #' @param colors      a string or character vector specifying the color(s) used for the artwork.
@@ -24,29 +24,29 @@
 #' @examples
 #' \donttest{
 #' set.seed(3)
-#' palette <- colorPalette('random', n = 5)
+#' palette <- colorPalette("random", n = 5)
 #' canvas_circlemap(colors = palette)
 #' }
-#' 
+#'
 #' @keywords artwork canvas
 #'
 #' @export
 #' @useDynLib aRtsy
 #' @import Rcpp
 
-canvas_circlemap <- function(colors, xmin = 0, xmax = 12.56, ymin = 0, ymax = 1, 
+canvas_circlemap <- function(colors, xmin = 0, xmax = 12.56, ymin = 0, ymax = 1,
                              iterations = 10, width = 1500, height = 1500) {
   x <- y <- z <- NULL
   canvas <- matrix(1, nrow = height, ncol = width)
   canvas <- draw_circlemap(canvas, xmin, xmax, ymin, ymax, iterations)
   canvas <- (canvas / iterations) / length(colors)
-  full_canvas <- unraster(canvas, names = c('y', 'x', 'z')) # Convert 2D matrix to data frame
+  full_canvas <- unraster(canvas, names = c("y", "x", "z")) # Convert 2D matrix to data frame
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
-    ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) + 
+    ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) +
     ggplot2::coord_equal() +
     ggplot2::scale_fill_gradientn(colours = colors) +
-    ggplot2::scale_y_continuous(expand = c(0,0)) + 
-    ggplot2::scale_x_continuous(expand = c(0,0))
+    ggplot2::scale_y_continuous(expand = c(0, 0)) +
+    ggplot2::scale_x_continuous(expand = c(0, 0))
   artwork <- theme_canvas(artwork, background = NULL)
-  return(artwork) 
+  return(artwork)
 }
