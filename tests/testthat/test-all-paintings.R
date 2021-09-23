@@ -117,3 +117,9 @@ test_that("canvas_nebula()", {
   artwork <- aRtsy::canvas_nebula(colors = c("black", "gray", "white"))
   expect_equal(!is.null(artwork), TRUE)
 })
+
+test_that("canvas_watercolors()", {
+  set.seed(1)
+  artwork <- aRtsy::canvas_watercolors(colors = c("black", "gray", "white"))
+  expect_equal(!is.null(artwork), TRUE)
+})

@@ -63,6 +63,7 @@ library(aRtsy)
 * [`canvas_squares()`](#squares-and-rectangles)
 * [`canvas_ribbons()`](#ribbons)
 * [`canvas_polylines()`](#polylines)
+* [`canvas_watercolors()`](#watercolors)
 * [`canvas_function()`](#functions)
 
 *The Supervised collection*
@@ -305,6 +306,23 @@ set.seed(1)
 canvas_polylines(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), 
                  background = '#fafafa', ratio = 0.5, iterations = 1000, 
                  alpha = NULL, size = 0.1, width = 500, height = 500)
+```
+
+#### Watercolors
+
+This artwork is an implementation of [this](https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints) excellent blog post by Tyler Hobbs. It creates an artwork full of watercolors.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-23.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-22.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-21.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_watercolors()` function to make your own artwork using this algorithm.
+
+```r
+set.seed(1)
+canvas_watercolors(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'), background = '#ebd5b3')
 ```
 
 #### Functions

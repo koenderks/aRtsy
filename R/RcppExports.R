@@ -37,6 +37,10 @@ draw_turmite <- function(X, iters, row, col, p) {
     .Call('_aRtsy_draw_turmite', PACKAGE = 'aRtsy', X, iters, row, col, p)
 }
 
+deform <- function(canvas, maxdepth, width, height, hole) {
+    .Call('_aRtsy_deform', PACKAGE = 'aRtsy', canvas, maxdepth, width, height, hole)
+}
+
 c_noise_knn <- function(x, y, z, newx, newy, k, n) {
     .Call('_aRtsy_c_noise_knn', PACKAGE = 'aRtsy', x, y, z, newx, newy, k, n)
 }
