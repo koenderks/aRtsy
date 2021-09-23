@@ -22,7 +22,7 @@ This function paints random ribbons and (optionally) a triangle in the middle.
 \examples{
 \donttest{
 set.seed(12)
-palette <- colorPalette('random', n = 4)
+palette <- colorPalette("random", n = 4)
 canvas_ribbons(colors = palette)
 }
 

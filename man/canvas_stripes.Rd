@@ -24,7 +24,7 @@ This function creates a brownian motion on each row of the artwork and colors it
 \examples{
 \donttest{
 set.seed(15)
-palette <- colorPalette('random', n = 5)
+palette <- colorPalette("random", n = 5)
 canvas_stripes(colors = palette)
 }
 

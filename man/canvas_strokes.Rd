@@ -4,7 +4,7 @@
 \alias{canvas_strokes}
 \title{Paint Random Strokes on a Canvas}
 \usage{
-canvas_strokes(colors, neighbors = 1, p = 0.01, iterations = 1, 
+canvas_strokes(colors, neighbors = 1, p = 0.01, iterations = 1,
                width = 500, height = 500, side = FALSE)
 }
 \arguments{
@@ -31,7 +31,7 @@ This function creates an artwork that resembles paints strokes. The algorithm is
 \examples{
 \donttest{
 set.seed(16)
-palette <- colorPalette('random', n = 6)
+palette <- colorPalette("random", n = 6)
 canvas_strokes(colors = palette)
 }
 

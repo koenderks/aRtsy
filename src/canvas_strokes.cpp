@@ -29,7 +29,8 @@ arma::mat draw_strokes(arma::mat X,
   double backwardsprob = R::runif(0, 1);
   if (backwardsprob < 0.5) { // Go forward through the loop
     for (int x = 0; x < n; x++) { // Loop over the columns of the frame
-      for (int y = 0; y < m; y++) { // Loop over the rows of the frame    
+      for (int y = 0; y < m; y++) { // Loop over the rows of the frame
+	    Rcpp::checkUserInterrupt();
         std::vector<int> colors;  
         for (int z = 0; z < k; z++) { // Loop over all neighboring blocks of the current block
           int ix  = neighboring_block(n, x + dx[z]); // Select the (adjusted) neighboring x location
@@ -53,8 +54,9 @@ arma::mat draw_strokes(arma::mat X,
     }
   } else { // Go backward through the loop  
     for (int x = 0; x < n; x++) {
-      for (int y = m; y --> 0;) {    
-        std::vector<int> colors;    
+      for (int y = m; y --> 0;) {
+		Rcpp::checkUserInterrupt();
+        std::vector<int> colors;
         for (int z = 0; z < k; z++) { // Loop over all neighboring blocks of the current block
           int ix  = neighboring_block(n, x + dx[z]); // Select the (adjusted) neighboring x location
           int iy  = neighboring_block(m, y + dy[z]); // Select the (adjusted) neighboring y location

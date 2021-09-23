@@ -24,7 +24,7 @@ This function paints a mosaic from randomly generated data by running a k-neares
 \examples{
 \donttest{
 set.seed(9)
-palette <- colorPalette('random', n = 10)
+palette <- colorPalette("random", n = 10)
 canvas_mosaic(colors = palette)
 }
 

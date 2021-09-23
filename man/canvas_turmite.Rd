@@ -4,7 +4,7 @@
 \alias{canvas_turmite}
 \title{Paint a Random Turmite on a Canvas}
 \usage{
-canvas_turmite(colors, background = '#fafafa', p = 0.5, iterations = 1e7, 
+canvas_turmite(colors, background = '#fafafa', p = 0.5, iterations = 1e7,
                width = 1500, height = 1500, noise = FALSE)
 }
 \arguments{
@@ -31,7 +31,7 @@ This function paints a turmite. A turmite is a Turing machine which has an orien
 \examples{
 \donttest{
 set.seed(17)
-palette <- colorPalette('dark2')
+palette <- colorPalette("dark2")
 canvas_turmite(colors = palette, p = 0, noise = TRUE)
 }
 

@@ -44,6 +44,7 @@ Rcpp::DataFrame deform(Rcpp::DataFrame canvas,
   // Insert a hole with 8 corners inside the polygon
   if (hole == 1) {
 	for (int k = 0; k < 50; k++) {
+		Rcpp::checkUserInterrupt();
 		int ind = floor(R::runif(1, x.length()));
 		int ncorns = 10;
 		double r = 1;
@@ -66,6 +67,7 @@ Rcpp::DataFrame deform(Rcpp::DataFrame canvas,
   }
   // Fit to canvas
   for (int i = 0; i < x.length(); i++) {
+	Rcpp::checkUserInterrupt();
 	if (x[i] < 0) {
 		x[i] = 0;
 	} else if (x[i] > width) {

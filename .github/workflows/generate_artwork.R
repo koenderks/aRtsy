@@ -9,8 +9,8 @@ seed <- as.numeric(Sys.Date())
 set.seed(seed)
 
 # Select artwork type
-type <- sample(1:19, size = 1)
-
+type <- sample(1:20, size = 1)
+type <- 20
 artwork <- switch(type,
                   '1' = canvas_turmite(color = colorPalette('random', sample(6:10, size = 1)), background = "#050505", p = runif(1, 0.2, 0.5), width = 2000, height = 2000, noise = TRUE),
                   '2' = canvas_strokes(colors = colorPalette('random', sample(5:15, size = 1)), neighbors = sample(1:4, size = 1), p = runif(1, 0.0001, 0.01), iterations = sample(1:3, size = 1), width = 1500, height = 1500, side = sample(c(TRUE, FALSE), size = 1)),
@@ -30,6 +30,7 @@ artwork <- switch(type,
                   '16' = canvas_gemstone(colors = colorPalette('random', n = sample(15:25, size = 1)), resolution = 1500),
                   '17' = canvas_blacklight(colors = colorPalette('random', n = sample(2:10, size = 1)), resolution = 1500),
                   '18' = canvas_ribbons(colors = colorPalette('random', sample(3:6, size = 1)), background = colorPalette('random', 1)),
-                  '19' = canvas_collatz(colors = colorPalette('random', n = 5), background = sample(c("black", "#fdf5e6", "#fafafa"), size = 1), n = sample(200:2000, size = 1), side = sample(c(TRUE, FALSE), size = 1)))
+                  '19' = canvas_collatz(colors = colorPalette('random', n = 5), background = sample(c("black", "#fdf5e6", "#fafafa"), size = 1), n = sample(200:2000, size = 1), side = sample(c(TRUE, FALSE), size = 1)),
+				  '20' = canvas_watercolors(colors = aRtsy::colorPalette("random", n = sample(4:20, size = 1)), background = aRtsy::colorPalette("random", n = 1), layers = 50, depth = 3))
 
 saveCanvas(artwork, filename, width = ifelse(type == 19, yes = NA, no = 7), height = ifelse(type == 19, yes = NA, no = 7))

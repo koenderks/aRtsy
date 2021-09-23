@@ -4,7 +4,7 @@
 \alias{canvas_polylines}
 \title{Paint Random Polygons and Lines on a Canvas}
 \usage{
-canvas_polylines(colors, background = '#fafafa', ratio = 0.5, iterations = 1000, 
+canvas_polylines(colors, background = '#fafafa', ratio = 0.5, iterations = 1000,
                  alpha = NULL, size = 0.1, width = 500, height = 500)
 }
 \arguments{
@@ -33,7 +33,7 @@ This function draws many points on the canvas and connects these points into a p
 \examples{
 \donttest{
 set.seed(11)
-palette <- colorPalette('random', n = 10)
+palette <- colorPalette("random", n = 10)
 canvas_polylines(colors = palette)
 }
 

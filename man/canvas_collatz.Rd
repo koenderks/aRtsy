@@ -4,7 +4,7 @@
 \alias{canvas_collatz}
 \title{Paint Random Collatz Sequences on a Canvas}
 \usage{
-canvas_collatz(colors, background = '#fafafa', n = 200, 
+canvas_collatz(colors, background = '#fafafa', n = 200,
                 angle.even = 0.0075, angle.odd = 0.0145, side = FALSE)
 }
 \arguments{
@@ -29,7 +29,7 @@ This function draws the Collatz conjecture on the canvas.
 \examples{
 \donttest{
 set.seed(4)
-palette <- colorPalette('random', n = 5)
+palette <- colorPalette("random", n = 5)
 canvas_collatz(colors = palette, n = 100)
 }
 

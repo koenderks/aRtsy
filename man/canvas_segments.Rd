@@ -4,7 +4,7 @@
 \alias{canvas_segments}
 \title{Paint Random Line Segments on a Canvas}
 \usage{
-canvas_segments(colors, background = '#fafafa', n = 100, 
+canvas_segments(colors, background = '#fafafa', n = 100,
                 p = 0.5, H = 0.1, size = 0.2)
 }
 \arguments{
@@ -29,7 +29,7 @@ This function draws many random line segments on the canvas.
 \examples{
 \donttest{
 set.seed(13)
-palette <- colorPalette('random', n = 4)
+palette <- colorPalette("random", n = 4)
 canvas_segments(colors = palette)
 }
 

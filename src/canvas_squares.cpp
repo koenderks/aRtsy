@@ -29,6 +29,7 @@ arma::mat draw_squares(arma::mat X,
   Rcpp::IntegerVector dx = neighbors["x"];
   Rcpp::IntegerVector dy = neighbors["y"];
   for (int i = 0; i < cuts; i++) {
+	Rcpp::checkUserInterrupt();
     int cutx = ceil(row / ratio);
     int cuty = ceil(col / ratio);
 	  double cutfromtop = R::runif(0, 1);
@@ -64,6 +65,7 @@ arma::mat draw_squares(arma::mat X,
   }
   arma::mat X_new = X;
   for (int x = 0; x < n; x++) {
+	Rcpp::checkUserInterrupt();
     for (int y = 0; y < m; y++) {
       std::vector<int> colors; 
       for (int z = 0; z < dx.size(); z++) {

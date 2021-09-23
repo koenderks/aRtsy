@@ -21,6 +21,7 @@ arma::mat draw_circlemap(arma::mat X,
   for (int iter = 0; iter < iterations; iter++) {
     for (int row = 0; row < m; row++) {
       for (int col = 0; col < n; col++) {
+		Rcpp::checkUserInterrupt();
         X(row, col) = X(row, col) + phi + (K / (2 * M_PI)) * sin(2 * M_PI * X(row, col));
         K = K - ((kmax - kmin) / m);
       }

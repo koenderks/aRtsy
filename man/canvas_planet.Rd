@@ -4,9 +4,9 @@
 \alias{canvas_planet}
 \title{Paint a Random Planet on a Canvas}
 \usage{
-canvas_planet(colors, threshold = 4, iterations = 200, 
+canvas_planet(colors, threshold = 4, iterations = 200,
               starprob = 0.01, fade = 0.2,
-              radius = NULL, center.x = NULL, center.y = NULL, 
+              radius = NULL, center.x = NULL, center.y = NULL,
               light.right = TRUE, width = 1500, height = 1500)
 }
 \arguments{
@@ -42,13 +42,17 @@ This function paints one or multiple planets and uses a cellular automata to fil
 \donttest{
 # Sun behind Earth and Moon
 set.seed(1)
-colors <- list(c("khaki1", "lightcoral", "lightsalmon"),
-               c("dodgerblue", "forestgreen", "white"), 
-               c("gray", "darkgray", "beige"))
-canvas_planet(colors, radius = c(800, 400, 150), 
-              center.x = c(1, 500, 1100),
-              center.y = c(1400, 500, 1000), 
-              starprob = 0.005)
+colors <- list(
+  c("khaki1", "lightcoral", "lightsalmon"),
+  c("dodgerblue", "forestgreen", "white"),
+  c("gray", "darkgray", "beige")
+)
+canvas_planet(colors,
+  radius = c(800, 400, 150),
+  center.x = c(1, 500, 1100),
+  center.y = c(1400, 500, 1000),
+  starprob = 0.005
+)
 }
 
 }

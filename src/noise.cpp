@@ -20,6 +20,7 @@ std::vector<double> c_noise_knn(arma::rowvec x,
   int npred = newx.n_elem;
   std::vector<double> newz;
   for(int i = 0; i < npred; i++) {
+	Rcpp::checkUserInterrupt();
     arma::rowvec xdist = x - newx[i]; // For each new point, compute distance to training points in x-plane
     arma::rowvec ydist = y - newy[i]; // For each new point, compute distance to training points in y-plane
     arma::rowvec dist = sqrt((xdist % xdist) + (ydist % ydist)); // Calculate Euclidian distance

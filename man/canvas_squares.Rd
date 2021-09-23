@@ -31,7 +31,7 @@ This function paints random squares. It works by repeatedly cutting into the can
 \examples{
 \donttest{
 set.seed(14)
-palette <- colorPalette('random', n = 4)
+palette <- colorPalette("random", n = 4)
 canvas_squares(colors = palette)
 }
 

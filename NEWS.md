@@ -1,3 +1,13 @@
+# aRtsy 0.1.2
+
+**New features**
+
+- Added new artwork `canvas_watercolors()`.
+
+**Minor changes**
+
+- Added `Rcpp::checkUserInterrupt()` to Cpp functions.
+
 # aRtsy 0.1.1
 
 **New features**

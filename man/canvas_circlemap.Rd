@@ -4,7 +4,7 @@
 \alias{canvas_circlemap}
 \title{Paint a Circle Map on a Canvas}
 \usage{
-canvas_circlemap(colors, xmin = 0, xmax = 12.56, ymin = 0, ymax = 1, 
+canvas_circlemap(colors, xmin = 0, xmax = 12.56, ymin = 0, ymax = 1,
                  iterations = 10, width = 1500, height = 1500)
 }
 \arguments{
@@ -33,7 +33,7 @@ This function draws a circle map on the canvas.
 \examples{
 \donttest{
 set.seed(3)
-palette <- colorPalette('random', n = 5)
+palette <- colorPalette("random", n = 5)
 canvas_circlemap(colors = palette)
 }
 

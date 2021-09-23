@@ -27,6 +27,7 @@ arma::mat draw_planet(arma::mat X,
   // Draw planet circle
   for (int row = 0; row < m; row++) {
     for (int col = 0; col < n; col++) {
+	  Rcpp::checkUserInterrupt();
       float xdist = xcenter - col;
       float ydist = ycenter - row;
       double dist = sqrt(xdist * xdist + ydist * ydist);
@@ -61,6 +62,7 @@ arma::mat draw_planet(arma::mat X,
   int circlesize = xcircle.size();
   for (int i = 0; i < iterations; i++) {
     for (int ii = 0; ii < circlesize; ii++) {
+	  Rcpp::checkUserInterrupt();
       int xpoint = xcircle[ii];
       int ypoint = ycircle[ii];
       if (ypoint > 0 && ypoint < (m - 1) && xpoint > 0 && xpoint < (n - 1)) {
@@ -89,6 +91,7 @@ arma::mat draw_planet(arma::mat X,
 	X_ref = X;
   }
   for (int ii = 0; ii < circlesize; ii++) {
+	Rcpp::checkUserInterrupt();
     int xpoint = xcircle[ii];
     int ypoint = ycircle[ii];
 	  float xdist = abs(xcenter - xpoint);

@@ -19,6 +19,7 @@ arma::mat draw_polylines(arma::mat X,
   int xradius = cols * ratio;
   int yradius = rows * ratio;
   for (int i = 1; i < iters; i++) {
+	Rcpp::checkUserInterrupt();
     double v = R::runif(0, 1);
     double h = R::runif(0, 1);
     double x1;

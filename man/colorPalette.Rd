@@ -24,8 +24,7 @@ The following color palettes are implemented:
 \if{latex}{\figure{colors.pdf}{options: width=5in}}
 }
 \examples{
-colorPalette('random', 5)
-
+colorPalette("random", 5)
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

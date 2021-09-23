@@ -24,7 +24,7 @@ This function creates an artwork from randomly generated data by running a k-nea
 \examples{
 \donttest{
 set.seed(7)
-palette <- colorPalette('random', n = 10)
+palette <- colorPalette("random", n = 10)
 canvas_gemstone(colors = palette)
 }
 

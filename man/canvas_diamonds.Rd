@@ -4,8 +4,8 @@
 \alias{canvas_diamonds}
 \title{Paint Random Diamonds on a Canvas}
 \usage{
-canvas_diamonds(colors, background = '#fafafa', col.line = 'black', 
-                radius = 10, alpha = 1, p = 0.2, 
+canvas_diamonds(colors, background = '#fafafa', col.line = 'black',
+                radius = 10, alpha = 1, p = 0.2,
                 width = 500, height = 500)
 }
 \arguments{
@@ -34,7 +34,7 @@ This function draws many diamonds on the canvas and places two lines behind them
 \examples{
 \donttest{
 set.seed(5)
-palette <- colorPalette('random', n = 5)
+palette <- colorPalette("random", n = 5)
 canvas_diamonds(colors = palette, radius = 10)
 }
 

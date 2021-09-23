@@ -25,6 +25,7 @@ arma::mat draw_ant(arma::mat X,
   int typeOne = 0; // 0 = L; 1 = R
   int s = 10000;
   while (i < iters) {
+	Rcpp::checkUserInterrupt();
     if (i%s == 0) { // Switch color every s iterations
       color = color + 1; // Next color
       if (color > k) {

@@ -4,8 +4,8 @@
 \alias{canvas_watercolors}
 \title{Paint Watercolors on a Canvas}
 \usage{
-canvas_watercolors(colors, background = "#ebd5b3", layers = 50,
-                      depth = 1, width = 250, height = 250)
+canvas_watercolors(colors, background = "#ebd5b3", layers = 20,
+                   depth = 2, width = 250, height = 250)
 }
 \arguments{
 \item{colors}{a string specifying the color used for the artwork.}
@@ -29,12 +29,12 @@ This function paints watercolors on a canvas.
 \examples{
 \donttest{
 set.seed(10)
-canvas_watercolors(color = colorPalette('tuscany1'))
+canvas_watercolors(color = colorPalette("tuscany1"))
 }
 
 }
 \references{
-\url{https://github.com/cutterkom/generativeart}
+\url{https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

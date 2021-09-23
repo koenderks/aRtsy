@@ -35,7 +35,7 @@ This function draws the Mandelbrot set on the canvas.
 \examples{
 \donttest{
 set.seed(8)
-palette <- colorPalette('random', n = 6)
+palette <- colorPalette("random", n = 6)
 canvas_mandelbrot(colors = palette, zoom = 10)
 }
 

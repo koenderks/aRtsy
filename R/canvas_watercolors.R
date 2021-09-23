@@ -2,17 +2,17 @@
 #'
 #' @description This function paints watercolors on a canvas.
 #'
-#' @usage canvas_watercolors(colors, background = "#ebd5b3", layers = 50,
-#'                       depth = 1, width = 250, height = 250)
+#' @usage canvas_watercolors(colors, background = "#ebd5b3", layers = 20,
+#'                    depth = 2, width = 250, height = 250)
 #'
 #' @param colors       a string specifying the color used for the artwork.
-#' @param background  a character specifying the color used for the background.
-#' @param layers      the number of layers of each color.
-#' @param depth       the maximum depth of the recusive algorithm.
-#' @param width       a positive integer specifying the width of the artwork in pixels.
-#' @param height      a positive integer specifying the height of the artwork in pixels.
+#' @param background   a character specifying the color used for the background.
+#' @param layers       the number of layers of each color.
+#' @param depth        the maximum depth of the recusive algorithm.
+#' @param width        a positive integer specifying the width of the artwork in pixels.
+#' @param height       a positive integer specifying the height of the artwork in pixels.
 #'
-#' @references \url{https://github.com/cutterkom/generativeart}
+#' @references \url{https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints}
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
