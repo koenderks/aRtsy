@@ -322,7 +322,7 @@ You can use the `canvas_watercolors()` function to make your own artwork using t
 
 ```r
 set.seed(1)
-canvas_watercolors(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'), background = '#ebd5b3')
+canvas_watercolors(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'))
 ```
 
 #### Functions

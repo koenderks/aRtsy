@@ -149,8 +149,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // deform
-Rcpp::DataFrame deform(Rcpp::DataFrame canvas, int maxdepth, int width, int height, double hole);
-RcppExport SEXP _aRtsy_deform(SEXP canvasSEXP, SEXP maxdepthSEXP, SEXP widthSEXP, SEXP heightSEXP, SEXP holeSEXP) {
+Rcpp::DataFrame deform(Rcpp::DataFrame canvas, int maxdepth, int width, int height);
+RcppExport SEXP _aRtsy_deform(SEXP canvasSEXP, SEXP maxdepthSEXP, SEXP widthSEXP, SEXP heightSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -158,8 +158,7 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type maxdepth(maxdepthSEXP);
     Rcpp::traits::input_parameter< int >::type width(widthSEXP);
     Rcpp::traits::input_parameter< int >::type height(heightSEXP);
-    Rcpp::traits::input_parameter< double >::type hole(holeSEXP);
-    rcpp_result_gen = Rcpp::wrap(deform(canvas, maxdepth, width, height, hole));
+    rcpp_result_gen = Rcpp::wrap(deform(canvas, maxdepth, width, height));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -191,7 +190,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_aRtsy_draw_squares", (DL_FUNC) &_aRtsy_draw_squares, 5},
     {"_aRtsy_draw_strokes", (DL_FUNC) &_aRtsy_draw_strokes, 4},
     {"_aRtsy_draw_turmite", (DL_FUNC) &_aRtsy_draw_turmite, 5},
-    {"_aRtsy_deform", (DL_FUNC) &_aRtsy_deform, 5},
+    {"_aRtsy_deform", (DL_FUNC) &_aRtsy_deform, 4},
     {"_aRtsy_c_noise_knn", (DL_FUNC) &_aRtsy_c_noise_knn, 7},
     {NULL, NULL, 0}
 };

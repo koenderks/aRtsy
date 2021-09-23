@@ -2,7 +2,7 @@
 #'
 #' @description This function paints watercolors on a canvas.
 #'
-#' @usage canvas_watercolors(colors, background = "#ebd5b3", layers = 20,
+#' @usage canvas_watercolors(colors, background = "#fafafa", layers = 20,
 #'                    depth = 2, width = 250, height = 250)
 #'
 #' @param colors       a string specifying the color used for the artwork.
@@ -21,7 +21,7 @@
 #' @examples
 #' \donttest{
 #' set.seed(10)
-#' canvas_watercolors(color = colorPalette("tuscany1"))
+#' canvas_watercolors(colors = colorPalette("tuscany1"))
 #' }
 #'
 #' @keywords artwork canvas
@@ -30,7 +30,7 @@
 #' @useDynLib aRtsy
 #' @import Rcpp
 
-canvas_watercolors <- function(colors, background = "#ebd5b3", layers = 20,
+canvas_watercolors <- function(colors, background = "#fafafa", layers = 20,
                                depth = 2, width = 250, height = 250) {
   x <- y <- z <- NULL
   nlayers <- length(colors)
@@ -44,7 +44,7 @@ canvas_watercolors <- function(colors, background = "#ebd5b3", layers = 20,
   }
   for (i in 1:length(colorSequence)) {
     canvas <- basePolygons[[labelSequence[i]]]
-    canvas <- deform(canvas, maxdepth = depth, width, height, hole = FALSE)
+    canvas <- deform(canvas, maxdepth = depth, width, height)
     canvas <- cbind(canvas, z = i)
     plotData <- rbind(plotData, canvas)
   }
@@ -74,6 +74,6 @@ canvas_watercolors <- function(colors, background = "#ebd5b3", layers = 20,
   varsegments <- stats::rnorm(nrow(coords), mean = 5)
   canvas <- data.frame(x = coords$x, y = coords$y, s = varsegments)
   # First time through deformation algorithm
-  canvas <- deform(canvas, maxdepth = 5, width, height, hole = 0)
+  canvas <- deform(canvas, maxdepth = 5, width, height)
   return(canvas)
 }

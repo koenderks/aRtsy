@@ -11,8 +11,7 @@
 Rcpp::DataFrame deform(Rcpp::DataFrame canvas,
                        int maxdepth,
                        int width,
-					   int height,
-					   double hole) {
+					   int height) {
   Rcpp::DoubleVector x = canvas["x"];
   Rcpp::DoubleVector y = canvas["y"];
   Rcpp::DoubleVector s = canvas["s"];
@@ -40,30 +39,6 @@ Rcpp::DataFrame deform(Rcpp::DataFrame canvas,
 		  y.insert(indexes[j] + 1, bstary);
 		  s.insert(indexes[j] + 1, bs);
 	  }
-  }
-  // Insert a hole with 8 corners inside the polygon
-  if (hole == 1) {
-	for (int k = 0; k < 50; k++) {
-		Rcpp::checkUserInterrupt();
-		int ind = floor(R::runif(1, x.length()));
-		int ncorns = 10;
-		double r = 1;
-		int xstart = R::rnorm(min(x) + (max(x) - min(x)) / 2, (max(x) - min(x)) / 2 / 3);
-		int ystart = R::rnorm(min(y) + (max(y) - min(y)) / 2, (max(y) - min(y)) / 2 / 3);
-		for (int i = 1; i < ncorns; i++) {
-			double px = xstart + r * cos(2 * 3.14 * i / ncorns);
-			double py = ystart + r * sin(2 * 3.14 * i / ncorns);
-			x.insert(ind + i, px);
-			y.insert(ind + i, py);
-			s.insert(ind + i, 0);
-		}
-		x.insert(ind + ncorns, xstart + r * cos(2 * 3.14 * 1 / ncorns));
-		y.insert(ind + ncorns, ystart + r * sin(2 * 3.14 * 1 / ncorns));
-		s.insert(ind + ncorns, 0);
-		x.insert(ind + ncorns + 1, x[ind]);
-		y.insert(ind + ncorns + 1, y[ind]);
-		s.insert(ind + ncorns + 1, 0);
-	}
   }
   // Fit to canvas
   for (int i = 0; i < x.length(); i++) {

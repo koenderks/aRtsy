@@ -4,7 +4,7 @@
 \alias{canvas_watercolors}
 \title{Paint Watercolors on a Canvas}
 \usage{
-canvas_watercolors(colors, background = "#ebd5b3", layers = 20,
+canvas_watercolors(colors, background = "#fafafa", layers = 20,
                    depth = 2, width = 250, height = 250)
 }
 \arguments{
@@ -29,7 +29,7 @@ This function paints watercolors on a canvas.
 \examples{
 \donttest{
 set.seed(10)
-canvas_watercolors(color = colorPalette("tuscany1"))
+canvas_watercolors(colors = colorPalette("tuscany1"))
 }
 
 }
