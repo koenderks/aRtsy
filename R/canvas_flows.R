@@ -51,7 +51,7 @@ canvas_flows <- function(colors, background = "#fafafa", lines = 100,
     rows <- iterate_flow(angles, j, iterations, left, right, top, bottom, step, width, height, resolution)
     rows$color <- sample(colors, size = 1)
     size <- cumsum(stats::rnorm(n = nrow(rows), sd = sqrt(1)))
-    rows$size <- abs(size / sd(size) * 0.05)
+    rows$size <- abs(size / stats::sd(size) * 0.05)
     plotData <- rbind(plotData, rows)
   }
   artwork <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y, group = factor(z))) +
