@@ -23,21 +23,22 @@ Rcpp::DataFrame deform(Rcpp::DataFrame canvas,
 	  for (int l = 1; l < isize; l++) {
 		indexes[l] = indexes[l - 1] + 2;
 	  }
-	  // Perform one round of deformation on each line
+	  // Perform deformation on each of the lines
 	  for (int j = 0; j < isize; j++) {
 		  Rcpp::checkUserInterrupt();
 		  // For each line A -> C in the polygon, find the midpoint, B.
 		  double bx = (x[indexes[j]] + x[indexes[j] + 1]) / 2;
 		  double by = (y[indexes[j]] + y[indexes[j] + 1]) / 2;
-		  double cvar = (s[indexes[j]] + s[indexes[j] + 1]) / 2;
-		  // From a Gaussian distribution centered on B, pick a new point B'.
-		  double bstarx = R::rnorm(bx, cvar);
-		  double bstary = R::rnorm(by, cvar);
-		  double bs = cvar * 0.5;
+		  // Determine the variance, angle, and length of break
+		  double edgevar = (s[indexes[j]] + s[indexes[j] + 1]) / 2;
+		  double angle = R::rnorm(0, 2);
+		  // Pick a new point B'.
+		  double bstarx = bx + edgevar * sin(angle);
+		  double bstary = by + edgevar * cos(angle);
 		  // Insert new point into the data
 		  x.insert(indexes[j] + 1, bstarx);
 		  y.insert(indexes[j] + 1, bstary);
-		  s.insert(indexes[j] + 1, bs);
+		  s.insert(indexes[j] + 1, edgevar * 0.5);
 	  }
   }
   // Fit to canvas

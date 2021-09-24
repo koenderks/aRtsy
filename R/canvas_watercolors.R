@@ -65,13 +65,13 @@ canvas_watercolors <- function(colors, background = "#fafafa", layers = 20,
     xmid <- (width / 2) + (width / 3) * cos(2 * pi * color / nlayers) * rnorm(1, mean = 0.75, sd = 0.25)
     ymid <- (height / 2) + (height / 3) * sin(2 * pi * color / nlayers) * rnorm(1, mean = 0.75, sd = 0.25)
   }
-  radiusx <- sample((width / 3):(width / 5), size = 1)
-  radiusy <- sample((height / 3):(height / 5), size = 1)
+  radiusx <- sample((width / 3):(width / 7.5), size = 1)
+  radiusy <- sample((height / 3):(height / 7.5), size = 1)
   polyx <- xmid + radiusx * cos(2 * pi * 1:corners / corners)
   polyy <- ymid + radiusy * sin(2 * pi * 1:corners / corners)
   coords <- data.frame(x = polyx, y = polyy)
   coords[nrow(coords) + 1, ] <- coords[1, ]
-  varsegments <- stats::rnorm(nrow(coords), mean = 5)
+  varsegments <- stats::rnorm(nrow(coords), mean = 6, sd = 1.5)
   canvas <- data.frame(x = coords$x, y = coords$y, s = varsegments)
   # First time through deformation algorithm
   canvas <- deform(canvas, maxdepth = 5, width, height)
