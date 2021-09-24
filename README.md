@@ -325,9 +325,9 @@ set.seed(1)
 canvas_watercolors(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'))
 ```
 
-#### Watercolors
+#### Flow fields
 
-This artwork implements the algorithm described in Tyler Hobbs' blog post [Flow fields](https://tylerxhobbs.com/essays/2020/flow-fields). It works by creating a flow field and rendering points through this field.
+This artwork implements the algorithm described in Tyler Hobbs' blog post [Flow fields](https://tylerxhobbs.com/essays/2020/flow-fields). It works by creating a grid of angles and letting data flow through this field. The angles are set using predictions from a k-nearest neighbors or support vector machines algorithm.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-24.png' width='270' height='270'>
@@ -335,11 +335,11 @@ This artwork implements the algorithm described in Tyler Hobbs' blog post [Flow 
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-22.png' width='270' height='270'>
 </p>
 
-You can use the `canvas_watercolors()` function to make your own artwork using this algorithm.
+You can use the `canvas_flows()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(1)
-canvas_watercolors(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'))
+canvas_flows(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'))
 ```
 
 #### Functions

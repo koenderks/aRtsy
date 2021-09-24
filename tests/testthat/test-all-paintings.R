@@ -123,3 +123,9 @@ test_that("canvas_watercolors()", {
   artwork <- aRtsy::canvas_watercolors(colors = c("black", "gray", "white"))
   expect_equal(!is.null(artwork), TRUE)
 })
+
+test_that("canvas_flows()", {
+  set.seed(1)
+  artwork <- aRtsy::canvas_flows(colors = c("black", "gray", "white"))
+  expect_equal(!is.null(artwork), TRUE)
+})
