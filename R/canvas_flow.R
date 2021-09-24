@@ -34,8 +34,8 @@ canvas_flows <- function(colors, background = "#fafafa", lines = 100,
                          iterations = 500, width = 100, height = 100) {
   x <- y <- z <- NULL
   resolution <- round(width * 0.01)
-  xsequence <- seq(0, width, length = width) # Create a sequence of pixels
-  ysequence <- seq(0, height, length = height) # Create a sequence of pixels
+  xsequence <- seq(0, width, length = width)
+  ysequence <- seq(0, height, length = height)
   grid <- expand.grid(xsequence, ysequence)
   grid <- data.frame(x = grid[, 1], y = grid[, 2], z = 0)
   left <- width * -0.5
@@ -44,19 +44,19 @@ canvas_flows <- function(colors, background = "#fafafa", lines = 100,
   top <- height * 1.5
   ncols <- (right - left) / resolution
   nrows <- (top - bottom) / resolution
-  angles <- .angles(dims = c(nrows, ncols), n = 100)
+  angles <- .angles(dims = c(nrows, ncols), n = sample(100:300, size = 1))
   plotData <- data.frame(x = numeric(), y = numeric(), z = numeric(), size = numeric(), color = numeric())
   for (j in 1:lines) {
-	step <- stats::runif(1, min = 0, max = width * 0.01)
+    step <- stats::runif(1, min = 0, max = width * 0.01)
     rows <- iterate_flow(angles, j, iterations, left, right, top, bottom, step, width, height, resolution)
-	rows$color <- sample(colors, size = 1)
-	size <- cumsum(stats::rnorm(n = nrow(rows), sd = sqrt(1)))
-	rows$size <- abs(size / sd(size) * 0.1)
+    rows$color <- sample(colors, size = 1)
+    size <- cumsum(stats::rnorm(n = nrow(rows), sd = sqrt(1)))
+    rows$size <- abs(size / sd(size) * 0.05)
     plotData <- rbind(plotData, rows)
   }
   artwork <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y, group = factor(z))) +
     ggplot2::geom_path(size = plotData$size, color = plotData$color, lineend = "round", alpha = 1) +
-	ggplot2::coord_cartesian(xlim = c(0, width), ylim = c(0, height))
+    ggplot2::coord_cartesian(xlim = c(0, width), ylim = c(0, height))
   artwork <- theme_canvas(artwork, background = background)
   return(artwork)
 }

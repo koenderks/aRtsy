@@ -9,7 +9,7 @@ seed <- as.numeric(Sys.Date())
 set.seed(seed)
 
 # Select artwork type
-type <- sample(1:20, size = 1)
+type <- sample(1:21, size = 1)
 
 artwork <- switch(type,
                   '1' = canvas_turmite(color = colorPalette('random', sample(6:10, size = 1)), background = "#050505", p = runif(1, 0.2, 0.5), width = 2000, height = 2000, noise = TRUE),
@@ -31,6 +31,7 @@ artwork <- switch(type,
                   '17' = canvas_blacklight(colors = colorPalette('random', n = sample(2:10, size = 1)), resolution = 1500),
                   '18' = canvas_ribbons(colors = colorPalette('random', sample(3:6, size = 1)), background = colorPalette('random', 1)),
                   '19' = canvas_collatz(colors = colorPalette('random', n = 5), background = sample(c("black", "#fdf5e6", "#fafafa"), size = 1), n = sample(200:2000, size = 1), side = sample(c(TRUE, FALSE), size = 1)),
-				  '20' = canvas_watercolors(colors = colorPalette("random", n = sample(2:15, size = 1)), background = sample(c('#fafafa', "black", "#ebd5b3", "darkgoldenrod3", "lavenderblush2", "salmon1"), size = 1), layers = 50, depth = 3))
+				  '20' = canvas_watercolors(colors = colorPalette("random", n = sample(2:15, size = 1)), background = sample(c('#fafafa', "black", "#ebd5b3", "darkgoldenrod3", "lavenderblush2", "salmon1"), size = 1), layers = 50, depth = 3),
+				  '21' = canvas_flows(colors = colorPalette("random", n = sample(4:20, size = 1)), background = sample(c("#fafafa", "firebrick", "#f9f0e0", "black", "lavenderblush2"), size = 1), lines = 2000))
 
 saveCanvas(artwork, filename, width = ifelse(type == 19, yes = NA, no = 7), height = ifelse(type == 19, yes = NA, no = 7))
