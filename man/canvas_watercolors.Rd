@@ -4,8 +4,8 @@
 \alias{canvas_watercolors}
 \title{Paint Watercolors on a Canvas}
 \usage{
-canvas_watercolors(colors, background = "#fafafa", layers = 20,
-                   depth = 2, width = 250, height = 250)
+canvas_watercolors(colors, background = "#fafafa", layers = 50,
+                   depth = 1, width = 250, height = 250)
 }
 \arguments{
 \item{colors}{a string specifying the color used for the artwork.}
