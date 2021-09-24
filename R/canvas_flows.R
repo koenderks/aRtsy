@@ -3,7 +3,7 @@
 #' @description This function paints watercolors on a canvas.
 #'
 #' @usage canvas_flows(colors, background = "#fafafa", lines = 100,
-#'              iterations = 500, width = 100, height = 100)
+#'              iterations = 100, width = 100, height = 100)
 #'
 #' @param colors       a string specifying the color used for the artwork.
 #' @param background   a character specifying the color used for the background.
@@ -31,7 +31,7 @@
 #' @import Rcpp
 
 canvas_flows <- function(colors, background = "#fafafa", lines = 100,
-                         iterations = 500, width = 100, height = 100) {
+                         iterations = 100, width = 100, height = 100) {
   x <- y <- z <- NULL
   resolution <- round(width * 0.01)
   xsequence <- seq(0, width, length = width)
