@@ -310,7 +310,7 @@ canvas_polylines(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue')
 
 #### Watercolors
 
-This artwork implements the algorithm described in Tyler Hobbs' blog post [A guide to simulating watercolor paint with generative art](https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints). It works by simulating and layering several geometric shapes, and deforming these shapes by repeatedly splitting their edges.
+This artwork implements the algorithm described in Tyler Hobbs' blog post [A guide to simulating watercolor paint with generative art](https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints). It works by layering several geometric shapes and deforming these shapes by repeatedly splitting their edges.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-23.png' width='270' height='270'>
