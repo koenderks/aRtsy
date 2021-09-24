@@ -45,6 +45,13 @@ After installation, the `aRtsy` package can be loaded with:
 library(aRtsy)
 ```
 
+**Note:** render times can be quite long for some artworks. It is therefore advised to instantly save an artwork to a file before checking it out. You can use the build-in `saveCanvas()` function for this, which saves the artwork with an appropriate size and quality.
+
+```r
+artwork <- canvas_strokes(colors = c('black', 'white'))
+saveCanvas(plot = artwork, filename = 'myArtwork.png')
+```
+
 ## Available artworks
 
 *The Iterative collection*
