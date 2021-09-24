@@ -325,6 +325,23 @@ set.seed(1)
 canvas_watercolors(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'))
 ```
 
+#### Watercolors
+
+This artwork implements the algorithm described in Tyler Hobbs' blog post [Flow fields](https://tylerxhobbs.com/essays/2020/flow-fields). It works by creating a flow field and rendering points through this field.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-24.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-23.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-22.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_watercolors()` function to make your own artwork using this algorithm.
+
+```r
+set.seed(1)
+canvas_watercolors(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'))
+```
+
 #### Functions
 
 The idea for this type of artwork is taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package. In this algorithm, the position of every single point is calculated by a formula which has random parameters.
