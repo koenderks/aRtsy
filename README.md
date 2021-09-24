@@ -64,6 +64,7 @@ library(aRtsy)
 * [`canvas_ribbons()`](#ribbons)
 * [`canvas_polylines()`](#polylines)
 * [`canvas_watercolors()`](#watercolors)
+* [`canvas_flows()`](#flow-fields)
 * [`canvas_function()`](#functions)
 
 *The Supervised collection*
