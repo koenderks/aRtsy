@@ -55,6 +55,8 @@ library(aRtsy)
 * [`canvas_ant()`](#langtons-ant)
 * [`canvas_planet()`](#planets)
 * [`canvas_stripes()`](#stripes)
+* [`canvas_watercolors()`](#watercolors)
+* [`canvas_flows()`](#flow-fields)
 
 *The Geometric collection*
 
@@ -63,8 +65,6 @@ library(aRtsy)
 * [`canvas_squares()`](#squares-and-rectangles)
 * [`canvas_ribbons()`](#ribbons)
 * [`canvas_polylines()`](#polylines)
-* [`canvas_watercolors()`](#watercolors)
-* [`canvas_flows()`](#flow-fields)
 * [`canvas_function()`](#functions)
 
 *The Supervised collection*
@@ -214,6 +214,40 @@ canvas_stripes(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'),
                n = 300, H = 1, burnin = 1)
 ```
 
+#### Watercolors
+
+This artwork implements the algorithm described in Tyler Hobbs' blog post [A guide to simulating watercolor paint with generative art](https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints). It works by layering several geometric shapes and deforming these shapes by repeatedly splitting their edges.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-23.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-22.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-21.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_watercolors()` function to make your own artwork using this algorithm.
+
+```r
+set.seed(1)
+canvas_watercolors(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'))
+```
+
+#### Flow fields
+
+This artwork implements the algorithm described in Tyler Hobbs' blog post [Flow fields](https://tylerxhobbs.com/essays/2020/flow-fields). It works by creating a grid of angles and letting data flow through this field. The angles are set using predictions from a k-nearest neighbors or support vector machines algorithm.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-24.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-23.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-22.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_flows()` function to make your own artwork using this algorithm.
+
+```r
+set.seed(1)
+canvas_flows(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'))
+```
+
 ### The Geometric collection
 
 The Geometric collection mostly implements algorithms that draw a geometric shape and apply a random color to it.
@@ -307,40 +341,6 @@ set.seed(1)
 canvas_polylines(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), 
                  background = '#fafafa', ratio = 0.5, iterations = 1000, 
                  alpha = NULL, size = 0.1, width = 500, height = 500)
-```
-
-#### Watercolors
-
-This artwork implements the algorithm described in Tyler Hobbs' blog post [A guide to simulating watercolor paint with generative art](https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints). It works by layering several geometric shapes and deforming these shapes by repeatedly splitting their edges.
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-23.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-22.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-21.png' width='270' height='270'>
-</p>
-
-You can use the `canvas_watercolors()` function to make your own artwork using this algorithm.
-
-```r
-set.seed(1)
-canvas_watercolors(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'))
-```
-
-#### Flow fields
-
-This artwork implements the algorithm described in Tyler Hobbs' blog post [Flow fields](https://tylerxhobbs.com/essays/2020/flow-fields). It works by creating a grid of angles and letting data flow through this field. The angles are set using predictions from a k-nearest neighbors or support vector machines algorithm.
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-24.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-23.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-22.png' width='270' height='270'>
-</p>
-
-You can use the `canvas_flows()` function to make your own artwork using this algorithm.
-
-```r
-set.seed(1)
-canvas_flows(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'))
 ```
 
 #### Functions
