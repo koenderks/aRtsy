@@ -62,8 +62,8 @@ canvas_watercolors <- function(colors, background = "#fafafa", layers = 20,
     xmid <- (width / 2)
     ymid <- (height / 2)
   } else {
-    xmid <- (width / 2) + (width / 3) * cos(2 * pi * color / nlayers) * rnorm(1, mean = 0.5, sd = 0.25)
-    ymid <- (height / 2) + (height / 3) * sin(2 * pi * color / nlayers) * rnorm(1, mean = 0.5, sd = 0.25)
+    xmid <- (width / 2) + (width / 3) * cos(2 * pi * color / nlayers) * rnorm(1, mean = 0.75, sd = 0.25)
+    ymid <- (height / 2) + (height / 3) * sin(2 * pi * color / nlayers) * rnorm(1, mean = 0.75, sd = 0.25)
   }
   radiusx <- sample((width / 3):(width / 5), size = 1)
   radiusy <- sample((height / 3):(height / 5), size = 1)
