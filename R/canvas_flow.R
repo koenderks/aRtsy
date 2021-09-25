@@ -55,10 +55,10 @@ canvas_flow <- function(colors, background = "#fafafa", lines = 500, iterations 
     angles <- .noise(dims = c(nrows, ncols), n = sample(100:300, size = 1), type = sample(c("knn", "svm", "rf"), size = 1))
   } else {
     if (!is.matrix(angles)) {
-      stop("'angles' should be a matrix")
+      stop("'angles' must be a matrix")
     }
     if (nrow(angles) != nrows || ncol(angles) != ncols) {
-      stop(paste0("'angles' should be a ", nrows, " x ", ncols, " matrix"))
+      stop(paste0("'angles' must be a ", nrows, " x ", ncols, " matrix"))
     }
   }
   plotData <- data.frame(x = numeric(), y = numeric(), z = numeric(), size = numeric(), color = numeric())

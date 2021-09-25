@@ -59,7 +59,7 @@ canvas_function <- function(color, background = "#fafafa", formula = NULL) {
     painting_formula <- painting_formulas[[sample(1:length(painting_formulas), 1)]]
   } else {
     if (length(formula) != 2) {
-      stop("'formula' should be a list with 'x' and 'y'")
+      stop("'formula' must be a list containing 'x' and 'y'")
     }
     painting_formula <- formula
   }
