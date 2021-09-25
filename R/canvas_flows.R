@@ -9,15 +9,19 @@
 #' @param background   a character specifying the color used for the background.
 #' @param lines        the number of lines to draw.
 #' @param iterations   the maximum number of iterations for each line.
-#' @param angles       method of setting the angles of the flow field. Possible options are \code{knn} and \code{svm}.
+#' @param angles       method of setting the angles of the flow field. Possible options are \code{svm}, \code{knn}, and \code{rf}.
 #' @param width        a positive integer specifying the width of the artwork in pixels.
 #' @param height       a positive integer specifying the height of the artwork in pixels.
 #'
-#' @references \url{https://tylerxhobbs.com/essays/2020/flow-fields}
-#'
 #' @return A \code{ggplot} object containing the artwork.
 #'
+#' @references \url{https://tylerxhobbs.com/essays/2020/flow-fields}
+#'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
+#'
+#' @keywords artwork canvas
+#'
+#' @seealso \code{colorPalette}
 #'
 #' @examples
 #' \donttest{
@@ -27,15 +31,15 @@
 #' canvas_flows(colors = colorPalette("dark2"))
 #' }
 #'
-#' @keywords artwork canvas
-#'
 #' @export
-#' @useDynLib aRtsy
-#' @import Rcpp
 
 canvas_flows <- function(colors, background = "#fafafa", lines = 500, iterations = 100,
                          angles = c("svm", "knn", "rf"), width = 100, height = 100) {
   angles <- match.arg(angles)
+  .checkUserInput(
+    background = background, width = width,
+    height = height, iterations = iterations
+  )
   resolution <- round(width * 0.01)
   xsequence <- seq(0, width, length = width)
   ysequence <- seq(0, height, length = height)

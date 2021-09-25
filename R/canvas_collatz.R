@@ -34,7 +34,7 @@
 
 canvas_collatz <- function(colors, background = "#fafafa", n = 200,
                            angle.even = 0.0075, angle.odd = 0.0145, side = FALSE) {
-  .checkUserInput(background = background, width = width, height = height)
+  .checkUserInput(background = background)
   canvas <- data.frame(x = numeric(), y = numeric(), col = numeric(), z = numeric())
   if (length(n) == 1) {
     n <- sample(1:1000000, size = n, replace = F)

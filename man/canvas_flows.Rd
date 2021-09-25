@@ -16,7 +16,7 @@ canvas_flows(colors, background = "#fafafa", lines = 500, iterations = 100,
 
 \item{iterations}{the maximum number of iterations for each line.}
 
-\item{angles}{method of setting the angles of the flow field. Possible options are \code{knn} and \code{svm}.}
+\item{angles}{method of setting the angles of the flow field. Possible options are \code{svm}, \code{knn}, and \code{rf}.}
 
 \item{width}{a positive integer specifying the width of the artwork in pixels.}
 
@@ -39,6 +39,9 @@ canvas_flows(colors = colorPalette("dark2"))
 }
 \references{
 \url{https://tylerxhobbs.com/essays/2020/flow-fields}
+}
+\seealso{
+\code{colorPalette}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
