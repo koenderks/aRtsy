@@ -1,6 +1,6 @@
 #' Draw Diamonds
 #'
-#' @description This function draws many diamonds on the canvas and places two lines behind them. The diamonds can be transparent or have a random color sampled from the input.
+#' @description This function draws diamonds on a canvas and (optionally) places two lines behind them. The diamonds can be transparent or have a random color sampled from the input.
 #'
 #' @usage canvas_diamonds(colors, background = '#fafafa', col.line = 'black',
 #'                 radius = 10, alpha = 1, p = 0.2,
@@ -19,6 +19,10 @@
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
+#' @keywords artwork canvas
+#'
+#' @seealso \code{colorPalette}
+#'
 #' @examples
 #' \donttest{
 #' set.seed(1)
@@ -27,29 +31,27 @@
 #' canvas_diamonds(colors = colorPalette("tuscany1"))
 #' }
 #'
-#' @keywords artwork canvas
-#'
 #' @export
 
 canvas_diamonds <- function(colors, background = "#fafafa", col.line = "black",
                             radius = 10, alpha = 1, p = 0.2,
                             width = 500, height = 500) {
-  x <- y <- xend <- yend <- type <- col <- NULL
+  .checkUserInput(background = background, width = width, height = height)
   x <- seq(from = width / 5, to = width / 5 * 4, by = radius)
-  ymax <- seq(from = height / 2 + radius, to = height / 5 * 4, by = radius)
-  ymax <- c(ymax, ymax[length(ymax)] + radius)
-  ymax <- c(ymax, seq(from = ymax[length(ymax)] - radius, to = height / 2 + radius, by = -radius))
-  ymin <- seq(from = height / 2 - radius, to = height / 5, by = -radius)
-  ymin <- c(ymin, ymin[length(ymin)] - radius)
-  ymin <- c(ymin, seq(from = ymin[length(ymin)] + radius, to = height / 2 - radius, by = radius))
-  locs <- data.frame(x = x, ymin = ymin, ymax = ymax)
+  top <- seq(from = height / 2 + radius, to = height / 5 * 4, by = radius)
+  top <- c(top, top[length(top)] + radius)
+  top <- c(top, seq(from = top[length(top)] - radius, to = height / 2 + radius, by = -radius))
+  bottom <- seq(from = height / 2 - radius, to = height / 5, by = -radius)
+  bottom <- c(bottom, bottom[length(bottom)] - radius)
+  bottom <- c(bottom, seq(from = bottom[length(bottom)] + radius, to = height / 2 - radius, by = radius))
+  locs <- data.frame(x = x, bottom = bottom, top = top)
   palette <- NULL
   full_canvas <- data.frame(x = numeric(), y = numeric(), type = numeric())
   for (j in 1:nrow(locs)) {
-    rs <- ceiling((ymax[j] - ymin[j]) / (radius * 2)) # required squares
+    rs <- ceiling((top[j] - bottom[j]) / (radius * 2)) # required squares
     for (i in 1:rs) {
       xvec <- c(locs$x[j], locs$x[j] + radius, locs$x[j], locs$x[j] - radius, locs$x[j])
-      yvec <- c(locs$ymax[j] - radius * ((i - 1) * 2), (locs$ymax[j] - radius * ((i - 1) * 2)) - radius, (locs$ymax[j] - radius * ((i - 1) * 2)) - (radius * 2), (locs$ymax[j] - radius * ((i - 1) * 2)) - radius, locs$ymax[j] - radius * ((i - 1) * 2))
+      yvec <- c(locs$top[j] - radius * ((i - 1) * 2), (locs$top[j] - radius * ((i - 1) * 2)) - radius, (locs$top[j] - radius * ((i - 1) * 2)) - (radius * 2), (locs$top[j] - radius * ((i - 1) * 2)) - radius, locs$top[j] - radius * ((i - 1) * 2))
       col <- sample(c(NA, sample(colors, size = 1)), size = 1, prob = c(p, 1 - p))
       if (!(col %in% palette)) {
         palette <- c(palette, col)

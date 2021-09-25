@@ -29,7 +29,7 @@ canvas_diamonds(colors, background = '#fafafa', col.line = 'black',
 A \code{ggplot} object containing the artwork.
 }
 \description{
-This function draws many diamonds on the canvas and places two lines behind them. The diamonds can be transparent or have a random color sampled from the input.
+This function draws diamonds on a canvas and (optionally) places two lines behind them. The diamonds can be transparent or have a random color sampled from the input.
 }
 \examples{
 \donttest{
@@ -39,6 +39,9 @@ set.seed(1)
 canvas_diamonds(colors = colorPalette("tuscany1"))
 }
 
+}
+\seealso{
+\code{colorPalette}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
