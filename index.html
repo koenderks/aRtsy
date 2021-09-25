@@ -89,7 +89,7 @@
 <div id="artwork-of-the-day" class="section level2">
 <h2 class="hasAnchor">
 <a href="#artwork-of-the-day" class="anchor"></a>Artwork of the day</h2>
-<p>Every 24 hours this repository randomly generates and tweets an artwork using <code><a href="https://rdrr.io/r/base/Random.html">set.seed(Sys.date())</a></code>. The full collection of daily artworks is available on the <a href="https://twitter.com/aRtsy_package">aRtsy twitter feed</a>. This is today’s artwork:</p>
+<p>Every 24 hours this repository generates (using <code><a href="https://rdrr.io/r/base/Random.html">set.seed(Sys.Date())</a></code>) and tweets an artwork from the <code>aRtsy</code> library. The full collection of daily artworks is available on the <a href="https://twitter.com/aRtsy_package">aRtsy twitter feed</a>. This is today’s artwork:</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/daily.png" width="400" height="400"></p>
 </div>
@@ -205,7 +205,7 @@
 <ol>
 <li>On a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block.</li>
 <li>On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block.</li>
-<li>The ant is able to cycle through different colors which correspond to different combinations of these rules.</li>
+<li>If a certain number of iterations has passed, choose a different color which corresponds to a different combination of these rules.</li>
 </ol>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-03.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-02.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-01.png" width="270" height="270"></p>
