@@ -4,7 +4,7 @@
 \alias{canvas_flow}
 \title{Draw A Flow Field}
 \usage{
-canvas_flow(colors, background = "#fafafa", lines = 500, lwd = 0.05
+canvas_flow(colors, background = "#fafafa", lines = 500, lwd = 0.05,
             iterations = 100, resolution = 100, angles = NULL)
 }
 \arguments{

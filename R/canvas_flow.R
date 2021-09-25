@@ -2,7 +2,7 @@
 #'
 #' @description This function draws flow fields on a canvas.
 #'
-#' @usage canvas_flow(colors, background = "#fafafa", lines = 500, lwd = 0.05
+#' @usage canvas_flow(colors, background = "#fafafa", lines = 500, lwd = 0.05,
 #'             iterations = 100, resolution = 100, angles = NULL)
 #'
 #' @param colors         a string or character vector specifying the color(s) used for the artwork.
