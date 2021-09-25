@@ -11,11 +11,9 @@
 
 *"If you laugh at a joke, what difference does it make if subsequently you are told that the joke was created by an algorithm?" - Marcus du Sautoy, The Creative Code*
 
-`aRtsy` is an attempt at making generative art available for the masses in a simple and standardized format. The package provides various algorithms for creating artworks in `ggplot2` that incorporate some form of randomness (depending on the set `seed`). Each type of artwork is implemented in a separate function.
+`aRtsy` is an attempt at making generative art available for the masses in a simple and standardized format. The package provides algorithms for generating artworks in `ggplot2` that incorporate some form of randomness (depending on the set `seed`). Each algorithm is implemented in a separate function that has its own parameters you can tweak to produce something unique. 
 
-Good luck hunting for some good `seed`'s! Feel free to post a comment with your best artworks and the corresponding seed in the [GitHub discussions](https://github.com/koenderks/aRtsy/discussions).
-
-Contributions to `aRtsy` are very much appreciated! If you want to add your own artwork to the package so that others can create unique versions of it, feel free to make a pull request to the [GitHub repository](https://github.com/koenderks/aRtsy). Don't forget to also adjust [generate-artwork.R](https://github.com/koenderks/aRtsy/blob/development/.github/workflows/generate_artwork.R) if you want the artwork to show up in the 'Artwork of the day' category and the twitter feed.
+Good luck hunting for some good `seed`'s!
 
 ## Artwork of the day
 
@@ -45,7 +43,7 @@ After installation, the `aRtsy` package can be loaded with:
 library(aRtsy)
 ```
 
-**Note:** render times in RStudio can be quite long for some artworks. It is therefore strongly recommended to save the artwork to a file before checking it out. You can use the `saveCanvas()` function for this, which saves the artwork with an appropriate size and quality.
+**Note:** render times in RStudio can be quite long for some artworks. It is therefore strongly recommended to save the artwork to a file (e.g., `.png` or `.jpg`) before viewing. You can use the `saveCanvas()` function for this, which saves the artwork with an appropriate size and quality.
 
 ```r
 artwork <- canvas_strokes(colors = c('black', 'white'))
@@ -104,9 +102,9 @@ When you think of the act of painting, you probably imagine stroking paint on a 
 You can use the `canvas_strokes()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_strokes for more input parameters of the algorithm
 set.seed(1)
 canvas_strokes(colors = colorPalette('tuscany1'))
+# see ?canvas_strokes for more input parameters of this algorithm
 ```
 
 #### Collatz conjecture
@@ -129,9 +127,9 @@ By visualizing the sequence for each number, overlaying sequences that are the s
 You can use the `canvas_collatz()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_collatz for more input parameters of the algorithm
 set.seed(1)
 canvas_collatz(colors = colorPalette('tuscany3'))
+# see ?canvas_collatz for more input parameters of this algorithm
 ```
 
 #### Turmite
@@ -151,9 +149,9 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *"
 You can use the `canvas_turmite()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_turmite for more input parameters of the algorithm
 set.seed(1)
 canvas_turmite(colors = colorPalette('dark2'))
+# see ?canvas_turmite for more input parameters of this algorithm
 ```
 
 #### Langton's ant
@@ -173,9 +171,9 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Langtons_ant), Langton's 
 You can use the `canvas_ant()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_ant for more input parameters of the algorithm
 set.seed(1)
 canvas_ant(colors = colorPalette('house'))
+# see ?canvas_ant for more input parameters of this algorithm
 ```
 
 #### Planets
@@ -191,9 +189,9 @@ We all love space, and this type of artwork puts you right between the planets. 
 You can use the `canvas_planet()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_planet for more input parameters of the algorithm
 set.seed(1)
 canvas_planet(colors = colorPalette('retro3'))
+# see ?canvas_planet for more input parameters of this algorithm
 ```
 
 #### Stripes
@@ -209,9 +207,9 @@ This type of artwork is based on the concept of [Brownian motion](https://en.wik
 You can use the `canvas_stripes()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_stripes for more input parameters of the algorithm
 set.seed(1)
 canvas_stripes(colors = colorPalette('random', n = 10))
+# see ?canvas_stripes for more input parameters of this algorithm
 ```
 
 #### Watercolors
@@ -227,9 +225,9 @@ This artwork implements the algorithm described in Tyler Hobbs' blog post [A gui
 You can use the `canvas_watercolors()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_watercolors for more input parameters of the algorithm
 set.seed(1)
 canvas_watercolors(colors = colorPalette('tuscany2'))
+# see ?canvas_watercolors for more input parameters of this algorithm
 ```
 
 #### Flow fields
@@ -245,9 +243,9 @@ This artwork implements the algorithm described in Tyler Hobbs' blog post [Flow 
 You can use the `canvas_flows()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_flows for more input parameters of the algorithm
 set.seed(1)
 canvas_flows(colors = colorPalette('dark2'))
+# see ?canvas_flows for more input parameters of this algorithm
 ```
 
 ### The Geometric collection
@@ -267,9 +265,9 @@ This type of artwork mimics the style of the well-known paintings by the Dutch a
 You can use the `canvas_segments()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_segments for more input parameters of the algorithm
 set.seed(1)
 canvas_segments(colors = colorPalette('dark1'))
+# see ?canvas_segments for more input parameters of this algorithm
 ```
 
 #### Diamonds
@@ -285,9 +283,9 @@ This function creates a set of diamonds on a canvas. The diamonds are filled in 
 You can use the `canvas_diamonds()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_diamonds for more input parameters of the algorithm
 set.seed(1)
 canvas_diamonds(colors = colorPalette('tuscany1'))
+# see ?canvas_diamonds for more input parameters of this algorithm
 ```
 
 #### Squares and rectangles
@@ -303,9 +301,9 @@ This type of artwork is also a la Mondriaan, but uses a variety of squares and r
 You can use the `canvas_squares()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_squares for more input parameters of the algorithm
 set.seed(1)
 canvas_squares(colors = colorPalette('retro2'))
+# see ?canvas_squares for more input parameters of this algorithm
 ```
 
 #### Ribbons
@@ -321,9 +319,9 @@ This function creates colored ribbons with (or without) a triangle that breaks t
 You can use the `canvas_ribbons()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_ribbons for more input parameters of the algorithm
 set.seed(1)
 canvas_ribbons(colors = colorPalette('retro1')
+# see ?canvas_ribbons for more input parameters of this algorithm
 ```
 
 #### Polylines
@@ -339,9 +337,9 @@ This function draws many points on the canvas and connects these points into a p
 You can use the `canvas_polylines()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_polylines for more input parameters of the algorithm
 set.seed(1)
 canvas_polylines(colors = colorPalette('retro1'))
+# see ?canvas_polylines for more input parameters of this algorithm
 ```
 
 #### Functions
@@ -357,9 +355,9 @@ The idea for this type of artwork is taken over from the [`generativeart`](https
 You can use the `canvas_function()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_function for more input parameters of the algorithm
 set.seed(1)
 canvas_function(color = 'navyblue')
+# see ?canvas_function for more input parameters of this algorithm
 ```
 
 ### The Supervised collection
@@ -379,9 +377,9 @@ The first artwork in this collection is inspired by a supervised learning method
 You can use the `canvas_mosaic()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_mosaic for more input parameters of the algorithm
 set.seed(1)
 canvas_mosaic(colors = colorPalette('retro2'))
+# see ?canvas_mosaic for more input parameters of this algorithm
 ```
 
 #### Forests
@@ -397,9 +395,9 @@ This artwork is inspired by a supervised learning method called random forest. I
 You can use the `canvas_forest()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_forest for more input parameters of the algorithm
 set.seed(1)
 canvas_forest(colors = colorPalette('tuscany1'))
+# see ?canvas_forest for more input parameters of this algorithm
 ```
 
 #### Gemstones
@@ -415,9 +413,9 @@ Returning to the previously mentioned k-nearest neighbors algorithm, this artwor
 You can use the `canvas_gemstone()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_gemstone for more input parameters of the algorithm
 set.seed(1)
 canvas_gemstone(colors = colorPalette('dark3'))
+# see ?canvas_gemstone for more input parameters of this algorithm
 ```
 
 #### Nebula
@@ -433,9 +431,9 @@ Based on the very same principle as described in the artwork above is this next 
 You can use the `canvas_nebula()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_nebula for more input parameters of the algorithm
 set.seed(1)
 canvas_nebula(colors = colorPalette('tuscany1'))
+# see ?canvas_nebula for more input parameters of this algorithm
 ```
 
 #### Blacklights
@@ -451,9 +449,9 @@ This artwork is inspired by a supervised machine learning method called support 
 You can use the `canvas_blacklight()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_blacklight for more input parameters of the algorithm
 set.seed(1)
 canvas_blacklight(colors = colorPalette('random', n = 5))
+# see ?canvas_blacklight for more input parameters of this algorithm
 ```
 
 ### The Static collection
@@ -473,8 +471,8 @@ This type of artwork visualizes the [Mandelbrot set](https://en.wikipedia.org/wi
 You can use the `canvas_mandelbrot()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_mandelbrot for more input parameters of the algorithm
 canvas_mandelbrot(colors = colorPalette('tuscany1'))
+# see ?canvas_mandelbrot for more input parameters of this algorithm
 ```
 
 #### Circle maps
@@ -490,8 +488,8 @@ This type of artwork is based on the concept of an [Arnold tongue](https://en.wi
 You can use the `canvas_circlemap()` function to make your own artwork using this algorithm.
 
 ```r
-# see ?canvas_circlemap for more input parameters of the algorithm
 canvas_circlemap(colors = colorPalette('dark2'))
+# see ?canvas_circlemap for more input parameters of this algorithm
 ```
 
 ## Color palettes
@@ -501,3 +499,7 @@ The function `colorPalette()` can be used to generate a random color palette, or
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/man/figures/colors.svg'>
 </p>
+
+## Contributing to the `aRtsy` package
+
+Contributions to the `aRtsy` package are very much appreciated and you are free to suggest or add your own algorithms! If you want to add your own artwork to the package so that others can create unique versions of it, feel free to make a pull request to the [GitHub repository](https://github.com/koenderks/aRtsy). Don't forget to also adjust [generate-artwork.R](https://github.com/koenderks/aRtsy/blob/development/.github/workflows/generate_artwork.R) if you want the artwork to show up in the 'Artwork of the day' category and the twitter feed.
