@@ -40,7 +40,7 @@ canvas_flow(colors = colorPalette("dark2"))
 
 # Advanced example
 angles <- matrix(rnorm(200 * 200), nrow = 200, ncol = 200)
-canvas_flow(colors = colorPalette("tuscany1", 4), angles = angles)
+canvas_flow(colors = colorPalette("tuscany1"), angles = angles)
 }
 
 }
