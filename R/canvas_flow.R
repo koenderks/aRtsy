@@ -2,12 +2,13 @@
 #'
 #' @description This function draws flow fields on a canvas.
 #'
-#' @usage canvas_flow(colors, background = "#fafafa", lines = 500, iterations = 100,
-#'             resolution = 100, angles = NULL)
+#' @usage canvas_flow(colors, background = "#fafafa", lines = 500, lwd = 0.05
+#'             iterations = 100, resolution = 100, angles = NULL)
 #'
 #' @param colors         a string or character vector specifying the color(s) used for the artwork.
 #' @param background     a character specifying the color used for the background.
 #' @param lines          the number of lines to draw.
+#' @param lwd            expansion factor for the line width.
 #' @param iterations     the maximum number of iterations for each line.
 #' @param resolution     resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.
 #' @param angles         optional, a matrix containing the angles of the flow field . If \code{NULL} (default), angles are set according to the predictions of a supervised learning algorithm.
@@ -36,8 +37,8 @@
 #'
 #' @export
 
-canvas_flow <- function(colors, background = "#fafafa", lines = 500, iterations = 100,
-                        resolution = 100, angles = NULL) {
+canvas_flow <- function(colors, background = "#fafafa", lines = 500, lwd = 0.05,
+                        iterations = 100, resolution = 100, angles = NULL) {
   .checkUserInput(
     background = background, iterations = iterations
   )
@@ -66,7 +67,7 @@ canvas_flow <- function(colors, background = "#fafafa", lines = 500, iterations 
     step <- stats::runif(1, min = 0, max = resolution * 0.01)
     rows <- iterate_flow(angles, j, iterations, left, right, top, bottom, step, r)
     rows$color <- sample(colors, size = 1)
-    rows$size <- .bmline(n = nrow(rows))
+    rows$size <- .bmline(n = nrow(rows), lwd)
     plotData <- rbind(plotData, rows)
   }
   artwork <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y, group = factor(z))) +
@@ -76,8 +77,8 @@ canvas_flow <- function(colors, background = "#fafafa", lines = 500, iterations 
   return(artwork)
 }
 
-.bmline <- function(n, sd = 1) {
-  x <- cumsum(stats::rnorm(n = n, sd = sqrt(sd)))
-  x <- abs(x / stats::sd(x) * 0.05)
+.bmline <- function(n, lwd) {
+  x <- cumsum(stats::rnorm(n = n, sd = sqrt(1)))
+  x <- abs(x / stats::sd(x) * lwd)
   return(x)
 }

@@ -4,8 +4,8 @@
 \alias{canvas_flow}
 \title{Draw A Flow Field}
 \usage{
-canvas_flow(colors, background = "#fafafa", lines = 500, iterations = 100,
-            resolution = 100, angles = NULL)
+canvas_flow(colors, background = "#fafafa", lines = 500, lwd = 0.05
+            iterations = 100, resolution = 100, angles = NULL)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
@@ -13,6 +13,8 @@ canvas_flow(colors, background = "#fafafa", lines = 500, iterations = 100,
 \item{background}{a character specifying the color used for the background.}
 
 \item{lines}{the number of lines to draw.}
+
+\item{lwd}{expansion factor for the line width.}
 
 \item{iterations}{the maximum number of iterations for each line.}
 
