@@ -8,7 +8,7 @@
 #' @param colors       a string specifying the color used for the artwork.
 #' @param background   a character specifying the color used for the background.
 #' @param layers       the number of layers of each color.
-#' @param depth        the maximum depth of the recusive algorithm.
+#' @param depth        the maximum depth of the recursive algorithm.
 #' @param resolution   resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.
 #'
 #' @return A \code{ggplot} object containing the artwork.

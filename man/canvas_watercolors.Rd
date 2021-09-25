@@ -14,7 +14,7 @@ canvas_watercolors(colors, background = "#fafafa", layers = 50,
 
 \item{layers}{the number of layers of each color.}
 
-\item{depth}{the maximum depth of the recusive algorithm.}
+\item{depth}{the maximum depth of the recursive algorithm.}
 
 \item{resolution}{resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.}
 }
