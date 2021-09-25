@@ -4,7 +4,7 @@
 \alias{theme_canvas}
 \title{Canvas Theme for ggplot2 Objects}
 \usage{
-theme_canvas(x, background = 'white', margin = 0)
+theme_canvas(x, background = NULL, margin = 0)
 }
 \arguments{
 \item{x}{a ggplot2 object.}
