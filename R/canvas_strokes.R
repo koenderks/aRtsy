@@ -35,7 +35,7 @@ canvas_strokes <- function(colors, neighbors = 1, p = 0.01, iterations = 1,
                            width = 500, height = 500, side = FALSE) {
   .checkUserInput(
     width = width, height = height,
-    background = background, iterations = iterations
+    iterations = iterations
   )
   if (neighbors < 1 || neighbors %% 1 != 0 || length(neighbors) != 1) {
     stop("'neighbors' must be a single integer >= 1")
