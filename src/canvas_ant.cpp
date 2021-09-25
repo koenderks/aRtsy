@@ -11,7 +11,7 @@
 // [[Rcpp::export]]
 arma::mat draw_ant(arma::mat X,
                    int iters,
-				   int ncolors,
+                   int ncolors,
                    int x,
                    int y,
                    std::vector<int> dx,
@@ -26,7 +26,7 @@ arma::mat draw_ant(arma::mat X,
   int t1 = 0; // 0 = L; 1 = R
   int s = ceil(iters / ncolors); // When to switch colors in the ant
   while (i < iters) {
-	Rcpp::checkUserInterrupt();
+    Rcpp::checkUserInterrupt();
     if (i%s == 0) { // Switch color every s iterations
       c = c + 1; // Next color
       if (c > k) {
@@ -45,7 +45,7 @@ arma::mat draw_ant(arma::mat X,
         d = d - 1;
         if (d == 0) {
           d = 4;
-        }	  
+        }
       }
       // Color the square
       X(x, y) = c;
@@ -67,24 +67,24 @@ arma::mat draw_ant(arma::mat X,
     // Move the ant
     if (d == 1) {
       x = x - 1; 
-	  if (x < 0) {
-		x = m - 1;
-	  }
+      if (x < 0) {
+        x = m - 1;
+      }
     } else if (d == 2) {
       y = y - 1;
-	  if (y < 0) {
-		y = n - 1;
-	  }
+      if (y < 0) {
+        y = n - 1;
+      }
     } else if (d == 3) {
       x = x + 1;
-	  if (x >= (m - 1)) {
-		x = 0;
-	  }
+      if (x >= (m - 1)) {
+        x = 0;
+      }
     } else if (d == 4) {
       y = y + 1;
-	  if (y >= (n - 1)) {
-		y = 0;
-	  }
+      if (y >= (n - 1)) {
+        y = 0;
+      }
     }
     i = i + 1;
   }

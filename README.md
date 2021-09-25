@@ -156,7 +156,7 @@ canvas_flow(colors = colorPalette("dark2"))
 
 #### Planets
 
-We all love space, and this type of artwork puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (described in the blog post [Neighborhoods: Experimenting with Cyclic Cellular Automata](https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/) by Fronkonstin) to fill in their surfaces. The color and placement of the planets can be set manually.
+We all love space, and this type of artwork puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (described in the blog post [Neighborhoods: Experimenting with Cyclic Cellular Automata](https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/) by Antonio Sánchez Chinchón) to fill in their surfaces. The color and placement of the planets can be set manually.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-26.png' width='270' height='270'>

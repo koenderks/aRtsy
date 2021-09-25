@@ -12,7 +12,7 @@ std::vector<int> get_collatz_sequence(int x) {
   std::vector<int> sequence;
   sequence.push_back(1);
   while (x > 1) {
-	Rcpp::checkUserInterrupt();
+    Rcpp::checkUserInterrupt();
     if (x%2==1) {
       x = (3 * x) + 1;
       sequence.push_back(1);
@@ -32,7 +32,7 @@ arma::mat draw_collatz(arma::mat empty,
   int s = series.size();
   double angle = 3.14/2;
   for (int i = 1; i < s; i++) {
-	Rcpp::checkUserInterrupt();
+    Rcpp::checkUserInterrupt();
     empty(i, 0)  = cos(angle) + empty(i - 1, 0);
     empty(i, 1) = sin(angle) + empty(i - 1, 1);
     if(series[i] == 0) {

@@ -19,9 +19,9 @@ arma::mat draw_turmite(arma::mat X,
   int i = 0;
   int state = 0;
   while (i < iters) {
-	Rcpp::checkUserInterrupt();
-    double stateSwap = ceil(R::runif(0, 2));
-    if (stateSwap < p) {
+    Rcpp::checkUserInterrupt();
+    double swap = ceil(R::runif(0, 2));
+    if (swap < p) {
       if (state == 0) {
         state = 1;
       } else if (state == 1) {

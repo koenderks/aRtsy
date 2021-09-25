@@ -17,8 +17,8 @@ int neighbor(int L, int i)
 }
 
 // [[Rcpp::export]]
-arma::mat draw_squares(arma::mat X, 
-                       Rcpp::DataFrame neighbors, 
+arma::mat draw_squares(arma::mat X,
+                       Rcpp::DataFrame neighbors,
                        int s,
                        int cuts,
                        double ratio) {
@@ -29,12 +29,12 @@ arma::mat draw_squares(arma::mat X,
   Rcpp::IntegerVector dx = neighbors["x"];
   Rcpp::IntegerVector dy = neighbors["y"];
   for (int i = 0; i < cuts; i++) {
-	Rcpp::checkUserInterrupt();
+    Rcpp::checkUserInterrupt();
     int cutx = ceil(row / ratio);
     int cuty = ceil(col / ratio);
-	  double cutfromtop = R::runif(0, 1);
-	  double cutfromleft = R::runif(0, 1);
-	  int color = ceil(R::runif(0, s)); // Sample color from 1 to s
+    double cutfromtop = R::runif(0, 1);
+    double cutfromleft = R::runif(0, 1);
+    int color = ceil(R::runif(0, s)); // Sample color from 1 to s
     if (cutfromtop >= 0.5 && cutfromleft >= 0.5) {
       for (int x = 0; x < cutx; x++) {
         for (int y = 0; y < cuty; y++) {
@@ -65,9 +65,9 @@ arma::mat draw_squares(arma::mat X,
   }
   arma::mat X_new = X;
   for (int x = 0; x < n; x++) {
-	Rcpp::checkUserInterrupt();
+    Rcpp::checkUserInterrupt();
     for (int y = 0; y < m; y++) {
-      std::vector<int> colors; 
+      std::vector<int> colors;
       for (int z = 0; z < dx.size(); z++) {
         int ix  = neighbor(n, x + dx[z]);
         int iy  = neighbor(m, y + dy[z]);
@@ -80,6 +80,6 @@ arma::mat draw_squares(arma::mat X,
         X_new(y, x) = 0;
       }
     }
-  }  
+  }
   return X_new;
 }
