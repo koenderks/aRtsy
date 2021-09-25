@@ -54,57 +54,61 @@ saveCanvas(artwork, filename = 'myArtwork.png')
 
 *The Iterative collection*
 
-* [`canvas_strokes()`](#paint-strokes)
-* [`canvas_collatz()`](#collatz-conjecture)
-* [`canvas_turmite()`](#turmite)
 * [`canvas_ant()`](#langtons-ant)
+* [`canvas_collatz()`](#collatz-conjecture)
+* [`canvas_flows()`](#flow-fields)
 * [`canvas_planet()`](#planets)
 * [`canvas_stripes()`](#stripes)
+* [`canvas_strokes()`](#paint-strokes)
+* [`canvas_turmite()`](#turmite)
 * [`canvas_watercolors()`](#watercolors)
-* [`canvas_flows()`](#flow-fields)
 
 *The Geometric collection*
 
-* [`canvas_segments()`](#segments)
 * [`canvas_diamonds()`](#diamonds)
-* [`canvas_squares()`](#squares-and-rectangles)
-* [`canvas_ribbons()`](#ribbons)
-* [`canvas_polylines()`](#polylines)
 * [`canvas_function()`](#functions)
+* [`canvas_polylines()`](#polylines)
+* [`canvas_ribbons()`](#ribbons)
+* [`canvas_segments()`](#segments)
+* [`canvas_squares()`](#squares-and-rectangles)
 
 *The Supervised collection*
 
-* [`canvas_mosaic()`](#mosaics)
+* [`canvas_blacklight()`](#blacklights)
 * [`canvas_forest()`](#forests)
 * [`canvas_gemstone()`](#gemstones)
+* [`canvas_mosaic()`](#mosaics)
 * [`canvas_nebula()`](#Nebula)
-* [`canvas_blacklight()`](#blacklights)
 
 *The Static collection*
 
+* [`canvas_circlemap()`](#circle-maps)
 * [`canvas_mandelbrot()`](#the-mandelbrot-set)
-* [`canvas_cirlemap()`](#circle-maps)
 
 ### The Iterative collection
 
 The Iterative collection mostly implements algorithms whose state depend on the previous state. These algorithms generally use a grid based canvas to draw on. On the grid, each point represents a pixel of the final image. By assigning a color to these points according to certain rules, one can create the images in this collection.
 
-#### Paint strokes
+#### Langton's ant
 
-When you think of the act of painting, you probably imagine stroking paint on a canvas. This type of artwork tries to mimic that activity. The paint strokes algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor chance of generating a new color. Going over the canvas like this results in strokes of paint. Repeating this a number of times creates more faded strokes of paint.
+According to [Wikipedia](https://en.wikipedia.org/wiki/Langtons_ant), Langton's ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below.
+
+1. On a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block.
+1. On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block.
+1. If a certain number of iterations has passed, choose a different color which corresponds to a different combination of these rules.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-21.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-20.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-10.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-03.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-02.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-01.png' width='270' height='270'>
 </p>
 
-You can use the `canvas_strokes()` function to make your own artwork using this algorithm.
+You can use the `canvas_ant()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(1)
-canvas_strokes(colors = colorPalette('tuscany1'))
-# see ?canvas_strokes for more input parameters of this algorithm
+canvas_ant(colors = colorPalette('house'))
+# see ?canvas_ant for more input parameters of this algorithm
 ```
 
 #### Collatz conjecture
@@ -132,48 +136,22 @@ canvas_collatz(colors = colorPalette('tuscany3'))
 # see ?canvas_collatz for more input parameters of this algorithm
 ```
 
-#### Turmite
+#### Flow fields
 
-According to [Wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *"a Turing machine which has an orientation in addition to a current state and a "tape" that consists of an infinite two-dimensional grid of cells"*. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in `aRtsy` is slightly modified so that the turmite does not go off the canvas, but instead bounces back onto the canvas.
-
-1. Turn on the spot (left, right, up, or down),
-2. Change the color of the block,
-3. Move forward one block.
+This artwork implements the algorithm described in Tyler Hobbs' blog post [Flow fields](https://tylerxhobbs.com/essays/2020/flow-fields). It works by creating a grid of angles and letting data flow through this field. The angles are set using predictions from a k-nearest neighbors or support vector machines algorithm.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-06.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-09.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-08.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-24.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-23.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-22.png' width='270' height='270'>
 </p>
 
-You can use the `canvas_turmite()` function to make your own artwork using this algorithm.
+You can use the `canvas_flows()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(1)
-canvas_turmite(colors = colorPalette('dark2'))
-# see ?canvas_turmite for more input parameters of this algorithm
-```
-
-#### Langton's ant
-
-According to [Wikipedia](https://en.wikipedia.org/wiki/Langtons_ant), Langton's ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below.
-
-1. On a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block.
-1. On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block.
-1. If a certain number of iterations has passed, choose a different color which corresponds to a different combination of these rules.
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-03.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-02.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-01.png' width='270' height='270'>
-</p>
-
-You can use the `canvas_ant()` function to make your own artwork using this algorithm.
-
-```r
-set.seed(1)
-canvas_ant(colors = colorPalette('house'))
-# see ?canvas_ant for more input parameters of this algorithm
+canvas_flows(colors = colorPalette('dark2'))
+# see ?canvas_flows for more input parameters of this algorithm
 ```
 
 #### Planets
@@ -212,6 +190,46 @@ canvas_stripes(colors = colorPalette('random', n = 10))
 # see ?canvas_stripes for more input parameters of this algorithm
 ```
 
+#### Paint strokes
+
+When you think of the act of painting, you probably imagine stroking paint on a canvas. This type of artwork tries to mimic that activity. The paint strokes algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor chance of generating a new color. Going over the canvas like this results in strokes of paint. Repeating this a number of times creates more faded strokes of paint.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-21.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-20.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-10.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_strokes()` function to make your own artwork using this algorithm.
+
+```r
+set.seed(1)
+canvas_strokes(colors = colorPalette('tuscany1'))
+# see ?canvas_strokes for more input parameters of this algorithm
+```
+
+#### Turmite
+
+According to [Wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *"a Turing machine which has an orientation in addition to a current state and a "tape" that consists of an infinite two-dimensional grid of cells"*. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in `aRtsy` is slightly modified so that the turmite does not go off the canvas, but instead bounces back onto the canvas.
+
+1. Turn on the spot (left, right, up, or down),
+2. Change the color of the block,
+3. Move forward one block.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-06.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-09.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-08.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_turmite()` function to make your own artwork using this algorithm.
+
+```r
+set.seed(1)
+canvas_turmite(colors = colorPalette('dark2'))
+# see ?canvas_turmite for more input parameters of this algorithm
+```
+
 #### Watercolors
 
 This artwork implements the algorithm described in Tyler Hobbs' blog post [A guide to simulating watercolor paint with generative art](https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints). It works by layering several geometric shapes and deforming these shapes by repeatedly splitting their edges.
@@ -230,45 +248,9 @@ canvas_watercolors(colors = colorPalette('tuscany2'))
 # see ?canvas_watercolors for more input parameters of this algorithm
 ```
 
-#### Flow fields
-
-This artwork implements the algorithm described in Tyler Hobbs' blog post [Flow fields](https://tylerxhobbs.com/essays/2020/flow-fields). It works by creating a grid of angles and letting data flow through this field. The angles are set using predictions from a k-nearest neighbors or support vector machines algorithm.
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-24.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-23.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-22.png' width='270' height='270'>
-</p>
-
-You can use the `canvas_flows()` function to make your own artwork using this algorithm.
-
-```r
-set.seed(1)
-canvas_flows(colors = colorPalette('dark2'))
-# see ?canvas_flows for more input parameters of this algorithm
-```
-
 ### The Geometric collection
 
 The Geometric collection mostly implements algorithms that draw a geometric shape and apply a random color to it.
-
-#### Segments
-
-This type of artwork mimics the style of the well-known paintings by the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan). The position and direction of each line segment is determined randomly.
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-07.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-08.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-06.png' width='270' height='270'>
-</p>
-
-You can use the `canvas_segments()` function to make your own artwork using this algorithm.
-
-```r
-set.seed(1)
-canvas_segments(colors = colorPalette('dark1'))
-# see ?canvas_segments for more input parameters of this algorithm
-```
 
 #### Diamonds
 
@@ -286,60 +268,6 @@ You can use the `canvas_diamonds()` function to make your own artwork using this
 set.seed(1)
 canvas_diamonds(colors = colorPalette('tuscany1'))
 # see ?canvas_diamonds for more input parameters of this algorithm
-```
-
-#### Squares and rectangles
-
-This type of artwork is also a la Mondriaan, but uses a variety of squares and rectangles instead of lines. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-03-01.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-02-28.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-02-29.png' width='270' height='270'>
-</p>
-
-You can use the `canvas_squares()` function to make your own artwork using this algorithm.
-
-```r
-set.seed(1)
-canvas_squares(colors = colorPalette('retro2'))
-# see ?canvas_squares for more input parameters of this algorithm
-```
-
-#### Ribbons
-
-This function creates colored ribbons with (or without) a triangle that breaks their paths. This path of the ribbon polygon is creating by picking one point on the left side of the triangle and one point on the right side at random and using these points as nodes.
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-16.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-15.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-14.png' width='270' height='270'>
-</p>
-
-You can use the `canvas_ribbons()` function to make your own artwork using this algorithm.
-
-```r
-set.seed(1)
-canvas_ribbons(colors = colorPalette('retro1')
-# see ?canvas_ribbons for more input parameters of this algorithm
-```
-
-#### Polylines
-
-This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork.
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-22.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-23.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-21.png' width='270' height='270'>
-</p>
-
-You can use the `canvas_polylines()` function to make your own artwork using this algorithm.
-
-```r
-set.seed(1)
-canvas_polylines(colors = colorPalette('retro1'))
-# see ?canvas_polylines for more input parameters of this algorithm
 ```
 
 #### Functions
@@ -360,26 +288,98 @@ canvas_function(color = 'navyblue')
 # see ?canvas_function for more input parameters of this algorithm
 ```
 
+#### Polylines
+
+This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-22.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-23.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-21.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_polylines()` function to make your own artwork using this algorithm.
+
+```r
+set.seed(1)
+canvas_polylines(colors = colorPalette('retro1'))
+# see ?canvas_polylines for more input parameters of this algorithm
+```
+
+#### Ribbons
+
+This function creates colored ribbons with (or without) a triangle that breaks their paths. This path of the ribbon polygon is creating by picking one point on the left side of the triangle and one point on the right side at random and using these points as nodes.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-16.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-15.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-14.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_ribbons()` function to make your own artwork using this algorithm.
+
+```r
+set.seed(1)
+canvas_ribbons(colors = colorPalette('retro1')
+# see ?canvas_ribbons for more input parameters of this algorithm
+```
+
+#### Segments
+
+This type of artwork mimics the style of the well-known paintings by the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan). The position and direction of each line segment is determined randomly.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-07.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-08.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-06.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_segments()` function to make your own artwork using this algorithm.
+
+```r
+set.seed(1)
+canvas_segments(colors = colorPalette('dark1'))
+# see ?canvas_segments for more input parameters of this algorithm
+```
+
+#### Squares and rectangles
+
+This type of artwork is also a la Mondriaan, but uses a variety of squares and rectangles instead of lines. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-03-01.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-02-28.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-02-29.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_squares()` function to make your own artwork using this algorithm.
+
+```r
+set.seed(1)
+canvas_squares(colors = colorPalette('retro2'))
+# see ?canvas_squares for more input parameters of this algorithm
+```
+
 ### The Supervised collection
 
 The artworks in the Supervised collection are inspired by decision boundary plots in machine learning tasks. The algorithms in this collection work by generating random data points on a two dimensional surface (with either a continuous or a categorical response variable), which they then try to model using the supervised learning algorithm. Next, they try to predict the color of each pixel on the canvas.
 
-#### Mosaics
+#### Blacklights
 
-The first artwork in this collection is inspired by a supervised learning method called k-nearest neighbors. In short, the k-nearest neighbors algorithm computes the distance of each pixel on the canvas to each randomly generated data point and assigns it the color of the class of that data point. If you considers fewer neighbors the artwork looks like a mosaic, while higher values make the artwork look more smooth.
+This artwork is inspired by a supervised machine learning method called support vector machines. It applies the same principle as described above, but uses a different predictive algorithm to fill in the color of the pixels.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-17.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-19.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-18.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-22.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-21.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-20.png' width='270' height='270'>
 </p>
 
-You can use the `canvas_mosaic()` function to make your own artwork using this algorithm.
+You can use the `canvas_blacklight()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(1)
-canvas_mosaic(colors = colorPalette('retro2'))
-# see ?canvas_mosaic for more input parameters of this algorithm
+canvas_blacklight(colors = colorPalette('random', n = 5))
+# see ?canvas_blacklight for more input parameters of this algorithm
 ```
 
 #### Forests
@@ -418,6 +418,24 @@ canvas_gemstone(colors = colorPalette('dark3'))
 # see ?canvas_gemstone for more input parameters of this algorithm
 ```
 
+#### Mosaics
+
+The first artwork in this collection is inspired by a supervised learning method called k-nearest neighbors. In short, the k-nearest neighbors algorithm computes the distance of each pixel on the canvas to each randomly generated data point and assigns it the color of the class of that data point. If you considers fewer neighbors the artwork looks like a mosaic, while higher values make the artwork look more smooth.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-17.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-19.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-18.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_mosaic()` function to make your own artwork using this algorithm.
+
+```r
+set.seed(1)
+canvas_mosaic(colors = colorPalette('retro2'))
+# see ?canvas_mosaic for more input parameters of this algorithm
+```
+
 #### Nebula
 
 Based on the very same principle as described in the artwork above is this next type of artwork. However, it produces slightly different pictures as it uses different code to create a form of k-nearest neighbors noise. Some of these artworks can resemble nebulas in outer space.
@@ -436,44 +454,9 @@ canvas_nebula(colors = colorPalette('tuscany1'))
 # see ?canvas_nebula for more input parameters of this algorithm
 ```
 
-#### Blacklights
-
-This artwork is inspired by a supervised machine learning method called support vector machines. It applies the same principle as described above, but uses a different predictive algorithm to fill in the color of the pixels.
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-22.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-21.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-20.png' width='270' height='270'>
-</p>
-
-You can use the `canvas_blacklight()` function to make your own artwork using this algorithm.
-
-```r
-set.seed(1)
-canvas_blacklight(colors = colorPalette('random', n = 5))
-# see ?canvas_blacklight for more input parameters of this algorithm
-```
-
 ### The Static collection
 
 The Static collection implements static images that produce nice pictures.
-
-#### The Mandelbrot set
-
-This type of artwork visualizes the [Mandelbrot set](https://en.wikipedia.org/wiki/Mandelbrot_set) fractal, a perfect example of a complex structure arising from the application of simple rules. You can zoom in on the set and apply some color to create these nice images.
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-08.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-09.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-07.png' width='270' height='270'>
-</p>
-
-You can use the `canvas_mandelbrot()` function to make your own artwork using this algorithm.
-
-```r
-canvas_mandelbrot(colors = colorPalette('tuscany1'))
-# see ?canvas_mandelbrot for more input parameters of this algorithm
-```
 
 #### Circle maps
 
@@ -490,6 +473,23 @@ You can use the `canvas_circlemap()` function to make your own artwork using thi
 ```r
 canvas_circlemap(colors = colorPalette('dark2'))
 # see ?canvas_circlemap for more input parameters of this algorithm
+```
+
+#### The Mandelbrot set
+
+This type of artwork visualizes the [Mandelbrot set](https://en.wikipedia.org/wiki/Mandelbrot_set) fractal, a perfect example of a complex structure arising from the application of simple rules. You can zoom in on the set and apply some color to create these nice images.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-08.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-09.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-07.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_mandelbrot()` function to make your own artwork using this algorithm.
+
+```r
+canvas_mandelbrot(colors = colorPalette('tuscany1'))
+# see ?canvas_mandelbrot for more input parameters of this algorithm
 ```
 
 ## Color palettes
