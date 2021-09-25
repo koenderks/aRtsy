@@ -17,7 +17,7 @@ Good luck hunting for some good `seed`'s!
 
 ## Artwork of the day
 
-Every 24 hours this repository randomly generates and tweets an artwork using `set.seed(Sys.date())`. The full collection of daily artworks is available on the [aRtsy twitter feed](https://twitter.com/aRtsy_package). This is today's artwork:
+Every 24 hours this repository generates (using `set.seed(Sys.Date())`) and tweets an artwork from the `aRtsy` library. The full collection of daily artworks is available on the [aRtsy twitter feed](https://twitter.com/aRtsy_package). This is today's artwork:
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/daily.png' width='400' height='400'>
@@ -160,7 +160,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Langtons_ant), Langton's 
 
 1. On a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block.
 1. On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block.
-1. The ant is able to cycle through different colors which correspond to different combinations of these rules.
+1. If a certain number of iterations has passed, choose a different color which corresponds to a different combination of these rules.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-03.png' width='270' height='270'>

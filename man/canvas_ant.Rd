@@ -2,9 +2,9 @@
 % Please edit documentation in R/canvas_ant.R
 \name{canvas_ant}
 \alias{canvas_ant}
-\title{Paint Langton's Ant on a Canvas}
+\title{Draw Langton's Ant}
 \usage{
-canvas_ant(colors, background = '#fafafa', iterations = 50000,
+canvas_ant(colors, background = "#fafafa", iterations = 50000,
            width = 250, height = 250)
 }
 \arguments{
@@ -22,7 +22,11 @@ canvas_ant(colors, background = '#fafafa', iterations = 50000,
 A \code{ggplot} object containing the artwork.
 }
 \description{
-This function paints Langton's Ant. Langton's ant is a two-dimensional universal Turing machine with a very simple set of rules but complex emergent behavior.
+This function draws Langton's Ant on a canvas. Langton's ant is a two-dimensional universal Turing machine with a very simple set of rules. These simple rules can lead to complex emergent behavior.
+}
+\details{
+The algorithm for Langton's Ant involves repeating the following rules: 1) on a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block; 2)
+         On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block; 3) If a certain number of iterations has passed, choose a different color which corresponds to a different combination of these rules.
 }
 \examples{
 \donttest{
@@ -35,6 +39,9 @@ canvas_ant(colors = colorPalette("house"))
 }
 \references{
 \url{https://en.wikipedia.org/wiki/Langtons_ant}
+}
+\seealso{
+\code{colorPalette}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

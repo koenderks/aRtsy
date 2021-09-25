@@ -1,8 +1,8 @@
-#' Paint Langton's Ant on a Canvas
+#' Draw Langton's Ant
 #'
-#' @description This function paints Langton's Ant. Langton's ant is a two-dimensional universal Turing machine with a very simple set of rules but complex emergent behavior.
+#' @description This function draws Langton's Ant on a canvas. Langton's ant is a two-dimensional universal Turing machine with a very simple set of rules. These simple rules can lead to complex emergent behavior.
 #'
-#' @usage canvas_ant(colors, background = '#fafafa', iterations = 50000,
+#' @usage canvas_ant(colors, background = "#fafafa", iterations = 50000,
 #'            width = 250, height = 250)
 #'
 #' @param colors      a character (vector) specifying the color(s) used for the artwork.
@@ -11,11 +11,18 @@
 #' @param width       a positive integer specifying the width of the artwork in pixels.
 #' @param height      a positive integer specifying the height of the artwork in pixels.
 #'
-#' @references \url{https://en.wikipedia.org/wiki/Langtons_ant}
-#'
 #' @return A \code{ggplot} object containing the artwork.
 #'
+#' @details The algorithm for Langton's Ant involves repeating the following rules: 1) on a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block; 2)
+#'          On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block; 3) If a certain number of iterations has passed, choose a different color which corresponds to a different combination of these rules.
+#'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
+#'
+#' @references \url{https://en.wikipedia.org/wiki/Langtons_ant}
+#'
+#' @keywords artwork canvas
+#'
+#' @seealso \code{colorPalette}
 #'
 #' @examples
 #' \donttest{
@@ -24,8 +31,6 @@
 #' # Simple example
 #' canvas_ant(colors = colorPalette("house"))
 #' }
-#'
-#' @keywords artwork canvas
 #'
 #' @export
 #' @useDynLib aRtsy
