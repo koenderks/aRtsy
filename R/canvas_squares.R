@@ -34,12 +34,6 @@
 canvas_squares <- function(colors, background = "#000000", cuts = 50, ratio = 1.618,
                            width = 200, height = 200, noise = FALSE) {
   .checkUserInput(width = width, height = height, background = background)
-  if (length(colors) <= 1) {
-    stop("You must specify more than one color.")
-  }
-  if (length(background) > 1) {
-    stop("Can only take one background value.")
-  }
   if (cuts <= 1) {
     stop("Cuts must be higher than 1.")
   }
