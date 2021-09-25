@@ -4,7 +4,7 @@
 \alias{canvas_ribbons}
 \title{Draw Ribbons}
 \usage{
-canvas_ribbons(colors, background = '#fdf5e6', triangle = TRUE)
+canvas_ribbons(colors, background = "#fdf5e6", triangle = TRUE)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork. The number of colors determines the number of ribbons.}
@@ -27,6 +27,9 @@ set.seed(1)
 canvas_ribbons(colors = colorPalette("retro1"))
 }
 
+}
+\seealso{
+\code{colorPalette}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

@@ -2,7 +2,7 @@
 #'
 #' @description This function paints random ribbons and (optionally) a triangle in the middle.
 #'
-#' @usage canvas_ribbons(colors, background = '#fdf5e6', triangle = TRUE)
+#' @usage canvas_ribbons(colors, background = "#fdf5e6", triangle = TRUE)
 #'
 #' @param colors      a string or character vector specifying the color(s) used for the artwork. The number of colors determines the number of ribbons.
 #' @param background  a character specifying the color of the background.
@@ -12,6 +12,10 @@
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
+#' @keywords artwork canvas
+#'
+#' @seealso \code{colorPalette}
+#'
 #' @examples
 #' \donttest{
 #' set.seed(1)
@@ -20,12 +24,9 @@
 #' canvas_ribbons(colors = colorPalette("retro1"))
 #' }
 #'
-#' @keywords artwork canvas
-#'
 #' @export
 
 canvas_ribbons <- function(colors, background = "#fdf5e6", triangle = TRUE) {
-  x <- y <- NULL
   # Create an empty figure
   artwork <- ggplot2::ggplot() +
     ggplot2::xlim(c(0, 100)) +

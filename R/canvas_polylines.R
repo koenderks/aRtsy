@@ -2,7 +2,7 @@
 #'
 #' @description This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork.
 #'
-#' @usage canvas_polylines(colors, background = '#fafafa', ratio = 0.5, iterations = 1000,
+#' @usage canvas_polylines(colors, background = "#fafafa", ratio = 0.5, iterations = 1000,
 #'                  alpha = NULL, size = 0.1, width = 500, height = 500)
 #'
 #' @param colors      a string or character vector specifying the color(s) used for the artwork.
@@ -18,6 +18,10 @@
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
+#' @keywords artwork canvas
+#'
+#' @seealso \code{colorPalette}
+#'
 #' @examples
 #' \donttest{
 #' set.seed(1)
@@ -26,15 +30,10 @@
 #' canvas_polylines(colors = colorPalette("retro1"))
 #' }
 #'
-#' @keywords artwork canvas
-#'
 #' @export
-#' @useDynLib aRtsy
-#' @import Rcpp
 
 canvas_polylines <- function(colors, background = "#fafafa", ratio = 0.5, iterations = 1000,
                              alpha = NULL, size = 0.1, width = 500, height = 500) {
-  x <- y <- type <- NULL
   if (is.null(alpha)) {
     alphas <- seq(from = 1, to = 0.1, length.out = length(colors))
   } else {

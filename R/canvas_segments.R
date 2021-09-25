@@ -1,8 +1,8 @@
 #' Draw Segments
 #'
-#' @description This function draws many random line segments on the canvas.
+#' @description This function draws line segments on a canvas. The length and direction of the line segments is determined randomly.
 #'
-#' @usage canvas_segments(colors, background = '#fafafa', n = 250,
+#' @usage canvas_segments(colors, background = "#fafafa", n = 250,
 #'                 p = 0.5, H = 0.1, size = 0.2)
 #'
 #' @param colors      a string or character vector specifying the color(s) used for the artwork.
@@ -16,6 +16,10 @@
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
+#' @keywords artwork canvas
+#'
+#' @seealso \code{colorPalette}
+#'
 #' @examples
 #' \donttest{
 #' set.seed(1)
@@ -24,19 +28,13 @@
 #' canvas_segments(colors = colorPalette("dark1"))
 #' }
 #'
-#' @keywords artwork canvas
-#'
 #' @export
 
 canvas_segments <- function(colors, background = "#fafafa", n = 250,
                             p = 0.5, H = 0.1, size = 0.2) {
-  x <- y <- xend <- yend <- col <- NULL
-  H <- 0.1
   full_canvas <- data.frame(
-    x = numeric(),
-    xend = numeric(),
-    y = numeric(),
-    yend = numeric()
+    x = numeric(), xend = numeric(),
+    y = numeric(), yend = numeric()
   )
   for (i in 1:n) {
     x <- 0.8 * stats::runif(1, 0, 1) + 0.1

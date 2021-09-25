@@ -4,7 +4,7 @@
 \alias{canvas_polylines}
 \title{Draw Polygons and Lines}
 \usage{
-canvas_polylines(colors, background = '#fafafa', ratio = 0.5, iterations = 1000,
+canvas_polylines(colors, background = "#fafafa", ratio = 0.5, iterations = 1000,
                  alpha = NULL, size = 0.1, width = 500, height = 500)
 }
 \arguments{
@@ -38,6 +38,9 @@ set.seed(1)
 canvas_polylines(colors = colorPalette("retro1"))
 }
 
+}
+\seealso{
+\code{colorPalette}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

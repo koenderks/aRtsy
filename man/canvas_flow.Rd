@@ -5,7 +5,7 @@
 \title{Draw A Flow Field}
 \usage{
 canvas_flow(colors, background = "#fafafa", lines = 500, iterations = 100,
-            angles = NULL, angles.method = c("svm", "knn", "rf"), 
+            angles = NULL, angles.method = c("svm", "knn", "rf"),
             width = 100, height = 100)
 }
 \arguments{
@@ -39,7 +39,7 @@ set.seed(1)
 canvas_flow(colors = colorPalette("dark2"))
 
 # Advanced example
-angles <- matrix(rnorm(200*200), nrow = 200, ncol = 200)
+angles <- matrix(rnorm(200 * 200), nrow = 200, ncol = 200)
 canvas_flow(colors = colorPalette("tuscany1", 4), angles = angles)
 }
 
