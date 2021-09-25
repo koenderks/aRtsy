@@ -53,7 +53,11 @@ canvas_flow <- function(colors, background = "#fafafa", lines = 500, lwd = 0.05,
   ncols <- (right - left) / r
   nrows <- (top - bottom) / r
   if (is.null(angles)) {
-    angles <- .noise(dims = c(nrows, ncols), n = sample(100:300, size = 1), type = sample(c("knn", "svm", "rf"), size = 1))
+    angles <- .noise(
+      dims = c(nrows, ncols), n = sample(100:300, size = 1),
+      type = sample(c("knn", "svm", "rf"), size = 1),
+      limits = c(-pi, pi)
+    )
   } else {
     if (!is.matrix(angles)) {
       stop("'angles' must be a matrix")
@@ -71,7 +75,7 @@ canvas_flow <- function(colors, background = "#fafafa", lines = 500, lwd = 0.05,
     plotData <- rbind(plotData, rows)
   }
   artwork <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y, group = factor(z))) +
-    ggplot2::geom_path(size = plotData$size, color = plotData$color, lineend = "round", alpha = 1) +
+    ggplot2::geom_path(size = plotData$size, color = plotData$color, lineend = "round") +
     ggplot2::coord_cartesian(xlim = c(0, resolution), ylim = c(0, resolution))
   artwork <- theme_canvas(artwork, background = background)
   return(artwork)
