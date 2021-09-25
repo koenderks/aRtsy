@@ -38,6 +38,9 @@ canvas_watercolors(colors = colorPalette("tuscany2"))
 \references{
 \url{https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints}
 }
+\seealso{
+\code{colorPalette}
+}
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
 }

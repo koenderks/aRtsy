@@ -9,7 +9,7 @@ canvas_flow(colors, background = "#fafafa", lines = 500, iterations = 100,
             width = 100, height = 100)
 }
 \arguments{
-\item{colors}{a string specifying the color used for the artwork.}
+\item{colors}{a string or character vector specifying the color(s) used for the artwork.}
 
 \item{background}{a character specifying the color used for the background.}
 

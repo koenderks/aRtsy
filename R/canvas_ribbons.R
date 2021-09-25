@@ -27,6 +27,7 @@
 #' @export
 
 canvas_ribbons <- function(colors, background = "#fdf5e6", triangle = TRUE) {
+  .checkUserInput(background = background)
   # Create an empty figure
   artwork <- ggplot2::ggplot() +
     ggplot2::xlim(c(0, 100)) +

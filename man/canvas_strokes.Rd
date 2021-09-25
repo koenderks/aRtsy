@@ -37,6 +37,9 @@ canvas_strokes(colors = colorPalette("tuscany1"))
 }
 
 }
+\seealso{
+\code{colorPalette}
+}
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
 }

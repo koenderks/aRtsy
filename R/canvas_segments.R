@@ -32,6 +32,7 @@
 
 canvas_segments <- function(colors, background = "#fafafa", n = 250,
                             p = 0.5, H = 0.1, size = 0.2) {
+  .checkUserInput(background = background)
   full_canvas <- data.frame(
     x = numeric(), xend = numeric(),
     y = numeric(), yend = numeric()

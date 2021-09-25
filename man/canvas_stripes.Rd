@@ -30,6 +30,9 @@ canvas_stripes(colors = colorPalette("random", n = 10))
 }
 
 }
+\seealso{
+\code{colorPalette}
+}
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
 }

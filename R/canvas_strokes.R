@@ -17,6 +17,10 @@
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
+#' @keywords artwork canvas
+#'
+#' @seealso \code{colorPalette}
+#'
 #' @examples
 #' \donttest{
 #' set.seed(1)
@@ -25,20 +29,19 @@
 #' canvas_strokes(colors = colorPalette("tuscany1"))
 #' }
 #'
-#' @keywords artwork canvas
-#'
 #' @export
-#' @useDynLib aRtsy
-#' @import Rcpp
 
 canvas_strokes <- function(colors, neighbors = 1, p = 0.01, iterations = 1,
                            width = 500, height = 500, side = FALSE) {
-  x <- y <- z <- NULL
-  if (neighbors < 1) {
-    stop("Neighbors must be equal to, or larger than, one.")
+  .checkUserInput(
+    width = width, height = height,
+    background = background, iterations = iterations
+  )
+  if (neighbors < 1 || neighbors %% 1 != 0 || length(neighbors) != 1) {
+    stop("'neighbors' must be a single integer >= 1")
   }
   if (width != height) {
-    stop("This artwork can only handle a square canvas.")
+    stop("'width' must be equal to 'height'")
   }
   if (length(colors) == 1) {
     colors <- c("#fafafa", colors)
@@ -49,7 +52,7 @@ canvas_strokes <- function(colors, neighbors = 1, p = 0.01, iterations = 1,
   for (i in 1:iterations) {
     canvas <- draw_strokes(X = canvas, neighbors = neighborsLocations, s = length(colors), p = p)
   }
-  full_canvas <- .unraster(canvas, names = c("x", "y", "z")) # Convert 2D matrix to data frame
+  full_canvas <- .unraster(canvas, names = c("x", "y", "z"))
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) +
     ggplot2::coord_equal() +

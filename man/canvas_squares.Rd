@@ -4,7 +4,7 @@
 \alias{canvas_squares}
 \title{Draw Squares and Rectangles}
 \usage{
-canvas_squares(colors, background = '#000000', cuts = 50, ratio = 1.618,
+canvas_squares(colors, background = "#000000", cuts = 50, ratio = 1.618,
                width = 200, height = 200, noise = FALSE)
 }
 \arguments{
@@ -20,13 +20,13 @@ canvas_squares(colors, background = '#000000', cuts = 50, ratio = 1.618,
 
 \item{height}{a positive integer specifying the height of the artwork in pixels.}
 
-\item{noise}{logical. Whether to add k-nn noise to the artwork. Caution, adding noise increases computation time significantly in large dimensions.}
+\item{noise}{logical. Whether to add k-nn noise to the artwork. Note that adding noise increases computation time significantly in large dimensions.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
 }
 \description{
-This function paints random squares. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.
+This function paints random squares and rectangles. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.
 }
 \examples{
 \donttest{
@@ -36,6 +36,9 @@ set.seed(1)
 canvas_squares(colors = colorPalette("retro2"))
 }
 
+}
+\seealso{
+\code{colorPalette}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

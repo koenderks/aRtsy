@@ -12,11 +12,15 @@
 #' @param width        a positive integer specifying the width of the artwork in pixels.
 #' @param height       a positive integer specifying the height of the artwork in pixels.
 #'
-#' @references \url{https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints}
-#'
 #' @return A \code{ggplot} object containing the artwork.
 #'
+#' @references \url{https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints}
+#'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
+#'
+#' @keywords artwork canvas
+#'
+#' @seealso \code{colorPalette}
 #'
 #' @examples
 #' \donttest{
@@ -26,15 +30,11 @@
 #' canvas_watercolors(colors = colorPalette("tuscany2"))
 #' }
 #'
-#' @keywords artwork canvas
-#'
 #' @export
-#' @useDynLib aRtsy
-#' @import Rcpp
 
 canvas_watercolors <- function(colors, background = "#fafafa", layers = 50,
                                depth = 2, width = 250, height = 250) {
-  x <- y <- z <- NULL
+  .checkUserInput(width = width, height = height, background = background)
   nlayers <- length(colors)
   plotData <- data.frame(x = numeric(), y = numeric(), s = numeric(), z = numeric())
   colorSequence <- rep(colors, times = ceiling(layers / 5), each = 5)
@@ -75,7 +75,6 @@ canvas_watercolors <- function(colors, background = "#fafafa", layers = 50,
   coords[nrow(coords) + 1, ] <- coords[1, ]
   varsegments <- stats::rnorm(nrow(coords), mean = 6, sd = 1.5)
   canvas <- data.frame(x = coords$x, y = coords$y, s = varsegments)
-  # First time through deformation algorithm
   canvas <- deform(canvas, maxdepth = 5, width, height)
   return(canvas)
 }

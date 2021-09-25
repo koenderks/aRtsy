@@ -34,6 +34,7 @@
 
 canvas_polylines <- function(colors, background = "#fafafa", ratio = 0.5, iterations = 1000,
                              alpha = NULL, size = 0.1, width = 500, height = 500) {
+  .checkUserInput(width = width, height = height, iterations = iterations)
   if (is.null(alpha)) {
     alphas <- seq(from = 1, to = 0.1, length.out = length(colors))
   } else {

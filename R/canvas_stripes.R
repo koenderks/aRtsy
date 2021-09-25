@@ -13,6 +13,10 @@
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
+#' @keywords artwork canvas
+#'
+#' @seealso \code{colorPalette}
+#'
 #' @examples
 #' \donttest{
 #' set.seed(1)
@@ -21,24 +25,20 @@
 #' canvas_stripes(colors = colorPalette("random", n = 10))
 #' }
 #'
-#' @keywords artwork canvas
-#'
 #' @export
 
 canvas_stripes <- function(colors, n = 300, H = 1, burnin = 1) {
-  x <- y <- z <- NULL
   if (burnin < 1) {
-    stop("The burnin parameter must be larger than, or equal to, one.")
+    stop("'burnin' must be a value >= 1")
   }
   mat <- matrix(NA, nrow = n, ncol = n)
   for (i in 1:nrow(mat)) {
-    # Create brownian movement within each row
     t <- 1:(n + burnin)
     x <- stats::rnorm(n = length(t) - 1, sd = sqrt(H))
     x <- c(0, cumsum(x))
     mat[i, ] <- rev(x[-(1:burnin)])
   }
-  canvas <- .unraster(mat, names = c("x", "y", "z")) # Convert 2D matrix to data frame
+  canvas <- .unraster(mat, names = c("x", "y", "z"))
   artwork <- ggplot2::ggplot(data = canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE) +
     ggplot2::scale_fill_gradientn(colours = colors)

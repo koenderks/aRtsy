@@ -1,9 +1,9 @@
 #' Draw Turmites
 #'
-#' @description This function paints a turmite. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells. The algorithm is simple: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.
+#' @description This function paints a turmite. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells.
 #'
-#' @usage canvas_turmite(colors, background = '#fafafa', p = 0.5, iterations = 1e7,
-#'                width = 1500, height = 1500, noise = FALSE)
+#' @usage canvas_turmite(colors, background = "#fafafa", p = 0.5, iterations = 1e6,
+#'                width = 500, height = 500, noise = FALSE)
 #'
 #' @param colors       a character specifying the color used for the artwork. The number of colors determines the number of turmites.
 #' @param background  a character specifying the color used for the background.
@@ -13,11 +13,17 @@
 #' @param height      a positive integer specifying the height of the artwork in pixels.
 #' @param noise       logical. Whether to add k-nn noise to the artwork. Caution, adding noise increases computation time significantly in large dimensions.
 #'
-#' @references \url{https://en.wikipedia.org/wiki/Turmite}
-#'
 #' @return A \code{ggplot} object containing the artwork.
 #'
+#' @details The turmite algorithm consists of the following steps: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.
+#'
+#' @references \url{https://en.wikipedia.org/wiki/Turmite}
+#'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
+#'
+#' @keywords artwork canvas
+#'
+#' @seealso \code{colorPalette}
 #'
 #' @examples
 #' \donttest{
@@ -27,17 +33,16 @@
 #' canvas_turmite(colors = colorPalette("dark2"))
 #' }
 #'
-#' @keywords artwork canvas
-#'
 #' @export
-#' @useDynLib aRtsy
-#' @import Rcpp
 
-canvas_turmite <- function(colors, background = "#fafafa", p = 0.5, iterations = 1e7,
-                           width = 1500, height = 1500, noise = FALSE) {
-  x <- y <- z <- NULL
-  if (length(background) > 1) {
-    stop("This artwork can only take one background value.")
+canvas_turmite <- function(colors, background = "#fafafa", p = 0.5, iterations = 1e6,
+                           width = 500, height = 500, noise = FALSE) {
+  .checkUserInput(
+    width = width, height = height,
+    background = background, iterations = iterations
+  )
+  if (width != height) {
+    stop("'width' must be equal to 'height'")
   }
   palette <- c(background, colors)
   canvas <- matrix(0, nrow = height, ncol = width)
@@ -59,7 +64,7 @@ canvas_turmite <- function(colors, background = "#fafafa", p = 0.5, iterations =
     }
     canvas <- canvas + turmite
   }
-  full_canvas <- .unraster(canvas, names = c("x", "y", "z")) # Convert 2D matrix to data frame
+  full_canvas <- .unraster(canvas, names = c("x", "y", "z"))
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) +
     ggplot2::coord_equal() +

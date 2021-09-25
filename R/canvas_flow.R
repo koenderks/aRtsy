@@ -6,7 +6,7 @@
 #'             angles = NULL, angles.method = c("svm", "knn", "rf"),
 #'             width = 100, height = 100)
 #'
-#' @param colors         a string specifying the color used for the artwork.
+#' @param colors         a string or character vector specifying the color(s) used for the artwork.
 #' @param background     a character specifying the color used for the background.
 #' @param lines          the number of lines to draw.
 #' @param iterations     the maximum number of iterations for each line.

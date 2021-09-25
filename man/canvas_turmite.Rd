@@ -4,8 +4,8 @@
 \alias{canvas_turmite}
 \title{Draw Turmites}
 \usage{
-canvas_turmite(colors, background = '#fafafa', p = 0.5, iterations = 1e7,
-               width = 1500, height = 1500, noise = FALSE)
+canvas_turmite(colors, background = "#fafafa", p = 0.5, iterations = 1e6,
+               width = 500, height = 500, noise = FALSE)
 }
 \arguments{
 \item{colors}{a character specifying the color used for the artwork. The number of colors determines the number of turmites.}
@@ -26,7 +26,10 @@ canvas_turmite(colors, background = '#fafafa', p = 0.5, iterations = 1e7,
 A \code{ggplot} object containing the artwork.
 }
 \description{
-This function paints a turmite. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells. The algorithm is simple: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.
+This function paints a turmite. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells.
+}
+\details{
+The turmite algorithm consists of the following steps: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.
 }
 \examples{
 \donttest{
@@ -39,6 +42,9 @@ canvas_turmite(colors = colorPalette("dark2"))
 }
 \references{
 \url{https://en.wikipedia.org/wiki/Turmite}
+}
+\seealso{
+\code{colorPalette}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
