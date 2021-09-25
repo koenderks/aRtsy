@@ -2,7 +2,7 @@
 #'
 #' @description This function draws the Collatz conjecture on the canvas.
 #'
-#' @usage canvas_collatz(colors, background = '#fafafa', n = 200,
+#' @usage canvas_collatz(colors, background = "#fafafa", n = 200,
 #'                 angle.even = 0.0075, angle.odd = 0.0145, side = FALSE)
 #'
 #' @param colors     a string or character vector specifying the color(s) used for the artwork.

@@ -19,7 +19,7 @@ canvas_forest(colors, n = 1000, width = 500, height = 500)
 A \code{ggplot} object containing the artwork.
 }
 \description{
-This function creates an artwork from randomly generated data by running a random forest classification algorithm to predict the color of each pixel on the canvas.
+This function draws the predictions from a random forest algorithm on randomly generated categorical data.
 }
 \examples{
 \donttest{
@@ -29,6 +29,12 @@ set.seed(1)
 canvas_forest(colors = colorPalette("tuscany1"))
 }
 
+}
+\references{
+\url{https://en.wikipedia.org/wiki/Random_forest}
+}
+\seealso{
+\code{colorPalette}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

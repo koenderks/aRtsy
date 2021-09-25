@@ -2,7 +2,7 @@
 #'
 #' @description This function draws diamonds on a canvas and (optionally) places two lines behind them. The diamonds can be transparent or have a random color sampled from the input.
 #'
-#' @usage canvas_diamonds(colors, background = '#fafafa', col.line = 'black',
+#' @usage canvas_diamonds(colors, background = "#fafafa", col.line = "black",
 #'                 radius = 10, alpha = 1, p = 0.2,
 #'                 width = 500, height = 500)
 #'

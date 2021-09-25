@@ -4,7 +4,7 @@
 \alias{canvas_collatz}
 \title{Draw Collatz Sequences}
 \usage{
-canvas_collatz(colors, background = '#fafafa', n = 200,
+canvas_collatz(colors, background = "#fafafa", n = 200,
                 angle.even = 0.0075, angle.odd = 0.0145, side = FALSE)
 }
 \arguments{

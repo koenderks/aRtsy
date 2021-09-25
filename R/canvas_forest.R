@@ -1,6 +1,6 @@
 #' Draw a Random Forest
 #'
-#' @description This function creates an artwork from randomly generated data by running a random forest classification algorithm to predict the color of each pixel on the canvas.
+#' @description This function draws the predictions from a random forest algorithm on randomly generated categorical data.
 #'
 #' @usage canvas_forest(colors, n = 1000, width = 500, height = 500)
 #'
@@ -11,7 +11,13 @@
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
+#' @references \url{https://en.wikipedia.org/wiki/Random_forest}
+#'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
+#'
+#' @keywords artwork canvas
+#'
+#' @seealso \code{colorPalette}
 #'
 #' @examples
 #' \donttest{
@@ -21,12 +27,10 @@
 #' canvas_forest(colors = colorPalette("tuscany1"))
 #' }
 #'
-#' @keywords artwork canvas
-#'
 #' @export
-#' @importFrom stats predict
 
 canvas_forest <- function(colors, n = 1000, width = 500, height = 500) {
+  .checkUserInput(width = width, height = height)
   train <- data.frame(
     x = stats::runif(n, 0, 1),
     y = stats::runif(n, 0, 1),

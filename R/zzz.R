@@ -1,6 +1,7 @@
 #' @useDynLib aRtsy
 #' @import Rcpp
 #' @importFrom stats predict
+#' @importFrom dplyr %>%
 NULL
 
 utils::globalVariables(c("x", "y", "z"))
