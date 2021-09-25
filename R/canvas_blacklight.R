@@ -9,11 +9,15 @@
 #' @param width       a positive integer specifying the width of the artwork in pixels.
 #' @param height      a positive integer specifying the height of the artwork in pixels.
 #'
-#' @references \url{https://en.wikipedia.org/wiki/Support-vector_machine}
-#'
 #' @return A \code{ggplot} object containing the artwork.
 #'
+#' @references \url{https://en.wikipedia.org/wiki/Support-vector_machine}
+#'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
+#'
+#' @keywords artwork canvas
+#'
+#' @seealso \code{colorPalette}
 #'
 #' @examples
 #' \donttest{
@@ -22,8 +26,6 @@
 #' # Simple example
 #' canvas_blacklight(colors = colorPalette("tuscany2"))
 #' }
-#'
-#' @keywords artwork canvas
 #'
 #' @export
 

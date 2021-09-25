@@ -1,5 +1,3 @@
-#' @importFrom stats predict
-
 # This function computes k-nearest neighbors noise from c++
 .noise <- function(dims, n = 100, type = c("artsy-knn", "knn", "svm", "rf"), k = 20) {
   type <- match.arg(type)

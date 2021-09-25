@@ -14,26 +14,27 @@
 #' @param width       a positive integer specifying the width of the artwork in pixels.
 #' @param height      a positive integer specifying the height of the artwork in pixels.
 #'
+#' @return A \code{ggplot} object containing the artwork.
+#'
 #' @references \url{https://en.wikipedia.org/wiki/Arnold_tongue}
 #' @references \url{https://linas.org/art-gallery/circle-map/circle-map.html}
 #'
-#' @return A \code{ggplot} object containing the artwork.
-#'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
+#'
+#' @keywords artwork canvas
+#'
+#' @seealso \code{colorPalette}
 #'
 #' @examples
 #' \donttest{
 #' canvas_circlemap(colors = colorPalette("dark2"))
 #' }
 #'
-#' @keywords artwork canvas
-#'
 #' @export
-#' @useDynLib aRtsy
-#' @import Rcpp
 
 canvas_circlemap <- function(colors, left = 0, right = 12.56, bottom = 0, top = 1,
                              iterations = 10, width = 1500, height = 1500) {
+  .checkUserInput(width = width, height = height)
   canvas <- matrix(1, nrow = height, ncol = width)
   canvas <- draw_circlemap(
     X = canvas, left = left, right = right,

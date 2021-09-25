@@ -33,6 +33,9 @@ canvas_blacklight(colors = colorPalette("tuscany2"))
 \references{
 \url{https://en.wikipedia.org/wiki/Support-vector_machine}
 }
+\seealso{
+\code{colorPalette}
+}
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
 }

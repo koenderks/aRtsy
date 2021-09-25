@@ -12,11 +12,15 @@
 #' @param angle.odd  a value specifying the angle (in radials) to use in bending the sequence at each even number.
 #' @param side       logical. Whether to put the artwork on its side.
 #'
-#' @references \url{https://nl.wikipedia.org/wiki/Collatz_Conjecture}
-#'
 #' @return A \code{ggplot} object containing the artwork.
 #'
+#' @references \url{https://nl.wikipedia.org/wiki/Collatz_Conjecture}
+#'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
+#'
+#' @keywords artwork canvas
+#'
+#' @seealso \code{colorPalette}
 #'
 #' @examples
 #' \donttest{
@@ -26,19 +30,11 @@
 #' canvas_collatz(colors = colorPalette("tuscany3"))
 #' }
 #'
-#' @keywords artwork canvas
-#'
 #' @export
 
 canvas_collatz <- function(colors, background = "#fafafa", n = 200,
                            angle.even = 0.0075, angle.odd = 0.0145, side = FALSE) {
-  x <- y <- z <- NULL
-  canvas <- data.frame(
-    x = numeric(),
-    y = numeric(),
-    col = numeric(),
-    z = numeric()
-  )
+  canvas <- data.frame(x = numeric(), y = numeric(), col = numeric(), z = numeric())
   if (length(n) == 1) {
     n <- sample(1:1000000, size = n, replace = F)
   }

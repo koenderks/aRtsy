@@ -38,6 +38,9 @@ canvas_collatz(colors = colorPalette("tuscany3"))
 \references{
 \url{https://nl.wikipedia.org/wiki/Collatz_Conjecture}
 }
+\seealso{
+\code{colorPalette}
+}
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
 }

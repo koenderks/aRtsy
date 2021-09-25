@@ -16,9 +16,9 @@
 #' @details The algorithm for Langton's Ant involves repeating the following rules: 1) on a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block; 2)
 #'          On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block; 3) If a certain number of iterations has passed, choose a different color which corresponds to a different combination of these rules.
 #'
-#' @author Koen Derks, \email{koen-derks@hotmail.com}
-#'
 #' @references \url{https://en.wikipedia.org/wiki/Langtons_ant}
+#'
+#' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @keywords artwork canvas
 #'
@@ -33,8 +33,6 @@
 #' }
 #'
 #' @export
-#' @useDynLib aRtsy
-#' @import Rcpp
 
 canvas_ant <- function(colors, background = "#fafafa", iterations = 50000,
                        width = 250, height = 250) {

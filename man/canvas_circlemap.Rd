@@ -41,6 +41,9 @@ canvas_circlemap(colors = colorPalette("dark2"))
 
 \url{https://linas.org/art-gallery/circle-map/circle-map.html}
 }
+\seealso{
+\code{colorPalette}
+}
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
 }
