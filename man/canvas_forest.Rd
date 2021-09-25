@@ -24,7 +24,7 @@ This function draws the predictions from a random forest algorithm trained on ra
 set.seed(1)
 
 # Simple example
-canvas_forest(colors = colorPalette("tuscany1"))
+canvas_forest(colors = colorPalette("jungle"))
 }
 
 }

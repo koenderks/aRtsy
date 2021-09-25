@@ -23,7 +23,7 @@
 #' set.seed(1)
 #'
 #' # Simple example
-#' canvas_forest(colors = colorPalette("tuscany1"))
+#' canvas_forest(colors = colorPalette("jungle"))
 #' }
 #'
 #' @export

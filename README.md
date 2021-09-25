@@ -396,7 +396,7 @@ You can use the `canvas_forest()` function to make your own artwork using this a
 
 ```r
 set.seed(1)
-canvas_forest(colors = colorPalette("tuscany1"))
+canvas_forest(colors = colorPalette("jungle"))
 # see ?canvas_forest for more input parameters of this algorithm
 ```
 
