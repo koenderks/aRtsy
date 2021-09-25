@@ -131,7 +131,7 @@
     <pre class="usage"><span class='fu'>canvas_planet</span><span class='op'>(</span><span class='va'>colors</span>, threshold <span class='op'>=</span> <span class='fl'>4</span>, iterations <span class='op'>=</span> <span class='fl'>200</span>,
               starprob <span class='op'>=</span> <span class='fl'>0.01</span>, fade <span class='op'>=</span> <span class='fl'>0.2</span>,
               radius <span class='op'>=</span> <span class='cn'>NULL</span>, center.x <span class='op'>=</span> <span class='cn'>NULL</span>, center.y <span class='op'>=</span> <span class='cn'>NULL</span>,
-              light.right <span class='op'>=</span> <span class='cn'>TRUE</span>, width <span class='op'>=</span> <span class='fl'>1500</span>, height <span class='op'>=</span> <span class='fl'>1500</span><span class='op'>)</span></pre>
+              light.right <span class='op'>=</span> <span class='cn'>TRUE</span>, resolution <span class='op'>=</span> <span class='fl'>1500</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -173,12 +173,8 @@
       <td><p>whether to draw the light from the right or the left.</p></td>
     </tr>
     <tr>
-      <th>width</th>
-      <td><p>a positive integer specifying the width of the artwork in pixels.</p></td>
-    </tr>
-    <tr>
-      <th>height</th>
-      <td><p>a positive integer specifying the height of the artwork in pixels.</p></td>
+      <th>resolution</th>
+      <td><p>resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.</p></td>
     </tr>
     </table>
 

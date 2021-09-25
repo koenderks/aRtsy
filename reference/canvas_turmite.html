@@ -129,7 +129,7 @@
     </div>
 
     <pre class="usage"><span class='fu'>canvas_turmite</span><span class='op'>(</span><span class='va'>colors</span>, background <span class='op'>=</span> <span class='st'>"#fafafa"</span>, p <span class='op'>=</span> <span class='fl'>0.5</span>, iterations <span class='op'>=</span> <span class='fl'>1e6</span>,
-               width <span class='op'>=</span> <span class='fl'>500</span>, height <span class='op'>=</span> <span class='fl'>500</span>, noise <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+               resolution <span class='op'>=</span> <span class='fl'>500</span>, noise <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -151,16 +151,12 @@
       <td><p>a positive integer specifying the number of iterations of the algorithm.</p></td>
     </tr>
     <tr>
-      <th>width</th>
-      <td><p>a positive integer specifying the width of the artwork in pixels.</p></td>
-    </tr>
-    <tr>
-      <th>height</th>
-      <td><p>a positive integer specifying the height of the artwork in pixels.</p></td>
+      <th>resolution</th>
+      <td><p>resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.</p></td>
     </tr>
     <tr>
       <th>noise</th>
-      <td><p>logical. Whether to add k-nn noise to the artwork. Caution, adding noise increases computation time significantly in large dimensions.</p></td>
+      <td><p>logical. Whether to add k-nn noise to the artwork. Note that adding noise increases computation time significantly in large dimensions.</p></td>
     </tr>
     </table>
 
