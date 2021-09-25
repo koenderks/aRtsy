@@ -43,7 +43,7 @@ After installation, the `aRtsy` package can be loaded with:
 library(aRtsy)
 ```
 
-**Note:** render times in RStudio can be quite long for some artworks. It is therefore strongly recommended to save the artwork to a file (e.g., `.png` or `.jpg`) before viewing. You can use the `saveCanvas()` function for this, which saves the artwork with an appropriate size and quality.
+**Note:** Render times in RStudio can be quite long for some artworks. It is therefore recommended to save the artwork to a file (e.g., `.png` or `.jpg`) before viewing. You can use the `saveCanvas()` function for this, which saves the artwork with an appropriate size and quality.
 
 ```r
 artwork <- canvas_strokes(colors = c("black", "white"))
@@ -87,14 +87,14 @@ saveCanvas(artwork, filename = "myArtwork.png")
 
 ### The Iterative collection
 
-The Iterative collection mostly implements algorithms whose state depend on the previous state. These algorithms generally use a grid based canvas to draw on. On the grid, each point represents a pixel of the final image. By assigning a color to these points according to certain rules, one can create the images in this collection.
+The Iterative collection mostly implements algorithms whose state depend on the previous state. These algorithms generally use a grid based canvas to draw on. On this grid, each point represents a pixel of the final image. By assigning a color to these points according to certain rules, one can create the images in this collection.
 
 #### Langton's ant
 
-According to [Wikipedia](https://en.wikipedia.org/wiki/Langtons_ant), Langton's ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below.
+According to [Wikipedia](https://en.wikipedia.org/wiki/Langtons_ant), Langton's ant is a turmite with a very specific set of rules. In particular, after choosing a starting position the algorithm involves repeating the following three rules:
 
-1. On a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block.
-1. On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block.
+1. On a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block,
+1. On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block,
 1. If a certain number of iterations has passed, choose a different color which corresponds to a different combination of these rules.
 
 <p align="center">
@@ -113,14 +113,14 @@ canvas_ant(colors = colorPalette("house"))
 
 #### Collatz conjecture
 
-The Collatz conjecture is also known as `3x+1`. The algorithm draws lines according to a simple rule set:
+The Collatz conjecture is also known as the `3x+1` equation. The algorithm draws lines according to a simple rule set:
 
 1. Take a random positive number.
 2. If the number is even, divide it by 2.
 3. If the number is odd, multiply the number by 3 and add 1.
 4. Repeat to get a sequence of numbers.
 
-By visualizing the sequence for each number, overlaying sequences that are the same, and bending the edges differently for even and odd numbers in the sequence, organic looking coral structures can occur.
+By visualizing the sequence for each number, overlaying sequences that are the same, and bending the edges differently for even and odd numbers in the sequence, organic looking structures can occur.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-09.png' width='270' height='270'>
@@ -138,7 +138,7 @@ canvas_collatz(colors = colorPalette("tuscany3"))
 
 #### Flow fields
 
-This artwork implements the algorithm described in Tyler Hobbs' blog post [Flow fields](https://tylerxhobbs.com/essays/2020/flow-fields). It works by creating a grid of angles and letting points flow through this field. The angles can be set manually or according to the predictions of a supervised learning method trained on randomly generated data.
+This artwork implements a version of the algorithm described in the blog post [Flow Fields](https://tylerxhobbs.com/essays/2020/flow-fields) by Tyler Hobbs. It works by creating a grid of angles and determining how these points will flow through this field. The angles in the field can be set manually or according to the predictions of a supervised learning method trained on randomly generated data.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-24.png' width='270' height='270'>
@@ -156,7 +156,7 @@ canvas_flow(colors = colorPalette("dark2"))
 
 #### Planets
 
-We all love space, and this type of artwork puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (inspired by an idea from [Fronkonstin](https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/)) to fill in their surfaces.
+We all love space, and this type of artwork puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (described in the blog post [Neighborhoods: Experimenting with Cyclic Cellular Automata](https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/) by Fronkonstin) to fill in their surfaces. The color and placement of the planets can be set manually.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-26.png' width='270' height='270'>
@@ -174,7 +174,7 @@ canvas_planet(colors = colorPalette("retro3"))
 
 #### Stripes
 
-This type of artwork is based on the concept of [Brownian motion](https://en.wikipedia.org/wiki/Brownian_motion). The algorithm generates a sequence of brownian motion steps on a two-dimensional surface for each row on the canvas. Next, it fills these according to their generated value. More colors usually make this artwork more interesting.
+This type of artwork is based on the concept of [Brownian motion](https://en.wikipedia.org/wiki/Brownian_motion). The algorithm generates a sequence of slightly increasing and decreasing values for each row on the canvas. Next, it fills these according to their generated value. More colors usually make this artwork more interesting.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/stripes/2021-08-23.png' width='270' height='270'>
@@ -192,7 +192,7 @@ canvas_stripes(colors = colorPalette("random", n = 10))
 
 #### Paint strokes
 
-When you think of the act of painting, you probably imagine stroking paint on a canvas. This type of artwork tries to mimic that activity. The paint strokes algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor chance of generating a new color. Going over the canvas like this results in strokes of paint. Repeating this a number of times creates more faded strokes of paint.
+When you think of the act of painting, you probably imagine stroking paint on a canvas. This type of artwork tries to mimic that activity. The algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor chance of generating a new color. Going over the canvas like this results in something that looks like strokes of paint.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-21.png' width='270' height='270'>
@@ -210,7 +210,7 @@ canvas_strokes(colors = colorPalette("tuscany1"))
 
 #### Turmite
 
-According to [Wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *"a Turing machine which has an orientation in addition to a current state and a "tape" that consists of an infinite two-dimensional grid of cells"*. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in `aRtsy` is slightly modified so that the turmite does not go off the canvas, but instead bounces back onto the canvas.
+According to [Wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *"a Turing machine which has an orientation in addition to a current state and a "tape" that consists of an infinite two-dimensional grid of cells"*. The classic algorithm consists of repeating the following three simple steps:
 
 1. Turn on the spot (left, right, up, or down),
 2. Change the color of the block,
@@ -232,7 +232,7 @@ canvas_turmite(colors = colorPalette("dark2"))
 
 #### Watercolors
 
-This artwork implements the algorithm described in Tyler Hobbs' blog post [A guide to simulating watercolor paint with generative art](https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints). It works by layering several geometric shapes and deforming these shapes by repeatedly splitting their edges.
+This artwork implements a version of the algorithm described in the blog post [A Guide to Simulating Watercolor Paint with Generative Art](https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints) by Tyler Hobbs. It works by layering several geometric shapes and deforming each shape by repeatedly splitting its edges.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-23.png' width='270' height='270'>
@@ -254,7 +254,7 @@ The Geometric collection mostly implements algorithms that draw a geometric shap
 
 #### Diamonds
 
-This function creates a set of diamonds on a canvas. The diamonds are filled in using a random color assignment.
+This function creates a set of diamonds on a canvas. The diamonds are filled in (or left out) using a random color assignment.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-06.png' width='270' height='270'>
@@ -272,7 +272,7 @@ canvas_diamonds(colors = colorPalette("tuscany1"))
 
 #### Functions
 
-The idea for this type of artwork is taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package. In this algorithm, the position of every single point is calculated by a formula which has random parameters. You can also supply your own formula.
+The idea for this type of artwork is taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package. In this algorithm, the position of every single point is calculated by a formula which has random parameters. You can supply your own formula.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-03-17.png' width='270' height='270'>
@@ -326,7 +326,7 @@ canvas_ribbons(colors = colorPalette("retro1")
 
 #### Segments
 
-This type of artwork mimics the style of the well-known paintings by the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan). The position and direction of each line segment is determined randomly.
+This type of artwork is inspired by the style of the well-known paintings by the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan). The position and direction of each line segment is determined randomly.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-07.png' width='270' height='270'>
@@ -344,7 +344,7 @@ canvas_segments(colors = colorPalette("dark1"))
 
 #### Squares and rectangles
 
-This type of artwork is also a la Mondriaan, but uses a variety of squares and rectangles instead of lines. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.
+This artwork uses a variety of squares and rectangles to fill the canvas. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-03-01.png' width='270' height='270'>
