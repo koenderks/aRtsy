@@ -14,7 +14,7 @@ There were no ERRORs or WARNINGs.
 
 On linux, there was 1 NOTE:
 
-* checking installed package size ... NOTE. installed size is 5.0Mb. sub-directories of 1Mb or more: libs 4.7Mb
+* checking installed package size ... NOTE. installed size is 7.5Mb. sub-directories of 1Mb or more: libs 7.2Mb
 
 ## Downstream dependencies
 There are currently no downstream dependencies for this package.
