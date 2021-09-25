@@ -23,7 +23,7 @@ theme_canvas <- function(x, background = NULL, margin = 0) {
     axis.ticks = ggplot2::element_blank(),
     axis.line = ggplot2::element_blank(),
     legend.position = "none",
-	plot.background = ggplot2::element_rect(fill = background, colour = background),
+    plot.background = ggplot2::element_rect(fill = background, colour = background),
     panel.border = ggplot2::element_blank(),
     panel.grid = ggplot2::element_blank(),
     plot.margin = ggplot2::unit(rep(margin, 4), "lines"),
@@ -31,9 +31,9 @@ theme_canvas <- function(x, background = NULL, margin = 0) {
     strip.text = ggplot2::element_blank()
   )
   if (is.null(background)) {
-	x <- x + ggplot2::theme(panel.background = ggplot2::element_blank())
+    x <- x + ggplot2::theme(panel.background = ggplot2::element_blank())
   } else {
-	x <- x + ggplot2::theme(panel.background = ggplot2::element_rect(fill = background, colour = background))
+    x <- x + ggplot2::theme(panel.background = ggplot2::element_rect(fill = background, colour = background))
   }
   return(x)
 }

@@ -5,7 +5,7 @@
 \title{Draw Langton's Ant}
 \usage{
 canvas_ant(colors, background = "#fafafa", iterations = 50000,
-           resolution = 250)
+           resolution = 500)
 }
 \arguments{
 \item{colors}{a character (vector) specifying the color(s) used for the artwork.}
