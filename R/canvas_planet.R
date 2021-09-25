@@ -49,13 +49,10 @@
 #' @keywords artwork canvas
 #'
 #' @export
-#' @useDynLib aRtsy
-#' @import Rcpp
 
 canvas_planet <- function(colors, threshold = 4, iterations = 200, starprob = 0.01, fade = 0.2,
                           radius = NULL, center.x = NULL, center.y = NULL, light.right = TRUE,
                           width = 1500, height = 1500) {
-  x <- y <- z <- NULL
   if (is.list(colors)) {
     palette <- list()
     for (i in 1:length(colors)) {

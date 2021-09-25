@@ -1,4 +1,4 @@
-#' Color palette generator.
+#' Color Palette Generator
 #'
 #' @description This function creates a random color palette, or allows the user to select a pre-implemented palette.
 #'

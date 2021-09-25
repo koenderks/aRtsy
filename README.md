@@ -56,7 +56,7 @@ saveCanvas(artwork, filename = 'myArtwork.png')
 
 * [`canvas_ant()`](#langtons-ant)
 * [`canvas_collatz()`](#collatz-conjecture)
-* [`canvas_flows()`](#flow-fields)
+* [`canvas_flow()`](#flow-fields)
 * [`canvas_planet()`](#planets)
 * [`canvas_stripes()`](#stripes)
 * [`canvas_strokes()`](#paint-strokes)
@@ -146,12 +146,12 @@ This artwork implements the algorithm described in Tyler Hobbs' blog post [Flow 
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-22.png' width='270' height='270'>
 </p>
 
-You can use the `canvas_flows()` function to make your own artwork using this algorithm.
+You can use the `canvas_flow()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(1)
-canvas_flows(colors = colorPalette('dark2'))
-# see ?canvas_flows for more input parameters of this algorithm
+canvas_flow(colors = colorPalette('dark2'))
+# see ?canvas_flow for more input parameters of this algorithm
 ```
 
 #### Planets

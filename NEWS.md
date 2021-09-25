@@ -2,7 +2,7 @@
 
 **New features**
 
-- Added new artwork `canvas_flows()`.
+- Added new artwork `canvas_flow()`.
 - Added new artwork `canvas_watercolors()`.
 
 **Minor changes**

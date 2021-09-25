@@ -1,17 +1,19 @@
-#' Draw Flow Fields
+#' Draw A Flow Field
 #'
 #' @description This function draws flow fields on a canvas.
 #'
-#' @usage canvas_flows(colors, background = "#fafafa", lines = 500, iterations = 100,
-#'              angles = c("svm", "knn", "rf"), width = 100, height = 100)
+#' @usage canvas_flow(colors, background = "#fafafa", lines = 500, iterations = 100,
+#'             angles = NULL, angles.method = c("svm", "knn", "rf"),
+#'             width = 100, height = 100)
 #'
-#' @param colors       a string specifying the color used for the artwork.
-#' @param background   a character specifying the color used for the background.
-#' @param lines        the number of lines to draw.
-#' @param iterations   the maximum number of iterations for each line.
-#' @param angles       method of setting the angles of the flow field. Possible options are \code{svm}, \code{knn}, and \code{rf}.
-#' @param width        a positive integer specifying the width of the artwork in pixels.
-#' @param height       a positive integer specifying the height of the artwork in pixels.
+#' @param colors         a string specifying the color used for the artwork.
+#' @param background     a character specifying the color used for the background.
+#' @param lines          the number of lines to draw.
+#' @param iterations     the maximum number of iterations for each line.
+#' @param angles         optional, a matrix containing the angles of the flow field . If \code{NULL} (default), angles are set according to the \code{angles.method}.
+#' @param angles.method  method of setting the angles of the flow field. Possible options are \code{svm}, \code{knn}, and \code{rf}.
+#' @param width          a positive integer specifying the width of the artwork in pixels.
+#' @param height         a positive integer specifying the height of the artwork in pixels.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
@@ -28,14 +30,19 @@
 #' set.seed(1)
 #'
 #' # Simple example
-#' canvas_flows(colors = colorPalette("dark2"))
+#' canvas_flow(colors = colorPalette("dark2"))
+#'
+#' # Advanced example
+#' angles <- matrix(rnorm(200 * 200), nrow = 200, ncol = 200)
+#' canvas_flow(colors = colorPalette("tuscany1", 4), angles = angles)
 #' }
 #'
 #' @export
 
-canvas_flows <- function(colors, background = "#fafafa", lines = 500, iterations = 100,
-                         angles = c("svm", "knn", "rf"), width = 100, height = 100) {
-  angles <- match.arg(angles)
+canvas_flow <- function(colors, background = "#fafafa", lines = 500, iterations = 100,
+                        angles = NULL, angles.method = c("svm", "knn", "rf"),
+                        width = 100, height = 100) {
+  angles.method <- match.arg(angles.method)
   .checkUserInput(
     background = background, width = width,
     height = height, iterations = iterations
@@ -51,7 +58,16 @@ canvas_flows <- function(colors, background = "#fafafa", lines = 500, iterations
   top <- height * 1.5
   ncols <- (right - left) / resolution
   nrows <- (top - bottom) / resolution
-  angles <- .noise(dims = c(nrows, ncols), n = sample(100:300, size = 1), type = angles)
+  if (is.null(angles)) {
+    angles <- .noise(dims = c(nrows, ncols), n = sample(100:300, size = 1), type = angles.method)
+  } else {
+    if (!is.matrix(angles)) {
+      stop("'angles' should be a matrix")
+    }
+    if (nrow(angles) != nrows || ncol(angles) != ncols) {
+      stop(paste0("'angles' should be a ", nrows, " x ", ncols, " matrix"))
+    }
+  }
   plotData <- data.frame(x = numeric(), y = numeric(), z = numeric(), size = numeric(), color = numeric())
   for (j in 1:lines) {
     step <- stats::runif(1, min = 0, max = width * 0.01)

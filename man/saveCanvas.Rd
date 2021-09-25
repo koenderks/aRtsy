@@ -2,7 +2,7 @@
 % Please edit documentation in R/saveCanvas.R
 \name{saveCanvas}
 \alias{saveCanvas}
-\title{Save a Canvas to an External Device.}
+\title{Save a Canvas to an External Device}
 \usage{
 saveCanvas(plot, filename, width = 7, height = 7, dpi = 300)
 }

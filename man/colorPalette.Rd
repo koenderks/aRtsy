@@ -2,7 +2,7 @@
 % Please edit documentation in R/colorPalette.R
 \name{colorPalette}
 \alias{colorPalette}
-\title{Color palette generator.}
+\title{Color Palette Generator}
 \usage{
 colorPalette(name, n = NULL)
 }
