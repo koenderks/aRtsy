@@ -45,7 +45,7 @@ After installation, the `aRtsy` package can be loaded with:
 library(aRtsy)
 ```
 
-**Note:** render times in RStudio can be quite long for some artworks. It is therefore strongly recommended to save the artwork to a file before checking it out. You can use the build-in `saveCanvas()` function for this, which saves the artwork with an appropriate size and quality.
+**Note:** render times in RStudio can be quite long for some artworks. It is therefore strongly recommended to save the artwork to a file before checking it out. You can use the `saveCanvas()` function for this, which saves the artwork with an appropriate size and quality.
 
 ```r
 artwork <- canvas_strokes(colors = c('black', 'white'))
