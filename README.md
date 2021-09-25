@@ -28,13 +28,13 @@ Every 24 hours this repository generates (using `set.seed(Sys.Date())`) and twee
 The most recently released version of `aRtsy` can be downloaded from [CRAN](https://cran.r-project.org/package=aRtsy) by running the following command in R:
 
 ```r
-install.packages('aRtsy')
+install.packages("aRtsy")
 ```
 
 Alternatively, you can download the development version from GitHub using:
 
 ```r
-devtools::install_github('koenderks/aRtsy')
+devtools::install_github("koenderks/aRtsy")
 ```
 
 After installation, the `aRtsy` package can be loaded with:
