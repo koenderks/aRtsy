@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Draw Polygons and Lines — canvas_polylines • aRtsy</title>
+<title>Draw A Flow Field — canvas_flow • aRtsy</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Draw Polygons and Lines — canvas_polylines" />
-<meta property="og:description" content="This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork." />
+<meta property="og:title" content="Draw A Flow Field — canvas_flow" />
+<meta property="og:description" content="This function draws flow fields on a canvas." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,44 +119,45 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Draw Polygons and Lines</h1>
-    <small class="dont-index">Source: <a href='https://github.com/koenderks/aRtsy/blob/master/R/canvas_polylines.R'><code>R/canvas_polylines.R</code></a></small>
-    <div class="hidden name"><code>canvas_polylines.Rd</code></div>
+    <h1>Draw A Flow Field</h1>
+    <small class="dont-index">Source: <a href='https://github.com/koenderks/aRtsy/blob/master/R/canvas_flow.R'><code>R/canvas_flow.R</code></a></small>
+    <div class="hidden name"><code>canvas_flow.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork.</p>
+    <p>This function draws flow fields on a canvas.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>canvas_polylines</span><span class='op'>(</span><span class='va'>colors</span>, background <span class='op'>=</span> <span class='st'>"#fafafa"</span>, ratio <span class='op'>=</span> <span class='fl'>0.5</span>, iterations <span class='op'>=</span> <span class='fl'>1000</span>,
-                 alpha <span class='op'>=</span> <span class='cn'>NULL</span>, size <span class='op'>=</span> <span class='fl'>0.1</span>, width <span class='op'>=</span> <span class='fl'>500</span>, height <span class='op'>=</span> <span class='fl'>500</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>canvas_flow</span><span class='op'>(</span><span class='va'>colors</span>, background <span class='op'>=</span> <span class='st'>"#fafafa"</span>, lines <span class='op'>=</span> <span class='fl'>500</span>, iterations <span class='op'>=</span> <span class='fl'>100</span>,
+            angles <span class='op'>=</span> <span class='cn'>NULL</span>, angles.method <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"svm"</span>, <span class='st'>"knn"</span>, <span class='st'>"rf"</span><span class='op'>)</span>,
+            width <span class='op'>=</span> <span class='fl'>100</span>, height <span class='op'>=</span> <span class='fl'>100</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>colors</th>
-      <td><p>a string or character vector specifying the color(s) used for the artwork.</p></td>
+      <td><p>a string specifying the color used for the artwork.</p></td>
     </tr>
     <tr>
       <th>background</th>
-      <td><p>a character specifying the color used for the lines.</p></td>
+      <td><p>a character specifying the color used for the background.</p></td>
     </tr>
     <tr>
-      <th>ratio</th>
-      <td><p>a positive value specifying the width of the polygons. Larger ratios cause more overlap.</p></td>
+      <th>lines</th>
+      <td><p>the number of lines to draw.</p></td>
     </tr>
     <tr>
       <th>iterations</th>
-      <td><p>a positive integer specifying the number of iterations of the algorithm.</p></td>
+      <td><p>the maximum number of iterations for each line.</p></td>
     </tr>
     <tr>
-      <th>alpha</th>
-      <td><p>a value specifying the transparency of the polygons. If <code>NULL</code> (the default), added layers become increasingly more transparent.</p></td>
+      <th>angles</th>
+      <td><p>optional, a matrix containing the angles of the flow field . If <code>NULL</code> (default), angles are set according to the <code>angles.method</code>.</p></td>
     </tr>
     <tr>
-      <th>size</th>
-      <td><p>a positive value specifying the size of the borders.</p></td>
+      <th>angles.method</th>
+      <td><p>method of setting the angles of the flow field. Possible options are <code>svm</code>, <code>knn</code>, and <code>rf</code>.</p></td>
     </tr>
     <tr>
       <th>width</th>
@@ -171,6 +172,9 @@
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A <code>ggplot</code> object containing the artwork.</p>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p><a href='https://tylerxhobbs.com/essays/2020/flow-fields'>https://tylerxhobbs.com/essays/2020/flow-fields</a></p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code>colorPalette</code></p></div>
@@ -183,8 +187,12 @@
 <span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span>
 
 <span class='co'># Simple example</span>
-<span class='fu'>canvas_polylines</span><span class='op'>(</span>colors <span class='op'>=</span> <span class='fu'><a href='colorPalette.html'>colorPalette</a></span><span class='op'>(</span><span class='st'>"retro1"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='img'><img src='canvas_polylines-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># }</span>
+<span class='fu'>canvas_flow</span><span class='op'>(</span>colors <span class='op'>=</span> <span class='fu'><a href='colorPalette.html'>colorPalette</a></span><span class='op'>(</span><span class='st'>"dark2"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='img'><img src='canvas_flow-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='co'># Advanced example</span>
+<span class='va'>angles</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span><span class='fl'>200</span> <span class='op'>*</span> <span class='fl'>200</span><span class='op'>)</span>, nrow <span class='op'>=</span> <span class='fl'>200</span>, ncol <span class='op'>=</span> <span class='fl'>200</span><span class='op'>)</span>
+<span class='fu'>canvas_flow</span><span class='op'>(</span>colors <span class='op'>=</span> <span class='fu'><a href='colorPalette.html'>colorPalette</a></span><span class='op'>(</span><span class='st'>"tuscany1"</span>, <span class='fl'>4</span><span class='op'>)</span>, angles <span class='op'>=</span> <span class='va'>angles</span><span class='op'>)</span>
+</div><div class='img'><img src='canvas_flow-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># }</span>
 
 </div></pre>
   </div>
