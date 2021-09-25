@@ -17,7 +17,7 @@ Good luck hunting for some good `seed`'s!
 
 ## Artwork of the day
 
-Every 24 hours this repository generates (using `set.seed(Sys.Date())`) and tweets an artwork from the `aRtsy` library. The full collection of daily artworks is available on the [aRtsy twitter feed](https://twitter.com/aRtsy_package). This is today's artwork:
+Every 24 hours this repository randomly generates and tweets an artwork from the `aRtsy` library. The full collection of daily artworks is available on the [aRtsy twitter feed](https://twitter.com/aRtsy_package). This is today's artwork:
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/daily.png' width='400' height='400'>
