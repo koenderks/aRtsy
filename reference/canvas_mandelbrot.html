@@ -128,8 +128,8 @@
     <p>This function draws the Mandelbrot set on the canvas.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>canvas_mandelbrot</span><span class='op'>(</span><span class='va'>colors</span>, iterations <span class='op'>=</span> <span class='fl'>100</span>, zoom <span class='op'>=</span> <span class='fl'>1</span>, xmin <span class='op'>=</span> <span class='op'>-</span><span class='fl'>1.7</span>, xmax <span class='op'>=</span> <span class='op'>-</span><span class='fl'>0.2</span>,
-                   ymin <span class='op'>=</span> <span class='op'>-</span><span class='fl'>0.2999</span>, ymax <span class='op'>=</span> <span class='fl'>0.8001</span>, width <span class='op'>=</span> <span class='fl'>500</span>, height <span class='op'>=</span> <span class='fl'>500</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>canvas_mandelbrot</span><span class='op'>(</span><span class='va'>colors</span>, iterations <span class='op'>=</span> <span class='fl'>100</span>, zoom <span class='op'>=</span> <span class='fl'>1</span>, left <span class='op'>=</span> <span class='op'>-</span><span class='fl'>1.7</span>, right <span class='op'>=</span> <span class='op'>-</span><span class='fl'>0.2</span>,
+                   bottom <span class='op'>=</span> <span class='op'>-</span><span class='fl'>0.2999</span>, top <span class='op'>=</span> <span class='fl'>0.8001</span>, width <span class='op'>=</span> <span class='fl'>500</span>, height <span class='op'>=</span> <span class='fl'>500</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -147,19 +147,19 @@
       <td><p>a positive value specifying the amount of zoom to apply.</p></td>
     </tr>
     <tr>
-      <th>xmin</th>
+      <th>left</th>
       <td><p>a value specifying the minimum location on the x-axis.</p></td>
     </tr>
     <tr>
-      <th>xmax</th>
+      <th>right</th>
       <td><p>a value specifying the maximum location on the x-axis.</p></td>
     </tr>
     <tr>
-      <th>ymin</th>
+      <th>bottom</th>
       <td><p>a value specifying the minimum location on the y-axis.</p></td>
     </tr>
     <tr>
-      <th>ymax</th>
+      <th>top</th>
       <td><p>a value specifying the maximum location on the y-axis.</p></td>
     </tr>
     <tr>
@@ -178,6 +178,9 @@
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p><a href='https://en.wikipedia.org/wiki/Mandelbrot_set'>https://en.wikipedia.org/wiki/Mandelbrot_set</a></p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code>colorPalette</code></p></div>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Koen Derks, <a href='mailto:koen-derks@hotmail.com'>koen-derks@hotmail.com</a></p>
