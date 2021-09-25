@@ -105,7 +105,7 @@
 <p>After installation, the <code>aRtsy</code> package can be loaded with:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://koenderks.github.io/aRtsy/">aRtsy</a></span><span class="op">)</span></code></pre></div>
-<p><strong>Note:</strong> render times in RStudio can be quite long for some artworks. It is therefore strongly recommended to save the artwork to a file (e.g., <code>.png</code> or <code>.jpg</code>) before viewing. You can use the <code><a href="reference/saveCanvas.html">saveCanvas()</a></code> function for this, which saves the artwork with an appropriate size and quality.</p>
+<p><strong>Note:</strong> Render times in RStudio can be quite long for some artworks. It is therefore recommended to save the artwork to a file (e.g., <code>.png</code> or <code>.jpg</code>) before viewing. You can use the <code><a href="reference/saveCanvas.html">saveCanvas()</a></code> function for this, which saves the artwork with an appropriate size and quality.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">artwork</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/canvas_strokes.html">canvas_strokes</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"black"</span>, <span class="st">"white"</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="reference/saveCanvas.html">saveCanvas</a></span><span class="op">(</span><span class="va">artwork</span>, filename <span class="op">=</span> <span class="st">"myArtwork.png"</span><span class="op">)</span></code></pre></div>
@@ -149,14 +149,14 @@
 <div id="the-iterative-collection" class="section level3">
 <h3 class="hasAnchor">
 <a href="#the-iterative-collection" class="anchor"></a>The Iterative collection</h3>
-<p>The Iterative collection mostly implements algorithms whose state depend on the previous state. These algorithms generally use a grid based canvas to draw on. On the grid, each point represents a pixel of the final image. By assigning a color to these points according to certain rules, one can create the images in this collection.</p>
+<p>The Iterative collection mostly implements algorithms whose state depend on the previous state. These algorithms generally use a grid based canvas to draw on. On this grid, each point represents a pixel of the final image. By assigning a color to these points according to certain rules, one can create the images in this collection.</p>
 <div id="langtons-ant" class="section level4">
 <h4 class="hasAnchor">
 <a href="#langtons-ant" class="anchor"></a>Langton’s ant</h4>
-<p>According to <a href="https://en.wikipedia.org/wiki/Langtons_ant">Wikipedia</a>, Langton’s ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below.</p>
+<p>According to <a href="https://en.wikipedia.org/wiki/Langtons_ant">Wikipedia</a>, Langton’s ant is a turmite with a very specific set of rules. In particular, after choosing a starting position the algorithm involves repeating the following three rules:</p>
 <ol>
-<li>On a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block.</li>
-<li>On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block.</li>
+<li>On a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block,</li>
+<li>On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block,</li>
 <li>If a certain number of iterations has passed, choose a different color which corresponds to a different combination of these rules.</li>
 </ol>
 <p align="center">
@@ -170,14 +170,14 @@
 <div id="collatz-conjecture" class="section level4">
 <h4 class="hasAnchor">
 <a href="#collatz-conjecture" class="anchor"></a>Collatz conjecture</h4>
-<p>The Collatz conjecture is also known as <code>3x+1</code>. The algorithm draws lines according to a simple rule set:</p>
+<p>The Collatz conjecture is also known as the <code>3x+1</code> equation. The algorithm draws lines according to a simple rule set:</p>
 <ol>
 <li>Take a random positive number.</li>
 <li>If the number is even, divide it by 2.</li>
 <li>If the number is odd, multiply the number by 3 and add 1.</li>
 <li>Repeat to get a sequence of numbers.</li>
 </ol>
-<p>By visualizing the sequence for each number, overlaying sequences that are the same, and bending the edges differently for even and odd numbers in the sequence, organic looking coral structures can occur.</p>
+<p>By visualizing the sequence for each number, overlaying sequences that are the same, and bending the edges differently for even and odd numbers in the sequence, organic looking structures can occur.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-09.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-08.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-10.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_collatz.html">canvas_collatz()</a></code> function to make your own artwork using this algorithm.</p>
@@ -189,7 +189,7 @@
 <div id="flow-fields" class="section level4">
 <h4 class="hasAnchor">
 <a href="#flow-fields" class="anchor"></a>Flow fields</h4>
-<p>This artwork implements the algorithm described in Tyler Hobbs’ blog post <a href="https://tylerxhobbs.com/essays/2020/flow-fields">Flow fields</a>. It works by creating a grid of angles and letting points flow through this field. The angles can be set manually or according to the predictions of a supervised learning method trained on randomly generated data.</p>
+<p>This artwork implements a version of the algorithm described in the blog post <a href="https://tylerxhobbs.com/essays/2020/flow-fields">Flow Fields</a> by Tyler Hobbs. It works by creating a grid of angles and determining how these points will flow through this field. The angles in the field can be set manually or according to the predictions of a supervised learning method trained on randomly generated data.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-24.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-23.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-22.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_flow.html">canvas_flow()</a></code> function to make your own artwork using this algorithm.</p>
@@ -201,7 +201,7 @@
 <div id="planets" class="section level4">
 <h4 class="hasAnchor">
 <a href="#planets" class="anchor"></a>Planets</h4>
-<p>We all love space, and this type of artwork puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (inspired by an idea from <a href="https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/">Fronkonstin</a>) to fill in their surfaces.</p>
+<p>We all love space, and this type of artwork puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (described in the blog post <a href="https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/">Neighborhoods: Experimenting with Cyclic Cellular Automata</a> by Fronkonstin) to fill in their surfaces. The color and placement of the planets can be set manually.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-26.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-27.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-28.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_planet.html">canvas_planet()</a></code> function to make your own artwork using this algorithm.</p>
@@ -213,7 +213,7 @@
 <div id="stripes" class="section level4">
 <h4 class="hasAnchor">
 <a href="#stripes" class="anchor"></a>Stripes</h4>
-<p>This type of artwork is based on the concept of <a href="https://en.wikipedia.org/wiki/Brownian_motion">Brownian motion</a>. The algorithm generates a sequence of brownian motion steps on a two-dimensional surface for each row on the canvas. Next, it fills these according to their generated value. More colors usually make this artwork more interesting.</p>
+<p>This type of artwork is based on the concept of <a href="https://en.wikipedia.org/wiki/Brownian_motion">Brownian motion</a>. The algorithm generates a sequence of slightly increasing and decreasing values for each row on the canvas. Next, it fills these according to their generated value. More colors usually make this artwork more interesting.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/stripes/2021-08-23.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/stripes/2021-08-24.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/stripes/2021-08-25.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_stripes.html">canvas_stripes()</a></code> function to make your own artwork using this algorithm.</p>
@@ -225,7 +225,7 @@
 <div id="paint-strokes" class="section level4">
 <h4 class="hasAnchor">
 <a href="#paint-strokes" class="anchor"></a>Paint strokes</h4>
-<p>When you think of the act of painting, you probably imagine stroking paint on a canvas. This type of artwork tries to mimic that activity. The paint strokes algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor chance of generating a new color. Going over the canvas like this results in strokes of paint. Repeating this a number of times creates more faded strokes of paint.</p>
+<p>When you think of the act of painting, you probably imagine stroking paint on a canvas. This type of artwork tries to mimic that activity. The algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor chance of generating a new color. Going over the canvas like this results in something that looks like strokes of paint.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-21.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-20.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-10.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_strokes.html">canvas_strokes()</a></code> function to make your own artwork using this algorithm.</p>
@@ -237,7 +237,7 @@
 <div id="turmite" class="section level4">
 <h4 class="hasAnchor">
 <a href="#turmite" class="anchor"></a>Turmite</h4>
-<p>According to <a href="https://en.wikipedia.org/wiki/Turmite">Wikipedia</a>, a turmite is <em>“a Turing machine which has an orientation in addition to a current state and a”tape" that consists of an infinite two-dimensional grid of cells"</em>. The classic algorithm consists of repeating the three simple steps shown below. However, the algorithm in <code>aRtsy</code> is slightly modified so that the turmite does not go off the canvas, but instead bounces back onto the canvas.</p>
+<p>According to <a href="https://en.wikipedia.org/wiki/Turmite">Wikipedia</a>, a turmite is <em>“a Turing machine which has an orientation in addition to a current state and a”tape" that consists of an infinite two-dimensional grid of cells"</em>. The classic algorithm consists of repeating the following three simple steps:</p>
 <ol>
 <li>Turn on the spot (left, right, up, or down),</li>
 <li>Change the color of the block,</li>
@@ -254,7 +254,7 @@
 <div id="watercolors" class="section level4">
 <h4 class="hasAnchor">
 <a href="#watercolors" class="anchor"></a>Watercolors</h4>
-<p>This artwork implements the algorithm described in Tyler Hobbs’ blog post <a href="https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints">A guide to simulating watercolor paint with generative art</a>. It works by layering several geometric shapes and deforming these shapes by repeatedly splitting their edges.</p>
+<p>This artwork implements a version of the algorithm described in the blog post <a href="https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints">A Guide to Simulating Watercolor Paint with Generative Art</a> by Tyler Hobbs. It works by layering several geometric shapes and deforming each shape by repeatedly splitting its edges.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-23.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-22.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-21.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_watercolors.html">canvas_watercolors()</a></code> function to make your own artwork using this algorithm.</p>
@@ -271,7 +271,7 @@
 <div id="diamonds" class="section level4">
 <h4 class="hasAnchor">
 <a href="#diamonds" class="anchor"></a>Diamonds</h4>
-<p>This function creates a set of diamonds on a canvas. The diamonds are filled in using a random color assignment.</p>
+<p>This function creates a set of diamonds on a canvas. The diamonds are filled in (or left out) using a random color assignment.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-06.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-04.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-05.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_diamonds.html">canvas_diamonds()</a></code> function to make your own artwork using this algorithm.</p>
@@ -283,7 +283,7 @@
 <div id="functions" class="section level4">
 <h4 class="hasAnchor">
 <a href="#functions" class="anchor"></a>Functions</h4>
-<p>The idea for this type of artwork is taken over from the <a href="https://github.com/cutterkom/generativeart"><code>generativeart</code></a> package. In this algorithm, the position of every single point is calculated by a formula which has random parameters. You can also supply your own formula.</p>
+<p>The idea for this type of artwork is taken over from the <a href="https://github.com/cutterkom/generativeart"><code>generativeart</code></a> package. In this algorithm, the position of every single point is calculated by a formula which has random parameters. You can supply your own formula.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-03-17.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-04-08.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-04-04.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_function.html">canvas_function()</a></code> function to make your own artwork using this algorithm.</p>
@@ -318,7 +318,7 @@
 <div id="segments" class="section level4">
 <h4 class="hasAnchor">
 <a href="#segments" class="anchor"></a>Segments</h4>
-<p>This type of artwork mimics the style of the well-known paintings by the Dutch artist <a href="https://nl.wikipedia.org/wiki/Piet_Mondriaan">Piet Mondriaan</a>. The position and direction of each line segment is determined randomly.</p>
+<p>This type of artwork is inspired by the style of the well-known paintings by the Dutch artist <a href="https://nl.wikipedia.org/wiki/Piet_Mondriaan">Piet Mondriaan</a>. The position and direction of each line segment is determined randomly.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-07.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-08.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-06.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_segments.html">canvas_segments()</a></code> function to make your own artwork using this algorithm.</p>
@@ -330,7 +330,7 @@
 <div id="squares-and-rectangles" class="section level4">
 <h4 class="hasAnchor">
 <a href="#squares-and-rectangles" class="anchor"></a>Squares and rectangles</h4>
-<p>This type of artwork is also a la Mondriaan, but uses a variety of squares and rectangles instead of lines. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.</p>
+<p>This artwork uses a variety of squares and rectangles to fill the canvas. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-03-01.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-02-28.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-02-29.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_squares.html">canvas_squares()</a></code> function to make your own artwork using this algorithm.</p>
