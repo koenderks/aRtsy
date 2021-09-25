@@ -47,7 +47,7 @@
 
 
 <meta property="og:title" content="Draw Turmites — canvas_turmite" />
-<meta property="og:description" content="This function paints a turmite. A turmite is a Turing machine which has an orientation in addition to a current state and a &quot;tape&quot; that consists of a two-dimensional grid of cells. The algorithm is simple: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square." />
+<meta property="og:description" content="This function paints a turmite. A turmite is a Turing machine which has an orientation in addition to a current state and a &quot;tape&quot; that consists of a two-dimensional grid of cells." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -125,11 +125,11 @@
     </div>
 
     <div class="ref-description">
-    <p>This function paints a turmite. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells. The algorithm is simple: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.</p>
+    <p>This function paints a turmite. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>canvas_turmite</span><span class='op'>(</span><span class='va'>colors</span>, background <span class='op'>=</span> <span class='st'>'#fafafa'</span>, p <span class='op'>=</span> <span class='fl'>0.5</span>, iterations <span class='op'>=</span> <span class='fl'>1e7</span>,
-               width <span class='op'>=</span> <span class='fl'>1500</span>, height <span class='op'>=</span> <span class='fl'>1500</span>, noise <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>canvas_turmite</span><span class='op'>(</span><span class='va'>colors</span>, background <span class='op'>=</span> <span class='st'>"#fafafa"</span>, p <span class='op'>=</span> <span class='fl'>0.5</span>, iterations <span class='op'>=</span> <span class='fl'>1e6</span>,
+               width <span class='op'>=</span> <span class='fl'>500</span>, height <span class='op'>=</span> <span class='fl'>500</span>, noise <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -167,9 +167,15 @@
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A <code>ggplot</code> object containing the artwork.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The turmite algorithm consists of the following steps: 1) turn on the spot (left, right, up, down) 2) change the color of the square 3) move forward one square.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p><a href='https://en.wikipedia.org/wiki/Turmite'>https://en.wikipedia.org/wiki/Turmite</a></p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code>colorPalette</code></p></div>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Koen Derks, <a href='mailto:koen-derks@hotmail.com'>koen-derks@hotmail.com</a></p>
