@@ -1,6 +1,6 @@
 #' Draw Functions
 #'
-#' @description This function paints functions with random parameters.
+#' @description This function paints functions with random parameters on a canvas.
 #'
 #' @usage canvas_function(color, background = "#fafafa", formula = NULL)
 #'
@@ -8,11 +8,15 @@
 #' @param background  a character specifying the color used for the background.
 #' @param formula     optional, a named list with 'x''and 'y' as structured in the example. If \code{NULL} (default), chooses a function with random parameters.
 #'
-#' @references \url{https://github.com/cutterkom/generativeart}
-#'
 #' @return A \code{ggplot} object containing the artwork.
 #'
+#' @references \url{https://github.com/cutterkom/generativeart}
+#'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
+#'
+#' @keywords artwork canvas
+#'
+#' @seealso \code{colorPalette}
 #'
 #' @examples
 #' \donttest{

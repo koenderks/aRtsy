@@ -17,7 +17,7 @@ canvas_function(color, background = "#fafafa", formula = NULL)
 A \code{ggplot} object containing the artwork.
 }
 \description{
-This function paints functions with random parameters.
+This function paints functions with random parameters on a canvas.
 }
 \examples{
 \donttest{
@@ -37,6 +37,9 @@ canvas_function(color = "firebrick", formula = formula)
 }
 \references{
 \url{https://github.com/cutterkom/generativeart}
+}
+\seealso{
+\code{colorPalette}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

@@ -4,8 +4,8 @@
 \alias{canvas_mandelbrot}
 \title{Draw the Mandelbrot Set}
 \usage{
-canvas_mandelbrot(colors, iterations = 100, zoom = 1, xmin = -1.7, xmax = -0.2,
-                   ymin = -0.2999, ymax = 0.8001, width = 500, height = 500)
+canvas_mandelbrot(colors, iterations = 100, zoom = 1, left = -1.7, right = -0.2,
+                   bottom = -0.2999, top = 0.8001, width = 500, height = 500)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
@@ -14,13 +14,13 @@ canvas_mandelbrot(colors, iterations = 100, zoom = 1, xmin = -1.7, xmax = -0.2,
 
 \item{zoom}{a positive value specifying the amount of zoom to apply.}
 
-\item{xmin}{a value specifying the minimum location on the x-axis.}
+\item{left}{a value specifying the minimum location on the x-axis.}
 
-\item{xmax}{a value specifying the maximum location on the x-axis.}
+\item{right}{a value specifying the maximum location on the x-axis.}
 
-\item{ymin}{a value specifying the minimum location on the y-axis.}
+\item{bottom}{a value specifying the minimum location on the y-axis.}
 
-\item{ymax}{a value specifying the maximum location on the y-axis.}
+\item{top}{a value specifying the maximum location on the y-axis.}
 
 \item{width}{a positive integer specifying the width of the artwork in pixels.}
 
@@ -40,6 +40,9 @@ canvas_mandelbrot(colors = colorPalette("tuscany1"))
 }
 \references{
 \url{https://en.wikipedia.org/wiki/Mandelbrot_set}
+}
+\seealso{
+\code{colorPalette}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
