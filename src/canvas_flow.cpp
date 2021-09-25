@@ -16,9 +16,7 @@ Rcpp::DataFrame iterate_flow(arma::mat angles,
 							 int top, 
 							 int bottom, 
 							 double step,
-							 int width,
-							 int height,
-							 int resolution) {
+							 int r) {
   Rcpp::DoubleVector x = {ceil(R::runif(left + 1, right - 1))};
   Rcpp::DoubleVector y = {ceil(R::runif(bottom + 1, top - 1))};
   int m = angles.n_rows;
@@ -27,8 +25,8 @@ Rcpp::DataFrame iterate_flow(arma::mat angles,
 	Rcpp::checkUserInterrupt();
     double x_offset = x[x.length() - 1] - left;
     double y_offset = y[y.length() - 1] - bottom;
-    int col_index = round(x_offset / resolution);
-    int row_index = round(y_offset / resolution);
+    int col_index = round(x_offset / r);
+    int row_index = round(y_offset / r);
     if (col_index >= n || col_index <= 0 || row_index >= m || row_index <= 0) {
       break;
     }

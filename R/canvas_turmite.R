@@ -3,15 +3,14 @@
 #' @description This function paints a turmite. A turmite is a Turing machine which has an orientation in addition to a current state and a "tape" that consists of a two-dimensional grid of cells.
 #'
 #' @usage canvas_turmite(colors, background = "#fafafa", p = 0.5, iterations = 1e6,
-#'                width = 500, height = 500, noise = FALSE)
+#'                resolution = 500, noise = FALSE)
 #'
 #' @param colors       a character specifying the color used for the artwork. The number of colors determines the number of turmites.
 #' @param background  a character specifying the color used for the background.
 #' @param p           a value specifying the probability of a state switch within the turmite.
 #' @param iterations  a positive integer specifying the number of iterations of the algorithm.
-#' @param width       a positive integer specifying the width of the artwork in pixels.
-#' @param height      a positive integer specifying the height of the artwork in pixels.
-#' @param noise       logical. Whether to add k-nn noise to the artwork. Caution, adding noise increases computation time significantly in large dimensions.
+#' @param resolution  resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.
+#' @param noise       logical. Whether to add k-nn noise to the artwork. Note that adding noise increases computation time significantly in large dimensions.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
@@ -36,30 +35,26 @@
 #' @export
 
 canvas_turmite <- function(colors, background = "#fafafa", p = 0.5, iterations = 1e6,
-                           width = 500, height = 500, noise = FALSE) {
+                           resolution = 500, noise = FALSE) {
   .checkUserInput(
-    width = width, height = height,
-    background = background, iterations = iterations
+    resolution = resolution, background = background, iterations = iterations
   )
-  if (width != height) {
-    stop("'width' must be equal to 'height'")
-  }
   palette <- c(background, colors)
-  canvas <- matrix(0, nrow = height, ncol = width)
+  canvas <- matrix(0, nrow = resolution, ncol = resolution)
   for (i in 1:length(colors)) {
     k <- sample(0:1, size = 1)
     row <- 0
     col <- 0
     if (k == 1) {
-      col <- sample(0:(width - 1), size = 1)
+      col <- sample(0:(resolution - 1), size = 1)
     }
     if (k == 0) {
-      row <- sample(0:(height - 1), size = 1)
+      row <- sample(0:(resolution - 1), size = 1)
     }
-    turmite <- draw_turmite(matrix(0, nrow = height, ncol = width), iterations, row, col, p = p)
+    turmite <- draw_turmite(matrix(0, nrow = resolution, ncol = resolution), iterations, row, col, p = p)
     if (noise) {
       turmite[which(turmite == 0)] <- NA
-      turmite <- turmite - .noise(dims = c(height, width))
+      turmite <- turmite - .noise(dims = c(resolution, resolution))
       turmite[which(is.na(turmite))] <- 0
     }
     canvas <- canvas + turmite

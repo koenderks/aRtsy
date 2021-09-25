@@ -49,15 +49,12 @@
 }
 
 # This function performs validation checks on the standardized input arguments of a function
-.checkUserInput <- function(background = NULL, width = NULL, height = NULL, iterations = NULL) {
+.checkUserInput <- function(background = NULL, resolution = NULL, iterations = NULL) {
   if (!is.null(background) && length(background) != 1) {
     stop("'background' should be a single character")
   }
-  if (!is.null(width) && (width < 1 || width %% 1 != 0)) {
-    stop("'width' should be a single value > 0")
-  }
-  if (!is.null(height) && (height < 1 || height %% 1 != 0)) {
-    stop("'height' should be a single integer > 0")
+  if (!is.null(resolution) && (resolution < 1 || resolution %% 1 != 0)) {
+    stop("'resolution' should be a single value > 0")
   }
   if (!is.null(iterations) && (iterations < 1 || iterations %% 1 != 0)) {
     stop("'iterations' should be a single integer > 0")

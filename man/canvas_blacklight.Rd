@@ -4,16 +4,14 @@
 \alias{canvas_blacklight}
 \title{Draw Blacklights}
 \usage{
-canvas_blacklight(colors, n = 1000, width = 500, height = 500)
+canvas_blacklight(colors, n = 1000, resolution = 500)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
 
 \item{n}{a positive integer specifying the number of random data points to generate.}
 
-\item{width}{a positive integer specifying the width of the artwork in pixels.}
-
-\item{height}{a positive integer specifying the height of the artwork in pixels.}
+\item{resolution}{resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.}
 }
 \value{
 A \code{ggplot} object containing the artwork.

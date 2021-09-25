@@ -5,6 +5,10 @@
 - Added new artwork `canvas_flow()`.
 - Added new artwork `canvas_watercolors()`.
 
+**Major changes**
+
+- Changed the `width` and `height` arguments in all functions to `resolution`. If you want to save a non-rectangular canvas you can do it in the save function itself.
+
 **Minor changes**
 
 - Added `Rcpp::checkUserInterrupt()` to all `C++` functions.

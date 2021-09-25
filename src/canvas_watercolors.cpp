@@ -10,8 +10,7 @@
 // [[Rcpp::export]]
 Rcpp::DataFrame deform(Rcpp::DataFrame canvas,
                        int maxdepth,
-                       int width,
-					   int height) {
+                       int resolution) {
   Rcpp::DoubleVector x = canvas["x"];
   Rcpp::DoubleVector y = canvas["y"];
   Rcpp::DoubleVector s = canvas["s"];
@@ -46,13 +45,13 @@ Rcpp::DataFrame deform(Rcpp::DataFrame canvas,
 	Rcpp::checkUserInterrupt();
 	if (x[i] < 0) {
 		x[i] = 0;
-	} else if (x[i] > width) {
-		x[i] = width;
+	} else if (x[i] > resolution) {
+		x[i] = resolution;
 	}
 	if (y[i] < 0) {
 		y[i] = 0;
-	} else if (y[i] > height) {
-		y[i] = height;
+	} else if (y[i] > resolution) {
+		y[i] = resolution;
 	}
   }
   Rcpp::DataFrame newdata = Rcpp::DataFrame::create(Rcpp::Named("x") = x, Rcpp::Named("y") = y, Rcpp::Named("s") = s);

@@ -138,7 +138,7 @@ canvas_collatz(colors = colorPalette("tuscany3"))
 
 #### Flow fields
 
-This artwork implements the algorithm described in Tyler Hobbs' blog post [Flow fields](https://tylerxhobbs.com/essays/2020/flow-fields). It works by creating a grid of angles and letting data flow through this field. The angles can be set manually or according to the predictions of a supervised learning method trained on randomly generated data.
+This artwork implements the algorithm described in Tyler Hobbs' blog post [Flow fields](https://tylerxhobbs.com/essays/2020/flow-fields). It works by creating a grid of angles and letting points flow through this field. The angles can be set manually or according to the predictions of a supervised learning method trained on randomly generated data.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-24.png' width='270' height='270'>
@@ -272,7 +272,7 @@ canvas_diamonds(colors = colorPalette("tuscany1"))
 
 #### Functions
 
-The idea for this type of artwork is taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package. In this algorithm, the position of every single point is calculated by a formula which has random parameters.
+The idea for this type of artwork is taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package. In this algorithm, the position of every single point is calculated by a formula which has random parameters. You can also supply your own formula.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-03-17.png' width='270' height='270'>

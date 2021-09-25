@@ -3,13 +3,12 @@
 #' @description This function draws Langton's Ant on a canvas. Langton's ant is a two-dimensional universal Turing machine with a very simple set of rules. These simple rules can lead to complex emergent behavior.
 #'
 #' @usage canvas_ant(colors, background = "#fafafa", iterations = 50000,
-#'            width = 250, height = 250)
+#'            resolution = 250)
 #'
 #' @param colors      a character (vector) specifying the color(s) used for the artwork.
 #' @param background  a character specifying the color used for the background.
 #' @param iterations  a positive integer specifying the number of iterations of the algorithm.
-#' @param width       a positive integer specifying the width of the artwork in pixels.
-#' @param height      a positive integer specifying the height of the artwork in pixels.
+#' @param resolution  resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
@@ -35,18 +34,17 @@
 #' @export
 
 canvas_ant <- function(colors, background = "#fafafa", iterations = 50000,
-                       width = 250, height = 250) {
+                       resolution = 250) {
   .checkUserInput(
-    background = background, width = width,
-    height = height, iterations = iterations
+    background = background, resolution = resolution, iterations = iterations
   )
   palette <- c(background, colors)
   directions <- .ant_directions(length(colors))
-  canvas <- matrix(0, nrow = height, ncol = width)
+  canvas <- matrix(0, nrow = resolution, ncol = resolution)
   full_canvas <- draw_ant(
     X = canvas, iters = iterations, ncolors = length(colors),
-    x = sample(ceiling(width * 0.05):ceiling(width * 0.95), size = 1),
-    y = sample(ceiling(height * 0.05):ceiling(height * 0.95), size = 1),
+    x = sample(ceiling(resolution * 0.05):ceiling(resolution * 0.95), size = 1),
+    y = sample(ceiling(resolution * 0.05):ceiling(resolution * 0.95), size = 1),
     dx = directions[, 1], dy = directions[, 2]
   )
   full_canvas <- .unraster(full_canvas, names = c("x", "y", "z"))

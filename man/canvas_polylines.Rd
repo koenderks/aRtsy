@@ -5,7 +5,7 @@
 \title{Draw Polygons and Lines}
 \usage{
 canvas_polylines(colors, background = "#fafafa", ratio = 0.5, iterations = 1000,
-                 alpha = NULL, size = 0.1, width = 500, height = 500)
+                 size = 0.1, resolution = 500)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
@@ -16,13 +16,9 @@ canvas_polylines(colors, background = "#fafafa", ratio = 0.5, iterations = 1000,
 
 \item{iterations}{a positive integer specifying the number of iterations of the algorithm.}
 
-\item{alpha}{a value specifying the transparency of the polygons. If \code{NULL} (the default), added layers become increasingly more transparent.}
-
 \item{size}{a positive value specifying the size of the borders.}
 
-\item{width}{a positive integer specifying the width of the artwork in pixels.}
-
-\item{height}{a positive integer specifying the height of the artwork in pixels.}
+\item{resolution}{resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.}
 }
 \value{
 A \code{ggplot} object containing the artwork.

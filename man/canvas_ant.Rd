@@ -5,7 +5,7 @@
 \title{Draw Langton's Ant}
 \usage{
 canvas_ant(colors, background = "#fafafa", iterations = 50000,
-           width = 250, height = 250)
+           resolution = 250)
 }
 \arguments{
 \item{colors}{a character (vector) specifying the color(s) used for the artwork.}
@@ -14,9 +14,7 @@ canvas_ant(colors, background = "#fafafa", iterations = 50000,
 
 \item{iterations}{a positive integer specifying the number of iterations of the algorithm.}
 
-\item{width}{a positive integer specifying the width of the artwork in pixels.}
-
-\item{height}{a positive integer specifying the height of the artwork in pixels.}
+\item{resolution}{resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.}
 }
 \value{
 A \code{ggplot} object containing the artwork.

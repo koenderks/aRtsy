@@ -5,7 +5,7 @@
 \title{Draw a Circle Map}
 \usage{
 canvas_circlemap(colors, left = 0, right = 12.56, bottom = 0, top = 1,
-                 iterations = 10, width = 1500, height = 1500)
+                 iterations = 10, resolution = 1500)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
@@ -20,9 +20,7 @@ canvas_circlemap(colors, left = 0, right = 12.56, bottom = 0, top = 1,
 
 \item{iterations}{a positive integer specifying the number of iterations of the algorithm.}
 
-\item{width}{a positive integer specifying the width of the artwork in pixels.}
-
-\item{height}{a positive integer specifying the height of the artwork in pixels.}
+\item{resolution}{resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.}
 }
 \value{
 A \code{ggplot} object containing the artwork.

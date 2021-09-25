@@ -17,8 +17,8 @@ draw_collatz <- function(empty, series, even, odd) {
     .Call('_aRtsy_draw_collatz', PACKAGE = 'aRtsy', empty, series, even, odd)
 }
 
-iterate_flow <- function(angles, j, iters, left, right, top, bottom, step, width, height, resolution) {
-    .Call('_aRtsy_iterate_flow', PACKAGE = 'aRtsy', angles, j, iters, left, right, top, bottom, step, width, height, resolution)
+iterate_flow <- function(angles, j, iters, left, right, top, bottom, step, r) {
+    .Call('_aRtsy_iterate_flow', PACKAGE = 'aRtsy', angles, j, iters, left, right, top, bottom, step, r)
 }
 
 draw_planet <- function(X, radius, xcenter, ycenter, threshold, iterations, starprob, ncolors, colorsused, fade, lightright) {
@@ -41,8 +41,8 @@ draw_turmite <- function(X, iters, row, col, p) {
     .Call('_aRtsy_draw_turmite', PACKAGE = 'aRtsy', X, iters, row, col, p)
 }
 
-deform <- function(canvas, maxdepth, width, height) {
-    .Call('_aRtsy_deform', PACKAGE = 'aRtsy', canvas, maxdepth, width, height)
+deform <- function(canvas, maxdepth, resolution) {
+    .Call('_aRtsy_deform', PACKAGE = 'aRtsy', canvas, maxdepth, resolution)
 }
 
 c_noise_knn <- function(x, y, z, newx, newy, k, n) {

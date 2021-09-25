@@ -5,7 +5,7 @@
 \title{Draw Watercolors}
 \usage{
 canvas_watercolors(colors, background = "#fafafa", layers = 50,
-                   depth = 2, width = 250, height = 250)
+                   depth = 2, resolution = 250)
 }
 \arguments{
 \item{colors}{a string specifying the color used for the artwork.}
@@ -16,9 +16,7 @@ canvas_watercolors(colors, background = "#fafafa", layers = 50,
 
 \item{depth}{the maximum depth of the recusive algorithm.}
 
-\item{width}{a positive integer specifying the width of the artwork in pixels.}
-
-\item{height}{a positive integer specifying the height of the artwork in pixels.}
+\item{resolution}{resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.}
 }
 \value{
 A \code{ggplot} object containing the artwork.

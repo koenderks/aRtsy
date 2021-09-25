@@ -5,7 +5,7 @@
 \title{Draw Squares and Rectangles}
 \usage{
 canvas_squares(colors, background = "#000000", cuts = 50, ratio = 1.618,
-               width = 200, height = 200, noise = FALSE)
+               resolution = 200, noise = FALSE)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
@@ -16,9 +16,7 @@ canvas_squares(colors, background = "#000000", cuts = 50, ratio = 1.618,
 
 \item{ratio}{a value specifying the \code{1:1} ratio for each cut.}
 
-\item{width}{a positive integer specifying the width of the artwork in pixels.}
-
-\item{height}{a positive integer specifying the height of the artwork in pixels.}
+\item{resolution}{resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.}
 
 \item{noise}{logical. Whether to add k-nn noise to the artwork. Note that adding noise increases computation time significantly in large dimensions.}
 }

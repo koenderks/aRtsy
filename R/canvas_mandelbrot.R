@@ -3,7 +3,7 @@
 #' @description This function draws the Mandelbrot set on the canvas.
 #'
 #' @usage canvas_mandelbrot(colors, iterations = 100, zoom = 1, left = -1.7, right = -0.2,
-#'                    bottom = -0.2999, top = 0.8001, width = 500, height = 500)
+#'                    bottom = -0.2999, top = 0.8001, resolution = 500)
 #'
 #' @param colors      a string or character vector specifying the color(s) used for the artwork.
 #' @param iterations  a positive integer specifying the number of iterations of the algorithm.
@@ -12,8 +12,7 @@
 #' @param right       a value specifying the maximum location on the x-axis.
 #' @param bottom      a value specifying the minimum location on the y-axis.
 #' @param top         a value specifying the maximum location on the y-axis.
-#' @param width       a positive integer specifying the width of the artwork in pixels.
-#' @param height      a positive integer specifying the height of the artwork in pixels.
+#' @param resolution  resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
@@ -33,8 +32,8 @@
 #' @export
 
 canvas_mandelbrot <- function(colors, iterations = 100, zoom = 1, left = -1.7, right = -0.2,
-                              bottom = -0.2999, top = 0.8001, width = 500, height = 500) {
-  .checkUserInput(width = width, height = height, iterations = iterations)
+                              bottom = -0.2999, top = 0.8001, resolution = 500) {
+  .checkUserInput(resolution = resolution, iterations = iterations)
   if (zoom > 1) {
     for (i in 1:(zoom - 1)) {
       xmin_tmp <- left
@@ -47,8 +46,8 @@ canvas_mandelbrot <- function(colors, iterations = 100, zoom = 1, left = -1.7, r
       top <- ymax_tmp - abs(ymin_tmp - ymax_tmp) / 4
     }
   }
-  x <- seq(left, right, length.out = width)
-  y <- seq(bottom, top, length.out = height)
+  x <- seq(left, right, length.out = resolution)
+  y <- seq(bottom, top, length.out = resolution)
   c <- outer(x, y * 1i, FUN = "+")
   z <- matrix(0, nrow = length(x), ncol = length(y))
   canvas <- matrix(0, nrow = length(x), ncol = length(y))

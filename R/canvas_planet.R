@@ -5,7 +5,7 @@
 #' @usage canvas_planet(colors, threshold = 4, iterations = 200,
 #'               starprob = 0.01, fade = 0.2,
 #'               radius = NULL, center.x = NULL, center.y = NULL,
-#'               light.right = TRUE, width = 1500, height = 1500)
+#'               light.right = TRUE, resolution = 1500)
 #'
 #' @param colors      a character specifying the colors used for a single planet. Can also be a list where each entry is a vector of colors for a planet.
 #' @param threshold   a character specifying the threshold for a color take.
@@ -16,8 +16,7 @@
 #' @param center.x    the x-axis coordinate(s) for the center(s) of the planet(s).
 #' @param center.y    the y-axis coordinate(s) for the center(s) of the planet(s).
 #' @param light.right whether to draw the light from the right or the left.
-#' @param width       a positive integer specifying the width of the artwork in pixels.
-#' @param height      a positive integer specifying the height of the artwork in pixels.
+#' @param resolution  resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.
 #'
 #' @references \url{https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/}
 #'
@@ -52,8 +51,8 @@
 
 canvas_planet <- function(colors, threshold = 4, iterations = 200, starprob = 0.01, fade = 0.2,
                           radius = NULL, center.x = NULL, center.y = NULL, light.right = TRUE,
-                          width = 1500, height = 1500) {
-  .checkUserInput(width = width, height = height, iterations = iterations)
+                          resolution = 1500) {
+  .checkUserInput(resolution = resolution, iterations = iterations)
   if (is.list(colors)) {
     palette <- list()
     for (i in 1:length(colors)) {
@@ -63,15 +62,15 @@ canvas_planet <- function(colors, threshold = 4, iterations = 200, starprob = 0.
     palette <- list(c("#000000", "#787878", "#fafafa", colors))
     colors <- list(colors)
   }
-  canvas <- matrix(0, nrow = height, ncol = width)
+  canvas <- matrix(0, nrow = resolution, ncol = resolution)
   if (is.null(radius)) {
-    radius <- ceiling(width / 2 / 1.5)
+    radius <- ceiling(resolution / 2 / 1.5)
   }
   if (is.null(center.x)) {
-    center.x <- ceiling(width / 2)
+    center.x <- ceiling(resolution / 2)
   }
   if (is.null(center.y)) {
-    center.y <- ceiling(height / 2)
+    center.y <- ceiling(resolution / 2)
   }
   if (length(unique(c(length(radius), length(center.y), length(center.x)))) != 1) {
     stop("Radius, center.y, and center.x do not have equal length.")

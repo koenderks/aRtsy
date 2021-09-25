@@ -2,12 +2,11 @@
 #'
 #' @description This function draws the predictions from a support vector machine algorithm trained on randomly generated continuous data.
 #'
-#' @usage canvas_blacklight(colors, n = 1000, width = 500, height = 500)
+#' @usage canvas_blacklight(colors, n = 1000, resolution = 500)
 #'
 #' @param colors      a string or character vector specifying the color(s) used for the artwork.
 #' @param n           a positive integer specifying the number of random data points to generate.
-#' @param width       a positive integer specifying the width of the artwork in pixels.
-#' @param height      a positive integer specifying the height of the artwork in pixels.
+#' @param resolution  resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
@@ -29,14 +28,14 @@
 #'
 #' @export
 
-canvas_blacklight <- function(colors, n = 1000, width = 500, height = 500) {
-  .checkUserInput(width = width, height = height)
-  canvas <- .noise(dims = c(width, height), n = n, type = "svm")
+canvas_blacklight <- function(colors, n = 1000, resolution = 500) {
+  .checkUserInput(resolution = resolution)
+  canvas <- .noise(dims = c(resolution, resolution), n = n, type = "svm")
   canvas <- .unraster(canvas, names = c("x", "y", "z"))
   artwork <- ggplot2::ggplot(data = canvas, mapping = ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_tile() +
-    ggplot2::xlim(c(0, width)) +
-    ggplot2::ylim(c(0, height)) +
+    ggplot2::xlim(c(0, resolution)) +
+    ggplot2::ylim(c(0, resolution)) +
     ggplot2::scale_fill_gradientn(colours = colors)
   artwork <- theme_canvas(artwork, background = NULL)
   return(artwork)

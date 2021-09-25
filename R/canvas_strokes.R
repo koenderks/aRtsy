@@ -3,14 +3,13 @@
 #' @description This function creates an artwork that resembles paints strokes. The algorithm is based on the simple idea that each next point on the grid has a chance to take over the color of an adjacent colored point but also has a change of generating a new color.
 #'
 #' @usage canvas_strokes(colors, neighbors = 1, p = 0.01, iterations = 1,
-#'                width = 500, height = 500, side = FALSE)
+#'                resolution = 500, side = FALSE)
 #'
 #' @param colors     a string or character vector specifying the color(s) used for the artwork.
 #' @param neighbors  a positive integer specifying the number of neighbors a block considers when taking over a color. More neighbors fades the artwork.
 #' @param p          a value specifying the probability of selecting a new color at each block. A higher probability adds more noise to the artwork.
 #' @param iterations a positive integer specifying the number of iterations of the algorithm. More iterations generally apply more fade to the artwork.
-#' @param width      a positive integer specifying the width of the artwork in pixels.
-#' @param height     a positive integer specifying the height of the artwork in pixels.
+#' @param resolution resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.
 #' @param side       logical. Whether to put the artwork on its side.
 #'
 #' @return A \code{ggplot} object containing the artwork.
@@ -32,23 +31,19 @@
 #' @export
 
 canvas_strokes <- function(colors, neighbors = 1, p = 0.01, iterations = 1,
-                           width = 500, height = 500, side = FALSE) {
+                           resolution = 500, side = FALSE) {
   .checkUserInput(
-    width = width, height = height,
-    iterations = iterations
+    resolution = resolution, iterations = iterations
   )
   if (neighbors < 1 || neighbors %% 1 != 0 || length(neighbors) != 1) {
     stop("'neighbors' must be a single integer >= 1")
-  }
-  if (width != height) {
-    stop("'width' must be equal to 'height'")
   }
   if (length(colors) == 1) {
     colors <- c("#fafafa", colors)
   }
   neighborsLocations <- expand.grid(-(neighbors):neighbors, -(neighbors):neighbors)
   colnames(neighborsLocations) <- c("x", "y")
-  canvas <- matrix(0, nrow = height, ncol = width)
+  canvas <- matrix(0, nrow = resolution, ncol = resolution)
   for (i in 1:iterations) {
     canvas <- draw_strokes(X = canvas, neighbors = neighborsLocations, s = length(colors), p = p)
   }

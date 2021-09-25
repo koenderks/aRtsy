@@ -4,7 +4,7 @@
 \alias{canvas_nebula}
 \title{Draw Nebulas}
 \usage{
-canvas_nebula(colors, k = 50, n = 500, width = 500, height = 500)
+canvas_nebula(colors, k = 50, n = 500, resolution = 500)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
@@ -13,9 +13,7 @@ canvas_nebula(colors, k = 50, n = 500, width = 500, height = 500)
 
 \item{n}{a positive integer specifying the number of random data points to generate.}
 
-\item{width}{a positive integer specifying the width of the artwork in pixels.}
-
-\item{height}{a positive integer specifying the height of the artwork in pixels.}
+\item{resolution}{resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.}
 }
 \value{
 A \code{ggplot} object containing the artwork.

@@ -5,7 +5,7 @@
 \title{Draw Turmites}
 \usage{
 canvas_turmite(colors, background = "#fafafa", p = 0.5, iterations = 1e6,
-               width = 500, height = 500, noise = FALSE)
+               resolution = 500, noise = FALSE)
 }
 \arguments{
 \item{colors}{a character specifying the color used for the artwork. The number of colors determines the number of turmites.}
@@ -16,11 +16,9 @@ canvas_turmite(colors, background = "#fafafa", p = 0.5, iterations = 1e6,
 
 \item{iterations}{a positive integer specifying the number of iterations of the algorithm.}
 
-\item{width}{a positive integer specifying the width of the artwork in pixels.}
+\item{resolution}{resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.}
 
-\item{height}{a positive integer specifying the height of the artwork in pixels.}
-
-\item{noise}{logical. Whether to add k-nn noise to the artwork. Caution, adding noise increases computation time significantly in large dimensions.}
+\item{noise}{logical. Whether to add k-nn noise to the artwork. Note that adding noise increases computation time significantly in large dimensions.}
 }
 \value{
 A \code{ggplot} object containing the artwork.

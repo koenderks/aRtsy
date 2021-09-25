@@ -5,7 +5,7 @@
 \title{Draw the Mandelbrot Set}
 \usage{
 canvas_mandelbrot(colors, iterations = 100, zoom = 1, left = -1.7, right = -0.2,
-                   bottom = -0.2999, top = 0.8001, width = 500, height = 500)
+                   bottom = -0.2999, top = 0.8001, resolution = 500)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
@@ -22,9 +22,7 @@ canvas_mandelbrot(colors, iterations = 100, zoom = 1, left = -1.7, right = -0.2,
 
 \item{top}{a value specifying the maximum location on the y-axis.}
 
-\item{width}{a positive integer specifying the width of the artwork in pixels.}
-
-\item{height}{a positive integer specifying the height of the artwork in pixels.}
+\item{resolution}{resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.}
 }
 \value{
 A \code{ggplot} object containing the artwork.

@@ -3,7 +3,7 @@
 #' @description This function draws a circle map on the canvas. A circle map models the dynamics of a physical system consisting of two rotors or disks, one free to spin, and anotther attached to a motor, with a long (weak) spring connecting the two.
 #'
 #' @usage canvas_circlemap(colors, left = 0, right = 12.56, bottom = 0, top = 1,
-#'                  iterations = 10, width = 1500, height = 1500)
+#'                  iterations = 10, resolution = 1500)
 #'
 #' @param colors      a string or character vector specifying the color(s) used for the artwork.
 #' @param left        a value specifying the minimum location on the x-axis.
@@ -11,8 +11,7 @@
 #' @param bottom      a value specifying the minimum location on the y-axis.
 #' @param top         a value specifying the maximum location on the y-axis.
 #' @param iterations  a positive integer specifying the number of iterations of the algorithm.
-#' @param width       a positive integer specifying the width of the artwork in pixels.
-#' @param height      a positive integer specifying the height of the artwork in pixels.
+#' @param resolution  resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
@@ -33,9 +32,9 @@
 #' @export
 
 canvas_circlemap <- function(colors, left = 0, right = 12.56, bottom = 0, top = 1,
-                             iterations = 10, width = 1500, height = 1500) {
-  .checkUserInput(width = width, height = height)
-  canvas <- matrix(1, nrow = height, ncol = width)
+                             iterations = 10, resolution = 1500) {
+  .checkUserInput(resolution = resolution)
+  canvas <- matrix(1, nrow = resolution, ncol = resolution)
   canvas <- draw_circlemap(
     X = canvas, left = left, right = right,
     bottom = bottom, top = top, iters = iterations

@@ -3,8 +3,7 @@
 #' @description This function draws diamonds on a canvas and (optionally) places two lines behind them. The diamonds can be transparent or have a random color sampled from the input.
 #'
 #' @usage canvas_diamonds(colors, background = "#fafafa", col.line = "black",
-#'                 radius = 10, alpha = 1, p = 0.2,
-#'                 width = 500, height = 500)
+#'                 radius = 10, alpha = 1, p = 0.2, resolution = 500)
 #'
 #' @param colors      a string or character vector specifying the color(s) used for the artwork.
 #' @param background  a character specifying the color used for the background.
@@ -12,8 +11,7 @@
 #' @param radius      a positive value specifying the radius of the diamonds.
 #' @param alpha       a value specifying the transparency of the diamonds. If \code{NULL} (the default), added layers become increasingly more transparent.
 #' @param p           a value specifying the probability of drawing an empty diamond.
-#' @param width       a positive integer specifying the width of the artwork in pixels.
-#' @param height      a positive integer specifying the height of the artwork in pixels.
+#' @param resolution  resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
@@ -34,16 +32,15 @@
 #' @export
 
 canvas_diamonds <- function(colors, background = "#fafafa", col.line = "black",
-                            radius = 10, alpha = 1, p = 0.2,
-                            width = 500, height = 500) {
-  .checkUserInput(background = background, width = width, height = height)
-  x <- seq(from = width / 5, to = width / 5 * 4, by = radius)
-  top <- seq(from = height / 2 + radius, to = height / 5 * 4, by = radius)
+                            radius = 10, alpha = 1, p = 0.2, resolution = 500) {
+  .checkUserInput(background = background, resolution = resolution)
+  x <- seq(from = resolution / 5, to = resolution / 5 * 4, by = radius)
+  top <- seq(from = resolution / 2 + radius, to = resolution / 5 * 4, by = radius)
   top <- c(top, top[length(top)] + radius)
-  top <- c(top, seq(from = top[length(top)] - radius, to = height / 2 + radius, by = -radius))
-  bottom <- seq(from = height / 2 - radius, to = height / 5, by = -radius)
+  top <- c(top, seq(from = top[length(top)] - radius, to = resolution / 2 + radius, by = -radius))
+  bottom <- seq(from = resolution / 2 - radius, to = resolution / 5, by = -radius)
   bottom <- c(bottom, bottom[length(bottom)] - radius)
-  bottom <- c(bottom, seq(from = bottom[length(bottom)] + radius, to = height / 2 - radius, by = radius))
+  bottom <- c(bottom, seq(from = bottom[length(bottom)] + radius, to = resolution / 2 - radius, by = radius))
   locs <- data.frame(x = x, bottom = bottom, top = top)
   palette <- NULL
   full_canvas <- data.frame(x = numeric(), y = numeric(), type = numeric())
@@ -61,15 +58,15 @@ canvas_diamonds <- function(colors, background = "#fafafa", col.line = "black",
     }
   }
   artwork <- ggplot2::ggplot(data = full_canvas, mapping = ggplot2::aes(x = x, y = y, group = type)) +
-    ggplot2::xlim(c(0, width)) +
-    ggplot2::ylim(c(0, height)) +
+    ggplot2::xlim(c(0, resolution)) +
+    ggplot2::ylim(c(0, resolution)) +
     ggplot2::geom_curve(
-      data = data.frame(x = 0, y = sample(0:height / 2, size = 1), xend = width, yend = sample((height / 2):height, size = 1), type = 999),
+      data = data.frame(x = 0, y = sample(0:resolution / 2, size = 1), xend = resolution, yend = sample((resolution / 2):resolution, size = 1), type = 999),
       mapping = ggplot2::aes(x = x, y = y, xend = xend, yend = yend),
       colour = col.line, size = stats::runif(1, 5, 15), curvature = stats::runif(1, 0, 0.5)
     ) +
     ggplot2::geom_curve(
-      data = data.frame(x = 0, y = sample((height / 2):height, size = 1), xend = width, yend = sample(0:height / 2, size = 1), type = 999),
+      data = data.frame(x = 0, y = sample((resolution / 2):resolution, size = 1), xend = resolution, yend = sample(0:resolution / 2, size = 1), type = 999),
       mapping = ggplot2::aes(x = x, y = y, xend = xend, yend = yend),
       colour = col.line, size = stats::runif(1, 5, 15), curvature = stats::runif(1, -0.5, 0)
     ) +

@@ -5,8 +5,7 @@
 \title{Draw Diamonds}
 \usage{
 canvas_diamonds(colors, background = "#fafafa", col.line = "black",
-                radius = 10, alpha = 1, p = 0.2,
-                width = 500, height = 500)
+                radius = 10, alpha = 1, p = 0.2, resolution = 500)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
@@ -21,9 +20,7 @@ canvas_diamonds(colors, background = "#fafafa", col.line = "black",
 
 \item{p}{a value specifying the probability of drawing an empty diamond.}
 
-\item{width}{a positive integer specifying the width of the artwork in pixels.}
-
-\item{height}{a positive integer specifying the height of the artwork in pixels.}
+\item{resolution}{resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
