@@ -6,7 +6,6 @@
 #'
 #' @param x            a ggplot2 object.
 #' @param background   a character specifying the color used for the empty canvas.
-#' @param margin       margins of the plot.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
@@ -16,7 +15,7 @@
 #'
 #' @export
 
-theme_canvas <- function(x, background = "#fafafa", margin = -1.25) {
+theme_canvas <- function(x, background = "white") {
   x <- x + ggplot2::theme(
     axis.title = ggplot2::element_blank(),
     axis.text = ggplot2::element_blank(),
@@ -27,7 +26,7 @@ theme_canvas <- function(x, background = "#fafafa", margin = -1.25) {
     panel.border = ggplot2::element_blank(),
     panel.grid = ggplot2::element_blank(),
     plot.background = ggplot2::element_rect(fill = background, colour = background),
-    plot.margin = ggplot2::unit(rep(margin, 4), "lines"),
+    plot.margin = ggplot2::unit(rep(-1.25, 4), "lines"),
     strip.background = ggplot2::element_blank(),
     strip.text = ggplot2::element_blank()
   )

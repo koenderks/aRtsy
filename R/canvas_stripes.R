@@ -42,6 +42,6 @@ canvas_stripes <- function(colors, n = 300, H = 1, burnin = 1) {
   artwork <- ggplot2::ggplot(data = canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE) +
     ggplot2::scale_fill_gradientn(colours = colors)
-  artwork <- theme_canvas(artwork, background = NULL)
+  artwork <- theme_canvas(artwork)
   return(artwork)
 }

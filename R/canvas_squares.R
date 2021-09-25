@@ -34,7 +34,7 @@ canvas_squares <- function(colors, background = "#000000", cuts = 50, ratio = 1.
                            resolution = 200, noise = FALSE) {
   .checkUserInput(resolution = resolution, background = background)
   if (cuts <= 1) {
-    stop("Cuts must be higher than 1.")
+    stop("'cuts' must be a single value >= 1")
   }
   palette <- c(background, colors)
   neighbors <- expand.grid(-1:1, -1:1)
@@ -48,9 +48,9 @@ canvas_squares <- function(colors, background = "#000000", cuts = 50, ratio = 1.
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = FALSE, alpha = 1) +
     ggplot2::coord_equal() +
-	ggplot2::xlim(c(0, resolution + 1)) + 
-	ggplot2::ylim(c(0, resolution + 1))
+    ggplot2::xlim(c(0, resolution + 1)) +
+    ggplot2::ylim(c(0, resolution + 1)) +
     ggplot2::scale_fill_gradientn(colours = palette)
-  artwork <- theme_canvas(artwork, background = NULL)
+  artwork <- theme_canvas(artwork)
   return(artwork)
 }

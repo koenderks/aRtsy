@@ -37,6 +37,6 @@ canvas_gemstone <- function(colors, n = 1000, resolution = 500) {
     ggplot2::xlim(c(0, resolution)) +
     ggplot2::ylim(c(0, resolution)) +
     ggplot2::scale_fill_gradientn(colours = colors)
-  artwork <- theme_canvas(artwork, background = NULL)
+  artwork <- theme_canvas(artwork)
   return(artwork)
 }

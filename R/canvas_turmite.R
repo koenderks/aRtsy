@@ -63,9 +63,9 @@ canvas_turmite <- function(colors, background = "#fafafa", p = 0.5, iterations =
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) +
     ggplot2::coord_equal() +
-    ggplot2::scale_fill_gradientn(colours = palette) +
-    ggplot2::scale_y_continuous(expand = c(0, 0)) +
-    ggplot2::scale_x_continuous(expand = c(0, 0))
-  artwork <- theme_canvas(artwork, background = NULL)
+    ggplot2::xlim(c(0, resolution + 1)) +
+    ggplot2::ylim(c(0, resolution + 1)) +
+    ggplot2::scale_fill_gradientn(colours = palette)
+  artwork <- theme_canvas(artwork, background)
   return(artwork)
 }

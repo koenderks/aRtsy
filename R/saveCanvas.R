@@ -18,6 +18,6 @@
 #'
 #' @export
 
-saveCanvas <- function(plot, filename, width = 7, height = 7, dpi = 300) {
+saveCanvas <- function(plot, filename, width = 7.5, height = 7.5, dpi = 300) {
   ggplot2::ggsave(plot = plot, filename = filename, width = width, height = height, units = "cm", dpi = dpi)
 }

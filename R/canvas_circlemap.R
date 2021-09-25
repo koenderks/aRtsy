@@ -40,13 +40,13 @@ canvas_circlemap <- function(colors, left = 0, right = 12.56, bottom = 0, top = 
     bottom = bottom, top = top, iters = iterations
   )
   canvas <- (canvas / iterations) / length(colors)
-  full_canvas <- .unraster(canvas, names = c("y", "x", "z")) # Convert 2D matrix to data frame
+  full_canvas <- .unraster(canvas, names = c("y", "x", "z"))
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) +
     ggplot2::coord_equal() +
-    ggplot2::scale_fill_gradientn(colours = colors) +
-    ggplot2::scale_y_continuous(expand = c(0, 0)) +
-    ggplot2::scale_x_continuous(expand = c(0, 0))
-  artwork <- theme_canvas(artwork, background = NULL)
+    ggplot2::xlim(c(0, resolution + 1)) +
+    ggplot2::ylim(c(0, resolution + 1)) +
+    ggplot2::scale_fill_gradientn(colours = colors)
+  artwork <- theme_canvas(artwork)
   return(artwork)
 }
