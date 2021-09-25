@@ -22,7 +22,7 @@ This function paints functions with random parameters and mimics the functionali
 set.seed(1)
 
 # Simple example
-canvas_function(color = 'navyblue')
+canvas_function(color = "navyblue")
 }
 
 }

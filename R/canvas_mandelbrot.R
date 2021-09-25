@@ -55,7 +55,7 @@ canvas_mandelbrot <- function(colors, iterations = 100, zoom = 1, xmin = -1.7, x
     z[index] <- z[index]^2 + c[index]
     canvas[index] <- canvas[index] + 1
   }
-  full_canvas <- unraster(canvas, names = c("x", "y", "z")) # Convert 2D matrix to data frame
+  full_canvas <- .unraster(canvas, names = c("x", "y", "z")) # Convert 2D matrix to data frame
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) +
     ggplot2::coord_equal() +

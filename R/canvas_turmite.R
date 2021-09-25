@@ -54,12 +54,12 @@ canvas_turmite <- function(colors, background = "#fafafa", p = 0.5, iterations =
     turmite <- draw_turmite(matrix(0, nrow = height, ncol = width), iterations, row, col, p = p)
     if (noise) {
       turmite[which(turmite == 0)] <- NA
-      turmite <- turmite - noise(dims = c(height, width))
+      turmite <- turmite - .noise(dims = c(height, width))
       turmite[which(is.na(turmite))] <- 0
     }
     canvas <- canvas + turmite
   }
-  full_canvas <- unraster(canvas, names = c("x", "y", "z")) # Convert 2D matrix to data frame
+  full_canvas <- .unraster(canvas, names = c("x", "y", "z")) # Convert 2D matrix to data frame
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) +
     ggplot2::coord_equal() +

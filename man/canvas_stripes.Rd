@@ -26,7 +26,7 @@ This function creates a brownian motion on each row of the artwork and colors it
 set.seed(1)
 
 # Simple example
-canvas_stripes(colors = colorPalette('random', n = 10))
+canvas_stripes(colors = colorPalette("random", n = 10))
 }
 
 }

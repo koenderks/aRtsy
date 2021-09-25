@@ -34,7 +34,7 @@ This function draws the Mandelbrot set on the canvas.
 }
 \examples{
 \donttest{
-canvas_mandelbrot(colors = colorPalette('tuscany1'))
+canvas_mandelbrot(colors = colorPalette("tuscany1"))
 }
 
 }

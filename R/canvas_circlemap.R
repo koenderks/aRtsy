@@ -38,7 +38,7 @@ canvas_circlemap <- function(colors, xmin = 0, xmax = 12.56, ymin = 0, ymax = 1,
   canvas <- matrix(1, nrow = height, ncol = width)
   canvas <- draw_circlemap(canvas, xmin, xmax, ymin, ymax, iterations)
   canvas <- (canvas / iterations) / length(colors)
-  full_canvas <- unraster(canvas, names = c("y", "x", "z")) # Convert 2D matrix to data frame
+  full_canvas <- .unraster(canvas, names = c("y", "x", "z")) # Convert 2D matrix to data frame
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) +
     ggplot2::coord_equal() +

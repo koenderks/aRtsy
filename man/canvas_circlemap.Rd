@@ -32,7 +32,7 @@ This function draws a circle map on the canvas.
 }
 \examples{
 \donttest{
-canvas_circlemap(colors = colorPalette('dark2'))
+canvas_circlemap(colors = colorPalette("dark2"))
 }
 
 }

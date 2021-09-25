@@ -1,0 +1,3 @@
+NULL
+
+utils::globalVariables(c("x", "y", "value"))

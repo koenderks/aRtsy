@@ -11,13 +11,13 @@
 
 *"If you laugh at a joke, what difference does it make if subsequently you are told that the joke was created by an algorithm?" - Marcus du Sautoy, The Creative Code*
 
-`aRtsy` is an attempt at making generative art available for the masses in a simple and standardized format. The package provides algorithms for generating artworks in `ggplot2` that incorporate some form of randomness (depending on the set `seed`). Each algorithm is implemented in a separate function that has its own parameters you can tweak to produce something unique. 
+`aRtsy` is an attempt at making generative art available for the masses in a simple and standardized format. The package provides algorithms for generating artworks in `ggplot2` that incorporate some form of randomness (depending on the set `seed`). Each algorithm has its own parameters you can tweak to produce something unique.
 
 Good luck hunting for some good `seed`'s!
 
 ## Artwork of the day
 
-Every 24 hours this repository generates and tweets a random artwork using the `aRtsy` package. The full collection of daily artworks is available on the [aRtsy twitter feed](https://twitter.com/aRtsy_package). This is today's artwork:
+Every 24 hours this repository randomly generates and tweets an artwork using `set.seed(Sys.date())`. The full collection of daily artworks is available on the [aRtsy twitter feed](https://twitter.com/aRtsy_package). This is today's artwork:
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/daily.png' width='400' height='400'>
@@ -156,7 +156,7 @@ canvas_turmite(colors = colorPalette('dark2'))
 
 #### Langton's ant
 
-According to [Wikipedia](https://en.wikipedia.org/wiki/Langtons_ant), Langton's ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below. Beware, the problem (or blessing) of Langton's ant is that it always moves off the canvas...
+According to [Wikipedia](https://en.wikipedia.org/wiki/Langtons_ant), Langton's ant is a turmite with a very specific set of rules. In particular, the algorithm involves repeating the three rules shown below.
 
 1. On a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block.
 1. On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block.

@@ -49,7 +49,7 @@ canvas_strokes <- function(colors, neighbors = 1, p = 0.01, iterations = 1,
   for (i in 1:iterations) {
     canvas <- draw_strokes(X = canvas, neighbors = neighborsLocations, s = length(colors), p = p)
   }
-  full_canvas <- unraster(canvas, names = c("x", "y", "z")) # Convert 2D matrix to data frame
+  full_canvas <- .unraster(canvas, names = c("x", "y", "z")) # Convert 2D matrix to data frame
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) +
     ggplot2::coord_equal() +

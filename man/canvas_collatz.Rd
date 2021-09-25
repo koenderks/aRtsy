@@ -31,7 +31,7 @@ This function draws the Collatz conjecture on the canvas.
 set.seed(1)
 
 # Simple example
-canvas_collatz(colors = colorPalette('tuscany3'))
+canvas_collatz(colors = colorPalette("tuscany3"))
 }
 
 }

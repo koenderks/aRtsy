@@ -33,7 +33,7 @@ This function creates an artwork that resembles paints strokes. The algorithm is
 set.seed(1)
 
 # Simple example
-canvas_strokes(colors = colorPalette('tuscany1'))
+canvas_strokes(colors = colorPalette("tuscany1"))
 }
 
 }

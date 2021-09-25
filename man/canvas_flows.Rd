@@ -31,7 +31,7 @@ This function paints watercolors on a canvas.
 set.seed(1)
 
 # Simple example
-canvas_flows(colors = colorPalette('dark2'))
+canvas_flows(colors = colorPalette("dark2"))
 }
 
 }

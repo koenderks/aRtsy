@@ -49,9 +49,9 @@ canvas_squares <- function(colors, background = "#000000", cuts = 50, ratio = 1.
   canvas <- matrix(0, nrow = height, ncol = width)
   full_canvas <- draw_squares(canvas, neighbors, length(colors), cuts, ratio)
   if (noise) {
-    full_canvas <- full_canvas - noise(dims = c(height, width))
+    full_canvas <- full_canvas - .noise(dims = c(height, width))
   }
-  full_canvas <- unraster(full_canvas, names = c("x", "y", "z")) # Convert 2D matrix to data frame
+  full_canvas <- .unraster(full_canvas, names = c("x", "y", "z")) # Convert 2D matrix to data frame
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = FALSE, alpha = 1) +
     ggplot2::coord_equal() +

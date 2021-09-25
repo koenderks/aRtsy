@@ -43,7 +43,7 @@ This function paints one or multiple planets and uses a cellular automata to fil
 set.seed(1)
 
 # Simple example
-canvas_planet(colors = colorPalette('retro3'))
+canvas_planet(colors = colorPalette("retro3"))
 
 # Advanced example
 colors <- list(

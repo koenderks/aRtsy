@@ -4,11 +4,11 @@
 \alias{canvas_ant}
 \title{Paint Langton's Ant on a Canvas}
 \usage{
-canvas_ant(colors, background = '#fafafa', iterations = 1e7,
-           width = 200, height = 200)
+canvas_ant(colors, background = '#fafafa', iterations = 50000,
+           width = 250, height = 250)
 }
 \arguments{
-\item{colors}{a string or character vector specifying the color(s) used for the artwork.}
+\item{colors}{a character (vector) specifying the color(s) used for the artwork.}
 
 \item{background}{a character specifying the color used for the background.}
 
@@ -29,7 +29,7 @@ This function paints Langton's Ant. Langton's ant is a two-dimensional universal
 set.seed(1)
 
 # Simple example
-canvas_ant(colors = colorPalette('house'))
+canvas_ant(colors = colorPalette("house"))
 }
 
 }
