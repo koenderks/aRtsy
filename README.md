@@ -11,7 +11,7 @@
 
 *"If you laugh at a joke, what difference does it make if subsequently you are told that the joke was created by an algorithm?" - Marcus du Sautoy, The Creative Code*
 
-`aRtsy` is an attempt at making generative art available for the masses in a simple and standardized format. The package provides algorithms for generating artworks in `ggplot2` that incorporate some form of randomness (depending on the set `seed`). Each algorithm has its own parameters you can tweak to produce something unique.
+The `aRtsy` package aims to make generative art accessible to the general public in a straightforward and standardized manner. The package provides algorithms for creating artworks that incorporate some form of randomness and are dependent on the set `seed`. Each algorithm is implemented in a separate function with its own set of parameters that can be tweaked.
 
 Good luck hunting for some good `seed`'s!
 
@@ -43,7 +43,7 @@ After installation, the `aRtsy` package can be loaded with:
 library(aRtsy)
 ```
 
-**Note:** Render times in RStudio can be quite long for some artworks. It is therefore recommended to save the artwork to a file (e.g., `.png` or `.jpg`) before viewing. You can use the `saveCanvas()` function for this, which saves the artwork with an appropriate size and quality.
+**Note:** Render times in RStudio can be quite long for some artworks. It is therefore recommended that you save the artwork to a file (e.g., `.png` or `.jpg`) before viewing it. You can save the artwork in an appropriate size and quality using the `saveCanvas()` function.
 
 ```r
 artwork <- canvas_strokes(colors = c("black", "white"))
