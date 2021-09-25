@@ -1,12 +1,13 @@
-#' Paint a Random Forest on a Canvas
+#' Draw a Random Forest
 #'
 #' @description This function creates an artwork from randomly generated data by running a random forest classification algorithm to predict the color of each pixel on the canvas.
 #'
-#' @usage canvas_forest(colors, n = 1000, resolution = 500)
+#' @usage canvas_forest(colors, n = 1000, width = 500, height = 500)
 #'
 #' @param colors      a string or character vector specifying the color(s) used for the artwork.
 #' @param n           a positive integer specifying the number of random data points to generate.
-#' @param resolution  a positive integer specifying the number of pixels (resolution x resolution) of the artwork.
+#' @param width       a positive integer specifying the width of the artwork in pixels.
+#' @param height      a positive integer specifying the height of the artwork in pixels.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
@@ -25,18 +26,18 @@
 #' @export
 #' @importFrom stats predict
 
-canvas_forest <- function(colors, n = 1000, resolution = 500) {
-  x <- y <- z <- NULL # Global variables
+canvas_forest <- function(colors, n = 1000, width = 500, height = 500) {
   train <- data.frame(
-    x = stats::runif(n, 0, 1), # Create a training data set with x (predictor), y (predictor), z (response)
+    x = stats::runif(n, 0, 1),
     y = stats::runif(n, 0, 1),
-    z = factor(sample(colors, size = n, replace = T))
+    z = factor(sample(colors, size = n, replace = TRUE))
   )
-  fit <- randomForest::randomForest(formula = z ~ x + y, data = train) # Fit random forest model to training data
-  sequence <- seq(0, 1, length = resolution) # Create a sequence of pixels
-  canvas <- expand.grid(sequence, sequence) # Create all combinations of pixels
+  fit <- randomForest::randomForest(formula = z ~ x + y, data = train)
+  xsequence <- seq(0, 1, length = width)
+  ysequence <- seq(0, 1, length = height)
+  canvas <- expand.grid(xsequence, ysequence)
   colnames(canvas) <- c("x", "y")
-  z <- predict(fit, newdata = canvas) # Predict each pixel using the fitted model
+  z <- predict(fit, newdata = canvas)
   full_canvas <- data.frame(x = canvas$x, y = canvas$y, z = z)
   artwork <- ggplot2::ggplot(data = full_canvas, mapping = ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_tile() +

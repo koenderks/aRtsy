@@ -4,8 +4,8 @@
 \alias{canvas_flows}
 \title{Paint Flows on a Canvas}
 \usage{
-canvas_flows(colors, background = "#fafafa", lines = 100,
-             iterations = 100, width = 100, height = 100)
+canvas_flows(colors, background = "#fafafa", lines = 100, iterations = 100,
+             angles = c("svm", "knn", "rf"), width = 100, height = 100)
 }
 \arguments{
 \item{colors}{a string specifying the color used for the artwork.}
@@ -15,6 +15,8 @@ canvas_flows(colors, background = "#fafafa", lines = 100,
 \item{lines}{the number of lines to draw.}
 
 \item{iterations}{the maximum number of iterations for each line.}
+
+\item{angles}{method of setting the angles of the flow field. Possible options are \code{knn} and \code{svm}.}
 
 \item{width}{a positive integer specifying the width of the artwork in pixels.}
 

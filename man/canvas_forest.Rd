@@ -2,16 +2,18 @@
 % Please edit documentation in R/canvas_forest.R
 \name{canvas_forest}
 \alias{canvas_forest}
-\title{Paint a Random Forest on a Canvas}
+\title{Draw a Random Forest}
 \usage{
-canvas_forest(colors, n = 1000, resolution = 500)
+canvas_forest(colors, n = 1000, width = 500, height = 500)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
 
 \item{n}{a positive integer specifying the number of random data points to generate.}
 
-\item{resolution}{a positive integer specifying the number of pixels (resolution x resolution) of the artwork.}
+\item{width}{a positive integer specifying the width of the artwork in pixels.}
+
+\item{height}{a positive integer specifying the height of the artwork in pixels.}
 }
 \value{
 A \code{ggplot} object containing the artwork.

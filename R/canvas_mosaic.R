@@ -31,9 +31,9 @@
 canvas_mosaic <- function(colors, n = 1000, width = 500, height = 500) {
   .checkUserInput(width = width, height = height)
   train <- data.frame(
-	x = stats::runif(n, 0, 1),
-	y = stats::runif(n, 0, 1),
-	z = factor(sample(colors, size = n, replace = TRUE))
+    x = stats::runif(n, 0, 1),
+    y = stats::runif(n, 0, 1),
+    z = factor(sample(colors, size = n, replace = TRUE))
   )
   fit <- kknn::train.kknn(formula = z ~ x + y, data = train, kmax = 1)
   xsequence <- seq(0, 1, length = width)

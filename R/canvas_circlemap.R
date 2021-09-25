@@ -2,14 +2,14 @@
 #'
 #' @description This function draws a circle map on the canvas.
 #'
-#' @usage canvas_circlemap(colors, xmin = 0, xmax = 12.56, ymin = 0, ymax = 1,
+#' @usage canvas_circlemap(colors, left = 0, right = 12.56, bottom = 0, top = 1,
 #'                  iterations = 10, width = 1500, height = 1500)
 #'
 #' @param colors      a string or character vector specifying the color(s) used for the artwork.
-#' @param xmin        a value specifying the minimum location on the x-axis.
-#' @param xmax        a value specifying the maximum location on the x-axis.
-#' @param ymin        a value specifying the minimum location on the y-axis.
-#' @param ymax        a value specifying the maximum location on the y-axis.
+#' @param left        a value specifying the minimum location on the x-axis.
+#' @param right       a value specifying the maximum location on the x-axis.
+#' @param bottom      a value specifying the minimum location on the y-axis.
+#' @param top         a value specifying the maximum location on the y-axis.
 #' @param iterations  a positive integer specifying the number of iterations of the algorithm.
 #' @param width       a positive integer specifying the width of the artwork in pixels.
 #' @param height      a positive integer specifying the height of the artwork in pixels.
@@ -32,11 +32,10 @@
 #' @useDynLib aRtsy
 #' @import Rcpp
 
-canvas_circlemap <- function(colors, xmin = 0, xmax = 12.56, ymin = 0, ymax = 1,
+canvas_circlemap <- function(colors, left = 0, right = 12.56, bottom = 0, top = 1,
                              iterations = 10, width = 1500, height = 1500) {
-  x <- y <- z <- NULL
   canvas <- matrix(1, nrow = height, ncol = width)
-  canvas <- draw_circlemap(canvas, xmin, xmax, ymin, ymax, iterations)
+  canvas <- draw_circlemap(canvas, left, right, bottom, top, iterations)
   canvas <- (canvas / iterations) / length(colors)
   full_canvas <- .unraster(canvas, names = c("y", "x", "z")) # Convert 2D matrix to data frame
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
