@@ -7,7 +7,7 @@
 
 **Major changes**
 
-- Changed the `width` and `height` arguments in all functions to `resolution`. If you want to save a non-rectangular canvas you can do it in the save function itself.
+- Changed the `width` and `height` arguments in all functions to `resolution`. If you want to save a non-square artwork, it is best to set a custom `height` and `width` the the preferred export / save function.
 
 **Minor changes**
 
