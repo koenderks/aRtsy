@@ -138,7 +138,7 @@ canvas_collatz(colors = colorPalette("tuscany3"))
 
 #### Flow fields
 
-This artwork implements a version of the algorithm described in the blog post [Flow Fields](https://tylerxhobbs.com/essays/2020/flow-fields) by Tyler Hobbs. It works by creating a grid of angles and determining how these points will flow through this field. The angles in the field can be set manually or according to the predictions of a supervised learning method trained on randomly generated data.
+This artwork implements a version of the algorithm described in the blog post [Flow Fields](https://tylerxhobbs.com/essays/2020/flow-fields) by Tyler Hobbs. It works by creating a grid of angles and determining how certain points will flow through this field. The angles in the field can be set manually or according to the predictions of a supervised learning method trained on randomly generated data.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-24.png' width='270' height='270'>
