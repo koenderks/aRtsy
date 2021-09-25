@@ -22,12 +22,39 @@
 }
 
 # This function computes k-nearest neighbors noise from c++
-.noise <- function(dims, k = 20, n = 100) {
-  if (length(dims) == 1) {
-    vec <- expand.grid(0, seq(0, 1, length.out = dims)) # Create all combinations of pixels
-  } else if (length(dims) == 2) {
-    vec <- expand.grid(seq(0, 1, length.out = dims[1]), seq(0, 1, length.out = dims[2])) # Create all combinations of pixels
+.noise <- function(dims, n = 100, type = c("artsy-knn", "knn", "svm"), k = 20) {
+  type <- match.arg(type)
+  if (type == "artsy-knn") {
+	if (length(dims) == 1) {
+		vec <- expand.grid(0, seq(0, 1, length.out = dims))
+	} else if (length(dims) == 2) {
+		vec <- expand.grid(seq(0, 1, length.out = dims[1]), seq(0, 1, length.out = dims[2]))
+	}
+	z <- c_noise_knn(stats::runif(n), stats::runif(n), stats::runif(n), vec[, 1], vec[, 2], k, n)
+  } else if (type == "svm") {
+	train <- data.frame(
+		x = stats::runif(n, 0, 1),
+		y = stats::runif(n, 0, 1),
+		z = stats::runif(n, 0, 1)
+	)
+	fit <- e1071::svm(formula = z ~ x + y, data = train)
+	xsequence <- seq(0, 1, length = dims[1])
+	ysequence <- seq(0, 1, length = dims[2])
+	canvas <- expand.grid(xsequence, ysequence)
+	colnames(canvas) <- c("x", "y")
+	z <- predict(fit, newdata = canvas)
+  } else if (type == "knn") {
+	train <- data.frame(
+		x = stats::runif(n, 0, 1),
+		y = stats::runif(n, 0, 1),
+		z = stats::runif(n, 0, 1)
+	)
+	fit <- kknn::train.kknn(formula = z ~ x + y, data = train, kmax = k)
+	xsequence <- seq(0, 1, length = dims[1])
+	ysequence <- seq(0, 1, length = dims[2])
+	canvas <- expand.grid(xsequence, ysequence)
+	colnames(canvas) <- c("x", "y")
+	z <- predict(fit, newdata = canvas)
   }
-  z <- c_noise_knn(stats::runif(n), stats::runif(n), stats::runif(n), vec[, 1], vec[, 2], k, n)
   return(matrix(z, nrow = dims[1], ncol = dims[2]))
 }

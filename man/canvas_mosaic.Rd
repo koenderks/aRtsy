@@ -2,24 +2,24 @@
 % Please edit documentation in R/canvas_mosaic.R
 \name{canvas_mosaic}
 \alias{canvas_mosaic}
-\title{Paint a Random Mosaic on a Canvas}
+\title{Draw Moisaics}
 \usage{
-canvas_mosaic(colors, maxk = 1, n = 1000, resolution = 500)
+canvas_mosaic(colors, n = 1000, width = 500, height = 500)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
 
-\item{maxk}{a positive integer specifying the maximum number of nearest neighbors to consider.}
-
 \item{n}{a positive integer specifying the number of random data points to generate.}
 
-\item{resolution}{a positive integer specifying the number of pixels (resolution x resolution) of the artwork.}
+\item{width}{a positive integer specifying the width of the artwork in pixels.}
+
+\item{height}{a positive integer specifying the height of the artwork in pixels.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
 }
 \description{
-This function paints a mosaic from randomly generated data by running a k-nearest neighbors classification algorithm to predict the color of each pixel on the canvas. Low values of \code{maxk} produce a mosaic like artwork, while higher values produce a more smooth decision boundary.
+This function draws mosaics by running a k-nearest neighbors classification algorithm on randomly generated data to predict the color of each pixel on the canvas.
 }
 \examples{
 \donttest{

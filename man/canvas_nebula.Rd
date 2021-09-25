@@ -2,9 +2,9 @@
 % Please edit documentation in R/canvas_nebula.R
 \name{canvas_nebula}
 \alias{canvas_nebula}
-\title{Paint a Nebula on a Canvas}
+\title{Draw Nebulas}
 \usage{
-canvas_nebula(colors, k = 50, n = 500, resolution = 2000)
+canvas_nebula(colors, k = 50, n = 500, width = 500, height = 500)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
@@ -13,7 +13,9 @@ canvas_nebula(colors, k = 50, n = 500, resolution = 2000)
 
 \item{n}{a positive integer specifying the number of random data points to generate.}
 
-\item{resolution}{a positive integer specifying the number of pixels (resolution x resolution) of the artwork.}
+\item{width}{a positive integer specifying the width of the artwork in pixels.}
+
+\item{height}{a positive integer specifying the height of the artwork in pixels.}
 }
 \value{
 A \code{ggplot} object containing the artwork.

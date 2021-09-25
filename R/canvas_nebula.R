@@ -1,13 +1,14 @@
-#' Paint a Nebula on a Canvas
+#' Draw Nebulas
 #'
 #' @description This function creates an artwork from randomly generated noise. Currently it is only capable of generating k-nearest neighbors noise. Sometimes, the noise resembles a nebula.
 #'
-#' @usage canvas_nebula(colors, k = 50, n = 500, resolution = 2000)
+#' @usage canvas_nebula(colors, k = 50, n = 500, width = 500, height = 500)
 #'
 #' @param colors      a string or character vector specifying the color(s) used for the artwork.
 #' @param k           a positive integer specifying the number of nearest neighbors to consider.
 #' @param n           a positive integer specifying the number of random data points to generate.
-#' @param resolution  a positive integer specifying the number of pixels (resolution x resolution) of the artwork.
+#' @param width       a positive integer specifying the width of the artwork in pixels.
+#' @param height      a positive integer specifying the height of the artwork in pixels.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
@@ -25,13 +26,14 @@
 #'
 #' @export
 
-canvas_nebula <- function(colors, k = 50, n = 500, resolution = 2000) {
-  x <- y <- z <- NULL
-  dims <- c(resolution, resolution)
-  canvas <- .noise(dims = dims, k, n)
-  canvas <- .unraster(canvas, c("x", "y", "z"))
+canvas_nebula <- function(colors, k = 50, n = 500, width = 500, height = 500) {
+  .checkUserInput(width = width, height = height)
+  canvas <- .noise(dims = c(width, height), n = n, type = "artsy-knn", k = k)
+  canvas <- .unraster(canvas, names = c("x", "y", "z"))
   artwork <- ggplot2::ggplot(data = canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster() +
+    ggplot2::xlim(c(0, width)) +
+    ggplot2::ylim(c(0, height)) +
     ggplot2::scale_fill_gradientn(colors = colors)
   artwork <- aRtsy::theme_canvas(artwork)
   return(artwork)

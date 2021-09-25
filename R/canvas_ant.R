@@ -51,7 +51,7 @@ canvas_ant <- function(colors, background = "#fafafa", iterations = 50000,
     y = sample(ceiling(height * 0.05):ceiling(height * 0.95), size = 1),
     dx = directions[, 1], dy = directions[, 2]
   )
-  full_canvas <- .unraster(full_canvas, names = c("y", "x", "z"))
+  full_canvas <- .unraster(full_canvas, names = c("x", "y", "z"))
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) +
     ggplot2::coord_equal() +

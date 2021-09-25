@@ -32,8 +32,8 @@
 #' @useDynLib aRtsy
 #' @import Rcpp
 
-canvas_flows <- function(colors, background = "#fafafa", lines = 100,
-                         iterations = 100, width = 100, height = 100) {
+canvas_flows <- function(colors, background = "#fafafa", lines = 100, iterations = 100,
+                         angles = c("knn", "svm"), width = 100, height = 100) {
   x <- y <- z <- NULL
   resolution <- round(width * 0.01)
   xsequence <- seq(0, width, length = width)
@@ -46,14 +46,13 @@ canvas_flows <- function(colors, background = "#fafafa", lines = 100,
   top <- height * 1.5
   ncols <- (right - left) / resolution
   nrows <- (top - bottom) / resolution
-  angles <- .angles(dims = c(nrows, ncols), n = sample(100:300, size = 1))
+  angles <- .noise(dims = c(nrows, ncols), n = sample(100:300, size = 1), type = angles)
   plotData <- data.frame(x = numeric(), y = numeric(), z = numeric(), size = numeric(), color = numeric())
   for (j in 1:lines) {
     step <- stats::runif(1, min = 0, max = width * 0.01)
     rows <- iterate_flow(angles, j, iterations, left, right, top, bottom, step, width, height, resolution)
     rows$color <- sample(colors, size = 1)
-    size <- cumsum(stats::rnorm(n = nrow(rows), sd = sqrt(1)))
-    rows$size <- abs(size / stats::sd(size) * 0.05)
+    rows$size <- .fbmline(n = nrow(rows))
     plotData <- rbind(plotData, rows)
   }
   artwork <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y, group = factor(z))) +
@@ -63,22 +62,8 @@ canvas_flows <- function(colors, background = "#fafafa", lines = 100,
   return(artwork)
 }
 
-.angles <- function(dims, n) {
-  train <- data.frame(
-    x = stats::runif(n, -3, 3),
-    y = stats::runif(n, -3, 3),
-    z = stats::runif(n, -3, 3)
-  )
-  s <- sample(0:1, size = 1)
-  if (s == 1) {
-    fit <- kknn::train.kknn(formula = z ~ x + y, data = train)
-  } else {
-    fit <- e1071::svm(formula = z ~ x + y, data = train)
-  }
-  xsequence <- seq(-3, 3, length = dims[1])
-  ysequence <- seq(-3, 3, length = dims[2])
-  canvas <- expand.grid(xsequence, ysequence)
-  colnames(canvas) <- c("x", "y")
-  z <- predict(fit, newdata = canvas)
-  angles <- matrix(z, nrow = dims[1], ncol = dims[2])
+.fbmline <- function(n, sd = 1) {
+  x <- cumsum(stats::rnorm(n = n, sd = sqrt(sd)))
+  x <- abs(x / stats::sd(x) * 0.05)
+  return(x)
 }
