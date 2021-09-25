@@ -50,7 +50,6 @@ canvas_strokes <- function(colors, neighbors = 1, p = 0.01, iterations = 1,
   full_canvas <- .unraster(canvas, names = c("x", "y", "z"))
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) +
-    ggplot2::coord_equal() +
     ggplot2::xlim(c(0, resolution + 1)) +
     ggplot2::ylim(c(0, resolution + 1)) +
     ggplot2::scale_fill_gradientn(colours = colors)

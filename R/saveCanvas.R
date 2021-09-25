@@ -18,6 +18,7 @@
 #'
 #' @export
 
-saveCanvas <- function(plot, filename, width = 7.5, height = 7.5, dpi = 300) {
+saveCanvas <- function(plot, filename, width = 7, height = 7, dpi = 300) {
+  plot <- plot + ggplot2::theme(plot.margin = ggplot2::unit(rep(-1.25, 4), "lines"))
   ggplot2::ggsave(plot = plot, filename = filename, width = width, height = height, units = "cm", dpi = dpi)
 }

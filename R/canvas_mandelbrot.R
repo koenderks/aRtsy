@@ -59,7 +59,6 @@ canvas_mandelbrot <- function(colors, iterations = 100, zoom = 1, left = -1.7, r
   full_canvas <- .unraster(canvas, names = c("x", "y", "z")) # Convert 2D matrix to data frame
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) +
-    ggplot2::coord_equal() +
     ggplot2::xlim(c(0, resolution + 1)) +
     ggplot2::ylim(c(0, resolution + 1)) +
     ggplot2::scale_fill_gradientn(colours = colors)

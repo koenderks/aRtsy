@@ -43,7 +43,6 @@ canvas_circlemap <- function(colors, left = 0, right = 12.56, bottom = 0, top = 
   full_canvas <- .unraster(canvas, names = c("y", "x", "z"))
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE, alpha = 0.9) +
-    ggplot2::coord_equal() +
     ggplot2::xlim(c(0, resolution + 1)) +
     ggplot2::ylim(c(0, resolution + 1)) +
     ggplot2::scale_fill_gradientn(colours = colors)

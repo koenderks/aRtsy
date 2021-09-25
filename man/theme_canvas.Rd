@@ -4,12 +4,14 @@
 \alias{theme_canvas}
 \title{Canvas Theme for ggplot2 Objects}
 \usage{
-theme_canvas(x, background = '#fafafa', margin = -1.25)
+theme_canvas(x, background = 'white', margin = 0)
 }
 \arguments{
 \item{x}{a ggplot2 object.}
 
 \item{background}{a character specifying the color used for the empty canvas.}
+
+\item{margin}{margins of the canvas.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
