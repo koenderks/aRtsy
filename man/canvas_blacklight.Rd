@@ -19,7 +19,7 @@ canvas_blacklight(colors, n = 1000, width = 500, height = 500)
 A \code{ggplot} object containing the artwork.
 }
 \description{
-This function draws the predictions from a support vector machines algorithm on randomly generated continuous data.
+This function draws the predictions from a support vector machine algorithm trained on randomly generated continuous data.
 }
 \examples{
 \donttest{

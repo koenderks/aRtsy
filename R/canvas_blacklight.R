@@ -1,6 +1,6 @@
 #' Draw Blacklights
 #'
-#' @description This function draws the predictions from a support vector machines algorithm on randomly generated continuous data.
+#' @description This function draws the predictions from a support vector machine algorithm trained on randomly generated continuous data.
 #'
 #' @usage canvas_blacklight(colors, n = 1000, width = 500, height = 500)
 #'

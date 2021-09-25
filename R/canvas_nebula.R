@@ -1,6 +1,6 @@
 #' Draw Nebulas
 #'
-#' @description This function creates an artwork from randomly generated noise. Currently it is only capable of generating k-nearest neighbors noise. Sometimes, the noise resembles a nebula.
+#' @description This function creates an artwork from randomly generated k-nearest neighbors noise.
 #'
 #' @usage canvas_nebula(colors, k = 50, n = 500, width = 500, height = 500)
 #'
@@ -14,6 +14,10 @@
 #'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
+#' @keywords artwork canvas
+#'
+#' @seealso \code{colorPalette}
+#'
 #' @examples
 #' \donttest{
 #' set.seed(1)
@@ -21,8 +25,6 @@
 #' # Simple example
 #' canvas_nebula(colors = colorPalette("tuscany1"))
 #' }
-#'
-#' @keywords artwork canvas
 #'
 #' @export
 

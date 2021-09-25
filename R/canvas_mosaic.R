@@ -1,6 +1,6 @@
 #' Draw Moisaics
 #'
-#' @description This function draws mosaics by running a k-nearest neighbors classification algorithm on randomly generated data to predict the color of each pixel on the canvas.
+#' @description This function draws the predictions from a k-nearest neighbors algorithm trained on randomly generated categorical data.
 #'
 #' @usage canvas_mosaic(colors, n = 1000, width = 500, height = 500)
 #'
@@ -9,11 +9,15 @@
 #' @param width       a positive integer specifying the width of the artwork in pixels.
 #' @param height      a positive integer specifying the height of the artwork in pixels.
 #'
-#' @references \url{https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm}
-#'
 #' @return A \code{ggplot} object containing the artwork.
 #'
+#' @references \url{https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm}
+#'
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
+#'
+#' @keywords artwork canvas
+#'
+#' @seealso \code{colorPalette}
 #'
 #' @examples
 #' \donttest{
@@ -23,10 +27,7 @@
 #' canvas_mosaic(colors = colorPalette("retro2"))
 #' }
 #'
-#' @keywords artwork canvas
-#'
 #' @export
-#' @importFrom stats predict
 
 canvas_mosaic <- function(colors, n = 1000, width = 500, height = 500) {
   .checkUserInput(width = width, height = height)

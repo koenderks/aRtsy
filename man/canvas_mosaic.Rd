@@ -19,7 +19,7 @@ canvas_mosaic(colors, n = 1000, width = 500, height = 500)
 A \code{ggplot} object containing the artwork.
 }
 \description{
-This function draws mosaics by running a k-nearest neighbors classification algorithm on randomly generated data to predict the color of each pixel on the canvas.
+This function draws the predictions from a k-nearest neighbors algorithm trained on randomly generated categorical data.
 }
 \examples{
 \donttest{
@@ -32,6 +32,9 @@ canvas_mosaic(colors = colorPalette("retro2"))
 }
 \references{
 \url{https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm}
+}
+\seealso{
+\code{colorPalette}
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}

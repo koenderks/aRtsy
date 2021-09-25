@@ -1,6 +1,6 @@
 #' Draw a Random Forest
 #'
-#' @description This function draws the predictions from a random forest algorithm on randomly generated categorical data.
+#' @description This function draws the predictions from a random forest algorithm trained on randomly generated categorical data.
 #'
 #' @usage canvas_forest(colors, n = 1000, width = 500, height = 500)
 #'
