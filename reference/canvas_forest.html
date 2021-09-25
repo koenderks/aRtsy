@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Paint a Random Forest on a Canvas — canvas_forest • aRtsy</title>
+<title>Draw a Random Forest — canvas_forest • aRtsy</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,7 @@
 
 
 
-<meta property="og:title" content="Paint a Random Forest on a Canvas — canvas_forest" />
+<meta property="og:title" content="Draw a Random Forest — canvas_forest" />
 <meta property="og:description" content="This function creates an artwork from randomly generated data by running a random forest classification algorithm to predict the color of each pixel on the canvas." />
 <meta property="og:image" content="/logo.png" />
 
@@ -119,7 +119,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Paint a Random Forest on a Canvas</h1>
+    <h1>Draw a Random Forest</h1>
     <small class="dont-index">Source: <a href='https://github.com/koenderks/aRtsy/blob/master/R/canvas_forest.R'><code>R/canvas_forest.R</code></a></small>
     <div class="hidden name"><code>canvas_forest.Rd</code></div>
     </div>
@@ -128,7 +128,7 @@
     <p>This function creates an artwork from randomly generated data by running a random forest classification algorithm to predict the color of each pixel on the canvas.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>canvas_forest</span><span class='op'>(</span><span class='va'>colors</span>, n <span class='op'>=</span> <span class='fl'>1000</span>, resolution <span class='op'>=</span> <span class='fl'>500</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>canvas_forest</span><span class='op'>(</span><span class='va'>colors</span>, n <span class='op'>=</span> <span class='fl'>1000</span>, width <span class='op'>=</span> <span class='fl'>500</span>, height <span class='op'>=</span> <span class='fl'>500</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -142,8 +142,12 @@
       <td><p>a positive integer specifying the number of random data points to generate.</p></td>
     </tr>
     <tr>
-      <th>resolution</th>
-      <td><p>a positive integer specifying the number of pixels (resolution x resolution) of the artwork.</p></td>
+      <th>width</th>
+      <td><p>a positive integer specifying the width of the artwork in pixels.</p></td>
+    </tr>
+    <tr>
+      <th>height</th>
+      <td><p>a positive integer specifying the height of the artwork in pixels.</p></td>
     </tr>
     </table>
 
