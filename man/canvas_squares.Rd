@@ -2,7 +2,7 @@
 % Please edit documentation in R/canvas_squares.R
 \name{canvas_squares}
 \alias{canvas_squares}
-\title{Paint Random Squares on a Canvas}
+\title{Draw Squares and Rectangles}
 \usage{
 canvas_squares(colors, background = '#000000', cuts = 50, ratio = 1.618,
                width = 200, height = 200, noise = FALSE)

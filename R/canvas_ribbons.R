@@ -1,4 +1,4 @@
-#' Paint Random Ribbons on a Canvas
+#' Draw Ribbons
 #'
 #' @description This function paints random ribbons and (optionally) a triangle in the middle.
 #'

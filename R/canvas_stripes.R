@@ -1,4 +1,4 @@
-#' Paint Random Stripes on a Canvas
+#' Draw Stripes
 #'
 #' @description This function creates a brownian motion on each row of the artwork and colors it according to the height of the motion.
 #'

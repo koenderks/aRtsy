@@ -2,7 +2,7 @@
 % Please edit documentation in R/canvas_ribbons.R
 \name{canvas_ribbons}
 \alias{canvas_ribbons}
-\title{Paint Random Ribbons on a Canvas}
+\title{Draw Ribbons}
 \usage{
 canvas_ribbons(colors, background = '#fdf5e6', triangle = TRUE)
 }

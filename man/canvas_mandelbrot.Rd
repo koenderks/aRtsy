@@ -2,7 +2,7 @@
 % Please edit documentation in R/canvas_mandelbrot.R
 \name{canvas_mandelbrot}
 \alias{canvas_mandelbrot}
-\title{Paint the Mandelbrot Set on a Canvas}
+\title{Draw the Mandelbrot Set}
 \usage{
 canvas_mandelbrot(colors, iterations = 100, zoom = 1, xmin = -1.7, xmax = -0.2,
                    ymin = -0.2999, ymax = 0.8001, width = 500, height = 500)

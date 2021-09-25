@@ -1,4 +1,4 @@
-#' Paint Random Polygons and Lines on a Canvas
+#' Draw Polygons and Lines
 #'
 #' @description This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork.
 #'

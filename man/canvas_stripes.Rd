@@ -2,7 +2,7 @@
 % Please edit documentation in R/canvas_stripes.R
 \name{canvas_stripes}
 \alias{canvas_stripes}
-\title{Paint Random Stripes on a Canvas}
+\title{Draw Stripes}
 \usage{
 canvas_stripes(colors, n = 300, H = 1, burnin = 1)
 }

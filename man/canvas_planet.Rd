@@ -2,7 +2,7 @@
 % Please edit documentation in R/canvas_planet.R
 \name{canvas_planet}
 \alias{canvas_planet}
-\title{Paint a Random Planet on a Canvas}
+\title{Draw Planets}
 \usage{
 canvas_planet(colors, threshold = 4, iterations = 200,
               starprob = 0.01, fade = 0.2,

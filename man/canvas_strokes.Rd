@@ -2,7 +2,7 @@
 % Please edit documentation in R/canvas_strokes.R
 \name{canvas_strokes}
 \alias{canvas_strokes}
-\title{Paint Random Strokes on a Canvas}
+\title{Draw Strokes}
 \usage{
 canvas_strokes(colors, neighbors = 1, p = 0.01, iterations = 1,
                width = 500, height = 500, side = FALSE)

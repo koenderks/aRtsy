@@ -2,9 +2,9 @@
 % Please edit documentation in R/canvas_flows.R
 \name{canvas_flows}
 \alias{canvas_flows}
-\title{Paint Flows}
+\title{Draw Flow Fields}
 \usage{
-canvas_flows(colors, background = "#fafafa", lines = 100, iterations = 100,
+canvas_flows(colors, background = "#fafafa", lines = 500, iterations = 100,
              angles = c("svm", "knn", "rf"), width = 100, height = 100)
 }
 \arguments{

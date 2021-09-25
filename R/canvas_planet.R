@@ -1,4 +1,4 @@
-#' Paint a Random Planet on a Canvas
+#' Draw Planets
 #'
 #' @description This function paints one or multiple planets and uses a cellular automata to fill their surfaces.
 #'

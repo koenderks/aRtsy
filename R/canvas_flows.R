@@ -1,8 +1,8 @@
-#' Paint Flows
+#' Draw Flow Fields
 #'
 #' @description This function draws flow fields on a canvas.
 #'
-#' @usage canvas_flows(colors, background = "#fafafa", lines = 100, iterations = 100,
+#' @usage canvas_flows(colors, background = "#fafafa", lines = 500, iterations = 100,
 #'              angles = c("svm", "knn", "rf"), width = 100, height = 100)
 #'
 #' @param colors       a string specifying the color used for the artwork.
@@ -33,7 +33,7 @@
 #' @useDynLib aRtsy
 #' @import Rcpp
 
-canvas_flows <- function(colors, background = "#fafafa", lines = 100, iterations = 100,
+canvas_flows <- function(colors, background = "#fafafa", lines = 500, iterations = 100,
                          angles = c("svm", "knn", "rf"), width = 100, height = 100) {
   angles <- match.arg(angles)
   resolution <- round(width * 0.01)

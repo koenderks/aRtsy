@@ -1,4 +1,4 @@
-#' Paint Random Collatz Sequences on a Canvas
+#' Draw Collatz Sequences
 #'
 #' @description This function draws the Collatz conjecture on the canvas.
 #'

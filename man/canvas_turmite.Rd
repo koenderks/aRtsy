@@ -2,7 +2,7 @@
 % Please edit documentation in R/canvas_turmite.R
 \name{canvas_turmite}
 \alias{canvas_turmite}
-\title{Paint a Random Turmite on a Canvas}
+\title{Draw Turmites}
 \usage{
 canvas_turmite(colors, background = '#fafafa', p = 0.5, iterations = 1e7,
                width = 1500, height = 1500, noise = FALSE)

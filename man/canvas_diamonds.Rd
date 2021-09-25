@@ -2,7 +2,7 @@
 % Please edit documentation in R/canvas_diamonds.R
 \name{canvas_diamonds}
 \alias{canvas_diamonds}
-\title{Paint Random Diamonds on a Canvas}
+\title{Draw Diamonds}
 \usage{
 canvas_diamonds(colors, background = '#fafafa', col.line = 'black',
                 radius = 10, alpha = 1, p = 0.2,

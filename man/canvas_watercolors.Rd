@@ -2,7 +2,7 @@
 % Please edit documentation in R/canvas_watercolors.R
 \name{canvas_watercolors}
 \alias{canvas_watercolors}
-\title{Paint Watercolors on a Canvas}
+\title{Draw Watercolors}
 \usage{
 canvas_watercolors(colors, background = "#fafafa", layers = 50,
                    depth = 2, width = 250, height = 250)

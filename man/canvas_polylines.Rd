@@ -2,7 +2,7 @@
 % Please edit documentation in R/canvas_polylines.R
 \name{canvas_polylines}
 \alias{canvas_polylines}
-\title{Paint Random Polygons and Lines on a Canvas}
+\title{Draw Polygons and Lines}
 \usage{
 canvas_polylines(colors, background = '#fafafa', ratio = 0.5, iterations = 1000,
                  alpha = NULL, size = 0.1, width = 500, height = 500)

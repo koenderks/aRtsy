@@ -1,4 +1,4 @@
-#' Paint Random Diamonds on a Canvas
+#' Draw Diamonds
 #'
 #' @description This function draws many diamonds on the canvas and places two lines behind them. The diamonds can be transparent or have a random color sampled from the input.
 #'

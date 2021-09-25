@@ -2,9 +2,9 @@
 % Please edit documentation in R/canvas_segments.R
 \name{canvas_segments}
 \alias{canvas_segments}
-\title{Paint Random Line Segments on a Canvas}
+\title{Draw Segments}
 \usage{
-canvas_segments(colors, background = '#fafafa', n = 100,
+canvas_segments(colors, background = '#fafafa', n = 250,
                 p = 0.5, H = 0.1, size = 0.2)
 }
 \arguments{

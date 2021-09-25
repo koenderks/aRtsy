@@ -1,4 +1,4 @@
-#' Paint the Mandelbrot Set on a Canvas
+#' Draw the Mandelbrot Set
 #'
 #' @description This function draws the Mandelbrot set on the canvas.
 #'

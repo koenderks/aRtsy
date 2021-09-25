@@ -1,4 +1,4 @@
-#' Paint Random Squares on a Canvas
+#' Draw Squares and Rectangles
 #'
 #' @description This function paints random squares. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.
 #'

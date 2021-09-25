@@ -1,8 +1,8 @@
-#' Paint Random Line Segments on a Canvas
+#' Draw Segments
 #'
 #' @description This function draws many random line segments on the canvas.
 #'
-#' @usage canvas_segments(colors, background = '#fafafa', n = 100,
+#' @usage canvas_segments(colors, background = '#fafafa', n = 250,
 #'                 p = 0.5, H = 0.1, size = 0.2)
 #'
 #' @param colors      a string or character vector specifying the color(s) used for the artwork.
@@ -28,7 +28,7 @@
 #'
 #' @export
 
-canvas_segments <- function(colors, background = "#fafafa", n = 100,
+canvas_segments <- function(colors, background = "#fafafa", n = 250,
                             p = 0.5, H = 0.1, size = 0.2) {
   x <- y <- xend <- yend <- col <- NULL
   H <- 0.1

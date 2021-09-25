@@ -1,4 +1,4 @@
-#' Paint Watercolors on a Canvas
+#' Draw Watercolors
 #'
 #' @description This function paints watercolors on a canvas.
 #'

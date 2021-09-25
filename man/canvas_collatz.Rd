@@ -2,7 +2,7 @@
 % Please edit documentation in R/canvas_collatz.R
 \name{canvas_collatz}
 \alias{canvas_collatz}
-\title{Paint Random Collatz Sequences on a Canvas}
+\title{Draw Collatz Sequences}
 \usage{
 canvas_collatz(colors, background = '#fafafa', n = 200,
                 angle.even = 0.0075, angle.odd = 0.0145, side = FALSE)

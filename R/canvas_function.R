@@ -1,4 +1,4 @@
-#' Paint A Random Function on a Canvas
+#' Draw Functions
 #'
 #' @description This function paints functions with random parameters and mimics the functionality of the \code{generativeart} package.
 #'

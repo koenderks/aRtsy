@@ -2,7 +2,7 @@
 % Please edit documentation in R/canvas_function.R
 \name{canvas_function}
 \alias{canvas_function}
-\title{Paint A Random Function on a Canvas}
+\title{Draw Functions}
 \usage{
 canvas_function(color, background = '#fafafa')
 }
