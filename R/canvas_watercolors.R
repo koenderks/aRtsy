@@ -20,8 +20,10 @@
 #'
 #' @examples
 #' \donttest{
-#' set.seed(10)
-#' canvas_watercolors(colors = colorPalette("tuscany1"))
+#' set.seed(1)
+#'
+#' # Simple example
+#' canvas_watercolors(colors = colorPalette("tuscany2"))
 #' }
 #'
 #' @keywords artwork canvas

@@ -17,9 +17,10 @@
 #'
 #' @examples
 #' \donttest{
-#' set.seed(7)
-#' palette <- colorPalette("random", n = 10)
-#' canvas_gemstone(colors = palette)
+#' set.seed(1)
+#'
+#' # Simple example
+#' canvas_gemstone(colors = colorPalette("dark3"))
 #' }
 #'
 #' @keywords artwork canvas

@@ -30,9 +30,10 @@ This function paints a turmite. A turmite is a Turing machine which has an orien
 }
 \examples{
 \donttest{
-set.seed(17)
-palette <- colorPalette("dark2")
-canvas_turmite(colors = palette, p = 0, noise = TRUE)
+set.seed(1)
+
+# Simple example
+canvas_turmite(colors = colorPalette('dark2'))
 }
 
 }

@@ -27,8 +27,9 @@ This function paints Langton's Ant. Langton's ant is a two-dimensional universal
 \examples{
 \donttest{
 set.seed(1)
-palette <- colorPalette("random", n = 10)
-canvas_ant(colors = palette)
+
+# Simple example
+canvas_ant(colors = colorPalette('house'))
 }
 
 }

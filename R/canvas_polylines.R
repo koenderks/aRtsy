@@ -20,9 +20,10 @@
 #'
 #' @examples
 #' \donttest{
-#' set.seed(11)
-#' palette <- colorPalette("random", n = 10)
-#' canvas_polylines(colors = palette)
+#' set.seed(1)
+#'
+#' # Simple example
+#' canvas_polylines(colors = colorPalette("retro1"))
 #' }
 #'
 #' @keywords artwork canvas

@@ -23,9 +23,10 @@ This function creates an artwork from randomly generated noise. Currently it is 
 }
 \examples{
 \donttest{
-set.seed(6)
-palette <- colorPalette("random", n = 5)
-canvas_nebula(colors = palette)
+set.seed(1)
+
+# Simple example
+canvas_nebula(colors = colorPalette("tuscany1"))
 }
 
 }

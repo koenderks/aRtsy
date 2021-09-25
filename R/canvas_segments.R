@@ -18,9 +18,10 @@
 #'
 #' @examples
 #' \donttest{
-#' set.seed(13)
-#' palette <- colorPalette("random", n = 4)
-#' canvas_segments(colors = palette)
+#' set.seed(1)
+#'
+#' # Simple example
+#' canvas_segments(colors = colorPalette("dark1"))
 #' }
 #'
 #' @keywords artwork canvas

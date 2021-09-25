@@ -49,7 +49,7 @@ library(aRtsy)
 
 ```r
 artwork <- canvas_strokes(colors = c('black', 'white'))
-saveCanvas(plot = artwork, filename = 'myArtwork.png')
+saveCanvas(artwork, filename = 'myArtwork.png')
 ```
 
 ## Available artworks
@@ -104,10 +104,9 @@ When you think of the act of painting, you probably imagine stroking paint on a 
 You can use the `canvas_strokes()` function to make your own artwork using this algorithm.
 
 ```r
+# see ?canvas_strokes for more input parameters of the algorithm
 set.seed(1)
-canvas_strokes(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), 
-               neighbors = 1, p = 0.01, iterations = 1, 
-               width = 500, height = 500, side = FALSE)
+canvas_strokes(colors = colorPalette('tuscany1'))
 ```
 
 #### Collatz conjecture
@@ -130,9 +129,9 @@ By visualizing the sequence for each number, overlaying sequences that are the s
 You can use the `canvas_collatz()` function to make your own artwork using this algorithm.
 
 ```r
-set.seed(2)
-canvas_collatz(colors = '#000000', background = '#fafafa', n = 200, 
-               angle.even = 0.0075, angle.odd = 0.0145, side = FALSE)
+# see ?canvas_collatz for more input parameters of the algorithm
+set.seed(1)
+canvas_collatz(colors = colorPalette('tuscany3'))
 ```
 
 #### Turmite
@@ -152,9 +151,9 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *"
 You can use the `canvas_turmite()` function to make your own artwork using this algorithm.
 
 ```r
-set.seed(3)
-canvas_turmite(colors = '#000000', background = '#fafafa', p = 0.5, 
-               iterations = 1e7, width = 1500, height = 1500, noise = FALSE)
+# see ?canvas_turmite for more input parameters of the algorithm
+set.seed(1)
+canvas_turmite(colors = colorPalette('dark2'))
 ```
 
 #### Langton's ant
@@ -174,9 +173,9 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Langtons_ant), Langton's 
 You can use the `canvas_ant()` function to make your own artwork using this algorithm.
 
 ```r
-set.seed(4)
-canvas_ant(colors = '#000000', background = '#fafafa', iterations = 1e7,
-           width = 200, height = 200)
+# see ?canvas_ant for more input parameters of the algorithm
+set.seed(1)
+canvas_ant(colors = colorPalette('house'))
 ```
 
 #### Planets
@@ -192,15 +191,9 @@ We all love space, and this type of artwork puts you right between the planets. 
 You can use the `canvas_planet()` function to make your own artwork using this algorithm.
 
 ```r
-# Sun behind Earth and Moon
+# see ?canvas_planet for more input parameters of the algorithm
 set.seed(1)
-colors <- list(c('khaki1', 'lightcoral', 'lightsalmon'),
-               c('dodgerblue', 'forestgreen', 'white'), 
-               c('gray', 'darkgray', 'beige'))
-canvas_planet(colors, radius = c(800, 400, 150), 
-              center.x = c(1, 500, 1100),
-              center.y = c(1400, 500, 1000), 
-              starprob = 0.005)
+canvas_planet(colors = colorPalette('retro3'))
 ```
 
 #### Stripes
@@ -216,9 +209,9 @@ This type of artwork is based on the concept of [Brownian motion](https://en.wik
 You can use the `canvas_stripes()` function to make your own artwork using this algorithm.
 
 ```r
-set.seed(5)
-canvas_stripes(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'),
-               n = 300, H = 1, burnin = 1)
+# see ?canvas_stripes for more input parameters of the algorithm
+set.seed(1)
+canvas_stripes(colors = colorPalette('random', n = 10))
 ```
 
 #### Watercolors
@@ -234,8 +227,9 @@ This artwork implements the algorithm described in Tyler Hobbs' blog post [A gui
 You can use the `canvas_watercolors()` function to make your own artwork using this algorithm.
 
 ```r
+# see ?canvas_watercolors for more input parameters of the algorithm
 set.seed(1)
-canvas_watercolors(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'))
+canvas_watercolors(colors = colorPalette('tuscany2'))
 ```
 
 #### Flow fields
@@ -251,8 +245,9 @@ This artwork implements the algorithm described in Tyler Hobbs' blog post [Flow 
 You can use the `canvas_flows()` function to make your own artwork using this algorithm.
 
 ```r
+# see ?canvas_flows for more input parameters of the algorithm
 set.seed(1)
-canvas_flows(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'))
+canvas_flows(colors = colorPalette('dark2'))
 ```
 
 ### The Geometric collection
@@ -272,8 +267,9 @@ This type of artwork mimics the style of the well-known paintings by the Dutch a
 You can use the `canvas_segments()` function to make your own artwork using this algorithm.
 
 ```r
-set.seed(6)
-canvas_segments(colors = 'black', background = '#fafafa', n = 100, p = 0.5, H = 0.1)
+# see ?canvas_segments for more input parameters of the algorithm
+set.seed(1)
+canvas_segments(colors = colorPalette('dark1'))
 ```
 
 #### Diamonds
@@ -289,10 +285,9 @@ This function creates a set of diamonds on a canvas. The diamonds are filled in 
 You can use the `canvas_diamonds()` function to make your own artwork using this algorithm.
 
 ```r
-set.seed(7)
-canvas_diamonds(colors = c('forestgreen', 'navyblue', 'goldenrod', 'firebrick'), 
-                background = '#fafafa', col.line = 'black', radius = 10, alpha = 1, 
-                p = 0.2, width = 500, height = 500)
+# see ?canvas_diamonds for more input parameters of the algorithm
+set.seed(1)
+canvas_diamonds(colors = colorPalette('tuscany1'))
 ```
 
 #### Squares and rectangles
@@ -308,9 +303,9 @@ This type of artwork is also a la Mondriaan, but uses a variety of squares and r
 You can use the `canvas_squares()` function to make your own artwork using this algorithm.
 
 ```r
-set.seed(6)
-canvas_squares(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'),
-               cuts = 50, ratio = 1.618, width = 200, height = 200, noise = FALSE)
+# see ?canvas_squares for more input parameters of the algorithm
+set.seed(1)
+canvas_squares(colors = colorPalette('retro2'))
 ```
 
 #### Ribbons
@@ -326,9 +321,9 @@ This function creates colored ribbons with (or without) a triangle that breaks t
 You can use the `canvas_ribbons()` function to make your own artwork using this algorithm.
 
 ```r
-set.seed(9)
-canvas_ribbons(colors = c('forestgreen', 'firebrick', 'dodgerblue', 'goldenrod'),
-               background = '#fdf5e6', triangle = TRUE)
+# see ?canvas_ribbons for more input parameters of the algorithm
+set.seed(1)
+canvas_ribbons(colors = colorPalette('retro1')
 ```
 
 #### Polylines
@@ -344,10 +339,9 @@ This function draws many points on the canvas and connects these points into a p
 You can use the `canvas_polylines()` function to make your own artwork using this algorithm.
 
 ```r
+# see ?canvas_polylines for more input parameters of the algorithm
 set.seed(1)
-canvas_polylines(colors = c('forestgreen', 'goldenrod', 'firebrick', 'navyblue'), 
-                 background = '#fafafa', ratio = 0.5, iterations = 1000, 
-                 alpha = NULL, size = 0.1, width = 500, height = 500)
+canvas_polylines(colors = colorPalette('retro1'))
 ```
 
 #### Functions
@@ -363,8 +357,9 @@ The idea for this type of artwork is taken over from the [`generativeart`](https
 You can use the `canvas_function()` function to make your own artwork using this algorithm.
 
 ```r
-set.seed(14)
-canvas_function(color = '#000000', background = '#fafafa')
+# see ?canvas_function for more input parameters of the algorithm
+set.seed(1)
+canvas_function(color = 'navyblue')
 ```
 
 ### The Supervised collection
@@ -384,9 +379,9 @@ The first artwork in this collection is inspired by a supervised learning method
 You can use the `canvas_mosaic()` function to make your own artwork using this algorithm.
 
 ```r
+# see ?canvas_mosaic for more input parameters of the algorithm
 set.seed(1)
-canvas_mosaic(colors = c('dodgerblue', 'forestgreen', 'white'), 
-              kmax = 1, n = 1000, resolution = 500)
+canvas_mosaic(colors = colorPalette('retro2'))
 ```
 
 #### Forests
@@ -402,9 +397,9 @@ This artwork is inspired by a supervised learning method called random forest. I
 You can use the `canvas_forest()` function to make your own artwork using this algorithm.
 
 ```r
+# see ?canvas_forest for more input parameters of the algorithm
 set.seed(1)
-canvas_forest(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'), 
-              n = 1000, resolution = 500)
+canvas_forest(colors = colorPalette('tuscany1'))
 ```
 
 #### Gemstones
@@ -417,13 +412,13 @@ Returning to the previously mentioned k-nearest neighbors algorithm, this artwor
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-22.png' width='270' height='270'>
 </p>
 
-```r
-set.seed(1)
-canvas_gemstone(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'), 
-                n = 1000, resolution = 500)
-```
-
 You can use the `canvas_gemstone()` function to make your own artwork using this algorithm.
+
+```r
+# see ?canvas_gemstone for more input parameters of the algorithm
+set.seed(1)
+canvas_gemstone(colors = colorPalette('dark3'))
+```
 
 #### Nebula
 
@@ -438,7 +433,9 @@ Based on the very same principle as described in the artwork above is this next 
 You can use the `canvas_nebula()` function to make your own artwork using this algorithm.
 
 ```r
-canvas_nebula(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'), k = 10)
+# see ?canvas_nebula for more input parameters of the algorithm
+set.seed(1)
+canvas_nebula(colors = colorPalette('tuscany1'))
 ```
 
 #### Blacklights
@@ -454,9 +451,9 @@ This artwork is inspired by a supervised machine learning method called support 
 You can use the `canvas_blacklight()` function to make your own artwork using this algorithm.
 
 ```r
+# see ?canvas_blacklight for more input parameters of the algorithm
 set.seed(1)
-canvas_blacklight(colors = c('dodgerblue', 'forestgreen', 'firebrick', 'goldenrod'), 
-                  n = 1000, resolution = 500)
+canvas_blacklight(colors = colorPalette('random', n = 5))
 ```
 
 ### The Static collection
@@ -476,7 +473,8 @@ This type of artwork visualizes the [Mandelbrot set](https://en.wikipedia.org/wi
 You can use the `canvas_mandelbrot()` function to make your own artwork using this algorithm.
 
 ```r
-canvas_mandelbrot(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'), zoom = 10)
+# see ?canvas_mandelbrot for more input parameters of the algorithm
+canvas_mandelbrot(colors = colorPalette('tuscany1'))
 ```
 
 #### Circle maps
@@ -492,14 +490,13 @@ This type of artwork is based on the concept of an [Arnold tongue](https://en.wi
 You can use the `canvas_circlemap()` function to make your own artwork using this algorithm.
 
 ```r
-canvas_circlemap(colors = c('forestgreen', 'firebrick', 'goldenrod', 'navyblue'),
-                 x_min = 0, x_max = 12.56, y_min = 0, y_max = 1, 
-                 iterations = 10, width = 1500, height = 1500)
+# see ?canvas_circlemap for more input parameters of the algorithm
+canvas_circlemap(colors = colorPalette('dark2'))
 ```
 
 ## Color palettes
 
-The function `colorPalette()` can be used to generate a random color palette, or pick a pre-implemented color palette. Currently, the color palettes displayed below are implemented in `aRtsy`. Feel free to suggest or add a new palette!
+The function `colorPalette()` can be used to generate a random color palette, or pick a pre-implemented color palette. Currently, the color palettes displayed below are implemented in `aRtsy`. Feel free to suggest or add a new palette by making an [issue](https://github.com/koenderks/aRtsy/issues) on GitHub!
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/man/figures/colors.svg'>

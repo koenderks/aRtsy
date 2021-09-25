@@ -30,9 +30,10 @@ This function paints random squares. It works by repeatedly cutting into the can
 }
 \examples{
 \donttest{
-set.seed(14)
-palette <- colorPalette("random", n = 4)
-canvas_squares(colors = palette)
+set.seed(1)
+
+# Simple example
+canvas_squares(colors = colorPalette("retro2"))
 }
 
 }

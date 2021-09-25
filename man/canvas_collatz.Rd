@@ -28,9 +28,10 @@ This function draws the Collatz conjecture on the canvas.
 }
 \examples{
 \donttest{
-set.seed(4)
-palette <- colorPalette("random", n = 5)
-canvas_collatz(colors = palette, n = 100)
+set.seed(1)
+
+# Simple example
+canvas_collatz(colors = colorPalette('tuscany3'))
 }
 
 }

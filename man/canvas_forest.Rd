@@ -21,9 +21,10 @@ This function creates an artwork from randomly generated data by running a rando
 }
 \examples{
 \donttest{
-set.seed(6)
-palette <- colorPalette("random", n = 5)
-canvas_forest(colors = palette)
+set.seed(1)
+
+# Simple example
+canvas_forest(colors = colorPalette("tuscany1"))
 }
 
 }

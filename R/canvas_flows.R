@@ -20,8 +20,10 @@
 #'
 #' @examples
 #' \donttest{
-#' set.seed(10)
-#' canvas_flows(colors = colorPalette("tuscany1"), lines = 500)
+#' set.seed(1)
+#'
+#' # Simple example
+#' canvas_flows(colors = colorPalette("dark2"))
 #' }
 #'
 #' @keywords artwork canvas

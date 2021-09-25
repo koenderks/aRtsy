@@ -27,8 +27,12 @@
 #'
 #' @examples
 #' \donttest{
-#' # Sun behind Earth and Moon
 #' set.seed(1)
+#'
+#' # Simple example
+#' canvas_planet(colors = colorPalette("retro3"))
+#'
+#' # Advanced example
 #' colors <- list(
 #'   c("khaki1", "lightcoral", "lightsalmon"),
 #'   c("dodgerblue", "forestgreen", "white"),

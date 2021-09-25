@@ -16,9 +16,10 @@
 #'
 #' @examples
 #' \donttest{
-#' set.seed(2)
-#' palette <- colorPalette("random", n = 5)
-#' canvas_blacklight(colors = palette)
+#' set.seed(1)
+#'
+#' # Simple example
+#' canvas_watercolors(colors = colorPalette("random", n = 5))
 #' }
 #'
 #' @keywords artwork canvas

@@ -33,9 +33,10 @@ This function draws many diamonds on the canvas and places two lines behind them
 }
 \examples{
 \donttest{
-set.seed(5)
-palette <- colorPalette("random", n = 5)
-canvas_diamonds(colors = palette, radius = 10)
+set.seed(1)
+
+# Simple example
+canvas_diamonds(colors = colorPalette("tuscany1"))
 }
 
 }

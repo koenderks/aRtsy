@@ -17,9 +17,10 @@
 #'
 #' @examples
 #' \donttest{
-#' set.seed(9)
-#' palette <- colorPalette("random", n = 10)
-#' canvas_mosaic(colors = palette)
+#' set.seed(1)
+#'
+#' # Simple example
+#' canvas_mosaic(colors = colorPalette("retro2"))
 #' }
 #'
 #' @keywords artwork canvas

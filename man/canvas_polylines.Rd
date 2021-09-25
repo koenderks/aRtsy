@@ -32,9 +32,10 @@ This function draws many points on the canvas and connects these points into a p
 }
 \examples{
 \donttest{
-set.seed(11)
-palette <- colorPalette("random", n = 10)
-canvas_polylines(colors = palette)
+set.seed(1)
+
+# Simple example
+canvas_polylines(colors = colorPalette("retro1"))
 }
 
 }

@@ -30,9 +30,10 @@ This function creates an artwork that resembles paints strokes. The algorithm is
 }
 \examples{
 \donttest{
-set.seed(16)
-palette <- colorPalette("random", n = 6)
-canvas_strokes(colors = palette)
+set.seed(1)
+
+# Simple example
+canvas_strokes(colors = colorPalette('tuscany1'))
 }
 
 }

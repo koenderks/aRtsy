@@ -14,9 +14,10 @@
 #'
 #' @examples
 #' \donttest{
-#' set.seed(12)
-#' palette <- colorPalette("random", n = 4)
-#' canvas_ribbons(colors = palette)
+#' set.seed(1)
+#'
+#' # Simple example
+#' canvas_ribbons(colors = colorPalette("retro1"))
 #' }
 #'
 #' @keywords artwork canvas

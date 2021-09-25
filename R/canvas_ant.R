@@ -20,8 +20,9 @@
 #' @examples
 #' \donttest{
 #' set.seed(1)
-#' palette <- colorPalette("random", n = 10)
-#' canvas_ant(colors = palette)
+#'
+#' # Simple example
+#' canvas_ant(colors = colorPalette("house"))
 #' }
 #'
 #' @keywords artwork canvas

@@ -23,9 +23,7 @@
 #'
 #' @examples
 #' \donttest{
-#' set.seed(3)
-#' palette <- colorPalette("random", n = 5)
-#' canvas_circlemap(colors = palette)
+#' canvas_circlemap(colors = colorPalette("dark2"))
 #' }
 #'
 #' @keywords artwork canvas

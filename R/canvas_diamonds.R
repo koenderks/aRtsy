@@ -21,9 +21,10 @@
 #'
 #' @examples
 #' \donttest{
-#' set.seed(5)
-#' palette <- colorPalette("random", n = 5)
-#' canvas_diamonds(colors = palette, radius = 10)
+#' set.seed(1)
+#'
+#' # Simple example
+#' canvas_diamonds(colors = colorPalette("tuscany1"))
 #' }
 #'
 #' @keywords artwork canvas

@@ -19,8 +19,10 @@ This function paints functions with random parameters and mimics the functionali
 }
 \examples{
 \donttest{
-set.seed(10)
-canvas_function(color = "#000000")
+set.seed(1)
+
+# Simple example
+canvas_function(color = 'navyblue')
 }
 
 }
