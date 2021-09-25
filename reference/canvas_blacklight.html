@@ -47,7 +47,7 @@
 
 
 <meta property="og:title" content="Draw Blacklights — canvas_blacklight" />
-<meta property="og:description" content="This function creates an artwork from randomly generated data by running a support vector machines regression algorithm to predict the color of each pixel on the canvas." />
+<meta property="og:description" content="This function draws the predictions from a support vector machines algorithm on randomly generated continuous data." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -125,7 +125,7 @@
     </div>
 
     <div class="ref-description">
-    <p>This function creates an artwork from randomly generated data by running a support vector machines regression algorithm to predict the color of each pixel on the canvas.</p>
+    <p>This function draws the predictions from a support vector machines algorithm on randomly generated continuous data.</p>
     </div>
 
     <pre class="usage"><span class='fu'>canvas_blacklight</span><span class='op'>(</span><span class='va'>colors</span>, n <span class='op'>=</span> <span class='fl'>1000</span>, width <span class='op'>=</span> <span class='fl'>500</span>, height <span class='op'>=</span> <span class='fl'>500</span><span class='op'>)</span></pre>
@@ -166,7 +166,7 @@
 <span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span>
 
 <span class='co'># Simple example</span>
-<span class='fu'><a href='canvas_watercolors.html'>canvas_watercolors</a></span><span class='op'>(</span>colors <span class='op'>=</span> <span class='fu'><a href='colorPalette.html'>colorPalette</a></span><span class='op'>(</span><span class='st'>"random"</span>, n <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'>canvas_blacklight</span><span class='op'>(</span>colors <span class='op'>=</span> <span class='fu'><a href='colorPalette.html'>colorPalette</a></span><span class='op'>(</span><span class='st'>"tuscany2"</span><span class='op'>)</span><span class='op'>)</span>
 </div><div class='img'><img src='canvas_blacklight-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># }</span>
 
 </div></pre>
