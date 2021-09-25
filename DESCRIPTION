@@ -17,6 +17,5 @@ Language: en-US
 License: GPL-3
 Encoding: UTF-8
 RoxygenNote: 7.1.1
-Suggests: 
-    testthat (>= 3.0.0)
+Suggests: testthat (>= 3.0.0)
 Config/testthat/edition: 3

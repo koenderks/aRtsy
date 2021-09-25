@@ -1,9 +1,8 @@
-## This is a re-submission for version 0.1.1
-This is a re-submission for aRtsy version 0.1.1. In this version I have:
+## This is a submission for version 0.1.2
+This is a submission for aRtsy version 0.1.2. In this version I have:
 
-* Fixed an error in `valgrind` CRAN check.
-* Removed unused `ggpubr` from the Imports field in `DESCRIPTION` to safely retain package on CRAN.
-* Added several new functions.
+* Added two several new functions.
+* Added `checkUserInterrupt()` in `c++` functions.
 
 ## Test environments
 * Windows install, (on github actions) R release

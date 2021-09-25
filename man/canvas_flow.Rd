@@ -16,9 +16,9 @@ canvas_flow(colors, background = "#fafafa", lines = 500, iterations = 100,
 
 \item{iterations}{the maximum number of iterations for each line.}
 
-\item{angles}{optional, a matrix containing the angles of the flow field . If \code{NULL} (default), angles are set according to the predictions of a supervised learning algorithm.}
-
 \item{resolution}{resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.}
+
+\item{angles}{optional, a matrix containing the angles of the flow field . If \code{NULL} (default), angles are set according to the predictions of a supervised learning algorithm.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
