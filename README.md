@@ -46,8 +46,8 @@ library(aRtsy)
 **Note:** render times in RStudio can be quite long for some artworks. It is therefore strongly recommended to save the artwork to a file (e.g., `.png` or `.jpg`) before viewing. You can use the `saveCanvas()` function for this, which saves the artwork with an appropriate size and quality.
 
 ```r
-artwork <- canvas_strokes(colors = c('black', 'white'))
-saveCanvas(artwork, filename = 'myArtwork.png')
+artwork <- canvas_strokes(colors = c("black", "white"))
+saveCanvas(artwork, filename = "myArtwork.png")
 ```
 
 ## Available artworks
@@ -107,7 +107,7 @@ You can use the `canvas_ant()` function to make your own artwork using this algo
 
 ```r
 set.seed(1)
-canvas_ant(colors = colorPalette('house'))
+canvas_ant(colors = colorPalette("house"))
 # see ?canvas_ant for more input parameters of this algorithm
 ```
 
@@ -132,7 +132,7 @@ You can use the `canvas_collatz()` function to make your own artwork using this 
 
 ```r
 set.seed(1)
-canvas_collatz(colors = colorPalette('tuscany3'))
+canvas_collatz(colors = colorPalette("tuscany3"))
 # see ?canvas_collatz for more input parameters of this algorithm
 ```
 
@@ -150,7 +150,7 @@ You can use the `canvas_flow()` function to make your own artwork using this alg
 
 ```r
 set.seed(1)
-canvas_flow(colors = colorPalette('dark2'))
+canvas_flow(colors = colorPalette("dark2"))
 # see ?canvas_flow for more input parameters of this algorithm
 ```
 
@@ -168,7 +168,7 @@ You can use the `canvas_planet()` function to make your own artwork using this a
 
 ```r
 set.seed(1)
-canvas_planet(colors = colorPalette('retro3'))
+canvas_planet(colors = colorPalette("retro3"))
 # see ?canvas_planet for more input parameters of this algorithm
 ```
 
@@ -186,7 +186,7 @@ You can use the `canvas_stripes()` function to make your own artwork using this 
 
 ```r
 set.seed(1)
-canvas_stripes(colors = colorPalette('random', n = 10))
+canvas_stripes(colors = colorPalette("random", n = 10))
 # see ?canvas_stripes for more input parameters of this algorithm
 ```
 
@@ -204,7 +204,7 @@ You can use the `canvas_strokes()` function to make your own artwork using this 
 
 ```r
 set.seed(1)
-canvas_strokes(colors = colorPalette('tuscany1'))
+canvas_strokes(colors = colorPalette("tuscany1"))
 # see ?canvas_strokes for more input parameters of this algorithm
 ```
 
@@ -226,7 +226,7 @@ You can use the `canvas_turmite()` function to make your own artwork using this 
 
 ```r
 set.seed(1)
-canvas_turmite(colors = colorPalette('dark2'))
+canvas_turmite(colors = colorPalette("dark2"))
 # see ?canvas_turmite for more input parameters of this algorithm
 ```
 
@@ -244,7 +244,7 @@ You can use the `canvas_watercolors()` function to make your own artwork using t
 
 ```r
 set.seed(1)
-canvas_watercolors(colors = colorPalette('tuscany2'))
+canvas_watercolors(colors = colorPalette("tuscany2"))
 # see ?canvas_watercolors for more input parameters of this algorithm
 ```
 
@@ -266,7 +266,7 @@ You can use the `canvas_diamonds()` function to make your own artwork using this
 
 ```r
 set.seed(1)
-canvas_diamonds(colors = colorPalette('tuscany1'))
+canvas_diamonds(colors = colorPalette("tuscany1"))
 # see ?canvas_diamonds for more input parameters of this algorithm
 ```
 
@@ -284,7 +284,7 @@ You can use the `canvas_function()` function to make your own artwork using this
 
 ```r
 set.seed(1)
-canvas_function(color = 'navyblue')
+canvas_function(color = "navyblue")
 # see ?canvas_function for more input parameters of this algorithm
 ```
 
@@ -302,7 +302,7 @@ You can use the `canvas_polylines()` function to make your own artwork using thi
 
 ```r
 set.seed(1)
-canvas_polylines(colors = colorPalette('retro1'))
+canvas_polylines(colors = colorPalette("retro1"))
 # see ?canvas_polylines for more input parameters of this algorithm
 ```
 
@@ -320,7 +320,7 @@ You can use the `canvas_ribbons()` function to make your own artwork using this 
 
 ```r
 set.seed(1)
-canvas_ribbons(colors = colorPalette('retro1')
+canvas_ribbons(colors = colorPalette("retro1")
 # see ?canvas_ribbons for more input parameters of this algorithm
 ```
 
@@ -338,7 +338,7 @@ You can use the `canvas_segments()` function to make your own artwork using this
 
 ```r
 set.seed(1)
-canvas_segments(colors = colorPalette('dark1'))
+canvas_segments(colors = colorPalette("dark1"))
 # see ?canvas_segments for more input parameters of this algorithm
 ```
 
@@ -356,7 +356,7 @@ You can use the `canvas_squares()` function to make your own artwork using this 
 
 ```r
 set.seed(1)
-canvas_squares(colors = colorPalette('retro2'))
+canvas_squares(colors = colorPalette("retro2"))
 # see ?canvas_squares for more input parameters of this algorithm
 ```
 
@@ -378,7 +378,7 @@ You can use the `canvas_blacklight()` function to make your own artwork using th
 
 ```r
 set.seed(1)
-canvas_blacklight(colors = colorPalette('random', n = 5))
+canvas_blacklight(colors = colorPalette("random", n = 5))
 # see ?canvas_blacklight for more input parameters of this algorithm
 ```
 
@@ -396,7 +396,7 @@ You can use the `canvas_forest()` function to make your own artwork using this a
 
 ```r
 set.seed(1)
-canvas_forest(colors = colorPalette('tuscany1'))
+canvas_forest(colors = colorPalette("tuscany1"))
 # see ?canvas_forest for more input parameters of this algorithm
 ```
 
@@ -414,7 +414,7 @@ You can use the `canvas_gemstone()` function to make your own artwork using this
 
 ```r
 set.seed(1)
-canvas_gemstone(colors = colorPalette('dark3'))
+canvas_gemstone(colors = colorPalette("dark3"))
 # see ?canvas_gemstone for more input parameters of this algorithm
 ```
 
@@ -432,7 +432,7 @@ You can use the `canvas_mosaic()` function to make your own artwork using this a
 
 ```r
 set.seed(1)
-canvas_mosaic(colors = colorPalette('retro2'))
+canvas_mosaic(colors = colorPalette("retro2"))
 # see ?canvas_mosaic for more input parameters of this algorithm
 ```
 
@@ -450,7 +450,7 @@ You can use the `canvas_nebula()` function to make your own artwork using this a
 
 ```r
 set.seed(1)
-canvas_nebula(colors = colorPalette('tuscany1'))
+canvas_nebula(colors = colorPalette("tuscany1"))
 # see ?canvas_nebula for more input parameters of this algorithm
 ```
 
@@ -471,7 +471,7 @@ This type of artwork is based on the concept of an [Arnold tongue](https://en.wi
 You can use the `canvas_circlemap()` function to make your own artwork using this algorithm.
 
 ```r
-canvas_circlemap(colors = colorPalette('dark2'))
+canvas_circlemap(colors = colorPalette("dark2"))
 # see ?canvas_circlemap for more input parameters of this algorithm
 ```
 
@@ -488,7 +488,7 @@ This type of artwork visualizes the [Mandelbrot set](https://en.wikipedia.org/wi
 You can use the `canvas_mandelbrot()` function to make your own artwork using this algorithm.
 
 ```r
-canvas_mandelbrot(colors = colorPalette('tuscany1'))
+canvas_mandelbrot(colors = colorPalette("tuscany1"))
 # see ?canvas_mandelbrot for more input parameters of this algorithm
 ```
 
