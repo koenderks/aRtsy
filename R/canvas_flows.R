@@ -1,6 +1,6 @@
-#' Paint Flows on a Canvas
+#' Paint Flows
 #'
-#' @description This function paints watercolors on a canvas.
+#' @description This function draws flow fields on a canvas.
 #'
 #' @usage canvas_flows(colors, background = "#fafafa", lines = 100, iterations = 100,
 #'              angles = c("svm", "knn", "rf"), width = 100, height = 100)

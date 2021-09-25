@@ -2,7 +2,7 @@
 % Please edit documentation in R/canvas_flows.R
 \name{canvas_flows}
 \alias{canvas_flows}
-\title{Paint Flows on a Canvas}
+\title{Paint Flows}
 \usage{
 canvas_flows(colors, background = "#fafafa", lines = 100, iterations = 100,
              angles = c("svm", "knn", "rf"), width = 100, height = 100)
@@ -26,7 +26,7 @@ canvas_flows(colors, background = "#fafafa", lines = 100, iterations = 100,
 A \code{ggplot} object containing the artwork.
 }
 \description{
-This function paints watercolors on a canvas.
+This function draws flow fields on a canvas.
 }
 \examples{
 \donttest{

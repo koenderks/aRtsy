@@ -19,14 +19,14 @@ canvas_blacklight(colors, n = 1000, width = 500, height = 500)
 A \code{ggplot} object containing the artwork.
 }
 \description{
-This function creates an artwork from randomly generated data by running a support vector machines regression algorithm to predict the color of each pixel on the canvas.
+This function draws the predictions from a support vector machines algorithm on randomly generated continuous data.
 }
 \examples{
 \donttest{
 set.seed(1)
 
 # Simple example
-canvas_watercolors(colors = colorPalette("random", n = 5))
+canvas_blacklight(colors = colorPalette("tuscany2"))
 }
 
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/canvas_circlemap.R
 \name{canvas_circlemap}
 \alias{canvas_circlemap}
-\title{Paint a Circle Map on a Canvas}
+\title{Draw a Circle Map}
 \usage{
 canvas_circlemap(colors, left = 0, right = 12.56, bottom = 0, top = 1,
                  iterations = 10, width = 1500, height = 1500)
@@ -28,7 +28,7 @@ canvas_circlemap(colors, left = 0, right = 12.56, bottom = 0, top = 1,
 A \code{ggplot} object containing the artwork.
 }
 \description{
-This function draws a circle map on the canvas.
+This function draws a circle map on the canvas. A circle map models the dynamics of a physical system consisting of two rotors or disks, one free to spin, and anotther attached to a motor, with a long (weak) spring connecting the two.
 }
 \examples{
 \donttest{

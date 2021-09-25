@@ -1,25 +1,4 @@
-# This function performs validation checks on the standardized input arguments of a function
-.checkUserInput <- function(background = NULL, width = NULL, height = NULL, iterations = NULL) {
-  if (!is.null(background) && length(background) != 1) {
-    stop("'background' should be a single character")
-  }
-  if (!is.null(width) && (width < 1 || width %% 1 != 0)) {
-    stop("'width' should be a single value > 0")
-  }
-  if (!is.null(height) && (height < 1 || height %% 1 != 0)) {
-    stop("'height' should be a single integer > 0")
-  }
-  if (!is.null(iterations) && (iterations < 1 || iterations %% 1 != 0)) {
-    stop("'iterations' should be a single integer > 0")
-  }
-}
-
-# This function turns a matrix into a data frame with columns x, y, and z
-.unraster <- function(x, names) {
-  newx <- data.frame(x = rep(1:ncol(x), times = ncol(x)), y = rep(1:nrow(x), each = nrow(x)), z = c(x))
-  colnames(newx) <- names
-  return(newx)
-}
+#' @importFrom stats predict
 
 # This function computes k-nearest neighbors noise from c++
 .noise <- function(dims, n = 100, type = c("artsy-knn", "knn", "svm", "rf"), k = 20) {
@@ -69,4 +48,27 @@
     z <- predict(fit, newdata = canvas)
   }
   return(matrix(z, nrow = dims[1], ncol = dims[2]))
+}
+
+# This function performs validation checks on the standardized input arguments of a function
+.checkUserInput <- function(background = NULL, width = NULL, height = NULL, iterations = NULL) {
+  if (!is.null(background) && length(background) != 1) {
+    stop("'background' should be a single character")
+  }
+  if (!is.null(width) && (width < 1 || width %% 1 != 0)) {
+    stop("'width' should be a single value > 0")
+  }
+  if (!is.null(height) && (height < 1 || height %% 1 != 0)) {
+    stop("'height' should be a single integer > 0")
+  }
+  if (!is.null(iterations) && (iterations < 1 || iterations %% 1 != 0)) {
+    stop("'iterations' should be a single integer > 0")
+  }
+}
+
+# This function turns a matrix into a data frame with columns x, y, and z
+.unraster <- function(x, names) {
+  newx <- data.frame(x = rep(1:ncol(x), times = ncol(x)), y = rep(1:nrow(x), each = nrow(x)), z = c(x))
+  colnames(newx) <- names
+  return(newx)
 }

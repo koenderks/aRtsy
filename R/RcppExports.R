@@ -5,8 +5,8 @@ draw_ant <- function(X, iters, ncolors, x, y, dx, dy) {
     .Call('_aRtsy_draw_ant', PACKAGE = 'aRtsy', X, iters, ncolors, x, y, dx, dy)
 }
 
-draw_circlemap <- function(X, kmin, kmax, phimin, phimax, iterations) {
-    .Call('_aRtsy_draw_circlemap', PACKAGE = 'aRtsy', X, kmin, kmax, phimin, phimax, iterations)
+draw_circlemap <- function(X, left, right, bottom, top, iters) {
+    .Call('_aRtsy_draw_circlemap', PACKAGE = 'aRtsy', X, left, right, bottom, top, iters)
 }
 
 get_collatz_sequence <- function(x) {
