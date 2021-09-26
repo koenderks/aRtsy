@@ -1,8 +1,7 @@
-## This is a submission for version 0.1.2
-This is a submission for aRtsy version 0.1.2. In this version I have:
+## This is a submission for version 0.1.3
+This is a submission for aRtsy version 0.1.3. In this version I have:
 
-* Added two several new functions.
-* Added `checkUserInterrupt()` in `c++` functions.
+* Fixed the `call of overloaded ‘ceil(int)’ is ambiguous` error on Solaris to retain package on CRAN.
 
 ## Test environments
 * Windows install, (on github actions) R release

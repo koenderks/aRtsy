@@ -24,7 +24,7 @@ arma::mat draw_ant(arma::mat X,
   int c = 0; // The current color starts at the first in the colors
   int t0 = 0; // 0 = R; 1 = L
   int t1 = 0; // 0 = L; 1 = R
-  int s = ceil(iters / ncolors); // When to switch colors in the ant
+  int s = iters / ncolors; // When to switch colors in the ant
   while (i < iters) {
     Rcpp::checkUserInterrupt();
     if (i%s == 0) { // Switch color every s iterations

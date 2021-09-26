@@ -1,3 +1,9 @@
+# aRtsy 0.1.3
+
+**Minor changes**
+
+- Fixed the `call of overloaded ‘ceil(int)’ is ambiguous` error on Solaris indicated by CRAN.
+
 # aRtsy 0.1.2
 
 **New features**
