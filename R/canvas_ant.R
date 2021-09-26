@@ -38,6 +38,9 @@ canvas_ant <- function(colors, background = "#fafafa", iterations = 50000,
   .checkUserInput(
     background = background, resolution = resolution, iterations = iterations
   )
+  if (iterations < length(colors)) {
+    stop(paste0("'iterations' must be >= ", length(colors)))
+  }
   palette <- c(background, colors)
   directions <- .ant_directions(length(colors))
   canvas <- matrix(0, nrow = resolution, ncol = resolution)
