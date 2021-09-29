@@ -1,7 +1,7 @@
-## This is a submission for version 0.1.3
-This is a submission for aRtsy version 0.1.3. In this version I have:
+## This is a submission for version 0.2.0
+This is a submission for aRtsy version 0.2.0. In this version I have:
 
-* Fixed the `call of overloaded ‘ceil(int)’ is ambiguous` error on Solaris to retain package on CRAN.
+* Added new functionality
 
 ## Test environments
 * Windows install, (on github actions) R release

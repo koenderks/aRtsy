@@ -1,3 +1,9 @@
+# aRtsy 0.1.4
+
+**Minor changes**
+
+- The function `colorPalette()` now randomizes the `hsl` scale in the `random` color palette instead of the `rgb` scale.
+
 # aRtsy 0.1.3
 
 **Minor changes**
