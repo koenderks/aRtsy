@@ -5,7 +5,7 @@
 #' @usage canvas_maze(color = "#fafafa", walls = "black", background = "#fafafa",
 #'             resolution = 20, polar = FALSE)
 #'
-#' @param colors      a string or character vector specifying the color(s) used for the artwork.
+#' @param color       a string or character vector specifying the color(s) used for the artwork.
 #' @param walls       a character specifying the color used for the walls of the maze.
 #' @param background  a character specifying the color used for the background.
 #' @param resolution  resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.
