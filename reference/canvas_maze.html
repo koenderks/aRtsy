@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Draw Nebulas — canvas_maze • aRtsy</title>
+<title>Draw Mazes — canvas_maze • aRtsy</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,7 @@
 
 
 
-<meta property="og:title" content="Draw Nebulas — canvas_maze" />
+<meta property="og:title" content="Draw Mazes — canvas_maze" />
 <meta property="og:description" content="This function draws a maze on a canvas." />
 <meta property="og:image" content="/logo.png" />
 
@@ -119,7 +119,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Draw Nebulas</h1>
+    <h1>Draw Mazes</h1>
     <small class="dont-index">Source: <a href='https://github.com/koenderks/aRtsy/blob/master/R/canvas_maze.R'><code>R/canvas_maze.R</code></a></small>
     <div class="hidden name"><code>canvas_maze.Rd</code></div>
     </div>
@@ -128,7 +128,7 @@
     <p>This function draws a maze on a canvas.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>canvas_maze</span><span class='op'>(</span>colors <span class='op'>=</span> <span class='st'>"black"</span>, walls <span class='op'>=</span> <span class='st'>"black"</span>, background <span class='op'>=</span> <span class='st'>"#fafafa"</span>, 
+    <pre class="usage"><span class='fu'>canvas_maze</span><span class='op'>(</span>colors <span class='op'>=</span> <span class='st'>"#fafafa"</span>, walls <span class='op'>=</span> <span class='st'>"black"</span>, background <span class='op'>=</span> <span class='st'>"#fafafa"</span>, 
             resolution <span class='op'>=</span> <span class='fl'>20</span>, polar <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -150,6 +150,10 @@
       <th>resolution</th>
       <td><p>resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.</p></td>
     </tr>
+    <tr>
+      <th>polar</th>
+      <td><p>logical, whether to use polar coordinates. Warning, this increases display and saving time dramatically.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -170,7 +174,7 @@
 <span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span>
 
 <span class='co'># Simple example</span>
-<span class='fu'>canvas_maze</span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"black"</span><span class='op'>)</span>
+<span class='fu'>canvas_maze</span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"#fafafa"</span><span class='op'>)</span>
 </div><div class='img'><img src='canvas_maze-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># }</span>
 
 </div></pre>
