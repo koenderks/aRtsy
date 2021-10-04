@@ -169,7 +169,7 @@ You can use the `canvas_maze()` function to make your own artwork using this alg
 
 ```r
 set.seed(1)
-canvas_maze(colors = "black")
+canvas_maze(color = "#fafafa")
 # see ?canvas_maze for more input parameters of this algorithm
 ```
 

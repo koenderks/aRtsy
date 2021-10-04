@@ -2,7 +2,7 @@
 #'
 #' @description This function draws a maze on a canvas.
 #'
-#' @usage canvas_maze(colors = "#fafafa", walls = "black", background = "#fafafa", 
+#' @usage canvas_maze(color = "#fafafa", walls = "black", background = "#fafafa",
 #'             resolution = 20, polar = FALSE)
 #'
 #' @param colors      a string or character vector specifying the color(s) used for the artwork.
@@ -31,7 +31,7 @@
 #'
 #' @export
 
-canvas_maze <- function(colors = "#fafafa", walls = "black", background = "#fafafa", 
+canvas_maze <- function(color = "#fafafa", walls = "black", background = "#fafafa",
                         resolution = 20, polar = FALSE) {
   canvas <- matrix(0, resolution, resolution)
   x <- sample(2:resolution, size = 1)
@@ -41,13 +41,13 @@ canvas_maze <- function(colors = "#fafafa", walls = "black", background = "#fafa
   full_canvas <- .unraster(full_canvas, names = c("x", "y", "z"))
   artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, fill = factor(z), color = factor(z))) +
     ggplot2::geom_tile() +
-    ggplot2::scale_fill_manual(values = c(colors, walls)) +
-    ggplot2::scale_color_manual(values = c(colors, walls)) +
+    ggplot2::scale_fill_manual(values = c(color, walls)) +
+    ggplot2::scale_color_manual(values = c(color, walls)) +
     ggplot2::ylim(c(0, max(full_canvas$y) + 1))
   if (!polar) {
     artwork <- artwork + ggplot2::xlim(c(0, max(full_canvas$x) + 1))
   } else {
-    artwork <- artwork + ggplot2::coord_polar(start = stats::runif(1, 0, 2*pi), clip = "off") +
+    artwork <- artwork + ggplot2::coord_polar(start = stats::runif(1, 0, 2 * pi), clip = "off") +
       ggplot2::xlim(c(0.5, max(full_canvas$x) + 0.5))
   }
   artwork <- theme_canvas(artwork, background = background)

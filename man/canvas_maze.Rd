@@ -4,12 +4,10 @@
 \alias{canvas_maze}
 \title{Draw Mazes}
 \usage{
-canvas_maze(colors = "#fafafa", walls = "black", background = "#fafafa", 
+canvas_maze(color = "#fafafa", walls = "black", background = "#fafafa",
             resolution = 20, polar = FALSE)
 }
 \arguments{
-\item{colors}{a string or character vector specifying the color(s) used for the artwork.}
-
 \item{walls}{a character specifying the color used for the walls of the maze.}
 
 \item{background}{a character specifying the color used for the background.}
@@ -17,6 +15,8 @@ canvas_maze(colors = "#fafafa", walls = "black", background = "#fafafa",
 \item{resolution}{resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.}
 
 \item{polar}{logical, whether to use polar coordinates. Warning, this increases display and saving time dramatically.}
+
+\item{colors}{a string or character vector specifying the color(s) used for the artwork.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
