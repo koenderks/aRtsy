@@ -129,3 +129,9 @@ test_that("canvas_flow()", {
   artwork <- aRtsy::canvas_flow(colors = c("black", "gray", "white"))
   expect_equal(!is.null(artwork), TRUE)
 })
+
+test_that("canvas_maze()", {
+  set.seed(1)
+  artwork <- aRtsy::canvas_maze(colors = c("black"))
+  expect_equal(!is.null(artwork), TRUE)
+})

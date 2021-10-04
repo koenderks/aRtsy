@@ -57,6 +57,7 @@ saveCanvas(artwork, filename = "myArtwork.png")
 * [`canvas_ant()`](#langtons-ant)
 * [`canvas_collatz()`](#collatz-conjecture)
 * [`canvas_flow()`](#flow-fields)
+* [`canvas_maze()`](#mazes)
 * [`canvas_planet()`](#planets)
 * [`canvas_stripes()`](#stripes)
 * [`canvas_strokes()`](#paint-strokes)
@@ -152,6 +153,24 @@ You can use the `canvas_flow()` function to make your own artwork using this alg
 set.seed(1)
 canvas_flow(colors = colorPalette("dark2"))
 # see ?canvas_flow for more input parameters of this algorithm
+```
+
+#### Mazes
+
+This artwork creates mazes. The mazes are created using a random walk algorithm (described in the [mazegenerator](https://github.com/matfmc/mazegenerator) repository). The mazes can also be displayed with polar coordinates, creating some pretty cool effects.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mazes/2021-10-03.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mazes/2021-10-02.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mazes/2021-10-04.png' width='270' height='270'>
+</p>
+
+You can use the `canvas_maze()` function to make your own artwork using this algorithm.
+
+```r
+set.seed(1)
+canvas_maze(colors = "black")
+# see ?canvas_maze for more input parameters of this algorithm
 ```
 
 #### Planets

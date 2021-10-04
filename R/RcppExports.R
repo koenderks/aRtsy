@@ -21,6 +21,10 @@ iterate_flow <- function(angles, j, iters, left, right, top, bottom, step, r) {
     .Call('_aRtsy_iterate_flow', PACKAGE = 'aRtsy', angles, j, iters, left, right, top, bottom, step, r)
 }
 
+iterate_maze <- function(X, x, y) {
+    .Call('_aRtsy_iterate_maze', PACKAGE = 'aRtsy', X, x, y)
+}
+
 draw_planet <- function(X, radius, xcenter, ycenter, threshold, iterations, starprob, ncolors, colorsused, fade, lightright) {
     .Call('_aRtsy_draw_planet', PACKAGE = 'aRtsy', X, radius, xcenter, ycenter, threshold, iterations, starprob, ncolors, colorsused, fade, lightright)
 }
