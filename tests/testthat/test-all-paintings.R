@@ -132,6 +132,6 @@ test_that("canvas_flow()", {
 
 test_that("canvas_maze()", {
   set.seed(1)
-  artwork <- aRtsy::canvas_maze(colors = c("black"))
+  artwork <- aRtsy::canvas_maze(color = "black")
   expect_equal(!is.null(artwork), TRUE)
 })
