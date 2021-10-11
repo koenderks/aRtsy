@@ -24,15 +24,15 @@ artwork <- switch(type,
                   '10' = canvas_diamonds(colors = colorPalette('random', sample(4:8, size = 1)), background = sample(c("#fafafa", "black", colorPalette('random', 1)), size = 1), col.line = sample(c(NA, sample(c("#fafafa", "black", colorPalette('random', 1)), size = 1)), size = 1), radius = sample(c(1, 2, 2.5, 5, 7, 7.5), size = 1), p = sample(seq(0.4, 0.8, 0.05), size = 1)),
                   '11' = canvas_segments(colors = colorPalette('random', sample(1:8, size = 1)), background = colorPalette('random', 1), n = sample(c(100, 200, 300, 400, 500), size = 1), H = 0.1, p = sample(c(0.3, 0.4, 0.5, 0.6, 0.7), size = 1)),
                   '12' = canvas_mandelbrot(colors = colorPalette('random', n = 5), zoom = sample(seq(4, 21, by = 0.5), 1)),
-                  '13' = canvas_nebula(colorPalette('random', sample(6:10, size = 1)), k = sample(50:100, size = 1), resolution = 2000),
+                  '13' = canvas_nebula(colors = colorPalette('random', sample(6:10, size = 1)), k = sample(50:100, size = 1), resolution = 2000),
                   '14' = canvas_mosaic(colors = colorPalette('random', n = sample(3:10, size = 1)), maxk = sample(c(1, 2, 3, 10, 50, 100), size = 1), resolution = 1500),
                   '15' = canvas_stripes(colors = colorPalette("random", sample(10:20, size = 1)), burnin = sample(1:200, size = 1)),
                   '16' = canvas_gemstone(colors = colorPalette('random', n = sample(15:25, size = 1)), resolution = 1500),
                   '17' = canvas_blacklight(colors = colorPalette('random', n = sample(2:10, size = 1)), resolution = 1500),
                   '18' = canvas_ribbons(colors = colorPalette('random', sample(3:6, size = 1)), background = colorPalette('random', 1)),
                   '19' = canvas_collatz(colors = colorPalette('random', n = 5), background = sample(c("black", "#fdf5e6", "#fafafa"), size = 1), n = sample(200:2000, size = 1), side = sample(c(TRUE, FALSE), size = 1)),
-				  '20' = canvas_watercolors(colors = colorPalette("random", n = sample(2:15, size = 1)), background = sample(c('#fafafa', "black", "#ebd5b3", "darkgoldenrod3", "lavenderblush2", "salmon1"), size = 1), layers = 50, depth = 3),
-				  '21' = canvas_flow(colors = colorPalette("random", n = sample(4:20, size = 1)), background = sample(c("#fafafa", "firebrick", "#f9f0e0", "black", "lavenderblush2"), size = 1), lines = sample(2000:3000, size = 1), lwd = sample(seq(0.04, 0.1, 0.01), size = 1), iterations = 500),
-				  '22' = canvas_maze(color = colorPalette("random", 1), walls = colorPalette("random", 1), background = colorPalette("random", 1), resolution = sample(50:100, size = 1), polar = sample(c(TRUE, FALSE), size = 1)))
+                  '20' = canvas_watercolors(colors = colorPalette("random", n = sample(2:15, size = 1)), background = sample(c('#fafafa', "black", "#ebd5b3", "darkgoldenrod3", "lavenderblush2", "salmon1"), size = 1), layers = 50, depth = 3),
+                  '21' = canvas_flow(colors = colorPalette("random", n = sample(4:20, size = 1)), background = sample(c("#fafafa", "firebrick", "#f9f0e0", "black", "lavenderblush2"), size = 1), lines = sample(2000:3000, size = 1), lwd = sample(seq(0.04, 0.1, 0.01), size = 1), iterations = 500),
+                  '22' = canvas_maze(color = colorPalette("random", 1), walls = colorPalette("random", 1), background = colorPalette("random", 1), resolution = sample(50:100, size = 1), polar = sample(c(TRUE, FALSE), size = 1)))
 
 saveCanvas(artwork, filename, width = ifelse(type == 19, yes = NA, no = 7), height = ifelse(type == 19, yes = NA, no = 7))
