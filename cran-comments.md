@@ -1,5 +1,5 @@
-## This is a submission for version 0.2.0
-This is a submission for aRtsy version 0.2.0. In this version I have:
+## aRtsy version 0.1.4
+This is a submission for aRtsy version 0.1.4. In this version I have:
 
 * Added new functionality
 
@@ -13,7 +13,7 @@ There were no ERRORs or WARNINGs.
 
 On linux, there was 1 NOTE:
 
-* checking installed package size ... NOTE. installed size is 7.5Mb. sub-directories of 1Mb or more: libs 7.2Mb
+* checking installed package size ... NOTE. installed size is 8.8Mb. sub-directories of 1Mb or more: libs 8.4Mb
 
 ## Downstream dependencies
 There are currently no downstream dependencies for this package.
