@@ -8,7 +8,7 @@ canvas_maze(color = "#fafafa", walls = "black", background = "#fafafa",
             resolution = 20, polar = FALSE)
 }
 \arguments{
-\item{color}{a string or character vector specifying the color(s) used for the artwork.}
+\item{color}{a character specifying the color used for the artwork.}
 
 \item{walls}{a character specifying the color used for the walls of the maze.}
 
