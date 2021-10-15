@@ -88,7 +88,7 @@ saveCanvas(artwork, filename = "myArtwork.png")
 
 ### The Iterative collection
 
-The Iterative collection mostly implements algorithms whose state depend on the previous state. These algorithms generally use a grid based canvas to draw on. On this grid, each point represents a pixel of the final image. By assigning a color to these points according to certain rules, one can create the images in this collection.
+The Iterative collection implements algorithms whose state depend on the previous state. These algorithms mostly use a grid based canvas to draw on. On this grid, each point represents a pixel of the final image. By assigning a color to these points according to certain rules, one can create the images in this collection.
 
 #### Langton's ant
 
@@ -385,7 +385,7 @@ The artworks in the Supervised collection are inspired by decision boundary plot
 
 #### Blacklights
 
-This artwork is inspired by a supervised machine learning method called support vector machines. It applies the same principle as described above, but uses a different predictive algorithm to fill in the color of the pixels.
+This artwork is inspired by a supervised machine learning method called support vector machines. It applies the principle as described above using a continuous response variable to fill the color of the pixels.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-22.png' width='270' height='270'>
@@ -403,7 +403,7 @@ canvas_blacklight(colors = colorPalette("random", n = 5))
 
 #### Forests
 
-This artwork is inspired by a supervised learning method called random forest. It applies the same principle as described above, but uses a different predictive algorithm to fill in the color of the pixels.
+This artwork is inspired by a supervised learning method called random forest. It applies the principle as described above using a continuous response variable to fill the color of the pixels.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-20.png' width='270' height='270'>
@@ -421,7 +421,7 @@ canvas_forest(colors = colorPalette("jungle"))
 
 #### Gemstones
 
-Returning to the previously mentioned k-nearest neighbors algorithm, this artwork uses a continuous response variable instead of a categorical one. The resulting pattern can sometimes resemble a gemstone.
+This artwork is inspired by a supervised learning method called k-nearest neighbors. It applies the principle as described above using a continuous response variable to fill the color of the pixels. In short, the k-nearest neighbors algorithm computes the distance of each pixel on the canvas to each randomly generated data point and assigns it the color of the value of that data point.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-20.png' width='270' height='270'>
@@ -439,7 +439,7 @@ canvas_gemstone(colors = colorPalette("dark3"))
 
 #### Mosaics
 
-The first artwork in this collection is inspired by a supervised learning method called k-nearest neighbors. In short, the k-nearest neighbors algorithm computes the distance of each pixel on the canvas to each randomly generated data point and assigns it the color of the class of that data point. If you considers fewer neighbors the artwork looks like a mosaic, while higher values make the artwork look more smooth.
+This artwork also uses a k-nearest neighbors method but instead of a continuous response variable a categorical one is used, making it a classification problem. If you considers fewer neighbors the artwork looks like a mosaic, while higher values make the artwork look more smooth.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-17.png' width='270' height='270'>
