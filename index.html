@@ -150,7 +150,7 @@
 <div id="the-iterative-collection" class="section level3">
 <h3 class="hasAnchor">
 <a href="#the-iterative-collection" class="anchor"></a>The Iterative collection</h3>
-<p>The Iterative collection mostly implements algorithms whose state depend on the previous state. These algorithms generally use a grid based canvas to draw on. On this grid, each point represents a pixel of the final image. By assigning a color to these points according to certain rules, one can create the images in this collection.</p>
+<p>The Iterative collection implements algorithms whose state depend on the previous state. These algorithms mostly use a grid based canvas to draw on. On this grid, each point represents a pixel of the final image. By assigning a color to these points according to certain rules, one can create the images in this collection.</p>
 <div id="langtons-ant" class="section level4">
 <h4 class="hasAnchor">
 <a href="#langtons-ant" class="anchor"></a>Langton’s ant</h4>
@@ -360,7 +360,7 @@
 <div id="blacklights" class="section level4">
 <h4 class="hasAnchor">
 <a href="#blacklights" class="anchor"></a>Blacklights</h4>
-<p>This artwork is inspired by a supervised machine learning method called support vector machines. It applies the same principle as described above, but uses a different predictive algorithm to fill in the color of the pixels.</p>
+<p>This artwork is inspired by a supervised machine learning method called support vector machines. It applies the principle as described above using a continuous response variable to fill the color of the pixels.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-22.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-21.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-20.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_blacklight.html">canvas_blacklight()</a></code> function to make your own artwork using this algorithm.</p>
@@ -372,7 +372,7 @@
 <div id="forests" class="section level4">
 <h4 class="hasAnchor">
 <a href="#forests" class="anchor"></a>Forests</h4>
-<p>This artwork is inspired by a supervised learning method called random forest. It applies the same principle as described above, but uses a different predictive algorithm to fill in the color of the pixels.</p>
+<p>This artwork is inspired by a supervised learning method called random forest. It applies the principle as described above using a continuous response variable to fill the color of the pixels.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-20.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-21.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-19.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_forest.html">canvas_forest()</a></code> function to make your own artwork using this algorithm.</p>
@@ -384,7 +384,7 @@
 <div id="gemstones" class="section level4">
 <h4 class="hasAnchor">
 <a href="#gemstones" class="anchor"></a>Gemstones</h4>
-<p>Returning to the previously mentioned k-nearest neighbors algorithm, this artwork uses a continuous response variable instead of a categorical one. The resulting pattern can sometimes resemble a gemstone.</p>
+<p>This artwork is inspired by a supervised learning method called k-nearest neighbors. It applies the principle as described above using a continuous response variable to fill the color of the pixels. In short, the k-nearest neighbors algorithm computes the distance of each pixel on the canvas to each randomly generated data point and assigns it the color of the value of that data point.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-20.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-21.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-22.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_gemstone.html">canvas_gemstone()</a></code> function to make your own artwork using this algorithm.</p>
@@ -396,7 +396,7 @@
 <div id="mosaics" class="section level4">
 <h4 class="hasAnchor">
 <a href="#mosaics" class="anchor"></a>Mosaics</h4>
-<p>The first artwork in this collection is inspired by a supervised learning method called k-nearest neighbors. In short, the k-nearest neighbors algorithm computes the distance of each pixel on the canvas to each randomly generated data point and assigns it the color of the class of that data point. If you considers fewer neighbors the artwork looks like a mosaic, while higher values make the artwork look more smooth.</p>
+<p>This artwork also uses a k-nearest neighbors method but instead of a continuous response variable a categorical one is used, making it a classification problem. If you considers fewer neighbors the artwork looks like a mosaic, while higher values make the artwork look more smooth.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-17.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-19.png" width="270" height="270"><img src="https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-18.png" width="270" height="270"></p>
 <p>You can use the <code><a href="reference/canvas_mosaic.html">canvas_mosaic()</a></code> function to make your own artwork using this algorithm.</p>
