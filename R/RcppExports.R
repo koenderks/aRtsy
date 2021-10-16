@@ -17,8 +17,8 @@ draw_collatz <- function(empty, series, even, odd) {
     .Call('_aRtsy_draw_collatz', PACKAGE = 'aRtsy', empty, series, even, odd)
 }
 
-iterate_flow <- function(angles, j, iters, left, right, top, bottom, step, r) {
-    .Call('_aRtsy_iterate_flow', PACKAGE = 'aRtsy', angles, j, iters, left, right, top, bottom, step, r)
+iterate_flow <- function(angles, j, iters, left, right, top, bottom, step) {
+    .Call('_aRtsy_iterate_flow', PACKAGE = 'aRtsy', angles, j, iters, left, right, top, bottom, step)
 }
 
 iterate_maze <- function(X, x, y) {

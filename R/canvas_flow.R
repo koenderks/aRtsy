@@ -42,7 +42,6 @@ canvas_flow <- function(colors, background = "#fafafa", lines = 500, lwd = 0.05,
   .checkUserInput(
     background = background, iterations = iterations
   )
-  r <- round(100 * 0.01)
   sequence <- seq(0, 100, length = 100)
   grid <- expand.grid(sequence, sequence)
   grid <- data.frame(x = grid[, 1], y = grid[, 2], z = 0)
@@ -50,8 +49,8 @@ canvas_flow <- function(colors, background = "#fafafa", lines = 500, lwd = 0.05,
   right <- 100 * 1.5
   bottom <- 100 * -0.5
   top <- 100 * 1.5
-  ncols <- (right - left) / r
-  nrows <- (top - bottom) / r
+  ncols <- right - left
+  nrows <- top - bottom
   if (is.null(angles)) {
     angles <- .noise(
       dims = c(nrows, ncols), n = sample(100:300, size = 1),
@@ -69,7 +68,7 @@ canvas_flow <- function(colors, background = "#fafafa", lines = 500, lwd = 0.05,
   plotData <- data.frame(x = numeric(), y = numeric(), z = numeric(), size = numeric(), color = numeric())
   for (j in 1:lines) {
     step <- stats::runif(1, min = 0, max = 100 * stepmax)
-    rows <- iterate_flow(angles, j, iterations, left, right, top, bottom, step, r)
+    rows <- iterate_flow(angles, j, iterations, left, right, top, bottom, step)
     rows$color <- sample(colors, size = 1)
     rows$size <- .bmline(n = nrow(rows), lwd)
     plotData <- rbind(plotData, rows)

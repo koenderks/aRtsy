@@ -15,18 +15,15 @@ Rcpp::DataFrame iterate_flow(arma::mat angles,
                              int right,
                              int top,
                              int bottom,
-                             double step,
-                             int r) {
+                             double step) {
   Rcpp::DoubleVector x = {ceil(R::runif(left + 1, right - 1))};
   Rcpp::DoubleVector y = {ceil(R::runif(bottom + 1, top - 1))};
   int m = angles.n_rows;
   int n = angles.n_cols;
   for (int i = 0; i < iters; i++) {
     Rcpp::checkUserInterrupt();
-    double x_offset = x[x.length() - 1] - left;
-    double y_offset = y[y.length() - 1] - bottom;
-    int col_index = round(x_offset / r);
-    int row_index = round(y_offset / r);
+    int col_index = x[x.length() - 1] - left;
+    int row_index = y[y.length() - 1] - bottom;
     if (col_index >= n || col_index <= 0 || row_index >= m || row_index <= 0) {
       break;
     }

@@ -70,8 +70,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // iterate_flow
-Rcpp::DataFrame iterate_flow(arma::mat angles, int j, int iters, int left, int right, int top, int bottom, double step, int r);
-RcppExport SEXP _aRtsy_iterate_flow(SEXP anglesSEXP, SEXP jSEXP, SEXP itersSEXP, SEXP leftSEXP, SEXP rightSEXP, SEXP topSEXP, SEXP bottomSEXP, SEXP stepSEXP, SEXP rSEXP) {
+Rcpp::DataFrame iterate_flow(arma::mat angles, int j, int iters, int left, int right, int top, int bottom, double step);
+RcppExport SEXP _aRtsy_iterate_flow(SEXP anglesSEXP, SEXP jSEXP, SEXP itersSEXP, SEXP leftSEXP, SEXP rightSEXP, SEXP topSEXP, SEXP bottomSEXP, SEXP stepSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -83,8 +83,7 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type top(topSEXP);
     Rcpp::traits::input_parameter< int >::type bottom(bottomSEXP);
     Rcpp::traits::input_parameter< double >::type step(stepSEXP);
-    Rcpp::traits::input_parameter< int >::type r(rSEXP);
-    rcpp_result_gen = Rcpp::wrap(iterate_flow(angles, j, iters, left, right, top, bottom, step, r));
+    rcpp_result_gen = Rcpp::wrap(iterate_flow(angles, j, iters, left, right, top, bottom, step));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -217,7 +216,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_aRtsy_draw_circlemap", (DL_FUNC) &_aRtsy_draw_circlemap, 6},
     {"_aRtsy_get_collatz_sequence", (DL_FUNC) &_aRtsy_get_collatz_sequence, 1},
     {"_aRtsy_draw_collatz", (DL_FUNC) &_aRtsy_draw_collatz, 4},
-    {"_aRtsy_iterate_flow", (DL_FUNC) &_aRtsy_iterate_flow, 9},
+    {"_aRtsy_iterate_flow", (DL_FUNC) &_aRtsy_iterate_flow, 8},
     {"_aRtsy_iterate_maze", (DL_FUNC) &_aRtsy_iterate_maze, 3},
     {"_aRtsy_draw_planet", (DL_FUNC) &_aRtsy_draw_planet, 11},
     {"_aRtsy_draw_polylines", (DL_FUNC) &_aRtsy_draw_polylines, 5},
