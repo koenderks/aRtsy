@@ -32,24 +32,26 @@ colorPalette <- function(name, n = NULL) {
     }
     palette <- character(n)
     for (i in 1:length(palette)) {
-      palette[i] <- .hsl_to_rgb(h = stats::runif(1, 0, 360), stats::runif(1), stats::runif(1))
+      palette[i] <- .hsl_to_rgb(h = stats::runif(1, 1, 360), stats::runif(1), stats::runif(1))
     }
   } else if (name == "complement") {
     palette <- character(n)
-	tmp <- stats::runif(1, 0, 360)
-	palette[1] <- .hsl_to_rgb(h = tmp, stats::runif(1), stats::runif(1))
+    tmp <- stats::runif(1, 1, 360)
+    palette[1] <- .hsl_to_rgb(h = tmp, stats::runif(1, .4, .8), stats::runif(1, .4, .8))
     for (i in 2:length(palette)) {
-      if (i%%2 == 0) {
-		  if (tmp >= 180) {
-			  color <- tmp - 180
-		  } else {
-			  color <- tmp + 180
-		  }
-		  palette[i] <- .hsl_to_rgb(h = color, stats::runif(1, .4, 1), stats::runif(1, .4, 1))
-	  } else {
-		  tmp <- stats::runif(1, 0, 360)
-		  palette[i] <- .hsl_to_rgb(h = tmp, stats::runif(1, .4, 1), stats::runif(1, .4, 1))
-	  }
+      if (i %% 2 == 0) {
+        if (tmp > 180) {
+          color <- tmp - 180
+        } else if (tmp < 180) {
+          color <- tmp + 180
+        } else {
+          color <- tmp
+        }
+        palette[i] <- .hsl_to_rgb(h = color, stats::runif(1, .4, .8), stats::runif(1, .4, .8))
+      } else {
+        tmp <- stats::runif(1, 1, 360)
+        palette[i] <- .hsl_to_rgb(h = tmp, stats::runif(1, .4, .8), stats::runif(1, .4, .8))
+      }
     }
   } else {
     palette <- switch(name,
