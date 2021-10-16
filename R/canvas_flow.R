@@ -3,15 +3,15 @@
 #' @description This function draws flow fields on a canvas.
 #'
 #' @usage canvas_flow(colors, background = "#fafafa", lines = 500, lwd = 0.05,
-#'             iterations = 100, resolution = 100, angles = NULL)
+#'             iterations = 100, stepmax = 1, angles = NULL)
 #'
 #' @param colors         a string or character vector specifying the color(s) used for the artwork.
 #' @param background     a character specifying the color used for the background.
 #' @param lines          the number of lines to draw.
 #' @param lwd            expansion factor for the line width.
 #' @param iterations     the maximum number of iterations for each line.
-#' @param resolution     resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.
-#' @param angles         optional, a matrix containing the angles of the flow field . If \code{NULL} (default), angles are set according to the predictions of a supervised learning algorithm.
+#' @param stepmax        the maximum proportion of the canvas covered in each iteration.
+#' @param angles         optional, a 200 x 200 matrix containing the angles of the flow field . If \code{NULL} (default), angles are set according to the predictions of a supervised learning algorithm.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
@@ -38,18 +38,18 @@
 #' @export
 
 canvas_flow <- function(colors, background = "#fafafa", lines = 500, lwd = 0.05,
-                        iterations = 100, resolution = 100, angles = NULL) {
+                        iterations = 100, stepmax = 0.01, angles = NULL) {
   .checkUserInput(
     background = background, iterations = iterations
   )
-  r <- round(resolution * 0.01)
-  sequence <- seq(0, resolution, length = resolution)
+  r <- round(100 * 0.01)
+  sequence <- seq(0, 100, length = 100)
   grid <- expand.grid(sequence, sequence)
   grid <- data.frame(x = grid[, 1], y = grid[, 2], z = 0)
-  left <- resolution * -0.5
-  right <- resolution * 1.5
-  bottom <- resolution * -0.5
-  top <- resolution * 1.5
+  left <- 100 * -0.5
+  right <- 100 * 1.5
+  bottom <- 100 * -0.5
+  top <- 100 * 1.5
   ncols <- (right - left) / r
   nrows <- (top - bottom) / r
   if (is.null(angles)) {
@@ -68,7 +68,7 @@ canvas_flow <- function(colors, background = "#fafafa", lines = 500, lwd = 0.05,
   }
   plotData <- data.frame(x = numeric(), y = numeric(), z = numeric(), size = numeric(), color = numeric())
   for (j in 1:lines) {
-    step <- stats::runif(1, min = 0, max = resolution * 0.01)
+    step <- stats::runif(1, min = 0, max = 100 * stepmax)
     rows <- iterate_flow(angles, j, iterations, left, right, top, bottom, step, r)
     rows$color <- sample(colors, size = 1)
     rows$size <- .bmline(n = nrow(rows), lwd)
@@ -76,7 +76,7 @@ canvas_flow <- function(colors, background = "#fafafa", lines = 500, lwd = 0.05,
   }
   artwork <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y, group = factor(z))) +
     ggplot2::geom_path(size = plotData$size, color = plotData$color, lineend = "round") +
-    ggplot2::coord_cartesian(xlim = c(0, resolution), ylim = c(0, resolution))
+    ggplot2::coord_cartesian(xlim = c(0, 100), ylim = c(0, 100))
   artwork <- theme_canvas(artwork, background = background)
   return(artwork)
 }

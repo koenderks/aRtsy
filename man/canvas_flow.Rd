@@ -5,7 +5,7 @@
 \title{Draw A Flow Field}
 \usage{
 canvas_flow(colors, background = "#fafafa", lines = 500, lwd = 0.05,
-            iterations = 100, resolution = 100, angles = NULL)
+            iterations = 100, stepmax = 1, angles = NULL)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
@@ -18,9 +18,9 @@ canvas_flow(colors, background = "#fafafa", lines = 500, lwd = 0.05,
 
 \item{iterations}{the maximum number of iterations for each line.}
 
-\item{resolution}{resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.}
+\item{stepmax}{the maximum proportion of the canvas covered in each iteration.}
 
-\item{angles}{optional, a matrix containing the angles of the flow field . If \code{NULL} (default), angles are set according to the predictions of a supervised learning algorithm.}
+\item{angles}{optional, a 200 x 200 matrix containing the angles of the flow field . If \code{NULL} (default), angles are set according to the predictions of a supervised learning algorithm.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
