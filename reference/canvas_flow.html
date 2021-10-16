@@ -47,7 +47,7 @@
 
 
 <meta property="og:title" content="Draw A Flow Field — canvas_flow" />
-<meta property="og:description" content="This function draws flow fields on a canvas." />
+<meta property="og:description" content="This function draws flow fields on a canvas. The algorithm simulates the flow of points through a field of angles which can be set manually or generated from the predictions of a supervised learning method (i.e., knn, svm, random forest) trained on randomly generated data." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -125,7 +125,7 @@
     </div>
 
     <div class="ref-description">
-    <p>This function draws flow fields on a canvas.</p>
+    <p>This function draws flow fields on a canvas. The algorithm simulates the flow of points through a field of angles which can be set manually or generated from the predictions of a supervised learning method (i.e., knn, svm, random forest) trained on randomly generated data.</p>
     </div>
 
     <pre class="usage"><span class='fu'>canvas_flow</span><span class='op'>(</span><span class='va'>colors</span>, background <span class='op'>=</span> <span class='st'>"#fafafa"</span>, lines <span class='op'>=</span> <span class='fl'>500</span>, lwd <span class='op'>=</span> <span class='fl'>0.05</span>,
@@ -160,7 +160,7 @@
     </tr>
     <tr>
       <th>angles</th>
-      <td><p>optional, a 200 x 200 matrix containing the angles of the flow field . If <code>NULL</code> (default), angles are set according to the predictions of a supervised learning algorithm.</p></td>
+      <td><p>optional, a 200 x 200 matrix containing the angles in the flow field. If <code>NULL</code> (default), angles are set according to the predictions of a supervised learning algorithm.</p></td>
     </tr>
     </table>
 
@@ -185,8 +185,14 @@
 <span class='fu'>canvas_flow</span><span class='op'>(</span>colors <span class='op'>=</span> <span class='fu'><a href='colorPalette.html'>colorPalette</a></span><span class='op'>(</span><span class='st'>"dark2"</span><span class='op'>)</span><span class='op'>)</span>
 </div><div class='img'><img src='canvas_flow-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Advanced example</span>
-<span class='va'>angles</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span><span class='fl'>200</span> <span class='op'>*</span> <span class='fl'>200</span><span class='op'>)</span>, nrow <span class='op'>=</span> <span class='fl'>200</span>, ncol <span class='op'>=</span> <span class='fl'>200</span><span class='op'>)</span>
-<span class='fu'>canvas_flow</span><span class='op'>(</span>colors <span class='op'>=</span> <span class='fu'><a href='colorPalette.html'>colorPalette</a></span><span class='op'>(</span><span class='st'>"tuscany1"</span><span class='op'>)</span>, angles <span class='op'>=</span> <span class='va'>angles</span><span class='op'>)</span>
+<span class='va'>angles</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>200</span>, <span class='fl'>200</span><span class='op'>)</span>
+<span class='va'>angles</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>100</span>, <span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span>from <span class='op'>=</span> <span class='fl'>0</span>, to <span class='op'>=</span> <span class='fl'>2</span> <span class='op'>*</span> <span class='va'>pi</span>, length <span class='op'>=</span> <span class='fl'>100</span><span class='op'>)</span>
+<span class='va'>angles</span><span class='op'>[</span><span class='fl'>101</span><span class='op'>:</span><span class='fl'>200</span>, <span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span>from <span class='op'>=</span> <span class='fl'>2</span> <span class='op'>*</span> <span class='va'>pi</span>, to <span class='op'>=</span> <span class='fl'>0</span>, length <span class='op'>=</span> <span class='fl'>100</span><span class='op'>)</span>
+<span class='va'>angles</span> <span class='op'>&lt;-</span> <span class='va'>angles</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span><span class='fl'>200</span> <span class='op'>*</span> <span class='fl'>200</span>, sd <span class='op'>=</span> <span class='fl'>0.1</span><span class='op'>)</span>
+<span class='fu'>canvas_flow</span><span class='op'>(</span>
+  colors <span class='op'>=</span> <span class='fu'><a href='colorPalette.html'>colorPalette</a></span><span class='op'>(</span><span class='st'>"tuscany1"</span><span class='op'>)</span>, background <span class='op'>=</span> <span class='st'>"black"</span>,
+  angles <span class='op'>=</span> <span class='va'>angles</span>, lwd <span class='op'>=</span> <span class='fl'>0.4</span>, lines <span class='op'>=</span> <span class='fl'>1000</span>, stepmax <span class='op'>=</span> <span class='fl'>0.001</span>
+<span class='op'>)</span>
 </div><div class='img'><img src='canvas_flow-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># }</span>
 
 </div></pre>
