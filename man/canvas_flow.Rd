@@ -5,7 +5,7 @@
 \title{Draw A Flow Field}
 \usage{
 canvas_flow(colors, background = "#fafafa", lines = 500, lwd = 0.05,
-            iterations = 100, stepmax = 1, angles = NULL)
+            iterations = 100, stepmax = 0.01, angles = NULL)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}

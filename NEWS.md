@@ -7,6 +7,8 @@
 **Minor changes**
 
 - The function `colorPalette()` now randomizes the `hsl` scale in the `random` color palette instead of the `rgb` scale.
+- The function `colorPalette()` can now create a `complement` color palette consisting of complementing color (e.g., on the other side of the `hsl` color wheel).
+- Removed the `resolution` parameter in `canvas_flow()` in favor of a `stepmax` parameter that determines the maximum proportion of the canvas covered by each iteration.
 
 # aRtsy 0.1.3
 

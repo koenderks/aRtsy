@@ -7,9 +7,9 @@
 colorPalette(name, n = NULL)
 }
 \arguments{
-\item{name}{name of the color palette. Can be \code{random} for random colors, but can also be the name of a pre-implemented palette. See the \code{details} section for a list of pre-implemented palettes.}
+\item{name}{name of the color palette. Can be \code{random} for random colors or \code{complement} for complementing colors, but can also be the name of a pre-implemented palette. See the \code{details} section for a list of pre-implemented palettes.}
 
-\item{n}{the number of colors to select from the palette. Required if \code{name = 'random'}. Otherwise, if \code{NULL}, automatically selects all colors from the chosen palette.}
+\item{n}{the number of colors to select from the palette. Required if \code{name = 'random'} or \code{name = 'complement'}. Otherwise, if \code{NULL}, automatically selects all colors from the chosen palette.}
 }
 \value{
 A vector of colors.
@@ -24,7 +24,7 @@ The following color palettes are implemented:
 \if{latex}{\figure{colors.pdf}{options: width=5in}}
 }
 \examples{
-colorPalette("random", 5)
+colorPalette("complement", 5)
 }
 \author{
 Koen Derks, \email{koen-derks@hotmail.com}
