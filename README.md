@@ -99,9 +99,9 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Langtons_ant), Langton's 
 1. If a certain number of iterations has passed, choose a different color which corresponds to a different combination of these rules.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-03.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-02.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-01.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-03.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-02.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-01.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_ant()` function to make your own artwork using this algorithm.
@@ -124,9 +124,9 @@ The Collatz conjecture is also known as the `3x+1` equation. The algorithm draws
 By visualizing the sequence for each number, overlaying sequences that are the same, and bending the edges differently for even and odd numbers in the sequence, organic looking structures can occur.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-09.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-08.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-10.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-09.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-08.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-10.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_collatz()` function to make your own artwork using this algorithm.
@@ -142,9 +142,9 @@ canvas_collatz(colors = colorPalette("tuscany3"))
 This artwork implements a version of the algorithm described in the blog post [Flow Fields](https://tylerxhobbs.com/essays/2020/flow-fields) by Tyler Hobbs. It works by creating a grid of angles and determining how certain points will flow through this field. The angles in the field can be set manually or according to the predictions of a supervised learning method trained on randomly generated data.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-24.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-23.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-22.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-24.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-23.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-22.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_flow()` function to make your own artwork using this algorithm.
@@ -160,9 +160,9 @@ canvas_flow(colors = colorPalette("dark2"))
 This artwork creates mazes. The mazes are created using a random walk algorithm (described in the [mazegenerator](https://github.com/matfmc/mazegenerator) repository). The mazes can also be displayed with polar coordinates, creating some pretty cool effects.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mazes/2021-10-03.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mazes/2021-10-02.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mazes/2021-10-04.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mazes/2021-10-03.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mazes/2021-10-02.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mazes/2021-10-04.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_maze()` function to make your own artwork using this algorithm.
@@ -178,9 +178,9 @@ canvas_maze(color = "#fafafa")
 We all love space, and this type of artwork puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (described in the blog post [Neighborhoods: Experimenting with Cyclic Cellular Automata](https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/) by Antonio Sánchez Chinchón) to fill in their surfaces. The color and placement of the planets can be set manually.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-26.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-27.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-28.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-26.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-27.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-28.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_planet()` function to make your own artwork using this algorithm.
@@ -196,9 +196,9 @@ canvas_planet(colors = colorPalette("retro3"))
 This type of artwork is based on the concept of [Brownian motion](https://en.wikipedia.org/wiki/Brownian_motion). The algorithm generates a sequence of slightly increasing and decreasing values for each row on the canvas. Next, it fills these according to their generated value. More colors usually make this artwork more interesting.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/stripes/2021-08-23.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/stripes/2021-08-24.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/stripes/2021-08-25.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/stripes/2021-08-23.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/stripes/2021-08-24.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/stripes/2021-08-25.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_stripes()` function to make your own artwork using this algorithm.
@@ -214,9 +214,9 @@ canvas_stripes(colors = colorPalette("random", n = 10))
 When you think of the act of painting, you probably imagine stroking paint on a canvas. This type of artwork tries to mimic that activity. The algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor chance of generating a new color. Going over the canvas like this results in something that looks like strokes of paint.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-21.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-20.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-10.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-21.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-20.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-10.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_strokes()` function to make your own artwork using this algorithm.
@@ -236,9 +236,9 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Turmite), a turmite is *"
 3. Move forward one block.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-06.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-09.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-08.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-06.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-09.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-08.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_turmite()` function to make your own artwork using this algorithm.
@@ -254,9 +254,9 @@ canvas_turmite(colors = colorPalette("dark2"))
 This artwork implements a version of the algorithm described in the blog post [A Guide to Simulating Watercolor Paint with Generative Art](https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints) by Tyler Hobbs. It works by layering several geometric shapes and deforming each shape by repeatedly splitting its edges.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-23.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-22.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-21.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-23.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-22.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-21.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_watercolors()` function to make your own artwork using this algorithm.
@@ -276,9 +276,9 @@ The Geometric collection mostly implements algorithms that draw a geometric shap
 This function creates a set of diamonds on a canvas. The diamonds are filled in (or left out) using a random color assignment.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-06.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-04.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-05.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-06.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-04.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-05.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_diamonds()` function to make your own artwork using this algorithm.
@@ -294,9 +294,9 @@ canvas_diamonds(colors = colorPalette("tuscany1"))
 The idea for this type of artwork is taken over from the [`generativeart`](https://github.com/cutterkom/generativeart) package. In this algorithm, the position of every single point is calculated by a formula which has random parameters. You can supply your own formula.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-03-17.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-04-08.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-04-04.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-03-17.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-04-08.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-04-04.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_function()` function to make your own artwork using this algorithm.
@@ -312,9 +312,9 @@ canvas_function(color = "navyblue")
 This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-22.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-23.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-21.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-22.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-23.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-21.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_polylines()` function to make your own artwork using this algorithm.
@@ -330,9 +330,9 @@ canvas_polylines(colors = colorPalette("retro1"))
 This function creates colored ribbons with (or without) a triangle that breaks their paths. This path of the ribbon polygon is creating by picking one point on the left side of the triangle and one point on the right side at random and using these points as nodes.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-16.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-15.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-14.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-16.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-15.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-14.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_ribbons()` function to make your own artwork using this algorithm.
@@ -348,9 +348,9 @@ canvas_ribbons(colors = colorPalette("retro1")
 This type of artwork is inspired by the style of the well-known paintings by the Dutch artist [Piet Mondriaan](https://nl.wikipedia.org/wiki/Piet_Mondriaan). The position and direction of each line segment is determined randomly.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-07.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-08.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-06.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-07.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-08.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-06.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_segments()` function to make your own artwork using this algorithm.
@@ -366,9 +366,9 @@ canvas_segments(colors = colorPalette("dark1"))
 This artwork uses a variety of squares and rectangles to fill the canvas. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-03-01.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-02-28.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-02-29.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-03-01.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-02-28.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-02-29.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_squares()` function to make your own artwork using this algorithm.
@@ -388,9 +388,9 @@ The artworks in the Supervised collection are inspired by decision boundary plot
 This artwork is inspired by a supervised machine learning method called support vector machines. It applies the principle as described above using a continuous response variable to fill the color of the pixels.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-22.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-21.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-20.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-22.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-21.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-20.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_blacklight()` function to make your own artwork using this algorithm.
@@ -406,9 +406,9 @@ canvas_blacklight(colors = colorPalette("random", n = 5))
 This artwork is inspired by a supervised learning method called random forest. It applies the principle as described above using a continuous response variable to fill the color of the pixels.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-20.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-21.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-19.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-20.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-21.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-19.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_forest()` function to make your own artwork using this algorithm.
@@ -424,9 +424,9 @@ canvas_forest(colors = colorPalette("jungle"))
 This artwork is inspired by a supervised learning method called k-nearest neighbors. It applies the principle as described above using a continuous response variable to fill the color of the pixels. In short, the k-nearest neighbors algorithm computes the distance of each pixel on the canvas to each randomly generated data point and assigns it the color of the value of that data point.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-20.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-21.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-22.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-20.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-21.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-22.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_gemstone()` function to make your own artwork using this algorithm.
@@ -442,9 +442,9 @@ canvas_gemstone(colors = colorPalette("dark3"))
 This artwork also uses a k-nearest neighbors method but instead of a continuous response variable a categorical one is used, making it a classification problem. If you considers fewer neighbors the artwork looks like a mosaic, while higher values make the artwork look more smooth.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-17.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-19.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-18.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-17.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-19.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-18.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_mosaic()` function to make your own artwork using this algorithm.
@@ -460,9 +460,9 @@ canvas_mosaic(colors = colorPalette("retro2"))
 Based on the very same principle as described in the artwork above is this next type of artwork. However, it produces slightly different pictures as it uses different code to create a form of k-nearest neighbors noise. Some of these artworks can resemble nebulas in outer space.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/nebulas/2021-08-29.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/nebulas/2021-08-28.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/nebulas/2021-08-27.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/nebulas/2021-08-29.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/nebulas/2021-08-28.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/nebulas/2021-08-27.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_nebula()` function to make your own artwork using this algorithm.
@@ -482,9 +482,9 @@ The Static collection implements static images that produce nice pictures.
 This type of artwork is based on the concept of an [Arnold tongue](https://en.wikipedia.org/wiki/Arnold_tongue). According to Wikipedia, Arnold tongues *"are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters"*.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22b.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22c.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22a.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22b.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22c.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22a.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_circlemap()` function to make your own artwork using this algorithm.
@@ -499,9 +499,9 @@ canvas_circlemap(colors = colorPalette("dark2"))
 This type of artwork visualizes the [Mandelbrot set](https://en.wikipedia.org/wiki/Mandelbrot_set) fractal, a perfect example of a complex structure arising from the application of simple rules. You can zoom in on the set and apply some color to create these nice images.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-08.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-09.png' width='270' height='270'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-07.png' width='270' height='270'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-08.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-09.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-07.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_mandelbrot()` function to make your own artwork using this algorithm.
