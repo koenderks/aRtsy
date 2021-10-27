@@ -4,8 +4,8 @@
 #'
 #' @usage colorPalette(name, n = NULL)
 #'
-#' @param name   name of the color palette. Can be \code{random} for random colors or \code{complement} for complementing colors, but can also be the name of a pre-implemented palette. See the \code{details} section for a list of pre-implemented palettes.
-#' @param n      the number of colors to select from the palette. Required if \code{name = 'random'} or \code{name = 'complement'}. Otherwise, if \code{NULL}, automatically selects all colors from the chosen palette.
+#' @param name   name of the color palette. Can be \code{random} for random colors, \code{complement} for complementing colors, or \code{divergent} for equally spaced colors, but can also be the name of a pre-implemented palette. See the \code{details} section for a list of pre-implemented palettes.
+#' @param n      the number of colors to select from the palette. Required if \code{name = 'random'}, \code{name = 'complement'}, or \code{name = 'divergent'}. Otherwise, if \code{NULL}, automatically selects all colors from the chosen palette.
 #'
 #' @details The following color palettes are implemented:
 #'
@@ -17,7 +17,7 @@
 #' @author Koen Derks, \email{koen-derks@hotmail.com}
 #'
 #' @examples
-#' colorPalette("complement", 5)
+#' colorPalette("divergent", 5)
 #' @keywords canvas palette
 #'
 #' @export
@@ -53,7 +53,15 @@ colorPalette <- function(name, n = NULL) {
         palette[i] <- .hsl_to_rgb(h = tmp, stats::runif(1, .4, .8), stats::runif(1, .4, .8))
       }
     }
-  } else {
+  } else if (name == "divergent") {
+      palette <- character(n)
+      start <- stats::runif(1, 0, 260)
+      colSeq <- seq(from = 1, to = 360, length.out = n)
+      h <- (colSeq + start) %% 360
+      for (i in 1:length(palette)) {
+        palette[i] <- .hsl_to_rgb(h = h[i], stats::runif(1, .4, .7), stats::runif(1, .4, .7))
+      }
+    } else {
     palette <- switch(name,
       "blackwhite" = c("black", "white"),
       "dark1" = c("#161616", "#346751", "#C84B31", "#ECDBBA"),
