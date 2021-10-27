@@ -5,11 +5,10 @@
 \title{aRtsy --- Generative Art using \code{ggplot2}}
 \description{
   \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
-
-  \code{aRtsy} is an attempt at making generative art available for the masses in a simple and standardized format. 
-  The package provides various algorithms for creating artworks in ggplot2 that incorporate some form of 
-  randomness (depending on the set \code{seed}). Each type of artwork is implemented in a separate function.
-
+  \code{aRtsy} aims to make generative art accessible to the general public in a straightforward and standardized manner. 
+  The package provides algorithms for creating artworks that incorporate some form of randomness and are dependent on the set \code{seed}. 
+  Each algorithm is implemented in a separate function with its own set of parameters that can be tweaked.
+  
   For documentation on \code{aRtsy} itself, including the manual and user guide
   for the package, worked examples, and other
   tutorial information visit the \href{https://koenderks.github.io/aRtsy/}{package website}.
