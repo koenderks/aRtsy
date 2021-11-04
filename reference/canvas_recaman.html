@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Draw Segments — canvas_segments • aRtsy</title>
+<title>Draw Recaman's Sequence — canvas_recaman • aRtsy</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Draw Segments — canvas_segments" />
-<meta property="og:description" content="This function draws line segments on a canvas. The length and direction of the line segments is determined randomly." />
+<meta property="og:title" content="Draw Recaman's Sequence — canvas_recaman" />
+<meta property="og:description" content="This function draws Recaman's sequence on a canvas. The algorithm takes increasingly large steps backward on the positive number line, but if it is unable to it takes a step forward." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,17 +119,17 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Draw Segments</h1>
-    <small class="dont-index">Source: <a href='https://github.com/koenderks/aRtsy/blob/master/R/canvas_segments.R'><code>R/canvas_segments.R</code></a></small>
-    <div class="hidden name"><code>canvas_segments.Rd</code></div>
+    <h1>Draw Recaman's Sequence</h1>
+    <small class="dont-index">Source: <a href='https://github.com/koenderks/aRtsy/blob/master/R/canvas_recaman.R'><code>R/canvas_recaman.R</code></a></small>
+    <div class="hidden name"><code>canvas_recaman.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function draws line segments on a canvas. The length and direction of the line segments is determined randomly.</p>
+    <p>This function draws Recaman's sequence on a canvas. The algorithm takes increasingly large steps backward on the positive number line, but if it is unable to it takes a step forward.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>canvas_segments</span><span class='op'>(</span><span class='va'>colors</span>, background <span class='op'>=</span> <span class='st'>"#fafafa"</span>, n <span class='op'>=</span> <span class='fl'>250</span>,
-                p <span class='op'>=</span> <span class='fl'>0.5</span>, H <span class='op'>=</span> <span class='fl'>0.1</span>, size <span class='op'>=</span> <span class='fl'>0.2</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>canvas_recaman</span><span class='op'>(</span><span class='va'>colors</span>, background <span class='op'>=</span> <span class='st'>"#fafafa"</span>, n <span class='op'>=</span> <span class='fl'>100</span>, start <span class='op'>=</span> <span class='fl'>0</span>,
+               increment <span class='op'>=</span> <span class='fl'>1</span>, curvature <span class='op'>=</span> <span class='op'>-</span><span class='fl'>1</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -144,25 +144,28 @@
     </tr>
     <tr>
       <th>n</th>
-      <td><p>a positive integer specifying the number of line segments to draw.</p></td>
+      <td><p>the number of steps to make in the sequence.</p></td>
     </tr>
     <tr>
-      <th>p</th>
-      <td><p>a value specifying the probability of drawing a vertical line segment.</p></td>
+      <th>start</th>
+      <td><p>the starting point of the algorithm.</p></td>
     </tr>
     <tr>
-      <th>H</th>
-      <td><p>a positive value specifying the scaling factor for the line segments.</p></td>
+      <th>increment</th>
+      <td><p>the increment of each step.</p></td>
     </tr>
     <tr>
-      <th>size</th>
-      <td><p>a positive value specifying the size of the line segments.</p></td>
+      <th>curvature</th>
+      <td><p>the curvature of each line.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A <code>ggplot</code> object containing the artwork.</p>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p><a href='https://mathworld.wolfram.com/RecamansSequence.html'>https://mathworld.wolfram.com/RecamansSequence.html</a></p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code>colorPalette</code></p></div>
@@ -175,8 +178,8 @@
 <span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># Simple example</span></span>
-<span class='r-in'><span class='fu'>canvas_segments</span><span class='op'>(</span>colors <span class='op'>=</span> <span class='fu'><a href='colorPalette.html'>colorPalette</a></span><span class='op'>(</span><span class='st'>"dark1"</span><span class='op'>)</span><span class='op'>)</span></span>
-<span class='r-plt img'><img src='canvas_segments-1.png' alt='' width='700' height='433' /></span>
+<span class='r-in'><span class='fu'>canvas_recaman</span><span class='op'>(</span>colors <span class='op'>=</span> <span class='fu'><a href='colorPalette.html'>colorPalette</a></span><span class='op'>(</span><span class='st'>"tuscany1"</span><span class='op'>)</span>, background <span class='op'>=</span> <span class='st'>"black"</span><span class='op'>)</span></span>
+<span class='r-plt img'><img src='canvas_recaman-1.png' alt='' width='700' height='433' /></span>
 <span class='r-in'><span class='co'># }</span></span>
 <span class='r-in'></span>
 </pre>
