@@ -10,7 +10,7 @@ set.seed(seed)
 
 # Select artwork type
 type <- sample(1:23, size = 1)
-type <- 23
+
 artwork <- switch(type,
                   '1' = canvas_turmite(colors = colorPalette('divergent', sample(6:10, size = 1)), background = "#050505", p = runif(1, 0.2, 0.5), resolution = 2000, noise = TRUE, iterations = 1e7),
                   '2' = canvas_strokes(colors = colorPalette('divergent', sample(c(5:15, 50), size = 1)), neighbors = sample(1:4, size = 1), p = runif(1, 0.0001, 0.01), iterations = sample(1:3, size = 1), resolution = 1500, side = sample(c(TRUE, FALSE), size = 1)),
