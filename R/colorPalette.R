@@ -89,7 +89,8 @@ colorPalette <- function(name, n = NULL) {
       n <- length(palette)
     }
     if (n > length(palette)) {
-      stop("attempt to select more colors than are available in this palette")
+      warning("attempt to select more colors than are available in this palette, returning the requested palette with the maximum number of colors")
+      return(palette)
     }
     palette <- palette[1:n]
   }

@@ -1,3 +1,9 @@
+# aRtsy 0.1.5
+
+**New features**
+
+- Added `canvas_remacan()`. Thanks to @akident on Twitter for the suggestion.
+
 # aRtsy 0.1.4
 
 **New features**

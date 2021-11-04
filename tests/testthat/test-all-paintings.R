@@ -135,3 +135,9 @@ test_that("canvas_maze()", {
   artwork <- canvas_maze(color = "black")
   expect_equal(!is.null(artwork), TRUE)
 })
+
+test_that("canvas_recaman()", {
+  set.seed(1)
+  artwork <- canvas_recaman(color = "black")
+  expect_equal(!is.null(artwork), TRUE)
+})
