@@ -33,6 +33,10 @@ draw_polylines <- function(X, ratio, iters, rows, cols) {
     .Call('_aRtsy_draw_polylines', PACKAGE = 'aRtsy', X, ratio, iters, rows, cols)
 }
 
+iterate_recaman <- function(n, start, increment) {
+    .Call('_aRtsy_iterate_recaman', PACKAGE = 'aRtsy', n, start, increment)
+}
+
 draw_squares <- function(X, neighbors, s, cuts, ratio) {
     .Call('_aRtsy_draw_squares', PACKAGE = 'aRtsy', X, neighbors, s, cuts, ratio)
 }

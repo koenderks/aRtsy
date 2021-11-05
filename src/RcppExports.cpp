@@ -136,6 +136,19 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// iterate_recaman
+Rcpp::IntegerVector iterate_recaman(int n, int start, int increment);
+RcppExport SEXP _aRtsy_iterate_recaman(SEXP nSEXP, SEXP startSEXP, SEXP incrementSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type start(startSEXP);
+    Rcpp::traits::input_parameter< int >::type increment(incrementSEXP);
+    rcpp_result_gen = Rcpp::wrap(iterate_recaman(n, start, increment));
+    return rcpp_result_gen;
+END_RCPP
+}
 // draw_squares
 arma::mat draw_squares(arma::mat X, Rcpp::DataFrame neighbors, int s, int cuts, double ratio);
 RcppExport SEXP _aRtsy_draw_squares(SEXP XSEXP, SEXP neighborsSEXP, SEXP sSEXP, SEXP cutsSEXP, SEXP ratioSEXP) {
@@ -220,6 +233,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_aRtsy_iterate_maze", (DL_FUNC) &_aRtsy_iterate_maze, 3},
     {"_aRtsy_draw_planet", (DL_FUNC) &_aRtsy_draw_planet, 11},
     {"_aRtsy_draw_polylines", (DL_FUNC) &_aRtsy_draw_polylines, 5},
+    {"_aRtsy_iterate_recaman", (DL_FUNC) &_aRtsy_iterate_recaman, 3},
     {"_aRtsy_draw_squares", (DL_FUNC) &_aRtsy_draw_squares, 5},
     {"_aRtsy_draw_strokes", (DL_FUNC) &_aRtsy_draw_strokes, 4},
     {"_aRtsy_draw_turmite", (DL_FUNC) &_aRtsy_draw_turmite, 5},

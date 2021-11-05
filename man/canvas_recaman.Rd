@@ -4,15 +4,16 @@
 \alias{canvas_recaman}
 \title{Draw Recaman's Sequence}
 \usage{
-canvas_recaman(colors, background = "#fafafa", n = 100, start = 0,
-               increment = 1, curvature = 1, angle = 0, closed = FALSE)
+canvas_recaman(colors, background = "#fafafa", iterations = 100, start = 0,
+               increment = 1, curvature = 1, angle = 0, size = 0.01,
+               closed = FALSE)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
 
 \item{background}{a character specifying the color used for the background.}
 
-\item{n}{the number of steps to make in the sequence.}
+\item{iterations}{the number of iterations of the algorithm.}
 
 \item{start}{the starting point of the algorithm.}
 
@@ -21,6 +22,8 @@ canvas_recaman(colors, background = "#fafafa", n = 100, start = 0,
 \item{curvature}{the curvature of each line.}
 
 \item{angle}{the angle at which to place the artwork.}
+
+\item{size}{the size of the lines.}
 
 \item{closed}{logical. Whether to plot a curve from the end of the sequence back to the starting point.}
 }

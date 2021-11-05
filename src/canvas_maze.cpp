@@ -78,7 +78,7 @@ Rcpp::DataFrame iterate_maze(arma::mat X,
   while (vx.length() < dim) {
     Rcpp::checkUserInterrupt();
     Rcpp::DataFrame nn = mazeNeighbors(x, y, m, n);
-	Rcpp::DataFrame snn = selectNeighbors(nn["x"], nn["y"], vx, vy);
+    Rcpp::DataFrame snn = selectNeighbors(nn["x"], nn["y"], vx, vy);
     int nrows = snn.nrows();
     if (nrows > 0) {
       Rcpp::NumericVector nx = snn["x"];
