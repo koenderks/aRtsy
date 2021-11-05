@@ -20,7 +20,7 @@ canvas_phyllotaxis(colors, background = '#fafafa', iterations = 10000,
 
 \item{alpha}{transparency of the points.}
 
-\item{p}{probability of leaving out a point.}
+\item{p}{probability of drawing a point on each iteration.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
@@ -33,12 +33,12 @@ This function draws a phyllotaxis which resembles the arrangement of leaves on a
 set.seed(1)
 
 # Simple example
-canvas_recaman(colors = colorPalette("tuscany1"))
+canvas_phyllotaxis(colors = colorPalette("tuscany1"))
 }
 
 }
 \references{
-\url{https://mathworld.wolfram.com/RecamansSequence.html}
+\url{https://en.wikipedia.org/wiki/Phyllotaxis}
 }
 \seealso{
 \code{colorPalette}

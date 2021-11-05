@@ -138,6 +138,12 @@ test_that("canvas_maze()", {
 
 test_that("canvas_recaman()", {
   set.seed(1)
-  artwork <- canvas_recaman(color = "black")
+  artwork <- canvas_recaman(colors = "black")
+  expect_equal(!is.null(artwork), TRUE)
+})
+
+test_that("canvas_phyllotaxis()", {
+  set.seed(1)
+  artwork <- canvas_phyllotaxis(colors = "black")
   expect_equal(!is.null(artwork), TRUE)
 })
