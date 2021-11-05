@@ -61,6 +61,8 @@ saveCanvas(artwork, filename = "myArtwork.png")
 * [`canvas_planet()`](#planets)
 * [`canvas_stripes()`](#stripes)
 * [`canvas_strokes()`](#paint-strokes)
+* [`canvas_phyllotaxis()`](#phyllotaxis)
+* [`canvas_recaman()`](#recamáns-sequence)
 * [`canvas_turmite()`](#turmite)
 * [`canvas_watercolors()`](#watercolors)
 
@@ -85,7 +87,6 @@ saveCanvas(artwork, filename = "myArtwork.png")
 
 * [`canvas_circlemap()`](#circle-maps)
 * [`canvas_mandelbrot()`](#the-mandelbrot-set)
-* [`canvas_recaman()`](#recamáns-sequence)
 
 ### The Iterative collection
 
@@ -226,6 +227,42 @@ You can use the `canvas_strokes()` function to make your own artwork using this 
 set.seed(1)
 canvas_strokes(colors = colorPalette("tuscany1"))
 # see ?canvas_strokes for more input parameters of this algorithm
+```
+
+#### Phyllotaxis
+
+This function draws a [Phyllotaxis](https://en.wikipedia.org/wiki/Phyllotaxis) on the canvas. This structure represents the arrangement of leaves on a plant stem.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/phyllotaxis/2021-11-05.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/phyllotaxis/2021-11-03.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/phyllotaxis/2021-11-04.png' width='250' height='250'>
+</p>
+
+You can use the `canvas_phyllotaxis()` function to make your own artwork using this algorithm.
+
+```r
+set.seed(1)
+canvas_phyllotaxis(colors = colorPalette("tuscany1"))
+# see ?canvas_phyllotaxis for more input parameters of this algorithm
+```
+
+#### Recamán's Sequence
+
+This function draws Recamán's sequence on a canvas. The algorithm takes increasingly large steps backwards on the positive number line, but takes a step forward if it is unable to perform the step backwards.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/recamans/2021-11-02.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/recamans/2021-11-03.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/recamans/2021-11-04.png' width='250' height='250'>
+</p>
+
+You can use the `canvas_recaman()` function to make your own artwork using this algorithm.
+
+```r
+set.seed(1)
+canvas_recaman(colors = colorPalette("random", n = 10))
+# see ?canvas_recaman for more input parameters of this algorithm
 ```
 
 #### Turmite
@@ -510,24 +547,6 @@ You can use the `canvas_mandelbrot()` function to make your own artwork using th
 ```r
 canvas_mandelbrot(colors = colorPalette("tuscany1"))
 # see ?canvas_mandelbrot for more input parameters of this algorithm
-```
-
-#### Recamán's Sequence
-
-This function draws Recamán's sequence on a canvas. The algorithm takes increasingly large steps backwards on the positive number line, but takes a step forward if it is unable to perform the step backwards.
-
-<p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/recamans/2021-11-02.png' width='250' height='250'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/recamans/2021-11-03.png' width='250' height='250'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/recamans/2021-11-04.png' width='250' height='250'>
-</p>
-
-You can use the `canvas_recaman()` function to make your own artwork using this algorithm.
-
-```r
-set.seed(1)
-canvas_recaman(colors = colorPalette("random", n = 10))
-# see ?canvas_recaman for more input parameters of this algorithm
 ```
 
 ## Color palettes
