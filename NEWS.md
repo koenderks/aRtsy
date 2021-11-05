@@ -3,6 +3,7 @@
 **New features**
 
 - Added `canvas_remacan()`. Thanks to @akident on Twitter for the suggestion.
+- Added `canvas_phyllotaxis()`.
 
 # aRtsy 0.1.4
 
