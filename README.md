@@ -55,6 +55,7 @@ saveCanvas(artwork, filename = "myArtwork.png")
 *The Iterative collection*
 
 * [`canvas_ant()`](#langtons-ant)
+* [`canvas_cobweb()`](#cobwebs)
 * [`canvas_collatz()`](#collatz-conjecture)
 * [`canvas_flow()`](#flow-fields)
 * [`canvas_maze()`](#mazes)
@@ -112,6 +113,24 @@ You can use the `canvas_ant()` function to make your own artwork using this algo
 set.seed(1)
 canvas_ant(colors = colorPalette("house"))
 # see ?canvas_ant for more input parameters of this algorithm
+```
+
+#### Cobwebs
+
+This function draws a lines in a structure that resemble cobwebs. The algorithm creates many [Fibonacci spirals](https://en.wikipedia.org/wiki/Golden_spiral) shifted by random noise from a normal distribution.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/cobwebs/2021-11-07.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/cobwebs/2021-11-06.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/cobwebs/2021-11-05.png' width='250' height='250'>
+</p>
+
+You can use the `canvas_cobweb()` function to make your own artwork using this algorithm.
+
+```r
+set.seed(1)
+canvas_cobweb(colors = colorPalette("tuscany1"))
+# see ?canvas_cobweb for more input parameters of this algorithm
 ```
 
 #### Collatz conjecture

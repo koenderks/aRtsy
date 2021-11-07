@@ -1,7 +1,7 @@
-## aRtsy version 0.1.4
-This is a submission for aRtsy version 0.1.4. In this version I have:
+## aRtsy version 0.1.5
+This is a submission for aRtsy version 0.1.5. In this version I have:
 
-* Added a new function.
+* Added three new functions.
 
 ## Test environments
 * Windows install, (on github actions) R release

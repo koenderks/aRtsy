@@ -3,6 +3,7 @@
 export(canvas_ant)
 export(canvas_blacklight)
 export(canvas_circlemap)
+export(canvas_cobweb)
 export(canvas_collatz)
 export(canvas_diamonds)
 export(canvas_flow)

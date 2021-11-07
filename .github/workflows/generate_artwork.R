@@ -9,7 +9,7 @@ seed <- as.numeric(Sys.Date())
 set.seed(seed)
 
 # Select artwork type
-type <- sample(1:24, size = 1)
+type <- sample(1:25, size = 1)
 
 artwork <- switch(type,
                   '1' = canvas_turmite(colors = colorPalette('divergent', sample(6:10, size = 1)), background = "#050505", p = runif(1, 0.2, 0.5), resolution = 2000, noise = TRUE, iterations = 1e7),
@@ -35,6 +35,7 @@ artwork <- switch(type,
                   '21' = canvas_flow(colors = colorPalette("divergent", n = sample(4:20, size = 1)), background = sample(c("#fafafa", "firebrick", "#f9f0e0", "black", "lavenderblush2"), size = 1), lines = sample(2000:3000, size = 1), lwd = sample(seq(0.04, 0.1, 0.01), size = 1), iterations = 500, stepmax = 0.01),
                   '22' = canvas_maze(color = colorPalette("random", 1), walls = colorPalette("random", 1), background = colorPalette("random", 1), resolution = sample(50:100, size = 1), polar = sample(c(TRUE, FALSE), size = 1)),
                   '23' = canvas_recaman(colors = colorPalette("divergent", sample(3:10, size = 1)), background = colorPalette("random", 1), iterations = sample(100:1000, size = 1), curvature = sample(1:15, size = 1), start = sample(1:100, size = 1), angle = sample(c(0, 45), size = 1)),
-                  '24' = canvas_phyllotaxis(colors = colorPalette("divergent", sample(3:10, size = 1)), iterations = sample(1000:100000, size = 1), p = runif(1, 0.5, 0.9), background = colorPalette("random", 1), angle = runif(1, 0, 1000), size = 0.01, alpha = runif(1, 0.3, 1)))
+                  '24' = canvas_phyllotaxis(colors = colorPalette("divergent", sample(3:10, size = 1)), iterations = sample(1000:100000, size = 1), p = runif(1, 0.5, 0.9), background = colorPalette("random", 1), angle = runif(1, 0, 1000), size = 0.01, alpha = runif(1, 0.3, 1)),
+                  '25' = canvas_cobweb(colors = colorPalette("divergent", sample(1:6, size = 1)), background = colorPalette("random", 1), lines = sample(200:1000, size = 1), iterations = sample(20:100, size = 1)))
 
 saveCanvas(artwork, filename, width = ifelse(type == 19, yes = NA, no = 7), height = ifelse(type == 19, yes = NA, no = 7))

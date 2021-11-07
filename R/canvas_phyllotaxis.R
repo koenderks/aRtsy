@@ -35,6 +35,7 @@
 
 canvas_phyllotaxis <- function(colors, background = '#fafafa', iterations = 10000, 
                                angle = 137.5, size = 0.01, alpha = 1, p = 0.5) { 
+  .checkUserInput(background = background, iterations = iterations)
   x = numeric(iterations)
   y = numeric(iterations)
   for (i in 1:iterations) {

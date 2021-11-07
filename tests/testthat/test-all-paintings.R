@@ -147,3 +147,9 @@ test_that("canvas_phyllotaxis()", {
   artwork <- canvas_phyllotaxis(colors = "black")
   expect_equal(!is.null(artwork), TRUE)
 })
+
+test_that("canvas_cobweb()", {
+  set.seed(1)
+  artwork <- canvas_cobweb(colors = "black")
+  expect_equal(!is.null(artwork), TRUE)
+})

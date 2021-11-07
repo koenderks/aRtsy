@@ -4,6 +4,7 @@
 
 - Added `canvas_remacan()`. Thanks to @akident on Twitter for the suggestion.
 - Added `canvas_phyllotaxis()`.
+- Added `canvas_cobweb()`.
 
 # aRtsy 0.1.4
 
