@@ -4,7 +4,7 @@
 \alias{canvas_cobweb}
 \title{Draw Cobwebs}
 \usage{
-canvas_cobweb(colors, background = "#fafafa", lines = 100,
+canvas_cobweb(colors, background = "#fafafa", lines = 300,
               iterations = 20)
 }
 \arguments{
@@ -27,7 +27,7 @@ This function draws many Fibonacci spirals shifted by random noise from a normal
 set.seed(1)
 
 # Simple example
-canvas_cobweb(colors = colorPalette("tuscany1"))
+canvas_cobweb(colors = colorPalette("neon1"), background = "black")
 }
 
 }

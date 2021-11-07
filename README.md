@@ -120,8 +120,8 @@ canvas_ant(colors = colorPalette("house"))
 This function draws a lines in a structure that resemble cobwebs. The algorithm creates many [Fibonacci spirals](https://en.wikipedia.org/wiki/Golden_spiral) shifted by random noise from a normal distribution.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/cobwebs/2021-11-07.png' width='250' height='250'>
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/cobwebs/2021-11-06.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/cobwebs/2021-11-07.png' width='250' height='250'>
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/cobwebs/2021-11-05.png' width='250' height='250'>
 </p>
 
