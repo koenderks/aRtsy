@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • aRtsy</title>
+<title>Draw Cobwebs — canvas_cobweb • aRtsy</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,8 @@
 
 
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Draw Cobwebs — canvas_cobweb" />
+<meta property="og:description" content="This function draws many Fibonacci spirals shifted by random noise from a normal distribution." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -66,7 +67,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -118,95 +119,65 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1 data-toc-skip>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/koenderks/aRtsy/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+    <h1>Draw Cobwebs</h1>
+    <small class="dont-index">Source: <a href='https://github.com/koenderks/aRtsy/blob/master/R/canvas_cobweb.R'><code>R/canvas_cobweb.R</code></a></small>
+    <div class="hidden name"><code>canvas_cobweb.Rd</code></div>
     </div>
 
-    <div id="artsy-015" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.5">
-<a href="#artsy-015" class="anchor"></a>aRtsy 0.1.5<small> Unreleased </small>
-</h1>
-<p><strong>New features</strong></p>
-<ul>
-<li>Added <code>canvas_remacan()</code>. Thanks to <a href='https://github.com/akident'>@akident</a> on Twitter for the suggestion.</li>
-<li>Added <code><a href="../reference/canvas_phyllotaxis.html">canvas_phyllotaxis()</a></code>.</li>
-<li>Added <code><a href="../reference/canvas_cobweb.html">canvas_cobweb()</a></code>.</li>
-</ul>
-</div>
-    <div id="artsy-014" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.4">
-<a href="#artsy-014" class="anchor"></a>aRtsy 0.1.4<small> 2021-10-25 </small>
-</h1>
-<p><strong>New features</strong></p>
-<ul>
-<li>Added <code><a href="../reference/canvas_maze.html">canvas_maze()</a></code>.</li>
-</ul>
-<p><strong>Minor changes</strong></p>
-<ul>
-<li>The function <code><a href="../reference/colorPalette.html">colorPalette()</a></code> now randomizes the <code>hsl</code> scale in the <code>random</code> color palette instead of the <code>rgb</code> scale.</li>
-<li>The function <code><a href="../reference/colorPalette.html">colorPalette()</a></code> can now create a <code>complement</code> color palette consisting of complementing color (e.g., on the other side of the <code>hsl</code> color wheel).</li>
-<li>Removed the <code>resolution</code> parameter in <code><a href="../reference/canvas_flow.html">canvas_flow()</a></code> in favor of a <code>stepmax</code> parameter that determines the maximum proportion of the canvas covered by each iteration.</li>
-</ul>
-</div>
-    <div id="artsy-013" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.3">
-<a href="#artsy-013" class="anchor"></a>aRtsy 0.1.3<small> 2021-09-26 </small>
-</h1>
-<p><strong>Minor changes</strong></p>
-<ul>
-<li>Fixed the <code>call of overloaded ‘ceil(int)’ is ambiguous</code> error on Solaris indicated by CRAN.</li>
-</ul>
-</div>
-    <div id="artsy-012" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.2">
-<a href="#artsy-012" class="anchor"></a>aRtsy 0.1.2<small> 2021-09-25 </small>
-</h1>
-<p><strong>New features</strong></p>
-<ul>
-<li>Added new artwork <code><a href="../reference/canvas_flow.html">canvas_flow()</a></code>.</li>
-<li>Added new artwork <code><a href="../reference/canvas_watercolors.html">canvas_watercolors()</a></code>.</li>
-</ul>
-<p><strong>Major changes</strong></p>
-<ul>
-<li>Changed the <code>width</code> and <code>height</code> arguments in all functions to <code>resolution</code>. If you want to save a non-square artwork, it is best to set a custom <code>height</code> and <code>width</code> the the preferred export / save function.</li>
-</ul>
-<p><strong>Minor changes</strong></p>
-<ul>
-<li>Added <code>Rcpp::checkUserInterrupt()</code> to all <code>C++</code> functions.</li>
-</ul>
-</div>
-    <div id="artsy-011" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.1">
-<a href="#artsy-011" class="anchor"></a>aRtsy 0.1.1<small> 2021-09-04 </small>
-</h1>
-<p><strong>New features</strong></p>
-<ul>
-<li>Added six new artworks to the package: <code><a href="../reference/canvas_stripes.html">canvas_stripes()</a></code>, <code><a href="../reference/canvas_gemstone.html">canvas_gemstone()</a></code>, <code><a href="../reference/canvas_blacklight.html">canvas_blacklight()</a></code>, <code><a href="../reference/canvas_mosaic.html">canvas_mosaic()</a></code>, <code><a href="../reference/canvas_forest.html">canvas_forest()</a></code>, and <code><a href="../reference/canvas_nebula.html">canvas_nebula()</a></code>.</li>
-</ul>
-<p><strong>Minor changes</strong></p>
-<ul>
-<li>Artwork of the day is now created with <code>set.seed(Sys.Date())</code> instead of <code>set.seed(Sys.time())</code>.</li>
-<li>Removed unnecessary <code>ggpubr</code> from the Imports field in <code>DESCRIPTION</code> for CRAN submission.</li>
-<li>Fixed a memory leak in <code><a href="../reference/canvas_ant.html">canvas_ant()</a></code>.</li>
-</ul>
-</div>
-    <div id="artsy-010" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.0">
-<a href="#artsy-010" class="anchor"></a>aRtsy 0.1.0<small> 2021-08-16 </small>
-</h1>
-<p><strong>New features</strong></p>
-<ul>
-<li>First implementation of the aRtsy package.</li>
-</ul>
-</div>
-  </div>
+    <div class="ref-description">
+    <p>This function draws many Fibonacci spirals shifted by random noise from a normal distribution.</p>
+    </div>
 
+    <pre class="usage"><span class='fu'>canvas_cobweb</span><span class='op'>(</span><span class='va'>colors</span>, background <span class='op'>=</span> <span class='st'>"#fafafa"</span>, lines <span class='op'>=</span> <span class='fl'>100</span>,
+              iterations <span class='op'>=</span> <span class='fl'>20</span><span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>colors</th>
+      <td><p>a string or character vector specifying the color(s) used for the artwork.</p></td>
+    </tr>
+    <tr>
+      <th>background</th>
+      <td><p>a character specifying the color used for the background.</p></td>
+    </tr>
+    <tr>
+      <th>lines</th>
+      <td><p>the number of lines to draw.</p></td>
+    </tr>
+    <tr>
+      <th>iterations</th>
+      <td><p>the number of iterations of the algorithm.</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A <code>ggplot</code> object containing the artwork.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code>colorPalette</code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Koen Derks, <a href='mailto:koen-derks@hotmail.com'>koen-derks@hotmail.com</a></p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='r-in'><span class='co'># \donttest{</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># Simple example</span></span>
+<span class='r-in'><span class='fu'>canvas_cobweb</span><span class='op'>(</span>colors <span class='op'>=</span> <span class='fu'><a href='colorPalette.html'>colorPalette</a></span><span class='op'>(</span><span class='st'>"tuscany1"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-err co'><span class='r-pr'>#&gt;</span> <span class='error'>Error in canvas_cobweb(colors = colorPalette("tuscany1")):</span> object 'n' not found</span>
+<span class='r-in'><span class='co'># }</span></span>
+<span class='r-in'></span>
+</pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
-
 </div>
 
 
