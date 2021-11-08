@@ -63,6 +63,8 @@ canvas_ant <- function(colors, background = "#fafafa", iterations = 50000,
 .ant_directions <- function(n) {
   sequence <- rep(0:1, n) # Create a sequence of 0 (L) and 1 (R) positions
   pos <- expand.grid(sequence, sequence) # Create a matrix that holds all possible combinations of 0 (L) and 1 (R)
+  pos <- pos[which(pos[, 1] == pos[, 2]), ]
   pos[2:nrow(pos), ] <- pos[sample(2:nrow(pos)), ] # Mix the possible positions randomly
   pos <- pos[1:n, ] # Select only as many positions as there are colors given by the user
+  return(pos)
 }
