@@ -3,7 +3,7 @@
 #' @description This function draws many Fibonacci spirals shifted by random noise from a normal distribution.
 #'
 #' @usage canvas_cobweb(colors, background = "#fafafa", lines = 300,
-#'               iterations = 20)
+#'               iterations = 100)
 #'
 #' @param colors      a string or character vector specifying the color(s) used for the artwork.
 #' @param background  a character specifying the color used for the background.
@@ -29,7 +29,7 @@
 #' @export
 
 canvas_cobweb <- function(colors, background = "#fafafa", lines = 300,
-                          iterations = 20) {
+                          iterations = 100) {
   .checkUserInput(background = background, iterations = iterations)
   fibonacci <- .fibonacci(n = iterations)
   seqn <- 1:iterations
@@ -55,7 +55,7 @@ canvas_cobweb <- function(colors, background = "#fafafa", lines = 300,
   artwork <- ggplot2::ggplot() +
     ggplot2::geom_curve(
       data = canvas, mapping = ggplot2::aes(x = x, y = y, xend = xend, yend = yend, group = id),
-      color = canvas$col, curvature = stats::runif(1, 0, 0.8), ncp = 25, size = canvas$lwd, alpha = 0.05
+      color = canvas$col, curvature = stats::runif(1, 0, 0.8), ncp = 25, size = canvas$lwd, alpha = 0.01
     )
   artwork <- theme_canvas(artwork, background = background)
   return(artwork)

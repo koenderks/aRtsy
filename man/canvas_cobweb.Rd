@@ -5,7 +5,7 @@
 \title{Draw Cobwebs}
 \usage{
 canvas_cobweb(colors, background = "#fafafa", lines = 300,
-              iterations = 20)
+              iterations = 100)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
