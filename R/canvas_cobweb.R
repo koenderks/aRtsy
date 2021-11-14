@@ -34,7 +34,7 @@ canvas_cobweb <- function(colors, background = "#fafafa", lines = 300,
   fibonacci <- .fibonacci(n = iterations)
   seqn <- 1:iterations
   nrows <- length(seqn - 3) * lines
-  canvas <- data.frame(x = rep(NA, nrows), xend = rep(NA, nrows), y = rep(NA, nrows), yend = rep(NA, nrows), id = rep(NA, nrows), lwd = rep(NA, nrows), col = rep(NA, nrows))
+  canvas <- data.frame(x = rep(NA, nrows), xend = rep(NA, nrows), y = rep(NA, nrows), yend = rep(NA, nrows), z = rep(NA, nrows), lwd = rep(NA, nrows), col = rep(NA, nrows))
   for (i in 1:lines) {
     x1 <- ifelse(seqn %% 2 == 1, yes = fibonacci, no = 0)
     y1 <- ifelse(seqn %% 2 == 0, yes = fibonacci, no = 0)
@@ -46,15 +46,15 @@ canvas_cobweb <- function(colors, background = "#fafafa", lines = 300,
     })
     xend <- c(x[-1], x[1])
     yend <- c(y[-1], y[1])
-    subdata <- data.frame(x = x, xend = xend, y = y, yend = yend, id = i, lwd = runif(1, 0, 0.1), col = sample(colors, size = 1))
+    subdata <- data.frame(x = x, xend = xend, y = y, yend = yend, z = i, lwd = stats::runif(1, 0, 0.1), col = sample(colors, size = 1))
     subdata <- subdata[-which(subdata$x == subdata$xend | subdata$y == subdata$yend), ]
     ind <- which(is.na(canvas$x))[1]
-    canvas[ind:(ind + nrow(subdata)-1), ] <- subdata[complete.cases(subdata), ]
+    canvas[ind:(ind + nrow(subdata)-1), ] <- subdata[stats::complete.cases(subdata), ]
   }
-  canvas <- canvas[complete.cases(canvas), ]
+  canvas <- canvas[stats::complete.cases(canvas), ]
   artwork <- ggplot2::ggplot() +
     ggplot2::geom_curve(
-      data = canvas, mapping = ggplot2::aes(x = x, y = y, xend = xend, yend = yend, group = id),
+      data = canvas, mapping = ggplot2::aes(x = x, y = y, xend = xend, yend = yend, group = z),
       color = canvas$col, curvature = stats::runif(1, 0, 0.8), ncp = 25, size = canvas$lwd, alpha = 0.01
     ) +
     ggplot2::coord_cartesian(xlim = c(min(canvas$x) / 4, max(canvas$x) / 4),

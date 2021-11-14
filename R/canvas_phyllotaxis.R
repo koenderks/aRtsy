@@ -36,21 +36,9 @@
 canvas_phyllotaxis <- function(colors, background = '#fafafa', iterations = 10000, 
                                angle = 137.5, size = 0.01, alpha = 1, p = 0.5) { 
   .checkUserInput(background = background, iterations = iterations)
-  x = numeric(iterations)
-  y = numeric(iterations)
-  for (i in 1:iterations) {
-    skip <- sample(c(FALSE, TRUE), size = 1, prob = c(p, 1-p))
-    if (skip) {
-      next
-    }
-    theta = (angle%%360)* i
-    x[i] = sqrt(i) * cos(theta)
-    y[i] = sqrt(i) * sin(theta)
-  }
-  canvas <- data.frame(x = x, y = y)
-  canvas <- canvas[which(canvas$x != 0 & canvas$y != 0), ]
-  canvas$id <- 1:nrow(canvas)
-  artwork <- ggplot2::ggplot(data = canvas, mapping = ggplot2::aes(x = x, y = y, color = id)) +
+  canvas <- iterate_phyllotaxis(iterations, angle, p)
+  canvas$z <- 1:nrow(canvas)
+  artwork <- ggplot2::ggplot(data = canvas, mapping = ggplot2::aes(x = x, y = y, color = z)) +
     ggplot2::geom_point(size = size, alpha = alpha) +
     ggplot2::scale_color_gradientn(colors = colors)
   artwork <- theme_canvas(artwork, background = background)
