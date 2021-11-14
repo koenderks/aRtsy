@@ -57,6 +57,7 @@ saveCanvas(artwork, filename = "myArtwork.png")
 * [`canvas_ant()`](#langtons-ant)
 * [`canvas_cobweb()`](#cobwebs)
 * [`canvas_collatz()`](#collatz-conjecture)
+* [`canvas_chladni()`](#chladni-figures)
 * [`canvas_flow()`](#flow-fields)
 * [`canvas_maze()`](#mazes)
 * [`canvas_planet()`](#planets)
@@ -156,6 +157,24 @@ You can use the `canvas_collatz()` function to make your own artwork using this 
 set.seed(1)
 canvas_collatz(colors = colorPalette("tuscany3"))
 # see ?canvas_collatz for more input parameters of this algorithm
+```
+
+#### Chladni figures
+
+This function draws [Chladni](https://en.wikipedia.org/wiki/Ernst_Chladni) figures on the canvas. It works by generating one or multiple sine waves on a square matrix. You can provide the waves to be added yourself.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/chladnis/2021-11-12.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/chladnis/2021-11-13.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/chladnis/2021-11-14.png' width='250' height='250'>
+</p>
+
+You can use the `canvas_chladni()` function to make your own artwork using this algorithm.
+
+```r
+set.seed(1)
+canvas_chladni(colors = colorPalette("tuscany1"))
+# see ?canvas_chladni for more input parameters of this algorithm
 ```
 
 #### Flow fields

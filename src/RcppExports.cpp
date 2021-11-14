@@ -28,6 +28,19 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// iterate_chladni
+arma::mat iterate_chladni(arma::mat X, Rcpp::IntegerVector waves, double f);
+RcppExport SEXP _aRtsy_iterate_chladni(SEXP XSEXP, SEXP wavesSEXP, SEXP fSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type X(XSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type waves(wavesSEXP);
+    Rcpp::traits::input_parameter< double >::type f(fSEXP);
+    rcpp_result_gen = Rcpp::wrap(iterate_chladni(X, waves, f));
+    return rcpp_result_gen;
+END_RCPP
+}
 // draw_circlemap
 arma::mat draw_circlemap(arma::mat X, double left, double right, double bottom, double top, int iters);
 RcppExport SEXP _aRtsy_draw_circlemap(SEXP XSEXP, SEXP leftSEXP, SEXP rightSEXP, SEXP bottomSEXP, SEXP topSEXP, SEXP itersSEXP) {
@@ -226,6 +239,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_aRtsy_draw_ant", (DL_FUNC) &_aRtsy_draw_ant, 7},
+    {"_aRtsy_iterate_chladni", (DL_FUNC) &_aRtsy_iterate_chladni, 3},
     {"_aRtsy_draw_circlemap", (DL_FUNC) &_aRtsy_draw_circlemap, 6},
     {"_aRtsy_get_collatz_sequence", (DL_FUNC) &_aRtsy_get_collatz_sequence, 1},
     {"_aRtsy_draw_collatz", (DL_FUNC) &_aRtsy_draw_collatz, 4},

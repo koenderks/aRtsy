@@ -153,3 +153,9 @@ test_that("canvas_cobweb()", {
   artwork <- canvas_cobweb(colors = "black")
   expect_equal(!is.null(artwork), TRUE)
 })
+
+test_that("canvas_chladni()", {
+  set.seed(1)
+  artwork <- canvas_chladni(colors = "black")
+  expect_equal(!is.null(artwork), TRUE)
+})
