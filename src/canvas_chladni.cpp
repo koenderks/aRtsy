@@ -4,6 +4,7 @@
 #include <vector>
 #include <cstdlib>
 #include <iterator>
+#include <math.h>
 
 // [[Rcpp::depends(RcppArmadillo)]]
 
@@ -18,7 +19,7 @@ arma::mat iterate_chladni(arma::mat X,
     for (int i = 0; i < m; i++) {
       for (int j = 0; j < n; j++) {
         Rcpp::checkUserInterrupt();
-        X(i, j) = abs(X(i, j) + sin(waves[k] * f * i) * sin(waves[k] * f * j));
+        X(i, j) = fabs(X(i, j) + sin(waves[k] * f * i) * sin(waves[k] * f * j));
       }
     }
   }

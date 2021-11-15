@@ -4,6 +4,7 @@
 #include <vector>
 #include <cstdlib>
 #include <iterator>
+#include <math.h>
 
 // [[Rcpp::depends(RcppArmadillo)]]
 
@@ -17,8 +18,8 @@ Rcpp::DataFrame iterate_phyllotaxis(int iter,
     Rcpp::checkUserInterrupt();
     double s = R::runif(0, 1);
     if (s < p) {
-      x.push_back(sqrt(i) * cos(a * i));
-      y.push_back(sqrt(i) * sin(a * i));
+      x.push_back(sqrt( (double) i) * cos(a * i));
+      y.push_back(sqrt( (double) i) * sin(a * i));
     }
   }
   Rcpp::DataFrame X = Rcpp::DataFrame::create(Rcpp::Named("x") = x,
