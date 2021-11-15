@@ -14,7 +14,7 @@ Rcpp::DataFrame iterate_phyllotaxis(int iter,
                                     double p) {
   Rcpp::NumericVector x;
   Rcpp::NumericVector y;
-  for (int i = 1; i < (iter + 1); i++) {
+  for (int i = 1; i < iter + 1; i++) {
     Rcpp::checkUserInterrupt();
     double s = R::runif(0, 1);
     if (s < p) {

@@ -4,14 +4,19 @@
 \alias{canvas_function}
 \title{Draw Functions}
 \usage{
-canvas_function(color, background = "#fafafa", formula = NULL)
+canvas_function(colors, background = "#fafafa", by = 0.01,
+               polar = TRUE, formula = NULL)
 }
 \arguments{
-\item{color}{a string specifying the color used for the artwork.}
+\item{colors}{a string specifying the color used for the artwork.}
 
 \item{background}{a character specifying the color used for the background.}
 
-\item{formula}{optional, a named list with 'x''and 'y' as structured in the example. If \code{NULL} (default), chooses a function with random parameters.}
+\item{by}{a value specifying the step size between consecutive points.}
+
+\item{polar}{logical. Whether to draw the function with polar coordinates.}
+
+\item{formula}{optional, a named list with 'x' and 'y' as structured in the example. If \code{NULL} (default), chooses a function with random parameters.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
@@ -21,17 +26,17 @@ This function paints functions with random parameters on a canvas.
 }
 \examples{
 \donttest{
-set.seed(1)
+set.seed(10)
 
 # Simple example
-canvas_function(color = "navyblue")
+canvas_function(colors = colorPalette("tuscany1"))
 
 # Advanced example
 formula <- list(
   x = quote(x_i^2 - sin(y_i^2)),
   y = quote(y_i^3 - cos(x_i^2))
 )
-canvas_function(color = "firebrick", formula = formula)
+canvas_function(colors = "firebrick", formula = formula)
 }
 
 }

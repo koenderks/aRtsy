@@ -54,14 +54,14 @@ colorPalette <- function(name, n = NULL) {
       }
     }
   } else if (name == "divergent") {
-      palette <- character(n)
-      start <- stats::runif(1, 0, 260)
-      colSeq <- seq(from = 1, to = 360, length.out = n)
-      h <- (colSeq + start) %% 360
-      for (i in 1:length(palette)) {
-        palette[i] <- .hsl_to_rgb(h = h[i], stats::runif(1, .4, .7), stats::runif(1, .4, .7))
-      }
-    } else {
+    palette <- character(n)
+    start <- stats::runif(1, 0, 260)
+    colSeq <- seq(from = 1, to = 360, length.out = n)
+    h <- (colSeq + start) %% 360
+    for (i in 1:length(palette)) {
+      palette[i] <- .hsl_to_rgb(h = h[i], stats::runif(1, .4, .7), stats::runif(1, .4, .7))
+    }
+  } else {
     palette <- switch(name,
       "blackwhite" = c("black", "white"),
       "dark1" = c("#161616", "#346751", "#C84B31", "#ECDBBA"),

@@ -58,7 +58,7 @@ canvas_recaman <- function(colors, background = "#fafafa", iterations = 100, sta
     x <- x[-length(x)]
   }
   canvas <- data.frame(z = 1:length(x), x = x, xend = xend)
-  canvas$y <- x * sin(angle%%360)
+  canvas$y <- x * sin(angle %% 360)
   canvas$yend <- canvas$y[match(canvas$xend, canvas$x)]
   minx <- apply(canvas[, 2:3], 1, min, na.rm = TRUE)
   maxx <- apply(canvas[, 2:3], 1, max, na.rm = TRUE)
@@ -71,8 +71,9 @@ canvas_recaman <- function(colors, background = "#fafafa", iterations = 100, sta
       canvas[i, 2:5] <- c(maxx[i], minx[i], maxy[i], miny[i])
     }
   }
-  if (!closed && angle == 45)
+  if (!closed && angle == 45) {
     canvas <- canvas[-nrow(canvas), ]
+  }
   artwork <- ggplot2::ggplot() +
     ggplot2::geom_curve(
       mapping = ggplot2::aes(x = x, y = y, xend = xend, yend = yend, color = z),

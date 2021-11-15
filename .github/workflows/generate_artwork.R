@@ -14,7 +14,7 @@ type <- sample(1:26, size = 1)
 artwork <- switch(type,
                   '1' = canvas_turmite(colors = colorPalette('divergent', sample(6:10, size = 1)), background = "#050505", p = runif(1, 0.2, 0.5), resolution = 2000, noise = TRUE, iterations = 1e7),
                   '2' = canvas_strokes(colors = colorPalette('divergent', sample(c(5:15, 50), size = 1)), neighbors = sample(1:4, size = 1), p = runif(1, 0.0001, 0.01), iterations = sample(1:3, size = 1), resolution = 1500, side = sample(c(TRUE, FALSE), size = 1)),
-                  '3' = canvas_function(color = sample(c("black", colorPalette('random', 1)), size = 1), background = sample(c("#fafafa", "#1a3657", "#343434", "#cc7722", "#a9d2c3", "#fc7c7c"), size = 1)),
+                  '3' = canvas_function(color = colorPalette('divergent', sample(1:10, size = 1)), background = sample(c("#fafafa", "#1a3657", "#343434", "#cc7722", "#a9d2c3", "#fc7c7c"), size = 1)),
                   '4' = canvas_ant(colors = colorPalette('divergent', sample(6:20, size = 1)), background = sample(c("#fafafa", "#cc7722", "#a9d2c3", "#fc7c7c", colorPalette('random', 1)), size = 1), resolution = 1000, iterations = 1e7),
                   '5' = canvas_squares(colors = colorPalette('divergent', sample(3:10, size = 1)), background = '#000000', cuts = sample(10:200, size = 1), noise = TRUE),
                   '6' = canvas_planet(colors = colorPalette('divergent', 3), iterations = 30, starprob = runif(1, 0.001, 0.1)),

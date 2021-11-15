@@ -49,7 +49,7 @@ canvas_cobweb <- function(colors, background = "#fafafa", lines = 300,
     subdata <- data.frame(x = x, xend = xend, y = y, yend = yend, z = i, lwd = stats::runif(1, 0, 0.1), col = sample(colors, size = 1))
     subdata <- subdata[-which(subdata$x == subdata$xend | subdata$y == subdata$yend), ]
     ind <- which(is.na(canvas$x))[1]
-    canvas[ind:(ind + nrow(subdata)-1), ] <- subdata[stats::complete.cases(subdata), ]
+    canvas[ind:(ind + nrow(subdata) - 1), ] <- subdata[stats::complete.cases(subdata), ]
   }
   canvas <- canvas[stats::complete.cases(canvas), ]
   artwork <- ggplot2::ggplot() +
@@ -57,8 +57,10 @@ canvas_cobweb <- function(colors, background = "#fafafa", lines = 300,
       data = canvas, mapping = ggplot2::aes(x = x, y = y, xend = xend, yend = yend, group = z),
       color = canvas$col, curvature = stats::runif(1, 0, 0.8), ncp = 25, size = canvas$lwd, alpha = 0.01
     ) +
-    ggplot2::coord_cartesian(xlim = c(min(canvas$x) / 4, max(canvas$x) / 4),
-                             ylim = c(min(canvas$y) / 4, max(canvas$y) / 4))
+    ggplot2::coord_cartesian(
+      xlim = c(min(canvas$x) / 4, max(canvas$x) / 4),
+      ylim = c(min(canvas$y) / 4, max(canvas$y) / 4)
+    )
   artwork <- theme_canvas(artwork, background = background)
   return(artwork)
 }

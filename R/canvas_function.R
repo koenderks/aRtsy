@@ -2,11 +2,14 @@
 #'
 #' @description This function paints functions with random parameters on a canvas.
 #'
-#' @usage canvas_function(color, background = "#fafafa", formula = NULL)
+#' @usage canvas_function(colors, background = "#fafafa", by = 0.01,
+#'                polar = TRUE, formula = NULL)
 #'
-#' @param color       a string specifying the color used for the artwork.
+#' @param colors      a string specifying the color used for the artwork.
 #' @param background  a character specifying the color used for the background.
-#' @param formula     optional, a named list with 'x''and 'y' as structured in the example. If \code{NULL} (default), chooses a function with random parameters.
+#' @param by          a value specifying the step size between consecutive points.
+#' @param polar       logical. Whether to draw the function with polar coordinates.
+#' @param formula     optional, a named list with 'x' and 'y' as structured in the example. If \code{NULL} (default), chooses a function with random parameters.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
@@ -20,28 +23,26 @@
 #'
 #' @examples
 #' \donttest{
-#' set.seed(1)
+#' set.seed(10)
 #'
 #' # Simple example
-#' canvas_function(color = "navyblue")
+#' canvas_function(colors = colorPalette("tuscany1"))
 #'
 #' # Advanced example
 #' formula <- list(
 #'   x = quote(x_i^2 - sin(y_i^2)),
 #'   y = quote(y_i^3 - cos(x_i^2))
 #' )
-#' canvas_function(color = "firebrick", formula = formula)
+#' canvas_function(colors = "firebrick", formula = formula)
 #' }
 #'
 #' @keywords artwork canvas
 #'
 #' @export
 
-canvas_function <- function(color, background = "#fafafa", formula = NULL) {
+canvas_function <- function(colors, background = "#fafafa", by = 0.01,
+                            polar = TRUE, formula = NULL) {
   .checkUserInput(background = background)
-  if (length(color) > 1) {
-    stop("Can only take one color value.")
-  }
   if (is.null(formula)) {
     painting_formulas <- list()
     painting_formulas[[1]] <- list(
@@ -58,16 +59,23 @@ canvas_function <- function(color, background = "#fafafa", formula = NULL) {
     )
     painting_formula <- painting_formulas[[sample(1:length(painting_formulas), 1)]]
   } else {
-    if (length(formula) != 2) {
-      stop("'formula' must be a list containing 'x' and 'y'")
+    if (!is.list(formula) || !("x" %in% names(formula)) || !("y" %in% names(formula))) {
+      stop("'formula' must be a named list containing 'x' and 'y'")
     }
-    painting_formula <- formula
+    painting_formula <- list(x = formula[["x"]], y = formula[["y"]])
   }
-  full_canvas <- expand.grid(x_i = seq(from = -pi, to = pi, by = 0.01), y_i = seq(from = -pi, to = pi, by = 0.01)) %>% dplyr::mutate(!!!painting_formula)
-  artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y)) +
-    ggplot2::geom_point(alpha = 0.1, size = 0, shape = 20, color = color) +
-    ggplot2::coord_fixed() +
-    ggplot2::coord_polar()
+  grid <- expand.grid(x_i = seq(from = -pi, to = pi, by = by), y_i = seq(from = -pi, to = pi, by = by))
+  x_i <- grid$x_i
+  y_i <- grid$y_i
+  full_canvas <- data.frame(x = eval(painting_formula$x), y = eval(painting_formula$y))
+  z <- y_i[stats::complete.cases(full_canvas)]
+  full_canvas <- full_canvas[stats::complete.cases(full_canvas), ]
+  artwork <- ggplot2::ggplot(data = full_canvas, ggplot2::aes(x = x, y = y, color = z)) +
+    ggplot2::geom_point(alpha = 0.1, size = 0, shape = 20) +
+    ggplot2::scale_color_gradientn(colors = colors)
+  if (polar) {
+    artwork <- artwork + ggplot2::coord_polar()
+  }
   artwork <- theme_canvas(artwork, background)
   return(artwork)
 }

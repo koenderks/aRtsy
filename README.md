@@ -379,7 +379,7 @@ You can use the `canvas_function()` function to make your own artwork using this
 
 ```r
 set.seed(1)
-canvas_function(color = "navyblue")
+canvas_function(colors = colorPalette("tuscany1"))
 # see ?canvas_function for more input parameters of this algorithm
 ```
 
