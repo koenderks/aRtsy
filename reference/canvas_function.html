@@ -128,22 +128,27 @@
     <p>This function paints functions with random parameters on a canvas.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>canvas_function</span><span class='op'>(</span><span class='va'>color</span>, background <span class='op'>=</span> <span class='st'>"#fafafa"</span>, formula <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>canvas_function</span><span class='op'>(</span><span class='va'>color</span>, background <span class='op'>=</span> <span class='st'>"#fafafa"</span>, by <span class='op'>=</span> <span class='fl'>0.01</span>,
+               polar <span class='op'>=</span> <span class='cn'>TRUE</span>, formula <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>color</th>
-      <td><p>a string specifying the color used for the artwork.</p></td>
-    </tr>
-    <tr>
       <th>background</th>
       <td><p>a character specifying the color used for the background.</p></td>
     </tr>
     <tr>
+      <th>by</th>
+      <td><p>a value specifying the step size between consecutive points.</p></td>
+    </tr>
+    <tr>
       <th>formula</th>
-      <td><p>optional, a named list with 'x''and 'y' as structured in the example. If <code>NULL</code> (default), chooses a function with random parameters.</p></td>
+      <td><p>optional, a named list with 'x' and 'y' as structured in the example. If <code>NULL</code> (default), chooses a function with random parameters.</p></td>
+    </tr>
+    <tr>
+      <th>color</th>
+      <td><p>a string specifying the color used for the artwork.</p></td>
     </tr>
     </table>
 
@@ -166,8 +171,6 @@
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># Simple example</span></span>
 <span class='r-in'><span class='fu'>canvas_function</span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"navyblue"</span><span class='op'>)</span></span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> Coordinate system already present. Adding new coordinate system, which will replace the existing one.</span>
-<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>Removed 198135 rows containing missing values (geom_point).</span>
 <span class='r-plt img'><img src='canvas_function-1.png' alt='' width='700' height='433' /></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># Advanced example</span></span>
@@ -176,7 +179,6 @@
 <span class='r-in'>  y <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>quote</a></span><span class='op'>(</span><span class='va'>y_i</span><span class='op'>^</span><span class='fl'>3</span> <span class='op'>-</span> <span class='fu'><a href='https://rdrr.io/r/base/Trig.html'>cos</a></span><span class='op'>(</span><span class='va'>x_i</span><span class='op'>^</span><span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span></span>
 <span class='r-in'><span class='op'>)</span></span>
 <span class='r-in'><span class='fu'>canvas_function</span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"firebrick"</span>, formula <span class='op'>=</span> <span class='va'>formula</span><span class='op'>)</span></span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> Coordinate system already present. Adding new coordinate system, which will replace the existing one.</span>
 <span class='r-plt img'><img src='canvas_function-2.png' alt='' width='700' height='433' /></span>
 <span class='r-in'><span class='co'># }</span></span>
 <span class='r-in'></span>
