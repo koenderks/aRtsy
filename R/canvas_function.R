@@ -54,8 +54,8 @@ canvas_function <- function(colors, background = "#fafafa", by = 0.01,
       y = quote(runif(1, -1, 10) * y_i^sample(c(0.5, 1:6), 1) - cos(x_i^sample(c(0.5, 1:6), 1)) * y_i^sample(c(0.5, 1:6), 1))
     )
     painting_formulas[[3]] <- list(
-      x = quote(runif(1, -1, 1) * x_i^2 - sin(y_i^2)),
-      y = quote(runif(1, -1, 1) * y_i^3 - cos(x_i^2))
+      x = quote(runif(1, -5, 5) * x_i^sample(1:5, 1) - sin(y_i^sample(1:5, 1))),
+      y = quote(runif(1, -5, 5) * y_i^sample(1:5, 1) - cos(x_i^sample(1:5, 1)))
     )
     painting_formula <- painting_formulas[[sample(1:length(painting_formulas), 1)]]
   } else {
