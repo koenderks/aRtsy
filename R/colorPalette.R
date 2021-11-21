@@ -4,7 +4,7 @@
 #'
 #' @usage colorPalette(name, n = NULL)
 #'
-#' @param name   name of the color palette. Can be \code{random} for random colors, \code{complement} for complementing colors, or \code{divergent} for equally spaced colors, but can also be the name of a pre-implemented palette. See the \code{details} section for a list of pre-implemented palettes.
+#' @param name   name of the color palette. Can be \code{random} for random colors, \code{complement} for complementing colors, \code{divergent} for equally spaced colors, or \code{random-palette} for a random palette, but can also be the name of a pre-implemented palette. See the \code{details} section for a list of pre-implemented palettes.
 #' @param n      the number of colors to select from the palette. Required if \code{name = 'random'}, \code{name = 'complement'}, or \code{name = 'divergent'}. Otherwise, if \code{NULL}, automatically selects all colors from the chosen palette.
 #'
 #' @details The following color palettes are implemented:
@@ -62,6 +62,13 @@ colorPalette <- function(name, n = NULL) {
       palette[i] <- .hsl_to_rgb(h = h[i], stats::runif(1, .4, .7), stats::runif(1, .4, .7))
     }
   } else {
+    if (name == "random-palette") {
+      name <- sample(c(
+        "blackwhite", "dark1", "dark2", "dark3", "flora", "house", "jasp", "jfa", "jungle",
+        "kpd", "lava", "nature", "neon1", "neon2", "retro1", "retro2", "retro3", "sooph", "tuscany1",
+        "tuscany2", "tuscany3"
+      ), size = 1)
+    }
     palette <- switch(name,
       "blackwhite" = c("black", "white"),
       "dark1" = c("#161616", "#346751", "#C84B31", "#ECDBBA"),

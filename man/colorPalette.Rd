@@ -7,7 +7,7 @@
 colorPalette(name, n = NULL)
 }
 \arguments{
-\item{name}{name of the color palette. Can be \code{random} for random colors, \code{complement} for complementing colors, or \code{divergent} for equally spaced colors, but can also be the name of a pre-implemented palette. See the \code{details} section for a list of pre-implemented palettes.}
+\item{name}{name of the color palette. Can be \code{random} for random colors, \code{complement} for complementing colors, \code{divergent} for equally spaced colors, or \code{random-palette} for a random palette, but can also be the name of a pre-implemented palette. See the \code{details} section for a list of pre-implemented palettes.}
 
 \item{n}{the number of colors to select from the palette. Required if \code{name = 'random'}, \code{name = 'complement'}, or \code{name = 'divergent'}. Otherwise, if \code{NULL}, automatically selects all colors from the chosen palette.}
 }

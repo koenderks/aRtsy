@@ -589,7 +589,7 @@ canvas_mandelbrot(colors = colorPalette("tuscany1"))
 
 ## Color palettes
 
-The function `colorPalette()` can be used to generate a random color palette, or pick a pre-implemented color palette. Currently, the color palettes displayed below are implemented in `aRtsy`. Feel free to suggest or add a new palette by making an [issue](https://github.com/koenderks/aRtsy/issues) on GitHub!
+The function `colorPalette()` can be used to generate a (semi-)random color palette, or pick a pre-implemented color palette. Currently, the color palettes displayed below are implemented in `aRtsy`. Feel free to suggest or add a new palette by making an [issue](https://github.com/koenderks/aRtsy/issues) on GitHub!
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/man/figures/colors.svg'>
