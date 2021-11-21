@@ -64,9 +64,9 @@ colorPalette <- function(name, n = NULL) {
   } else {
     if (name == "random-palette") {
       name <- sample(c(
-        "blackwhite", "dark1", "dark2", "dark3", "flora", "house", "jasp", "jfa", "jungle",
-        "kpd", "lava", "nature", "neon1", "neon2", "retro1", "retro2", "retro3", "sooph", "tuscany1",
-        "tuscany2", "tuscany3"
+        "blackwhite", "dark1", "dark2", "dark3", "flora", "gogh", "house", "jasp", "jfa", "jungle",
+        "klimt", "kpd", "lava", "nature", "neon1", "neon2", "origami", "retro1", "retro2", "retro3", "sooph",
+        "tuscany1", "tuscany2", "tuscany3"
       ), size = 1)
     }
     palette <- switch(name,
@@ -75,15 +75,18 @@ colorPalette <- function(name, n = NULL) {
       "dark2" = c("#1B262C", "#0F4C75", "#3282B8", "#BBE1FA"),
       "dark3" = c("#222831", "#393E46", "#00ADB5", "#EEEEEE"),
       "flora" = c("#000000", "#f2f2eb", "#ccb77c", "#523402"),
+      "gogh" = c("#8699b5", "#161918", "#9d8018", "#232d8a", "#b4ad5a", "#c2ccd5"),
       "house" = c("#191919", "white", "#960606", "#cca222", "#036440"),
       "jasp" = c("#14a1e3", "#ffffff", "#f7971c", "#8cc63e", "#000000"),
       "jfa" = c("#2a94d1", "#e89643", "#233e4a"),
       "jungle" = c("#4e6349", "#614128", "#171812", "#698144", "#917861"),
+      "klimt" = c("#847049", "#ba9d3e", "#29241f", "#a787b0", "#cd5627", "#7ea36e"),
       "kpd" = c("#c42f32", "#315b99", "#354741"),
       "lava" = c("#f59907", "#a42300", "#482a22", "#050000", "#6b0800"),
       "nature" = c("forestgreen", "dodgerblue", "brown", "white", "gray"),
       "neon1" = c("#F7FD04", "#F9B208", "#F98404", "#FC5404"),
       "neon2" = c("#F5F7B2", "#1CC5DC", "#890596", "#CF0000"),
+      "origami" = c("#01364f", "#84231e", "#247c86", "#e8674d", "#dfdbbe", "#fdf4b4"),
       "retro1" = c("#0A1931", "#185ADB", "#FFC947", "#EFEFEF"),
       "retro2" = c("#DDDDDD", "#222831", "#30475E", "#F05454"),
       "retro3" = c("#111D5E", "#C70039", "#F37121", "#C0E218"),
