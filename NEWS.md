@@ -2,7 +2,7 @@
 
 **New features**
 
-- Added `canvas_remacan()`. Thanks to @akident on Twitter for the suggestion.
+- Added `canvas_recaman()`. Thanks to @akident on Twitter for the suggestion.
 - Added `canvas_phyllotaxis()`.
 - Added `canvas_cobweb()`.
 - Added `canvas_chladni()`.
