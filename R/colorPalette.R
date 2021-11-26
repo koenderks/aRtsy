@@ -66,7 +66,7 @@ colorPalette <- function(name, n = NULL) {
       name <- sample(c(
         "blackwhite", "dark1", "dark2", "dark3", "flora", "gogh", "house", "jasp", "jfa", "jungle",
         "klimt", "kpd", "lava", "nature", "neon1", "neon2", "origami", "retro1", "retro2", "retro3", "sooph",
-        "tuscany1", "tuscany2", "tuscany3"
+        "tuscany1", "tuscany2", "tuscany3", "vrolik1", "vrolik2", "vrolik3"
       ), size = 1)
     }
     palette <- switch(name,
@@ -93,7 +93,10 @@ colorPalette <- function(name, n = NULL) {
       "sooph" = c("#d6c398", "#cbabdb", "#139485", "#9e1710", "#414952"),
       "tuscany1" = c("firebrick", "goldenrod", "forestgreen", "navyblue"),
       "tuscany2" = c("#500342", "#023b59", "#f9efdd", "#deaa70", "#711308"),
-      "tuscany3" = c("#b08653", "#f5daba", "#c9673c", "#f2ab4e", "#a1863b")
+      "tuscany3" = c("#b08653", "#f5daba", "#c9673c", "#f2ab4e", "#a1863b"),
+      "vrolik1" = c("#4ca787", "#183867", "#ea8857", "#442a37", "#ffb747"),
+      "vrolik2" = c("#d8c888", "#f4edf3", "#fa428c", "#1900b4", "#ecd07d"),
+      "vrolik3" = c("#774f38", "#e08e79", "#f1d4af", "#ece5ce", "#c5e0dc")
     )
     if (is.null(palette)) {
       stop(paste0("'", name, "' is not an existing palette"))

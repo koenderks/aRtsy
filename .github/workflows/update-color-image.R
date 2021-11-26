@@ -25,7 +25,10 @@ palettes <- c(
   "sooph",
   "tuscany1",
   "tuscany2",
-  "tuscany3"
+  "tuscany3",
+  "vrolik1",
+  "vrolik2",
+  "vrolik3"
 )
 
 ncol <- 3
@@ -40,7 +43,7 @@ for (i in 1:length(palettes)) {
     ggplot2::geom_bar(fill = d$col) +
     ggplot2::xlab(palettes[i]) +
     ggplot2::theme(
-      axis.title.x = ggplot2::element_text(size = 12),
+      axis.title.x = ggplot2::element_text(size = 9),
       axis.title.y = ggplot2::element_blank(),
       axis.text = ggplot2::element_blank(),
       axis.ticks = ggplot2::element_blank(),
