@@ -1,3 +1,9 @@
+# aRtsy 0.1.6
+
+**New features**
+
+- Added more color palettes to the `colorPalette()` function.
+
 # aRtsy 0.1.5
 
 **New features**
