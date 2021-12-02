@@ -26,6 +26,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -38,18 +40,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">aRtsy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.6</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -59,7 +55,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/koenderks/aRtsy/">
+  <a href="https://github.com/koenderks/aRtsy/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -78,41 +74,41 @@
   <div class="contents col-md-9">
 
 
-<div id="artsy-generative-art-with-r-and-ggplot2" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#artsy-generative-art-with-r-and-ggplot2" class="anchor"></a>aRtsy: Generative Art with <code>R</code> and <code>ggplot2</code>
+<div class="section level1">
+<div class="page-header"><h1 id="artsy-generative-art-with-r-and-ggplot2">aRtsy: Generative Art with <code>R</code> and <code>ggplot2</code>
+<a class="anchor" aria-label="anchor" href="#artsy-generative-art-with-r-and-ggplot2"></a>
 </h1></div>
-<p><img src="https://github.com/koenderks/aRtsy/raw/development/man/figures/logo.png" width="149" height="173" alt="logo" align="right" margin-left="20" margin-right="20"></p>
+<p><img src="https://github.com/koenderks/aRtsy/raw/development/reference/figures/logo.png" width="149" height="173" alt="logo" align="right" margin-left="20" margin-right="20"></p>
 <p><em>“If you laugh at a joke, what difference does it make if subsequently you are told that the joke was created by an algorithm?” - Marcus du Sautoy, The Creative Code</em></p>
 <p><code>aRtsy</code> aims to make generative art accessible to the general public in a straightforward and standardized manner. The package provides algorithms for creating artworks that incorporate some form of randomness and are dependent on the set <code>seed</code>. Each algorithm is implemented in a separate function with its own set of parameters that can be tweaked.</p>
 <p>Good luck hunting for some good <code>seed</code>’s!</p>
-<div id="artwork-of-the-day" class="section level2">
-<h2 class="hasAnchor">
-<a href="#artwork-of-the-day" class="anchor"></a>Artwork of the day</h2>
-<p>Every 24 hours this repository randomly generates and tweets an artwork from the <code>aRtsy</code> library. The full collection of daily artworks is available on the <a href="https://twitter.com/aRtsy_package">aRtsy twitter feed</a>. This is today’s artwork:</p>
+<div class="section level2">
+<h2 id="artwork-of-the-day">Artwork of the day<a class="anchor" aria-label="anchor" href="#artwork-of-the-day"></a>
+</h2>
+<p>Every 24 hours this repository randomly generates and tweets an artwork from the <code>aRtsy</code> library. The full collection of daily artworks is available on the <a href="https://twitter.com/aRtsy_package" class="external-link">aRtsy twitter feed</a>. This is today’s artwork:</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/daily.png" width="400" height="400"></p>
 </div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p>The most recently released version of <code>aRtsy</code> can be downloaded from <a href="https://cran.r-project.org/package=aRtsy">CRAN</a> by running the following command in R:</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>The most recently released version of <code>aRtsy</code> can be downloaded from <a href="https://cran.r-project.org/package=aRtsy" class="external-link">CRAN</a> by running the following command in R:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"aRtsy"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"aRtsy"</span><span class="op">)</span></code></pre></div>
 <p>Alternatively, you can download the development version from GitHub using:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"koenderks/aRtsy"</span><span class="op">)</span></code></pre></div>
 <p>After installation, the <code>aRtsy</code> package can be loaded with:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://koenderks.github.io/aRtsy/">aRtsy</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://koenderks.github.io/aRtsy/" class="external-link">aRtsy</a></span><span class="op">)</span></code></pre></div>
 <p><strong>Note:</strong> Render times in RStudio can be quite long for some artworks. It is therefore recommended that you save the artwork to a file (e.g., <code>.png</code> or <code>.jpg</code>) before viewing it. You can save the artwork in an appropriate size and quality using the <code><a href="reference/saveCanvas.html">saveCanvas()</a></code> function.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">artwork</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/canvas_strokes.html">canvas_strokes</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"black"</span>, <span class="st">"white"</span><span class="op">)</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">artwork</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/canvas_strokes.html">canvas_strokes</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"black"</span>, <span class="st">"white"</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="reference/saveCanvas.html">saveCanvas</a></span><span class="op">(</span><span class="va">artwork</span>, filename <span class="op">=</span> <span class="st">"myArtwork.png"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="available-artworks" class="section level2">
-<h2 class="hasAnchor">
-<a href="#available-artworks" class="anchor"></a>Available artworks</h2>
+<div class="section level2">
+<h2 id="available-artworks">Available artworks<a class="anchor" aria-label="anchor" href="#available-artworks"></a>
+</h2>
 <p><em>The Iterative collection</em></p>
 <ul>
 <li><a href="#langtons-ant"><code>canvas_ant()</code></a></li>
@@ -151,15 +147,15 @@
 <li><a href="#circle-maps"><code>canvas_circlemap()</code></a></li>
 <li><a href="#the-mandelbrot-set"><code>canvas_mandelbrot()</code></a></li>
 </ul>
-<div id="the-iterative-collection" class="section level3">
-<h3 class="hasAnchor">
-<a href="#the-iterative-collection" class="anchor"></a>The Iterative collection</h3>
+<div class="section level3">
+<h3 id="the-iterative-collection">The Iterative collection<a class="anchor" aria-label="anchor" href="#the-iterative-collection"></a>
+</h3>
 <p>The Iterative collection implements algorithms whose state depend on the previous state. These algorithms mostly use a grid based canvas to draw on. On this grid, each point represents a pixel of the final image. By assigning a color to these points according to certain rules, one can create the images in this collection.</p>
-<div id="langtons-ant" class="section level4">
-<h4 class="hasAnchor">
-<a href="#langtons-ant" class="anchor"></a>Langton’s ant</h4>
-<p>According to <a href="https://en.wikipedia.org/wiki/Langtons_ant">Wikipedia</a>, Langton’s ant is a turmite with a very specific set of rules. In particular, after choosing a starting position the algorithm involves repeating the following three rules:</p>
-<ol>
+<div class="section level4">
+<h4 id="langtons-ant">Langton’s ant<a class="anchor" aria-label="anchor" href="#langtons-ant"></a>
+</h4>
+<p>According to <a href="https://en.wikipedia.org/wiki/Langtons_ant" class="external-link">Wikipedia</a>, Langton’s ant is a turmite with a very specific set of rules. In particular, after choosing a starting position the algorithm involves repeating the following three rules:</p>
+<ol style="list-style-type: decimal">
 <li>On a non-colored block: turn 90 degrees clockwise, un-color the block, move forward one block,</li>
 <li>On a colored block: turn 90 degrees counter-clockwise, color the block, move forward one block,</li>
 <li>If a certain number of iterations has passed, choose a different color which corresponds to a different combination of these rules.</li>
@@ -168,27 +164,27 @@
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-03.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-02.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/ants/2021-03-01.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_ant.html">canvas_ant()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_ant.html">canvas_ant</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"house"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_ant for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="cobwebs" class="section level4">
-<h4 class="hasAnchor">
-<a href="#cobwebs" class="anchor"></a>Cobwebs</h4>
-<p>This function draws a lines in a structure that resemble cobwebs. The algorithm creates many <a href="https://en.wikipedia.org/wiki/Golden_spiral">Fibonacci spirals</a> shifted by random noise from a normal distribution.</p>
+<div class="section level4">
+<h4 id="cobwebs">Cobwebs<a class="anchor" aria-label="anchor" href="#cobwebs"></a>
+</h4>
+<p>This function draws a lines in a structure that resemble cobwebs. The algorithm creates many <a href="https://en.wikipedia.org/wiki/Golden_spiral" class="external-link">Fibonacci spirals</a> shifted by random noise from a normal distribution.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/cobwebs/2021-11-05.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/cobwebs/2021-11-07.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/cobwebs/2021-11-06.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_cobweb.html">canvas_cobweb()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_cobweb.html">canvas_cobweb</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"tuscany1"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_cobweb for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="collatz-conjecture" class="section level4">
-<h4 class="hasAnchor">
-<a href="#collatz-conjecture" class="anchor"></a>Collatz conjecture</h4>
+<div class="section level4">
+<h4 id="collatz-conjecture">Collatz conjecture<a class="anchor" aria-label="anchor" href="#collatz-conjecture"></a>
+</h4>
 <p>The Collatz conjecture is also known as the <code>3x+1</code> equation. The algorithm draws lines according to a simple rule set:</p>
-<ol>
+<ol style="list-style-type: decimal">
 <li>Take a random positive number.</li>
 <li>If the number is even, divide it by 2.</li>
 <li>If the number is odd, multiply the number by 3 and add 1.</li>
@@ -199,111 +195,111 @@
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-09.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-08.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/collatzs/2021-08-10.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_collatz.html">canvas_collatz()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_collatz.html">canvas_collatz</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"tuscany3"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_collatz for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="chladni-figures" class="section level4">
-<h4 class="hasAnchor">
-<a href="#chladni-figures" class="anchor"></a>Chladni figures</h4>
-<p>This function draws <a href="https://en.wikipedia.org/wiki/Ernst_Chladni">Chladni</a> figures on the canvas. It works by generating one or multiple sine waves on a square matrix. You can provide the waves to be added yourself.</p>
+<div class="section level4">
+<h4 id="chladni-figures">Chladni figures<a class="anchor" aria-label="anchor" href="#chladni-figures"></a>
+</h4>
+<p>This function draws <a href="https://en.wikipedia.org/wiki/Ernst_Chladni" class="external-link">Chladni</a> figures on the canvas. It works by generating one or multiple sine waves on a square matrix. You can provide the waves to be added yourself.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/chladnis/2021-11-12.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/chladnis/2021-11-13.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/chladnis/2021-11-14.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_chladni.html">canvas_chladni()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_chladni.html">canvas_chladni</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"tuscany1"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_chladni for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="flow-fields" class="section level4">
-<h4 class="hasAnchor">
-<a href="#flow-fields" class="anchor"></a>Flow fields</h4>
-<p>This artwork implements a version of the algorithm described in the blog post <a href="https://tylerxhobbs.com/essays/2020/flow-fields">Flow Fields</a> by Tyler Hobbs. It works by creating a grid of angles and determining how certain points will flow through this field. The angles in the field can be set manually or according to the predictions of a supervised learning method trained on randomly generated data.</p>
+<div class="section level4">
+<h4 id="flow-fields">Flow fields<a class="anchor" aria-label="anchor" href="#flow-fields"></a>
+</h4>
+<p>This artwork implements a version of the algorithm described in the blog post <a href="https://tylerxhobbs.com/essays/2020/flow-fields" class="external-link">Flow Fields</a> by Tyler Hobbs. It works by creating a grid of angles and determining how certain points will flow through this field. The angles in the field can be set manually or according to the predictions of a supervised learning method trained on randomly generated data.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-24.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-23.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/flows/2021-09-22.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_flow.html">canvas_flow()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_flow.html">canvas_flow</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"dark2"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_flow for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="mazes" class="section level4">
-<h4 class="hasAnchor">
-<a href="#mazes" class="anchor"></a>Mazes</h4>
-<p>This artwork creates mazes. The mazes are created using a random walk algorithm (described in the <a href="https://github.com/matfmc/mazegenerator">mazegenerator</a> repository). The mazes can also be displayed with polar coordinates, creating some pretty cool effects.</p>
+<div class="section level4">
+<h4 id="mazes">Mazes<a class="anchor" aria-label="anchor" href="#mazes"></a>
+</h4>
+<p>This artwork creates mazes. The mazes are created using a random walk algorithm (described in the <a href="https://github.com/matfmc/mazegenerator" class="external-link">mazegenerator</a> repository). The mazes can also be displayed with polar coordinates, creating some pretty cool effects.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/mazes/2021-10-03.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/mazes/2021-10-02.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/mazes/2021-10-04.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_maze.html">canvas_maze()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_maze.html">canvas_maze</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"#fafafa"</span><span class="op">)</span>
 <span class="co"># see ?canvas_maze for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="planets" class="section level4">
-<h4 class="hasAnchor">
-<a href="#planets" class="anchor"></a>Planets</h4>
-<p>We all love space, and this type of artwork puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (described in the blog post <a href="https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/">Neighborhoods: Experimenting with Cyclic Cellular Automata</a> by Antonio Sánchez Chinchón) to fill in their surfaces. The color and placement of the planets can be set manually.</p>
+<div class="section level4">
+<h4 id="planets">Planets<a class="anchor" aria-label="anchor" href="#planets"></a>
+</h4>
+<p>We all love space, and this type of artwork puts you right between the planets. The algorithm creates one or multiple planets in space and uses a cellular automata (described in the blog post <a href="https://fronkonstin.com/2021/01/02/neighborhoods-experimenting-with-cyclic-cellular-automata/" class="external-link">Neighborhoods: Experimenting with Cyclic Cellular Automata</a> by Antonio Sánchez Chinchón) to fill in their surfaces. The color and placement of the planets can be set manually.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-26.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-27.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/planets/2021-02-28.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_planet.html">canvas_planet()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_planet.html">canvas_planet</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"retro3"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_planet for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="stripes" class="section level4">
-<h4 class="hasAnchor">
-<a href="#stripes" class="anchor"></a>Stripes</h4>
-<p>This type of artwork is based on the concept of <a href="https://en.wikipedia.org/wiki/Brownian_motion">Brownian motion</a>. The algorithm generates a sequence of slightly increasing and decreasing values for each row on the canvas. Next, it fills these according to their generated value. More colors usually make this artwork more interesting.</p>
+<div class="section level4">
+<h4 id="stripes">Stripes<a class="anchor" aria-label="anchor" href="#stripes"></a>
+</h4>
+<p>This type of artwork is based on the concept of <a href="https://en.wikipedia.org/wiki/Brownian_motion" class="external-link">Brownian motion</a>. The algorithm generates a sequence of slightly increasing and decreasing values for each row on the canvas. Next, it fills these according to their generated value. More colors usually make this artwork more interesting.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/stripes/2021-08-23.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/stripes/2021-08-24.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/stripes/2021-08-25.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_stripes.html">canvas_stripes()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_stripes.html">canvas_stripes</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"random"</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_stripes for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="paint-strokes" class="section level4">
-<h4 class="hasAnchor">
-<a href="#paint-strokes" class="anchor"></a>Paint strokes</h4>
+<div class="section level4">
+<h4 id="paint-strokes">Paint strokes<a class="anchor" aria-label="anchor" href="#paint-strokes"></a>
+</h4>
 <p>When you think of the act of painting, you probably imagine stroking paint on a canvas. This type of artwork tries to mimic that activity. The algorithm is based on the simple idea that each next point on a grid-based canvas has a chance to take over the color of an adjacent colored point, but also has a minor chance of generating a new color. Going over the canvas like this results in something that looks like strokes of paint.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-21.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-20.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/strokes/2021-03-10.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_strokes.html">canvas_strokes()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_strokes.html">canvas_strokes</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"tuscany1"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_strokes for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="phyllotaxis" class="section level4">
-<h4 class="hasAnchor">
-<a href="#phyllotaxis" class="anchor"></a>Phyllotaxis</h4>
-<p>This function draws a <a href="https://en.wikipedia.org/wiki/Phyllotaxis">Phyllotaxis</a> on the canvas. This structure represents the arrangement of leaves on a plant stem.</p>
+<div class="section level4">
+<h4 id="phyllotaxis">Phyllotaxis<a class="anchor" aria-label="anchor" href="#phyllotaxis"></a>
+</h4>
+<p>This function draws a <a href="https://en.wikipedia.org/wiki/Phyllotaxis" class="external-link">Phyllotaxis</a> on the canvas. This structure represents the arrangement of leaves on a plant stem.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/phyllotaxis/2021-11-05.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/phyllotaxis/2021-11-03.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/phyllotaxis/2021-11-04.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_phyllotaxis.html">canvas_phyllotaxis()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_phyllotaxis.html">canvas_phyllotaxis</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"tuscany1"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_phyllotaxis for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="recamáns-sequence" class="section level4">
-<h4 class="hasAnchor">
-<a href="#recam%C3%A1ns-sequence" class="anchor"></a>Recamán’s Sequence</h4>
+<div class="section level4">
+<h4 id="recamáns-sequence">Recamán’s Sequence<a class="anchor" aria-label="anchor" href="#recam%C3%A1ns-sequence"></a>
+</h4>
 <p>This function draws Recamán’s sequence on a canvas. The algorithm takes increasingly large steps backwards on the positive number line, but takes a step forward if it is unable to perform the step backwards.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/recamans/2021-11-02.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/recamans/2021-11-03.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/recamans/2021-11-04.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_recaman.html">canvas_recaman()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_recaman.html">canvas_recaman</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"random"</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_recaman for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="turmite" class="section level4">
-<h4 class="hasAnchor">
-<a href="#turmite" class="anchor"></a>Turmite</h4>
-<p>According to <a href="https://en.wikipedia.org/wiki/Turmite">Wikipedia</a>, a turmite is <em>“a Turing machine which has an orientation in addition to a current state and a”tape" that consists of an infinite two-dimensional grid of cells"</em>. The classic algorithm consists of repeating the following three simple steps:</p>
-<ol>
+<div class="section level4">
+<h4 id="turmite">Turmite<a class="anchor" aria-label="anchor" href="#turmite"></a>
+</h4>
+<p>According to <a href="https://en.wikipedia.org/wiki/Turmite" class="external-link">Wikipedia</a>, a turmite is <em>“a Turing machine which has an orientation in addition to a current state and a”tape" that consists of an infinite two-dimensional grid of cells"</em>. The classic algorithm consists of repeating the following three simple steps:</p>
+<ol style="list-style-type: decimal">
 <li>Turn on the spot (left, right, up, or down),</li>
 <li>Change the color of the block,</li>
 <li>Move forward one block.</li>
@@ -312,66 +308,66 @@
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-06.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-09.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/turmites/2021-03-08.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_turmite.html">canvas_turmite()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_turmite.html">canvas_turmite</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"dark2"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_turmite for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="watercolors" class="section level4">
-<h4 class="hasAnchor">
-<a href="#watercolors" class="anchor"></a>Watercolors</h4>
-<p>This artwork implements a version of the algorithm described in the blog post <a href="https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints">A Guide to Simulating Watercolor Paint with Generative Art</a> by Tyler Hobbs. It works by layering several geometric shapes and deforming each shape by repeatedly splitting its edges.</p>
+<div class="section level4">
+<h4 id="watercolors">Watercolors<a class="anchor" aria-label="anchor" href="#watercolors"></a>
+</h4>
+<p>This artwork implements a version of the algorithm described in the blog post <a href="https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints" class="external-link">A Guide to Simulating Watercolor Paint with Generative Art</a> by Tyler Hobbs. It works by layering several geometric shapes and deforming each shape by repeatedly splitting its edges.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-23.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-22.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/watercolors/2021-09-21.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_watercolors.html">canvas_watercolors()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_watercolors.html">canvas_watercolors</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"tuscany2"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_watercolors for more input parameters of this function</span></code></pre></div>
 </div>
 </div>
-<div id="the-geometric-collection" class="section level3">
-<h3 class="hasAnchor">
-<a href="#the-geometric-collection" class="anchor"></a>The Geometric collection</h3>
+<div class="section level3">
+<h3 id="the-geometric-collection">The Geometric collection<a class="anchor" aria-label="anchor" href="#the-geometric-collection"></a>
+</h3>
 <p>The Geometric collection mostly implements algorithms that draw a geometric shape and apply a random color to it.</p>
-<div id="diamonds" class="section level4">
-<h4 class="hasAnchor">
-<a href="#diamonds" class="anchor"></a>Diamonds</h4>
+<div class="section level4">
+<h4 id="diamonds">Diamonds<a class="anchor" aria-label="anchor" href="#diamonds"></a>
+</h4>
 <p>This function creates a set of diamonds on a canvas. The diamonds are filled in (or left out) using a random color assignment.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-06.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-04.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/diamonds/2021-08-05.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_diamonds.html">canvas_diamonds()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_diamonds.html">canvas_diamonds</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"tuscany1"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_diamonds for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="functions" class="section level4">
-<h4 class="hasAnchor">
-<a href="#functions" class="anchor"></a>Functions</h4>
-<p>The idea for this type of artwork is taken over from the <a href="https://github.com/cutterkom/generativeart"><code>generativeart</code></a> package. In this algorithm, the position of every single point is calculated by a formula which has random parameters. You can supply your own formula.</p>
+<div class="section level4">
+<h4 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a>
+</h4>
+<p>The idea for this type of artwork is taken over from the <a href="https://github.com/cutterkom/generativeart" class="external-link"><code>generativeart</code></a> package. In this algorithm, the position of every single point is calculated by a formula which has random parameters. You can supply your own formula.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-03-17.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-04-08.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/functions/2021-04-04.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_function.html">canvas_function()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_function.html">canvas_function</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"tuscany1"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_function for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="polylines" class="section level4">
-<h4 class="hasAnchor">
-<a href="#polylines" class="anchor"></a>Polylines</h4>
+<div class="section level4">
+<h4 id="polylines">Polylines<a class="anchor" aria-label="anchor" href="#polylines"></a>
+</h4>
 <p>This function draws many points on the canvas and connects these points into a polygon. After repeating this for all the colors, the edges of all polygons are drawn on top of the artwork.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-22.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-23.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/polylines/2021-07-21.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_polylines.html">canvas_polylines()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_polylines.html">canvas_polylines</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"retro1"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_polylines for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="ribbons" class="section level4">
-<h4 class="hasAnchor">
-<a href="#ribbons" class="anchor"></a>Ribbons</h4>
+<div class="section level4">
+<h4 id="ribbons">Ribbons<a class="anchor" aria-label="anchor" href="#ribbons"></a>
+</h4>
 <p>This function creates colored ribbons with (or without) a triangle that breaks their paths. This path of the ribbon polygon is creating by picking one point on the left side of the triangle and one point on the right side at random and using these points as nodes.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-16.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-15.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/ribbons/2021-07-14.png" width="250" height="250"></p>
@@ -380,104 +376,104 @@
 <span id="cb21-2"><a href="#cb21-2"></a><span class="kw">canvas_ribbons</span>(<span class="dt">colors =</span> <span class="kw">colorPalette</span>(<span class="st">"retro1"</span>)</span>
 <span id="cb21-3"><a href="#cb21-3"></a><span class="co"># see ?canvas_ribbons for more input parameters of this function</span></span></code></pre></div>
 </div>
-<div id="segments" class="section level4">
-<h4 class="hasAnchor">
-<a href="#segments" class="anchor"></a>Segments</h4>
-<p>This type of artwork is inspired by the style of the well-known paintings by the Dutch artist <a href="https://nl.wikipedia.org/wiki/Piet_Mondriaan">Piet Mondriaan</a>. The position and direction of each line segment is determined randomly.</p>
+<div class="section level4">
+<h4 id="segments">Segments<a class="anchor" aria-label="anchor" href="#segments"></a>
+</h4>
+<p>This type of artwork is inspired by the style of the well-known paintings by the Dutch artist <a href="https://nl.wikipedia.org/wiki/Piet_Mondriaan" class="external-link">Piet Mondriaan</a>. The position and direction of each line segment is determined randomly.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-07.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-08.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/segments/2021-08-06.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_segments.html">canvas_segments()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_segments.html">canvas_segments</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"dark1"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_segments for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="squares-and-rectangles" class="section level4">
-<h4 class="hasAnchor">
-<a href="#squares-and-rectangles" class="anchor"></a>Squares and rectangles</h4>
+<div class="section level4">
+<h4 id="squares-and-rectangles">Squares and rectangles<a class="anchor" aria-label="anchor" href="#squares-and-rectangles"></a>
+</h4>
 <p>This artwork uses a variety of squares and rectangles to fill the canvas. It works by repeatedly cutting into the canvas at random locations and coloring the area that these cuts create.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-03-01.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-02-28.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/squares/2021-02-29.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_squares.html">canvas_squares()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_squares.html">canvas_squares</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"retro2"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_squares for more input parameters of this function</span></code></pre></div>
 </div>
 </div>
-<div id="the-supervised-collection" class="section level3">
-<h3 class="hasAnchor">
-<a href="#the-supervised-collection" class="anchor"></a>The Supervised collection</h3>
+<div class="section level3">
+<h3 id="the-supervised-collection">The Supervised collection<a class="anchor" aria-label="anchor" href="#the-supervised-collection"></a>
+</h3>
 <p>The artworks in the Supervised collection are inspired by decision boundary plots in machine learning tasks. The algorithms in this collection work by generating random data points on a two dimensional surface (with either a continuous or a categorical response variable), which they then try to model using the supervised learning algorithm. Next, they try to predict the color of each pixel on the canvas.</p>
-<div id="blacklights" class="section level4">
-<h4 class="hasAnchor">
-<a href="#blacklights" class="anchor"></a>Blacklights</h4>
+<div class="section level4">
+<h4 id="blacklights">Blacklights<a class="anchor" aria-label="anchor" href="#blacklights"></a>
+</h4>
 <p>This artwork is inspired by a supervised machine learning method called support vector machines. It applies the principle as described above using a continuous response variable to fill the color of the pixels.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-22.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-21.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/blacklights/2021-08-20.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_blacklight.html">canvas_blacklight()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_blacklight.html">canvas_blacklight</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"random"</span>, n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_blacklight for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="forests" class="section level4">
-<h4 class="hasAnchor">
-<a href="#forests" class="anchor"></a>Forests</h4>
+<div class="section level4">
+<h4 id="forests">Forests<a class="anchor" aria-label="anchor" href="#forests"></a>
+</h4>
 <p>This artwork is inspired by a supervised learning method called random forest. It applies the principle as described above using a continuous response variable to fill the color of the pixels.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-20.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-21.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/forests/2021-08-19.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_forest.html">canvas_forest()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_forest.html">canvas_forest</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"jungle"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_forest for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="gemstones" class="section level4">
-<h4 class="hasAnchor">
-<a href="#gemstones" class="anchor"></a>Gemstones</h4>
+<div class="section level4">
+<h4 id="gemstones">Gemstones<a class="anchor" aria-label="anchor" href="#gemstones"></a>
+</h4>
 <p>This artwork is inspired by a supervised learning method called k-nearest neighbors. It applies the principle as described above using a continuous response variable to fill the color of the pixels. In short, the k-nearest neighbors algorithm computes the distance of each pixel on the canvas to each randomly generated data point and assigns it the color of the value of that data point.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-20.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-21.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/gemstones/2021-08-22.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_gemstone.html">canvas_gemstone()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_gemstone.html">canvas_gemstone</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"dark3"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_gemstone for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="mosaics" class="section level4">
-<h4 class="hasAnchor">
-<a href="#mosaics" class="anchor"></a>Mosaics</h4>
+<div class="section level4">
+<h4 id="mosaics">Mosaics<a class="anchor" aria-label="anchor" href="#mosaics"></a>
+</h4>
 <p>This artwork also uses a k-nearest neighbors method but instead of a continuous response variable a categorical one is used, making it a classification problem. If you considers fewer neighbors the artwork looks like a mosaic, while higher values make the artwork look more smooth.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-17.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-19.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/mosaics/2021-08-18.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_mosaic.html">canvas_mosaic()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_mosaic.html">canvas_mosaic</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"retro2"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_mosaic for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="nebula" class="section level4">
-<h4 class="hasAnchor">
-<a href="#nebula" class="anchor"></a>Nebula</h4>
+<div class="section level4">
+<h4 id="nebula">Nebula<a class="anchor" aria-label="anchor" href="#nebula"></a>
+</h4>
 <p>Based on the very same principle as described in the artwork above is this next type of artwork. However, it produces slightly different pictures as it uses different code to create a form of k-nearest neighbors noise. Some of these artworks can resemble nebulas in outer space.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/nebulas/2021-08-29.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/nebulas/2021-08-28.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/nebulas/2021-08-27.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_nebula.html">canvas_nebula()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_nebula.html">canvas_nebula</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"tuscany1"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_nebula for more input parameters of this function</span></code></pre></div>
 </div>
 </div>
-<div id="the-static-collection" class="section level3">
-<h3 class="hasAnchor">
-<a href="#the-static-collection" class="anchor"></a>The Static collection</h3>
+<div class="section level3">
+<h3 id="the-static-collection">The Static collection<a class="anchor" aria-label="anchor" href="#the-static-collection"></a>
+</h3>
 <p>The Static collection implements static images that produce nice pictures.</p>
-<div id="circle-maps" class="section level4">
-<h4 class="hasAnchor">
-<a href="#circle-maps" class="anchor"></a>Circle maps</h4>
-<p>This type of artwork is based on the concept of an <a href="https://en.wikipedia.org/wiki/Arnold_tongue">Arnold tongue</a>. According to Wikipedia, Arnold tongues <em>“are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters”</em>.</p>
+<div class="section level4">
+<h4 id="circle-maps">Circle maps<a class="anchor" aria-label="anchor" href="#circle-maps"></a>
+</h4>
+<p>This type of artwork is based on the concept of an <a href="https://en.wikipedia.org/wiki/Arnold_tongue" class="external-link">Arnold tongue</a>. According to Wikipedia, Arnold tongues <em>“are a pictorial phenomenon that occur when visualizing how the rotation number of a dynamical system, or other related invariant property thereof, changes according to two or more of its parameters”</em>.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22b.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22c.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/circlemaps/2021-04-22a.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_circlemap.html">canvas_circlemap()</a></code> function to make your own artwork using this algorithm.</p>
@@ -485,10 +481,10 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/canvas_circlemap.html">canvas_circlemap</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"dark2"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># see ?canvas_circlemap for more input parameters of this function</span></code></pre></div>
 </div>
-<div id="the-mandelbrot-set" class="section level4">
-<h4 class="hasAnchor">
-<a href="#the-mandelbrot-set" class="anchor"></a>The Mandelbrot set</h4>
-<p>This type of artwork visualizes the <a href="https://en.wikipedia.org/wiki/Mandelbrot_set">Mandelbrot set</a> fractal, a perfect example of a complex structure arising from the application of simple rules. You can zoom in on the set and apply some color to create these nice images.</p>
+<div class="section level4">
+<h4 id="the-mandelbrot-set">The Mandelbrot set<a class="anchor" aria-label="anchor" href="#the-mandelbrot-set"></a>
+</h4>
+<p>This type of artwork visualizes the <a href="https://en.wikipedia.org/wiki/Mandelbrot_set" class="external-link">Mandelbrot set</a> fractal, a perfect example of a complex structure arising from the application of simple rules. You can zoom in on the set and apply some color to create these nice images.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-08.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-09.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/mandelbrots/2021-08-07.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_mandelbrot.html">canvas_mandelbrot()</a></code> function to make your own artwork using this algorithm.</p>
@@ -498,17 +494,17 @@
 </div>
 </div>
 </div>
-<div id="color-palettes" class="section level2">
-<h2 class="hasAnchor">
-<a href="#color-palettes" class="anchor"></a>Color palettes</h2>
-<p>The function <code><a href="reference/colorPalette.html">colorPalette()</a></code> can be used to generate a (semi-)random color palette, or pick a pre-implemented color palette. Currently, the color palettes displayed below are implemented in <code>aRtsy</code>. Feel free to suggest or add a new palette by making an <a href="https://github.com/koenderks/aRtsy/issues">issue</a> on GitHub!</p>
+<div class="section level2">
+<h2 id="color-palettes">Color palettes<a class="anchor" aria-label="anchor" href="#color-palettes"></a>
+</h2>
+<p>The function <code><a href="reference/colorPalette.html">colorPalette()</a></code> can be used to generate a (semi-)random color palette, or pick a pre-implemented color palette. Currently, the color palettes displayed below are implemented in <code>aRtsy</code>. Feel free to suggest or add a new palette by making an <a href="https://github.com/koenderks/aRtsy/issues" class="external-link">issue</a> on GitHub!</p>
 <p align="center">
-<img src="https://github.com/koenderks/aRtsy/raw/development/man/figures/colors.svg"></p>
+<img src="https://github.com/koenderks/aRtsy/raw/development/reference/figures/colors.svg"></p>
 </div>
-<div id="contributing-to-the-artsy-package" class="section level2">
-<h2 class="hasAnchor">
-<a href="#contributing-to-the-artsy-package" class="anchor"></a>Contributing to the <code>aRtsy</code> package</h2>
-<p>Contributions to the <code>aRtsy</code> package are very much appreciated and you are free to suggest or add your own algorithms! If you want to add your own artwork to the package so that others can create unique versions of it, feel free to make a pull request to the <a href="https://github.com/koenderks/aRtsy">GitHub repository</a>. Don’t forget to also adjust <a href="https://github.com/koenderks/aRtsy/blob/development/.github/workflows/generate_artwork.R">generate-artwork.R</a> if you want the artwork to show up in the ‘Artwork of the day’ category and the twitter feed.</p>
+<div class="section level2">
+<h2 id="contributing-to-the-artsy-package">Contributing to the <code>aRtsy</code> package<a class="anchor" aria-label="anchor" href="#contributing-to-the-artsy-package"></a>
+</h2>
+<p>Contributions to the <code>aRtsy</code> package are very much appreciated and you are free to suggest or add your own algorithms! If you want to add your own artwork to the package so that others can create unique versions of it, feel free to make a pull request to the <a href="https://github.com/koenderks/aRtsy" class="external-link">GitHub repository</a>. Don’t forget to also adjust <a href="https://github.com/koenderks/aRtsy/blob/development/.github/workflows/generate_artwork.R" class="external-link">generate-artwork.R</a> if you want the artwork to show up in the ‘Artwork of the day’ category and the twitter feed.</p>
 </div>
 </div>
 
@@ -516,62 +512,66 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=aRtsy">https://​cloud.r-project.org/​package=aRtsy</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/koenderks/aRtsy/">https://​github.com/​koenderks/​aRtsy/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/koenderks/aRtsy/issues">https://​github.com/​koenderks/​aRtsy/​issues</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=aRtsy" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/koenderks/aRtsy/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/koenderks/aRtsy/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></li>
+<li><a href="https://www.r-project.org/Licenses/GPL-3" class="external-link">GPL-3</a></li>
 </ul>
 </div>
+
 <div class="community">
-<h2>Community</h2>
+<h2 data-toc-skip>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
+
 <div class="citation">
-<h2>Citation</h2>
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html">Citing aRtsy</a></li>
+<li><a href="authors.html#citation">Citing aRtsy</a></li>
 </ul>
 </div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Koen Derks <br><small class="roles"> Author, maintainer </small>  </li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://cran.r-project.org/package=aRtsy"><img src="https://img.shields.io/cran/v/aRtsy?color=yellow&amp;label=CRAN&amp;logo=r" alt="CRAN"></a></li>
-<li><a href="https://github.com/koenderks/aRtsy/actions"><img src="https://github.com/koenderks/aRtsy/workflows/Build/badge.svg" alt="R_build_status"></a></li>
-<li><a href="https://app.codecov.io/gh/koenderks/aRtsy"><img src="https://codecov.io/gh/koenderks/aRtsy/branch/development/graph/badge.svg?token=ZoxIB8p8PW" alt="Codecov"></a></li>
-<li><a href="https://github.com/koenderks/aRtsy/issues?q=is%3Aopen+is%3Aissue+label%3Abug"><img src="https://img.shields.io/github/issues/koenderks/aRtsy/bug?label=Bugs&amp;logo=github&amp;logoColor=%23FFF&amp;color=brightgreen" alt="Bugs"></a></li>
-<li><a href="https://cranlogs.r-pkg.org"><img src="https://cranlogs.r-pkg.org/badges/aRtsy?color=blue" alt="Monthly"></a></li>
-<li><a href="https://cranlogs.r-pkg.org"><img src="https://cranlogs.r-pkg.org/badges/grand-total/aRtsy?color=blue" alt="Total"></a></li>
+<li><a href="https://cran.r-project.org/package=aRtsy" class="external-link"><img src="https://img.shields.io/cran/v/aRtsy?color=yellow&amp;label=CRAN&amp;logo=r" alt="CRAN"></a></li>
+<li><a href="https://github.com/koenderks/aRtsy/actions" class="external-link"><img src="https://github.com/koenderks/aRtsy/workflows/Build/badge.svg" alt="R_build_status"></a></li>
+<li><a href="https://app.codecov.io/gh/koenderks/aRtsy" class="external-link"><img src="https://codecov.io/gh/koenderks/aRtsy/branch/development/graph/badge.svg?token=ZoxIB8p8PW" alt="Codecov"></a></li>
+<li><a href="https://github.com/koenderks/aRtsy/issues?q=is%3Aopen+is%3Aissue+label%3Abug" class="external-link"><img src="https://img.shields.io/github/issues/koenderks/aRtsy/bug?label=Bugs&amp;logo=github&amp;logoColor=%23FFF&amp;color=brightgreen" alt="Bugs"></a></li>
+<li><a href="https://cranlogs.r-pkg.org" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/aRtsy?color=blue" alt="Monthly"></a></li>
+<li><a href="https://cranlogs.r-pkg.org" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/aRtsy?color=blue" alt="Total"></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Koen Derks.</p>
+  <p></p>
+<p>Developed by Koen Derks.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.0.</p>
 </div>
 
       </footer>
@@ -579,6 +579,8 @@
 
   
 
+
+  
 
   </body>
 </html>
