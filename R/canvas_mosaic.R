@@ -31,21 +31,20 @@
 canvas_mosaic <- function(colors, n = 1000, resolution = 500) {
   .checkUserInput(resolution = resolution)
   train <- data.frame(
-    x = stats::runif(n, 0, 1),
-    y = stats::runif(n, 0, 1),
+    x = stats::runif(n, 0, resolution),
+    y = stats::runif(n, 0, resolution),
     z = factor(sample(colors, size = n, replace = TRUE))
   )
   fit <- kknn::train.kknn(formula = z ~ x + y, data = train, kmax = 1)
-  sequence <- seq(0, 1, length = resolution)
+  sequence <- seq(0, resolution, by = 1)
   canvas <- expand.grid(sequence, sequence)
   colnames(canvas) <- c("x", "y")
   z <- predict(fit, newdata = canvas)
-  canvas <- matrix(z, nrow = resolution, ncol = resolution)
-  canvas <- .unraster(canvas, names = c("x", "y", "z"))
+  full_canvas <- data.frame(x = canvas$x, y = canvas$y, z = z)
   artwork <- ggplot2::ggplot(data = canvas, mapping = ggplot2::aes(x = x, y = y, fill = z)) +
-    ggplot2::geom_tile() +
-    ggplot2::xlim(c(0, resolution)) +
-    ggplot2::ylim(c(0, resolution)) +
+    ggplot2::geom_raster(interpolate = TRUE) +
+    ggplot2::xlim(c(-1, resolution + 1)) +
+    ggplot2::ylim(c(-1, resolution + 1)) +
     ggplot2::scale_fill_manual(values = colors)
   artwork <- theme_canvas(artwork)
   return(artwork)

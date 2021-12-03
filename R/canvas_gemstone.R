@@ -33,9 +33,9 @@ canvas_gemstone <- function(colors, n = 1000, resolution = 500) {
   canvas <- .noise(dims = c(resolution, resolution), n = n, type = "knn")
   canvas <- .unraster(canvas, names = c("x", "y", "z"))
   artwork <- ggplot2::ggplot(data = canvas, mapping = ggplot2::aes(x = x, y = y, fill = z)) +
-    ggplot2::geom_tile() +
-    ggplot2::xlim(c(0, resolution)) +
-    ggplot2::ylim(c(0, resolution)) +
+    ggplot2::geom_raster(interpolate = TRUE) +
+    ggplot2::xlim(c(0, resolution + 1)) +
+    ggplot2::ylim(c(0, resolution + 1)) +
     ggplot2::scale_fill_gradientn(colours = colors)
   artwork <- theme_canvas(artwork)
   return(artwork)
