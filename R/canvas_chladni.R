@@ -29,18 +29,38 @@
 #'
 #' @export
 
-canvas_chladni <- function(colors, waves = 5, resolution = 500) {
+canvas_chladni <- function(colors, waves = 5, resolution = 500, warp = 1, angles = NULL, distances = NULL) {
   .checkUserInput(resolution = resolution)
   if (length(waves) == 1) {
     waves <- sample(1:50, size = waves, replace = TRUE)
   }
-  canvas <- matrix(0, nrow = resolution, ncol = resolution)
-  f <- pi / (2 * resolution)
-  canvas <- iterate_chladni(canvas, waves, f)
-  full_canvas <- .unraster(x = canvas, names = c("x", "y", "z"))
+  x <- seq(0, 1, length.out = resolution)
+  y <- seq(0, 1, length.out = resolution)
+  canvas <- expand.grid(x, y)
+  z <- .iterate_chladni(if (warp > 0) .warp(canvas, warp, resolution, angles, distances) else as.matrix(canvas), waves)
+  full_canvas <- data.frame(x = canvas[, 1], y = canvas[, 2], z = z)
   artwork <- ggplot2::ggplot(data = full_canvas, mapping = ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE) +
     ggplot2::scale_fill_gradientn(colours = colors)
   artwork <- theme_canvas(artwork)
   return(artwork)
+}
+
+.iterate_chladni <- function(p, waves) { # Takes a point (x, y) and returns z
+  z <- numeric(nrow(p))
+  for (i in 1:length(waves)) {
+    z <- abs(z + sin(waves[i] * p[, 1]) * sin(waves[i] * p[, 2]))
+  }
+  return(z)
+}
+
+# This function takes a point (x, y) and returns a warped point (x, y)
+.warp <- function(p, warpDist = 1, resolution, angles = NULL, distances = NULL) {
+  if (is.null(angles)) {
+    angles <- .noise(c(resolution, resolution), type = "svm", limits = c(-pi, pi))
+  }
+  if (is.null(distances)) {
+    distances <- .noise(c(resolution, resolution), type = "knn", n = 500, k = 100, limits = c(0, warpDist))
+  }
+  return(matrix(c(p[, 1] + c(cos(angles)) * c(distances), p[, 2] + c(sin(angles)) * c(distances)), ncol = 2))
 }
