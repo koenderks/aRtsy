@@ -2,11 +2,15 @@
 #'
 #' @description This function draws Chladni figures on a canvas.
 #'
-#' @usage canvas_chladni(colors, waves = 5, resolution = 500)
+#' @usage canvas_chladni(colors, waves = 5, resolution = 500, 
+#'                 warp = 1, angles = NULL, distances = NULL)
 #'
 #' @param colors      a string or character vector specifying the color(s) used for the artwork.
 #' @param waves       a character specifying the number of randomly sampled waves, or an integer vector of waves to be summed.
 #' @param resolution  resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.
+#' @param warp        the warp distance.
+#' @param angles      the warp angles.
+#' @param distances   the warp distances.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'

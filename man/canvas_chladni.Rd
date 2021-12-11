@@ -4,7 +4,8 @@
 \alias{canvas_chladni}
 \title{Draw Chladni Figures}
 \usage{
-canvas_chladni(colors, waves = 5, resolution = 500)
+canvas_chladni(colors, waves = 5, resolution = 500, 
+                warp = 1, angles = NULL, distances = NULL)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
@@ -12,6 +13,12 @@ canvas_chladni(colors, waves = 5, resolution = 500)
 \item{waves}{a character specifying the number of randomly sampled waves, or an integer vector of waves to be summed.}
 
 \item{resolution}{resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.}
+
+\item{warp}{the warp distance.}
+
+\item{angles}{the warp angles.}
+
+\item{distances}{the warp distances.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
