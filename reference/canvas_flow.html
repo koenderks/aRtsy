@@ -72,7 +72,7 @@
 <dt>stepmax</dt>
 <dd><p>the maximum proportion of the canvas covered in each iteration.</p></dd>
 <dt>angles</dt>
-<dd><p>optional, a 200 x 200 matrix containing the angles in the flow field. If <code>NULL</code> (default), angles are set according to the predictions of a supervised learning algorithm.</p></dd>
+<dd><p>optional, a 200 x 200 matrix containing the angles in the flow field, or a character indicating the type of noise to use (<code>svm</code>, <code>knn</code>, <code>rf</code>, <code>perlin</code>, <code>cubic</code>, <code>simplex</code>, or <code>worley</code>). If <code>NULL</code> (default) the noise type is chosen randomly.</p></dd>
 </dl></div>
     <div id="value">
     <h2>Value</h2>
