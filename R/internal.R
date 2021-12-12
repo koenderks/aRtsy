@@ -1,5 +1,6 @@
-# This function computes k-nearest neighbors noise from c++
-.noise <- function(dims, n = 100, type = c("artsy-knn", "knn", "svm", "rf"), k = 20, limits = c(0, 1)) {
+# This function generates noise
+.noise <- function(dims, n = 100, type = c("artsy-knn", "knn", "svm", "rf", "perlin", "cubic", "simplex", "worley"),
+                   k = 20, limits = c(0, 1)) {
   type <- match.arg(type)
   if (type == "artsy-knn") {
     if (length(dims) == 1) {
@@ -44,6 +45,18 @@
     canvas <- expand.grid(xsequence, ysequence)
     colnames(canvas) <- c("x", "y")
     z <- predict(fit, newdata = canvas)
+  } else if (type == "perlin") {
+    z <- ambient::noise_perlin(dims, frequency = stats::runif(1, 0.001, 0.04))
+    z <- (z - range(z)[1])/diff(range(z)) * diff(limits) + limits[1]
+  } else if (type == "cubic") {
+    z <- ambient::noise_cubic(dims, frequency = stats::runif(1, 0.001, 0.04))
+    z <- (z - range(z)[1])/diff(range(z)) * diff(limits) + limits[1]
+  } else if (type == "simplex") {
+    z <- ambient::noise_simplex(dims, frequency = stats::runif(1, 0.001, 0.04))
+    z <- (z - range(z)[1])/diff(range(z)) * diff(limits) + limits[1]
+  } else if (type == "worley") {
+    z <- ambient::noise_worley(dims)
+    z <- (z - range(z)[1])/diff(range(z)) * diff(limits) + limits[1]
   }
   return(matrix(z, nrow = dims[1], ncol = dims[2]))
 }
@@ -66,4 +79,27 @@
   newx <- data.frame(x = rep(1:ncol(x), times = ncol(x)), y = rep(1:nrow(x), each = nrow(x)), z = c(x))
   colnames(newx) <- names
   return(newx)
+}
+
+# This function takes a point (x, y) and returns a warped point (x, y)
+.warp <- function(p, warpDistance, resolution, angles = NULL, distances = NULL) {
+  if (is.null(angles)) {
+    angles <- .noise(c(resolution, resolution), type = sample(c("svm", "perlin", "cubic", "simplex"), size = 1), limits = c(-pi, pi))
+  } else if (is.character(angles)) {
+    angles <- .noise(c(resolution, resolution), type = angles, limits = c(-pi, pi))
+  } else if (is.matrix(angles)) {
+    if (nrow(angles) != resolution || ncol(angles) != resolution) {
+      stop(paste0("'angles' should be a ", resolution, " x ", resolution, " matrix"))
+    }
+  }
+  if (is.null(distances)) {
+    distances <- .noise(c(resolution, resolution), type = sample(c("knn", "perlin", "cubic", "simplex"), size = 1), limits = c(0, warpDistance))
+  } else if (is.character(distances)) {
+    distances <- .noise(c(resolution, resolution), type = distances, limits = c(0, warpDistance))
+  } else if (is.matrix(distances)) {
+    if (nrow(distances) != resolution || ncol(distances) != resolution) {
+      stop(paste0("'distances' should be a ", resolution, " x ", resolution, " matrix"))
+    }
+  }
+  return(matrix(c(p[, 1] + c(cos(angles)) * c(distances), p[, 2] + c(sin(angles)) * c(distances)), ncol = 2))
 }

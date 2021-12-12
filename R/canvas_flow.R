@@ -11,7 +11,7 @@
 #' @param lwd            expansion factor for the line width.
 #' @param iterations     the maximum number of iterations for each line.
 #' @param stepmax        the maximum proportion of the canvas covered in each iteration.
-#' @param angles         optional, a 200 x 200 matrix containing the angles in the flow field. If \code{NULL} (default), angles are set according to the predictions of a supervised learning algorithm.
+#' @param angles         optional, a 200 x 200 matrix containing the angles in the flow field, or a character indicating the type of noise to use (\code{svm}, \code{knn}, \code{rf}, \code{perlin}, \code{cubic}, \code{simplex}, or \code{worley}). If \code{NULL} (default) the noise type is chosen randomly.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'
@@ -60,7 +60,13 @@ canvas_flow <- function(colors, background = "#fafafa", lines = 500, lwd = 0.05,
   if (is.null(angles)) {
     angles <- .noise(
       dims = c(nrows, ncols), n = sample(100:300, size = 1),
-      type = sample(c("knn", "svm", "rf"), size = 1),
+      type = sample(c("knn", "svm", "rf", "perlin", "cubic", "simplex", "worley"), size = 1),
+      limits = c(-pi, pi)
+    )
+  } else if (is.character(angles)) {
+    angles <- .noise(
+      dims = c(nrows, ncols), n = sample(100:300, size = 1),
+      type = angles,
       limits = c(-pi, pi)
     )
   } else {

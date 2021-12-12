@@ -20,7 +20,7 @@ canvas_flow(colors, background = "#fafafa", lines = 500, lwd = 0.05,
 
 \item{stepmax}{the maximum proportion of the canvas covered in each iteration.}
 
-\item{angles}{optional, a 200 x 200 matrix containing the angles in the flow field. If \code{NULL} (default), angles are set according to the predictions of a supervised learning algorithm.}
+\item{angles}{optional, a 200 x 200 matrix containing the angles in the flow field, or a character indicating the type of noise to use (\code{svm}, \code{knn}, \code{rf}, \code{perlin}, \code{cubic}, \code{simplex}, or \code{worley}). If \code{NULL} (default) the noise type is chosen randomly.}
 }
 \value{
 A \code{ggplot} object containing the artwork.

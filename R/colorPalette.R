@@ -114,7 +114,7 @@ colorPalette <- function(name, n = NULL) {
       warning("attempt to select more colors than are available in this palette, returning the requested palette with the maximum number of colors")
       return(palette)
     }
-    palette <- palette[1:n]
+    palette <- palette[sample(1:n)]
   }
   return(palette)
 }

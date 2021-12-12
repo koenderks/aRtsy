@@ -3,6 +3,8 @@
 **New features**
 
 - Added more color palettes to the `colorPalette()` function.
+- Added more noise types for `canvas_flow()` and `canvas_chladni()` with the `ambient` package.
+- Added `warp` to `canvas_chladni()` which now also warps the figure.
 
 # aRtsy 0.1.5
 

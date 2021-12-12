@@ -10,7 +10,7 @@ Authors@R:
            email = "koen-derks@hotmail.com")
 BugReports: https://github.com/koenderks/aRtsy/issues
 URL: https://koenderks.github.io/aRtsy/, https://github.com/koenderks/aRtsy, https://twitter.com/aRtsy_package
-Imports: e1071, ggplot2, kknn, randomForest, Rcpp, stats
+Imports: ambient, e1071, ggplot2, kknn, randomForest, Rcpp, stats
 LinkingTo: Rcpp, RcppArmadillo
 Language: en-US
 License: GPL-3
