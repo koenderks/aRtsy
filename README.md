@@ -161,7 +161,7 @@ canvas_collatz(colors = colorPalette("tuscany3"))
 
 #### Chladni figures
 
-This function draws [Chladni](https://en.wikipedia.org/wiki/Ernst_Chladni) figures on the canvas. It works by generating one or multiple sine waves on a square matrix. You can provide the waves to be added yourself.
+This function draws [Chladni](https://en.wikipedia.org/wiki/Ernst_Chladni) figures on the canvas. It works by generating one or multiple sine waves on a square matrix. You can provide the waves to be added yourself. After generating the waves it is possible to warp them using a [domain warping](https://www.iquilezles.org/www/articles/warp/warp.htm) technique.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/chladnis/2021-11-12.png' width='250' height='250'>
