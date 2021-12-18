@@ -9,8 +9,8 @@
 #' @param waves       a character specifying the number of randomly sampled waves, or an integer vector of waves to be summed.
 #' @param resolution  resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.
 #' @param warp        a numeric value specifying the maximum warping distance for each point. If \code{warp = 0} (the default), no warping is performed.
-#' @param angles      optional, a resolution x resoltuion matrix containing the angles for the warp, or a character indicating the type of noise to use (\code{svm}, \code{knn}, \code{rf}, \code{perlin}, \code{cubic}, \code{simplex}, or \code{worley}). If \code{NULL} (default) the noise type is chosen randomly.
-#' @param distances   optional, a resolution x resoltuion matrix containing the distances for the warp, or a character indicating the type of noise to use (\code{svm}, \code{knn}, \code{rf}, \code{perlin}, \code{cubic}, \code{simplex}, or \code{worley}). If \code{NULL} (default) the noise type is chosen randomly.
+#' @param angles      optional, a resolution x resolution matrix containing the angles for the warp, or a character indicating the type of noise to use (\code{svm}, \code{knn}, \code{rf}, \code{perlin}, \code{cubic}, \code{simplex}, or \code{worley}). If \code{NULL} (the default), the noise type is chosen randomly.
+#' @param distances   optional, a resolution x resolution matrix containing the distances for the warp, or a character indicating the type of noise to use (\code{svm}, \code{knn}, \code{rf}, \code{perlin}, \code{cubic}, \code{simplex}, or \code{worley}). If \code{NULL} (the default), the noise type is chosen randomly.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'

@@ -11,7 +11,7 @@
 #' @param lwd            expansion factor for the line width.
 #' @param iterations     the maximum number of iterations for each line.
 #' @param stepmax        the maximum proportion of the canvas covered in each iteration.
-#' @param angles         optional, a 200 x 200 matrix containing the angles in the flow field, or a character indicating the type of noise to use (\code{svm}, \code{knn}, \code{rf}, \code{perlin}, \code{cubic}, \code{simplex}, or \code{worley}). If \code{NULL} (default) the noise type is chosen randomly.
+#' @param angles         optional, a 200 x 200 matrix containing the angles in the flow field, or a character indicating the type of noise to use (\code{svm}, \code{knn}, \code{rf}, \code{perlin}, \code{cubic}, \code{simplex}, or \code{worley}). If \code{NULL} (the default), the noise type is chosen randomly.
 #'
 #' @return A \code{ggplot} object containing the artwork.
 #'

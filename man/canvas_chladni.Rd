@@ -16,9 +16,9 @@ canvas_chladni(colors, waves = 5, warp = 0, resolution = 500,
 
 \item{resolution}{resolution of the artwork in pixels per row/column. Increasing the resolution increases the quality of the artwork but also increases the computation time exponentially.}
 
-\item{angles}{optional, a resolution x resoltuion matrix containing the angles for the warp, or a character indicating the type of noise to use (\code{svm}, \code{knn}, \code{rf}, \code{perlin}, \code{cubic}, \code{simplex}, or \code{worley}). If \code{NULL} (default) the noise type is chosen randomly.}
+\item{angles}{optional, a resolution x resolution matrix containing the angles for the warp, or a character indicating the type of noise to use (\code{svm}, \code{knn}, \code{rf}, \code{perlin}, \code{cubic}, \code{simplex}, or \code{worley}). If \code{NULL} (the default), the noise type is chosen randomly.}
 
-\item{distances}{optional, a resolution x resoltuion matrix containing the distances for the warp, or a character indicating the type of noise to use (\code{svm}, \code{knn}, \code{rf}, \code{perlin}, \code{cubic}, \code{simplex}, or \code{worley}). If \code{NULL} (default) the noise type is chosen randomly.}
+\item{distances}{optional, a resolution x resolution matrix containing the distances for the warp, or a character indicating the type of noise to use (\code{svm}, \code{knn}, \code{rf}, \code{perlin}, \code{cubic}, \code{simplex}, or \code{worley}). If \code{NULL} (the default), the noise type is chosen randomly.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
