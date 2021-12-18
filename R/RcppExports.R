@@ -5,6 +5,10 @@ draw_ant <- function(X, iters, ncolors, x, y, dx, dy) {
     .Call('_aRtsy_draw_ant', PACKAGE = 'aRtsy', X, iters, ncolors, x, y, dx, dy)
 }
 
+iterate_chladni <- function(x, y, waves) {
+    .Call('_aRtsy_iterate_chladni', PACKAGE = 'aRtsy', x, y, waves)
+}
+
 draw_circlemap <- function(X, left, right, bottom, top, iters) {
     .Call('_aRtsy_draw_circlemap', PACKAGE = 'aRtsy', X, left, right, bottom, top, iters)
 }

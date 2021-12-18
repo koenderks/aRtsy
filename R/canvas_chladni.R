@@ -42,19 +42,16 @@ canvas_chladni <- function(colors, waves = 5, warp = 0, resolution = 500,
   x <- seq(0, 0.5 * pi, length.out = resolution)
   y <- seq(0, 0.5 * pi, length.out = resolution)
   canvas <- expand.grid(x, y)
-  z <- .iterate_chladni(if (warp > 0) .warp(canvas, warp, resolution, angles, distances) else as.matrix(canvas), waves, resolution)
+  if (warp > 0) {
+    inputCanvas <- .warp(canvas, warp, resolution, angles, distances)
+  } else {
+    inputCanvas <- as.matrix(canvas)
+  }
+  z <- iterate_chladni(x = inputCanvas[, 1], y = inputCanvas[, 2], waves)
   full_canvas <- data.frame(x = canvas[, 1], y = canvas[, 2], z = z)
   artwork <- ggplot2::ggplot(data = full_canvas, mapping = ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE) +
     ggplot2::scale_fill_gradientn(colours = colors)
   artwork <- theme_canvas(artwork)
   return(artwork)
-}
-
-.iterate_chladni <- function(canvas, waves, resolution) {
-  z <- numeric(nrow(canvas))
-  for (i in 1:length(waves)) {
-    z <- abs(z + sin(waves[i] * canvas[, 1]) * sin(waves[i] * canvas[, 2]))
-  }
-  return(z)
 }
