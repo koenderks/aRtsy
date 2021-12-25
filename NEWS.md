@@ -2,7 +2,7 @@
 
 **New features**
 
-- Added `polar` to `canvas_flow()`.
+- Added `polar` to `canvas_flow()`, thanks to @researchremora on twitter for the idea.
 
 # aRtsy 0.1.6
 
