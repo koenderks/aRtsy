@@ -1,9 +1,9 @@
 citHeader("To cite aRtsy in publications, please use:")
 
 bibentry(bibtype = "Manual",
-         title = "aRtsy: Generative Art with 'ggplot2'.",
+         title = "aRtsy: Generative Art with 'ggplot2'",
          author = person("Koen", "Derks"),
          year = "2021",
-         note = "R package version 0.1.6",
+         note = "R package version 0.1.7",
          url = "https://CRAN.R-project.org/package=aRtsy",
-         textVersion = "Derks, K. (2021). aRtsy: Generative Art with 'ggplot2'. R package version 0.1.6.")
+         textVersion = "Derks, K. (2021). aRtsy: Generative Art with 'ggplot2'. R package version 0.1.7.")

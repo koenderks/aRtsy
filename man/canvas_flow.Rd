@@ -20,7 +20,7 @@ canvas_flow(colors, background = "#fafafa", lines = 500, lwd = 0.05,
 
 \item{stepmax}{the maximum proportion of the canvas covered in each iteration.}
 
-\item{polar}{logical. Whether to draw the function with polar coordinates.}
+\item{polar}{logical. Whether to draw the flow field with polar coordinates.}
 
 \item{angles}{optional, a 200 x 200 matrix containing the angles in the flow field, or a character indicating the type of noise to use (\code{svm}, \code{knn}, \code{rf}, \code{perlin}, \code{cubic}, \code{simplex}, or \code{worley}). If \code{NULL} (the default), the noise type is chosen randomly.}
 }
