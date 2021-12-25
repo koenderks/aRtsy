@@ -3,7 +3,7 @@
 #' @description This function draws flow fields on a canvas. The algorithm simulates the flow of points through a field of angles which can be set manually or generated from the predictions of a supervised learning method (i.e., knn, svm, random forest) trained on randomly generated data.
 #'
 #' @usage canvas_flow(colors, background = "#fafafa", lines = 500, lwd = 0.05,
-#'             iterations = 100, stepmax = 0.01, angles = NULL)
+#'             iterations = 100, stepmax = 0.01, polar = FALSE, angles = NULL)
 #'
 #' @param colors         a string or character vector specifying the color(s) used for the artwork.
 #' @param background     a character specifying the color used for the background.
@@ -11,6 +11,7 @@
 #' @param lwd            expansion factor for the line width.
 #' @param iterations     the maximum number of iterations for each line.
 #' @param stepmax        the maximum proportion of the canvas covered in each iteration.
+#' @param polar       logical. Whether to draw the function with polar coordinates.
 #' @param angles         optional, a 200 x 200 matrix containing the angles in the flow field, or a character indicating the type of noise to use (\code{svm}, \code{knn}, \code{rf}, \code{perlin}, \code{cubic}, \code{simplex}, or \code{worley}). If \code{NULL} (the default), the noise type is chosen randomly.
 #'
 #' @return A \code{ggplot} object containing the artwork.
@@ -39,12 +40,15 @@
 #'   colors = colorPalette("tuscany1"), background = "black",
 #'   angles = angles, lwd = 0.4, lines = 1000, stepmax = 0.001
 #' )
+#'
+#' # Polar example
+#' canvas_flow(colors = colorPalette("vrolik2"), lines = 300, lwd = 0.5, polar = TRUE)
 #' }
 #'
 #' @export
 
 canvas_flow <- function(colors, background = "#fafafa", lines = 500, lwd = 0.05,
-                        iterations = 100, stepmax = 0.01, angles = NULL) {
+                        iterations = 100, stepmax = 0.01, polar = FALSE, angles = NULL) {
   .checkUserInput(
     background = background, iterations = iterations
   )
@@ -86,8 +90,12 @@ canvas_flow <- function(colors, background = "#fafafa", lines = 500, lwd = 0.05,
     plotData <- rbind(plotData, rows)
   }
   artwork <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y, group = factor(z))) +
-    ggplot2::geom_path(size = plotData$size, color = plotData$color, lineend = "round") +
-    ggplot2::coord_cartesian(xlim = c(0, 100), ylim = c(0, 100))
+    ggplot2::geom_path(size = plotData$size, color = plotData$color, lineend = "round")
+  if (polar) {
+    artwork <- artwork + ggplot2::coord_polar()
+  } else {
+    artwork <- artwork + ggplot2::coord_cartesian(xlim = c(0, 100), ylim = c(0, 100))
+  }
   artwork <- theme_canvas(artwork, background = background)
   return(artwork)
 }

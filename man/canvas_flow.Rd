@@ -5,7 +5,7 @@
 \title{Draw A Flow Field}
 \usage{
 canvas_flow(colors, background = "#fafafa", lines = 500, lwd = 0.05,
-            iterations = 100, stepmax = 0.01, angles = NULL)
+            iterations = 100, stepmax = 0.01, polar = FALSE, angles = NULL)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
@@ -19,6 +19,8 @@ canvas_flow(colors, background = "#fafafa", lines = 500, lwd = 0.05,
 \item{iterations}{the maximum number of iterations for each line.}
 
 \item{stepmax}{the maximum proportion of the canvas covered in each iteration.}
+
+\item{polar}{logical. Whether to draw the function with polar coordinates.}
 
 \item{angles}{optional, a 200 x 200 matrix containing the angles in the flow field, or a character indicating the type of noise to use (\code{svm}, \code{knn}, \code{rf}, \code{perlin}, \code{cubic}, \code{simplex}, or \code{worley}). If \code{NULL} (the default), the noise type is chosen randomly.}
 }
@@ -44,6 +46,9 @@ canvas_flow(
   colors = colorPalette("tuscany1"), background = "black",
   angles = angles, lwd = 0.4, lines = 1000, stepmax = 0.001
 )
+
+# Polar example
+canvas_flow(colors = colorPalette("vrolik2"), lines = 300, lwd = 0.5, polar = TRUE)
 }
 
 }
