@@ -13,7 +13,7 @@ URL: https://koenderks.github.io/aRtsy/, https://github.com/koenderks/aRtsy, htt
 Imports: ambient, e1071, ggplot2, kknn, randomForest, Rcpp, stats
 LinkingTo: Rcpp, RcppArmadillo
 Language: en-US
-License: GPL-3
+License: GPL (>= 3)
 Encoding: UTF-8
 RoxygenNote: 7.1.2
 Suggests: testthat (>= 3.0.0)
