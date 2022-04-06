@@ -174,3 +174,9 @@ test_that("canvas_chladni()", {
   artwork <- canvas_chladni(colors = "black")
   expect_equal(!is.null(artwork), TRUE)
 })
+
+test_that("canvas_petri()", {
+  set.seed(1)
+  artwork <- canvas_petri(colors = "black")
+  expect_equal(!is.null(artwork), TRUE)
+})

@@ -2,6 +2,7 @@
 
 **New features**
 
+- Added new function `canvas_petri()`.
 - Added `polar` to `canvas_flow()`, thanks to @researchremora on twitter for the idea.
 - Added more color palettes to the `colorPalette()` function.
 

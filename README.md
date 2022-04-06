@@ -59,6 +59,7 @@ saveCanvas(artwork, filename = "myArtwork.png")
 * [`canvas_chladni()`](#chladni-figures)
 * [`canvas_flow()`](#flow-fields)
 * [`canvas_maze()`](#mazes)
+* [`canvas_petri()`](#petridishes)
 * [`canvas_planet()`](#planets)
 * [`canvas_stripes()`](#stripes)
 * [`canvas_strokes()`](#paint-strokes)
@@ -210,6 +211,24 @@ You can use the `canvas_maze()` function to make your own artwork using this alg
 set.seed(1)
 canvas_maze(color = "#fafafa")
 # see ?canvas_maze for more input parameters of this function
+```
+
+#### Petridishes
+
+This artwork draws petridishes but is currently very slow. A faster implementation is hopefully coming soon.
+
+<p align="center">
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/petris/2022-04-05.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/petris/2022-04-06.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/petris/2022-04-04.png' width='250' height='250'>
+</p>
+
+You can use the `canvas_planet()` function to make your own artwork using this algorithm.
+
+```r
+set.seed(1)
+canvas_planet(colors = colorPalette("retro3"))
+# see ?canvas_planet for more input parameters of this function
 ```
 
 #### Planets
