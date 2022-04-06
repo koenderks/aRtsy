@@ -3,6 +3,7 @@ library(aRtsy)
 
 palettes <- c(
   "blackwhite",
+  "bell",
   "boogy1",
   "boogy2",
   "boogy3",
@@ -22,19 +23,24 @@ palettes <- c(
   "mixer1",
   "mixer2",
   "mixer3",
+  "mixer4",
   "nature",
   "neon1",
   "neon2",
   "retro1",
   "retro2",
   "retro3",
+  "retro4",
   "sooph",
+  "sky",
   "tuscany1",
   "tuscany2",
   "tuscany3",
   "vrolik1",
   "vrolik2",
-  "vrolik3"
+  "vrolik3",
+  "vrolik4",
+  "vrolik5"
 )
 
 ncol <- 3
