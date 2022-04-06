@@ -2,7 +2,6 @@
 ^cran-comments.md$
 ^.github$
 ^Meta$
-^man/manual$
 ^png$
 ^CRAN-RELEASE$
 ^docs$
