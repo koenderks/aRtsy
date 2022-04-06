@@ -239,14 +239,14 @@
 <div class="section level4">
 <h4 id="petridishes">Petridishes<a class="anchor" aria-label="anchor" href="#petridishes"></a>
 </h4>
-<p>This artwork draws petridishes but is currently very slow. A faster implementation is hopefully coming soon.</p>
+<p>This artwork draws petridishes on the basis of a space colonization algorithm. The current implementation, however, is very slow. A faster implementation is hopefully coming soon.</p>
 <p align="center">
 <img src="https://github.com/koenderks/aRtsy/raw/development/png/petris/2022-04-05.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/petris/2022-04-06.png" width="250" height="250"><img src="https://github.com/koenderks/aRtsy/raw/development/png/petris/2022-04-04.png" width="250" height="250"></p>
 <p>You can use the <code><a href="reference/canvas_petri.html">canvas_petri()</a></code> function to make your own artwork using this algorithm.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="reference/canvas_petri.html">canvas_petri</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="reference/colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"sooph"</span><span class="op">)</span><span class="op">)</span>
-<span class="co"># see ?canvas_planet for more input parameters of this function</span></code></pre></div>
+<span class="co"># see ?canvas_petri for more input parameters of this function</span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="planets">Planets<a class="anchor" aria-label="anchor" href="#planets"></a>
