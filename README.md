@@ -215,7 +215,7 @@ canvas_maze(color = "#fafafa")
 
 #### Petridishes
 
-This artwork draws petridishes but is currently very slow. A faster implementation is hopefully coming soon.
+This artwork draws petridishes on the basis of a space colonization algorithm. The current implementation, however, is very slow. A faster implementation is hopefully coming soon.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/petris/2022-04-05.png' width='250' height='250'>
@@ -228,7 +228,7 @@ You can use the `canvas_petri()` function to make your own artwork using this al
 ```r
 set.seed(1)
 canvas_petri(colors = colorPalette("sooph"))
-# see ?canvas_planet for more input parameters of this function
+# see ?canvas_petri for more input parameters of this function
 ```
 
 #### Planets
