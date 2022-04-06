@@ -223,11 +223,11 @@ This artwork draws petridishes but is currently very slow. A faster implementati
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/petris/2022-04-04.png' width='250' height='250'>
 </p>
 
-You can use the `canvas_planet()` function to make your own artwork using this algorithm.
+You can use the `canvas_petri()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(1)
-canvas_planet(colors = colorPalette("retro3"))
+canvas_petri(colors = colorPalette("sooph"))
 # see ?canvas_planet for more input parameters of this function
 ```
 

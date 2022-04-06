@@ -61,7 +61,7 @@ canvas_petri <- function(colors, background = "#fafafa", circle = "black",
   attractor_data <- data.frame(x = r * cos(theta), y = r * sin(theta))
   r <- pi * sqrt(stats::runif(nodes, min = hole * 1.1, max = 0.99))
   theta <- stats::runif(nodes) * 2 * pi
-  node_data <- data.frame(x = r * cos(theta), y = r * sin(theta), o = 1:nodes, t = 0)
+  node_data <- data.frame(x = r * cos(theta), y = r * sin(theta), z = 1:nodes, t = 0)
   node_data$xend <- node_data$x # xend is the node's x location
   node_data$yend <- node_data$y # yend is the node's y location
   t <- 0
@@ -95,7 +95,7 @@ canvas_petri <- function(colors, background = "#fafafa", circle = "black",
     new_nodes <- data.frame(
       xend = node_data$xend + directions$xend,
       yend = node_data$yend + directions$yend,
-      o = node_data$o, t = t
+      z = node_data$z, t = t
     )
     new_nodes$x <- node_data$xend
     new_nodes$y <- node_data$yend
@@ -123,10 +123,10 @@ canvas_petri <- function(colors, background = "#fafafa", circle = "black",
   circle_data2 <- .circle_points(center = c(0, 0), diameter = 2 * pi * hole, npoints = 100)
   limits <- range(pretty(c(node_data$x, node_data$xend, node_data$y, node_data$yend, circle_data$x, circle_data$y)))
   node_data$size <- (max(node_data$t) - node_data$t) / max(node_data$t)
-  artwork <- ggplot2::ggplot(data = node_data, mapping = ggplot2::aes(x = x, y = y, xend = xend, yend = yend, group = factor(o))) +
+  artwork <- ggplot2::ggplot(data = node_data, mapping = ggplot2::aes(x = x, y = y, xend = xend, yend = yend, group = factor(z))) +
     ggplot2::geom_polygon(data = circle_data, mapping = ggplot2::aes(x = x, y = y), inherit.aes = FALSE, fill = circle) +
     ggplot2::geom_polygon(data = circle_data2, mapping = ggplot2::aes(x = x, y = y), inherit.aes = FALSE, fill = background) +
-    ggplot2::geom_segment(mapping = ggplot2::aes(color = factor(o)), size = node_data$size, linejoin = "round", lineend = "round") +
+    ggplot2::geom_segment(mapping = ggplot2::aes(color = factor(z)), size = node_data$size, linejoin = "round", lineend = "round") +
     ggplot2::scale_color_manual(values = colors) +
     ggplot2::coord_equal(xlim = limits, ylim = limits)
   artwork <- theme_canvas(artwork, background = background)
