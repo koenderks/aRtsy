@@ -59,7 +59,7 @@ saveCanvas(artwork, filename = "myArtwork.png")
 * [`canvas_chladni()`](#chladni-figures)
 * [`canvas_flow()`](#flow-fields)
 * [`canvas_maze()`](#mazes)
-* [`canvas_petri()`](#petridishes)
+* [`canvas_petri()`](#petri-dishes)
 * [`canvas_planet()`](#planets)
 * [`canvas_stripes()`](#stripes)
 * [`canvas_strokes()`](#paint-strokes)
@@ -213,7 +213,7 @@ canvas_maze(color = "#fafafa")
 # see ?canvas_maze for more input parameters of this function
 ```
 
-#### Petridishes
+#### Petri dishes
 
 This artwork uses a space colonization algorithm (excellently described in [this blogpost](https://medium.com/@jason.webb/space-colonization-algorithm-in-javascript-6f683b743dc5) by Jason Webb) to draw Petri dish colonies. If you add a hole in the middle of the Petri dish, the colony grows around the hole.
 
