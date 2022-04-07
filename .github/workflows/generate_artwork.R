@@ -39,7 +39,7 @@ artwork <- switch(type,
   "24" = canvas_phyllotaxis(colors = colorPalette("random-palette"), iterations = sample(1000:100000, size = 1), p = runif(1, 0.5, 0.9), background = colorPalette("random", 1), angle = runif(1, 0, 1000), size = 0.01, alpha = runif(1, 0.3, 1)),
   "25" = canvas_cobweb(colors = colorPalette("random-palette"), background = colorPalette("random", 1), lines = sample(500:1000, size = 1), iterations = sample(20:100, size = 1)),
   "26" = canvas_chladni(colors = colorPalette("random-palette"), waves = sample(3:10, size = 1), resolution = sample(c(500, 1000), size = 1), warp = runif(1, 0, 1.5)),
-  "27" = canvas_petri(colors = colorPalette("random-palette"), attractors = 5000, hole = sample(c(0, 0.25, 0.5, 0.8), size = 1))
+  "27" = canvas_petri(colors = colorPalette("random-palette"), background = colorPalette("random", 1), dish = colorPalette("random", 1), attractors = 5000, iterations = sample(10:20, size = 1), hole = sample(c(0, 0.7, 0.8), size = 1))
 )
 
 saveCanvas(artwork, filename, width = ifelse(type == 19, yes = NA, no = 7), height = ifelse(type == 19, yes = NA, no = 7))

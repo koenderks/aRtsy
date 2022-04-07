@@ -2,27 +2,29 @@
 % Please edit documentation in R/canvas_petri.R
 \name{canvas_petri}
 \alias{canvas_petri}
-\title{Draw Petri-dish Colonies}
+\title{Draw Petri Dish Colonies}
 \usage{
-canvas_petri(colors, background = "#fafafa", circle = "black",
-                attractors = 1000, hole = 0)
+canvas_petri(colors, background = "#fafafa", dish = "black",
+             attractors = 1000, iterations = 15, hole = 0)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
 
-\item{background}{a character specifying the color used for the background.}
+\item{background}{a character specifying the color used for the background (and the hole).}
 
-\item{circle}{a character specifying the color used for the circle.}
+\item{dish}{a character specifying the color used for the Petri dish.}
 
-\item{attractors}{a numeric value larger than 1000 specifying the number of attractors.}
+\item{attractors}{an integer specifying the number of attractors.}
 
-\item{hole}{a value between 0 and 0.9 specifying the hole width.}
+\item{iterations}{a positive integer specifying the number of iterations of the algorithm.}
+
+\item{hole}{a value between 0 and 0.9 specifying the hole size in proportion to the dish.}
 }
 \value{
 A \code{ggplot} object containing the artwork.
 }
 \description{
-This function uses a space colony algorithm.
+This function uses a space colony algorithm to draw Petri dish colonies.
 }
 \examples{
 \donttest{
@@ -32,9 +34,12 @@ set.seed(2)
 canvas_petri(colors = colorPalette("origami"))
 
 # Advanced example
-canvas_petri(colors = "black", hole = 0.8)
+canvas_petri(colors = "white", hole = 0.8, attractors = 5000)
 }
 
+}
+\references{
+\url{https://medium.com/@jason.webb/space-colonization-algorithm-in-javascript-6f683b743dc5}
 }
 \seealso{
 \code{colorPalette}

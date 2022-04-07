@@ -215,12 +215,12 @@ canvas_maze(color = "#fafafa")
 
 #### Petridishes
 
-This artwork draws petridishes on the basis of a space colonization algorithm. The current implementation, however, is very slow. A faster implementation is hopefully coming soon.
+This artwork uses a space colonization algorithm (excellently described in [this blogpost](https://medium.com/@jason.webb/space-colonization-algorithm-in-javascript-6f683b743dc5) by Jason Webb) to draw Petri dish colonies. If you add a hole in the middle of the Petri dish, the colony grows around the hole.
 
 <p align="center">
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/petris/2022-04-05.png' width='250' height='250'>
-  <img src='https://github.com/koenderks/aRtsy/raw/development/png/petris/2022-04-06.png' width='250' height='250'>
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/petris/2022-04-04.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/petris/2022-04-06.png' width='250' height='250'>
+  <img src='https://github.com/koenderks/aRtsy/raw/development/png/petris/2022-04-05.png' width='250' height='250'>
 </p>
 
 You can use the `canvas_petri()` function to make your own artwork using this algorithm.

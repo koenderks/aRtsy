@@ -29,6 +29,22 @@ iterate_maze <- function(X, x, y) {
     .Call('_aRtsy_iterate_maze', PACKAGE = 'aRtsy', X, x, y)
 }
 
+get_closest_node <- function(attractor_x, attractor_y, nodes_x, nodes_y, attraction_distance) {
+    .Call('_aRtsy_get_closest_node', PACKAGE = 'aRtsy', attractor_x, attractor_y, nodes_x, nodes_y, attraction_distance)
+}
+
+kill_attractors <- function(attractor_x, attractor_y, nodes_x, nodes_y, kill_distance) {
+    .Call('_aRtsy_kill_attractors', PACKAGE = 'aRtsy', attractor_x, attractor_y, nodes_x, nodes_y, kill_distance)
+}
+
+draw_circle <- function(center_x, center_y, diameter, n) {
+    .Call('_aRtsy_draw_circle', PACKAGE = 'aRtsy', center_x, center_y, diameter, n)
+}
+
+get_directions <- function(attractor_x, attractor_y, nodes_x, nodes_y, closest_nodes) {
+    .Call('_aRtsy_get_directions', PACKAGE = 'aRtsy', attractor_x, attractor_y, nodes_x, nodes_y, closest_nodes)
+}
+
 iterate_phyllotaxis <- function(iter, a, p) {
     .Call('_aRtsy_iterate_phyllotaxis', PACKAGE = 'aRtsy', iter, a, p)
 }
