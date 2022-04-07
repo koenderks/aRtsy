@@ -36,7 +36,7 @@ Rcpp::IntegerVector get_closest_node(Rcpp::NumericVector attractor_x,
     double min_dist = attraction_distance;
     for (int j = 0; j < n_nodes; j++) {
       Rcpp::checkUserInterrupt();
-      double dist = abs(sqrt(pow(attractor_x[i] - nodes_x[j], 2) + pow(attractor_y[i] - nodes_y[j], 2)));
+      double dist = fabs(sqrt(pow(attractor_x[i] - nodes_x[j], 2) + pow(attractor_y[i] - nodes_y[j], 2)));
       if (dist < min_dist) {
         min_dist = dist;
         min_dist_node = j + 1;
@@ -62,7 +62,7 @@ Rcpp::DataFrame kill_attractors(Rcpp::NumericVector attractor_x,
     int c = 0;
     for (int j = 0; j < n_nodes; j++) {
       Rcpp::checkUserInterrupt();
-      double dist = abs(sqrt(pow(attractor_x[i] - nodes_x[j], 2) + pow(attractor_y[i] - nodes_y[j], 2)));
+      double dist = fabs(sqrt(pow(attractor_x[i] - nodes_x[j], 2) + pow(attractor_y[i] - nodes_y[j], 2)));
       if (dist <= kill_distance) {
         c++;
       }
