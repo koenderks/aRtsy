@@ -33,6 +33,8 @@ arma::mat draw_polylines(arma::mat X,
   X(0, 1) = R::runif(0, rows);
   int xradius = cols * ratio;
   int yradius = rows * ratio;
+  bool c1;
+  bool c2;
   for (int i = 1; i < iters; i++) {
     Rcpp::checkUserInterrupt();
     double v = R::runif(0, 1);
@@ -44,7 +46,9 @@ arma::mat draw_polylines(arma::mat X,
         x1 = 0;
       if (x1 > cols)
         x1 = cols;
-      if ((x1 > (X(0, 0) + (xradius * R::runif(0.5, 2)))) || (x1 < (X(0, 0) - (xradius * R::runif(0.5, 2)))))
+      c1 = x1 > (X(0, 0) + (xradius * R::runif(0.5, 2)));
+      c2 = x1 < (X(0, 0) - (xradius * R::runif(0.5, 2)));
+      if (c1 || c2)
         x1 = X(i-1, 0);
     } else {
       x1 = X(i-1, 0);
@@ -57,7 +61,9 @@ arma::mat draw_polylines(arma::mat X,
         y1 = 0;
       if (y1 > rows)
         y1 = rows;
-      if ((y1 > (X(0, 1) + (yradius * R::runif(0.5, 2)))) || (y1 < (X(0, 1) - (yradius * R::runif(0.5, 2)))))
+      c1 = y1 > (X(0, 1) + (yradius * R::runif(0.5, 2)));
+      c2 = y1 < (X(0, 1) - (yradius * R::runif(0.5, 2)));
+      if (c1 || c2)
         y1 = X(i-1, 1);
     } else {
       y1 = X(i-1, 1);
