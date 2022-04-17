@@ -10,3 +10,5 @@ aRtsyRelease.R
 ^\.Rproj\.user$
 .vscode
 ^LICENSE\.md$
+^CITATION\.cff$
+^\.github$
