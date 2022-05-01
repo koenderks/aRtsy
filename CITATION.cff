@@ -8,7 +8,7 @@ message: 'To cite package "aRtsy" in publications use:'
 type: software
 license: GPL-3.0-or-later
 title: 'aRtsy: Generative Art with ''ggplot2'''
-version: 0.1.7
+version: 0.1.8
 abstract: Provides algorithms for creating artworks in the 'ggplot2' language that
   incorporate some form of randomness.
 authors:
@@ -28,7 +28,7 @@ preferred-citation:
 repository: https://CRAN.R-project.org/package=aRtsy
 repository-code: https://github.com/koenderks/aRtsy
 url: https://koenderks.github.io/aRtsy/
-date-released: '2022-04-07'
+date-released: '2022-05-01'
 contact:
 - family-names: Derks
   given-names: Koen
