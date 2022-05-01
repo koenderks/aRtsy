@@ -1,8 +1,7 @@
-## aRtsy version 0.1.7
-This is a submission for aRtsy version 0.1.7. In this version I have:
+## aRtsy version 0.1.8
+This is a submission for aRtsy version 0.1.8. In this version I have:
 
-* Added one new function and made some small internal changes.
-* Fixed a clang warning `use of bitwise '|' with boolean operands`.
+* Added one new function.
 
 ## Test environments
 * Windows install, (on github actions) R release
