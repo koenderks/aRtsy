@@ -61,7 +61,7 @@ saveCanvas(artwork, filename = "myArtwork.png")
 * [`canvas_maze()`](#mazes)
 * [`canvas_petri()`](#petri-dishes)
 * [`canvas_planet()`](#planets)
-* [`canvas_split()`](#split-lines)
+* [`canvas_splits()`](#split-lines)
 * [`canvas_stripes()`](#stripes)
 * [`canvas_strokes()`](#paint-strokes)
 * [`canvas_phyllotaxis()`](#phyllotaxis)
@@ -260,12 +260,12 @@ This function creates a canvas of lines in which each line is split several time
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/splits/2022-05-02.png' width='250' height='250'>
 </p>
 
-You can use the `canvas_split()` function to make your own artwork using this algorithm.
+You can use the `canvas_splits()` function to make your own artwork using this algorithm.
 
 ```r
 set.seed(1)
-canvas_split(colors = colorPalette("origami"))
-# see ?canvas_split for more input parameters of this function
+canvas_splits(colors = colorPalette("origami"))
+# see ?canvas_splits for more input parameters of this function
 ```
 
 #### Stripes

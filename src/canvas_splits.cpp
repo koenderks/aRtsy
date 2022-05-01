@@ -23,14 +23,14 @@
 // [[Rcpp::depends(RcppArmadillo)]]
 
 // [[Rcpp::export]]
-Rcpp::DataFrame draw_split(Rcpp::NumericVector x,
-                           Rcpp::NumericVector xend,
-                           Rcpp::NumericVector y,
-                           Rcpp::NumericVector yend,
-                           Rcpp::NumericVector col,
-                           double sda,
-                           int ncols,
-                           int iterations) {
+Rcpp::DataFrame draw_splits(Rcpp::NumericVector x,
+                            Rcpp::NumericVector xend,
+                            Rcpp::NumericVector y,
+                            Rcpp::NumericVector yend,
+                            Rcpp::NumericVector col,
+                            double sda,
+                            int ncols,
+                            int iterations) {
   for (int i = 0; i < iterations; i++) {
     int l1 = x.length() * 4;
     Rcpp::NumericVector x2 (l1);

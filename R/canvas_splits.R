@@ -17,8 +17,8 @@
 #'
 #' @description This function draws split lines.
 #'
-#' @usage canvas_split(colors, background = "#fafafa", iterations = 7,
-#'              lwd = 0.05, alpha = 0.2)
+#' @usage canvas_splits(colors, background = "#fafafa", iterations = 7,
+#'               lwd = 0.05, alpha = 0.2)
 #'
 #' @param colors         a string or character vector specifying the color(s) used for the artwork.
 #' @param background     a character specifying the color used for the background (and the hole).
@@ -40,16 +40,16 @@
 #' set.seed(2)
 #'
 #' # Simple example
-#' canvas_split(colors = "black", sd = 0, iterations = 6)
+#' canvas_splits(colors = "black", sd = 0, iterations = 6)
 #'
 #' # Simple example
-#' canvas_split(colors = colorPalette("origami"), background = "black")
+#' canvas_splits(colors = colorPalette("origami"), background = "black")
 #' }
 #'
 #' @export
 
-canvas_split <- function(colors, background = "#fafafa", iterations = 7,
-                         sd = 0.2, lwd = 0.05, alpha = 0.2) {
+canvas_splits <- function(colors, background = "#fafafa", iterations = 7,
+                          sd = 0.2, lwd = 0.05, alpha = 0.2) {
   .checkUserInput(iterations = iterations, background = background)
   if (sd < 0) {
     stop("'sd' must be >= 0")
@@ -59,7 +59,7 @@ canvas_split <- function(colors, background = "#fafafa", iterations = 7,
     y = c(0, 0, 1, 1), yend = c(0, 1, 1, 0),
     col = sample(1:length(colors), size = 4, replace = TRUE)
   )
-  canvas <- draw_split(line$x, line$xend, line$y, line$yend, line$col, sd, length(colors), iterations)
+  canvas <- draw_splits(line$x, line$xend, line$y, line$yend, line$col, sd, length(colors), iterations)
   breaks <- range(c(canvas$x, canvas$xend, canvas$y, canvas$yend))
   p <- ggplot2::ggplot(data = canvas) +
     ggplot2::geom_segment(mapping = ggplot2::aes(x = x, y = y, xend = xend, yend = yend, col = factor(col)), size = lwd, alpha = alpha) +
