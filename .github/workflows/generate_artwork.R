@@ -40,7 +40,7 @@ artwork <- switch(type,
   "25" = canvas_cobweb(colors = colorPalette("random-palette"), background = colorPalette("random", 1), lines = sample(500:1000, size = 1), iterations = sample(20:100, size = 1)),
   "26" = canvas_chladni(colors = colorPalette("random-palette"), waves = sample(3:10, size = 1), resolution = sample(c(500, 1000), size = 1), warp = runif(1, 0, 1.5)),
   "27" = canvas_petri(colors = colorPalette("random-palette"), background = colorPalette("random", 1), dish = colorPalette("random", 1), attractors = 5000, iterations = sample(10:20, size = 1), hole = sample(c(0, 0.7, 0.8), size = 1)),
-  "28" = canvas_split(colors = colorPalette("random-palette"), background = colorPalette("random", 1), iterations = sample(6:8, size = 1))
+  "28" = canvas_split(colors = colorPalette("random-palette"), background = colorPalette("random", 1), iterations = sample(6:8, size = 1), sd = abs(rnorm(1, sd = 0.2)))
 )
 
 saveCanvas(artwork, filename, width = ifelse(type == 19, yes = NA, no = 7), height = ifelse(type == 19, yes = NA, no = 7))

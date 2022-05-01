@@ -61,8 +61,8 @@ iterate_recaman <- function(n, start, increment) {
     .Call('_aRtsy_iterate_recaman', PACKAGE = 'aRtsy', n, start, increment)
 }
 
-draw_split <- function(x, xend, y, yend, col, ncols, iterations) {
-    .Call('_aRtsy_draw_split', PACKAGE = 'aRtsy', x, xend, y, yend, col, ncols, iterations)
+draw_split <- function(x, xend, y, yend, col, sda, ncols, iterations) {
+    .Call('_aRtsy_draw_split', PACKAGE = 'aRtsy', x, xend, y, yend, col, sda, ncols, iterations)
 }
 
 draw_squares <- function(X, neighbors, s, cuts, ratio) {

@@ -4,7 +4,7 @@
 \alias{canvas_split}
 \title{Draw Split Lines}
 \usage{
-canvas_split(colors, background = "black", iterations = 7,
+canvas_split(colors, background = "#fafafa", iterations = 7,
              lwd = 0.05, alpha = 0.2)
 }
 \arguments{
@@ -13,6 +13,8 @@ canvas_split(colors, background = "black", iterations = 7,
 \item{background}{a character specifying the color used for the background (and the hole).}
 
 \item{iterations}{a positive integer specifying the number of iterations of the algorithm.}
+
+\item{sd}{a numeric value specifying the standard deviation of the angle noise.}
 
 \item{lwd}{a numeric value specifying the width of the lines.}
 
@@ -29,7 +31,10 @@ This function draws split lines.
 set.seed(2)
 
 # Simple example
-canvas_split(colors = colorPalette("origami"))
+canvas_split(colors = "black", sd = 0, iterations = 6)
+
+# Simple example
+canvas_split(colors = colorPalette("origami"), background = "black")
 }
 
 }

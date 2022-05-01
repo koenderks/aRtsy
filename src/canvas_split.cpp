@@ -28,6 +28,7 @@ Rcpp::DataFrame draw_split(Rcpp::NumericVector x,
                            Rcpp::NumericVector y,
                            Rcpp::NumericVector yend,
                            Rcpp::NumericVector col,
+                           double sda,
                            int ncols,
                            int iterations) {
   for (int i = 0; i < iterations; i++) {
@@ -46,7 +47,7 @@ Rcpp::DataFrame draw_split(Rcpp::NumericVector x,
       double d = sqrt(pow(xdir, 2) + pow(ydir, 2));
       double r = d * 0.49;
       double cur_angle = atan2(ydir, xdir);
-      double new_angle = cur_angle + M_PI / 2 + R::rnorm(0, 0.2);
+      double new_angle = cur_angle + M_PI / 2 + R::rnorm(0, sda);
       x2[index + 0] = x[j];
       x2[index + 1] = x[j] + 0.47 * xdir;
       x2[index + 2] = center_x + r * cos(new_angle);
