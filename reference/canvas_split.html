@@ -53,7 +53,7 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">canvas_split</span><span class="op">(</span><span class="va">colors</span>, background <span class="op">=</span> <span class="st">"black"</span>, iterations <span class="op">=</span> <span class="fl">7</span>,
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">canvas_split</span><span class="op">(</span><span class="va">colors</span>, background <span class="op">=</span> <span class="st">"#fafafa"</span>, iterations <span class="op">=</span> <span class="fl">7</span>,
              lwd <span class="op">=</span> <span class="fl">0.05</span>, alpha <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span></code></pre></div>
     </div>
 
@@ -65,6 +65,8 @@
 <dd><p>a character specifying the color used for the background (and the hole).</p></dd>
 <dt>iterations</dt>
 <dd><p>a positive integer specifying the number of iterations of the algorithm.</p></dd>
+<dt>sd</dt>
+<dd><p>a numeric value specifying the standard deviation of the angle noise.</p></dd>
 <dt>lwd</dt>
 <dd><p>a numeric value specifying the width of the lines.</p></dd>
 <dt>alpha</dt>
@@ -89,8 +91,12 @@
 <span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># Simple example</span></span>
-<span class="r-in"><span class="fu">canvas_split</span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"origami"</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu">canvas_split</span><span class="op">(</span>colors <span class="op">=</span> <span class="st">"black"</span>, sd <span class="op">=</span> <span class="fl">0</span>, iterations <span class="op">=</span> <span class="fl">6</span><span class="op">)</span></span>
 <span class="r-plt img"><img src="canvas_split-1.png" alt="" width="700" height="433"></span>
+<span class="r-in"></span>
+<span class="r-in"><span class="co"># Simple example</span></span>
+<span class="r-in"><span class="fu">canvas_split</span><span class="op">(</span>colors <span class="op">=</span> <span class="fu"><a href="colorPalette.html">colorPalette</a></span><span class="op">(</span><span class="st">"origami"</span><span class="op">)</span>, background <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span></span>
+<span class="r-plt img"><img src="canvas_split-2.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span class="co"># }</span></span>
 <span class="r-in"></span>
 </code></pre></div>
