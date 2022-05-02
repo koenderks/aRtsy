@@ -252,7 +252,7 @@ canvas_planet(colors = colorPalette("retro3"))
 
 #### Split Lines
 
-This function creates a canvas of lines in which each line is split several times according to a predefined pattern.
+This function generates a [fractal curve](https://en.wikipedia.org/wiki/Fractal_curve). It starts with four simple lines and proceeds to split each line in four new line segments. If this action is repeated for some time, and each time the same split is made, the end product is a fractal curve. The fractal curve in this function (optionally) uses some noise to create random distortions in the curve.
 
 <p align="center">
   <img src='https://github.com/koenderks/aRtsy/raw/development/png/splits/2022-05-03.png' width='250' height='250'>

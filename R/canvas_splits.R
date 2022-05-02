@@ -17,8 +17,8 @@
 #'
 #' @description This function draws split lines.
 #'
-#' @usage canvas_splits(colors, background = "#fafafa", iterations = 7,
-#'               lwd = 0.05, alpha = 0.2)
+#' @usage canvas_splits(colors, background = "#fafafa", iterations = 6,
+#'               sd = 0.2, lwd = 0.05, alpha = 0.5)
 #'
 #' @param colors         a string or character vector specifying the color(s) used for the artwork.
 #' @param background     a character specifying the color used for the background (and the hole).
@@ -40,16 +40,16 @@
 #' set.seed(2)
 #'
 #' # Simple example
-#' canvas_splits(colors = "black", sd = 0, iterations = 6)
+#' canvas_splits(colors = "black", sd = 0)
 #'
 #' # Simple example
-#' canvas_splits(colors = colorPalette("origami"), background = "black")
+#' canvas_splits(colors = colorPalette("dark2"), background = "black", sd = 1)
 #' }
 #'
 #' @export
 
-canvas_splits <- function(colors, background = "#fafafa", iterations = 7,
-                          sd = 0.2, lwd = 0.05, alpha = 0.2) {
+canvas_splits <- function(colors, background = "#fafafa", iterations = 6,
+                          sd = 0.2, lwd = 0.05, alpha = 0.5) {
   .checkUserInput(iterations = iterations, background = background)
   if (sd < 0) {
     stop("'sd' must be >= 0")
@@ -66,6 +66,6 @@ canvas_splits <- function(colors, background = "#fafafa", iterations = 7,
     ggplot2::scale_x_continuous(limits = breaks) +
     ggplot2::scale_y_continuous(limits = breaks) +
     ggplot2::scale_color_manual(values = colors)
-  p <- aRtsy::theme_canvas(p, background = background)
+  p <- theme_canvas(p, background = background)
   return(p)
 }

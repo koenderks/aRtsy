@@ -62,16 +62,16 @@
     z <- predict(fit, newdata = canvas)
   } else if (type == "perlin") {
     z <- ambient::noise_perlin(dims, frequency = stats::runif(1, 0.001, 0.04))
-    z <- (z - range(z)[1])/diff(range(z)) * diff(limits) + limits[1]
+    z <- (z - range(z)[1]) / diff(range(z)) * diff(limits) + limits[1]
   } else if (type == "cubic") {
     z <- ambient::noise_cubic(dims, frequency = stats::runif(1, 0.001, 0.04))
-    z <- (z - range(z)[1])/diff(range(z)) * diff(limits) + limits[1]
+    z <- (z - range(z)[1]) / diff(range(z)) * diff(limits) + limits[1]
   } else if (type == "simplex") {
     z <- ambient::noise_simplex(dims, frequency = stats::runif(1, 0.001, 0.04))
-    z <- (z - range(z)[1])/diff(range(z)) * diff(limits) + limits[1]
+    z <- (z - range(z)[1]) / diff(range(z)) * diff(limits) + limits[1]
   } else if (type == "worley") {
     z <- ambient::noise_worley(dims)
-    z <- (z - range(z)[1])/diff(range(z)) * diff(limits) + limits[1]
+    z <- (z - range(z)[1]) / diff(range(z)) * diff(limits) + limits[1]
   }
   return(matrix(z, nrow = dims[1], ncol = dims[2]))
 }

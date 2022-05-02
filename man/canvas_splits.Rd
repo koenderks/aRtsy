@@ -4,8 +4,8 @@
 \alias{canvas_splits}
 \title{Draw Split Lines}
 \usage{
-canvas_splits(colors, background = "#fafafa", iterations = 7,
-              lwd = 0.05, alpha = 0.2)
+canvas_splits(colors, background = "#fafafa", iterations = 6,
+              sd = 0.2, lwd = 0.05, alpha = 0.5)
 }
 \arguments{
 \item{colors}{a string or character vector specifying the color(s) used for the artwork.}
@@ -31,10 +31,10 @@ This function draws split lines.
 set.seed(2)
 
 # Simple example
-canvas_splits(colors = "black", sd = 0, iterations = 6)
+canvas_splits(colors = "black", sd = 0)
 
 # Simple example
-canvas_splits(colors = colorPalette("origami"), background = "black")
+canvas_splits(colors = colorPalette("dark2"), background = "black", sd = 1)
 }
 
 }
