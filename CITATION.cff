@@ -23,12 +23,12 @@ preferred-citation:
     given-names: Koen
     email: koen-derks@hotmail.com
   year: '2022'
-  notes: R package version 0.1.7
+  notes: R package version 0.1.8
   url: https://CRAN.R-project.org/package=aRtsy
 repository: https://CRAN.R-project.org/package=aRtsy
 repository-code: https://github.com/koenderks/aRtsy
 url: https://koenderks.github.io/aRtsy/
-date-released: '2022-05-01'
+date-released: '2022-05-07'
 contact:
 - family-names: Derks
   given-names: Koen
