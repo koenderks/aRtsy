@@ -95,10 +95,10 @@ Rcpp::DataFrame draw_splits(Rcpp::NumericVector x,
   for (int i = 0; i < nrows; i++) {
     for (int j = 0; j < nlines; j++ ){
       int index    = i * nlines + j;
-      nx[index]    = (R::rnorm(x[i], 0.0025));
-      nxend[index] = (R::rnorm(xend[i], 0.0025));
-      ny[index]    = (R::rnorm(y[i], 0.0025));
-      nyend[index] = (R::rnorm(yend[i], 0.0025));
+      nx[index]    = R::rnorm(x[i], 0.0025);
+      nxend[index] = R::rnorm(xend[i], 0.0025);
+      ny[index]    = R::rnorm(y[i], 0.0025);
+      nyend[index] = R::rnorm(yend[i], 0.0025);
       ncol[index]  = col[i];
     }
   }

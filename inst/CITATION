@@ -4,6 +4,6 @@ bibentry(bibtype = "Manual",
          title = "aRtsy: Generative Art with 'ggplot2'",
          author = person("Koen", "Derks"),
          year = "2022",
-         note = "R package version 0.1.7",
+         note = "R package version 0.1.8",
          url = "https://CRAN.R-project.org/package=aRtsy",
-         textVersion = "Derks, K. (2022). aRtsy: Generative Art with 'ggplot2'. R package version 0.1.7.")
+         textVersion = "Derks, K. (2022). aRtsy: Generative Art with 'ggplot2'. R package version 0.1.8.")
