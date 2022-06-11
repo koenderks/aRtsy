@@ -4,7 +4,7 @@
 \docType{package}
 \title{aRtsy --- Generative Art using \code{ggplot2}}
 \description{
-  \if{html}{\figure{logo.png}{options: alt='logo' width='120'}}
+  \if{html}{\figure{logo.png}{options: alt='logo' width='120' style='float: right'}}
   \code{aRtsy} aims to make generative art accessible to the general public in a straightforward and standardized manner. 
   The package provides algorithms for creating artworks that incorporate some form of randomness and are dependent on the set \code{seed}. 
   Each algorithm is implemented in a separate function with its own set of parameters that can be tweaked.
