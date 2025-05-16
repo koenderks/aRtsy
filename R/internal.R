@@ -42,12 +42,11 @@
       y = stats::runif(n, limits[1], limits[2]),
       z = stats::runif(n, limits[1], limits[2])
     )
-    fit <- kknn::train.kknn(formula = z ~ x + y, data = train, kmax = k)
     xsequence <- seq(limits[1], limits[2], length = dims[1])
     ysequence <- seq(limits[1], limits[2], length = dims[2])
     canvas <- expand.grid(xsequence, ysequence)
     colnames(canvas) <- c("x", "y")
-    z <- predict(fit, newdata = canvas)
+    z <- FNN::knn.reg(train = train[, c("x", "y")], test = canvas[, c("x", "y")], y = train[, "z"], k = k)$pred
   } else if (type == "rf") {
     train <- data.frame(
       x = stats::runif(n, limits[1], limits[2]),
