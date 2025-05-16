@@ -11,8 +11,6 @@ title: 'aRtsy: Generative Art with ''ggplot2'''
 version: 1.0.1
 doi: 10.32614/CRAN.package.aRtsy
 identifiers:
-- type: doi
-  value: 10.32614/CRAN.package.aRtsy
 - type: url
   value: https://twitter.com/aRtsy_package
 - type: url
@@ -34,10 +32,9 @@ preferred-citation:
   notes: R package version 1.0.1
   url: https://CRAN.R-project.org/package=aRtsy
   doi: 10.32614/CRAN.package.aRtsy
-repository: https://CRAN.R-project.org/package=aRtsy
 repository-code: https://github.com/koenderks/aRtsy
 url: https://koenderks.github.io/aRtsy/
-date-released: '2024-11-20'
+date-released: '2025-05-16'
 contact:
 - family-names: Derks
   given-names: Koen
@@ -58,7 +55,7 @@ references:
   - family-names: Wickham
     given-names: Hadley
     email: hadley@posit.co
-  year: '2024'
+  year: '2025'
   doi: 10.32614/CRAN.package.testthat
   version: '>= 3.0.0'
 - type: software
@@ -74,7 +71,7 @@ references:
     orcid: https://orcid.org/0000-0002-5147-4711
   - family-names: Peck
     given-names: Jordan
-  year: '2024'
+  year: '2025'
   doi: 10.32614/CRAN.package.ambient
 - type: software
   title: e1071
@@ -97,7 +94,7 @@ references:
     given-names: Andreas
   - family-names: Leisch
     given-names: Friedrich
-  year: '2024'
+  year: '2025'
   doi: 10.32614/CRAN.package.e1071
 - type: software
   title: ggplot2
@@ -137,23 +134,30 @@ references:
     given-names: Teun
     name-particle: van den
     orcid: https://orcid.org/0000-0002-9335-7468
-  year: '2024'
+  year: '2025'
   doi: 10.32614/CRAN.package.ggplot2
   version: '>= 3.4.0'
 - type: software
-  title: kknn
-  abstract: 'kknn: Weighted k-Nearest Neighbors'
+  title: FNN
+  abstract: 'FNN: Fast Nearest Neighbor Search Algorithms and Applications'
   notes: Imports
-  url: https://github.com/KlausVigo/kknn
-  repository: https://CRAN.R-project.org/package=kknn
+  repository: https://CRAN.R-project.org/package=FNN
   authors:
-  - family-names: Schliep
-    given-names: Klaus
-    email: klaus.schliep@gmail.com
-  - family-names: Hechenbichler
-    given-names: Klaus
-  year: '2024'
-  doi: 10.32614/CRAN.package.kknn
+  - family-names: Beygelzimer
+    given-names: Alina
+  - family-names: Kakadet
+    given-names: Sham
+  - family-names: Langford
+    given-names: John
+  - family-names: Arya
+    given-names: Sunil
+  - family-names: Mount
+    given-names: David
+  - family-names: Li
+    given-names: Shengqiao
+    email: lishengqiao@yahoo.com
+  year: '2025'
+  doi: 10.32614/CRAN.package.FNN
 - type: software
   title: randomForest
   abstract: 'randomForest: Breiman and Cutlers Random Forests for Classification and
@@ -171,7 +175,7 @@ references:
     email: andy_liaw@merck.com
   - family-names: Wiener
     given-names: Matthew
-  year: '2024'
+  year: '2025'
   doi: 10.32614/CRAN.package.randomForest
 - type: software
   title: Rcpp
@@ -206,7 +210,7 @@ references:
     orcid: https://orcid.org/0000-0001-8316-9503
   - family-names: Chambers
     given-names: John
-  year: '2024'
+  year: '2025'
   doi: 10.32614/CRAN.package.Rcpp
 - type: software
   title: scales
@@ -224,7 +228,7 @@ references:
     orcid: https://orcid.org/0000-0002-5147-4711
   - family-names: Seidel
     given-names: Dana
-  year: '2024'
+  year: '2025'
   doi: 10.32614/CRAN.package.scales
 - type: software
   title: stats
@@ -235,7 +239,7 @@ references:
   institution:
     name: R Foundation for Statistical Computing
     address: Vienna, Austria
-  year: '2024'
+  year: '2025'
 - type: software
   title: RcppArmadillo
   abstract: 'RcppArmadillo: ''Rcpp'' Integration for the ''Armadillo'' Templated Linear
@@ -259,6 +263,6 @@ references:
   - family-names: Sanderson
     given-names: Conrad
     orcid: https://orcid.org/0000-0002-0049-4501
-  year: '2024'
+  year: '2025'
   doi: 10.32614/CRAN.package.RcppArmadillo
 
