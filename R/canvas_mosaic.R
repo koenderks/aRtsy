@@ -56,10 +56,11 @@ canvas_mosaic <- function(colors,
     y = stats::runif(n, 0, resolution),
     z = factor(sample(colors, size = n, replace = TRUE))
   )
+  fit <- kknn::train.kknn(formula = z ~ x + y, data = train, kmax = 1)
   sequence <- seq(0, resolution, by = 1)
   canvas <- expand.grid(sequence, sequence)
   colnames(canvas) <- c("x", "y")
-  z <- FNN::knn(train = train[, c("x", "y")], test = canvas[, c("x", "y")], cl = train[, "z"], k = 1)
+  z <- predict(fit, newdata = canvas)
   full_canvas <- data.frame(x = canvas[["x"]], y = canvas[["y"]], z = z)
   artwork <- ggplot2::ggplot(data = full_canvas, mapping = ggplot2::aes(x = x, y = y, fill = z)) +
     ggplot2::geom_raster(interpolate = TRUE) +

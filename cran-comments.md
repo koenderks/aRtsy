@@ -1,8 +1,7 @@
-## aRtsy version 1.0.1
-This is a submission for aRtsy version 1.0.1. In this version I have:
+## aRtsy version 1.0.2
+This is a submission for aRtsy version 1.0.2. In this version I have:
 
-* Removed kknn as a dependency in the hope of getting the aRtsy package out of the CRAN archive.
-* Improved performance of c++ code.
+* Reverted back to the kknn package which was archived on CRAN but is now back.
 
 ## Test environments
 * Windows install, (on github actions) R release

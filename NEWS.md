@@ -1,3 +1,7 @@
+# aRtsy 1.0.2
+
+- Revert back to the kknn package.
+
 # aRtsy 1.0.1
 
 - Added `canvas_slime()`.
