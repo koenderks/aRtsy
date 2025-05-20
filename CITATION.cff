@@ -8,9 +8,11 @@ message: 'To cite package "aRtsy" in publications use:'
 type: software
 license: GPL-3.0-or-later
 title: 'aRtsy: Generative Art with ''ggplot2'''
-version: 1.0.1
+version: 1.0.2
 doi: 10.32614/CRAN.package.aRtsy
 identifiers:
+- type: doi
+  value: 10.32614/CRAN.package.aRtsy
 - type: url
   value: https://twitter.com/aRtsy_package
 - type: url
@@ -28,13 +30,14 @@ preferred-citation:
   - family-names: Derks
     given-names: Koen
     email: koen-derks@hotmail.com
-  year: '2024'
-  notes: R package version 1.0.1
+  year: '2025'
+  notes: R package version 1.0.2
   url: https://CRAN.R-project.org/package=aRtsy
   doi: 10.32614/CRAN.package.aRtsy
+repository: https://CRAN.R-project.org/package=aRtsy
 repository-code: https://github.com/koenderks/aRtsy
 url: https://koenderks.github.io/aRtsy/
-date-released: '2025-05-16'
+date-released: '2025-05-20'
 contact:
 - family-names: Derks
   given-names: Koen
@@ -138,26 +141,20 @@ references:
   doi: 10.32614/CRAN.package.ggplot2
   version: '>= 3.4.0'
 - type: software
-  title: FNN
-  abstract: 'FNN: Fast Nearest Neighbor Search Algorithms and Applications'
+  title: kknn
+  abstract: 'kknn: Weighted k-Nearest Neighbors'
   notes: Imports
-  repository: https://CRAN.R-project.org/package=FNN
+  url: https://github.com/KlausVigo/kknn
+  repository: https://CRAN.R-project.org/package=kknn
   authors:
-  - family-names: Beygelzimer
-    given-names: Alina
-  - family-names: Kakadet
-    given-names: Sham
-  - family-names: Langford
-    given-names: John
-  - family-names: Arya
-    given-names: Sunil
-  - family-names: Mount
-    given-names: David
-  - family-names: Li
-    given-names: Shengqiao
-    email: lishengqiao@yahoo.com
+  - family-names: Schliep
+    given-names: Klaus
+    email: klaus.schliep@gmail.com
+  - family-names: Hechenbichler
+    given-names: Klaus
   year: '2025'
-  doi: 10.32614/CRAN.package.FNN
+  doi: 10.32614/CRAN.package.kknn
+  version: '>= 1.4.1'
 - type: software
   title: randomForest
   abstract: 'randomForest: Breiman and Cutlers Random Forests for Classification and
